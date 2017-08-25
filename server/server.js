@@ -38,6 +38,10 @@ app.get('/', (req, res) => {
   res.render('index.hbs');
 });
 
+app.get('/categories', (req, res) => {
+  res.render('categories.hbs');
+});
+
 module.exports = {
   app: app
 };
