@@ -17,10 +17,6 @@ body, html {
 }
 
 /* Index */
-.index-body {
-  overflow-x: hidden;
-}
-
 .index-main-container {
   margin: 0;
   padding: 0;
@@ -28,13 +24,13 @@ body, html {
 
 .index-main-jumbotron {
   width: auto;
-  height: 15em;
-  margin-top: 3em;
+  height: 20em;
+  margin-top: 0em;
   background-color: #0d47a1;
 }
 
 .index-main-title {
-  margin-top: 4em;
+  padding-top: 7em;
   text-align: center;
 }
 
