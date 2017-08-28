@@ -192,4 +192,8 @@ body, html {
 .tag-paradigms {
   color: #fff;
   background-color: #2bbbad;
-} */
+}
+
+footer {
+  display: none;
+}

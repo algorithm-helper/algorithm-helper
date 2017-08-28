@@ -1,0 +1,561 @@
+[
+    {
+        "category": "data-structures",
+        "title": "Data Structures",
+        "url": "/categories/data-structures",
+        "topics": [
+            {
+                "topic": "lists",
+                "title": "Lists",
+                "url": "/lists",
+                "articles": [
+                    {
+                        "article": "introduction",
+                        "title": "Introduction",
+                        "url": "/introduction"
+                    },
+                    {
+                        "article": "linked-list",
+                        "title": "Linked List",
+                        "url": "/linked-list"
+                    },
+                    {
+                        "article": "double-ended-linked-list",
+                        "title": "Double Ended Linked List",
+                        "url": "/double-ended-linked-list"
+                    },
+                    {
+                        "article": "vector-dynamically-resizing-array",
+                        "title": "Vector / Dynamically Resizing Array",
+                        "url": "/vector-dynamically-resizing-array"
+                    },
+                    {
+                        "article": "amortization",
+                        "title": "Amortization",
+                        "url": "/amortization"
+                    },
+                    {
+                        "article": "stack",
+                        "title": "Stack",
+                        "url": "/stack"
+                    },
+                    {
+                        "article": "queue",
+                        "title": "Queue",
+                        "url": "/queue"
+                    },
+                    {
+                        "article": "deque-double-ended-queue",
+                        "title": "Deque / Double Ended Queue",
+                        "url": "/deque-double-ended-queue"
+                    },
+                    {
+                        "article": "union-find-disjoint-set",
+                        "title": "Union Find / Disjoint Set",
+                        "url": "/union-find-disjoint-set"
+                    },
+                    {
+                        "article": "iterator-iterable",
+                        "title": "Iterator / Iterable",
+                        "url": "/iterator-iterable"
+                    },
+                    {
+                        "article": "time-and-space-complexity",
+                        "title": "Time and Space Complexity",
+                        "url": "/time-and-space-complexity"
+                    }
+                ]
+            },
+            {
+                "topic": "trees",
+                "title": "Trees",
+                "url": "/trees",
+                "articles": [
+                    {
+                        "article": "introduction",
+                        "title": "Introduction",
+                        "url": "/introduction"
+                    },
+                    {
+                        "article": "map-symbol-table",
+                        "title": "Map / Symbol Table",
+                        "url": "/map-symbol-table"
+                    },
+                    {
+                        "article": "set",
+                        "title": "Set",
+                        "url": "/set"
+                    },
+                    {
+                        "article": "binary-search-tree",
+                        "title": "Binary Search Tree",
+                        "url": "/binary-search-tree"
+                    },
+                    {
+                        "article": "balanaced-binary-search-tree",
+                        "title": "Balanced Binary Search Tree",
+                        "url": "/balanced-binary-search-tree"
+                    },
+                    {
+                        "article": "2-3-tree",
+                        "title": "2-3 Tree",
+                        "url": "/2-3-tree"
+                    },
+                    {
+                        "article": "red-black-tree",
+                        "title": "Red-Black Tree",
+                        "url": "/red-black-tree"
+                    },
+                    {
+                        "article": "avl-tree",
+                        "title": "AVL Tree",
+                        "url": "/avl-tree"
+                    },
+                    {
+                        "article": "heap",
+                        "title": "Heap",
+                        "url": "/heap"
+                    },
+                    {
+                        "article": "priority-queue",
+                        "title": "Priority Queue",
+                        "url": "/priority-queue"
+                    },
+                    {
+                        "article": "time-and-space-complexity",
+                        "title": "Time and Space Complexity",
+                        "url": "/time-and-space-complexity"
+                    }
+                ]
+            },
+            {
+                "topic": "hashing",
+                "title": "Hashing",
+                "url": "/hashing",
+                "articles": [
+                    {
+                        "article": "introduction",
+                        "title": "Introduction",
+                        "url": "/introduction"
+                    },
+                    {
+                        "article": "hash-function",
+                        "title": "Hash Function",
+                        "url": "/hash-function"
+                    },
+                    {
+                        "article": "collision-resolution",
+                        "title": "Collision Resolution",
+                        "url": "/collision-resolution"
+                    },
+                    {
+                        "article": "simple-uniform-hashing-assumption",
+                        "title": "Simple Uniform Hashing Assumption",
+                        "url": "/simple-uniform-hashing-assumption"
+                    },
+                    {
+                        "article": "hash-table-hash-map",
+                        "title": "Hash Table / Hash Map",
+                        "url": "/hash-table-hash-map"
+                    },
+                    {
+                        "article": "hash-set",
+                        "title": "Hash Set",
+                        "url": "/hash-set"
+                    },
+                    {
+                        "article": "time-and-space-complexity",
+                        "title": "Time and Space Complexity",
+                        "url": "/time-and-space-complexity"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "category": "algorithms",
+        "title": "Algorithms",
+        "url": "/categories/algorithms",
+        "topics": [
+            {
+                "topic": "searching",
+                "title": "Searching",
+                "url": "/searching",
+                "articles": [
+                    {
+                        "article": "introduction",
+                        "title": "Introduction",
+                        "url": "/introduction"
+                    },
+                    {
+                        "article": "binary-search",
+                        "title": "Binary Search",
+                        "url": "/binary-search"
+                    },
+                    {
+                        "article": "ternary-search",
+                        "title": "Ternary Search",
+                        "url": "/ternary-search"
+                    },
+                    {
+                        "article": "jump-search",
+                        "title": "Jump Search",
+                        "url": "/jump-search"
+                    },
+                    {
+                        "article": "interpolation-search",
+                        "title": "Interpolation Search",
+                        "url": "/interpolation-search"
+                    },
+                    {
+                        "article": "time-and-space-complexity",
+                        "title": "Time and Space Complexity",
+                        "url": "/time-and-space-complexity"
+                    }
+                ]
+            },
+            {
+                "topic": "sorting",
+                "title": "Sorting",
+                "url": "/sorting",
+                "articles": [
+                    {
+                        "article": "introduction",
+                        "title": "Introduction",
+                        "url": "/introduction"
+                    },
+                    {
+                        "article": "stability",
+                        "title": "Stability",
+                        "url": "/stability"
+                    },
+                    {
+                        "article": "in-place",
+                        "title": "In-Place",
+                        "url": "/in-place"
+                    },
+                    {
+                        "article": "selection-sort",
+                        "title": "Selection Sort",
+                        "url": "/selection-sort"
+                    },
+                    {
+                        "article": "insertion-sort",
+                        "title": "Insertion Sort",
+                        "url": "/insertion-sort"
+                    },
+                    {
+                        "article": "shell-sort",
+                        "title": "Shell Sort",
+                        "url": "/shell-sort"
+                    },
+                    {
+                        "article": "divide-and-conquer",
+                        "title": "Divide and Conquer",
+                        "url": "/divide-and-conquer"
+                    },
+                    {
+                        "article": "merge-sort",
+                        "title": "Merge Sort",
+                        "url": "/merge-sort"
+                    },
+                    {
+                        "article": "quick-sort",
+                        "title": "Quick Sort",
+                        "url": "/quick-sort"
+                    },
+                    {
+                        "article": "heap-sort",
+                        "title": "Heap Sort",
+                        "url": "/heap-sort"
+                    },
+                    {
+                        "article": "bucket-sort",
+                        "title": "Bucket Sort",
+                        "url": "/bucket-sort"
+                    },
+                    {
+                        "article": "radix-sort",
+                        "title": "Radix Sort",
+                        "url": "/radix-sort"
+                    },
+                    {
+                        "article": "comparator-comparable",
+                        "title": "Comparator / Comparable",
+                        "url": "/comparator-comparable"
+                    },
+                    {
+                        "article": "time-and-space-complexity",
+                        "title": "Time and Space Complexity",
+                        "url": "/time-and-space-complexity"
+                    }
+                ]
+            },
+            {
+                "topic": "shuffling",
+                "title": "Shuffling",
+                "url": "/shuffling",
+                "articles": [
+                    {
+                        "article": "introduction",
+                        "title": "Introduction",
+                        "url": "/introduction"
+                    },
+                    {
+                        "article": "fisher-yates-shuffle",
+                        "title": "Fisher-Yates Shuffle",
+                        "url": "/fisher-yates-shuffle"
+                    },
+                    {
+                        "article": "sattolos-algorithm",
+                        "title": "Sattolo's Algorithm",
+                        "url": "/sattolos-algorithm"
+                    },
+                    {
+                        "article": "time-and-space-complexity",
+                        "title": "Time and Space Complexity",
+                        "url": "/time-and-space-complexity"
+                    }
+                ]
+            },
+            {
+                "topic": "graphs",
+                "title": "Graphs",
+                "url": "/graphs",
+                "articles": [
+                    {
+                        "article": "introduction",
+                        "title": "Introduction",
+                        "url": "/introduction"
+                    },
+                    {
+                        "article": "undirected-and-directed-graphs",
+                        "title": "Undirected and Directed Graphs",
+                        "url": "/undirected-and-directed-graphs"
+                    },
+                    {
+                        "article": "sparse-and-dense-graphs",
+                        "title": "Sparse and Dense Graphs",
+                        "url": "/sparse-and-dense-graphs"
+                    },
+                    {
+                        "article": "graph-representation",
+                        "title": "Graph Representation",
+                        "url": "/graph-representation"
+                    },
+                    {
+                        "article": "path-finding",
+                        "title": "Path Finding",
+                        "url": "/path-finding"
+                    },
+                    {
+                        "article": "depth-first-search",
+                        "title": "Depth First Search",
+                        "url": "/depth-first-search"
+                    },
+                    {
+                        "article": "breadth-first-search",
+                        "title": "Breadth First Search",
+                        "url": "/breadth-first-search"
+                    },
+                    {
+                        "article": "topological-sort",
+                        "title": "Topological Sort",
+                        "url": "/topological-sort"
+                    },
+                    {
+                        "article": "strongly-connected-components",
+                        "title": "Strongly Connected Components",
+                        "url": "/strongly-connected-components"
+                    },
+                    {
+                        "article": "kosarajus-algorithm",
+                        "title": "Kosaraju's Algorithm",
+                        "url": "/kosarajus-algorithm"
+                    },
+                    {
+                        "article": "weighted-graph",
+                        "title": "Weighted Graph",
+                        "url": "/weighted-graph"
+                    },
+                    {
+                        "article": "cycle-detection",
+                        "title": "Cycle Detection",
+                        "url": "/cycle-detection"
+                    },
+                    {
+                        "article": "floyds-algorithm",
+                        "title": "Floyd's Algorithm",
+                        "url": "/floyds-algorithm"
+                    },
+                    {
+                        "article": "brents-algorithm",
+                        "title": "Brent's Algorithm",
+                        "url": "/brents-algorithm"
+                    },
+                    {
+                        "article": "shortest-path-finding",
+                        "title": "Shortest Path Finding",
+                        "url": "/shortest-path-finding"
+                    },
+                    {
+                        "article": "edge-relaxation",
+                        "title": "Edge Relaxation",
+                        "url": "/edge-relaxation"
+                    },
+                    {
+                        "article": "dijkstras-algorithm",
+                        "title": "Dijkstra's Algorithm",
+                        "url": "/dijkstras-algorithm"
+                    },
+                    {
+                        "article": "a-star-algorithm",
+                        "title": "A* Algorithm",
+                        "url": "/a-star-algorithm"
+                    },
+                    {
+                        "article": "bellman-ford-algorithm",
+                        "title": "Bellman-Ford Algorithm",
+                        "url": "/bellman-ford-algorithm"
+                    },
+                    {
+                        "article": "floyd-warshall-algorithm",
+                        "title": "Floyd-Warshall Algorithm",
+                        "url": "/floyd-warshall-algorithm"
+                    },
+                    {
+                        "article": "greedy-algorithm",
+                        "title": "Greedy Algorithm",
+                        "url": "/greedy-algorithm"
+                    },
+                    {
+                        "article": "minimum-spanning-tree",
+                        "title": "Minimum Spanning Tree",
+                        "url": "/minimum-spanning-tree"
+                    },
+                    {
+                        "article": "prims-algorithm",
+                        "title": "Prim's Algorithm",
+                        "url": "/prims-algorithm"
+                    },
+                    {
+                        "article": "kruskals-algorithm",
+                        "title": "Kruskal's Algorithm",
+                        "url": "/kruskals-algorithm"
+                    },
+                    {
+                        "article": "network-flow",
+                        "title": "Network Flow",
+                        "url": "/network-flow"
+                    },
+                    {
+                        "article": "max-flow-min-cut",
+                        "title": "Max Flow Min Cut",
+                        "url": "/max-flow-min-cut"
+                    },
+                    {
+                        "article": "ford-fulkerson-algorithm",
+                        "title": "Ford-Fulkerson Algorithm",
+                        "url": "/ford-fulkerson-algorithm"
+                    },
+                    {
+                        "article": "time-and-space-complexity",
+                        "title": "Time and Space Complexity",
+                        "url": "/time-and-space-complexity"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "category": "paradigms",
+        "title": "Paradigms",
+        "url": "/categories/paradigms",
+        "topics": [
+            {
+                "topic": "object-oriented-programming",
+                "title": "Object Oriented Programming",
+                "url": "/object-oriented-programming",
+                "articles": [
+                    {
+                        "article": "introduction",
+                        "title": "Introduction",
+                        "url": "/introduction"
+                    },
+                    {
+                        "article": "class-and-instance",
+                        "title": "Class and Instance",
+                        "url": "/binary-search"
+                    },
+                    {
+                        "article": "inheritance",
+                        "title": "Inheritance",
+                        "url": "/inheritance"
+                    },
+                    {
+                        "article": "encapsulation",
+                        "title": "Encapsulation",
+                        "url": "/encapsulation"
+                    },
+                    {
+                        "article": "abstract-class",
+                        "title": "Abstract Class",
+                        "url": "/abstract-class"
+                    },
+                    {
+                        "article": "polymorphism",
+                        "title": "Polymorphism",
+                        "url": "/polymorphism"
+                    }
+                ]
+            },
+            {
+                "topic": "functional-programming",
+                "title": "Functional Programming",
+                "url": "/functional-programming",
+                "articles": [
+                    {
+                        "article": "introduction",
+                        "title": "Introduction",
+                        "url": "/introduction"
+                    },
+                    {
+                        "article": "first-class-and-higher-order-function",
+                        "title": "First Class and Higher Order Function",
+                        "url": "/first-class-and-higher-order-function"
+                    },
+                    {
+                        "article": "recursion",
+                        "title": "Recursion",
+                        "url": "/recursion"
+                    },
+                    {
+                        "article": "lambda-notation",
+                        "title": "Lambda Notation",
+                        "url": "/lambda-notation"
+                    },
+                    {
+                        "article": "functional-composition",
+                        "title": "Function Composition",
+                        "url": "/functional-composition"
+                    },
+                    {
+                        "article": "currying",
+                        "title": "Currying",
+                        "url": "/currying"
+                    },
+                    {
+                        "article": "piping",
+                        "title": "Piping",
+                        "url": "/piping"
+                    },
+                    {
+                        "article": "map-filter-reduce",
+                        "title": "Map",
+                        "url": "/map-filter-reduce"
+                    }
+                ]
+            }
+        ]
+    }
+]

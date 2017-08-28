@@ -8,6 +8,7 @@ const fuzzy = require('fuzzy');
 const path = require('path');
 const hbs = require('hbs');
 
+const categoryIndex = require('./../content/categoryIndex.json');
 const topicIndex = require('./../content/topicIndex.json');
 
 var app = express();
@@ -42,12 +43,14 @@ app.get('/', (req, res) => {
   });
 });
 
-app.get('/topic', (req, res) => {
-  res.render('topic.hbs');
+app.get('/categories', (req, res) => {
+  res.render('categories.hbs', {
+    categoryIndex: JSON.stringify(categoryIndex)
+  });
 });
 
-app.get('/categories', (req, res) => {
-  res.render('categories.hbs');
+app.get('/topic', (req, res) => {
+  res.render('topic.hbs');
 });
 
 app.get('/article', (req, res) => {
