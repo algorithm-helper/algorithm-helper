@@ -1,29 +1,33 @@
 /**
  * 
- * category.js
+ * topic.js
  * 
- * Script for rendering topic card view elements for a particular category.
+ * Script for rendering article card view elements for a particular topic.
  * 
  */
 
  $(document).ready(() => {
     // For debug purposes:
-    // console.log(categoryData);
+    console.log(topicData);
 
     // Render title:
-    $('#category-title').html(categoryData.title);
+    $('#topic-title').html(topicData.title);
 
     // Render card view:
-    const renderTopicCards = (callback) => {
-        let categoryMainCardContainer = $('#category-main-card-container');
+    const renderArticleCards = (callback) => {
+        let topicMainCardContainer = $('#topic-main-card-container');
 
-        for (let i = 0; i < categoryData.topics.length; i += 3) {
+        for (let i = 0; i < topicData.articles.length; i += 3) {
             let row = $(document.createElement('div'))
             .addClass('row main-card-row')
-            .appendTo(categoryMainCardContainer);
+            .appendTo(topicMainCardContainer);
+
+            if (i > topicData.articles.length) {
+                break;
+            }
 
             for (let j = 0; j < 3; j++) {
-                if (!categoryData.topics[i+j]) {
+                if (!topicData.articles[i+j]) {
                     break;
                 }
 
@@ -41,17 +45,12 @@
    
                 let title = $(document.createElement('h4'))
                 .addClass('card-title')
-                .text(categoryData.topics[i+j].title)
+                .text(topicData.articles[i+j].title)
                 .appendTo(cardBody);
-   
-                let description = $(document.createElement('p'))
-                .addClass('card-text')
-                .text(categoryData.topics[i+j].description)
-                .appendTo(cardBody);
-   
+
                 let btn = $(document.createElement('a'))
                 .addClass('btn btn-primary')
-                .attr('href', `${categoryData.url}${categoryData.topics[i+j].url}`)
+                .attr('href', `${window.location.pathname}${topicData.articles[i+j].url}`)
                 .text('View')
                 .appendTo(cardBody);
             }
@@ -60,8 +59,8 @@
         callback();
     } 
 
-    renderTopicCards(() => {
-        // Render footer only when finished rendering category cards:
+    renderArticleCards(() => {
+        // Render footer only when finished rendering article cards:
         $('footer').css('display', 'block');
     });
 

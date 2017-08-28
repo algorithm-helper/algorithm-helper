@@ -10,7 +10,7 @@
 
 $(document).ready(function () {
     // For debug purposes:
-    console.log(categoryData);
+    // console.log(categoryData);
 
     // Render title:
     $('#category-title').html(categoryData.title);
@@ -45,7 +45,7 @@ $(document).ready(function () {
     };
 
     renderTopicCards(function () {
-        // Render footer only when finished rendering index cards:
+        // Render footer only when finished rendering category cards:
         $('footer').css('display', 'block');
     });
 });

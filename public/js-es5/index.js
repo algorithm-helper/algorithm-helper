@@ -16,7 +16,7 @@ $(document).ready(function () {
              var renderIndexCards = function renderIndexCards(callback) {
                           var indexMainCardContainer = $('#index-main-card-container');
                           for (var i = 0; i < topicIndex.length; i += 3) {
-                                       var row = $(document.createElement('div')).addClass('row index-main-card-row').appendTo(indexMainCardContainer);
+                                       var row = $(document.createElement('div')).addClass('row main-card-row').appendTo(indexMainCardContainer);
 
                                        var _loop = function _loop(j) {
                                                     var column = $(document.createElement('div')).addClass('col-md-4').appendTo(row);

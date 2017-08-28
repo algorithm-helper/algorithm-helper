@@ -50,10 +50,10 @@ app.get('/categories', (req, res) => {
 });
 
 app.get('/categories/:category', (req, res) => {
-  console.log(req.params);
+  let category = req.params.category.toLowerCase();
 
   let categoryData = categoryIndex.find((x) => {
-    return x.category == req.params.category;
+    return x.category == category;
   });
 
   if (!categoryData) {
@@ -66,9 +66,28 @@ app.get('/categories/:category', (req, res) => {
 });
 
 app.get('/categories/:category/:topic', (req, res) => {
-  console.log(req.params);
+  let category = req.params.category.toLowerCase();
+  let topic = req.params.topic.toLowerCase();
 
-  // return res.render('topic.hbs');
+  let categoryData = categoryIndex.find((x) => {
+    return x.category == category;
+  });
+
+  if (!categoryData) {
+    return res.redirect('/');
+  }
+
+  let topicData = categoryData.topics.find((x) => {
+    return x.topic == topic;
+  });
+
+  if (!topicData) {
+    return res.redirect(`/categories/${category}`);
+  }
+
+  return res.render('topic.hbs', {
+    topicData: JSON.stringify(topicData)
+  });
 });
 
 app.get('/categories/:category/:topic/:article', (req, res) => {
@@ -82,5 +101,5 @@ app.get('*', (req, res) => {
 });
 
 module.exports = {
-  app: app
+  app
 };

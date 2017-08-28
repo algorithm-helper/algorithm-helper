@@ -14,8 +14,9 @@ $(document).ready(function () {
 
             var renderCategoryCards = function renderCategoryCards(callback) {
                         var categoriesMainCardContainer = $('#categories-main-card-container');
+
                         categoryIndex.forEach(function (category) {
-                                    var categoriesMainCardRow = $(document.createElement('div')).addClass('row categories-main-card-row').appendTo(categoriesMainCardContainer);
+                                    var categoriesMainCardRow = $(document.createElement('div')).addClass('row main-card-row').appendTo(categoriesMainCardContainer);
 
                                     var cardColumn = $(document.createElement('div')).addClass('col-md-4').appendTo(categoriesMainCardRow);
 
@@ -39,7 +40,7 @@ $(document).ready(function () {
 
                                                 var topicTitle = $(document.createElement('h4')).text(topic.title).appendTo(topicURL);
 
-                                                var articlesRow = $(document.createElement('div')).addClass('row categories-item-row').appendTo(categoryRow);
+                                                var articlesRow = $(document.createElement('div')).addClass('row main-card-row').appendTo(categoryRow);
 
                                                 topic.articles.forEach(function (article) {
 

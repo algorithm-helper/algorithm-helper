@@ -1,31 +1,28 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        {{> head}}
+    </head>
+    <body>
+        {{> navbar}}
 
-<head>
-    {{> head}}
-</head>
-
-<body class="categories-body">
-    {{> navbar}}
-
-    <div class="container-fluid categories-main-container">
-        <div class="categories-main-jumbotron">
-            <div class="categories-main-title">
-                <h1 class="h1-responsive white-text">Categories</h1>
+        <div class="container-fluid main-container">
+            <div class="main-jumbotron">
+                <div class="main-title">
+                    <h1 class="h1-responsive white-text">Categories</h1>
+                </div>
             </div>
+
+            <div id="categories-main-card-container" class="container main-card-container"></div>
         </div>
 
-        <div id="categories-main-card-container" class="categories-main-card-container container"></div>
-    </div>
+        {{> footer}}
 
-    {{> footer}}
-
-    <!-- Bootstrap Material Design Compressed and Minified JavaScript -->
-    <script type="text/javascript" src="/js-lib/mdb.min.js"></script>
-    <script>
-        let categoryIndex = {{{categoryIndex}}};
-    </script>
-    <script type="text/javascript" src="/js-es6/categories.js"></script>
-</body>
-
+        <!-- Bootstrap Material Design Compressed and Minified JavaScript -->
+        <script type="text/javascript" src="/js-lib/mdb.min.js"></script>
+        <script>
+            let categoryIndex = {{{categoryIndex}}};
+        </script>
+        <script type="text/javascript" src="/js-es6/categories.js"></script>
+    </body>
 </html>

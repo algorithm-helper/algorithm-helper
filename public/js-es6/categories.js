@@ -12,9 +12,10 @@
 
      const renderCategoryCards = (callback) => {
         let categoriesMainCardContainer = $('#categories-main-card-container');
+
         categoryIndex.forEach((category) => {
            let categoriesMainCardRow = $(document.createElement('div'))
-           .addClass('row categories-main-card-row')
+           .addClass('row main-card-row')
            .appendTo(categoriesMainCardContainer);
    
            let cardColumn = $(document.createElement('div'))
@@ -59,7 +60,7 @@
                .appendTo(topicURL);
    
                let articlesRow = $(document.createElement('div'))
-               .addClass('row categories-item-row')
+               .addClass('row main-card-row')
                .appendTo(categoryRow);
    
                topic.articles.forEach((article) => {

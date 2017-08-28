@@ -1,63 +1,28 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    {{> head}}
-  </head>
-  <body class="topic-body">
-    {{> navbar}}
+    <head>
+        {{> head}}
+    </head>
+    <body>
+        {{> navbar}}
 
-    <div class="container-fluid topic-main-container">
-      <div class="topic-main-jumbotron">
-          <div class="topic-main-title">
-            <h1 class="h1-responsive white-text">Data Structures</h1>
-          </div>
-      </div>
-
-      <div id="topic-main-card-container" class="topic-main-card-container container">
-          <div class="row topic-main-card-row">
-            <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">Lists</h4>
-                    <span class="card-tag tag-data-structures">data structures</span>
-                    <p class="card-text">Learn about linear data structures like Linked Lists, Vectors, Stacks, Queues, and Union Find, as well as amortization.</p>
-                    <a href="#" class="btn btn-primary">View</a>
+        <div class="container-fluid main-container">
+            <div class="main-jumbotron">
+                <div class="main-title">
+                    <h1 id="topic-title" class="h1-responsive white-text"></h1>
                 </div>
             </div>
-            </div>
 
-            <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">Trees</h4>
-                    <span class="card-tag tag-data-structures">data structures</span>
-                    <p class="card-text">Learn about using binary and balanced binary search trees to implement Maps/Sets with logarithmic performance.</p>
-                    <a href="#" class="btn btn-primary">View</a>
-                </div>
-            </div>
-            </div>
-
-            <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">Hashing</h4>
-                    <span class="card-tag tag-data-structures">data structures</span>
-                    <p class="card-text">Learn about using hash functions to implement Maps/Sets, with efficient (constant, amortized) time for all operations.</p>
-                    <a href="#" class="btn btn-primary">View</a>
-                </div>
-            </div>
-            </div>
+            <div id="topic-main-card-container" class="container main-card-container"></div>
         </div>
-      </div>
-    </div>
 
-    {{> footer}}
+        {{> footer}}
 
-    <!-- Bootstrap Material Design Compressed and Minified JavaScript -->
-    <script type="text/javascript" src="/js-lib/mdb.min.js"></script>
-    <script>
-        let topicIndex = {{{topicIndex}}};
-    </script>
-    <script type="text/javascript" src="/js-es6/index.js"></script>
-  </body>
+        <!-- Bootstrap Material Design Compressed and Minified JavaScript -->
+        <script type="text/javascript" src="/js-lib/mdb.min.js"></script>
+        <script>
+            let topicData = {{{topicData}}};
+        </script>
+        <script type="text/javascript" src="/js-es6/topic.js"></script>
+    </body>
 </html>

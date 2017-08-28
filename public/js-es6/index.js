@@ -15,7 +15,7 @@
         let indexMainCardContainer = $('#index-main-card-container');
         for (let i = 0; i < topicIndex.length; i += 3) {
             let row = $(document.createElement('div'))
-            .addClass('row index-main-card-row')
+            .addClass('row main-card-row')
             .appendTo(indexMainCardContainer);
    
             for (let j = 0; j < 3; j++) {
