@@ -84,7 +84,7 @@
     }
 
     renderCategoryCards(() => {
-        // Render footer only when finished rendering index cards:
+        // Render footer only when finished rendering category cards:
         $('footer').css('display', 'block');
     });
 

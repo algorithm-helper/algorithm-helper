@@ -7,6 +7,7 @@
             {
                 "topic": "lists",
                 "title": "Lists",
+                "description": "Learn about linear data structures like Linked Lists, Vectors, Stacks, Queues, and Union Find, as well as amortization.",                
                 "url": "/lists",
                 "articles": [
                     {
@@ -70,6 +71,7 @@
                 "topic": "trees",
                 "title": "Trees",
                 "url": "/trees",
+                "description": "Learn about using binary and balanced binary search trees to implement Maps/Sets with logarithmic performance.",                
                 "articles": [
                     {
                         "article": "introduction",
@@ -132,6 +134,7 @@
                 "topic": "hashing",
                 "title": "Hashing",
                 "url": "/hashing",
+                "description": "Learn about using hash functions to implement Maps/Sets, with efficient (constant, amortized) time for all operations.",                
                 "articles": [
                     {
                         "article": "introduction",
@@ -181,6 +184,7 @@
                 "topic": "searching",
                 "title": "Searching",
                 "url": "/searching",
+                "description": "Learn about algorithms for searching for elements in arrays efficiently, in logarithmic time and better.",                
                 "articles": [
                     {
                         "article": "introduction",
@@ -218,6 +222,7 @@
                 "topic": "sorting",
                 "title": "Sorting",
                 "url": "/sorting",
+                "description": "Learn about the fundamental problem of sorting, and algorithms like Merge Sort, Quick Sort and Heap Sort.",                
                 "articles": [
                     {
                         "article": "introduction",
@@ -295,6 +300,7 @@
                 "topic": "shuffling",
                 "title": "Shuffling",
                 "url": "/shuffling",
+                "description": "Learn about algorithms like Fisher-Yates and Sattolo's Algorithm to order elements in arrays uniformly randomly.",                
                 "articles": [
                     {
                         "article": "introduction",
@@ -322,6 +328,7 @@
                 "topic": "graphs",
                 "title": "Graphs",
                 "url": "/graphs",
+                "description": "Learn about algorithms for shortest path finding, minimum spanning trees, topological sorting, cycles and network flow.",                
                 "articles": [
                     {
                         "article": "introduction",
@@ -464,6 +471,27 @@
                         "url": "/time-and-space-complexity"
                     }
                 ]
+            },
+            {
+                "topic": "mathematics",
+                "title": "Mathematics",
+                "url": "/mathematics",
+                "description": "Learn about efficient algorithms for multiplication and matrix multiplication, and computing convex hulls.",
+                "articles": []
+            },
+            {
+                "topic": "strings",
+                "title": "Strings",
+                "url": "/strings",
+                "description": "Learn about data structures and algorithms for string matching and searching like Tries, and the Rabin-Karp algorithm.",
+                "articles": []
+            },
+            {
+                "topic": "randomized",
+                "title": "Randomized",
+                "url": "/randomized",
+                "description": "Learn about Las Vegas and Monte Carlo algorithms, that use randomness to achieve approximate solutions.",
+                "articles": []
             }
         ]
     },
@@ -476,6 +504,7 @@
                 "topic": "object-oriented-programming",
                 "title": "Object Oriented Programming",
                 "url": "/object-oriented-programming",
+                "description": "Learn about object oriented programming concepts like encapsulation, inheritance, and polymorphism.",                        
                 "articles": [
                     {
                         "article": "introduction",
@@ -513,6 +542,7 @@
                 "topic": "functional-programming",
                 "title": "Functional Programming",
                 "url": "/functional-programming",
+                "description": "Learn about functional programming concepts like lambda notation, function composition, filter, map, and reduce.",                
                 "articles": [
                     {
                         "article": "introduction",

@@ -197,3 +197,29 @@ body, html {
 footer {
   display: none;
 }
+
+.category-main-container {
+  margin: 0;
+  padding: 0;
+}
+
+.category-main-jumbotron {
+  width: auto;
+  height: 15em;
+  margin-top: 0em;
+  background-color: #0d47a1;
+}
+
+.category-main-title {
+  padding-top: 7.5em;
+  text-align: center;
+}
+
+.category-main-card-container {
+  margin-top: 2em;
+  margin-bottom: 5em;
+}
+
+.main-card-row {
+  margin-bottom: 1em;
+}

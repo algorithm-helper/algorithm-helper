@@ -49,24 +49,36 @@ app.get('/categories', (req, res) => {
   });
 });
 
-app.get('/topic', (req, res) => {
-  res.render('topic.hbs');
-});
-
-app.get('/article', (req, res) => {
-  res.render('article.hbs');
-});
-
 app.get('/categories/:category', (req, res) => {
   console.log(req.params);
+
+  let categoryData = categoryIndex.find((x) => {
+    return x.category == req.params.category;
+  });
+
+  if (!categoryData) {
+    return res.redirect('/');
+  }
+
+  res.render('category.hbs', {
+    categoryData: JSON.stringify(categoryData)
+  });
 });
 
 app.get('/categories/:category/:topic', (req, res) => {
   console.log(req.params);
+
+  // return res.render('topic.hbs');
 });
 
 app.get('/categories/:category/:topic/:article', (req, res) => {
   console.log(req.params);
+
+  // return res.render('article.hbs');
+});
+
+app.get('*', (req, res) => {
+  res.redirect('/');
 });
 
 module.exports = {
