@@ -1,0 +1,1 @@
+"use strict";$(document).ready(function(){$("#link-categories").click(function(){setTimeout(function(){window.location.href="/categories"},500)})});

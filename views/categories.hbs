@@ -1,602 +1,632 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     {{> head}}
-  </head>
-  <body class="categories-body">
+</head>
+
+<body class="categories-body">
     {{> navbar}}
 
     <div class="container-fluid categories-main-container">
-      <div class="categories-main-jumbotron">
-          <div class="categories-main-title">
-            <h1 class="h1-responsive white-text">Categories</h1>
-          </div>
-      </div>
+        <div class="categories-main-jumbotron">
+            <div class="categories-main-title">
+                <h1 class="h1-responsive white-text">Categories</h1>
+            </div>
+        </div>
 
-      <div class="categories-main-card-container container">
-        
-        <div class="row categories-main-card-row">
-            <div class="col-md-4">
-                <div>
-                    <h2 class="text-right">Data Structures</h1>
+        <div class="categories-main-card-container container">
+            <div class="row categories-main-card-row">
+                <div class="col-md-4">
+                    <div>
+                        <a href="/categories/data-structures">
+                            <h2 class="text-right">Data Structures</h2>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="category-title">
+                                <a href="#">
+                                    <h4>Lists</h4>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row categories-item-row">
+                        <div class="col-md-6">
+                            <div class="category-item">
+                                <a href="#">Introduction</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Linked List</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Double Ended Linked List</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Vector / Dynamically Resizing Array</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Amortization</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Stack</a>
+                                <div class="row">
+                                    <div class="col-md-1">
+                                    </div>
+                                    <div class="col-md-11">
+                                        <div class="category-subitem">
+                                            <a href="#">With Linked List</a>
+                                        </div>
+                                        <div class="category-subitem">
+                                            <a href="#">With Dynamically Resizing Array</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="category-item">
+                                <a href="#">Queue</a>
+                                <div class="row">
+                                    <div class="col-md-1">
+                                    </div>
+                                    <div class="col-md-11">
+                                        <div class="category-subitem">
+                                            <a href="#">With Linked List</a>
+                                        </div>
+                                        <div class="category-subitem">
+                                            <a href="#">With Dynamically Resizing Array</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Deque / Double Ended Queue</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Union Find / Disjoint Set</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Iterator / Iterable</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Time and Space Complexity</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="category-title">
+                                <a href="#">
+                                    <h4>Trees</h4>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row categories-item-row">
+                        <div class="col-md-6">
+                            <div class="category-item">
+                                <a href="#">Introduction</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Map / Symbol Table</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Set</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Binary Search Tree</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Balanced Binary Search Tree</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">2-3 Tree</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Red-Black Tree</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">AVL Tree</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="category-item">
+                                <a href="#">Heap</a>
+                                <div class="row">
+                                    <div class="col-md-1">
+                                    </div>
+                                    <div class="col-md-11">
+                                        <div class="category-subitem">
+                                            <a href="#">Binary Min Heap</a>
+                                        </div>
+                                        <div class="category-subitem">
+                                            <a href="#">Binary Max Heap</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Priority Queue</a>
+                                <div class="row">
+                                    <div class="col-md-1">
+                                    </div>
+                                    <div class="col-md-11">
+                                        <div class="category-subitem">
+                                            <a href="#">Priority Min Queue</a>
+                                        </div>
+                                        <div class="category-subitem">
+                                            <a href="#">Priority Max Queue</a>
+                                        </div>
+                                        <div class="category-subitem">
+                                            <a href="#">Double Ended Priority Queue</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Time and Space Complexity</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="category-title">
+                                <a href="#">
+                                    <h4>Hashing</h4>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row categories-item-row">
+                        <div class="col-md-6">
+                            <div class="category-item">
+                                <a href="#">Introduction</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Hash Function</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Collision Resolution</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Simple Uniform Hashing Assumption</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="category-item">
+                                <a href="#">Hash Table / Hash Map</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Hash Set</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Time and Space Complexity</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-8">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="category-title">
-                            <a href="#"><h3>Lists</h3></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="row categories-item-row">
-                    <div class="col-md-6">
-                        <div class="category-item">
-                            <a href="#">Introduction</a>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">Linked List</a>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">Double Ended Linked List</a>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">Vector / Dynamically Resizing Array</a>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">Amortization</a>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">Stack</a>
-                            <div class="row">
-                                <div class="col-md-1">
-                                </div>
-                                <div class="col-md-11">
-                                    <div class="category-subitem">
-                                        <a href="#">With Linked List</a>
-                                    </div>
-                                    <div class="category-subitem">
-                                        <a href="#">With Dynamically Resizing Array</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="category-item">
-                            <a href="#">Queue</a>
-                            <div class="row">
-                                <div class="col-md-1">
-                                </div>
-                                <div class="col-md-11">
-                                    <div class="category-subitem">
-                                        <a href="#">With Linked List</a>
-                                    </div>
-                                    <div class="category-subitem">
-                                        <a href="#">With Dynamically Resizing Array</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">Deque / Double Ended Queue</a>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">Union Find / Disjoint Set</a>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">Iterator / Iterable</a>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">Time and Space Complexity</a>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="category-title">
-                            <a href="#"><h3>Trees</h3></a>
-                        </div>
+            <div class="row categories-main-card-row">
+                <div class="col-md-4">
+                    <div>
+                        <a href="/categories/algorithms">
+                            <h2 class="text-right">Algorithms</h2>
+                        </a>
                     </div>
                 </div>
-                <div class="row categories-item-row">
-                    <div class="col-md-6">
-                        <div class="category-item">
-                            <a href="#">Introduction</a>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">Map / Symbol Table</a>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">Set</a>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">Binary Search Tree</a>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">Balanced Binary Search Tree</a>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">2-3 Tree</a>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">Red-Black Tree</a>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">AVL Tree</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="category-item">
-                            <a href="#">Heap</a>
-                            <div class="row">
-                                <div class="col-md-1">
-                                </div>
-                                <div class="col-md-11">
-                                    <div class="category-subitem">
-                                        <a href="#">Binary Min Heap</a>
-                                    </div>
-                                    <div class="category-subitem">
-                                        <a href="#">Binary Max Heap</a>
-                                    </div>
-                                </div>
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="category-title">
+                                <a href="#">
+                                    <h4>Searching</h4>
+                                </a>
                             </div>
                         </div>
-                        <div class="category-item">
-                            <a href="#">Priority Queue</a>
-                            <div class="row">
-                                <div class="col-md-1">
-                                </div>
-                                <div class="col-md-11">
-                                    <div class="category-subitem">
-                                        <a href="#">Priority Min Queue</a>
-                                    </div>
-                                    <div class="category-subitem">
-                                        <a href="#">Priority Max Queue</a>
-                                    </div>
-                                    <div class="category-subitem">
-                                        <a href="#">Double Ended Priority Queue</a>
-                                    </div>
-                                </div>
+                    </div>
+                    <div class="row categories-item-row">
+                        <div class="col-md-6">
+                            <div class="category-item">
+                                <a href="#">Introduction</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Binary Search</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Ternary Search</a>
                             </div>
                         </div>
-                        <div class="category-item">
-                            <a href="#">Time and Space Complexity</a>
+                        <div class="col-md-6">
+                            <div class="category-item">
+                                <a href="#">Jump Search</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Interpolation Search</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Time and Space Complexity</a>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="category-title">
-                            <a href="#"><h3>Hashing</h3></a>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="category-title">
+                                <a href="#">
+                                    <h4>Sorting</h4>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row categories-item-row">
+                        <div class="col-md-6">
+                            <div class="category-item">
+                                <a href="#">Introduction</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Stability</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">In-Place</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Selection Sort</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Insertion Sort</a>
+                                <div class="row">
+                                    <div class="col-md-1">
+                                    </div>
+                                    <div class="col-md-11">
+                                        <div class="category-subitem">
+                                            <a href="#">Inversion</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Shell Sort</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Divide and Conquer</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Merge Sort</a>
+                                <div class="row">
+                                    <div class="col-md-1">
+                                    </div>
+                                    <div class="col-md-11">
+                                        <div class="category-subitem">
+                                            <a href="#">Merge Sort Bottom Up</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="category-item">
+                                <a href="#">Quick Sort</a>
+                                <div class="row">
+                                    <div class="col-md-1">
+                                    </div>
+                                    <div class="col-md-11">
+                                        <div class="category-subitem">
+                                            <a href="#">Quick Sort Three Way</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Heap Sort</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Bucket Sort</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Radix Sort</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Comparator / Comparable</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Time and Space Complexity</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="category-title">
+                                <a href="#">
+                                    <h4>Shuffling</h4>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row categories-item-row">
+                        <div class="col-md-6">
+                            <div class="category-item">
+                                <a href="#">Introduction</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Fisher-Yates Shuffle</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="category-item">
+                                <a href="#">Sattolo's Algorithm</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Time and Space Complexity</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="category-title">
+                                <a href="#">
+                                    <h4>Graphs</h4>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row categories-item-row">
+                        <div class="col-md-6">
+                            <div class="category-item">
+                                <a href="#">Introduction</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Undirected and Directed Graphs</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Sparse and Dense Graphs</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Graph Representation</a>
+                                <div class="row">
+                                    <div class="col-md-1">
+                                    </div>
+                                    <div class="col-md-11">
+                                        <div class="category-subitem">
+                                            <a href="#">Edge List</a>
+                                        </div>
+                                        <div class="category-subitem">
+                                            <a href="#">Vertex Matrix</a>
+                                        </div>
+                                        <div class="category-subitem">
+                                            <a href="#">Adjacency List</a>
+                                        </div>
+                                        <div class="category-subitem">
+                                            <a href="#">Time and Space Complexity</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Path Finding</a>
+                                <div class="row">
+                                    <div class="col-md-1">
+                                    </div>
+                                    <div class="col-md-11">
+                                        <div class="category-subitem">
+                                            <a href="#">Depth First Search</a>
+                                        </div>
+                                        <div class="category-subitem">
+                                            <a href="#">Breadth First Search</a>
+                                        </div>
+                                        <div class="category-subitem">
+                                            <a href="#">Topological Sort</a>
+                                        </div>
+                                        <div class="category-subitem">
+                                            <a href="#">Strongly Connected Components</a>
+                                        </div>
+                                        <div class="category-subitem">
+                                            <a href="#">Kosaraju's Algorithm</a>
+                                        </div>
+                                        <div class="category-subitem">
+                                            <a href="#">Time and Space Complexity</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Weighted Graph</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Cycle Detection</a>
+                                <div class="row">
+                                    <div class="col-md-1">
+                                    </div>
+                                    <div class="col-md-11">
+                                        <div class="category-subitem">
+                                            <a href="#">Floyd's Algorithm</a>
+                                        </div>
+                                        <div class="category-subitem">
+                                            <a href="#">Brent's Algorithm</a>
+                                        </div>
+                                        <div class="category-subitem">
+                                            <a href="#">Time and Space Complexity</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="category-item">
+                                <a href="#">Shortest Path Finding</a>
+                                <div class="row">
+                                    <div class="col-md-1">
+                                    </div>
+                                    <div class="col-md-11">
+                                        <div class="category-subitem">
+                                            <a href="#">Edge Relaxation</a>
+                                        </div>
+                                        <div class="category-subitem">
+                                            <a href="#">Dijkstra's Algorithm</a>
+                                        </div>
+                                        <div class="category-subitem">
+                                            <a href="#">A* Algorithm</a>
+                                        </div>
+                                        <div class="category-subitem">
+                                            <a href="#">Bellman-Ford Algorithm</a>
+                                        </div>
+                                        <div class="category-subitem">
+                                            <a href="#">Floyd Warshall Algorithm</a>
+                                        </div>
+                                        <div class="category-subitem">
+                                            <a href="#">Time and Space Complexity</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Greedy Algorithm</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Minimum Spanning Tree</a>
+                                <div class="row">
+                                    <div class="col-md-1">
+                                    </div>
+                                    <div class="col-md-11">
+                                        <div class="category-subitem">
+                                            <a href="#">Prim's Algorithm</a>
+                                        </div>
+                                        <div class="category-subitem">
+                                            <a href="#">Kruskal's Algorithm</a>
+                                        </div>
+                                        <div class="category-subitem">
+                                            <a href="#">Time and Space Complexity</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Network Flow</a>
+                                <div class="row">
+                                    <div class="col-md-1">
+                                    </div>
+                                    <div class="col-md-11">
+                                        <div class="category-subitem">
+                                            <a href="#">Max Flow Min Cut</a>
+                                        </div>
+                                        <div class="category-subitem">
+                                            <a href="#">Ford-Fulkerson Algorithm</a>
+                                        </div>
+                                        <div class="category-subitem">
+                                            <a href="#">Time and Space Complexity</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="row categories-item-row">
-                    <div class="col-md-6">
-                        <div class="category-item">
-                            <a href="#">Introduction</a>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">Hash Function</a>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">Collision Resolution</a>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">Simple Uniform Hashing Assumption</a>
+            </div>
+
+            <div class="row categories-main-card-row">
+                <div class="col-md-4">
+                    <div>
+                        <a href="/categories/paradigms">
+                            <h2 class="text-right">Paradigms</h2>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="category-title">
+                                <a href="#">
+                                    <h4>Object Oriented Programming</h4>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="category-item">
-                            <a href="#">Hash Table / Hash Map</a>
+                    <div class="row categories-item-row">
+                        <div class="col-md-6">
+                            <div class="category-item">
+                                <a href="#">Introduction</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Classes and Instances</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Inheritance</a>
+                            </div>
                         </div>
-                        <div class="category-item">
-                            <a href="#">Hash Set</a>
+                        <div class="col-md-6">
+                            <div class="category-item">
+                                <a href="#">Encapsulation</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Abstract Classes</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Polymorphism</a>
+                            </div>
                         </div>
-                        <div class="category-item">
-                            <a href="#">Time and Space Complexity</a>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="category-title">
+                                <a href="#">
+                                    <h4>Functional Programming</h4>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row categories-item-row">
+                        <div class="col-md-6">
+                            <div class="category-item">
+                                <a href="#">Introduction</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">First Class and Higher Order Functions</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Recursion</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Lambda Notation</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="category-item">
+                                <a href="#">Function Composition</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Currying</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Piping</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#">Map, Filter and Reduce</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="row categories-main-card-row">
-            <div class="col-md-4">
-                <div>
-                    <h2 class="text-right">Algorithms</h1>
-                </div>
-            </div>
-            <div class="col-md-8">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="category-title">
-                            <a href="#"><h3>Searching</h3></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="row categories-item-row">
-                    <div class="col-md-6">
-                        <div class="category-item">
-                            <a href="#">Introduction</a>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">Binary Search</a>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">Ternary Search</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="category-item">
-                            <a href="#">Jump Search</a>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">Interpolation Search</a>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">Time and Space Complexity</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="category-title">
-                            <a href="#"><h3>Sorting</h3></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="row categories-item-row">
-                    <div class="col-md-6">
-                        <div class="category-item">
-                            <a href="#">Introduction</a>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">Stability</a>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">In-Place</a>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">Selection Sort</a>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">Insertion Sort</a>
-                            <div class="row">
-                                <div class="col-md-1">
-                                </div>
-                                <div class="col-md-11">
-                                    <div class="category-subitem">
-                                        <a href="#">Inversion</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">Shell Sort</a>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">Divide and Conquer</a>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">Merge Sort</a>
-                            <div class="row">
-                                <div class="col-md-1">
-                                </div>
-                                <div class="col-md-11">
-                                    <div class="category-subitem">
-                                        <a href="#">Merge Sort Bottom Up</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="category-item">
-                            <a href="#">Quick Sort</a>
-                            <div class="row">
-                                <div class="col-md-1">
-                                </div>
-                                <div class="col-md-11">
-                                    <div class="category-subitem">
-                                        <a href="#">Quick Sort Three Way</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">Heap Sort</a>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">Bucket Sort</a>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">Radix Sort</a>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">Comparator / Comparable</a>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">Time and Space Complexity</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="category-title">
-                            <a href="#"><h3>Shuffling</h3></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="row categories-item-row">
-                    <div class="col-md-6">
-                        <div class="category-item">
-                            <a href="#">Introduction</a>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">Fisher-Yates Shuffle</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="category-item">
-                            <a href="#">Sattolo's Algorithm</a>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">Time and Space Complexity</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="category-title">
-                            <a href="#"><h3>Graphs</h3></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="row categories-item-row">
-                    <div class="col-md-6">
-                        <div class="category-item">
-                            <a href="#">Introduction</a>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">Undirected and Directed Graphs</a>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">Sparse and Dense Graphs</a>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">Graph Representation</a>
-                            <div class="row">
-                                <div class="col-md-1">
-                                </div>
-                                <div class="col-md-11">
-                                    <div class="category-subitem">
-                                        <a href="#">Edge List</a>
-                                    </div>
-                                    <div class="category-subitem">
-                                        <a href="#">Vertex Matrix</a>
-                                    </div>
-                                    <div class="category-subitem">
-                                        <a href="#">Adjacency List</a>
-                                    </div>
-                                    <div class="category-subitem">
-                                        <a href="#">Time and Space Complexity</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">Path Finding</a>
-                            <div class="row">
-                                <div class="col-md-1">
-                                </div>
-                                <div class="col-md-11">
-                                    <div class="category-subitem">
-                                        <a href="#">Depth First Search</a>
-                                    </div>
-                                    <div class="category-subitem">
-                                        <a href="#">Breadth First Search</a>
-                                    </div>
-                                    <div class="category-subitem">
-                                        <a href="#">Topological Sort</a>
-                                    </div>
-                                    <div class="category-subitem">
-                                        <a href="#">Strongly Connected Components</a>
-                                    </div>
-                                    <div class="category-subitem">
-                                        <a href="#">Kosaraju's Algorithm</a>
-                                    </div>
-                                    <div class="category-subitem">
-                                        <a href="#">Time and Space Complexity</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">Weighted Graph</a>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">Cycle Detection</a>
-                            <div class="row">
-                                <div class="col-md-1">
-                                </div>
-                                <div class="col-md-11">
-                                    <div class="category-subitem">
-                                        <a href="#">Floyd's Algorithm</a>
-                                    </div>
-                                    <div class="category-subitem">
-                                        <a href="#">Brent's Algorithm</a>
-                                    </div>
-                                    <div class="category-subitem">
-                                        <a href="#">Time and Space Complexity</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="category-item">
-                            <a href="#">Shortest Path Finding</a>
-                            <div class="row">
-                                <div class="col-md-1">
-                                </div>
-                                <div class="col-md-11">
-                                    <div class="category-subitem">
-                                        <a href="#">Edge Relaxation</a>
-                                    </div>
-                                    <div class="category-subitem">
-                                        <a href="#">Dijkstra's Algorithm</a>
-                                    </div>
-                                    <div class="category-subitem">
-                                        <a href="#">A* Algorithm</a>
-                                    </div>
-                                    <div class="category-subitem">
-                                        <a href="#">Bellman-Ford Algorithm</a>
-                                    </div>
-                                    <div class="category-subitem">
-                                        <a href="#">Floyd Warshall Algorithm</a>
-                                    </div>
-                                    <div class="category-subitem">
-                                        <a href="#">Time and Space Complexity</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">Greedy Algorithm</a>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">Minimum Spanning Tree</a>
-                            <div class="row">
-                                <div class="col-md-1">
-                                </div>
-                                <div class="col-md-11">
-                                    <div class="category-subitem">
-                                        <a href="#">Prim's Algorithm</a>
-                                    </div>
-                                    <div class="category-subitem">
-                                        <a href="#">Kruskal's Algorithm</a>
-                                    </div>
-                                    <div class="category-subitem">
-                                        <a href="#">Time and Space Complexity</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">Network Flow</a>
-                            <div class="row">
-                                <div class="col-md-1">
-                                </div>
-                                <div class="col-md-11">
-                                    <div class="category-subitem">
-                                        <a href="#">Max Flow Min Cut</a>
-                                    </div>
-                                    <div class="category-subitem">
-                                        <a href="#">Ford-Fulkerson Algorithm</a>
-                                    </div>
-                                    <div class="category-subitem">
-                                        <a href="#">Time and Space Complexity</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row categories-main-card-row">
-            <div class="col-md-4">
-                <div>
-                    <h2 class="text-right">Programming Paradigms</h1>
-                </div>
-            </div>
-            <div class="col-md-8">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="category-title">
-                            <a href="#"><h3>Object Oriented Programming</h3></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="row categories-item-row">
-                    <div class="col-md-6">
-                        <div class="category-item">
-                            <a href="#">Introduction</a>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">Classes and Instances</a>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">Inheritance</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="category-item">
-                            <a href="#">Encapsulation</a>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">Abstract Classes</a>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">Polymorphism</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="category-title">
-                            <a href="#"><h3>Functional Programming</h3></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="row categories-item-row">
-                    <div class="col-md-6">
-                        <div class="category-item">
-                            <a href="#">Introduction</a>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">First Class and Higher Order Functions</a>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">Recursion</a>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">Lambda Notation</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="category-item">
-                            <a href="#">Function Composition</a>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">Currying</a>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">Piping</a>
-                        </div>
-                        <div class="category-item">
-                            <a href="#">Map, Filter and Reduce</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-      </div>
     </div>
 
     {{> footer}}
 
     <!-- Bootstrap Material Design Compressed and Minified JavaScript -->
     <script type="text/javascript" src="js-lib/mdb.min.js"></script>
-  </body>
+    <script>
+        let categoriesIndex = {{{categoriesIndex }}};
+    </script>
+    <script type="text/javascript" src="js-es6/categories.js"></script>
+</body>
+
 </html>

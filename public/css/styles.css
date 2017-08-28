@@ -120,9 +120,37 @@ body, html {
 }
 
 
+/* Topics */
+.topic-main-container {
+  margin: 0;
+  padding: 0;
+} 
 
-/* 
+.topic-main-jumbotron {
+  width: auto;
+  height: 15em;
+  margin-top: 0em;
+  background-color: #0d47a1;
+}
 
+.topic-main-title {
+  padding-top: 7.5em;
+  text-align: center;
+}
+
+.topic-main-desc {
+  margin-top: 2em;
+  text-align: center;
+}
+
+.topic-main-card-container {
+  margin-top: 2em;
+  margin-bottom: 5em;
+}
+
+.topic-main-card-row {
+  margin-bottom: 1em;
+}
 
 
 

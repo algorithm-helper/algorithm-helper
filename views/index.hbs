@@ -16,153 +16,16 @@
           </div>
       </div>
 
-      <div class="index-main-card-container container">
-        <div class="row index-main-card-row">
-          <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">Lists</h4>
-                    <span class="card-tag tag-data-structures">data structures</span>
-                    <p class="card-text">Learn about linear data structures like Linked Lists, Vectors, Stacks, Queues, and Union Find, as well as amortization.</p>
-                    <a href="#" class="btn btn-primary">View</a>
-                </div>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">Trees</h4>
-                    <span class="card-tag tag-data-structures">data structures</span>
-                    <p class="card-text">Learn about using binary and balanced binary search trees to implement Maps/Sets with logarithmic performance.</p>
-                    <a href="#" class="btn btn-primary">View</a>
-                </div>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">Hashing</h4>
-                    <span class="card-tag tag-data-structures">data structures</span>
-                    <p class="card-text">Learn about using hash functions to implement Maps/Sets, with efficient (constant, amortized) time for all operations.</p>
-                    <a href="#" class="btn btn-primary">View</a>
-                </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row index-main-card-row">
-          <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">Searching</h4>
-                    <span class="card-tag tag-algorithms">algorithms</span>
-                    <p class="card-text">Learn about algorithms for searching for elements in arrays efficiently, in logarithmic time and better.</p>
-                    <a href="#" class="btn btn-primary">View</a>
-                </div>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">Sorting</h4>
-                    <span class="card-tag tag-algorithms">algorithms</span>
-                    <p class="card-text">Learn about the fundamental problem of sorting, and algorithms like Merge Sort, Quick Sort and Heap Sort.</p>
-                    <a href="#" class="btn btn-primary">View</a>
-                </div>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">Shuffling</h4>
-                    <span class="card-tag tag-algorithms">algorithms</span>
-                    <p class="card-text">Learn about algorithms like Fisher-Yates and Sattolo's Algorithm to order elements in arrays uniformly randomly.</p>
-                    <a href="#" class="btn btn-primary">View</a>
-                </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row index-main-card-row">
-          <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">Graphs</h4>
-                    <span class="card-tag tag-algorithms">algorithms</span>
-                    <p class="card-text">Learn about algorithms for shortest path finding, minimum spanning trees, topological sorting, cycles and network flow.</p>
-                    <a href="#" class="btn btn-primary">View</a>
-                </div>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">Mathematics</h4>
-                    <span class="card-tag tag-algorithms">algorithms</span>
-                    <p class="card-text">Learn about efficient algorithms for multiplication and matrix multiplication, and computing convex hulls.</p>
-                    <a href="#" class="btn btn-primary">View</a>
-                </div>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">Strings</h4>
-                    <span class="card-tag tag-data-structures">data structures</span><span class="card-tag tag-algorithms">algorithms</span>
-                    <p class="card-text">Learn about data structures and algorithms for string matching and searching like Tries, and the Rabin-Karp algorithm.</p>
-                    <a href="#" class="btn btn-primary">View</a>
-                </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row index-main-card-row">
-          <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">Randomized</h4>
-                    <span class="card-tag tag-algorithms">algorithms</span>
-                    <p class="card-text">Learn about Las Vegas and Monte Carlo algorithms, that use randomness to achieve approximate solutions.</p>
-                    <a href="#" class="btn btn-primary">View</a>
-                </div>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title card-title-lg">Object Oriented Programming</h4>
-                    <span class="card-tag tag-paradigms">paradigms</span>
-                    <p class="card-text">Learn about object oriented programming concepts like encapsulation, inheritance, and polymorphism.</p>
-                    <a href="#" class="btn btn-primary">View</a>
-                </div>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title card-title-lg">Functional Programming</h4>
-                    <span class="card-tag tag-paradigms">paradigms</span>
-                    <p class="card-text">Learn about functional programming concepts like lambda notation, function composition, filter, map, and reduce.</p>
-                    <a href="#" class="btn btn-primary">View</a>
-                </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
+      <div id="index-main-card-container" class="index-main-card-container container"></div>
     </div>
 
     {{> footer}}
 
     <!-- Bootstrap Material Design Compressed and Minified JavaScript -->
     <script type="text/javascript" src="js-lib/mdb.min.js"></script>
+    <script>
+        let topicIndex = {{{topicIndex}}};
+    </script>
+    <script type="text/javascript" src="js-es6/index.js"></script>
   </body>
 </html>

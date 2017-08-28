@@ -8,6 +8,8 @@ const fuzzy = require('fuzzy');
 const path = require('path');
 const hbs = require('hbs');
 
+const topicIndex = require('./../content/topicIndex.json');
+
 var app = express();
 
 const port = process.env.PORT || 3000;
@@ -35,11 +37,33 @@ app.listen(port, () => {
 });
 
 app.get('/', (req, res) => {
-  res.render('index.hbs');
+  res.render('index.hbs', {
+    topicIndex: JSON.stringify(topicIndex)
+  });
+});
+
+app.get('/topic', (req, res) => {
+  res.render('topic.hbs');
 });
 
 app.get('/categories', (req, res) => {
   res.render('categories.hbs');
+});
+
+app.get('/article', (req, res) => {
+  res.render('article.hbs');
+});
+
+app.get('/categories/:category', (req, res) => {
+  console.log(req.params);
+});
+
+app.get('/categories/:category/:topic', (req, res) => {
+  console.log(req.params);
+});
+
+app.get('/categories/:category/:topic/:article', (req, res) => {
+  console.log(req.params);
 });
 
 module.exports = {
