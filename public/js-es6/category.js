@@ -50,7 +50,7 @@
                 .appendTo(cardBody);
    
                 let btn = $(document.createElement('a'))
-                .addClass('btn btn-primary')
+                .addClass('btn btn-primary card-btn')
                 .attr('href', `${categoryData.url}${categoryData.topics[i+j].url}`)
                 .text('View')
                 .appendTo(cardBody);

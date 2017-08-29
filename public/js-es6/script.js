@@ -11,7 +11,7 @@
     $('#link-categories').click(() => {
         setTimeout(() => {
             window.location.href = '/categories';
-          }, 500);
+        }, 500);
     });
 
  });

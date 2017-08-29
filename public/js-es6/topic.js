@@ -8,7 +8,7 @@
 
  $(document).ready(() => {
     // For debug purposes:
-    console.log(topicData);
+    // console.log(topicData);
 
     // Render title:
     $('#topic-title').html(topicData.title);
@@ -49,7 +49,7 @@
                 .appendTo(cardBody);
 
                 let btn = $(document.createElement('a'))
-                .addClass('btn btn-primary')
+                .addClass('btn btn-primary card-btn')
                 .attr('href', `${window.location.pathname}${topicData.articles[i+j].url}`)
                 .text('View')
                 .appendTo(cardBody);

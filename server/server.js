@@ -8,8 +8,13 @@ const fuzzy = require('fuzzy');
 const path = require('path');
 const hbs = require('hbs');
 
+// Data:
 const categoryIndex = require('./../content/categoryIndex.json');
 const topicIndex = require('./../content/topicIndex.json');
+
+// Utils:
+const { renderCategoryPage } = require('./utils/renderCategoryPage');
+const { renderTopicPage } = require('./utils/renderTopicPage');
 
 var app = express();
 
@@ -50,50 +55,39 @@ app.get('/categories', (req, res) => {
 });
 
 app.get('/categories/:category', (req, res) => {
-  let category = req.params.category.toLowerCase();
+  let category = req.params.category;
 
-  let categoryData = categoryIndex.find((x) => {
-    return x.category == category;
-  });
-
-  if (!categoryData) {
-    return res.redirect('/');
-  }
-
-  res.render('category.hbs', {
-    categoryData: JSON.stringify(categoryData)
+  renderCategoryPage(category, (err, categoryData) => {
+    if (err) {
+      return res.redirect('/categories');
+    }
+    return res.render('category.hbs', {
+      categoryData: JSON.stringify(categoryData)
+    });
   });
 });
 
 app.get('/categories/:category/:topic', (req, res) => {
-  let category = req.params.category.toLowerCase();
-  let topic = req.params.topic.toLowerCase();
+  let category = req.params.category;
+  let topic = req.params.topic;
 
-  let categoryData = categoryIndex.find((x) => {
-    return x.category == category;
-  });
+  renderTopicPage(category, topic, (errCategory, errTopic, topicData) => {
+    if (errCategory) {
+      return res.redirect('/categories');
+    } else if (errTopic) {
+      return res.redirect(`/categories/${category}`);
+    }
 
-  if (!categoryData) {
-    return res.redirect('/');
-  }
-
-  let topicData = categoryData.topics.find((x) => {
-    return x.topic == topic;
-  });
-
-  if (!topicData) {
-    return res.redirect(`/categories/${category}`);
-  }
-
-  return res.render('topic.hbs', {
-    topicData: JSON.stringify(topicData)
+    return res.render('topic.hbs', {
+      topicData: JSON.stringify(topicData)
+    });
   });
 });
 
 app.get('/categories/:category/:topic/:article', (req, res) => {
   console.log(req.params);
 
-  // return res.render('article.hbs');
+  return res.render('article.hbs');
 });
 
 app.get('*', (req, res) => {

@@ -34,7 +34,7 @@ $(document).ready(function () {
 
                                                     var description = $(document.createElement('p')).addClass('card-text').text(topicIndex[i + j].description).appendTo(cardBody);
 
-                                                    var btn = $(document.createElement('a')).addClass('btn btn-primary').attr('href', topicIndex[i + j].url).text('View').appendTo(cardBody);
+                                                    var btn = $(document.createElement('a')).addClass('btn btn-primary card-btn').attr('href', topicIndex[i + j].url).text('View').appendTo(cardBody);
                                        };
 
                                        for (var j = 0; j < 3; j++) {

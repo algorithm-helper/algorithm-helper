@@ -37,7 +37,7 @@ $(document).ready(function () {
 
                 var description = $(document.createElement('p')).addClass('card-text').text(categoryData.topics[i + j].description).appendTo(cardBody);
 
-                var btn = $(document.createElement('a')).addClass('btn btn-primary').attr('href', '' + categoryData.url + categoryData.topics[i + j].url).text('View').appendTo(cardBody);
+                var btn = $(document.createElement('a')).addClass('btn btn-primary card-btn').attr('href', '' + categoryData.url + categoryData.topics[i + j].url).text('View').appendTo(cardBody);
             }
         }
 

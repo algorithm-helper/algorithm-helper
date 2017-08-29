@@ -10,7 +10,7 @@
 
 $(document).ready(function () {
     // For debug purposes:
-    console.log(topicData);
+    // console.log(topicData);
 
     // Render title:
     $('#topic-title').html(topicData.title);
@@ -39,7 +39,7 @@ $(document).ready(function () {
 
                 var title = $(document.createElement('h4')).addClass('card-title').text(topicData.articles[i + j].title).appendTo(cardBody);
 
-                var btn = $(document.createElement('a')).addClass('btn btn-primary').attr('href', '' + window.location.pathname + topicData.articles[i + j].url).text('View').appendTo(cardBody);
+                var btn = $(document.createElement('a')).addClass('btn btn-primary card-btn').attr('href', '' + window.location.pathname + topicData.articles[i + j].url).text('View').appendTo(cardBody);
             }
         }
 
