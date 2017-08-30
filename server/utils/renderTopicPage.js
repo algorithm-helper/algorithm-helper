@@ -2,35 +2,34 @@
  * 
  * renderTopicPage.js
  * 
- * This module is used to render the topic page for a valid topic
- * parameter, otherwise redirect to the corresponding /categories/<category>
- * route.
+ * This module is used to check if the category and topic is valid, and 
+ * return a Promise. If the category and topic are valid, then resolve the 
+ * Promise with the topicData, otherwise, reject the Promise with an error
+ * Object.
  * 
  */
 
+const { isValidCategory } = require('./isValidCategory');
+const { isValidTopic } = require('./isValidTopic');
+
 const categoryIndex = require('./../../content/categoryIndex.json');
 
-const renderTopicPage = (category, topic, callback) => {
-    category = category.toLowerCase();
-    topic = topic.toLowerCase();
+const renderTopicPage = (params) => {
+    let category = params.category.toLowerCase();
+    let topic = params.topic.toLowerCase();
 
-    let categoryData = categoryIndex.find((x) => {
-        return x.category == category;
+    return new Promise((resolve, reject) => {
+        isValidCategory(category, categoryIndex)
+        .then((categoryData) => {
+          return isValidTopic(topic, categoryData);  
+        })
+        .then((topicData) => {
+            resolve(topicData);
+        })
+        .catch((err) => {
+            reject(err);
+        });
     });
-    
-    if (!categoryData) {
-        return callback(true, undefined, undefined);
-    }
-
-    let topicData = categoryData.topics.find((x) => {
-        return x.topic == topic;
-    });
-
-    if (!topicData) {
-        return callback(undefined, true, undefined);
-    }
-
-    return callback(undefined, undefined, topicData);
 };
 
 module.exports = {

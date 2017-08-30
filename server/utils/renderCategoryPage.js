@@ -2,25 +2,28 @@
  * 
  * renderCategoryPage.js
  * 
- * This module is used to render the category page for a valid category
- * parameter, otherwise redirect to the /categories route.
+ * This module is used to check if the category is valid, and return a 
+ * Promise. If the category is valid, then resolve the Promise with the 
+ * categoryData, otherwise, reject the Promise with an error Object.
  * 
  */
 
+const { isValidCategory } = require('./isValidCategory');
+
 const categoryIndex = require('./../../content/categoryIndex.json');
 
-const renderCategoryPage = (category, callback) => {
-    category = category.toLowerCase();
+const renderCategoryPage = (params) => {
+    let category = params.category.toLowerCase();
 
-    let categoryData = categoryIndex.find((x) => {
-        return x.category == category;
+    return new Promise((resolve, reject) => {
+        isValidCategory(category, categoryIndex)
+        .then((categoryData) => {
+            resolve(categoryData);
+        })
+        .catch((err) => {
+            reject(err);
+        });
     });
-
-    if (!categoryData) {
-        return callback(true, undefined);
-    }
-
-    return callback(undefined, categoryData);
 };
 
 module.exports = {

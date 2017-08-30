@@ -2,50 +2,40 @@
  * 
  * renderArticlePage.js
  * 
- * This module is used to render the article page for a valid article 
- * (otherwise redirect to the corresponding /:topic route), and a valid 
- * topic (otherwise redirect to the corresponding /:category route), and 
- * a valid category (otherwise redirect to the /categories route).
+ * This module is used to check if the category, topic and article is valid, 
+ * and return a Promise. If the category, topic and article are valid, then 
+ * resolve the Promise with the article's file path, otherwise, reject the 
+ * Promise with an error Object.
  * 
  */
 
+const { isValidCategory } = require('./isValidCategory');
+const { isValidTopic } = require('./isValidTopic');
+const { isValidArticle } = require('./isValidArticle');
+
 const categoryIndex = require('./../../content/categoryIndex.json');
 
- const renderArticlePage = (params, callback) => {
+ const renderArticlePage = (params) => {
     let category = params.category.toLowerCase();
     let topic = params.topic.toLowerCase();
     let article = params.article.toLowerCase();
 
-    // Check that category is valid:
-    let categoryData = categoryIndex.find((x) => {
-        return x.category == category;
+    return new Promise((resolve, reject) => {
+        isValidCategory(category, categoryIndex)
+        .then((categoryData) => {
+            return isValidTopic(topic, categoryData);
+        })
+        .then((topicData) => {
+            return isValidArticle(article, topicData);
+        })
+        .then(() => {
+            let articleFilePath = `content/categories/${category}/${topic}/${article}.md`;
+            resolve(articleFilePath);
+        })
+        .catch((err) => {
+            reject(err);
+        });
     });
-    
-    if (!categoryData) {
-        return callback({ category: true }, undefined);
-    }
-
-    // Check that topic is valid:
-    let topicData = categoryData.topics.find((x) => {
-        return x.topic == topic;
-    });
-
-    if (!topicData) {
-        return callback({ topic: true }, undefined);
-    }
-
-    // Check that article is valid:
-    let articleData = topicData.articles.find((x) => {
-        return x.article = article;
-    });
-
-    if (!articleData) {
-        return callback({ article: true }, undefined);
-    }
-
-    let articleFilePath = `content/categories/${category}/${topic}/${article}.md`;
-
-    return callback({}, articleFilePath);
  };
 
  module.exports = {

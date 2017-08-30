@@ -73,13 +73,17 @@ app.get('/categories', (req, res) => {
 app.get('/categories/:category', (req, res) => {
   let category = req.params.category;
 
-  renderCategoryPage(category, (err, categoryData) => {
-    if (err) {
-      return res.redirect('/categories');
-    }
+  renderCategoryPage({ category })
+  .then((categoryData) => {
     return res.render('category.hbs', {
       categoryData: JSON.stringify(categoryData)
     });
+  })
+  .catch((err) => {
+    console.log(err);
+    if (err.category) {
+      return res.redirect('/categories');
+    }
   });
 });
 
@@ -87,16 +91,19 @@ app.get('/categories/:category/:topic', (req, res) => {
   let category = req.params.category;
   let topic = req.params.topic;
 
-  renderTopicPage(category, topic, (errCategory, errTopic, topicData) => {
-    if (errCategory) {
-      return res.redirect('/categories');
-    } else if (errTopic) {
-      return res.redirect(`/categories/${category}`);
-    }
-
+  renderTopicPage({ category, topic })
+  .then((topicData) => {
     return res.render('topic.hbs', {
       topicData: JSON.stringify(topicData)
     });
+  })
+  .catch((err) => {
+    console.log(err);
+    if (err.category) {
+      return res.redirect('/categories');
+    } else if (err.topic) {
+      return res.redirect(`/categories/${category}`);
+    }
   });
 });
 
@@ -105,7 +112,21 @@ app.get('/categories/:category/:topic/:article', (req, res) => {
   let topic = req.params.topic;
   let article = req.params.article;
 
-  renderArticlePage({ category, topic, article }, (err, articleFilePath) => {
+  renderArticlePage({ category, topic, article })
+  .then((articleFilePath) => {
+    fs.readFile(articleFilePath, 'utf8', (err, data) => {
+      if (err) {
+        console.log(err);
+        return res.redirect(`/categories/${category}/${topic}`);
+      }
+      // console.log(marked(data));
+      return res.render('article.hbs', {
+        article: marked(data)
+      });
+    });
+  })
+  .catch((err) => {
+    console.log(err);
     if (err.category) {
       return res.redirect('/categories');
     } else if (err.topic) {
@@ -113,18 +134,6 @@ app.get('/categories/:category/:topic/:article', (req, res) => {
     } else if (err.article) {
       return res.redirect(`/categories/${category}/${topic}`);
     }
-
-    fs.readFile(articleFilePath, 'utf8', (err, data) => {
-      if (err) {
-        console.log(err);
-        return res.redirect(`/categories/${category}/${topic}`);
-      }
-
-      console.log(marked(data));
-      return res.render('article.hbs', {
-        article: marked(data)
-      });
-    });
   });
 });
 
