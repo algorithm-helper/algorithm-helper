@@ -3,10 +3,13 @@ require('./config/config');
 const _ = require('lodash');
 const bodyParser = require('body-parser');
 const express = require('express');
-const session = require('express-session');
 const fuzzy = require('fuzzy');
-const path = require('path');
+const fs = require('fs');
 const hbs = require('hbs');
+const marked = require('marked');
+const path = require('path');
+const session = require('express-session');
+
 
 // Data:
 const categoryIndex = require('./../content/categoryIndex.json');
@@ -15,6 +18,18 @@ const topicIndex = require('./../content/topicIndex.json');
 // Utils:
 const { renderCategoryPage } = require('./utils/renderCategoryPage');
 const { renderTopicPage } = require('./utils/renderTopicPage');
+
+// Configure markdown renderer:
+marked.setOptions({
+  renderer: new marked.Renderer(),
+  gfm: true,
+  tables: true,
+  breaks: false,
+  pedantic: false,
+  sanitize: true,
+  smartLists: true,
+  smartypants: false
+});
 
 var app = express();
 
@@ -43,7 +58,7 @@ app.listen(port, () => {
 });
 
 app.get('/', (req, res) => {
-  res.render('index.hbs', {
+  return res.render('index.hbs', {
     topicIndex: JSON.stringify(topicIndex)
   });
 });
@@ -87,11 +102,20 @@ app.get('/categories/:category/:topic', (req, res) => {
 app.get('/categories/:category/:topic/:article', (req, res) => {
   console.log(req.params);
 
-  return res.render('article.hbs');
+  fs.readFile('content/test.md', 'utf8', (err, data) => {
+    if (err) {
+      return console.log(err);
+    }
+
+    console.log(marked(data));
+    return res.render('article.hbs', {
+      article: marked(data)
+    });
+  });
 });
 
 app.get('*', (req, res) => {
-  res.redirect('/');
+  return res.redirect('/');
 });
 
 module.exports = {

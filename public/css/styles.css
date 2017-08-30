@@ -6,6 +6,8 @@
 body, html {
   margin: 0;
   padding: 0;
+  height: 100%;
+  width: 100%;
 }
 
 /* Navbar */
@@ -21,6 +23,7 @@ body, html {
 .main-container {
   margin: 0;
   padding: 0;
+  min-height: 100%;
 }
 
 .main-jumbotron-lg {
@@ -100,4 +103,30 @@ body, html {
 /* Footer */
 footer {
   display: none;
+}
+
+
+/* Article */
+.article-content-container {
+  margin-top: 6em;
+}
+
+.breadcrumbs {
+  margin-bottom: 2em;
+}
+
+.table-of-contents {
+  position: fixed;
+  z-index: 99999;
+  width: auto;
+  height: 25em;
+  left: 2em;
+  top: 8em;
+  padding: 1em;
+}
+
+@media all and (max-width: 930px) {
+  .table-of-contents {
+    display: none;
+  }
 }
