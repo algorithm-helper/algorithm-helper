@@ -18,6 +18,7 @@ const topicIndex = require('./../content/topicIndex.json');
 // Utils:
 const { renderCategoryPage } = require('./utils/renderCategoryPage');
 const { renderTopicPage } = require('./utils/renderTopicPage');
+const { renderArticlePage } = require('./utils/renderArticlePage');
 
 // Configure markdown renderer:
 marked.setOptions({
@@ -100,16 +101,29 @@ app.get('/categories/:category/:topic', (req, res) => {
 });
 
 app.get('/categories/:category/:topic/:article', (req, res) => {
-  console.log(req.params);
+  let category = req.params.category;
+  let topic = req.params.topic;
+  let article = req.params.article;
 
-  fs.readFile('content/test.md', 'utf8', (err, data) => {
-    if (err) {
-      return console.log(err);
+  renderArticlePage({ category, topic, article }, (err, articleFilePath) => {
+    if (err.category) {
+      return res.redirect('/categories');
+    } else if (err.topic) {
+      return res.redirect(`/categories/${category}`);
+    } else if (err.article) {
+      return res.redirect(`/categories/${category}/${topic}`);
     }
 
-    console.log(marked(data));
-    return res.render('article.hbs', {
-      article: marked(data)
+    fs.readFile(articleFilePath, 'utf8', (err, data) => {
+      if (err) {
+        console.log(err);
+        return res.redirect(`/categories/${category}/${topic}`);
+      }
+
+      console.log(marked(data));
+      return res.render('article.hbs', {
+        article: marked(data)
+      });
     });
   });
 });

@@ -39,6 +39,8 @@ $(document).ready(function () {
 
                 var title = $(document.createElement('h4')).addClass('card-title').text(topicData.articles[i + j].title).appendTo(cardBody);
 
+                var description = $(document.createElement('p')).addClass('card-text').text(topicData.articles[i + j].description).appendTo(cardBody);
+
                 var btn = $(document.createElement('a')).addClass('btn btn-primary card-btn').attr('href', '' + window.location.pathname + topicData.articles[i + j].url).text('View').appendTo(cardBody);
             }
         }

@@ -635,9 +635,9 @@
                         "description": "Learn about Lambda Notation, a system in mathematical logic for expressing computation based on function abstraction and application using variable binding and substitution."
                     },
                     {
-                        "article": "functional-composition",
+                        "article": "function-composition",
                         "title": "Function Composition",
-                        "url": "/functional-composition",
+                        "url": "/function-composition",
                         "description": "Learn about Function Composition, a technique in functional programming for applying functions to the result of another function to produce a third function."
                     },
                     {

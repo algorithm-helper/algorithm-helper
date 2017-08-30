@@ -2,7 +2,7 @@
  * 
  * renderCategoryPage.js
  * 
- * This module is used to render the category page for a valid cateogry
+ * This module is used to render the category page for a valid category
  * parameter, otherwise redirect to the /categories route.
  * 
  */
