@@ -10,7 +10,6 @@ const marked = require('marked');
 const path = require('path');
 const session = require('express-session');
 
-
 // Data:
 const categoryIndex = require('./../content/categoryIndex.json');
 const topicIndex = require('./../content/topicIndex.json');
@@ -119,9 +118,38 @@ app.get('/categories/:category/:topic/:article', (req, res) => {
         console.log(err);
         return res.redirect(`/categories/${category}/${topic}`);
       }
+      // For debug purposes:
       // console.log(marked(data));
+
+      // Get full title and path of category, topic, article:
+      let categoryData = categoryIndex.find((x) => {
+        return x.category == category;
+      });
+
+      let topicData = categoryData.topics.find((x) => {
+        return x.topic == topic;
+      });
+
+      let articleData = topicData.articles.find((x) => {
+        return x.article == article;
+      });
+
       return res.render('article.hbs', {
-        article: marked(data)
+        article: marked(data),
+        articlePath: JSON.stringify({
+          category: {
+            title: categoryData.title,
+            url: categoryData.url
+          },
+          topic: {
+            title: topicData.title,
+            url: `${categoryData.url}${topicData.url}`
+          },
+          article: {
+            title: articleData.title,
+            url: `${categoryData.url}${topicData.url}${articleData.url}`
+          }
+        })
       });
     });
   })

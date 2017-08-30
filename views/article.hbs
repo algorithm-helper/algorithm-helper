@@ -9,25 +9,16 @@
         <div class="container-fluid main-container">
 
             <div id="article-main-card-container" class="container main-card-container article-content-container">
-                <div id="article-markdown-container" class="row markdown-container">
+                <div class="row markdown-container">
                     <div class="col-md-3"></div>
-                    <div class="col-md-8">
-                        <h1>Test</h1>
-                        <div class="breadcrumbs">
-                            <a href="#">Test</a> / <a href="#">Test</a> / <a href="#">Test</a> / <a href="#">Test</a>
-                        </div>
+                    <div id="article-markdown" class="col-md-8">
                         {{{article}}}
                     </div>
                     <div class="col-md-1"></div>
                 </div>
 
-                <div class="table-of-contents">
-                    <h3>Table of Contents</h3></a>
-                    <a href="#test"><h6>Test</h6></a>
-                    <a href="#test"><h6>Test</h6></a>
-                    <a href="#test"><h6>Test</h6></a>
-                    <a href="#test"><h6>Test</h6></a>
-                    <a href="#test"><h6>Test</h6></a>
+                <div id="table-of-contents" class="table-of-contents">
+                    <h3>Table of Contents</h3>
                 </div>
             </div>
         </div>
@@ -36,9 +27,9 @@
 
         <!-- Bootstrap Material Design Compressed and Minified JavaScript -->
         <script type="text/javascript" src="/js-lib/mdb.min.js"></script>
-        {{!-- <script>
-            let topicData = {{{topicData}}};
+        <script>
+            let articlePath = {{{articlePath}}};
         </script>
-        <script type="text/javascript" src="/js-es6/topic.js"></script> --}}
+        <script type="text/javascript" src="/js-es6/article.js"></script>
     </body>
 </html>
