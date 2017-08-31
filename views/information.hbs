@@ -9,11 +9,19 @@
         <div class="container-fluid main-container">
             <div class="main-jumbotron">
                 <div class="main-title">
-                    <h1 id="category-title" class="h1-responsive white-text"></h1>
+                    <h1 class="h1-responsive white-text">{{title}}</h1>
                 </div>
             </div>
 
-            <div id="category-main-card-container" class="container main-card-container"></div>
+            <div class="container main-card-container">
+                <div class="row">
+                    <div class="col-2"></div>
+                    <div class="col-8">
+                        {{{article}}}
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+            </div>
         </div>
 
         {{> footer}}
@@ -21,8 +29,7 @@
         <!-- Bootstrap Material Design Compressed and Minified JavaScript -->
         <script type="text/javascript" src="/js-lib/mdb.min.js"></script>
         <script>
-            let categoryData = {{{categoryData}}};
+            $('footer').css('display', 'block');
         </script>
-        <script type="text/javascript" src="/js-es6/category.js"></script>
     </body>
 </html>

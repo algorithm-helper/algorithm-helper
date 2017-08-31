@@ -53,22 +53,77 @@ app.use(session({
   }
 }));
 
+// Start server:
 app.listen(port, () => {
   console.log(`Server started on port ${port}`);
 });
 
+// Home page:
 app.get('/', (req, res) => {
   return res.render('index.hbs', {
     topicIndex: JSON.stringify(topicIndex)
   });
 });
 
+// About page:
+app.get('/about', (req, res) => {
+  const aboutFilePath = 'content/information/about.md';
+
+  fs.readFile(aboutFilePath, 'utf8', (err, data) => {
+    if (err) {
+      console.log(err);
+      return res.redirect('/');
+    }
+
+    return res.render('information.hbs', {
+      title: 'About',
+      article: marked(data)
+    });
+  });
+});
+
+// Contact page:
+app.get('/contact', (req, res) => {
+  const contactFilePath = 'content/information/contact.md';
+  
+  fs.readFile(contactFilePath, 'utf8', (err, data) => {
+    if (err) {
+      console.log(err);
+      return res.redirect('/');
+    }
+
+    return res.render('information.hbs', {
+      title: 'Contact',
+      article: marked(data)
+    });
+  });
+});
+
+// Terms and Conditions page:
+app.get('/terms-and-conditions', (req, res) => {
+  const termsFilePath = 'content/information/terms-and-conditions.md';
+  
+  fs.readFile(termsFilePath, 'utf8', (err, data) => {
+    if (err) {
+      console.log(err);
+      return res.redirect('/');
+    }
+
+    return res.render('information.hbs', {
+      title: 'Terms and Conditions',
+      article: marked(data)
+    });
+  });
+});
+
+// Categories page:
 app.get('/categories', (req, res) => {
   res.render('categories.hbs', {
     categoryIndex: JSON.stringify(categoryIndex)
   });
 });
 
+// Category page:
 app.get('/categories/:category', (req, res) => {
   let category = req.params.category;
 
@@ -86,6 +141,7 @@ app.get('/categories/:category', (req, res) => {
   });
 });
 
+// Topic page:
 app.get('/categories/:category/:topic', (req, res) => {
   let category = req.params.category;
   let topic = req.params.topic;
@@ -106,6 +162,7 @@ app.get('/categories/:category/:topic', (req, res) => {
   });
 });
 
+// Article page:
 app.get('/categories/:category/:topic/:article', (req, res) => {
   let category = req.params.category;
   let topic = req.params.topic;
@@ -166,6 +223,7 @@ app.get('/categories/:category/:topic/:article', (req, res) => {
   });
 });
 
+// Search page:
 app.get('/search', (req, res) => {
   if (!req.query.q) {
     return res.redirect('/');
@@ -183,6 +241,7 @@ app.get('/search', (req, res) => {
   });
 });
 
+// Handle invalid routes by redirecting to home page:
 app.get('*', (req, res) => {
   return res.redirect('/');
 });

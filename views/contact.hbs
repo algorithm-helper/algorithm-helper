@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {{> head}}
+    </head>
+    <body>
+        {{> navbar}}
+
+        <div class="container-fluid main-container">
+            <div class="main-jumbotron">
+                <div class="main-title">
+                    <h1 class="h1-responsive white-text">Contact</h1>
+                </div>
+            </div>
+
+            <div class="container main-card-container">
+                <div class="row">
+                    <div class="col-2"></div>
+                    <div class="col-8">
+                        {{article}}
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+            </div>
+        </div>
+
+        {{> footer}}
+
+        <!-- Bootstrap Material Design Compressed and Minified JavaScript -->
+        <script type="text/javascript" src="/js-lib/mdb.min.js"></script>
+        <script>
+            $('footer').css('display', 'block');
+        </script>
+    </body>
+</html>
