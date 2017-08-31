@@ -130,3 +130,12 @@ footer {
     display: none;
   }
 }
+
+.search-container {
+  margin-top: 5em;
+}
+
+.highlight {
+  font-weight: bold;
+  color: #3f3f3f;
+}

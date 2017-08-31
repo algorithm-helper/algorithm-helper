@@ -1,0 +1,1 @@
+"use strict";$(document).ready(function(){$("#search-form").submit(function(e){var t=$("#search").val();if(!t||0==t.length)return e.preventDefault()})});

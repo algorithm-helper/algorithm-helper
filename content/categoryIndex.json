@@ -109,7 +109,7 @@
                         "description": "Learn about the Binary Search Tree, a tree data structure that uses binary search for the efficient retrieval of elements."
                     },
                     {
-                        "article": "balanaced-binary-search-tree",
+                        "article": "balanced-binary-search-tree",
                         "title": "Balanced Binary Search Tree",
                         "url": "/balanced-binary-search-tree",
                         "description": "Learn about the Balanced Binary Search Tree, a tree data structure that guarantees logarithmic performance by keeping balanced."

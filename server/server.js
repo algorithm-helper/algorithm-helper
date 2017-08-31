@@ -3,7 +3,6 @@ require('./config/config');
 const _ = require('lodash');
 const bodyParser = require('body-parser');
 const express = require('express');
-const fuzzy = require('fuzzy');
 const fs = require('fs');
 const hbs = require('hbs');
 const marked = require('marked');
@@ -15,6 +14,7 @@ const categoryIndex = require('./../content/categoryIndex.json');
 const topicIndex = require('./../content/topicIndex.json');
 
 // Utils:
+const { getSearchResults } = require('./utils/getSearchResults');
 const { renderCategoryPage } = require('./utils/renderCategoryPage');
 const { renderTopicPage } = require('./utils/renderTopicPage');
 const { renderArticlePage } = require('./utils/renderArticlePage');
@@ -149,7 +149,8 @@ app.get('/categories/:category/:topic/:article', (req, res) => {
             title: articleData.title,
             url: `${categoryData.url}${topicData.url}${articleData.url}`
           }
-        })
+        }),
+        showTableOfContents: true
       });
     });
   })
@@ -162,6 +163,23 @@ app.get('/categories/:category/:topic/:article', (req, res) => {
     } else if (err.article) {
       return res.redirect(`/categories/${category}/${topic}`);
     }
+  });
+});
+
+app.get('/search', (req, res) => {
+  if (!req.query.q) {
+    return res.redirect('/');
+  }
+
+  let query = req.query.q;
+  getSearchResults(req.query.q)
+  .then((results) => {
+    return res.render('search.hbs', {
+      results: JSON.stringify(results)
+    });
+  })
+  .catch((err) => {
+    return res.redirect('/');
   });
 });
 

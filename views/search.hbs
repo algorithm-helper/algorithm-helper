@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {{> head}}
+    </head>
+    <body>
+        {{> navbar}}
+
+        <div class="container-fluid main-container">
+            <div id="search-main-container" class="container main-card-container">
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div id="search-container" class="col-md-8 search-container">
+                        <h1>Search Results</h1>
+                        <p id="search-articles-found"></p>
+                        <hr>
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+            </div>
+        </div>
+
+        {{> footer}}
+
+        <!-- Bootstrap Material Design Compressed and Minified JavaScript -->
+        <script type="text/javascript" src="/js-lib/mdb.min.js"></script>
+        <script>
+            let results = {{{results}}};
+        </script>
+        <script type="text/javascript" src="/js-es6/searchResults.js"></script>
+    </body>
+</html>

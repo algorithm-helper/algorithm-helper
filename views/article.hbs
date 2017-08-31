@@ -17,16 +17,21 @@
                     <div class="col-md-1"></div>
                 </div>
 
+                {{#if showTableOfContents}}
                 <div id="table-of-contents" class="table-of-contents">
                     <h3>Table of Contents</h3>
                 </div>
+                {{/if}}
             </div>
         </div>
 
         {{> footer}}
 
+        <!-- Highlight.js Markdown Code Highlighting JavaScript -->
+        <script type="text/javascript" src="/js-lib/highlight.pack.js"></script>
         <!-- Bootstrap Material Design Compressed and Minified JavaScript -->
         <script type="text/javascript" src="/js-lib/mdb.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
         <script>
             let articlePath = {{{articlePath}}};
         </script>
