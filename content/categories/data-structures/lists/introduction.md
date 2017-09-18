@@ -72,9 +72,9 @@ List structures are implemented either with nodes or an array.
 ##### With Nodes
 
 When lists are implemented with nodes, the list points to a starting node called 
-the `head` (and we may also have another pointer to the ending node called the 
-`tail`), and each node in the list points to the subsequent node in the list. Nodes 
-usually have some field `value` which contains some data associated with 
+the `first` (and we may also have another pointer to the ending node called the 
+`last`), and each node in the list points to the subsequent node in the list. Nodes 
+usually have some field `item` which contains some data associated with 
 that node, and a pointer `next` to the next node in the list (and we may also 
 have a pointer `prev` which points to the previous node in the list), and they may 
 have more fields. Thus with nodes, lists are recursively defined. 
@@ -83,7 +83,7 @@ Example of a Node (Java):
 
 ```
 class Node {
-    Object value;
+    Object item;
     Node next;
     // other fields may go here ...
 }
@@ -95,7 +95,7 @@ O(1) time, conceptually with a list like this, we must iterate through the
 nodes one by one, until we find the node with the desired value, which is done
 in O(N) time.
 
-However, since we may have the `head` and `tail` pointer, we would be able to 
+However, since we may have the `first` and `last` pointer, we would be able to 
 directly access the value associated with the first and last elements of the 
 list in O(1) time, which proves itself to be useful in stacks and queues, 
 for example.
