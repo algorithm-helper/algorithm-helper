@@ -6,6 +6,21 @@ stores some data associated with the node, and a pointer `next` that
 points to the subsequent node in the linked list, or `null` if there
 is no next node.
 
+### Visualization
+
+A linked list can be visualized as the following picture:
+
+```
+first 
+  |
+ ----      ----             ----
+| a1 | -> | a2 | -> ... -> | an | -|| null
+ ----      ----             ---- 
+```
+
+Nodes point to `next` nodes, until it points to `null`, which 
+indicates the end of the linked list.
+
 ### Operations
 
 Linked lists use the following operations:
