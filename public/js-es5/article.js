@@ -27,7 +27,9 @@ $(document).ready(function () {
         for (var i = 0; i < headerElements.length; i++) {
             var text = $(headerElements[i]).text();
             var id = $(headerElements[i]).attr('id');
-            toc.append($(document.createElement('a')).attr('href', '#' + id).append($(document.createElement('h6')).text(text)));
+            var spaces = Array(2 * Math.abs(3 - parseInt(headerElements[i].nodeName.charAt(1)))).join('&nbsp;');
+
+            toc.append($(document.createElement('a')).attr('href', '#' + id).append($(document.createElement('h6')).html('' + spaces + text)));
         }
 
         callback();
