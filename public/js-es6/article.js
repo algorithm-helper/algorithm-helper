@@ -39,10 +39,14 @@
         for (let i = 0; i < headerElements.length; i++) {
             let text = $(headerElements[i]).text();
             let id = $(headerElements[i]).attr('id');
+            let spaces = Array(2 * Math.abs(3 - parseInt(headerElements[i]
+                .nodeName.charAt(1))))
+                .join('&nbsp;');
+
             toc.append($(document.createElement('a'))
                 .attr('href', `#${id}`)
                 .append($(document.createElement('h6'))
-                    .text(text)));
+                    .html(`${spaces}${text}`)));
         }
 
         callback();
