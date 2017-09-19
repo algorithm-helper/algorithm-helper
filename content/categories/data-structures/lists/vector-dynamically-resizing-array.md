@@ -50,7 +50,7 @@ array size will be halved once the array is a quarter full.
 
 ### Visualization
 
-The following visualized the state of the array, starting from an empty array 
+The following visualizes the state of the array, starting from an empty array 
 of size 1:
 
 ```
