@@ -17,31 +17,31 @@ The following visualizes the state of the stack, starting from an empty stack:
 // Starting stack:
 []
 
-// Push 1:
+// push(1):
 [1]
 
-// Push 2:
+// push(2):
 [1, 2]
 
-// Push 3:
+// push(3):
 [1, 2, 3]
 
-// Push 4:
+// push(4):
 [1, 2, 3, 4]
 
-// Pop:
+// pop():
 [1, 2, 3]
 
-// Pop:
+// pop():
 [1, 2]
 
-// Pop:
+// pop():
 [1]
 
-// Pop:
+// pop():
 []
 
-// Pop:
+// pop():
 Exception: cannot pop from empty stack.
 ```
 

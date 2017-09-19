@@ -17,31 +17,31 @@ The following visualizes the state of the queue, starting from an empty queue:
 // Starting queue:
 []
 
-// Enqueue 1:
+// enqueue(1):
 [1]
 
-// Enqueue 2:
+// enqueue(2):
 [1, 2]
 
-// Enqueue 3:
+// enqueue(3):
 [1, 2, 3]
 
-// Enqueue 4:
+// enqueue(4):
 [1, 2, 3, 4]
 
-// Dequeue:
+// dequeue():
 [2, 3, 4]
 
-// Dequeue:
+// dequeue():
 [3, 4]
 
-// Dequeue:
+// dequeue():
 [4]
 
-// Dequeue:
+// dequeue():
 []
 
-// Dequeue:
+// dequeue():
 Exception: cannot dequeue from empty queue.
 ```
 
@@ -422,9 +422,15 @@ public class QueueResizingArray<T> implements Iterable<T> {
 
 ### Time Complexity
 
+The following table describes the time complexity for performing the operations 
+above on a queue, comparing between the linked list and the vector/dynamically 
+resizing array implementation:
+
 ```
 | Data Structure                                    | enqueue | dequeue | peek |
 |---------------------------------------------------|---------|---------|------|
 | queue (using linked list)                         | O(1)    | O(1)    | O(1) |
 | queue (using vector / dynamically resizing array) | O(1)*   | O(1)*   | O(1) |
 ```
+
+\* Amortized
