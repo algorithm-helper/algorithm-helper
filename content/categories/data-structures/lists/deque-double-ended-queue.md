@@ -9,10 +9,10 @@ an element at the front of the deque (similar to `pop` or `dequeue` in a stack),
 `removeBack` which removes an element at the back of the deque, `peekFront`
 which returns the front-most element's `item` without removing it from the deque
 and `peekBack` which returns the back-most element's `item` without removing it 
-from the deque. Since it is similar to a combination of first-in-first-out (FIFO)
-and last-in-first-out (LIFO), if we were to insert 3 elements (A, B, C) into the 
-deque in that order, we cannot get the second element B without either removing 
-the first element A or the third element C.
+from the deque. Since it is similar to a combination of first-in-first-out 
+(FIFO) and last-in-first-out (LIFO), if we were to insert 3 elements (A, B, C) 
+into the deque in that order, we cannot get the second element B without either 
+removing the first element A or the third element C.
 
 ### Visualization
 

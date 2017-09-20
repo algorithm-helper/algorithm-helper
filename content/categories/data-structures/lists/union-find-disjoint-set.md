@@ -137,14 +137,14 @@ in `size` are initialized to 1.
     - Merge the connected component of element `i` with element `j`, assuming 
     they are not already in the same connected component, compare 
     `size[i]` and `size[j]`. Without loss of generally, suppose `size[i]` is
-    larger, then update the `id` value of the smaller element to the larger element, 
-    (`id[j] = id[i]`) and add the size of the smaller element 
+    larger, then update the `id` value of the smaller element to the larger 
+    element, (`id[j] = id[i]`) and add the size of the smaller element 
     and add the size of the smaller element to the larger element 
     (`size[i] += size[j]`).
 - `connected`
     - Traverse up the tree of `i` and `j` by continuously following their parent 
-    `id[i]` and `id[j]`. If the roots of the trees are the same, then return `true`,
-    otherwise return `false`.
+    `id[i]` and `id[j]`. If the roots of the trees are the same, then return 
+    `true`, otherwise return `false`.
 
 ### Implementation
 

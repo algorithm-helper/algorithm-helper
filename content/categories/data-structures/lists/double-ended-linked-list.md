@@ -33,25 +33,25 @@ Double ended linked lists use the following operations:
     ended linked list), retrieve the `item` at that node.
 - `insert`
     - Given a particular valid index `i`, insert the new node at that position 
-    and update its `item`, `next` and `prev` fields. While inserting at the front 
-    or back (when `i=0` or `i=n-1`, respectively), `insertFront` or `insertBack` 
-    could just be called instead. When a node is inserted in between two other 
-    nodes, intuitively this is done by linking the before node's `next` to the 
-    new node, and then the new node's `next` to the after node, and the after
-    node's `prev` to the new node, and the new node's `prev` to the before 
-    node.
+    and update its `item`, `next` and `prev` fields. While inserting at the 
+    front or back (when `i=0` or `i=n-1`, respectively), `insertFront` or 
+    `insertBack` could just be called instead. When a node is inserted in 
+    between two other nodes, intuitively this is done by linking the before 
+    node's `next` to the new node, and then the new node's `next` to the after 
+    node, and the after node's `prev` to the new node, and the new node's `prev` 
+    to the before node.
 - `insertFront`
     - Insert the new node at the front of the double ended linked list, if the 
     double ended linked list is initially empty, then `first` and `last` points 
     to this new node. Otherwise, point the `next` field of the new node to the 
-    original `first` node, point the `prev`field to `null` and then update `first` 
-    by pointing it at the new node.
+    original `first` node, point the `prev`field to `null` and then update 
+    `first` by pointing it at the new node.
 - `insertBack`
-    - Insert the new node at the end of the double ended linked list, if the double 
-    ended linked list is initially empty, then `first` and `last` points to this 
-    new node. Otherwise, point the `prev` field of the new node to the original 
-    `last` node, point the `next` field to `null` and then update `last` by pointing 
-    it at the new node.
+    - Insert the new node at the end of the double ended linked list, if the 
+    double ended linked list is initially empty, then `first` and `last` points 
+    to this new node. Otherwise, point the `prev` field of the new node to the 
+    original `last` node, point the `next` field to `null` and then update 
+    `last` by pointing it at the new node.
 - `remove`
     - Given a particular index `i`, remove the node at that position. Similar
     to insert, if `i=0` or `i=n-1`, then `removeFront` or `removeBack` could
@@ -60,22 +60,22 @@ Double ended linked lists use the following operations:
     after node to the before node.
 - `removeFront`
     - Remove the node at the front of the double ended linked list, and this is 
-    done by pointing `first` to the `next` node of `first`, and then updating the 
-    `prev` field of the new `first` node to be `null`.
+    done by pointing `first` to the `next` node of `first`, and then updating 
+    the `prev` field of the new `first` node to be `null`.
 - `removeBack`
-    - Remove the node at the end of the double ended linked list, and this is done by 
-    pointing `last` to the `prev` node of `last`, and then updating the `next`
-    field of the new `last` node to be `null`.
+    - Remove the node at the end of the double ended linked list, and this is 
+    done by pointing `last` to the `prev` node of `last`, and then updating the 
+    `next` field of the new `last` node to be `null`.
 - `peekFront`
     - Return the `item` of `first`.
 - `peekBack`
     - Return the `item` of `last`.
 
-It is clear that comparing the double ended linked list to the regular linked list
-that while it is slightly more involved because of how the `prev` pointers and the 
-`last` pointer have to be managed, it becomes more efficient to perform operations 
-at the front and the end of the double ended linked list, since they can be 
-directly accessed, and done in O(1) time.
+It is clear that comparing the double ended linked list to the regular linked 
+list that while it is slightly more involved because of how the `prev` pointers 
+and the `last` pointer have to be managed, it becomes more efficient to perform 
+operations at the front and the end of the double ended linked list, since they 
+can be directly accessed, and done in O(1) time.
 
 ### Implementations
 

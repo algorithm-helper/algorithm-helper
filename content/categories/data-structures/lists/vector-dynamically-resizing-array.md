@@ -44,9 +44,9 @@ is to never shrink the array when elements are removed, or to halve the size of
 the array once the array becomes half full. First, this wastes an unnecessary 
 amount of space, and second, consider what happens when we do a number of
 insertions and deletions of one element at example when the array is half full.
-Then each operation causes the data structure to be repeatedly doubled and halved,
-which take uncessary O(N) time, each time. To avoid situations like this, the 
-array size will be halved once the array is a quarter full.
+Then each operation causes the data structure to be repeatedly doubled and 
+halved, which take uncessary O(N) time, each time. To avoid situations like 
+this, the array size will be halved once the array is a quarter full.
 
 ### Visualization
 
@@ -107,9 +107,11 @@ Vectors use the following operations:
     - Given a particular valid index `i` (within 0 and the size of the vector), 
     retrieve the `item` at that index into the array.
 - `insert`
-    - Given a particular valid index `i`, insert the new element at that position
-    by shifting all elements in the array at `i` to the right, resize the array
-    if necessary. While inserting at the front or back (when `i=0` or `i=n-1`, respectively), `insertFront` or `insertBack` could just be called instead.
+    - Given a particular valid index `i`, insert the new element at that 
+    position by shifting all elements in the array at `i` to the right, resize 
+    the array if necessary. While inserting at the front or back (when `i=0` or 
+    `i=n-1`, respectively), `insertFront` or `insertBack` could just be called 
+    instead.
 - `insertFront`
     - Insert the element at index 0 by shifting all elements from index 0 over 
     to the right, and then assigning index 0 to be the new element, resize the 
@@ -126,8 +128,8 @@ Vectors use the following operations:
     the array from index 1 over to the left, and then decrement `n`, resize the 
     array if necessary.
 - `removeBack`
-    - Remove the element at the end of the vector by decrementing `n`, resize the 
-    array if necessary.
+    - Remove the element at the end of the vector by decrementing `n`, resize 
+    the array if necessary.
 - `peekFront`
     - Return the `item` at index 0.
 - `peekBack`

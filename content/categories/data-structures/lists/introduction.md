@@ -73,11 +73,11 @@ List structures are implemented either with nodes or an array.
 
 When lists are implemented with nodes, the list points to a starting node called 
 the `first` (and we may also have another pointer to the ending node called the 
-`last`), and each node in the list points to the subsequent node in the list. Nodes 
-usually have some field `item` which contains some data associated with 
+`last`), and each node in the list points to the subsequent node in the list. 
+Nodes usually have some field `item` which contains some data associated with 
 that node, and a pointer `next` to the next node in the list (and we may also 
-have a pointer `prev` which points to the previous node in the list), and they may 
-have more fields. Thus with nodes, lists are recursively defined. 
+have a pointer `prev` which points to the previous node in the list), and they 
+may have more fields. Thus with nodes, lists are recursively defined. 
 
 Example of a Node (Java):
 
@@ -144,16 +144,17 @@ although within specific ones like stacks or queues, they may not be
 conventionally named the same.
 
 The operation `insert` adds a new element to the list, and we will consider this 
-to mean adds to an arbitrary position within the list. The operation `insertFront`
-adds a new element to the start of the list, and the operation `insertBack` adds
-a new element to the end fo the list. Similarly, we have operations `remove`,
-`removeFront`, and `removeBack`, which removes an element from an arbitrary 
-position, from the start of the list and from the back of the list, respectively.
+to mean adds to an arbitrary position within the list. The operation 
+`insertFront` adds a new element to the start of the list, and the operation 
+`insertBack` adds a new element to the end fo the list. Similarly, we have 
+operations `remove`, `removeFront`, and `removeBack`, which removes an element 
+from an arbitrary position, from the start of the list and from the back of the 
+list, respectively.
 
-We would want the operation `get` to retrieve the value of an element in the list
-at some arbitrary position, as well as `peekFront` and `peekBack` to retrieve the 
-value of the element at the start and end of the list respectively, without 
-deleting the element.
+We would want the operation `get` to retrieve the value of an element in the 
+list at some arbitrary position, as well as `peekFront` and `peekBack` to 
+retrieve the value of the element at the start and end of the list respectively, 
+without deleting the element.
 
 It may be useful to have operations like `max` and `min` which get the maximum
 and minimum values (in whatever way they are defined) respectively.

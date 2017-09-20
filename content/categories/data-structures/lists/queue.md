@@ -57,15 +57,15 @@ array index of the front-most element in the queue.
         to the new node, and if it is the first element to be inserted, point
         `first` to the new node as well.
     - Using vector/dynamically resizing array:
-        - Insert the element at the `last` index, then increment `last`, resize the 
-        array if necessary.
+        - Insert the element at the `last` index, then increment `last`, resize 
+        the array if necessary.
 - `dequeue`
     - Using linked list: 
         - Save the node at `first`, then point `first` to its `next` node, then 
         return the saved node.
     - Using vector/dynamically resizing array:
-        - Save the element at the `first` index, then increment `first`, resize the 
-        array if necessary.
+        - Save the element at the `first` index, then increment `first`, resize 
+        the array if necessary.
 - `peek`
     - Using linked list: 
         - Return the `item` of the node at the front of the linked list.
@@ -81,9 +81,9 @@ Note that with the vector/dynamically resizing array implementation,
 because when we are dequeuing elements we need to increment `first`, the `first` 
 index does not necessarily correspond to index 0. It follows that this would 
 waste unnecessary amounts of space at the front of the array, before `first`.
-So whenever we need to resize the array, the elements get copied to the new array
-starting at index 0, and the `first` and `last` indices are updated accordingly.
-See the implementation below for clarification.
+So whenever we need to resize the array, the elements get copied to the new 
+array starting at index 0, and the `first` and `last` indices are updated 
+accordingly. See the implementation below for clarification.
 
 ### Implementation (using Linked List)
 
