@@ -1139,7 +1139,7 @@ public class BinarySearchTreeSet<K extends Comparable<K>> {
 ### Time Complexity
 
 The following table describes the time complexity for performing the 
-operations above on a binary search tree
+operations above on a binary search tree:
 
 ```
 | Data Structure     | contains | get  | put  | min  | max  | delete | deleteMin | deleteMax | floor | ceil | select | rank |
