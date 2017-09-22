@@ -1,7 +1,7 @@
 # Red-Black Tree
 
 A red-black tree is a self-balancing binary search tree modeled after the 2-3
-tree, where we uses colors (`RED` or `BLACK`) to coordinate which nodes are
+tree, where we use colors (`RED` or `BLACK`) to coordinate which nodes are
 grouped together as a 2-node, and which are grouped together as a 3-node. We 
 consider the variant of left learning red-black tree (Sedgewick). The main idea 
 behind this approach is that all of the nodes contain an extra `boolean` field 
