@@ -2,6 +2,8 @@
 
 ### Visualization
 
+### Balancing Mechanism
+
 ### Operations
 
 ### Implementation (Map)
