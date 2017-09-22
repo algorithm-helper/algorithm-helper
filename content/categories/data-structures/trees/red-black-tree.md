@@ -97,6 +97,24 @@ To:
 
 ### Visualization
 
+The following visualizes a basic red-black tree, we will use double lines to 
+denote `RED` links:
+
+```
+          |
+      A = B
+     /  |  \  
+    C   D   E
+```
+
+The link between nodes `A` and `B` is `RED`, but the parent link going up from
+`B` is `BLACK`, since we cannot have two consecutive `RED` links. Just like with
+a 2-3 tree, C ≤ A ≤ D ≤ B ≤ E. Many operations are identical to 2-3 trees and
+the regular binary search tree: `get`, `put`, `min`/`max`, 
+`delete`/`deleteMin`/`deleteMax`, `floor`/`ceil`, `select`, `rank`. These 
+operations are identical because they are completely independent from needing 
+to know information on the `color` of the nodes.
+
 The main idea behind using red-black trees is to maintain correspondence with 
 2-3 trees, and using these three basic operations: `rotateLeft`, `rotateRight`,
 and `flipColors`.
@@ -189,6 +207,18 @@ The following visualizes a situation where we need the `flipColors` operation:
              5   10
             / \  / \  
 ```
+
+Inserting a node into a red-black tree requires us to insert into some 3-node
+at the leaf level, coloring its link red, and continuously using these basic
+operations until we restore the red-black tree property. When we insert the 
+node, we check to see if the subtree at that node is incorrectly right-leaning,
+and then apply `rotateLeft`. Then we check to see if that results in two `left`
+links being `RED` in a row, then apply `rotateRight`. Then we check if the
+`color` of both the `left` and the `right` are `RED`, then apply `flipColors`.
+
+Since we are always able to balance the red-black tree, the height of the tree 
+gets to be at most precisely ≤ 2lgN, and thus for operations like `get`, `put`,
+or `delete`, they run in O(lgN) time.
 
 ### Operations
 
