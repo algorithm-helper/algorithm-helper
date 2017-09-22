@@ -2,7 +2,7 @@
 
 This article will elaborate further on the time and space complexities of the
 operations on the list data structures discussed in this topic. Data structures 
-withsimilar operations will be grouped together.
+with similar operations will be grouped together.
 
 ### Comparisons
 
