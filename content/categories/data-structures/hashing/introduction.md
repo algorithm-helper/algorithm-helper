@@ -82,7 +82,7 @@ the probability to hash to index 2 is higher, then the probability for the
 cluster to grow at index 2 also becomes larger, which leads to performance
 degenerating to O(N).
 
-We assume that `h` evenly distributes `keys` to slots, and this is called the 
+We assume that `h` evenly distributes keys to slots, and this is called the 
 Simple Uniform Hashing Assumption. 
 
 From Wikipedia:
