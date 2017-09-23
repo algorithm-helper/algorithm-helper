@@ -185,7 +185,7 @@ For linear probing:
     in the hash map. This is done by hashing the `key` into the correct slot, 
     and if the corresponding (`key`, `val`) pair already exists there, then it
     returns true. Otherwise, it continuously checks the next adjcent slot, and 
-    if the corresponding (`key`,  `val`) pair is found, then it returns true,
+    if the corresponding (`key`, `val`) pair is found, then it returns true,
     indicating that the given `key` exists. If the probe reaches a `null` slot, 
     then it returns false, indicating that the given `key` does not exist in 
     the hash map.
