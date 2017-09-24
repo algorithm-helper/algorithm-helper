@@ -23,7 +23,7 @@ Sorted order means that the elements in the array are arranged in a sequence
 based on some defined comparison or comparator, and we only consider
 "ascending order" of elements. For example, applying the `compare` function of 
 some comparator on elements `x` and `y`, where `x` comes before `y` in the 
-array, `compare(x, y) = 1`, denoting that element `x` is "less" than `y`, in
+array, `compare(x, y) = -1`, denoting that element `x` is "less" than `y`, in
 whatever way that may be defined. 
 
 For example:
