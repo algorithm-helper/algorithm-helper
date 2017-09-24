@@ -116,6 +116,7 @@ Intuitively, since we can divide the array at most log&#8323;N times, thus this
 algorithm runs in O(logN) time.
 
 Since it requires four pointers (`left`, `right`, `leftThird`, `rightThird`), 
+we need O(1) auxiliary space.Since it requires four pointers (`left`, `right`, `leftThird`, `rightThird`), 
 we need O(1) auxiliary space.
 
 The following describes the time and space complexity of ternary search:
