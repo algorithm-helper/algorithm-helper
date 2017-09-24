@@ -31,8 +31,11 @@ Similar to binary search, since we are continuously splitting the array into
 three intervals, we can only at most split it at most log&#8323;N times. Thus, 
 this algorithm runs in O(logN) time.
 
+The following is a visualization of ternary search:
+
 ```
-// Given the following array a which represents a discrete unimodal function:
+// Suppose we have the following array a which represents a discrete unimodal 
+// function:
 1 2 3 4 5 6 7 8 9 100 9 8 7 6 4 3 2 1 1 1 0
 
 // mode():
