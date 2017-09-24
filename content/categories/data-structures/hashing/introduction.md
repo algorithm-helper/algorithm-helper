@@ -51,11 +51,13 @@ m-1}.
 
 From Wikipedia:
 
-[Hash Function](https://en.wikipedia.org/wiki/Hash_function) - a hash function 
+> [Hash Function](https://en.wikipedia.org/wiki/Hash_function) - a hash function 
 is any function that can be used to map data of arbitrary size to data of fixed 
 size. The values returned by a hash function are called hash values, hash codes, 
 digests, or simple hashes. One use is a data structure called a hash table, 
 widely used in computer software for rapid data lookup.
+
+---
 
 Since there are much more possible keys than there are available locations in 
 the array, eventually there will be two different keys that will hash to the 
@@ -63,7 +65,7 @@ same slot. This is called a collision.
 
 From Wikipedia:
 
-[Collision](https://en.wikipedia.org/wiki/Collision_%28computer_science%29) - 
+> [Collision](https://en.wikipedia.org/wiki/Collision_%28computer_science%29) - 
 a collision or clash occurs when two different inputs to a function, typically
 one used to compress large data items into a smaller or fixed size, produce the
 same output, called a hash value, checksum, fingerprint, or digest. Collisions
@@ -82,12 +84,14 @@ the probability to hash to index 2 is higher, then the probability for the
 cluster to grow at index 2 also becomes larger, which leads to performance
 degenerating to O(N).
 
+---
+
 We assume that `h` evenly distributes keys to slots, and this is called the 
 Simple Uniform Hashing Assumption. 
 
 From Wikipedia:
 
-[Simple Uniform Hashing Assumption](https://en.wikipedia.org/wiki/SUHA_%28computer_science%29) -
+> [Simple Uniform Hashing Assumption](https://en.wikipedia.org/wiki/SUHA_%28computer_science%29) -
 The SUHA (Simple Uniform Hashing Assumption) is a basic assumption that 
 facilitates the mathematical analysis of hash tables. The assumption states that
 a hypothetical hashing function will evenly distribute items into the slots of 

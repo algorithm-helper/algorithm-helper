@@ -18,7 +18,7 @@ values, and the ordering in which they are arranged is relevant.
 
 From Wikipedia:
 
-[Sequence](https://en.wikipedia.org/wiki/Sequence) - a sequence is an 
+> [Sequence](https://en.wikipedia.org/wiki/Sequence) - a sequence is an 
 enumerated collection of objects in which repetitions are allowed. Like a
 set, it contains members (also called elements, or terms). The number of 
 elements (possibly infinite) is called the length of the sequence. Unlike a 
@@ -34,7 +34,7 @@ similarly `tail`/`last`, which is a pointer to the last element in the list.
 
 From Wikipedia:
 
-[List](https://en.wikipedia.org/wiki/List_%28abstract_data_type%29) - a list or 
+> [List](https://en.wikipedia.org/wiki/List_%28abstract_data_type%29) - a list or 
 sequence is an abstract data type that represents a countable number of ordered
 values, where the same value may occur more than once. An instance of a list is
 a computer representation of the mathematical concpet of a finite sequence; the
@@ -49,7 +49,7 @@ element in a "chain-like" structure, or use an array.
 
 From Wikipedia:
 
-[Collection](https://en.wikipedia.org/wiki/Collection_%28abstract_data_type%29) -
+> [Collection](https://en.wikipedia.org/wiki/Collection_%28abstract_data_type%29) -
 a collection or container is a grouping of some variable number of data items
 (possibly zero) that have some shared significance to the problem being solved
 and need to be operated upon together in some controleld fashion. Generally, 

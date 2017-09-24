@@ -18,7 +18,7 @@ or with an array (like with a heap).
 
 From Wikipedia:
 
-[Tree](https://en.wikipedia.org/wiki/Tree_%28data_structure%29) - a tree is a 
+> [Tree](https://en.wikipedia.org/wiki/Tree_%28data_structure%29) - a tree is a 
 widely used abstract data type (ADT) or data structure implementing this ADT
 that simulates a hierarchical tree structure, with a root value and subtrees
 of children with a parent node, represented as a set of linked nodes. A tree 
