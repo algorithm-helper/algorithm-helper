@@ -23,3 +23,16 @@ For example:
 // An array of strings sorted in ascending (lexicographic) order:
 ["ant", "brother", "elephant", "juice", "rainbow"]
 ```
+
+---
+
+Stability in the context of sorting algorithms refers to whether or not 
+identical elements maintain their relative order after the sorting algorithm
+has finished. More can be read in the article on [Stability](/categories/algorithms/sorting/stability).
+
+---
+
+In-place in the context of sorting algorithms refers to whether or not the
+sorting algorithm requires auxiliary space, or if elements within the array 
+itself can be manipulated to bring it into sorted order. More can be read in the 
+article on [In-Place](/categories/algorithms/sorting/in-place).
