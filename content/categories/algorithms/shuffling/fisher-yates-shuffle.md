@@ -59,9 +59,9 @@ public class FisherYatesShuffle {
         int n = arr.length;
         for (int i = 0; i < n-1; i++) {
             int random = (int) (Math.random() * (n - 1));
-            Comparable swap = arr[random];
+            Comparable temp = arr[random];
             arr[random] = arr[i];
-            arr[i] = swap;
+            arr[i] = temp;
         }
     }
 }
@@ -72,7 +72,7 @@ public class FisherYatesShuffle {
 The time complexity of Fisher-Yates shuffle is O(N) since we do a random swap
 for each of the N elements in the array.
 
-Since we just require a temporary variable `swap` to faciliate swapping 
+Since we just require a temporary variable `temp` to faciliate swapping 
 elements, it requires O(1) auxiliary space.
 
 ```
