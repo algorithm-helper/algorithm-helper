@@ -35,7 +35,7 @@ But likewise with Fisher-Yates, this algorithm runs in O(N) time.
 ##### Java
 
 ```
-package com.example;
+package algorithms.shuffling;
 
 public class SattoloShuffle {
 

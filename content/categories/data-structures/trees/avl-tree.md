@@ -231,13 +231,12 @@ that the `left` side generally has more weight.
 ##### Java
 
 ```
-package com.example;
+package datastructures.trees;
 
-import com.example.utils.Queue;
-
+import datastructures.lists.QueueLinkedList;
 import java.util.NoSuchElementException;
 
-public class AVLTree<K extends Comparable<K>, V> {
+public class AVLTreeMap<K extends Comparable<K>, V> {
 
     private Node root;
 
@@ -256,23 +255,23 @@ public class AVLTree<K extends Comparable<K>, V> {
     }
 
     /**
-     * Initializes an empty AVLTree.
+     * Initializes an empty AVLTreeMapMap.
      */
-    public AVLTree() {}
+    public AVLTreeMap() {}
 
     /**
-     * Returns true if the AVLTree is empty, false otherwise.
+     * Returns true if the AVLTreeMapMap is empty, false otherwise.
      *
-     * @return true if the AVLTree is empty, false otherwise
+     * @return true if the AVLTreeMapMap is empty, false otherwise
      */
     public boolean isEmpty() {
         return root == null;
     }
 
     /**
-     * Returns the number of elements in the AVLTree.
+     * Returns the number of elements in the AVLTreeMapMap.
      *
-     * @return the number of elements in the AVLTree
+     * @return the number of elements in the AVLTreeMapMap
      */
     public int size() {
         return size(root);
@@ -280,10 +279,10 @@ public class AVLTree<K extends Comparable<K>, V> {
 
     /**
      * Helper function that returns the number of elements from x in the
-     * AVLTree.
+     * AVLTreeMapMap.
      *
      * @param x, the Node whose size in question
-     * @return the number of elements from x in the AVLTree
+     * @return the number of elements from x in the AVLTreeMapMap
      */
     private int size(Node x) {
         if (x == null)
@@ -292,9 +291,9 @@ public class AVLTree<K extends Comparable<K>, V> {
     }
 
     /**
-     * Return the height of the AVLTree.
+     * Return the height of the AVLTreeMapMap.
      *
-     * @return the height of the AVLTree
+     * @return the height of the AVLTreeMapMap
      */
     public int height() {
         return height(root);
@@ -349,10 +348,10 @@ public class AVLTree<K extends Comparable<K>, V> {
     }
 
     /**
-     * Returns the val associated with the key in the AVLTree.
+     * Returns the val associated with the key in the AVLTreeMapMap.
      *
      * @param key, the key to be searched for
-     * @return the val associated with the key in the AVLTree
+     * @return the val associated with the key in the AVLTreeMapMap
      */
     public V get(K key) {
         if (key == null)
@@ -374,11 +373,11 @@ public class AVLTree<K extends Comparable<K>, V> {
     }
 
     /**
-     * Returns true if the key is contained in the AVLTree, false
+     * Returns true if the key is contained in the AVLTreeMapMap, false
      * otherwise.
      *
      * @param key, the key to be searched for
-     * @return true if the key is contained in the AVLTree, false
+     * @return true if the key is contained in the AVLTreeMapMap, false
      *         otherwise
      */
     public boolean contains(K key) {
@@ -388,7 +387,7 @@ public class AVLTree<K extends Comparable<K>, V> {
     }
 
     /**
-     * Insert the (key, val) pair into the AVLTree, but if the val
+     * Insert the (key, val) pair into the AVLTreeMapMap, but if the val
      * is null, then delete the element with the associated key.
      *
      * @param key, the key to be inserted
@@ -468,7 +467,7 @@ public class AVLTree<K extends Comparable<K>, V> {
     }
 
     /**
-     * Remove the key from the AVLTree.
+     * Remove the key from the AVLTreeMapMap.
      *
      * @param key, the key to be removed
      */
@@ -513,14 +512,14 @@ public class AVLTree<K extends Comparable<K>, V> {
     }
 
     /**
-     * Delete the element with the smallest key in the AVLTree.
+     * Delete the element with the smallest key in the AVLTreeMapMap.
      *
-     * @throws NoSuchElementException if the AVLTree is empty
+     * @throws NoSuchElementException if the AVLTreeMapMap is empty
      */
     public void deleteMin() {
         if (isEmpty())
             throw new NoSuchElementException("deleteMin with empty " +
-                    "AVLTree");
+                    "AVLTreeMapMap");
         root = deleteMin(root);
     }
 
@@ -535,21 +534,21 @@ public class AVLTree<K extends Comparable<K>, V> {
         if (x.left == null)
             return x.right;
         x.left = deleteMin(x.left);
-        
+
         x.size = 1 + size(x.left) + size(x.right);
         x.height = 1 + Math.max(height(x.left), height(x.right));
         return restoreInvariant(x);
     }
 
     /**
-     * Removes the element with the largest key in the AVLTree.
+     * Removes the element with the largest key in the AVLTreeMapMap.
      *
-     * @throws NoSuchElementException if the AVLTree is empty
+     * @throws NoSuchElementException if the AVLTreeMapMap is empty
      */
     public void deleteMax() {
         if (isEmpty())
             throw new NoSuchElementException("deleteMax with empty " +
-                    "AVLTree");
+                    "AVLTreeMapMap");
         root = deleteMax(root);
     }
 
@@ -571,13 +570,13 @@ public class AVLTree<K extends Comparable<K>, V> {
     }
 
     /**
-     * Return the smallest key in the AVLTree.
+     * Return the smallest key in the AVLTreeMapMap.
      *
-     * @return the smallest key in the AVLTree.
+     * @return the smallest key in the AVLTreeMapMap.
      */
     public K min() {
         if (isEmpty())
-            throw new NoSuchElementException("min with empty AVLTree");
+            throw new NoSuchElementException("min with empty AVLTreeMapMap");
         return min(root).key;
     }
 
@@ -594,13 +593,13 @@ public class AVLTree<K extends Comparable<K>, V> {
     }
 
     /**
-     * Return the largest key in the AVLTree.
+     * Return the largest key in the AVLTreeMapMap.
      *
-     * @return the largest key in the AVLTree.
+     * @return the largest key in the AVLTreeMapMap.
      */
     public K max() {
         if (isEmpty())
-            throw new NoSuchElementException("max with empty AVLTree");
+            throw new NoSuchElementException("max with empty AVLTreeMapMap");
         return max(root).key;
     }
 
@@ -618,19 +617,19 @@ public class AVLTree<K extends Comparable<K>, V> {
 
     /**
      * Returns the largest key less than or equal to key in the
-     * AVLTree.
+     * AVLTreeMapMap.
      *
      * @param key, the key to be searched
      * @return the largest key less than or equal to key in the
-     *         AVLTree.
+     *         AVLTreeMapMap.
      * @throws IllegalArgumentException if the key is null
-     * @throws NoSuchElementException if the AVLTree is empty
+     * @throws NoSuchElementException if the AVLTreeMapMap is empty
      */
     public K floor(K key) {
         if (key == null)
             throw new IllegalArgumentException("floor with null key");
         if (isEmpty())
-            throw new NoSuchElementException("floor with null AVLTree");
+            throw new NoSuchElementException("floor with null AVLTreeMapMap");
         Node x = floor(root, key);
         if (x == null)
             return null;
@@ -660,20 +659,20 @@ public class AVLTree<K extends Comparable<K>, V> {
 
     /**
      * Returns the smallest key greater than or equal to key in the
-     * AVLTree.
+     * AVLTreeMapMap.
      *
      * @param key, the key to be searched
      * @return the smallest key greater than or equal to key in the
-     *         AVLTree.
+     *         AVLTreeMapMap.
      * @throws IllegalArgumentException if the key is null
-     * @throws NoSuchElementException if the AVLTree is empty
+     * @throws NoSuchElementException if the AVLTreeMapMap is empty
      */
     public K ceil(K key) {
         if (key == null)
             throw new IllegalArgumentException("ceil with null key");
         if (isEmpty())
             throw new NoSuchElementException("ceil with empty " +
-                    "AVLTree");
+                    "AVLTreeMapMap");
         Node x = ceil(root, key);
         if (x == null)
             return null;
@@ -702,10 +701,10 @@ public class AVLTree<K extends Comparable<K>, V> {
     }
 
     /**
-     * Return the k-th smallest key in the AVLTree.
+     * Return the k-th smallest key in the AVLTreeMapMap.
      *
      * @param k, the kth number
-     * @return the k-th smallest key in the AVLTree.
+     * @return the k-th smallest key in the AVLTreeMapMap.
      * @throws IllegalArgumentException if k is invalid
      */
     public K select(int k) {
@@ -733,11 +732,11 @@ public class AVLTree<K extends Comparable<K>, V> {
     }
 
     /**
-     * Return the number of keys in the AVLTree less than the
+     * Return the number of keys in the AVLTreeMapMap less than the
      * given key.
      *
      * @param  key, the key to be searched
-     * @return the number of keys in the AVLTree less than the
+     * @return the number of keys in the AVLTreeMapMap less than the
      *         given key.
      * @throws IllegalArgumentException if the key is null
      */
@@ -752,7 +751,7 @@ public class AVLTree<K extends Comparable<K>, V> {
      *
      * @param x
      * @param key
-     * @return the number of keys in the AVLTree less than the
+     * @return the number of keys in the AVLTreeMapMap less than the
      *         given key from x
      */
     private int rank(K key, Node x) {
@@ -767,10 +766,10 @@ public class AVLTree<K extends Comparable<K>, V> {
     }
 
     /**
-     * Returns all the keys in the AVLTree ordered
+     * Returns all the keys in the AVLTreeMapMap ordered
      * from the smallest key to the largest key, in an Iterable.
      *
-     * @return all the keys in the AVLTree ordered
+     * @return all the keys in the AVLTreeMapMap ordered
      * from the smallest key to the largest key, in an Iterable.
      */
     public Iterable<K> keys() {
@@ -778,12 +777,12 @@ public class AVLTree<K extends Comparable<K>, V> {
     }
 
     /**
-     * Returns all keys in the AVLTree in the range between
+     * Returns all keys in the AVLTreeMapMap in the range between
      * lo and hi, in order, in an Iterable.
      *
      * @param  lo, lower bound
      * @param  hi, upper bound
-     * @return all keys in the AVLTree in the range between
+     * @return all keys in the AVLTreeMapMap in the range between
      *         lo and hi, in order, in an Iterable.
      * @throws IllegalArgumentException if lo is null
      * @throws IllegalArgumentException if hi is null
@@ -794,7 +793,7 @@ public class AVLTree<K extends Comparable<K>, V> {
         if (hi == null)
             throw new IllegalArgumentException("keys with null hi");
 
-        Queue<K> queue = new Queue();
+        QueueLinkedList<K> queue = new QueueLinkedList();
         keys(root, queue, lo, hi);
         return queue;
     }
@@ -807,7 +806,7 @@ public class AVLTree<K extends Comparable<K>, V> {
      * @param lo
      * @param hi
      */
-    private void keys(Node x, Queue<K> queue, K lo, K hi) {
+    private void keys(Node x, QueueLinkedList<K> queue, K lo, K hi) {
         if (x == null)
             return;
 
@@ -829,10 +828,9 @@ public class AVLTree<K extends Comparable<K>, V> {
 ##### Java
 
 ```
-package com.example;
+package datastructures.trees;
 
-import com.example.utils.Queue;
-
+import datastructures.lists.QueueLinkedList;
 import java.util.NoSuchElementException;
 
 public class AVLTreeSet<K extends Comparable<K>> {
@@ -1378,7 +1376,7 @@ public class AVLTreeSet<K extends Comparable<K>> {
         if (hi == null)
             throw new IllegalArgumentException("keys with null hi");
 
-        Queue<K> queue = new Queue();
+        QueueLinkedList<K> queue = new QueueLinkedList();
         keys(root, queue, lo, hi);
         return queue;
     }
@@ -1391,7 +1389,7 @@ public class AVLTreeSet<K extends Comparable<K>> {
      * @param lo
      * @param hi
      */
-    private void keys(Node x, Queue<K> queue, K lo, K hi) {
+    private void keys(Node x, QueueLinkedList<K> queue, K lo, K hi) {
         if (x == null)
             return;
 

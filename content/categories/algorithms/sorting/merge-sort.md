@@ -143,7 +143,7 @@ Likewise with regular merge sort, this algorithm runs in O(NlgN).
 ##### Java
 
 ```
-package com.example;
+package algorithms.sorting;
 
 public class MergeSort {
 

@@ -70,7 +70,7 @@ lo      m          n        hi
 ##### Java
 
 ```
-package com.example;
+package algorithms.searching;
 
 public class TernarySearch {
 

@@ -60,7 +60,7 @@ lo          mid              hi
 ##### Java
 
 ```
-package com.example;
+package algorithms.searching;
 
 public class BinarySearch {
 
@@ -97,7 +97,6 @@ public class BinarySearch {
         }
         return -1;
     }
-
 }
 ```
 

@@ -40,7 +40,7 @@ O(N) time.
 ##### Java
 
 ```
-package com.example;
+package algorithms.shuffling;
 
 public class FisherYatesShuffle {
 

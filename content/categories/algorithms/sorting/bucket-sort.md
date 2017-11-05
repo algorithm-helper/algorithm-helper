@@ -92,7 +92,7 @@ substantial amount of auxiliary space.
 ##### Java
 
 ```
-package com.example;
+package algorithms.sorting;
 
 public class BucketSort {
 

@@ -82,7 +82,7 @@ can be directly accessed, and done in O(1) time.
 ##### Java
 
 ```
-package com.example;
+package datastructures.lists;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
@@ -129,7 +129,7 @@ public class DoubleEndedLinkedList<T> implements Iterable<T> {
 
     /**
      * Returns the number of elements contained in the DoubleEndedLinkedList.
-     * 
+     *
      * @return the number of elements contained in the DoubleEndedLinkedList
      */
     public int size() {
@@ -141,22 +141,22 @@ public class DoubleEndedLinkedList<T> implements Iterable<T> {
      *
      * @param i, the index into the DoubleEndedLinkedList
      * @return the element at index i in the DoubleEndedLinkedList
-     * @throws IndexOutOfBoundsException if i is greater or equal to the length 
+     * @throws IndexOutOfBoundsException if i is greater or equal to the length
      *         of the DoubleEndedLinkedList or a negative number
      */
     public T get(int i) {
-        if (i >= n || i < 0) 
+        if (i >= n || i < 0)
             throw new IndexOutOfBoundsException("get index out of bounds");
-        
-        if (i == 0 && first == null || 
-            i == n-1 && last == null)
+
+        if (i == 0 && first == null ||
+                i == n-1 && last == null)
             return null;
-        
+
         if (i == 0)
             return first.item;
         else if (i == n-1)
             return last.item;
-        
+
         Node<T> current = first;
         for (int j = 0; j < i; j++)
             current = current.next;
@@ -172,7 +172,7 @@ public class DoubleEndedLinkedList<T> implements Iterable<T> {
      * @throws IndexOutOfBoundsException if i is greater or equal to the length
      *         of the DoubleEndedLinkedList or a negative number
      */
-    public void insert(T item) {
+    public void insert(int i, T item) {
         if (item == null)
             throw new IllegalArgumentException("insert with null item");
         if (i >= n || i < 0)

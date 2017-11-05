@@ -139,7 +139,7 @@ and not lg (base 2)).
 ##### Java
 
 ```
-package com.example;
+package algorithms.sorting;
 
 public class RadixSort {
 

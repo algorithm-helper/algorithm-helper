@@ -3,21 +3,21 @@
         "topic": "lists",
         "title": "Lists",
         "tags": ["data structures"],
-        "description": "Learn about linear data structures like Linked Lists, Vectors, Stacks, Queues, and Union Find, as well as amortization.",
+        "description": "Learn about linear data structures like linked lists, dynamic arrays, stacks, queues as well as amortization.",
         "url": "/categories/data-structures/lists"
     },
     {
         "topic": "trees",
         "title": "Trees",
         "tags": ["data structures"],
-        "description": "Learn about using binary and balanced binary search trees to implement Maps/Sets with logarithmic performance.",
+        "description": "Learn about using binary and balanced binary search trees to implement maps and sets with logarithmic performance.",
         "url": "/categories/data-structures/trees"
     },
     {
         "topic": "hashing",
         "title": "Hashing",
         "tags": ["data structures"],
-        "description": "Learn about using hash functions to implement Maps/Sets, with efficient (constant, amortized) time for all operations.",
+        "description": "Learn about using hash functions to implement hash maps and hash sets with efficient (constant, amortized) time for all operations.",
         "url": "/categories/data-structures/hashing"
     },
     {
@@ -31,7 +31,7 @@
         "topic": "sorting",
         "title": "Sorting",
         "tags": ["algorithms"],
-        "description": "Learn about the fundamental problem of sorting, and algorithms like Merge Sort, Quick Sort and Heap Sort.",
+        "description": "Learn about the fundamental problem of sorting, and algorithms like merge sort, quick sort and heap sort.",
         "url": "/categories/algorithms/sorting"
     },
     {
@@ -59,7 +59,7 @@
         "topic": "strings",
         "title": "Strings",
         "tags": ["algorithms"],
-        "description": "Learn about data structures and algorithms for string matching and searching like Tries, and the Rabin-Karp algorithm.",
+        "description": "Learn about data structures and algorithms for string matching and searching like tries, and the Rabin-Karp algorithm.",
         "url": "/categories/algorithms/strings"
     },
     {

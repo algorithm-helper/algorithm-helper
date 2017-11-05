@@ -5,7 +5,7 @@ concerned with tree data structures, that is, a set of linked nodes such that it
 has a root and it has subtrees of children nodes, forming a tree-like structure.
 The following data structures are going to be covered in this topic: binary
 search trees, balanced binary search tree, 2-3 tree, red-black tree, AVL tree,
-heap, and priority queue.
+heap, priority queue and union find/disjoint set.
 
 ### Terminology
 
@@ -65,6 +65,11 @@ There are a lot of terminology used in trees:
 - forest 
     - A forest is a set of n ≥ 0 disjoint trees.
 
+As well, we consider union finds/disjoint sets, which is a data structure 
+concerned with dynamic connectivity and connected components, which although 
+is implemented with an array, can be both represented as a linear structure as 
+well as a (more efficient) tree structure. 
+
 ### Visualization
 
 The following visualizes an tree, where the nodes are labelled and just placed
@@ -119,7 +124,7 @@ class Node {
 ```
 
 But in the case of sets (more is discussed about this abstract data type in the 
-article on [Sets](/categories/data-structures/trees/sets)), each node is only
+article on [Sets](/categories/data-structures/trees/set)), each node is only
 associated with a key. If we implement a set using a tree, the nodes may look
 like the following.
 

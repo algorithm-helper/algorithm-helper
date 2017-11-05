@@ -58,8 +58,6 @@ false
 ##### Java
 
 ```
-package com.example;
-
 import java.util.Iterator;
 
 public class ExampleClass<T> implements Iterable<T> {

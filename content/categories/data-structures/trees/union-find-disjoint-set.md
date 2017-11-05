@@ -151,7 +151,7 @@ in `size` are initialized to 1.
 ##### Java
 
 ```
-package com.example;
+package datastructures.trees;
 
 public class UnionFind {
 

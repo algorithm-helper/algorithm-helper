@@ -2,12 +2,11 @@
 
 A stack is a linear data structure in which elements are inserted and 
 removed in last-in-first-out (LIFO) procedure, and can be implemented 
-using a linked list or a vector/dynamically resizing array. The operation
-`push` adds an element to the top of the stack, the operation `pop`
-removes the top-most element of the stack, and the operation `peek`
-returns the top-most element's `item`, without removing it from the stack.
-Since it is LIFO, if we `push` two elements, we cannot retrieve the 
-first one before popping out the second one.
+using a linked list or a dynamic array. The operation `push` adds an element to 
+the top of the stack, the operation `pop` removes the top-most element of the 
+stack, and the operation `peek` returns the top-most element's `item`, without 
+removing it from the stack. Since it is LIFO, if we `push` two elements, we 
+cannot retrieve the first one before popping out the second one.
 
 ### Visualization
 
@@ -51,33 +50,32 @@ Exception: cannot pop from empty stack.
     - Using linked list: 
         - Insert a node at the front of the linked list by pointing `first`
         to the new node.
-    - Using vector/dynamically resizing array:
+    - Using dynamic array:
         - Insert the element at `n`, then increment `n`, resize the array if
         necessary.
 - `pop`
     - Using linked list: 
         - Save the node at `first`, then point `first` to its `next` node, then
         return the saved node.
-    - Using vector/dynamically resizing array:
+    - Using dynamic array:
         - Save the element at `n`, then decrement `n`, resize the array if 
         necessary, then return the saved node.
 - `peek`
     - Using linked list: 
         - Return the `item` of the node at the front of the linked list.
-    - Using vector/dynamically resizing array:
+    - Using dynamic array:
         - Return the element at `n`.
 
 With a linked list, a stack is essentially only limited to `insertFront`, 
-`removeFront` and `peekFront`. With a vector/dynamically resizing array,
-a stack is essentially only limited to `insertBack`, `removeBack` and 
-`peekBack`.
+`removeFront` and `peekFront`. With a dynamic array, a stack is essentially only 
+limited to `insertBack`, `removeBack` and `peekBack`.
 
 ### Implementation (using Linked List)
 
 ##### Java
 
 ```
-package com.example;
+package datastructures.lists;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
@@ -223,37 +221,36 @@ public class StackLinkedList<T> implements Iterable<T> {
         };
     }
 }
-
 ```
 
-### Implementation (using Vector)
+### Implementation (using Dynamic Array)
 
 ##### Java
 
 ```
-package com.example;
+package datastructures.lists;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class StackResizingArray<T> implements Iterable<T> {
+public class StackDynamicArray<T> implements Iterable<T> {
 
     private T[] arr;
     private int n;
 
     /**
-     * Initializes an empty StackResizingArray.
+     * Initializes an empty StackDynamicArray.
      */
-    public StackResizingArray() {
+    public StackDynamicArray() {
         arr = (T[]) new Object[1];
         n = 0;
     }
 
     /**
-     * Return true is this StackResizingArray contains no elements, otherwise
+     * Return true is this StackDynamicArray contains no elements, otherwise
      * false.
      *
-     * @return true is this StackResizingArray contains no elements, otherwise
+     * @return true is this StackDynamicArray contains no elements, otherwise
      *         false
      */
     public boolean isEmpty() {
@@ -261,16 +258,16 @@ public class StackResizingArray<T> implements Iterable<T> {
     }
 
     /**
-     * Returns the number of elements contained in the StackResizingArray.
+     * Returns the number of elements contained in the StackDynamicArray.
      *
-     * @return the number of elements contained in the StackResizingArray
+     * @return the number of elements contained in the StackDynamicArray
      */
     public int size() {
         return n;
     }
 
     /**
-     * Resizes the StackResizingArray arr field to newSize.
+     * Resizes the StackDynamicArray arr field to newSize.
      *
      * @param newSize, the new size of the arr
      * @throws IllegalArgumentException if newSize <= 0
@@ -286,7 +283,7 @@ public class StackResizingArray<T> implements Iterable<T> {
     }
 
     /**
-     * Inserts item to the top of the StackResizingArray, but if the arr
+     * Inserts item to the top of the StackDynamicArray, but if the arr
      * exceeds its capacity, then double the size of the arr.
      *
      * @param item, the item to be inserted
@@ -302,16 +299,16 @@ public class StackResizingArray<T> implements Iterable<T> {
     }
 
     /**
-     * Removes item at the top of the StackResizingArray, and returns it, but
+     * Removes item at the top of the StackDynamicArray, and returns it, but
      * if the arr is below a quarter of the arr capacity, halve the arr size
      *
-     * @return the item at the top of the StackResizingArray
-     * @throws NoSuchElementException if this StackResizingArray is empty
+     * @return the item at the top of the StackDynamicArray
+     * @throws NoSuchElementException if this StackDynamicArray is empty
      */
     public T pop() {
         if (isEmpty())
             throw new NoSuchElementException("pop from empty " +
-                    "StackResizingArray");
+                    "StackDynamicArray");
         T item = arr[--n];
         arr[n] = null;
         if (n > 0 && n == arr.length/4)
@@ -320,24 +317,24 @@ public class StackResizingArray<T> implements Iterable<T> {
     }
 
     /**
-     * Returns the item at the top of the StackResizingArray.
+     * Returns the item at the top of the StackDynamicArray.
      *
-     * @return the item at the top of the StackResizingArray
-     * @throws NoSuchElementException if this StackResizingArray is empty
+     * @return the item at the top of the StackDynamicArray
+     * @throws NoSuchElementException if this StackDynamicArray is empty
      */
     public T peek() {
         if (isEmpty())
             throw new NoSuchElementException("peek from empty " +
-                    "StackResizingArray");
+                    "StackDynamicArray");
         return arr[n-1];
     }
 
     /**
-     * Returns a String representation of the StackResizingArray, in the form
-     * [x0, x1, ... xn] where x0...xn are elements of the StackResizingArray in
+     * Returns a String representation of the StackDynamicArray, in the form
+     * [x0, x1, ... xn] where x0...xn are elements of the StackDynamicArray in
      * reverse order.
      *
-     * @return a String representation of the StackResizingArray, with elements
+     * @return a String representation of the StackDynamicArray, with elements
      *         separated by a comma and space
      */
     public String toString() {
@@ -356,11 +353,11 @@ public class StackResizingArray<T> implements Iterable<T> {
     }
 
     /**
-     * Returns an Iterator to the StackResizingArray that iterates through the
-     * elements of the StackResizingArray in reverse order.
+     * Returns an Iterator to the StackDynamicArray that iterates through the
+     * elements of the StackDynamicArray in reverse order.
      *
-     * @return an Iterator to the StackResizingArray that iterates through the
-     *         elements of the StackResizingArray in reverse order.
+     * @return an Iterator to the StackDynamicArray that iterates through the
+     *         elements of the StackDynamicArray in reverse order.
      */
     public Iterator<T> iterator() {
         return new Iterator<T>() {
@@ -387,14 +384,14 @@ public class StackResizingArray<T> implements Iterable<T> {
 ### Time Complexity
 
 The following table describes the time complexity for performing the operations 
-above on a stack, comparing between the linked list and the vector/dynamically 
-resizing array implementation:
+above on a stack, comparing between the linked list and the dynamic array 
+implementation:
 
 ```
-| Data Structure                                    | push  | pop   | peek |
-|---------------------------------------------------|-------|-------|------|
-| stack (using linked list)                         | O(1)  | O(1)  | O(1) |
-| stack (using vector / dynamically resizing array) | O(1)* | O(1)* | O(1) |
+| Data Structure              | push  | pop   | peek |
+|-----------------------------|-------|-------|------|
+| stack (using linked list)   | O(1)  | O(1)  | O(1) |
+| stack (using dynamic array) | O(1)* | O(1)* | O(1) |
 ```
 
 \* Amortized

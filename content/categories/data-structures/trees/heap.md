@@ -265,7 +265,7 @@ For binary min heap:
 ##### Java
 
 ```
-package com.example;
+package datastructures.trees;
 
 public class BinaryMaxHeap<T extends Comparable<T>> {
 
@@ -485,7 +485,7 @@ public class BinaryMaxHeap<T extends Comparable<T>> {
 ##### Java
 
 ```
-package com.example;
+package datastructures.trees;
 
 public class BinaryMinHeap<T extends Comparable<T>> {
 
@@ -585,7 +585,7 @@ public class BinaryMinHeap<T extends Comparable<T>> {
             int minChild = leftIndex(i);
 
             if (hasRight(i) &&
-                arr[leftIndex(i)].compareTo(arr[rightIndex(i)]) > 0)
+                    arr[leftIndex(i)].compareTo(arr[rightIndex(i)]) > 0)
                 minChild = rightIndex(i);
 
             if (arr[i].compareTo(arr[minChild]) > 0)
@@ -604,7 +604,7 @@ public class BinaryMinHeap<T extends Comparable<T>> {
         int i = n;
 
         while (hasParent(i) &&
-               (parent(i).compareTo(arr[i])) > 0) {
+                (parent(i).compareTo(arr[i])) > 0) {
             swap(i, parentIndex(i));
             i = parentIndex(i);
         }
@@ -698,7 +698,6 @@ public class BinaryMinHeap<T extends Comparable<T>> {
         arr[j] = temp;
     }
 }
-
 ```
 
 ### Time Complexity

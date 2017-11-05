@@ -69,7 +69,7 @@ Linked lists use the following operations:
 ##### Java
 
 ```
-package com.example;
+package datastructures.lists;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
@@ -88,7 +88,7 @@ public class LinkedList<T> implements Iterable<T> {
         public Node(T value, Node<T> next) {
             this.item = item;
             this.next = next;
-        } 
+        }
     }
 
     /**
@@ -141,7 +141,7 @@ public class LinkedList<T> implements Iterable<T> {
 
     /**
      * Inserts the item at the specified index in the LinkedList.
-     * 
+     *
      * @param item, the item to be inserted
      * @param i, the index into the LinkedList
      * @throws IllegalArgumentException if the item is null
@@ -153,7 +153,7 @@ public class LinkedList<T> implements Iterable<T> {
             throw new IllegalArgumentException("insert with null item");
         if (i >= n || i < 0)
             throw new IndexOutOfBoundsException("insert index out of bounds");
-        
+
         if (i == 0) {
             insertFront(item);
         } else if (i == n-1) {
@@ -163,7 +163,7 @@ public class LinkedList<T> implements Iterable<T> {
             for (int j = 0; j < i-1; j++)
                 current = current.next;
             current.next = new Node(item, current.next.next);
-            n++:
+            n++;
         }
     }
 
@@ -190,13 +190,13 @@ public class LinkedList<T> implements Iterable<T> {
     public void insertBack(T item) {
         if (item == null)
             throw new IllegalArgumentException("insertBack with null item");
-        
+
         Node<T> current = first;
         for (int j = 0; j < n-1; j++)
             current = current.next;
-    
+
         current.next = new Node(item, null);
-        n++:
+        n++;
     }
 
     /**
@@ -209,7 +209,7 @@ public class LinkedList<T> implements Iterable<T> {
     public T remove(int i) {
         if (i >= n || i < 0)
             throw new IndexOutOfBoundsException("remove index out of bounds");
-        
+
         if (i == 0) {
             return removeFront();
         } else if (i == n-1) {
@@ -218,7 +218,7 @@ public class LinkedList<T> implements Iterable<T> {
             Node<T> current = first;
             for (int j = 0; j < i-1; j++)
                 current = current.next;
-            
+
             T item = current.next.item;
             current.next = null;
             current.next = current.next.next;
@@ -235,8 +235,8 @@ public class LinkedList<T> implements Iterable<T> {
      */
     public T removeFront() {
         if (isEmpty()) {
-            throw new NoSuchElementException("removeFront from empty " + 
-                "LinkedList");
+            throw new NoSuchElementException("removeFront from empty " +
+                    "LinkedList");
         }
 
         T item = first.item;
@@ -253,8 +253,8 @@ public class LinkedList<T> implements Iterable<T> {
      */
     public T removeBack() {
         if (isEmpty()) {
-            throw new NoSuchElementException("removeBack from empty " + 
-                "LinkedList");
+            throw new NoSuchElementException("removeBack from empty " +
+                    "LinkedList");
         }
 
         if (n == 0)
@@ -263,7 +263,7 @@ public class LinkedList<T> implements Iterable<T> {
         Node<T> current = first;
         for (int j = 0; j < n-2; j++)
             current = current.next;
-        
+
         T item = current.next.item;
         current.next = null;
         n--;
@@ -274,33 +274,33 @@ public class LinkedList<T> implements Iterable<T> {
 
     /**
      * Returns the item at the front of the LinkedList.
-     * 
+     *
      * @return the item at the front of the LinkedList
      * @throws NoSuchElementException if this LinkedList is empty
      */
     public T peekFront() {
         if (isEmpty()) {
-            throw new NoSuchElementException("peekFront from empty " + 
-                "LinkedList");
+            throw new NoSuchElementException("peekFront from empty " +
+                    "LinkedList");
         }
         return first.item;
     }
 
     /**
      * Returns the item at the back of the LinkedList.
-     * 
+     *
      * @return the item at the back of the LinkedList
      * @throws NoSuchElementException if this LinkedList is empty
      */
     public T peekBack() {
         if (isEmpty()) {
-            throw new NoSuchElementException("peekBack from empty " + 
-                "LinkedList");
+            throw new NoSuchElementException("peekBack from empty " +
+                    "LinkedList");
         }
 
         if (n == 0)
             return peekFront();
-        
+
         Node<T> current = first;
         for (int j = 0; j < n-1; j++)
             current = current.next;
@@ -309,7 +309,7 @@ public class LinkedList<T> implements Iterable<T> {
 
     /**
      * Returns a String representation of the LinkedList, in the form
-     * [x0, x1, ... xn] where x0...xn are elements of the LinkedList 
+     * [x0, x1, ... xn] where x0...xn are elements of the LinkedList
      * in forward order.
      *
      * @return a String representation of the LinkedList, with elements
@@ -318,7 +318,7 @@ public class LinkedList<T> implements Iterable<T> {
     public String toString() {
         if (isEmpty())
             return "[]";
-        
+
         StringBuilder sb = new StringBuilder();
         sb.append('[');
         for (T item : this) {
@@ -349,16 +349,16 @@ public class LinkedList<T> implements Iterable<T> {
             @Override
             public T next() {
                 if (!hasNext()) {
-                    throw new NoSuchElementException("iterator does not have " + 
-                        "next element");
+                    throw new NoSuchElementException("iterator does not have " +
+                            "next element");
                 }
                 T item = current.item;
                 current = current.next;
                 return item;
             }
-        }
+        };
     }
-}
+}  
 ```
 
 ### Time Complexity

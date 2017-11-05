@@ -75,7 +75,7 @@ insertion sort if the number of elements is below a certain number.
 ##### Java
 
 ```
-package com.example;
+package algorithms.sorting;
 
 public class InsertionSort {
 

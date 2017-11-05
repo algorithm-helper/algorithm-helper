@@ -179,9 +179,7 @@ For double ended priority queue:
 ##### Java
 
 ```
-package com.example;
-
-import com.example.utils.BinaryMaxHeap;
+package datastructures.trees;
 
 import java.util.NoSuchElementException;
 
@@ -270,9 +268,7 @@ public class PriorityMaxQueue<T extends Comparable<T>> {
 ##### Java
 
 ```
-package com.example;
-
-import com.example.utils.BinaryMinHeap;
+package datastructures.trees;
 
 import java.util.NoSuchElementException;
 
@@ -361,7 +357,7 @@ public class PriorityMinQueue<T extends Comparable<T>> {
 ##### Java
 
 ```
-package com.example;
+package datastructures.trees;
 
 import java.util.NoSuchElementException;
 

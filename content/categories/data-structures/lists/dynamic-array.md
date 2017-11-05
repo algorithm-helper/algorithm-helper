@@ -1,10 +1,10 @@
-# Vector / Dynamically Resizing Array
+# Dynamic Array
 
-A vector, or dynamically resizing array, is a linear data structure using 
-an array. They overcome the problem of having arrays being of fixed size
-by copying the contents of the array into a larger array once the original 
-has become full, or into a smaller array once elements get removed at a 
-certain point, to avoid using up large amounts of memory. A vector has an 
+A dynamic array, also called a vector or dynamically resizing array, is a linear 
+data structure using an array. They overcome the problem of having arrays being 
+of fixed size by copying the contents of the array into a larger array once the 
+original has become full, or into a smaller array once elements get removed at a 
+certain point, to avoid using up large amounts of memory. A dynamic array has an 
 array back-end and an index, which represents the number of elements in the 
 array, and is incremented every time an element is inserted and decremented
 every time an element is removed. This index also represents the next index 
@@ -61,18 +61,15 @@ of size 1:
 [a1]
 
 // Insert a2, by first doubling the size of the array:
-[a1][  ]
 [a1][a2]
 
 // Insert a3, by first doubling the size of the array:
-[a1][a2][  ][  ]
 [a1][a2][a3][  ]
 
 // Insert a4:
 [a1][a2][a3][a4]
 
 // Insert a5, by first doubling the size of the array:
-[a1][a2][a3][a4][  ][  ][  ][  ]
 [a1][a2][a3][a4][a5][  ][  ][  ]
 
 // Insert a6:
@@ -95,7 +92,6 @@ of size 1:
 
 // Remove last element, then halve the size of the array since it is 
 // only a quarter full:
-[a1][a2][  ][  ][  ][  ][  ][  ]
 [a1][a2][  ][  ]
 ```
 
@@ -104,8 +100,8 @@ of size 1:
 Vectors use the following operations:
 
 - `get`
-    - Given a particular valid index `i` (within 0 and the size of the vector), 
-    retrieve the `item` at that index into the array.
+    - Given a particular valid index `i` (within 0 and the size of the dynamic 
+    array), retrieve the `item` at that index into the array.
 - `insert`
     - Given a particular valid index `i`, insert the new element at that 
     position by shifting all elements in the array at `i` to the right, resize 
@@ -124,12 +120,12 @@ Vectors use the following operations:
     shifting all elements from index `i+1` to the left, and then decrement `n`,
     resize the array if necessary.
 - `removeFront`
-    - Remove the element at the front of the vector by shifting all elements in 
-    the array from index 1 over to the left, and then decrement `n`, resize the 
-    array if necessary.
+    - Remove the element at the front of the dynamic array by shifting all 
+    elements in the array from index 1 over to the left, and then decrement `n`, 
+    resize the array if necessary.
 - `removeBack`
-    - Remove the element at the end of the vector by decrementing `n`, resize 
-    the array if necessary.
+    - Remove the element at the end of the dynamic array by decrementing `n`, 
+    resize the array if necessary.
 - `peekFront`
     - Return the `item` at index 0.
 - `peekBack`
@@ -148,44 +144,44 @@ entire array's contents, also in O(N) time.
 ##### Java
 
 ```
-package com.example;
+package datastructures.lists;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class Vector<T> implements Iterable<T> {
+public class DynamicArray<T> implements Iterable<T> {
 
     private T[] arr;
     private int n;
 
     /**
-     * Initializes an empty Vector.
+     * Initializes an empty DynamicArray.
      */
-    public Vector() {
+    public DynamicArray() {
         arr = (T[]) new Object[1];
         n = 0;
     }
 
     /**
-     * Return true is this Vector contains no elements, otherwise false.
+     * Return true is this DynamicArray contains no elements, otherwise false.
      *
-     * @return true is this Vector contains no elements, otherwise false
+     * @return true is this DynamicArray contains no elements, otherwise false
      */
     public boolean isEmpty() {
         return n == 0;
     }
 
     /**
-     * Returns the number of elements contained in the Vector.
+     * Returns the number of elements contained in the DynamicArray.
      *
-     * @return the number of elements contained in the Vector
+     * @return the number of elements contained in the DynamicArray
      */
     public int size() {
         return n;
     }
 
     /**
-     * Resizes the Vector arr field to newSize.
+     * Resizes the DynamicArray arr field to newSize.
      *
      * @param newSize, the new size of the arr
      * @throws IllegalArgumentException if newSize <= 0
@@ -202,12 +198,12 @@ public class Vector<T> implements Iterable<T> {
     }
 
     /**
-     * Return the element at the specified index in the Vector.
+     * Return the element at the specified index in the DynamicArray.
      *
-     * @param i, the index into the Vector
-     * @return the element at index i in the Vector
+     * @param i, the index into the DynamicArray
+     * @return the element at index i in the DynamicArray
      * @throws IndexOutOfBoundsException if i is greater or equal to the length
-     *         of the Vector or a negative number
+     *         of the DynamicArray or a negative number
      */
     public T get(int i) {
         if (i >= n || i < 0)
@@ -216,13 +212,13 @@ public class Vector<T> implements Iterable<T> {
     }
 
     /**
-     * Insert the item at the specified index in the Vector.
+     * Insert the item at the specified index in the DynamicArray.
      *
      * @param item, the item to be inserted
-     * @param i, the index into the Vector
+     * @param i, the index into the DynamicArray
      * @throws IllegalArgumentException if the item is null
      * @throws IndexOutOfBoundsException if i is greater or equal to the length
-     *         of the Vector or a negative number
+     *         of the DynamicArray or a negative number
      */
     public void insert(T item, int i) {
         if (item == null)
@@ -240,7 +236,7 @@ public class Vector<T> implements Iterable<T> {
     }
 
     /**
-     * Inserts item to the front of the Vector, but if the arr exceeds
+     * Inserts item to the front of the DynamicArray, but if the arr exceeds
      * its capacity, then double the size of the arr.
      *
      * @param item, the item to be inserted
@@ -260,7 +256,7 @@ public class Vector<T> implements Iterable<T> {
     }
 
     /**
-     * Inserts item to the back of the Vector, but if the arr exceeds
+     * Inserts item to the back of the DynamicArray, but if the arr exceeds
      * its capacity, then double the size of the arr.
      *
      * @param item, the item to be inserted
@@ -276,13 +272,13 @@ public class Vector<T> implements Iterable<T> {
     }
 
     /**
-     * Removes the item at the specified index in the Vector, and returns it,
+     * Removes the item at the specified index in the DynamicArray, and returns it,
      * but if the arr is below a quarter of the arr capacity, halve the
      * arr size
      *
-     * @param i, the index into the Vector
+     * @param i, the index into the DynamicArray
      * @throws IndexOutOfBoundsException if i is greater or equal to the length
-     *         of the Vector or a negative number
+     *         of the DynamicArray or a negative number
      */
     public T remove(int i) {
         if (i >= n || i < 0)
@@ -299,15 +295,15 @@ public class Vector<T> implements Iterable<T> {
     }
 
     /**
-     * Removes item at the front of the Vector, and returns it, but if the
+     * Removes item at the front of the DynamicArray, and returns it, but if the
      * arr is below a quarter of the arr capacity, halve the arr size
      *
-     * @return the item at the top of the Vector
-     * @throws NoSuchElementException if this Vector is empty
+     * @return the item at the top of the DynamicArray
+     * @throws NoSuchElementException if this DynamicArray is empty
      */
     public T removeFront() {
         if (isEmpty())
-            throw new NoSuchElementException("removeBack from empty Vector");
+            throw new NoSuchElementException("removeBack from empty DynamicArray");
 
         T item = arr[0];
         for (int i = 0; i < n-1; i++)
@@ -320,15 +316,15 @@ public class Vector<T> implements Iterable<T> {
     }
 
     /**
-     * Removes item at the back of the Vector, and returns it, but if the
+     * Removes item at the back of the DynamicArray, and returns it, but if the
      * arr is below a quarter of the arr capacity, halve the arr size
      *
-     * @return the item at the top of the Vector
-     * @throws NoSuchElementException if this Vector is empty
+     * @return the item at the top of the DynamicArray
+     * @throws NoSuchElementException if this DynamicArray is empty
      */
     public T removeBack() {
         if (isEmpty())
-            throw new NoSuchElementException("removeBack from empty Vector");
+            throw new NoSuchElementException("removeBack from empty DynamicArray");
         T item = arr[--n];
         arr[n] = null;
         if (n > 0 && n == arr.length/4)
@@ -337,35 +333,35 @@ public class Vector<T> implements Iterable<T> {
     }
 
     /**
-     * Returns the item at the front of the Vector.
+     * Returns the item at the front of the DynamicArray.
      *
-     * @return the item at the front of the Vector
-     * @throws NoSuchElementException if this Vector is empty
+     * @return the item at the front of the DynamicArray
+     * @throws NoSuchElementException if this DynamicArray is empty
      */
     public T peekFront() {
         if (isEmpty())
-            throw new NoSuchElementException("peek from empty Vector");
+            throw new NoSuchElementException("peek from empty DynamicArray");
         return arr[0];
     }
 
     /**
-     * Returns the item at the back of the Vector.
+     * Returns the item at the back of the DynamicArray.
      *
-     * @return the item at the front of the Vector
-     * @throws NoSuchElementException if this Vector is empty
+     * @return the item at the front of the DynamicArray
+     * @throws NoSuchElementException if this DynamicArray is empty
      */
     public T peekBack() {
         if (isEmpty())
-            throw new NoSuchElementException("peek from empty Vector");
+            throw new NoSuchElementException("peek from empty DynamicArray");
         return arr[n-1];
     }
 
     /**
-     * Returns a String representation of the Vector, in the form
-     * [x0, x1, ... xn] where x0...xn are elements of the Vector in
+     * Returns a String representation of the DynamicArray, in the form
+     * [x0, x1, ... xn] where x0...xn are elements of the DynamicArray in
      * forward order.
      *
-     * @return a String representation of the Vector, with elements
+     * @return a String representation of the DynamicArray, with elements
      *         separated by a comma and space
      */
     public String toString() {
@@ -384,11 +380,11 @@ public class Vector<T> implements Iterable<T> {
     }
 
     /**
-     * Returns an Iterator to the Vector that iterates through the
-     * elements of the Vector in forward order.
+     * Returns an Iterator to the DynamicArray that iterates through the
+     * elements of the DynamicArray in forward order.
      *
-     * @return an Iterator to the Vector that iterates through the
-     *         elements of the Vector in forward order.
+     * @return an Iterator to the DynamicArray that iterates through the
+     *         elements of the DynamicArray in forward order.
      */
     public Iterator<T> iterator() {
         return new Iterator<T>() {
@@ -415,12 +411,12 @@ public class Vector<T> implements Iterable<T> {
 ### Time Complexity
 
 The following table describes the time complexity for performing the operations 
-above on a vector:
+above on a dynamic array:
 
 ```
-| Data Structure                      | get  | insert | insertFront | insertBack | remove | removeFront | removeBack | peekFront | peekBack |
-|-------------------------------------|------|--------|-------------|------------|--------|-------------|------------|-----------|----------|
-| vector / dynamically resizing array | O(1) | O(N)   | O(N)        | O(1)*      | O(N)   | O(N)        | O(1)*      | O(1)      | O(1)     |
+| Data Structure   | get  | insert | insertFront | insertBack | remove | removeFront | removeBack | peekFront | peekBack |
+|------------------|------|--------|-------------|------------|--------|-------------|------------|-----------|----------|
+| dynamic array    | O(1) | O(N)   | O(N)        | O(1)*      | O(N)   | O(N)        | O(1)*      | O(1)      | O(1)     |
 ```
 
 \* Amortized

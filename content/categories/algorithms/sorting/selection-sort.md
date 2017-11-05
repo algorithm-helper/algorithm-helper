@@ -64,7 +64,7 @@ However, it is not stable because it swaps non-adjacent elements.
 ##### Java
 
 ```
-package com.example;
+package algorithms.sorting;
 
 public class SelectionSort {
 

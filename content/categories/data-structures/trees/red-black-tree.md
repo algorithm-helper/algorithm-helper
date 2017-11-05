@@ -296,12 +296,12 @@ or `delete`, they run in O(lgN) time.
 ##### Java
 
 ```
-package com.example;
+package datastructures.trees;
 
-import com.example.utils.Queue;
+import datastructures.lists.QueueLinkedList;
 import java.util.NoSuchElementException;
 
-public class RedBlackTree<K extends Comparable<K>, V> {
+public class RedBlackTreeMap<K extends Comparable<K>, V> {
 
     private static final boolean RED = true;
     private static final boolean BLACK = false;
@@ -324,25 +324,25 @@ public class RedBlackTree<K extends Comparable<K>, V> {
     }
 
     /**
-     * Initializes an empty RedBlackTree.
+     * Initializes an empty RedBlackTreeMap.
      */
-    public RedBlackTree() {
+    public RedBlackTreeMap() {
         root = null;
     }
 
     /**
-     * Returns true if the RedBlackTree is empty, false otherwise.
+     * Returns true if the RedBlackTreeMap is empty, false otherwise.
      *
-     * @return true if the RedBlackTree is empty, false otherwise
+     * @return true if the RedBlackTreeMap is empty, false otherwise
      */
     public boolean isEmpty() {
         return root == null;
     }
 
     /**
-     * Returns the number of elements in the RedBlackTree.
+     * Returns the number of elements in the RedBlackTreeMap.
      *
-     * @return the number of elements in the RedBlackTree
+     * @return the number of elements in the RedBlackTreeMap
      */
     public int size() {
         return size(root);
@@ -350,10 +350,10 @@ public class RedBlackTree<K extends Comparable<K>, V> {
 
     /**
      * Helper function that returns the number of elements from x in the
-     * RedBlackTree.
+     * RedBlackTreeMap.
      *
      * @param x, the Node whose size in question
-     * @return the number of elements from x in the RedBlackTree
+     * @return the number of elements from x in the RedBlackTreeMap
      */
     private int size(Node x) {
         if (x == null)
@@ -474,9 +474,9 @@ public class RedBlackTree<K extends Comparable<K>, V> {
     }
 
     /**
-     * Return the height of the RedBlackTree.
+     * Return the height of the RedBlackTreeMap.
      *
-     * @return the height of the RedBlackTree
+     * @return the height of the RedBlackTreeMap
      */
     public int height() {
         return height(root);
@@ -495,10 +495,10 @@ public class RedBlackTree<K extends Comparable<K>, V> {
     }
 
     /**
-     * Returns the val associated with the key in the RedBlackTree.
+     * Returns the val associated with the key in the RedBlackTreeMap.
      *
      * @param key, the key to be searched for
-     * @return the val associated with the key in the RedBlackTree
+     * @return the val associated with the key in the RedBlackTreeMap
      */
     public V get(K key) {
         if (key == null)
@@ -520,11 +520,11 @@ public class RedBlackTree<K extends Comparable<K>, V> {
     }
 
     /**
-     * Returns true if the key is contained in the RedBlackTree, false
+     * Returns true if the key is contained in the RedBlackTreeMap, false
      * otherwise.
      *
      * @param key, the key to be searched for
-     * @return true if the key is contained in the RedBlackTree, false
+     * @return true if the key is contained in the RedBlackTreeMap, false
      *         otherwise
      */
     public boolean contains(K key) {
@@ -534,7 +534,7 @@ public class RedBlackTree<K extends Comparable<K>, V> {
     }
 
     /**
-     * Insert the (key, val) pair into the RedBlackTree, but if the val
+     * Insert the (key, val) pair into the RedBlackTreeMap, but if the val
      * is null, then delete the element with the associated key.
      *
      * @param key, the key to be inserted
@@ -587,7 +587,7 @@ public class RedBlackTree<K extends Comparable<K>, V> {
     }
 
     /**
-     * Remove the key from the RedBlackTree.
+     * Remove the key from the RedBlackTreeMap.
      *
      * @param key, the key to be removed
      */
@@ -637,14 +637,14 @@ public class RedBlackTree<K extends Comparable<K>, V> {
     }
 
     /**
-     * Delete the element with the smallest key in the RedBlackTree.
+     * Delete the element with the smallest key in the RedBlackTreeMap.
      *
-     * @throws NoSuchElementException if the RedBlackTree is empty
+     * @throws NoSuchElementException if the RedBlackTreeMap is empty
      */
     public void deleteMin() {
         if (isEmpty())
             throw new NoSuchElementException("deleteMin with empty " +
-                    "RedBlackTree");
+                    "RedBlackTreeMap");
         if (!isRed(root.left) && !isRed(root.right))
             root.color = RED;
 
@@ -673,14 +673,14 @@ public class RedBlackTree<K extends Comparable<K>, V> {
     }
 
     /**
-     * Removes the element with the largest key in the RedBlackTree.
+     * Removes the element with the largest key in the RedBlackTreeMap.
      *
-     * @throws NoSuchElementException if the RedBlackTree is empty
+     * @throws NoSuchElementException if the RedBlackTreeMap is empty
      */
     public void deleteMax() {
         if (isEmpty())
             throw new NoSuchElementException("deleteMax with empty " +
-                    "RedBlackTree");
+                    "RedBlackTreeMap");
 
         if (!isRed(root.left) && !isRed(root.right))
             root.color = RED;
@@ -713,14 +713,14 @@ public class RedBlackTree<K extends Comparable<K>, V> {
     }
 
     /**
-     * Return the smallest key in the RedBlackTree.
+     * Return the smallest key in the RedBlackTreeMap.
      *
-     * @return the smallest key in the RedBlackTree.
+     * @return the smallest key in the RedBlackTreeMap.
      */
     public K min() {
         if (isEmpty())
             throw new NoSuchElementException("min with empty " +
-                    "RedBlackTree");
+                    "RedBlackTreeMap");
         return min(root).key;
     }
 
@@ -737,14 +737,14 @@ public class RedBlackTree<K extends Comparable<K>, V> {
     }
 
     /**
-     * Return the largest key in the RedBlackTree.
+     * Return the largest key in the RedBlackTreeMap.
      *
-     * @return the largest key in the RedBlackTree.
+     * @return the largest key in the RedBlackTreeMap.
      */
     public K max() {
         if (isEmpty())
             throw new NoSuchElementException("max with empty " +
-                    "RedBlackTree");
+                    "RedBlackTreeMap");
         return max(root).key;
     }
 
@@ -762,20 +762,20 @@ public class RedBlackTree<K extends Comparable<K>, V> {
 
     /**
      * Returns the largest key less than or equal to key in the
-     * RedBlackTree.
+     * RedBlackTreeMap.
      *
      * @param key, the key to be searched
      * @return the largest key less than or equal to key in the
-     *         RedBlackTree.
+     *         RedBlackTreeMap.
      * @throws IllegalArgumentException if the key is null
-     * @throws NoSuchElementException if the RedBlackTree is empty
+     * @throws NoSuchElementException if the RedBlackTreeMap is empty
      */
     public K floor(K key) {
         if (key == null)
             throw new IllegalArgumentException("floor with null key");
         if (isEmpty())
             throw new NoSuchElementException("floor with empty " +
-                    "RedBlackTree");
+                    "RedBlackTreeMap");
         Node x = floor(root, key);
         if (x == null)
             return null;
@@ -805,20 +805,20 @@ public class RedBlackTree<K extends Comparable<K>, V> {
 
     /**
      * Returns the smallest key greater than or equal to key in the
-     * RedBlackTree.
+     * RedBlackTreeMap.
      *
      * @param key, the key to be searched
      * @return the smallest key greater than or equal to key in the
-     *         RedBlackTree.
+     *         RedBlackTreeMap.
      * @throws IllegalArgumentException if the key is null
-     * @throws NoSuchElementException if the RedBlackTree is empty
+     * @throws NoSuchElementException if the RedBlackTreeMap is empty
      */
     public K ceil(K key) {
         if (key == null)
             throw new IllegalArgumentException("ceil with null key");
         if (isEmpty())
             throw new NoSuchElementException("ceil with empty " +
-                    "RedBlackTree");
+                    "RedBlackTreeMap");
         Node x = ceil(root, key);
         if (x == null)
             return null;
@@ -847,10 +847,10 @@ public class RedBlackTree<K extends Comparable<K>, V> {
     }
 
     /**
-     * Return the k-th smallest key in the RedBlackTree.
+     * Return the k-th smallest key in the RedBlackTreeMap.
      *
      * @param k, the kth number
-     * @return the k-th smallest key in the RedBlackTree.
+     * @return the k-th smallest key in the RedBlackTreeMap.
      * @throws IllegalArgumentException if k is invalid
      */
     public K select(int k) {
@@ -878,11 +878,11 @@ public class RedBlackTree<K extends Comparable<K>, V> {
     }
 
     /**
-     * Return the number of keys in the RedBlackTree less than the
+     * Return the number of keys in the RedBlackTreeMap less than the
      * given key.
      *
      * @param  key, the key to be searched
-     * @return the number of keys in the RedBlackTree less than the
+     * @return the number of keys in the RedBlackTreeMap less than the
      *         given key.
      * @throws IllegalArgumentException if the key is null
      */
@@ -897,7 +897,7 @@ public class RedBlackTree<K extends Comparable<K>, V> {
      *
      * @param x
      * @param key
-     * @return the number of keys in the RedBlackTree less than the
+     * @return the number of keys in the RedBlackTreeMap less than the
      *         given key from x
      */
     private int rank(K key, Node x) {
@@ -912,10 +912,10 @@ public class RedBlackTree<K extends Comparable<K>, V> {
     }
 
     /**
-     * Returns all the keys in the RedBlackTree ordered
+     * Returns all the keys in the RedBlackTreeMap ordered
      * from the smallest key to the largest key, in an Iterable.
      *
-     * @return all the keys in the RedBlackTree ordered
+     * @return all the keys in the RedBlackTreeMap ordered
      * from the smallest key to the largest key, in an Iterable.
      */
     public Iterable<K> keys() {
@@ -923,12 +923,12 @@ public class RedBlackTree<K extends Comparable<K>, V> {
     }
 
     /**
-     * Returns all keys in the RedBlackTree in the range between
+     * Returns all keys in the RedBlackTreeMap in the range between
      * lo and hi, in order, in an Iterable.
      *
      * @param  lo, lower bound
      * @param  hi, upper bound
-     * @return all keys in the RedBlackTree in the range between
+     * @return all keys in the RedBlackTreeMap in the range between
      *         lo and hi, in order, in an Iterable.
      * @throws IllegalArgumentException if lo is null
      * @throws IllegalArgumentException if hi is null
@@ -939,7 +939,7 @@ public class RedBlackTree<K extends Comparable<K>, V> {
         if (hi == null)
             throw new IllegalArgumentException("keys with null hi");
 
-        Queue<K> queue = new Queue();
+        QueueLinkedList<K> queue = new QueueLinkedList();
         keys(root, queue, lo, hi);
         return queue;
     }
@@ -952,7 +952,7 @@ public class RedBlackTree<K extends Comparable<K>, V> {
      * @param lo
      * @param hi
      */
-    private void keys(Node x, Queue<K> queue, K lo, K hi) {
+    private void keys(Node x, QueueLinkedList<K> queue, K lo, K hi) {
         if (x == null)
             return;
 
@@ -974,9 +974,9 @@ public class RedBlackTree<K extends Comparable<K>, V> {
 ##### Java
 
 ```
-package com.example;
+package datastructures.trees;
 
-import com.example.utils.Queue;
+import datastructures.lists.QueueLinkedList;
 import java.util.NoSuchElementException;
 
 public class RedBlackTreeSet<K extends Comparable<K>> {
@@ -1602,7 +1602,7 @@ public class RedBlackTreeSet<K extends Comparable<K>> {
         if (hi == null)
             throw new IllegalArgumentException("keys with null hi");
 
-        Queue<K> queue = new Queue();
+        QueueLinkedList<K> queue = new QueueLinkedList();
         keys(root, queue, lo, hi);
         return queue;
     }
@@ -1615,7 +1615,7 @@ public class RedBlackTreeSet<K extends Comparable<K>> {
      * @param lo
      * @param hi
      */
-    private void keys(Node x, Queue<K> queue, K lo, K hi) {
+    private void keys(Node x, QueueLinkedList<K> queue, K lo, K hi) {
         if (x == null)
             return;
 

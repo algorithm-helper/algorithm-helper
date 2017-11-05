@@ -214,7 +214,7 @@ needed.
 ##### Java
 
 ```
-package com.example;
+package algorithms.sorting;
 
 public class HeapSort<T extends Comparable<T>> {
 

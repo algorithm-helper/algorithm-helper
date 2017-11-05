@@ -2,12 +2,11 @@
 
 A queue is a linear data structure in which elements are inserted and 
 removed in first-in-first-out (FIFO) procedure, and can be implemented
-using a linked list or a vector/dynamically resizing array. The operation
-`enqueue` adds an element to the back of the queue, the operation `dequeue`
-removes the front-most element of the stack, and the operation `peek`
-returns the front-most element's `item`, without removing it from the queue.
-Since it is FIFO, if we `enqueue` two elements, we cannot retrieve the 
-second one before dequeuing out the first one.
+using a linked list or a dynamic array. The operation `enqueue` adds an element 
+to the back of the queue, the operation `dequeue` removes the front-most element 
+of the queue, and the operation `peek` returns the front-most element's `item`, 
+without removing it from the queue. Since it is FIFO, if we `enqueue` two 
+elements, we cannot retrieve the second one before dequeuing out the first one.
 
 ### Visualization
 
@@ -48,7 +47,7 @@ Exception: cannot dequeue from empty queue.
 ### Operations
 
 Note that we are using a double ended linked list, as well as a modified 
-vector/dynamically resizing array with a `first` index to be able to track the 
+dynamic array with a `first` index to be able to track the 
 array index of the front-most element in the queue.
 
 - `enqueue`
@@ -56,41 +55,41 @@ array index of the front-most element in the queue.
         - Insert a node at the end of the linked list by pointing `last`
         to the new node, and if it is the first element to be inserted, point
         `first` to the new node as well.
-    - Using vector/dynamically resizing array:
+    - Using dynamic array:
         - Insert the element at the `last` index, then increment `last`, resize 
         the array if necessary.
 - `dequeue`
     - Using linked list: 
         - Save the node at `first`, then point `first` to its `next` node, then 
         return the saved node.
-    - Using vector/dynamically resizing array:
+    - Using dynamic array:
         - Save the element at the `first` index, then increment `first`, resize 
         the array if necessary.
 - `peek`
     - Using linked list: 
         - Return the `item` of the node at the front of the linked list.
-    - Using vector/dynamically resizing array:
+    - Using dynamic array:
         - Return the element at the `first` index.
 
 With a linked list, a queue is essentially only limited to `insertBack`, 
-`removeFront` and `peekFront`. With a vector/dynamically resizing array,
+`removeFront` and `peekFront`. With a dynamic array,
 a stack is essentially only limited to `insertBack`, `removeFront` and 
 `peekBack`. 
 
-Note that with the vector/dynamically resizing array implementation,
-because when we are dequeuing elements we need to increment `first`, the `first` 
-index does not necessarily correspond to index 0. It follows that this would 
-waste unnecessary amounts of space at the front of the array, before `first`.
-So whenever we need to resize the array, the elements get copied to the new 
-array starting at index 0, and the `first` and `last` indices are updated 
-accordingly. See the implementation below for clarification.
+Note that with the dynamic array implementation, because when we are dequeuing 
+elements we need to increment `first`, the `first` index does not necessarily 
+correspond to index 0. It follows that this would waste unnecessary amounts of 
+space at the front of the array, before `first`. So whenever we need to resize 
+the array, the elements get copied to the new array starting at index 0, and 
+the `first` and `last` indices are updated accordingly. See the implementation 
+below for clarification.
 
 ### Implementation (using Linked List)
 
 ##### Java
 
 ```
-package com.example;
+package datastructures.lists;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
@@ -247,17 +246,17 @@ public class QueueLinkedList<T> implements Iterable<T> {
 }
 ```
 
-### Implementation (using Vector)
+### Implementation (using Dynamic Array)
 
 ##### Java
 
 ```
-package com.example;
+package datastructures.lists;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class QueueResizingArray<T> implements Iterable<T> {
+public class QueueDynamicArray<T> implements Iterable<T> {
 
     private T[] arr;
     private int first;
@@ -265,9 +264,9 @@ public class QueueResizingArray<T> implements Iterable<T> {
     private int n;
 
     /**
-     * Initializes an empty QueueResizingArray.
+     * Initializes an empty QueueDynamicArray.
      */
-    public QueueResizingArray() {
+    public QueueDynamicArray() {
         arr = (T[]) new Object[2];
         n = 0;
         first = 0;
@@ -275,10 +274,10 @@ public class QueueResizingArray<T> implements Iterable<T> {
     }
 
     /**
-     * Return true is this QueueResizingArray contains no elements, otherwise
+     * Return true is this QueueDynamicArray contains no elements, otherwise
      * false.
      *
-     * @return true is this QueueResizingArray contains no elements, otherwise
+     * @return true is this QueueDynamicArray contains no elements, otherwise
      *         false
      */
     public boolean isEmpty() {
@@ -286,16 +285,16 @@ public class QueueResizingArray<T> implements Iterable<T> {
     }
 
     /**
-     * Returns the number of elements contained in the QueueResizingArray.
+     * Returns the number of elements contained in the QueueDynamicArray.
      *
-     * @return the number of elements contained in the QueueResizingArray
+     * @return the number of elements contained in the QueueDynamicArray
      */
     public int size() {
         return n;
     }
 
     /**
-     * Resizes the QueueResizingArray arr field to newSize.
+     * Resizes the QueueDynamicArray arr field to newSize.
      *
      * @param newSize, the new size of the arr
      * @throws IllegalArgumentException if newSize <= 0
@@ -312,7 +311,7 @@ public class QueueResizingArray<T> implements Iterable<T> {
     }
 
     /**
-     * Inserts item to the back of the QueueResizingArray, but if the arr
+     * Inserts item to the back of the QueueDynamicArray, but if the arr
      * exceeds its capacity, then double the size of the arr.
      *
      * @param item, the item to be inserted
@@ -331,16 +330,16 @@ public class QueueResizingArray<T> implements Iterable<T> {
     }
 
     /**
-     * Removes item at the ffront of the QueueResizingArray, and returns it, but
+     * Removes item at the ffront of the QueueDynamicArray, and returns it, but
      * if the arr is below a quarter of the arr capacity, halve the arr size
      *
-     * @return the item at the front of the QueueResizingArray
-     * @throws NoSuchElementException if this QueueResizingArray is empty
+     * @return the item at the front of the QueueDynamicArray
+     * @throws NoSuchElementException if this QueueDynamicArray is empty
      */
     public T dequeue() {
         if (isEmpty())
             throw new NoSuchElementException("dequeue from empty " +
-                    "QueueResizingArray");
+                    "QueueDynamicArray");
 
         T item = arr[first];
         arr[first] = null;
@@ -354,24 +353,24 @@ public class QueueResizingArray<T> implements Iterable<T> {
     }
 
     /**
-     * Returns the item at the front of the QueueResizingArray.
+     * Returns the item at the front of the QueueDynamicArray.
      *
-     * @return the item at the front of the QueueResizingArray
-     * @throws NoSuchElementException if this QueueResizingArray is empty
+     * @return the item at the front of the QueueDynamicArray
+     * @throws NoSuchElementException if this QueueDynamicArray is empty
      */
     public T peek() {
         if (isEmpty())
             throw new NoSuchElementException("peek from empty " +
-                    "QueueResizingArray");
+                    "QueueDynamicArray");
         return arr[first];
     }
 
     /**
-     * Returns a String representation of the QueueResizingArray, in the form
-     * [x0, x1, ... xn] where x0...xn are elements of the QueueResizingArray in
+     * Returns a String representation of the QueueDynamicArray, in the form
+     * [x0, x1, ... xn] where x0...xn are elements of the QueueDynamicArray in
      * forward order.
      *
-     * @return a String representation of the QueueResizingArray, with elements
+     * @return a String representation of the QueueDynamicArray, with elements
      *         separated by a comma and space
      */
     public String toString() {
@@ -390,11 +389,11 @@ public class QueueResizingArray<T> implements Iterable<T> {
     }
 
     /**
-     * Returns an Iterator to the QueueResizingArray that iterates through the
-     * elements of the QueueResizingArray in forward order.
+     * Returns an Iterator to the QueueDynamicArray that iterates through the
+     * elements of the QueueDynamicArray in forward order.
      *
-     * @return an Iterator to the QueueResizingArray that iterates through the
-     *         elements of the QueueResizingArray in forward order.
+     * @return an Iterator to the QueueDynamicArray that iterates through the
+     *         elements of the QueueDynamicArray in forward order.
      */
     public Iterator<T> iterator() {
         return new Iterator<T>() {
@@ -423,14 +422,14 @@ public class QueueResizingArray<T> implements Iterable<T> {
 ### Time Complexity
 
 The following table describes the time complexity for performing the operations 
-above on a queue, comparing between the linked list and the vector/dynamically 
-resizing array implementation:
+above on a queue, comparing between the linked list and the dynamic array 
+implementation:
 
 ```
-| Data Structure                                    | enqueue | dequeue | peek |
-|---------------------------------------------------|---------|---------|------|
-| queue (using linked list)                         | O(1)    | O(1)    | O(1) |
-| queue (using vector / dynamically resizing array) | O(1)*   | O(1)*   | O(1) |
+| Data Structure              | enqueue | dequeue | peek |
+|-----------------------------|---------|---------|------|
+| queue (using linked list)   | O(1)    | O(1)    | O(1) |
+| queue (using dynamic array) | O(1)*   | O(1)*   | O(1) |
 ```
 
 \* Amortized

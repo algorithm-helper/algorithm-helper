@@ -9,9 +9,9 @@ operation.
 
 ### Example
 
-The example used here will be in the context of vectors/dynamically resizing 
-arrays, and the amortized cost of inserting elements when we have to double the 
-size of the underlying array when it becomes full:
+The example used here will be in the context of dynamic arrays, and the 
+amortized cost of inserting elements when we have to double the size of the 
+underlying array when it becomes full:
 
 ```
 // Starting array:
@@ -21,18 +21,15 @@ size of the underlying array when it becomes full:
 [a1]
 
 // Insert a2, by first doubling the size of the array:
-[a1][  ]
 [a1][a2]
 
 // Insert a3, by first doubling the size of the array:
-[a1][a2][  ][  ]
 [a1][a2][a3][  ]
 
 // Insert a4:
 [a1][a2][a3][a4]
 
 // Insert a5, by first doubling the size of the array:
-[a1][a2][a3][a4][  ][  ][  ][  ]
 [a1][a2][a3][a4][a5][  ][  ][  ]
 
 // Insert a6:

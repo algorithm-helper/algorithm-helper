@@ -7,7 +7,7 @@
             {
                 "topic": "lists",
                 "title": "Lists",
-                "description": "Learn about linear data structures like Linked Lists, Vectors, Stacks, Queues, and Union Find, as well as amortization.",                
+                "description": "Learn about linear data structures like linked lists, dynamic arrays, stacks, queues as well as amortization.",                
                 "url": "/lists",
                 "articles": [
                     {
@@ -20,55 +20,49 @@
                         "article": "linked-list",
                         "title": "Linked List",
                         "url": "/linked-list",
-                        "description": "Learn about the Linked List, a recursively defined, sequence of Nodes with pointers to the next Nodes in the sequence, and a head pointer."
+                        "description": "Learn about the linked list, a recursively defined, sequence of nodes with pointers to the next nodes in the sequence."
                     },
                     {
                         "article": "double-ended-linked-list",
                         "title": "Double Ended Linked List",
                         "url": "/double-ended-linked-list",
-                        "description": "Learn about the Double Ended Linked List, an augmentation to the Linked List where Nodes have a next and previous pointer."
+                        "description": "Learn about the double ended linked list, an augmentation to the linked list where nodes point to the next and previous nodes."
                     },
                     {
-                        "article": "vector-dynamically-resizing-array",
-                        "title": "Vector / Dynamically Resizing Array",
-                        "url": "/vector-dynamically-resizing-array",
-                        "description": "Learn about the Vector / Dynamically Resizing Array, an array-based data structure that allows for the expansion of the size of the array."
+                        "article": "dynamic-array",
+                        "title": "Dynamic Array",
+                        "url": "/dynamic-array",
+                        "description": "Learn about the dynamic array, an array-based data structure that allows for the expansion of the size of the array."
                     },
                     {
                         "article": "amortization",
                         "title": "Amortization",
                         "url": "/amortization",
-                        "description": "Learn about Amortization, an analysis method for time and space complexity, and its context within data structures and algorithms."
+                        "description": "Learn about amortization, an analysis method for time and space complexity, and its context within data structures and algorithms."
                     },
                     {
                         "article": "stack",
                         "title": "Stack",
                         "url": "/stack",
-                        "description": "Learn about the Stack, a fundamental last-in-first-out data structure, and its implementations with both a Linked List and Vector."
+                        "description": "Learn about the stack, a fundamental last-in-first-out data structure, and its implementations with both a linked list and a dynamic array."
                     },
                     {
                         "article": "queue",
                         "title": "Queue",
                         "url": "/queue",
-                        "description": "Learn about the Queue, a fundamental first-in-first-out data structure, and its implementations with both a Linked List and Vector."
+                        "description": "Learn about the queue, a fundamental first-in-first-out data structure, and its implementations with both a linked list and a dynamic array."
                     },
                     {
-                        "article": "deque-double-ended-queue",
-                        "title": "Deque / Double Ended Queue",
-                        "url": "/deque-double-ended-queue",
-                        "description": "Learn about the Deque / Double Ended Queue, an abstract data structure that supports adding and removing elements from the front and back."                        
-                    },
-                    {
-                        "article": "union-find-disjoint-set",
-                        "title": "Union Find / Disjoint Set",
-                        "url": "/union-find-disjoint-set",
-                        "description": "Learn about the Union Find / Disjoint Set, a data structure used to represent connected components and in the problem of dynamic connectivity."                        
+                        "article": "double-ended-queue",
+                        "title": "Double Ended Queue",
+                        "url": "/double-ended-queue",
+                        "description": "Learn about the double ended queue, an abstract data structure that supports adding and removing elements from the front and back."                        
                     },
                     {
                         "article": "iterator-iterable",
                         "title": "Iterator / Iterable",
                         "url": "/iterator-iterable",
-                        "description": "Learn about the Iterator / Iterable, an abstract data structure used for traversing a List structure."
+                        "description": "Learn about the iterator / iterable, an abstract data structure used for traversing a list structure."
                     },
                     {
                         "article": "time-and-space-complexity",
@@ -82,7 +76,7 @@
                 "topic": "trees",
                 "title": "Trees",
                 "url": "/trees",
-                "description": "Learn about using binary and balanced binary search trees to implement Maps/Sets with logarithmic performance.",                
+                "description": "Learn about using binary and balanced binary search trees to implement maps and sets with logarithmic performance.",                
                 "articles": [
                     {
                         "article": "introduction",
@@ -94,55 +88,61 @@
                         "article": "map-symbol-table",
                         "title": "Map / Symbol Table",
                         "url": "/map-symbol-table",
-                        "description": "Learn about the Map / Symbol Table, an abstract data structure for maintaining a collection of (key, value) pairs."
+                        "description": "Learn about the map / symbol table, an abstract data structure for maintaining a collection of (key, value) pairs."
                     },
                     {
                         "article": "set",
                         "title": "Set",
                         "url": "/set",
-                        "description": "Learn about the Set, an abstract data structure for maintaining a collection of unique key elements."
+                        "description": "Learn about the set, an abstract data structure for maintaining a collection of unique key elements."
                     },
                     {
                         "article": "binary-search-tree",
                         "title": "Binary Search Tree",
                         "url": "/binary-search-tree",
-                        "description": "Learn about the Binary Search Tree, a tree data structure that uses binary search for the efficient retrieval of elements."
+                        "description": "Learn about the binary search tree, a tree data structure that uses binary search for the efficient retrieval of elements."
                     },
                     {
                         "article": "balanced-binary-search-tree",
                         "title": "Balanced Binary Search Tree",
                         "url": "/balanced-binary-search-tree",
-                        "description": "Learn about the Balanced Binary Search Tree, a tree data structure that guarantees logarithmic performance by keeping balanced."
+                        "description": "Learn about the balanced binary search tree, a tree data structure that guarantees logarithmic performance by keeping balanced."
                     },
                     {
                         "article": "2-3-tree",
                         "title": "2-3 Tree",
                         "url": "/2-3-tree",
-                        "description": "Learn about the 2-3 Tree, a tree data structure that keeps balance through the mechanism of 2-Nodes and 3-Nodes."
+                        "description": "Learn about the 2-3 tree, a tree data structure that keeps balance through the mechanism of 2-Nodes and 3-Nodes."
                     },
                     {
                         "article": "red-black-tree",
                         "title": "Red-Black Tree",
                         "url": "/red-black-tree",
-                        "description": "Learn about the Red-Black Tree, a tree data structure derived from the 2-3 Tree, that keeps balance using red and black colored Nodes."
+                        "description": "Learn about the red-black tree, a tree data structure derived from the 2-3 tree, that keeps balance using red and black colored nodes."
                     },
                     {
                         "article": "avl-tree",
                         "title": "AVL Tree",
                         "url": "/avl-tree",
-                        "description": "Learn about the AVL Tree, a tree data structure that keeps balance through maintaining balance between the heights of subtrees."
+                        "description": "Learn about the AVL tree, a tree data structure that keeps balance through maintaining balance between the heights of subtrees."
                     },
                     {
                         "article": "heap",
                         "title": "Heap",
                         "url": "/heap",
-                        "description": "Learn about the Heap, a tree data structure that represents the tree in a single array, and implementations for Binary Min/Max Heaps."
+                        "description": "Learn about the heap, a tree data structure that represents the tree in a single array, and implementations for binary min/max heaps."
                     },
                     {
                         "article": "priority-queue",
                         "title": "Priority Queue",
                         "url": "/priority-queue",
-                        "description": "Learn about the Priority Queue, a data structure that uses the Heap data structure to allow for efficient retrieval of min/max elements."
+                        "description": "Learn about the priority queue, a data structure that uses the heap data structure to allow for efficient retrieval of min/max elements."
+                    },
+                    {
+                        "article": "union-find-disjoint-set",
+                        "title": "Union Find / Disjoint Set",
+                        "url": "/union-find-disjoint-set",
+                        "description": "Learn about the union find / disjoint set, a data structure used to represent connected components in the problem of dynamic connectivity."                        
                     },
                     {
                         "article": "time-and-space-complexity",
@@ -156,7 +156,7 @@
                 "topic": "hashing",
                 "title": "Hashing",
                 "url": "/hashing",
-                "description": "Learn about using hash functions to implement Maps/Sets, with efficient (constant, amortized) time for all operations.",                
+                "description": "Learn about using hash functions to implement hash maps and hash sets with efficient (constant, amortized) time for all operations.",                
                 "articles": [
                     {
                         "article": "introduction",
@@ -168,31 +168,31 @@
                         "article": "hash-function",
                         "title": "Hash Function",
                         "url": "/hash-function",
-                        "description": "Learn about the Hash Function, a function that enables mapping data of an arbitrary size to data of fixed size."
+                        "description": "Learn about the hash function, a function that enables mapping data of an arbitrary size to data of fixed size."
                     },
                     {
                         "article": "collision-resolution",
                         "title": "Collision Resolution",
                         "url": "/collision-resolution",
-                        "description": "Learn about Collision Resolution, the techniques used when dealing with situations where more than one element hash to the same place."
+                        "description": "Learn about collision resolution, the techniques used when dealing with situations where more than one element hash to the same place."
                     },
                     {
                         "article": "simple-uniform-hashing-assumption",
                         "title": "Simple Uniform Hashing Assumption",
                         "url": "/simple-uniform-hashing-assumption",
-                        "description": "Learn about the Simple Uniform Hashing Assumption, the basic mathematical assumption that enables the analysis of Hash Tables / Hash Maps."
+                        "description": "Learn about the Simple Uniform Hashing Assumption, the basic mathematical assumption that enables the analysis of hash maps."
                     },
                     {
-                        "article": "hash-table-hash-map",
-                        "title": "Hash Table / Hash Map",
-                        "url": "/hash-table-hash-map",
-                        "description": "Learn about the Hash Table / Hash Map, and its implementations with Separate Chaining and Linear Probing, that allows for constant time for all operations."
+                        "article": "hash-map",
+                        "title": "Hash Map",
+                        "url": "/hash-map",
+                        "description": "Learn about the hash map, and its implementations with separate chaining and linear probing, that allows for constant time for all operations."
                     },
                     {
                         "article": "hash-set",
                         "title": "Hash Set",
                         "url": "/hash-set",
-                        "description": "Learn about the Hash Set, and its use to represent the abstract data structure of a Set, but using hashing to allow for constant time for all operations."
+                        "description": "Learn about the hash set, and its use to represent the abstract data structure of a set, but using hashing to allow for constant time for all operations."
                     },
                     {
                         "article": "time-and-space-complexity",
@@ -225,25 +225,25 @@
                         "article": "binary-search",
                         "title": "Binary Search",
                         "url": "/binary-search",
-                        "description": "Learn about Binary Search, a searching algorithm for retrieving elements in a sorted array in logarithmic time."                    
+                        "description": "Learn about binary search, a searching algorithm for retrieving elements in a sorted array in logarithmic time."                    
                     },
                     {
                         "article": "ternary-search",
                         "title": "Ternary Search",
                         "url": "/ternary-search",
-                        "description": "Learn about Ternary Search, a searching algorithm for finding the min/max element of a unimodal function."
+                        "description": "Learn about ternary search, a searching algorithm for finding the min/max element of a unimodal function."
                     },
                     {
                         "article": "jump-search",
                         "title": "Jump Search",
                         "url": "/jump-search",
-                        "description": "Learn about Jump Search, a searching algorithm for retrieving elements in a sorted array by taking steps of size sqrt(N)."
+                        "description": "Learn about jump search, a searching algorithm for retrieving elements in a sorted array by taking steps of size sqrt(N)."
                     },
                     {
                         "article": "interpolation-search",
                         "title": "Interpolation Search",
                         "url": "/interpolation-search",
-                        "description": "Learn about Interpolation Search, a searching algorithm for retrieving elements in a sorted array with elements uniformly distributed."
+                        "description": "Learn about interpolation search, a searching algorithm for retrieving elements in a sorted array with elements uniformly distributed."
                     },
                     {
                         "article": "time-and-space-complexity",
@@ -257,7 +257,7 @@
                 "topic": "sorting",
                 "title": "Sorting",
                 "url": "/sorting",
-                "description": "Learn about the fundamental problem of sorting, and algorithms like Merge Sort, Quick Sort and Heap Sort.",                
+                "description": "Learn about the fundamental problem of sorting, and algorithms like merge sort, quick sort and heap sort.",                
                 "articles": [
                     {
                         "article": "introduction",
@@ -269,73 +269,73 @@
                         "article": "stability",
                         "title": "Stability",
                         "url": "/stability",
-                        "description": "Learn about Stability, which refers to the property of sorting algorithms to be able to keep identical elements in the same final order."
+                        "description": "Learn about stability, which refers to the property of sorting algorithms to be able to keep identical elements in the same final order."
                     },
                     {
                         "article": "in-place",
                         "title": "In-Place",
                         "url": "/in-place",
-                        "description": "Learn about In-Place, where refers to the property of sorting algorithms to be able to be performed without the use of auxiliary space."
+                        "description": "Learn about in-place, where refers to the property of sorting algorithms to be able to be performed without the use of auxiliary space."
                     },
                     {
                         "article": "selection-sort",
                         "title": "Selection Sort",
                         "url": "/selection-sort",
-                        "description": "Learn about Selection Sort, a sorting algorithm that works by iterating through the array, selecting the minimum element each time."
+                        "description": "Learn about selection sort, a sorting algorithm that works by iterating through the array, selecting the minimum element each time."
                     },
                     {
                         "article": "insertion-sort",
                         "title": "Insertion Sort",
                         "url": "/insertion-sort",
-                        "description": "Learn about Insertion Sort, a sorting algorithm that works by inserting the next element into the current sorted array."
+                        "description": "Learn about insertion sort, a sorting algorithm that works by inserting the next element into the current sorted array."
                     },
                     {
                         "article": "shell-sort",
                         "title": "Shell Sort",
                         "url": "/shell-sort",
-                        "description": "Learn about Shell Sort, a sorting algorithm that uses h-sorting, and takes advantage of Insertion Sort's efficiency with nearly sorted arrays."
+                        "description": "Learn about shell sort, a sorting algorithm that uses h-sorting, and takes advantage of insertion sort's efficiency with nearly sorted arrays."
                     },
                     {
                         "article": "divide-and-conquer",
                         "title": "Divide and Conquer",
                         "url": "/divide-and-conquer",
-                        "description": "Learn about Divide and Conquer, an algorithm design paradigm that recursively breaks down a larger problem into easier, smaller, subproblems."
+                        "description": "Learn about divide and conquer, an algorithm design paradigm that recursively breaks down a larger problem into easier, smaller, subproblems."
                     },
                     {
                         "article": "merge-sort",
                         "title": "Merge Sort",
                         "url": "/merge-sort",
-                        "description": "Learn about Merge Sort, an efficient sorting algorithm that works by recursively breaking down subarrays and merging sorted subarrays."
+                        "description": "Learn about merge sort, an efficient sorting algorithm that works by recursively breaking down subarrays and merging sorted subarrays."
                     },
                     {
                         "article": "quick-sort",
                         "title": "Quick Sort",
                         "url": "/quick-sort",
-                        "description": "Learn about Quick Sort, an efficient sorting algorithm that works by using a pivot and recurively sorting elements to the left and right of the pivot."
+                        "description": "Learn about quick sort, an efficient sorting algorithm that works by using a pivot and recurively sorting elements to the left and right of the pivot."
                     },
                     {
                         "article": "heap-sort",
                         "title": "Heap Sort",
                         "url": "/heap-sort",
-                        "description": "Learn about Heap Sort, an efficient sorting algorithm that works by building a Binary Min Heap out of the elements, and swapping the min element with the last element."
+                        "description": "Learn about heap sort, an efficient sorting algorithm that works by building a binary min heap out of the elements, and swapping the min element with the last element."
                     },
                     {
                         "article": "bucket-sort",
                         "title": "Bucket Sort",
                         "url": "/bucket-sort",
-                        "description": "Learn about Bucket Sort, a sorting algorithm that runs in linear time in the context of sorting integer elements, by moving them to array indices that match the element."
+                        "description": "Learn about bucket sort, a sorting algorithm that runs in linear time in the context of sorting integer elements, by moving them to array indices that match the element."
                     },
                     {
                         "article": "radix-sort",
                         "title": "Radix Sort",
                         "url": "/radix-sort",
-                        "description": "Learn about Radix Sort, a sorting algorithm that is used to sort integer elements through the use of looking at the least to most significant digits of the elements."
+                        "description": "Learn about radix sort, a sorting algorithm that is used to sort integer elements through the use of looking at the least to most significant digits of the elements."
                     },
                     {
                         "article": "comparator-comparable",
                         "title": "Comparator / Comparable",
                         "url": "/comparator-comparable",
-                        "description": "Learn about the Comparator / Comparable, an abstract data structure that enables the comparison of two Objects to create more generic sorting algorithms."
+                        "description": "Learn about the comparator / comparable, an abstract data structure that enables the comparison of two objects to create more generic sorting algorithms."
                     },
                     {
                         "article": "time-and-space-complexity",
@@ -393,43 +393,43 @@
                         "article": "undirected-and-directed-graphs",
                         "title": "Undirected and Directed Graphs",
                         "url": "/undirected-and-directed-graphs",
-                        "description": "Learn about Undirected and Directed Graphs, two types of graphs that greatly dictate the limitations of certain algorithms used on them."
+                        "description": "Learn about undirected and directed graphs, two types of graphs that greatly dictate the limitations of certain algorithms used on them."
                     },
                     {
                         "article": "sparse-and-dense-graphs",
                         "title": "Sparse and Dense Graphs",
                         "url": "/sparse-and-dense-graphs",
-                        "description": "Learn about Sparse and Dense Graphs, two types of graphs that refer to the property of the number of vertex and edges within the graph."
+                        "description": "Learn about sparse and dense graphs, two types of graphs that refer to the property of the number of vertex and edges within the graph."
                     },
                     {
                         "article": "graph-representation",
                         "title": "Graph Representation",
                         "url": "/graph-representation",
-                        "description": "Learn about Graph Representation, and the three main implementations using Edge Lists, Vertex Matricies, and Adjacency Lists."
+                        "description": "Learn about graph representation, and the three main implementations using edge lists, vertex matrices, and adjacency lists."
                     },
                     {
                         "article": "path-finding",
                         "title": "Path Finding",
                         "url": "/path-finding",
-                        "description": "Learn about Path Finding, the fundamental problem within graphs of being able to find a sequence of edges that go from a starting vertex to ending vertex."
+                        "description": "Learn about path finding, the fundamental problem within graphs of being able to find a sequence of edges that go from a starting vertex to ending vertex."
                     },
                     {
                         "article": "depth-first-search",
                         "title": "Depth First Search",
                         "url": "/depth-first-search",
-                        "description": "Learn about Depth First Search, a basic graph traversal algorithm with the property of always choosing adjacent vertices to be the next to be traversed."
+                        "description": "Learn about depth first search, a basic graph traversal algorithm with the property of always choosing adjacent vertices to be the next to be traversed."
                     },
                     {
                         "article": "breadth-first-search",
                         "title": "Breadth First Search",
                         "url": "/breadth-first-search",
-                        "description": "Learn about Breadth First Search, a basic graph traversal algorithm with the property of always at the same level to be the next to be traversed."
+                        "description": "Learn about breadth first search, a basic graph traversal algorithm with the property of always at the same level to be the next to be traversed."
                     },
                     {
                         "article": "topological-sort",
                         "title": "Topological Sort",
                         "url": "/topological-sort",
-                        "description": "Learn about Topological Sort, an algorithm for the linear ordering of vertices in a graph such that for all edges (u, v), u comes before v."
+                        "description": "Learn about topological sort, an algorithm for the linear ordering of vertices in a graph such that for all edges (u, v), u comes before v."
                     },
                     {
                         "article": "kahns-topological-sort-algorithm",
@@ -441,7 +441,7 @@
                         "article": "strongly-connected-components",
                         "title": "Strongly Connected Components",
                         "url": "/strongly-connected-components",
-                        "description": "Learn about Strongly Connected Components, a property such that there exists a path from any vertex to every other vertex in a subgraph."
+                        "description": "Learn about strongly connected components, a property such that there exists a path from any vertex to every other vertex in a subgraph."
                     },
                     {
                         "article": "kosarajus-algorithm",
@@ -453,13 +453,13 @@
                         "article": "weighted-graph",
                         "title": "Weighted Graph",
                         "url": "/weighted-graph",
-                        "description": "Learn about Weighted Graphs, which are graphs such that the edges are given a numerical weight, which may represent length, cost, or capacity."
+                        "description": "Learn about weighted graphs, which are graphs such that the edges are given a numerical weight, which may represent length, cost, or capacity."
                     },
                     {
                         "article": "cycle-detection",
                         "title": "Cycle Detection",
                         "url": "/cycle-detection",
-                        "description": "Learn about Cycle Detection, which is the problem of determining the start and length of cycles within an graph, circular Linked list, or iterated function."
+                        "description": "Learn about cycle detection, which is the problem of determining the start and length of cycles within an graph, circular linked list, or iterated function."
                     },
                     {
                         "article": "floyds-algorithm",
@@ -477,13 +477,13 @@
                         "article": "shortest-path-finding",
                         "title": "Shortest Path Finding",
                         "url": "/shortest-path-finding",
-                        "description": "Learn about Shortest Path Finding, which is a fundamental problem in graph theory of being able to find the path from one vertex to another with the least combined weight."
+                        "description": "Learn about shorted path finding, which is a fundamental problem in graph theory of being able to find the path from one vertex to another with the least combined weight."
                     },
                     {
                         "article": "edge-relaxation",
                         "title": "Edge Relaxation",
                         "url": "/edge-relaxation",
-                        "description": "Learn about Edge Relaxation, which is a common operation used in shortest path finding algorithms, that is used to lower the cost of reaching a vertex by using another vertex."
+                        "description": "Learn about edge relaxation, which is a common operation used in shortest path finding algorithms, that is used to lower the cost of reaching a vertex by using another vertex."
                     },
                     {
                         "article": "dijkstras-algorithm",
@@ -513,13 +513,13 @@
                         "article": "greedy-algorithm",
                         "title": "Greedy Algorithm",
                         "url": "/greedy-algorithm",
-                        "description": "Learn about Greedy Algorithms, a class of algorithms with the property of always choosing the locally optimal choice with the goal of achieving a globally optimal solution."
+                        "description": "Learn about greedy algorithms, a class of algorithms with the property of always choosing the locally optimal choice with the goal of achieving a globally optimal solution."
                     },
                     {
                         "article": "minimum-spanning-tree",
                         "title": "Minimum Spanning Tree",
                         "url": "/minimum-spanning-tree",
-                        "description": "Learn about Minimum Spanning Trees, which are a set of edges of a graph such that they connect all of the vertices with no cycles between them."
+                        "description": "Learn about minimum spanning trees, which are a set of edges of a graph such that they connect all of the vertices with no cycles between them."
                     },
                     {
                         "article": "prims-algorithm",
@@ -537,13 +537,13 @@
                         "article": "network-flow",
                         "title": "Network Flow",
                         "url": "/network-flow",
-                        "description": "Learn about Network Flow, a type of graph such that all edges have capacities, and recieve flows, and the flow cannot exceed the capacity."
+                        "description": "Learn about network flow, a type of graph such that all edges have capacities, and recieve flows, and the flow cannot exceed the capacity."
                     },
                     {
                         "article": "max-flow-min-cut",
                         "title": "Max Flow Min Cut",
                         "url": "/max-flow-min-cut",
-                        "description": "Learn about Max Flow Min Cut, a concept in network flow that states the max flow from the source to sink is equal to the total weight fo the edges in the min cut."
+                        "description": "Learn about max flow min cut, a concept in network flow that states the max flow from the source to sink is equal to the total weight fo the edges in the min cut."
                     },
                     {
                         "article": "ford-fulkerson-algorithm",
@@ -582,25 +582,25 @@
                         "article": "class-and-instance",
                         "title": "Class and Instance",
                         "url": "/class-and-instance",
-                        "description": "Learn about Classes and Instances, which are are structures for a template of creating Objects, and concrete occurences of that Object."
+                        "description": "Learn about classes and instances, which are are structures for a template of creating objects, and concrete occurences of that object."
                     },
                     {
                         "article": "inheritance",
                         "title": "Inheritance",
                         "url": "/inheritance",
-                        "description": "Learn about Inheritance, which is when an Object of a particular class is able to acquire all of the properties, methods and functions of its parent class."
+                        "description": "Learn about inheritance, which is when an object of a particular class is able to acquire all of the properties, methods and functions of its parent class."
                     },
                     {
                         "article": "encapsulation",
                         "title": "Encapsulation",
                         "url": "/encapsulation",
-                        "description": "Learn about Encapsulation, which is a property of Objects to be able to restrict access to its internal fields, methods and functions."
+                        "description": "Learn about encapsulation, which is a property of Objects to be able to restrict access to its internal fields, methods and functions."
                     },
                     {
                         "article": "polymorphism",
                         "title": "Polymorphism",
                         "url": "/polymorphism",
-                        "description": "Learn about Polymorphism, which is the mechanism of being able to use some abstract interface to apply to multiple classes that implement that interface."
+                        "description": "Learn about polymorphism, which is the mechanism of being able to use some abstract interface to apply to multiple classes that implement that interface."
                     }
                 ]
             },
@@ -620,37 +620,37 @@
                         "article": "first-class-function",
                         "title": "First Class Function",
                         "url": "/first-class-function",
-                        "description": "Learn about the First Class Function, which is a property of functional programming languages where functions can be passed as arguments to other functions."
+                        "description": "Learn about the first class function, which is a property of functional programming languages where functions can be passed as arguments to other functions."
                     },
                     {
                         "article": "recursion",
                         "title": "Recursion",
                         "url": "/recursion",
-                        "description": "Learn about Recursion, a programming method and general mechanism in functional programming, where solutions to problems depend on smaller subproblems."
+                        "description": "Learn about recursion, a programming method and general mechanism in functional programming, where solutions to problems depend on smaller subproblems."
                     },
                     {
                         "article": "lambda-notation",
                         "title": "Lambda Notation",
                         "url": "/lambda-notation",
-                        "description": "Learn about Lambda Notation, a system in mathematical logic for expressing computation based on function abstraction and application using variable binding and substitution."
+                        "description": "Learn about lambda notation, a system in mathematical logic for expressing computation based on function abstraction and application using variable binding and substitution."
                     },
                     {
                         "article": "function-composition",
                         "title": "Function Composition",
                         "url": "/function-composition",
-                        "description": "Learn about Function Composition, a technique in functional programming for applying functions to the result of another function to produce a third function."
+                        "description": "Learn about function composition, a technique in functional programming for applying functions to the result of another function to produce a third function."
                     },
                     {
                         "article": "map-filter-reduce",
                         "title": "Map, Filter, Reduce",
                         "url": "/map-filter-reduce",
-                        "description": "Learn about Map, Filter, and Reduce, which are fundamental functions that operate on lists of elements, and are used to augment, remove, and combine elements."
+                        "description": "Learn about map, filter, and reduce, which are fundamental functions that operate on lists of elements, and are used to augment, remove, and combine elements."
                     },
                     {
                         "article": "currying",
                         "title": "Currying",
                         "url": "/currying",
-                        "description": "Learn about Currying, a technique in functional programming to translate the evaluation of a function with multiple arguments into a evaluating a sequence of functions."
+                        "description": "Learn about currying, a technique in functional programming to translate the evaluation of a function with multiple arguments into a evaluating a sequence of functions."
                     }
                 ]
             }

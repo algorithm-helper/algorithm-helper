@@ -57,7 +57,7 @@ order.
 ##### Java
 
 ```
-package com.example;
+package algorithms.sorting;
 
 public class ShellSort {
 

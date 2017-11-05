@@ -80,7 +80,7 @@ search to index 15 until we have found the element or not:
 ##### Java
 
 ```
-package com.example;
+package algorithms.searching;
 
 public class JumpSearch {
 
@@ -122,7 +122,6 @@ public class JumpSearch {
             return prev;
         return -1;
     }
-
 }
 ```
 

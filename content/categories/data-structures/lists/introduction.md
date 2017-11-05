@@ -4,9 +4,8 @@ The topic in this section is lists, and these data structures are primarily
 concerned with linear data structures, that is, a linear sequence of items,
 from which we can perform operations like adding, removing, or peeking at the 
 first or last element. The following data structures are going to be covered 
-in this topic: linked lists, double ended linked lists, vectors/dynamically
-resizing arrays, stacks, queues, deques/double ended queues, union 
-finds/disjoint sets, and iterator/iterable.
+in this topic: linked lists, double ended linked lists, dynamic arrays, stacks, 
+queues, double ended queues, and the iterator/iterable.
 
 ### Terminology
 
@@ -29,8 +28,8 @@ A list is an abstract data type that represents a countable number of values,
 where repeated values are allowed, and the ordering in which the values are 
 arranged. Some properties we may want to define on a list is `size`/`length`, 
 which represents the number of elements contained in the list. We may want to 
-define `head`/`first`, which is a pointer to the first element in the list, or
-similarly `tail`/`last`, which is a pointer to the last element in the list.
+define `head`/`first`, which is a reference to the first element in the list, or
+similarly `tail`/`last`, which is a reference to the last element in the list.
 
 From Wikipedia:
 
@@ -56,13 +55,9 @@ and need to be operated upon together in some controleld fashion. Generally,
 the data items will be of the same type or, in languages supporting inheritance,
 derived from some common ancestor type.
 
-As well, we consider union finds/disjoint sets, which is a data structure 
-concerned with dynamic connectivity and connected components, which although 
-is implemented with an array, can be both represented as a linear structure as 
-well as a (more efficient) tree structure. We consider iterator/iterable, which
-is an abstract data structure used within these list structures concerned with 
-iterating through the elements of a list/collection in a manner hidden to the 
-client.
+We consider iterator/iterable, which is an abstract data structure used within 
+these list structures concerned with iterating through the elements of a 
+list/collection in a manner hidden to the client.
 
 ### Properties
 

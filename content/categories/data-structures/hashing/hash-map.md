@@ -214,11 +214,10 @@ For linear probing:
 ##### Java
 
 ```
-package com.example;
+package datastructures.hashing;
 
-import com.example.utils.LinkedListMap;
-import com.example.utils.Queue;
-
+import datastructures.lists.LinkedListMap;
+import datastructures.lists.QueueLinkedList;
 import java.util.NoSuchElementException;
 
 public class HashMapSeparateChaining<K extends Comparable<K>, V> {
@@ -390,7 +389,7 @@ public class HashMapSeparateChaining<K extends Comparable<K>, V> {
             throw new NoSuchElementException("keys with empty " +
                     "HashMapSeparateChaining");
 
-        Queue<K> queue = new Queue();
+        QueueLinkedList<K> queue = new QueueLinkedList();
         for (int i = 0; i < m; i++) {
             for (K key : L[i].keys()) {
                 queue.enqueue(key);
@@ -406,10 +405,9 @@ public class HashMapSeparateChaining<K extends Comparable<K>, V> {
 ##### Java
 
 ```
-package com.example;
+package datastructures.hashing;
 
-import com.example.utils.Queue;
-
+import datastructures.lists.QueueLinkedList;
 import java.util.NoSuchElementException;
 
 public class HashMapLinearProbing<K extends Comparable<K>, V> {
@@ -610,7 +608,7 @@ public class HashMapLinearProbing<K extends Comparable<K>, V> {
             throw new NoSuchElementException("keys with empty " +
                     "HashMapLinearProbing");
 
-        Queue<K> queue = new Queue();
+        QueueLinkedList<K> queue = new QueueLinkedList<K>();
         for (int i = 0; i < m; i++) {
             if (keys[i] != null)
                 queue.enqueue(keys[i]);

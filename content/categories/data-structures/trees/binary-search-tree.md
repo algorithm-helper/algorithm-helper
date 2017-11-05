@@ -135,12 +135,12 @@ until the `left` becomes `null`, respectively.
 ##### Java
 
 ```
-package com.example;
+package datastructures.trees;
 
-import com.example.utils.Queue;
+import datastructures.lists.QueueLinkedList;
 import java.util.NoSuchElementException;
 
-public class BinarySearchTree<K extends Comparable<K>, V> {
+public class BinarySearchTreeMap<K extends Comparable<K>, V> {
 
     private Node root;
 
@@ -158,21 +158,21 @@ public class BinarySearchTree<K extends Comparable<K>, V> {
     }
 
     /**
-     * Initializes an empty BinarySearchTree.
+     * Initializes an empty BinarySearchTreeMap.
      */
-    public BinarySearchTree() {}
+    public BinarySearchTreeMap() {}
 
     /**
-     * Returns true if the BinarySearchTree is empty.
-     * @return true if the BinarySearchTree is empty, false otherwise
+     * Returns true if the BinarySearchTreeMap is empty.
+     * @return true if the BinarySearchTreeMap is empty, false otherwise
      */
     public boolean isEmpty() {
         return size() == 0;
     }
 
     /**
-     * Returns the number of elements in the BinarySearchTree.
-     * @return the number of elements in the BinarySearchTree
+     * Returns the number of elements in the BinarySearchTreeMap.
+     * @return the number of elements in the BinarySearchTreeMap
      */
     public int size() {
         if (root == null)
@@ -181,8 +181,8 @@ public class BinarySearchTree<K extends Comparable<K>, V> {
     }
 
     /**
-     * Returns the number of elements from x in the BinarySearchTree.
-     * @return the number of elements from x in the BinarySearchTree
+     * Returns the number of elements from x in the BinarySearchTreeMap.
+     * @return the number of elements from x in the BinarySearchTreeMap
      */
     private int size(Node x) {
         if (x == null)
@@ -191,9 +191,9 @@ public class BinarySearchTree<K extends Comparable<K>, V> {
     }
 
     /**
-     * Returns true if the key is contained in the BinarySearchTree.
+     * Returns true if the key is contained in the BinarySearchTreeMap.
      * @param key, the key to be searched for
-     * @return true if the key is contained in the BinarySearchTree,
+     * @return true if the key is contained in the BinarySearchTreeMap,
      *         false otherwise
      * @throws IllegalArgumentException if the key is null
      */
@@ -205,11 +205,11 @@ public class BinarySearchTree<K extends Comparable<K>, V> {
 
     /**
      * Return the val associated with the key, if the key is not
-     * found in the BinarySearchTree, return null
+     * found in the BinarySearchTreeMap, return null
      *
      * @param key, the key to be searched for
      * @return the val associated with the key, if the key is not
-     *         found in the BinarySearchTree, return null
+     *         found in the BinarySearchTreeMap, return null
      * @throws IllegalArgumentException if the key is null
      */
     public V get(K key) {
@@ -233,7 +233,7 @@ public class BinarySearchTree<K extends Comparable<K>, V> {
     }
 
     /**
-     * Insert the (key, val) pair into the BinarySearchTree. If a pair
+     * Insert the (key, val) pair into the BinarySearchTreeMap. If a pair
      * with the key is already contained, update the val to the new val.
      * If the val provided is null, then delete the pair with the key.
      *
@@ -277,12 +277,12 @@ public class BinarySearchTree<K extends Comparable<K>, V> {
     }
 
     /**
-     * Return the smallest key in the BinarySearchTree.
-     * @return the smallest key in the BinarySearchTree
+     * Return the smallest key in the BinarySearchTreeMap.
+     * @return the smallest key in the BinarySearchTreeMap
      */
     public K min() {
         if (isEmpty())
-            throw new NoSuchElementException("min with empty BinarySearchTree");
+            throw new NoSuchElementException("min with empty BinarySearchTreeMap");
         Node current = root;
         while (current.left != null)
             current = current.left;
@@ -290,12 +290,12 @@ public class BinarySearchTree<K extends Comparable<K>, V> {
     }
 
     /**
-     * Return the largest key in the BinarySearchTree.
-     * @return the largest key in the BinarySearchTree
+     * Return the largest key in the BinarySearchTreeMap.
+     * @return the largest key in the BinarySearchTreeMap
      */
     public K max() {
         if (isEmpty())
-            throw new NoSuchElementException("min with empty BinarySearchTree");
+            throw new NoSuchElementException("min with empty BinarySearchTreeMap");
         Node current = root;
         while (current.right != null)
             current = current.right;
@@ -303,8 +303,8 @@ public class BinarySearchTree<K extends Comparable<K>, V> {
     }
 
     /**
-     * Return the Node with the smallest key in the BinarySearchTree.
-     * @return the Node with the smallest key in the BinarySearchTree
+     * Return the Node with the smallest key in the BinarySearchTreeMap.
+     * @return the Node with the smallest key in the BinarySearchTreeMap
      */
     public Node minNode(Node x) {
         if (x.left == null)
@@ -313,8 +313,8 @@ public class BinarySearchTree<K extends Comparable<K>, V> {
     }
 
     /**
-     * Return the Node with the largest key in the BinarySearchTree.
-     * @return the Node with the largest key in the BinarySearchTree
+     * Return the Node with the largest key in the BinarySearchTreeMap.
+     * @return the Node with the largest key in the BinarySearchTreeMap
      */
     public Node maxNode(Node x) {
         if (x.right == null)
@@ -324,10 +324,10 @@ public class BinarySearchTree<K extends Comparable<K>, V> {
 
     /**
      * Removes the (key, value) pair with the given key from the
-     * BinarySearchTree.
+     * BinarySearchTreeMap.
      *
      * @param key, the key whose (key, value) to be deleted
-     * @throws NoSuchElementException if the BinarySearchTree is empty
+     * @throws NoSuchElementException if the BinarySearchTreeMap is empty
      */
     public void delete(K key) {
         if (key == null)
@@ -368,14 +368,14 @@ public class BinarySearchTree<K extends Comparable<K>, V> {
 
     /**
      * Removes the (key, value) pair with the smallest key from the
-     * BinarySearchTree.
+     * BinarySearchTreeMap.
      *
-     * @throws NoSuchElementException if the BinarySearchTree is empty
+     * @throws NoSuchElementException if the BinarySearchTreeMap is empty
      */
     public void deleteMin() {
         if (isEmpty())
             throw new NoSuchElementException("deleteMin on empty " +
-                    "BinarySearchTree");
+                    "BinarySearchTreeMap");
         root = deleteMin(root);
     }
 
@@ -395,14 +395,14 @@ public class BinarySearchTree<K extends Comparable<K>, V> {
 
     /**
      * Removes the (key, value) pair with the largest key from the
-     * BinarySearchTree.
+     * BinarySearchTreeMap.
      *
-     * @throws NoSuchElementException if the BinarySearchTree is empty
+     * @throws NoSuchElementException if the BinarySearchTreeMap is empty
      */
     public void deleteMax() {
         if (isEmpty())
             throw new NoSuchElementException("deleteMax on empty " +
-                    "BinarySearchTree");
+                    "BinarySearchTreeMap");
         root = deleteMax(root);
     }
 
@@ -422,20 +422,20 @@ public class BinarySearchTree<K extends Comparable<K>, V> {
 
     /**
      * Returns the largest key less than or equal to key in the
-     * BinarySearchTree.
+     * BinarySearchTreeMap.
      *
      * @param key, the key to be searched
      * @return the largest key less than or equal to key in the
-     *         BinarySearchTree.
+     *         BinarySearchTreeMap.
      * @throws IllegalArgumentException if the key is null
-     * @throws NoSuchElementException if the BinarySearchTree is empty
+     * @throws NoSuchElementException if the BinarySearchTreeMap is empty
      */
     public K floor(K key) {
         if (key == null)
             throw new IllegalArgumentException("floor with null key");
         if (isEmpty())
             throw new NoSuchElementException("floor with empty " +
-                    "BinarySearchTree");
+                    "BinarySearchTreeMap");
 
         Node x = floor(root, key);
         if (x == null)
@@ -470,20 +470,20 @@ public class BinarySearchTree<K extends Comparable<K>, V> {
 
     /**
      * Returns the smallest key greater than or equal to key in the
-     * BinarySearchTree.
+     * BinarySearchTreeMap.
      *
      * @param key, the key to be searched
      * @return the smallest key greater than or equal to key in the
-     *         BinarySearchTree.
+     *         BinarySearchTreeMap.
      * @throws IllegalArgumentException if the key is null
-     * @throws NoSuchElementException if the BinarySearchTree is empty
+     * @throws NoSuchElementException if the BinarySearchTreeMap is empty
      */
     public K ceil(K key) {
         if (key == null)
             throw new IllegalArgumentException("ceil with null key");
         if (isEmpty())
             throw new NoSuchElementException("ceil with empty " +
-                    "BinarySearchTree");
+                    "BinarySearchTreeMap");
 
         Node x = ceil(root, key);
         if (x == null)
@@ -516,10 +516,10 @@ public class BinarySearchTree<K extends Comparable<K>, V> {
     }
 
     /**
-     * Return the k-th smallest key in the BinarySearchTree.
+     * Return the k-th smallest key in the BinarySearchTreeMap.
      *
      * @param k, the kth number
-     * @return the k-th smallest key in the BinarySearchTree.
+     * @return the k-th smallest key in the BinarySearchTreeMap.
      * @throws IllegalArgumentException if k is invalid
      */
     public K select(int k) {
@@ -550,11 +550,11 @@ public class BinarySearchTree<K extends Comparable<K>, V> {
     }
 
     /**
-     * Return the number of keys in the BinarySearchTree less than the
+     * Return the number of keys in the BinarySearchTreeMap less than the
      * given key.
      *
      * @param  key, the key to be searched
-     * @return the number of keys in the BinarySearchTree less than the
+     * @return the number of keys in the BinarySearchTreeMap less than the
      *         given key.
      * @throws IllegalArgumentException if the key is null
      */
@@ -569,7 +569,7 @@ public class BinarySearchTree<K extends Comparable<K>, V> {
      *
      * @param x
      * @param key
-     * @return the number of keys in the BinarySearchTree less than the
+     * @return the number of keys in the BinarySearchTreeMap less than the
      *         given key from x
      */
     private int rank(Node x, K key) {
@@ -586,10 +586,10 @@ public class BinarySearchTree<K extends Comparable<K>, V> {
     }
 
     /**
-     * Returns all the keys in the BinarySearchTree ordered
+     * Returns all the keys in the BinarySearchTreeMap ordered
      * from the smallest key to the largest key, in an Iterable.
      *
-     * @return all the keys in the BinarySearchTree ordered
+     * @return all the keys in the BinarySearchTreeMap ordered
      * from the smallest key to the largest key, in an Iterable.
      */
     public Iterable<K> keys() {
@@ -597,12 +597,12 @@ public class BinarySearchTree<K extends Comparable<K>, V> {
     }
 
     /**
-     * Returns all keys in the BinarySearchTree in the range between
+     * Returns all keys in the BinarySearchTreeMap in the range between
      * lo and hi, in order, in an Iterable.
      *
      * @param  lo, lower bound
      * @param  hi, upper bound
-     * @return all keys in the BinarySearchTree in the range between
+     * @return all keys in the BinarySearchTreeMap in the range between
      *         lo and hi, in order, in an Iterable.
      * @throws IllegalArgumentException if lo is null
      * @throws IllegalArgumentException if hi is null
@@ -613,7 +613,7 @@ public class BinarySearchTree<K extends Comparable<K>, V> {
         if (hi == null)
             throw new IllegalArgumentException("keys with null hi");
 
-        Queue<K> queue = new Queue();
+        QueueLinkedList<K> queue = new QueueLinkedList();
         keys(root, queue, lo, hi);
         return queue;
     }
@@ -626,7 +626,7 @@ public class BinarySearchTree<K extends Comparable<K>, V> {
      * @param lo
      * @param hi
      */
-    private void keys(Node x, Queue<K> queue, K lo, K hi) {
+    private void keys(Node x, QueueLinkedList<K> queue, K lo, K hi) {
         if (x == null)
             return;
 
@@ -648,9 +648,9 @@ public class BinarySearchTree<K extends Comparable<K>, V> {
 ##### Java
 
 ```
-package com.example;
+package datastructures.trees;
 
-import com.example.utils.Queue;
+import datastructures.lists.QueueLinkedList;
 import java.util.NoSuchElementException;
 
 public class BinarySearchTreeSet<K extends Comparable<K>> {
@@ -1106,7 +1106,7 @@ public class BinarySearchTreeSet<K extends Comparable<K>> {
         if (hi == null)
             throw new IllegalArgumentException("keys with null hi");
 
-        Queue<K> queue = new Queue();
+        QueueLinkedList<K> queue = new QueueLinkedList();
         keys(root, queue, lo, hi);
         return queue;
     }
@@ -1119,7 +1119,7 @@ public class BinarySearchTreeSet<K extends Comparable<K>> {
      * @param lo
      * @param hi
      */
-    private void keys(Node x, Queue<K> queue, K lo, K hi) {
+    private void keys(Node x, QueueLinkedList<K> queue, K lo, K hi) {
         if (x == null)
             return;
 

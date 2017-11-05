@@ -87,3 +87,26 @@ and thus those operations run in O(1) time.
 For the double ended priority queue, the operations `insert`, `extractMax`, 
 `extractMin`, `max`, and `min` depend on its underlying red-black tree, and thus
 those operations all run in O(lgN) time.
+
+---
+
+We will look at union find/disjoint, and the time complexities for `union` and 
+`connected` are described below:
+
+```
+| Data Structure            | union  | connected |
+|---------------------------|--------|-----------|
+| union find / disjoint set | O(lgN) | O(lgN)    |
+```
+
+For the operations `union` and `connected`, we consider two elements `i` and 
+`j`. The operation `union` is a matter of linking the root-most node of the 
+trees from traversing up the parent of `i` and `j`, and then comparing which 
+tree starting from that root has the larger size, and linking the root of the 
+smaller tree to the root of the larger tree. Since there are at most lgN nodes
+to traverse up the tree, this is done in O(lgN) time.
+
+Similarly with the operation `connected`, we traverse up the parent nodes of 
+`i` and `j` until we reach their root-most nodes and compare the roots. Since 
+there are at most lgN nodes to traverse up the tree, this is done in O(lgN) 
+time.

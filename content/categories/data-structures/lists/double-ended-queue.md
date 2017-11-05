@@ -1,26 +1,28 @@
-# Deque / Double Ended Queue
+# Double Ended Queue
 
-A deque, or double ended queue, is a linear data structure that generalizes
-a queue, and has properties similar to both a stack and a queue combined. It
-has operations `insertFront` which adds an element to the front of the deque
-(similar to `push` in a stack), `insertBack` which adds an element to the 
-back of the deque (similar to `enqueue` in a queue), `removeFront` which removes
-an element at the front of the deque (similar to `pop` or `dequeue` in a stack), 
-`removeBack` which removes an element at the back of the deque, `peekFront`
-which returns the front-most element's `item` without removing it from the deque
-and `peekBack` which returns the back-most element's `item` without removing it 
-from the deque. Since it is similar to a combination of first-in-first-out 
-(FIFO) and last-in-first-out (LIFO), if we were to insert 3 elements (A, B, C) 
-into the deque in that order, we cannot get the second element B without either 
-removing the first element A or the third element C.
+A double ended queue, also known as a deque, is a linear data structure that 
+generalizes a queue, and has properties similar to both a stack and a queue 
+combined. It has operations `insertFront` which adds an element to the front of 
+the double ended queue (similar to `push` in a stack), `insertBack` which adds 
+an element to the back of the double ended queue (similar to `enqueue` in a 
+queue), `removeFront` which removes an element at the front of the double ended 
+queue (similar to `pop` in a stack or `dequeue` in a queue), `removeBack` which 
+removes an element at the back of the double ended queue, `peekFront` which 
+returns the front-most element's `item` without removing it from the double 
+ended queue and `peekBack` which returns the back-most element's `item` without 
+removing it from the double ended queue. Since it is similar to a combination of 
+first-in-first-out (FIFO) and last-in-first-out (LIFO), if we were to insert 3 
+elements (A, B, C) into the double ended queue in that order, we cannot get the 
+second element B without either removing the first element A or the third 
+element C.
 
 ### Visualization
 
-The following visualizes the state of the deque/double ended queue, starting 
-from an empty deque/double ended deque:
+The following visualizes the state of the double ended queue, starting 
+from an empty double ended queue:
 
 ```
-// Starting deque:
+// Starting double ended queue:
 []
 
 // insertFront(1):
@@ -48,17 +50,17 @@ from an empty deque/double ended deque:
 []
 
 // removeFront():
-Exception: cannot removeFront from empty deque.
+Exception: cannot removeFront from empty double ended queue.
 ```
 
 ### Operations
 
 - `insertFront`
-    - Insert a node at the front of the deque by pointing `first`
+    - Insert a node at the front of the double ended queue by pointing `first`
     to the new node, if this is the first node to be inserted, then also 
     point `last` to this new node.
 - `insertBack`
-    - Insert a node at the end of the deque by pointing `last`
+    - Insert a node at the end of the double ended queue by pointing `last`
     to the new node, if this is the first node to be inserted, then also 
     point `first` to this new node.
 - `removeFront`
@@ -77,12 +79,12 @@ Exception: cannot removeFront from empty deque.
 ##### Java
 
 ```
-package com.example;
+package datastructures.lists;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class Deque<T> implements Iterable<T> {
+public class DoubleEndedQueue<T> implements Iterable<T> {
 
     private Node<T> first;
     private Node<T> last;
@@ -103,18 +105,18 @@ public class Deque<T> implements Iterable<T> {
     }
 
     /**
-     * Initializes an empty Deque.
+     * Initializes an empty DoubleEndedQueue.
      */
-    public Deque() {
+    public DoubleEndedQueue() {
         first = null;
         last = null;
         n = 0;
     }
 
     /**
-     * Return true is this Deque contains no elements, otherwise false.
+     * Return true is this DoubleEndedQueue contains no elements, otherwise false.
      *
-     * @return true is this Deque contains no elements,
+     * @return true is this DoubleEndedQueue contains no elements,
      *         otherwise false
      */
     public boolean isEmpty() {
@@ -122,16 +124,16 @@ public class Deque<T> implements Iterable<T> {
     }
 
     /**
-     * Returns the number of elements contained in the Deque.
+     * Returns the number of elements contained in the DoubleEndedQueue.
      *
-     * @return the number of elements contained in the Deque
+     * @return the number of elements contained in the DoubleEndedQueue
      */
     public int size() {
         return n;
     }
 
     /**
-     * Inserts item to the front of the Deque.
+     * Inserts item to the front of the DoubleEndedQueue.
      *
      * @param item, the item to be inserted
      * @throws IllegalArgumentException if the item is null
@@ -151,7 +153,7 @@ public class Deque<T> implements Iterable<T> {
     }
 
     /**
-     * Inserts item to the back of the Deque.
+     * Inserts item to the back of the DoubleEndedQueue.
      *
      * @param item, the item to be inserted
      * @throws IllegalArgumentException if the item is null
@@ -171,15 +173,15 @@ public class Deque<T> implements Iterable<T> {
     }
 
     /**
-     * Removes item at the front of the Deque, and returns it.
+     * Removes item at the front of the DoubleEndedQueue, and returns it.
      *
-     * @return the item at the front of the Deque
-     * @throws NoSuchElementException if this Deque is empty
+     * @return the item at the front of the DoubleEndedQueue
+     * @throws NoSuchElementException if this DoubleEndedQueue is empty
      */
     public T removeFront() {
         if (isEmpty()) {
             throw new NoSuchElementException("removeFront from empty " +
-                    "Deque");
+                    "DoubleEndedQueue");
         }
 
         T item = first.item;
@@ -194,15 +196,15 @@ public class Deque<T> implements Iterable<T> {
     }
 
     /**
-     * Removes item at the back of the Deque, and returns it.
+     * Removes item at the back of the DoubleEndedQueue, and returns it.
      *
-     * @return the item at the back of the Deque
-     * @throws NoSuchElementException if this Deque is empty
+     * @return the item at the back of the DoubleEndedQueue
+     * @throws NoSuchElementException if this DoubleEndedQueue is empty
      */
     public T removeBack() {
         if (isEmpty()) {
             throw new NoSuchElementException("removeBack from empty " +
-                    "Deque");
+                    "DoubleEndedQueue");
         }
 
         T item = last.item;
@@ -217,39 +219,39 @@ public class Deque<T> implements Iterable<T> {
     }
 
     /**
-     * Returns the item at the front of the Deque.
+     * Returns the item at the front of the DoubleEndedQueue.
      *
-     * @return the item at the front of the Deque
-     * @throws NoSuchElementException if this Deque is empty
+     * @return the item at the front of the DoubleEndedQueue
+     * @throws NoSuchElementException if this DoubleEndedQueue is empty
      */
     public T peekFront() {
         if (isEmpty()) {
             throw new NoSuchElementException("peekFront from empty " +
-                    "Deque");
+                    "DoubleEndedQueue");
         }
         return first.item;
     }
 
     /**
-     * Returns the item at the back of the Deque.
+     * Returns the item at the back of the DoubleEndedQueue.
      *
-     * @return the item at the back of the Deque
-     * @throws NoSuchElementException if this Deque is empty
+     * @return the item at the back of the DoubleEndedQueue
+     * @throws NoSuchElementException if this DoubleEndedQueue is empty
      */
     public T peekBack() {
         if (isEmpty()) {
             throw new NoSuchElementException("peekBack from empty " +
-                    "Deque");
+                    "DoubleEndedQueue");
         }
         return last.item;
     }
 
     /**
-     * Returns a String representation of the Deque, in the form
-     * [x0, x1, ... xn] where x0...xn are elements of the Deque in
+     * Returns a String representation of the DoubleEndedQueue, in the form
+     * [x0, x1, ... xn] where x0...xn are elements of the DoubleEndedQueue in
      * forward order.
      *
-     * @return a String representation of the Deque, with elements
+     * @return a String representation of the DoubleEndedQueue, with elements
      *         separated by a comma and space
      */
     public String toString() {
@@ -268,11 +270,11 @@ public class Deque<T> implements Iterable<T> {
     }
 
     /**
-     * Returns an Iterator to the Deque that iterates
-     * through the elements of the Deque in forward order.
+     * Returns an Iterator to the DoubleEndedQueue that iterates
+     * through the elements of the DoubleEndedQueue in forward order.
      *
-     * @return an Iterator to the Deque that iterates
-     *         through the elements of the Dequeue in forward order
+     * @return an Iterator to the DoubleEndedQueue that iterates
+     *         through the elements of the DoubleEndedQueueue in forward order
      */
     public Iterator<T> iterator() {
         return new Iterator<T>() {
@@ -300,10 +302,10 @@ public class Deque<T> implements Iterable<T> {
 ### Time Complexity
 
 The following table describes the time complexity for performing the operations 
-above on a deque:
+above on a double ended queue:
 
 ```
-| Data Structure           | insertFront | insertBack | removeFront | removeBack | peekFront | peekBack |
-|--------------------------|-------------|------------|-------------|------------|-----------|----------|
-| deque/double ended queue | O(1)        | O(1)       | O(1)        | O(1)       | O(1)      | O(1)     |
+| Data Structure     | insertFront | insertBack | removeFront | removeBack | peekFront | peekBack |
+|--------------------|-------------|------------|-------------|------------|-----------|----------|
+| double ended queue | O(1)        | O(1)       | O(1)        | O(1)       | O(1)      | O(1)     |
 ```
