@@ -88,8 +88,10 @@ below for clarification.
 
 ##### Java
 
+View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/lists/QueueLinkedList.java).
+
 ```
-package datastructures.lists;
+package com.algorithmhelper.datastructures.lists;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
@@ -250,8 +252,10 @@ public class QueueLinkedList<T> implements Iterable<T> {
 
 ##### Java
 
+View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/lists/QueueDynamicArray.java).
+
 ```
-package datastructures.lists;
+package com.algorithmhelper.datastructures.lists;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;

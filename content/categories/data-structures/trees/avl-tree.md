@@ -230,13 +230,16 @@ that the `left` side generally has more weight.
 
 ##### Java
 
+View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/AVLTreeMap.java).
+
 ```
-package datastructures.trees;
+package com.algorithmhelper.datastructures.trees;
 
-import datastructures.lists.QueueLinkedList;
 import java.util.NoSuchElementException;
+import com.algorithmhelper.datastructures.interfaces.Map;
+import com.algorithmhelper.datastructures.lists.QueueLinkedList;
 
-public class AVLTreeMap<K extends Comparable<K>, V> {
+public class AVLTreeMap<K extends Comparable<K>, V> implements Map<K, V> {
 
     private Node root;
 
@@ -827,13 +830,16 @@ public class AVLTreeMap<K extends Comparable<K>, V> {
 
 ##### Java
 
+View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/AVLTreeSet.java).
+
 ```
-package datastructures.trees;
+package com.algorithmhelper.datastructures.trees;
 
-import datastructures.lists.QueueLinkedList;
 import java.util.NoSuchElementException;
+import com.algorithmhelper.datastructures.interfaces.Set;
+import com.algorithmhelper.datastructures.lists.QueueLinkedList;
 
-public class AVLTreeSet<K extends Comparable<K>> {
+public class AVLTreeSet<K extends Comparable<K>> implements Set<K> {
 
     private Node root;
 

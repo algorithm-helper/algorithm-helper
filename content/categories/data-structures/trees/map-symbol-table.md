@@ -50,3 +50,73 @@ null
 // delete(C):
 {(B, 2), (D, 10)}
 ```
+
+### Implementations
+
+The following provides an interface for maps.
+
+##### Java
+
+View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/interfaces/Map.java).
+
+```
+package com.algorithmhelper.datastructures.interfaces;
+
+public interface Map<K extends Comparable<K>, V> {
+
+    /**
+     * Returns true if the Map is empty, false otherwise.
+     *
+     * @return true if the Map is empty, false otherwise
+     */
+    public boolean isEmpty();
+
+    /**
+     * Returns the number of elements in the Map.
+     *
+     * @return the number of elements in the Map
+     */
+    public int size();
+
+    /**
+     * Returns the val associated with the key in the Map.
+     *
+     * @param key, the key to be searched for
+     * @return the val associated with the key in the Map
+     */
+    public V get(K key);
+
+    /**
+     * Returns true if the key is contained in the Map, false
+     * otherwise.
+     *
+     * @param key, the key to be searched for
+     * @return true if the key is contained in the Map, false
+     *         otherwise
+     */
+    public boolean contains(K key);
+
+    /**
+     * Insert the (key, val) pair into the Map.
+     *
+     * @param key, the key to be inserted
+     * @param val, the val associated with the key
+     */
+    public void put(K key, V val);
+
+    /**
+     * Remove the key from the Map.
+     *
+     * @param key, the key to be removed
+     */
+    public void delete(K key);
+
+    /**
+     * Returns an Iterable to the elements of the Map.
+     *
+     * @return an Iterable to the elements of the Map
+     */
+    public Iterable<K> keys();
+
+}
+```

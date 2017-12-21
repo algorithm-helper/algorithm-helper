@@ -81,8 +81,10 @@ can be directly accessed, and done in O(1) time.
 
 ##### Java
 
+View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/lists/DoubleEndedLinkedList.java).
+
 ```
-package datastructures.lists;
+package com.algorithmhelper.datastructures.lists;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;

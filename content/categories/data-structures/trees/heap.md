@@ -264,8 +264,10 @@ For binary min heap:
 
 ##### Java
 
+View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/BinaryMaxHeap.java).
+
 ```
-package datastructures.trees;
+package com.algorithmhelper.datastructures.trees;
 
 public class BinaryMaxHeap<T extends Comparable<T>> {
 
@@ -484,8 +486,10 @@ public class BinaryMaxHeap<T extends Comparable<T>> {
 
 ##### Java
 
+View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/BinaryMinHeap.java).
+
 ```
-package datastructures.trees;
+package com.algorithmhelper.datastructures.trees;
 
 public class BinaryMinHeap<T extends Comparable<T>> {
 

@@ -214,13 +214,14 @@ For linear probing:
 ##### Java
 
 ```
-package datastructures.hashing;
+package com.algorithmhelper.datastructures.hashing;
 
-import datastructures.lists.LinkedListMap;
-import datastructures.lists.QueueLinkedList;
 import java.util.NoSuchElementException;
+import com.algorithmhelper.datastructures.interfaces.Map;
+import com.algorithmhelper.datastructures.lists.LinkedListMap;
+import com.algorithmhelper.datastructures.lists.QueueLinkedList;
 
-public class HashMapSeparateChaining<K extends Comparable<K>, V> {
+public class HashMapSeparateChaining<K extends Comparable<K>, V> implements Map<K, V> {
 
     private static final int INIT_CAPACITY = 4;
     private int n;
@@ -405,12 +406,13 @@ public class HashMapSeparateChaining<K extends Comparable<K>, V> {
 ##### Java
 
 ```
-package datastructures.hashing;
+package com.algorithmhelper.datastructures.hashing;
 
-import datastructures.lists.QueueLinkedList;
 import java.util.NoSuchElementException;
+import com.algorithmhelper.datastructures.interfaces.Map;
+import com.algorithmhelper.datastructures.lists.QueueLinkedList;
 
-public class HashMapLinearProbing<K extends Comparable<K>, V> {
+public class HashMapLinearProbing<K extends Comparable<K>, V> implements Map<K, V> {
 
     private static final int INIT_CAPACITY = 4;
     private int n;
@@ -614,6 +616,310 @@ public class HashMapLinearProbing<K extends Comparable<K>, V> {
                 queue.enqueue(keys[i]);
         }
         return queue;
+    }
+}
+```
+
+### Implementation (LinkedListMap)
+
+A map version of linked list is needed for separate chaining.
+
+##### Java
+
+View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/lists/LinkedListMap.java).
+
+```
+package com.algorithmhelper.datastructures.lists;
+
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
+public class LinkedListMap<K extends Comparable<K>, V> implements Iterable<K> {
+
+    private Node<K, V> first;
+    private int n;
+
+    private class Node<K, V> {
+        private K key;
+        private V val;
+        private Node<K, V> next;
+
+        public Node() {}
+
+        public Node(K key, V val, Node<K, V> next) {
+            this.key = key;
+            this.val = val;
+            this.next = next;
+        }
+    }
+
+    /**
+     * Initializes an empty LinkedListMap.
+     */
+    public LinkedListMap() {
+        first = null;
+        n = 0;
+    }
+
+    /**
+     * Returns true is this LinkedListMap contains no elements,
+     * otherwise false.
+     *
+     * @return true is this LinkedListMap contains no elements,
+     *         otherwise false
+     */
+    public boolean isEmpty() {
+        return n == 0;
+    }
+
+    /**
+     * Returns the number of elements contained in the LinkedListMap.
+     *
+     * @return the number of elements contained in the LinkedListMap
+     */
+    public int size() {
+        return n;
+    }
+
+    /**
+     * Returns true if the key is contained in the LinkedListMap,
+     * otherwise false.
+     *
+     * @param key, the key to be search for
+     * @return true if the key is contained in the LinkedListMap,
+     *         otherwise false.
+     * @throws IllegalArgumentException if the key is null
+     */
+    public boolean contains(K key) {
+        if (key == null)
+            throw new IllegalArgumentException("contains with null key");
+        if (isEmpty())
+            return false;
+        return get(key) != null;
+    }
+
+    /**
+     * Returns the associated val with the given key in the LinkedListMap.
+     *
+     * @param key, the key to be searched
+     * @return the associated val with the given key in the LinkedListMap
+     * @throws IllegalArgumentException if the key is null
+     */
+    public V get(K key) {
+        if (key == null)
+            throw new IllegalArgumentException("get with null key");
+        if (isEmpty())
+            return null;
+
+        Node<K, V> current = first;
+        for (int j = 0; j < n; j++)
+            current = current.next;
+        return current.val;
+    }
+
+    /**
+     * Inserts the (key, val) pair to the front of the LinkedListMap.
+     *
+     * @param key, the key to be inserted
+     * @param val, the val associated with the key
+     * @throws IllegalArgumentException if the key is null
+     */
+    public void insert(K key, V val) {
+        if (key == null)
+            throw new IllegalArgumentException("insertFront with null key");
+        if (val == null) {
+            remove(key);
+            return;
+        }
+
+        Node<K, V> oldFirst = first;
+        first = new Node(key, val, oldFirst);
+        n++;
+    }
+
+    /**
+     * Removes the (key, val) pair from the LinkedListMap, returns the associated
+     * val if the key exists, otherwise return null.
+     *
+     * @param key, the key to be searched
+     * @return the val associated with the key, if the key does not exist, return
+     *         null
+     * @throws IllegalArgumentException if the key is null
+     * @throws NoSuchElementException if the LinkedListMap is empty
+     */
+    public V remove(K key) {
+        if (key == null)
+            throw new IllegalArgumentException("remove with null key");
+        if (isEmpty())
+            throw new NoSuchElementException("remove with empty list");
+        if (!contains(key))
+            return null;
+
+        Node<K, V> current = first;
+
+        while (current != null) {
+            if (current.next.key.compareTo(key) == 0)
+                break;
+        }
+
+        V val = current.next.val;
+        current.next = current.next.next;
+        return val;
+    }
+
+    /**
+     * Removes the (key, val) pair at the front of the LinkedListMap, and
+     * returns it.
+     *
+     * @return the key of the (key, val) pair at the front of the
+     *         LinkedListMap, and returns it.
+     * @throws NoSuchElementException if this LinkedListMap is empty
+     */
+    public K removeFront() {
+        if (isEmpty()) {
+            throw new NoSuchElementException("removeFront from empty " +
+                    "LinkedListMap");
+        }
+
+        K key = first.key;
+        first = first.next;
+        n--;
+        return key;
+    }
+
+    /**
+     * Removes the (key, val) pair at the back of the LinkedListMap, and
+     * returns it.
+     *
+     * @return the key of the (key, val) pair at the back of the
+     *         LinkedListMap, and returns it.
+     * @throws NoSuchElementException if this LinkedListMap is empty
+     */
+    public K removeBack() {
+        if (isEmpty()) {
+            throw new NoSuchElementException("removeBack from empty " +
+                    "LinkedListMap");
+        }
+
+        if (n == 1) {
+            return removeFront();
+        }
+
+        Node<K, V> current = first;
+        for (int j = 0; j < n-2; j++)
+            current = current.next;
+
+        K key = current.next.key;
+        current.next = null;
+        n--;
+        if (isEmpty())
+            first = null;
+        return key;
+    }
+
+    /**
+     * Returns the key at the front of the LinkedListMap.
+     *
+     * @return the key at the front of the LinkedListMap
+     * @throws NoSuchElementException if this LinkedListMap is empty
+     */
+    public K peekFront() {
+        if (isEmpty()) {
+            throw new NoSuchElementException("peekFront from empty " +
+                    "LinkedListMap");
+        }
+        return first.key;
+    }
+
+    /**
+     * Returns the key at the back of the LinkedListMap.
+     *
+     * @return the key at the back of the LinkedListMap
+     * @throws NoSuchElementException if this LinkedListMap is empty
+     */
+    public K peekBack() {
+        if (isEmpty()) {
+            throw new NoSuchElementException("peekBack from empty " +
+                    "LinkedListMap");
+        }
+
+        if (n == 1)
+            return peekFront();
+
+        Node<K, V> current = first;
+        for (int j = 0; j < n-1; j++)
+            current = current.next;
+        return current.key;
+    }
+
+    /**
+     * Returns a String representation of the LinkedListMap, in the form
+     * [x0, x1, ... xn] where x0...xn are elements of the LinkedListMap.
+     *
+     * @return a String representation of the LinkedListMap, with elements
+     *         separated by a comma and space
+     */
+    public String toString() {
+        if (isEmpty())
+            return "[]";
+
+        StringBuilder sb = new StringBuilder();
+        sb.append('[');
+        for (K key : this) {
+            sb.append(key);
+            sb.append(',');
+            sb.append(' ');
+        }
+        sb.append(']');
+        return sb.toString();
+    }
+
+    /**
+     * Returns an Iterable that iterates over the keys of the LinkedListMap.
+     *
+     * @return an Iterable that iterates over the keys of the LinkedListMap
+     * @throws NoSuchElementException if the LinkedListMap is null
+     */
+    public Iterable<K> keys() {
+        if (isEmpty())
+            throw new NoSuchElementException("keys with null LinkedListMap");
+
+        QueueLinkedList<K> queue = new QueueLinkedList<K>();
+        Node<K, V> current = first;
+        while (current != null) {
+            queue.enqueue(current.key);
+            current = current.next;
+        }
+        return queue;
+    }
+
+    /**
+     * Returns an Iterator to the LinkedListMap that iterates
+     * through the elements of the LinkedListMap in the order they
+     * were inserted.
+     *
+     * @return an Iterator to the LinkedListMap that iterates
+     *         through the elements of the in the order they were inserted.
+     */
+    public Iterator<K> iterator() {
+        return new Iterator<K>() {
+            private Node<K, V> current = first;
+
+            @Override
+            public boolean hasNext() {
+                return current != null;
+            }
+
+            @Override
+            public K next() {
+                if (!hasNext())
+                    throw new NoSuchElementException("iterator does not have "
+                            + "next element");
+                K key = current.key;
+                current = current.next;
+                return key;
+            }
+        };
     }
 }
 ```

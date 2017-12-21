@@ -178,8 +178,10 @@ For double ended priority queue:
 
 ##### Java
 
+View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/PriorityMaxQueue.java).
+
 ```
-package datastructures.trees;
+package com.algorithmhelper.datastructures.trees;
 
 import java.util.NoSuchElementException;
 
@@ -266,6 +268,8 @@ public class PriorityMaxQueue<T extends Comparable<T>> {
 ### Implementation (Priority Min Queue)
 
 ##### Java
+
+View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/PriorityMinQueue.java).
 
 ```
 package datastructures.trees;
@@ -356,8 +360,10 @@ public class PriorityMinQueue<T extends Comparable<T>> {
 
 ##### Java
 
+View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/DoubleEndedPriorityQueue.java).
+
 ```
-package datastructures.trees;
+package com.algorithmhelper.datastructures.trees;
 
 import java.util.NoSuchElementException;
 

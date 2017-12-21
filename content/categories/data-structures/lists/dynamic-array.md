@@ -143,8 +143,10 @@ entire array's contents, also in O(N) time.
 
 ##### Java
 
+View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/lists/DynamicArray.java).
+
 ```
-package datastructures.lists;
+package com.algorithmhelper.datastructures.lists;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;

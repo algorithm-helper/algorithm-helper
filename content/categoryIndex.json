@@ -7,7 +7,7 @@
             {
                 "topic": "lists",
                 "title": "Lists",
-                "description": "Learn about linear data structures like linked lists, dynamic arrays, stacks, queues as well as amortization.",                
+                "description": "Learn about linear data structures like linked lists, dynamic arrays, stacks, queues and amortization.",                
                 "url": "/lists",
                 "articles": [
                     {

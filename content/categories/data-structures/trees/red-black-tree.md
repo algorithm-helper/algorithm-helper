@@ -295,13 +295,16 @@ or `delete`, they run in O(lgN) time.
 
 ##### Java
 
+View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/RedBlackTreeMap.java).
+
 ```
-package datastructures.trees;
+package com.algorithmhelper.datastructures.trees;
 
-import datastructures.lists.QueueLinkedList;
 import java.util.NoSuchElementException;
+import com.algorithmhelper.datastructures.interfaces.Map;
+import com.algorithmhelper.datastructures.lists.QueueLinkedList;
 
-public class RedBlackTreeMap<K extends Comparable<K>, V> {
+public class RedBlackTreeMap<K extends Comparable<K>, V> implements Map<K, V> {
 
     private static final boolean RED = true;
     private static final boolean BLACK = false;
@@ -973,13 +976,16 @@ public class RedBlackTreeMap<K extends Comparable<K>, V> {
 
 ##### Java
 
+View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/RedBlackTreeSet.java).
+
 ```
-package datastructures.trees;
+package com.algorithmhelper.datastructures.trees;
 
-import datastructures.lists.QueueLinkedList;
 import java.util.NoSuchElementException;
+import com.algorithmhelper.datastructures.interfaces.Set;
+import com.algorithmhelper.datastructures.lists.QueueLinkedList;
 
-public class RedBlackTreeSet<K extends Comparable<K>> {
+public class RedBlackTreeSet<K extends Comparable<K>> implements Set<K> {
 
     private static final boolean RED = true;
     private static final boolean BLACK = false;

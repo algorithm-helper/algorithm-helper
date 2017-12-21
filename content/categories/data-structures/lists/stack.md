@@ -74,8 +74,10 @@ limited to `insertBack`, `removeBack` and `peekBack`.
 
 ##### Java
 
+View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/lists/StackLinkedList.java).
+
 ```
-package datastructures.lists;
+package com.algorithmhelper.datastructures.lists;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
@@ -225,10 +227,12 @@ public class StackLinkedList<T> implements Iterable<T> {
 
 ### Implementation (using Dynamic Array)
 
+View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/lists/StackDynamicArray.java).
+
 ##### Java
 
 ```
-package datastructures.lists;
+package com.algorithmhelper.datastructures.lists;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;

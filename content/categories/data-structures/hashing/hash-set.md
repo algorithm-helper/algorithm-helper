@@ -66,13 +66,14 @@ For linear probing:
 ##### Java
 
 ```
-package datastructures.hashing;
+package com.algorithmhelper.datastructures.hashing;
 
-import datastructures.lists.LinkedListSet;
-import datastructures.lists.QueueLinkedList;
 import java.util.NoSuchElementException;
+import com.algorithmhelper.datastructures.interfaces.Set;
+import com.algorithmhelper.datastructures.lists.QueueLinkedList;
+import com.algorithmhelper.datastructures.lists.LinkedListSet;
 
-public class HashSetSeparateChaining<K extends Comparable<K>> {
+public class HashSetSeparateChaining<K extends Comparable<K>> implements Set<K> {
 
     private static final int INIT_CAPACITY = 4;
     private int n;
@@ -236,12 +237,13 @@ public class HashSetSeparateChaining<K extends Comparable<K>> {
 ##### Java
 
 ```
-package datastructures.hashing;
+package com.algorithmhelper.datastructures.hashing;
 
-import datastructures.lists.QueueLinkedList;
 import java.util.NoSuchElementException;
+import com.algorithmhelper.datastructures.interfaces.Set;
+import com.algorithmhelper.datastructures.lists.QueueLinkedList;
 
-public class HashSetLinearProbing<K extends Comparable<K>> {
+public class HashSetLinearProbing<K extends Comparable<K>> implements Set<K> {
 
     private static final int INIT_CAPACITY = 4;
     private int n;
@@ -416,6 +418,286 @@ public class HashSetLinearProbing<K extends Comparable<K>> {
                 queue.enqueue(keys[i]);
         }
         return queue;
+    }
+}
+```
+
+### Implementation (LinkedListSet)
+
+A set version of linked list is needed for separate chaining.
+
+##### Java
+
+View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/lists/LinkedListSet.java).
+
+```
+package com.algorithmhelper.datastructures.lists;
+
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
+public class LinkedListSet<K extends Comparable<K>> implements Iterable<K> {
+
+    private Node<K> first;
+    private int n;
+
+    private class Node<K> {
+        private K key;
+        private Node<K> next;
+
+        public Node() {}
+
+        public Node(K key, Node<K> next) {
+            this.key = key;
+            this.next = next;
+        }
+    }
+
+    /**
+     * Initializes an empty LinkedListSet.
+     */
+    public LinkedListSet() {
+        first = null;
+        n = 0;
+    }
+
+    /**
+     * Returns true is this LinkedListSet contains no elements,
+     * otherwise false.
+     *
+     * @return true is this LinkedListSet contains no elements,
+     *         otherwise false
+     */
+    public boolean isEmpty() {
+        return n == 0;
+    }
+
+    /**
+     * Returns the number of elements contained in the LinkedListSet.
+     *
+     * @return the number of elements contained in the LinkedListSet
+     */
+    public int size() {
+        return n;
+    }
+
+    /**
+     * Returns true if the key is contained in the LinkedListSet,
+     * otherwise false.
+     *
+     * @param key, the key to be search for
+     * @return true if the key is contained in the LinkedListSet,
+     *         otherwise false.
+     * @throws IllegalArgumentException if the key is null
+     */
+    public boolean contains(K key) {
+        if (key == null)
+            throw new IllegalArgumentException("contains with null key");
+        if (isEmpty())
+            return false;
+
+        Node<K> current = first;
+
+        while (current != null) {
+            if (current.key.compareTo(key) == 0)
+                return true;
+        }
+        return false;
+    }
+
+    /**
+     * Inserts the key to the front of the LinkedListSet.
+     *
+     * @param key, the key to be inserted
+     * @throws IllegalArgumentException if the key is null
+     */
+    public void insert(K key) {
+        if (key == null)
+            throw new IllegalArgumentException("insertFront with null key");
+
+        Node<K> oldFirst = first;
+        first = new Node(key, oldFirst);
+        n++;
+    }
+
+    /**
+     * Removes the key from the LinkedListSet.
+     *
+     * @param key, the key to be searched
+     * @throws IllegalArgumentException if the key is null
+     * @throws NoSuchElementException if the LinkedListSet is empty
+     */
+    public void remove(K key) {
+        if (key == null)
+            throw new IllegalArgumentException("remove with null key");
+        if (isEmpty())
+            throw new NoSuchElementException("remove with empty list");
+        if (!contains(key))
+            return;
+
+        Node<K> current = first;
+
+        while (current != null) {
+            if (current.next.key.compareTo(key) == 0)
+                break;
+        }
+
+        current.next = current.next.next;
+    }
+
+    /**
+     * Removes the key at the front of the LinkedListSet, and
+     * returns it.
+     *
+     * @return the key of the key at the front of the
+     *         LinkedListSet, and returns it.
+     * @throws NoSuchElementException if this LinkedListSet is empty
+     */
+    public K removeFront() {
+        if (isEmpty()) {
+            throw new NoSuchElementException("removeFront from empty " +
+                    "LinkedListSet");
+        }
+
+        K key = first.key;
+        first = first.next;
+        n--;
+        return key;
+    }
+
+    /**
+     * Removes the key at the back of the LinkedListSet, and
+     * returns it.
+     *
+     * @return the key of the key at the back of the
+     *         LinkedListSet, and returns it.
+     * @throws NoSuchElementException if this LinkedListSet is empty
+     */
+    public K removeBack() {
+        if (isEmpty()) {
+            throw new NoSuchElementException("removeBack from empty " +
+                    "LinkedListSet");
+        }
+
+        if (n == 1) {
+            return removeFront();
+        }
+
+        Node<K> current = first;
+        for (int j = 0; j < n-2; j++)
+            current = current.next;
+
+        K key = current.next.key;
+        current.next = null;
+        n--;
+        if (isEmpty())
+            first = null;
+        return key;
+    }
+
+    /**
+     * Returns the key at the front of the LinkedListSet.
+     *
+     * @return the key at the front of the LinkedListSet
+     * @throws NoSuchElementException if this LinkedListSet is empty
+     */
+    public K peekFront() {
+        if (isEmpty()) {
+            throw new NoSuchElementException("peekFront from empty " +
+                    "LinkedListSet");
+        }
+        return first.key;
+    }
+
+    /**
+     * Returns the key at the back of the LinkedListSet.
+     *
+     * @return the key at the back of the LinkedListSet
+     * @throws NoSuchElementException if this LinkedListSet is empty
+     */
+    public K peekBack() {
+        if (isEmpty()) {
+            throw new NoSuchElementException("peekBack from empty " +
+                    "LinkedListSet");
+        }
+
+        if (n == 1)
+            return peekFront();
+
+        Node<K> current = first;
+        for (int j = 0; j < n-1; j++)
+            current = current.next;
+        return current.key;
+    }
+
+    /**
+     * Returns a String representation of the LinkedListSet, in the form
+     * [x0, x1, ... xn] where x0...xn are elements of the LinkedListSet.
+     *
+     * @return a String representation of the LinkedListSet, with elements
+     *         separated by a comma and space
+     */
+    public String toString() {
+        if (isEmpty())
+            return "[]";
+
+        StringBuilder sb = new StringBuilder();
+        sb.append('[');
+        for (K key : this) {
+            sb.append(key);
+            sb.append(',');
+            sb.append(' ');
+        }
+        sb.append(']');
+        return sb.toString();
+    }
+
+    /**
+     * Returns an Iterable that iterates over the keys of the LinkedListSet.
+     *
+     * @return an Iterable that iterates over the keys of the LinkedListSet
+     * @throws NoSuchElementException if the LinkedListSet is null
+     */
+    public Iterable<K> keys() {
+        if (isEmpty())
+            throw new NoSuchElementException("keys with null LinkedListSet");
+
+        QueueLinkedList<K> queue = new QueueLinkedList();
+        Node<K> current = first;
+        while (current != null) {
+            queue.enqueue(current.key);
+            current = current.next;
+        }
+        return queue;
+    }
+
+    /**
+     * Returns an Iterator to the LinkedListSet that iterates
+     * through the elements of the LinkedListSet in the order they
+     * were inserted.
+     *
+     * @return an Iterator to the LinkedListSet that iterates
+     *         through the elements of the in the order they were inserted.
+     */
+    public Iterator<K> iterator() {
+        return new Iterator<K>() {
+            private Node<K> current = first;
+
+            @Override
+            public boolean hasNext() {
+                return current != null;
+            }
+
+            @Override
+            public K next() {
+                if (!hasNext())
+                    throw new NoSuchElementException("iterator does not have "
+                            + "next element");
+                K key = current.key;
+                current = current.next;
+                return key;
+            }
+        };
     }
 }
 ```

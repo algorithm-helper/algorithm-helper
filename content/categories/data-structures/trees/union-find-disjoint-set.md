@@ -150,8 +150,10 @@ in `size` are initialized to 1.
 
 ##### Java
 
+View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/UnionFind.java).
+
 ```
-package datastructures.trees;
+package com.algorithmhelper.datastructures.trees;
 
 public class UnionFind {
 

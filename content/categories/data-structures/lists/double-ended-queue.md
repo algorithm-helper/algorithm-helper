@@ -78,8 +78,10 @@ Exception: cannot removeFront from empty double ended queue.
 
 ##### Java
 
+View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/lists/DoubleEndedQueue.java).
+
 ```
-package datastructures.lists;
+package com.algorithmhelper.datastructures.lists;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;

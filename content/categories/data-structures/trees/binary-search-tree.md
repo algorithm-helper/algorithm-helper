@@ -134,13 +134,16 @@ until the `left` becomes `null`, respectively.
 
 ##### Java
 
+View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/BinarySearchTreeMap.java).
+
 ```
-package datastructures.trees;
+package com.algorithmhelper.datastructures.trees;
 
-import datastructures.lists.QueueLinkedList;
 import java.util.NoSuchElementException;
+import com.algorithmhelper.datastructures.interfaces.Map;
+import com.algorithmhelper.datastructures.lists.QueueLinkedList;
 
-public class BinarySearchTreeMap<K extends Comparable<K>, V> {
+public class BinarySearchTreeMap<K extends Comparable<K>, V> implements Map<K, V> {
 
     private Node root;
 
@@ -647,13 +650,16 @@ public class BinarySearchTreeMap<K extends Comparable<K>, V> {
 
 ##### Java
 
+View the souce code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/BinarySearchTreeSet.java).
+
 ```
-package datastructures.trees;
+package com.algorithmhelper.datastructures.trees;
 
-import datastructures.lists.QueueLinkedList;
 import java.util.NoSuchElementException;
+import com.algorithmhelper.datastructures.interfaces.Set;
+import com.algorithmhelper.datastructures.lists.QueueLinkedList;
 
-public class BinarySearchTreeSet<K extends Comparable<K>> {
+public class BinarySearchTreeSet<K extends Comparable<K>> implements Set<K> {
 
     private Node root;
 

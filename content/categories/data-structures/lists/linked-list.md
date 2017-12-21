@@ -68,8 +68,10 @@ Linked lists use the following operations:
 
 ##### Java
 
+View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/lists/LinkedList.java).
+
 ```
-package datastructures.lists;
+package com.algorithmhelper.datastructures.lists;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
@@ -358,7 +360,7 @@ public class LinkedList<T> implements Iterable<T> {
             }
         };
     }
-}  
+}
 ```
 
 ### Time Complexity
