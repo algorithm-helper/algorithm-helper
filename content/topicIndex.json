@@ -47,7 +47,7 @@
         "tags": ["algorithms"],
         "description": "Learn about algorithms for shortest path finding, minimum spanning trees, topological sorting, cycles and network flow.",
         "url": "/categories/algorithms/graphs"
-    },
+    },    
     {
         "topic": "mathematics",
         "title": "Mathematics",
@@ -82,5 +82,12 @@
         "tags": ["paradigms"],
         "description": "Learn about functional programming concepts like lambda notation, function composition, filter, map, and reduce.",
         "url": "/categories/paradigms/functional-programming"
+    },
+    {
+        "topic": "design-patterns",
+        "title": "Design Patterns",
+        "tags": ["software engineering"],
+        "description": "Learn about software design patterns for solving common problems like factories, builders, and observers.",
+        "url": "/categories/software-engineering/design-patterns"
     }
 ]

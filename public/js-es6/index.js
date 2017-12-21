@@ -8,7 +8,7 @@
 
  $(document).ready(() => {
      // For debug purposes:
-     // console.log(topicIndex);
+     console.log(topicIndex);
 
      // Create card for each element, append to index-main-card-container
      const renderIndexCards = (callback) => {
@@ -19,6 +19,10 @@
             .appendTo(indexMainCardContainer);
    
             for (let j = 0; j < 3; j++) {
+                if (!topicIndex[i+j]) {
+                    break;
+                }
+
                 let column = $(document.createElement('div'))
                 .addClass('col-md-4')
                 .appendTo(row);

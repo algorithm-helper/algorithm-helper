@@ -100,6 +100,11 @@ body, html {
   background-color: #2bbbad;
 }
 
+.tag-software-engineering {
+  color: #fff;
+  background-color: #607d8b;
+}
+
 /* Footer */
 footer {
   display: none;

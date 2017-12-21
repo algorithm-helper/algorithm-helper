@@ -655,5 +655,164 @@
                 ]
             }
         ]
+    },
+    {
+        "category": "software-engineering",
+        "title": "Software Engineering",
+        "url": "/categories/software-engineering",
+        "topics": [
+            {
+                "topic": "design-patterns",
+                "title": "Design Patterns",
+                "url": "/design-patterns",
+                "description": "Learn about software design patterns for solving common problems like factories, builders, and observers.",                        
+                "articles": [
+                    {
+                        "article": "introduction",
+                        "title": "Introduction",
+                        "url": "/introduction",
+                        "description": "General overview of the motivations behind using design patterns, terminology and concepts that will be covered in this topic."
+                    },
+                    {
+                        "article": "adapter",
+                        "title": "Adapter",
+                        "url": "/adapter",
+                        "description": "Learn about the adapter pattern, which is used for converting incompatible interfaces."
+                    },
+                    {
+                        "article": "bridge",
+                        "title": "Bridge",
+                        "url": "/bridge",
+                        "description": "Learn about the bridge pattern, which is used for decoupling abstractions from their implementations."
+                    },
+                    {
+                        "article": "builder",
+                        "title": "Builder",
+                        "url": "/builder",
+                        "description": "Learn about the builder pattern, which is used for constructing and parsing complex objects."
+                    },
+                    {
+                        "article": "chain-of-responsiblity",
+                        "title": "Chain of Responsibility",
+                        "url": "/chain-of-responsibility",
+                        "description": "Learn about the chain of responsibility pattern, which is using more than one object to handle a request."
+                    },
+                    {
+                        "article": "command",
+                        "title": "Command",
+                        "url": "/command",
+                        "description": "Learn about the command pattern, which is used to encapsulate and parameterize a request object."
+                    },
+                    {
+                        "article": "composite",
+                        "title": "Composite",
+                        "url": "/composite",
+                        "description": "Learn about the composite pattern, which is used to represent objects in a recursive tree structure."
+                    },
+                    {
+                        "article": "decorator",
+                        "title": "Decorator",
+                        "url": "/decorator",
+                        "description": "Learn about the decorator pattern, which is used to attach functionality to an object dynamically."
+                    },
+                    {
+                        "article": "facade",
+                        "title": "Facade",
+                        "url": "/facade",
+                        "description": "Learn about the facade pattern, which is used to provide a unified interface for a set of interfaces."
+                    },
+                    {
+                        "article": "factory",
+                        "title": "Factory",
+                        "url": "/factory",
+                        "description": "Learn about the factory pattern, which is used to create objects of different parameters."
+                    },
+                    {
+                        "article": "flyweight",
+                        "title": "Flyweight",
+                        "url": "/flyweight",
+                        "description": "Learn about the flyweight pattern, which is used to support large numbers of light weight objects."
+                    },
+                    {
+                        "article": "interpreter",
+                        "title": "Interpreter",
+                        "url": "/interpreter",
+                        "description": "Learn about the interpreter pattern, which is used to define a custom language and grammar."
+                    },
+                    {
+                        "article": "iterator",
+                        "title": "Iterator",
+                        "url": "/iterator",
+                        "description": "Learn about the iterator pattern, which is used to traverse through a collection of objects without breaking encapsulation."
+                    },
+                    {
+                        "article": "mediator",
+                        "title": "Mediator",
+                        "url": "/mediator",
+                        "description": "Learn about the mediator pattern, which is used to be an intermediary between a set of objects."
+                    },
+                    {
+                        "article": "memento",
+                        "title": "Memento",
+                        "url": "/memento",
+                        "description": "Learn about the memento pattern, which is used to save an object's internal state without breaking encapsulation."
+                    },
+                    {
+                        "article": "null-object",
+                        "title": "Null Object",
+                        "url": "/null-object",
+                        "description": "Learn about the null object pattern, which is used to encapsulate the absence of an object."
+                    },
+                    {
+                        "article": "observer",
+                        "title": "Observer",
+                        "url": "/observer",
+                        "description": "Learn about the observer pattern, which is used for objects to automatically update its dependents."
+                    },
+                    {
+                        "article": "prototype",
+                        "title": "Prototype",
+                        "url": "/prototype",
+                        "description": "Learn about the prototype pattern, which is used to instantiate objects with specific parameters."
+                    },
+                    {
+                        "article": "proxy",
+                        "title": "Proxy",
+                        "url": "/proxy",
+                        "description": "Learn about the proxy pattern, which is used to provide an surrogate for another object to have access."
+                    },
+                    {
+                        "article": "singleton",
+                        "title": "Singleton",
+                        "url": "/singleton",
+                        "description": "Learn about the singleton pattern, which is used to instantiate an object of only one instance."
+                    },
+                    {
+                        "article": "state",
+                        "title": "State",
+                        "url": "/state",
+                        "description": "Learn about the state pattern, which is used to provide an internal state to an object."
+                    },
+                    {
+                        "article": "strategy",
+                        "title": "Strategy",
+                        "url": "/strategy",
+                        "description": "Learn about the strategy pattern, which is used to encapsulate a family of algorithms."
+                    },
+                    {
+                        "article": "template-method",
+                        "title": "Template Method",
+                        "url": "/template-method",
+                        "description": "Learn about the template method pattern, which is used to provide a skeleton for a particular class."
+                    },
+                    {
+                        "article": "visitor",
+                        "title": "Visitor",
+                        "url": "/visitor",
+                        "description": "Learn about the visitor pattern, which is used to perform dynamic dispatch on multiple polymorphic objects."
+                    }
+                ]
+            }
+        ]
     }
 ]
