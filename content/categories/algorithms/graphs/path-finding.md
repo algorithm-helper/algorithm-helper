@@ -1,25 +1,47 @@
 # Path Finding
 
-Path Finding, in general, is producing a sequence of Edges to get from a
-starting Vertex x to an ending Vertex y, such that for each Edge in this
-sequence, the ending Vertex must be the starting Vertex of the next Edge.
+Path finding, in general, is producing a sequence of edges to get from a starting vertex `u` to an
+ending vertex `v` such that it is a path (all of the vertices are distinct). 
 
-Generally, in path finding, we maintain a set of explored Vertices and an array
-of predecessor, which points each Vertex to its parent Vertex, and starting some
-beginning Vertex x and continuously explore its adjacent Vertices (adding them
-to the set of explored Vertices each time, and updating their predecessor to be
-x), until we find the ending Vertex, or exhaust the search possibilities and can
-conclude that a path does not exist.
+Generally in path finding, we maintain a set of `explored` vertices and an array of `predecessor`,
+which points each vertex to its parent vertex, and start from some starting vertex `u` and 
+continuously exploring its neighbors, adding them to `explored` each time, updating their 
+updating their predecessor to be `u`, until we find the ending vertex `v`, or exhaust the search 
+possibilities and can conclude that a path does not exist. 
 
-If we do find a path, we maintain a Stack, and traverse up the predecessor tree,
-adding each Vertex to the Stack, until we get to the starting Vertex again.
-Iterating over this Stack then represents the path.
+If we do find a path, we maintain a stack, and traverse up the predecessor tree, adding each 
+subsequent vertex to the stack until we reach the starting vertex again. Iterating over this stack
+gives us the path.
 
-One of the common applications of path finding is finding the shortest path,
-which is in the context of Weighted Graphs, we want to minimize the total
-weight of the path.
+One of the common applications of path finding is finding the shortest path, which in the context
+of weighted graphs, is to produce a path of the minimum weight.
 
-We will look at algorithms for undirected and directed graphs, weighted graphs
-where all Edge weights are positive, and weighted graphs but we have the
-possibility of negative Edge weights and thus the possibility of negative
-weight cycles.
+We will look at algorithms for undirected and directed graphs, weights graphs where all edge weights
+are positive, and weighted graphs but we have the possiblity of negative and zero edge weights 
+(and thus an issue arises with negative weight cycles, which hinders the path finding process). 
+
+### Observations
+
+There are some interesting and useful properties of graphs that can be proved using paths. The 
+following are a few of those properties (for undirected graphs):
+
+(1) If there exists a walk from vertex `u` to `v`, then there exists a path from `u` to `v`.
+
+Let `W = u(0), u(1), ... u(n)` be a walk from vertex `u(0)` to `u(n)`. If `W` has no repeated 
+vertices then by definition `W` is a path. If `W` has repeated vertices, it follows that somewhere
+along the walk, there exists two distinct paths from some `u(i)` to some `u(j)`. Delete the edges
+off of one of those paths, and repeat this process until `W` has no repeated vertices. Then `W` is
+a path.
+
+(2) If there exists a path from vertex `u` to `v` and `v` to `w`, then there exists a path from
+`u` to `w`.
+
+Let `P(1)` be the path from `u` to `v`, `P(1) = u, p(1), p(2), ... p(i), v` and let `P(2)` be the path
+from `v` to `w`, `P(2) = v, p(i+1), p(i+2), ... p(n), w`. Then there exists a walk `W = P(1), P(2)`
+from `u` to `w`. Thus by (1), there exists a path from `u` to `w`.
+
+(3) Let `G` be a graph. If there exists a vertex `u` in `V(G)` such that for all other vertices `v`
+in `V(G)` there exists a path from `u` to `v`, then `G` is connected.
+
+Between any two vertices `x` and `y` in `V(G)`, there is a path from `x` to `u` and `u` to `y`, thus
+by (2), there is a path from `x` to `y`. Thus by definition, `G` is connected.
