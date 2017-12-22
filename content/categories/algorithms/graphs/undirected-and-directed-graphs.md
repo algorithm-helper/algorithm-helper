@@ -44,7 +44,7 @@ two directed edges between pairs of vertices `u` and `v`, with an edge going fro
 edge going from `v` to `u`.
 
 For simplicity, we do not consider weights in detail, which are values of the edges that measure 
-some property of that connection between two vertices, until the [Weighted Graphs](/categories/algorithms/graphs/weight-graphs) section. But it is clear that in the case of a 
+some property of that connection between two vertices, until the [Weighted Graphs](/categories/algorithms/graphs/weighted-graph) section. But it is clear that in the case of a 
 weighted graphs, the description of an directed graph possibly being an undirected graph using two 
 directed edges in opposite directions is not necessarily accurate. Consider the case of a graph 
 whose vertices represent the altitude of a hill-like landscape. Clearly, although we may have two
