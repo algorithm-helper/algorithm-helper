@@ -1,7 +1,7 @@
 # Introduction
 
-The topic in this section is graphs, and algorithms on graphs. A graph is an abstract data type that 
-is used to model connections and relationships, and consist of a set of vertices `V` and a set of 
+The topic in this section is graphs and algorithms on graphs. A graph is an abstract data type that 
+is used to model connections and relationships, and consists of a set of vertices `V` and a set of 
 edges `E`. A graph is generally visualized as a network of vertices joined pairwise with edges, 
 which may be straight lines (in the case of undirected graphs), arrow lines (in the case of directed 
 graphs), or with numbers beside them representing weights (in the case of weighted graphs). We will 
@@ -116,7 +116,7 @@ The following are terminology relating to properties and operations on graphs, v
     connected.
 - bridge
     - An edge `e` in `E(G)` such that the resulting graph obtained by deleting `e` (`G - e`) has
-    more components that `G`.
+    more components than that of `G`.
 - predecessor
     - A list of all vertices `v` where there exists an edge `e` from `v` to a vertex `u`.
 - edge weight
