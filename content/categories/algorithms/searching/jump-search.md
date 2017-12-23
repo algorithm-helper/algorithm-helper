@@ -1,16 +1,15 @@
 # Jump Search
 
-Jump search is an algorithm for searching for elements in a sorted array in 
-O(sqrtN) time. The main idea behind this algorithm is to continuously take 
-"steps" or "jumps" of elements of sqrt(N), where N is the size of the array. 
-By skipping elements of sqrt(N), we can get to an interval close to the key, 
-and then linearly search that interval until we find the key or not.
+Jump search is an algorithm for searching for elements in a sorted array in `O(sqrtN)` time. The 
+main idea behind this algorithm is to continuously take "steps" or "jumps" of elements of `sqrt(N)`,
+where `N` is the size of the array. By skipping elements of `sqrt(N)`, we can get to an interval 
+close to the key, and then linearly search that interval until we find the key or not.
 
 ### Visualization
 
-Since we can only make sqrt(N) number of these jumps, and even if we have to 
-linearly search in that block, we search sqrt(N) items until we can find if the 
-key exists or not. Thus, this algorithm runs in O(sqrt(N)) time.
+Since we can only make `sqrt(N)` number of these jumps, and even if we have to linearly search in 
+that block, we search `sqrt(N)` items until we can find if the key exists or not. Thus, this 
+algorithm runs in `O(sqrt(N))` time.
 
 The following is a visualization of jump search:
 
@@ -79,59 +78,16 @@ search to index 15 until we have found the element or not:
 
 ##### Java
 
-```
-package algorithms.searching;
+View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/algorithms/searching/JumpSearch.java).
 
-public class JumpSearch {
-
-    /**
-     * Returns the index of the search key x in the sorted array arr, or
-     * -1 if the key is not found.
-     *
-     * @param arr, the array to be searched in
-     * @param x, the key to be searched for
-     * @return the index of the search key x in the array arr, or
-     *         -1 if the key is not found
-     * @throws IllegalArgumentException if arr is null
-     * @throws IllegalArgumentException if x is null
-     */
-    public static int search(Comparable[] arr, Comparable x) {
-        if (arr == null)
-            throw new IllegalArgumentException("search with null arr");
-        if (x == null)
-            throw new IllegalArgumentException("search with null x");
-
-        int jump = (int) Math.sqrt(arr.length);
-
-        int prev = 0;
-        while (arr[Math.min(jump, arr.length) - 1].compareTo(x) == -1) {
-            prev = jump;
-            jump += (int) Math.sqrt(arr.length);
-            if (prev >= arr.length)
-                return -1;
-        }
-
-        while (arr[prev].compareTo(x) == -1) {
-            prev++;
-
-            if (prev == Math.min(jump, arr.length))
-                return -1;
-        }
-
-        if (arr[prev] == x)
-            return prev;
-        return -1;
-    }
-}
-```
+<script src="https://gist.github.com/eliucs/abc9ee8995a9cd3258fe5535b0718f90.js"></script>
 
 ### Time Complexity
 
-Since we jump sqrtN times to get close to where the searched element is
-in the array, and only linear search an interval of size sqrt, this algorithm
-runs in O(sqrtN) time.
+Since we jump sqrtN times to get close to where the searched element is in the array, and only 
+linear search an interval of size sqrt, this algorithm runs in `O(sqrtN)` time.
 
-Since it requires two pointers `jump` and `prev`, we need O(1) auxiliary space.
+Since it requires two pointers `jump` and `prev`, we need `O(1)` auxiliary space.
 
 The following describes the time and space complexity of jump search:
 

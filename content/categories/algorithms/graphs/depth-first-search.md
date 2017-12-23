@@ -116,19 +116,17 @@ auxiliary space.
 
 ##### Java
 
-View the source code here.
+View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/algorithms/graphs/DepthFirstSearchVerticesRecursion.java).
 
-```
-```
+<script src="https://gist.github.com/eliucs/362dc1f9a986ee83094823f1e9a041ac.js"></script>
 
 ### Implementation (using Stack)
 
 ##### Java
 
-View the source code here.
+View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/algorithms/graphs/DepthFirstSearchVerticesStack.java).
 
-```
-```
+<script src="https://gist.github.com/eliucs/9988a7547c8f2191c29fa8d205ef1fd9.js"></script>
 
 ### Time Complexity
 

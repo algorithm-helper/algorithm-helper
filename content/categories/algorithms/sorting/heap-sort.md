@@ -1,27 +1,24 @@
 # Heap Sort
 
-Heap sort is a sorting algorithm based on the idea of using heaps, specifically
-max heaps for sorting an array through the heap operations `heapifyDown`. More 
-on this can be found in the article on [Heaps](/categories/data-structures/trees/heap).
+Heap sort is a sorting algorithm based on the idea of using heaps, specifically max heaps for 
+sorting an array through the heap operations `heapifyDown`. More on this can be found in the article 
+on [Heaps](/categories/data-structures/trees/heap).
 
-The approach to using a heap is that from the array, we build up the heap 
-structure, in-place. Then we continuously swap the top of the max heap (which is 
-the largest element in the heap) with the last element in the array. We then 
-"remove" that element from the heap and into the finalized array by decrementing 
-the size of the heap.
+The approach to using a heap is that from the array, we build up the heap structure, in-place. Then 
+we continuously swap the top of the max heap (which is the largest element in the heap) with the 
+last element in the array. We then "remove" that element from the heap and into the finalized array 
+by decrementing the size of the heap.
 
-Then we apply the operation `heapifyDown` on the current root element of the 
-heap, and continue this process until the heap is of size 0. The correctness of 
-this algorithm can be seen intuitively, if we move the root of the max heap, 
-which is the current max element, to the back of the heap, then in the finalized 
-array that element must be in the correct position.
+Then we apply the operation `heapifyDown` on the current root element of the heap, and continue this 
+process until the heap is of size 0. The correctness of this algorithm can be seen intuitively, if 
+we move the root of the max heap, which is the current max element, to the back of the heap, then in 
+the finalized array that element must be in the correct position.
 
-Since heaps are completely balanced binary trees, the height of a heap is at 
-most lgN. Furthermore, when we call the `heapifyDown` operation, the most we 
-must displace a wrongly positioned root item is at the bottom of the heap, so 
-this element must travel the height of the tree. Intuitively, since the height 
-is lgN, and we must do this for all the N items, this algorithm's running time 
-is O(NlgN).
+Since heaps are completely balanced binary trees, the height of a heap is at most `lgN`. 
+Furthermore, when we call the `heapifyDown` operation, the most we must displace a wrongly 
+positioned root item is at the bottom of the heap, so this element must travel the height of the 
+tree. Intuitively, since the height is `lgN`, and we must do this for all the `N` items, this 
+algorithm's running time is `O(NlgN)`.
 
 ### Visualization
 
@@ -202,98 +199,25 @@ a = [5, 0, -1, 7, 8, 9, 12]
 a = [-1, 0, 5, 7, 8, 9, 12]
 ```
 
-The advantage to heap sort is that because it is in-place, as we can build up 
-the heap structure within the original array itself, so the extra space usage 
-is only O(1).
+The advantage to heap sort is that because it is in-place, as we can build up the heap structure 
+within the original array itself, so the extra space usage is only `O(1)`.
 
-But heap sort is not stable, making it an undesirable property if stability is 
-needed.
+But heap sort is not stable, making it an undesirable property if stability is needed.
 
 ### Implementation
 
 ##### Java
 
-```
-package algorithms.sorting;
+View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/algorithms/sorting/HeapSort.java).
 
-public class HeapSort<T extends Comparable<T>> {
-
-    /**
-     * Sorts the array arr.
-     *
-     * @param arr, the array to be sorted.
-     * @throws IllegalArgumentException if arr is null
-     */
-    public static void sort(Comparable[] arr) {
-        if (arr == null)
-            throw new IllegalArgumentException("sort with null arr");
-
-        int n = arr.length;
-
-        for (int i = n/2; i >= 1; i--)
-            heapifyDown(arr, i, n);
-
-        while (n > 1) {
-            swap(arr, 1, n--);
-            heapifyDown(arr, 1, n);
-        }
-    }
-
-    /**
-     * Restores the (min) heap invariant by continuously moving i
-     * down the heap if it is larger than its two children.
-     *
-     * @param arr
-     * @param i
-     * @param n
-     */
-    private static void heapifyDown(Comparable[] arr, int i, int n) {
-        while (2*i <= n) {
-            int j = 2*i;
-            if (j < n && less(arr, j, j+1)) j++;
-            if (!less(arr, i, j))
-                break;
-            swap(arr, i, j);
-            i = j;
-        }
-    }
-
-    /**
-     * Helper function that returns true if the element at index i is
-     * less than the element at index j in the array arr, otherwise false.
-     *
-     * @param arr
-     * @param i
-     * @param j
-     * @return true if the element at index i is less than the element at
-     *         index j in the array arr, otherwise false.
-     */
-    private static boolean less(Comparable[] arr, int i, int j) {
-        return arr[i-1].compareTo(arr[j-1]) < 0;
-    }
-
-    /**
-     * Helper method that swaps the elements at index i and j in the
-     * array a.
-     *
-     * @param arr
-     * @param i
-     * @param j
-     */
-    private static void swap(Comparable[] arr, int i, int j) {
-        Comparable temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
-    }
-}
-```
+<script src="https://gist.github.com/eliucs/252f31aa7f59025b04b2fe8761220f68.js"></script>
 
 ### Time Complexity
 
 The time complexity of heap sort is O(NlogN).
 
-Since it is done in-place in the array and requires variables `i` and `j` for
-the `heapifyDown` operation, it requires O(1) auxiliary space.
+Since it is done in-place in the array and requires variables `i` and `j` for the `heapifyDown` 
+operation, it requires `O(1)` auxiliary space.
 
 It is in-place, and not stable.
 

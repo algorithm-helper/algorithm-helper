@@ -1,17 +1,15 @@
 # Amortization
 
-Amortization is a method of analyzing a algorithm's time and space complexity,
-with the primary motivation that looking at the worst-case runtime per operation
-may be too pessimistic, because some operations can "amortize" the cost over 
-multiple uses of that same operation. "Amortizing the cost" can be though of as
-distributing the cost of that operation over the multiple uses of that same 
+Amortization is a method of analyzing a algorithm's time and space complexity, with the primary 
+motivation that looking at the worst-case runtime per operation may be too pessimistic, because some 
+operations can "amortize" the cost over multiple uses of that same operation. "Amortizing the cost" 
+can be though of as distributing the cost of that operation over the multiple uses of that same 
 operation. 
 
 ### Example
 
-The example used here will be in the context of dynamic arrays, and the 
-amortized cost of inserting elements when we have to double the size of the 
-underlying array when it becomes full:
+The example used here will be in the context of dynamic arrays, and the amortized cost of inserting 
+elements when we have to double the size of the underlying array when it becomes full:
 
 ```
 // Starting array:
@@ -42,17 +40,15 @@ underlying array when it becomes full:
 [a1][a2][a3][a4][a5][a6][a7][a8]
 ```
 
-At first glance, we may naively say that the operation to insert elements to 
-the back of the array is done in O(N) time, since we would need to initialize
-an array of twice the size and copy all of the original elements over to the 
-new array, whenever array doubling is needed. However, intuitively, we only 
-need to double at most lgN times, since after we double, we still have to 
-completely fill up the array again. We can amortize the cost of the array 
-doubling over the calls to the operation `insertBack` until we fill up the array
-again.
+At first glance, we may naively say that the operation to insert elements to the back of the array 
+is done in `O(N)` time, since we would need to initialize an array of twice the size and copy all of 
+the original elements over to the new array, whenever array doubling is needed. However, intuitively, 
+we only need to double at most `lgN` times, since after we double, we still have to completely fill 
+up the array again. We can amortize the cost of the array doubling over the calls to the operation 
+`insertBack` until we fill up the array again.
 
-Consider N number of insertions. We only have to double lgN times. So the total 
-cost of the insertion becomes:
+Consider `N` number of insertions. We only have to double `lgN` times. So the total cost of the 
+insertion becomes:
 
 ```
 = O(2^0 + 2^1 + ... 2^lgN)
@@ -66,4 +62,4 @@ But this is the total cost over N elements. So per element it becomes:
 = O(1)
 ```
 
-Thus we say that we `insertBack` runs in O(1) amortized time.
+Thus we say that we `insertBack` runs in `O(1)` amortized time.

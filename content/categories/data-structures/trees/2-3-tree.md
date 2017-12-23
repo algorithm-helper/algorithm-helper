@@ -1,21 +1,19 @@
 # 2-3 Tree
 
-A 2-3 tree is a balanced tree structure where nodes can contain either 2 
-children (called a 2-node) or 3 children (called a 3-node). In a 3-node, we 
-would have pointers to the `left`, `middle`, and `right` children, where the 
-`key` of the `left` is less than the `key` of the `middle`, and the `key` of the 
-`middle` is less than the `key` of the `right`. Overall, `key` values in the 
-`left` subtree is less than the `key` of the node, and the `key` of the node
-is less than the `key` of the `right` subtree, just like in a regular binary 
-search tree.
+A 2-3 tree is a balanced tree structure where nodes can contain either 2 children (called a 2-node) 
+or 3 children (called a 3-node). In a 3-node, we would have pointers to the `left`, `middle`, and 
+`right` children, where the `key` of the `left` is less than the `key` of the `middle`, and the 
+`key` of the `middle` is less than the `key` of the `right`. Overall, `key` values in the `left` 
+subtree is less than the `key` of the node, and the `key` of the node is less than the `key` of the 
+`right` subtree, just like in a regular binary search tree.
 
-Since we are always able to maintain balance, the distance from the root to any
-leaf in the tree is always less than or equal to lgN, where N is the number of
-elements in the tree, and thus the time complexity for operations like `get`,
-`put`, or `delete` is always O(lgN).
+Since we are always able to maintain balance, the distance from the root to any leaf in the tree is 
+always less than or equal to `lgN`, where `N` is the number of elements in the tree, and thus the 
+time complexity for operations like `get`, `put`, or `delete` is always `O(lgN)`.
 
-However, implementing this exact description of a 2-3 tree is difficult in
-practice, but this can be done using the [Red-Black Tree](/categories/data-structures/trees/red-black-tree), which is modelled after the 2-3 tree.
+However, implementing this exact description of a 2-3 tree is difficult in practice, but this can be 
+done using the [Red-Black Tree](/categories/data-structures/trees/red-black-tree), which is modelled 
+after the 2-3 tree.
 
 ### Algorithm
 

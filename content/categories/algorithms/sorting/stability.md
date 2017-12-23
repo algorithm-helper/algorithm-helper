@@ -1,19 +1,16 @@
 # Stability
 
-Stability in the context of sorting algorithms refers to whether or not elements 
-in the array that are equal stay in the same original order after the array has 
-been sorted. 
+Stability in the context of sorting algorithms refers to whether or not elements in the array that 
+are equal stay in the same original order after the array has been sorted. 
 
 From Wikipedia:
 
-> [Stability](https://en.wikipedia.org/wiki/Sorting_algorithm#Stability) - 
-Stable sorting algorithms maintain the relative order of records with equal
-keys.
+> [Stability](https://en.wikipedia.org/wiki/Sorting_algorithm#Stability) - Stable sorting algorithms 
+maintain the relative order of records with equal keys.
 
 ### Example
 
-An example of where stability might be important is if we consider (`key`, 
-`val`) pairs.
+An example of where stability might be important is if we consider (`key`, `val`) pairs.
 
 The following visualizes stability:
 

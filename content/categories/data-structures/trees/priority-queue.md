@@ -1,56 +1,51 @@
 # Priority Queue
 
-A priority queue is an abstract data type that is used to insert and extract
-elements based off of some priority value. There are three variants: the 
-priority max queue, the priority min queue, and the double ended priority queue,
-which allows us to retrieve the element of the maximum priority efficiently with 
-the operation `extractMax`, retrieve the element of the minimum priority 
-efficiently with the operation `extractMin`, or retrieve both the element with 
-the maximum and minimum priority efficient. 
+A priority queue is an abstract data type that is used to insert and extract elements based off of 
+some priority value. There are three variants: the priority max queue, the priority min queue, and 
+the double ended priority queue, which allows us to retrieve the element of the maximum priority 
+efficiently with the operation `extractMax`, retrieve the element of the minimum priority 
+efficiently with the operation `extractMin`, or retrieve both the element with the maximum and 
+minimum priority efficiently. 
 
 ### Priority Max Queue
 
-A priority max queue is a priority queue that supports the operations `insert`,
-`extractMax`, and `max`, which allow us to insert an element of some priority 
-into the data structure, remove and return the element of maximum priority,
-and return the element of maximum priority without removing it from the 
-priority max queue, respectively.
+A priority max queue is a priority queue that supports the operations `insert`, `extractMax`, and 
+`max`, which allow us to insert an element of some priority into the data structure, remove and 
+return the element of maximum priority, and return the element of maximum priority without removing 
+it from the priority max queue, respectively.
 
-This data structure is best suitable to be implemented with a binary max heap,
-and thus we are able to run the operations `insert` and `extractMax` in O(lgN)
-time, and return the `max` in O(1) time.
+This data structure is best suitable to be implemented with a binary max heap, and thus we are able 
+to run the operations `insert` and `extractMax` in `O(lgN)` time, and return the `max` in `O(1)` 
+time.
 
 ### Priority Min Queue
 
-A priority min queue is a priority queue that supports the operations `insert`,
-`extractMin`, and `min`, which allow us to insert an element of some priority 
-into the data structure, remove and return the element of minimum priority,
-and return the element of minimum priority without removing it from the 
-priority min queue, respectively.
+A priority min queue is a priority queue that supports the operations `insert`, `extractMin`, and 
+`min`, which allow us to insert an element of some priority into the data structure, remove and 
+return the element of minimum priority, and return the element of minimum priority without removing 
+it from the priority min queue, respectively.
 
-This data structure is best suitable to be implemented with a binary min heap,
-and thus we are able to run the operations `insert` and `extractMin` in O(lgN)
-time, and return the `min` in O(1) time.
+This data structure is best suitable to be implemented with a binary min heap, and thus we are able 
+to run the operations `insert` and `extractMin` in `O(lgN)` time, and return the `min` in `O(1)`
+time.
 
 ### Double Ended Priority Queue
 
-A double ended priority queue is a priority queue that supports the operations 
-`insert`, `extractMax`, `extractMin`, `max`, and `min`, which allow us to insert 
-an element of some priority into the data structure, remove and return the 
-element of maximum priority, remove and return the element of minimum priority, 
-return the element of maximum priority without removing it from the 
-double ended priority queue, and return the element of minimum priority without 
-removing it from the double ended priority queue.
+A double ended priority queue is a priority queue that supports the operations `insert`, 
+`extractMax`, `extractMin`, `max`, and `min`, which allow us to insert an element of some priority 
+into the data structure, remove and return the element of maximum priority, remove and return the 
+element of minimum priority, return the element of maximum priority without removing it from the 
+double ended priority queue, and return the element of minimum priority without removing it from the 
+double ended priority queue.
 
-This data structure is best suitable to be implemented with some balanced tree
-structure, like a red-black tree, and thus we are able to run all of the 
-operations in O(lgN) time.
+This data structure is best suitable to be implemented with some balanced tree structure, like a 
+red-black tree, and thus we are able to run all of the operations in `O(lgN)` time.
 
 ### Visualization
 
-The following demonstrates the state of a priority max queue, starting with an
-empty priority max queue, and a lower number represents a higher priority. It is
-essentially the same with a priority min queue:
+The following demonstrates the state of a priority max queue, starting with an empty priority max 
+queue, and a lower number represents a higher priority. It is essentially the same with a priority 
+min queue:
 
 ```
 // Suppose that we start off with the following empty priority max queue:
@@ -87,9 +82,8 @@ essentially the same with a priority min queue:
 5
 ```
 
-The following demonstrates the state of a double ended priority queue, starting 
-with an empty double ended priority queue, and a lower number represents a 
-higher priority:
+The following demonstrates the state of a double ended priority queue, starting with an empty double 
+ended priority queue, and a lower number represents a higher priority:
 
 ```
 // Suppose that we start off with the following empty double ended priority 
@@ -180,90 +174,7 @@ For double ended priority queue:
 
 View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/PriorityMaxQueue.java).
 
-```
-package com.algorithmhelper.datastructures.trees;
-
-import java.util.NoSuchElementException;
-
-public class PriorityMaxQueue<T extends Comparable<T>> {
-
-    private BinaryMaxHeap<T> heap;
-
-    /**
-     * Initializes an empty PriorityMaxQueue.
-     */
-    public PriorityMaxQueue() {
-        heap = new BinaryMaxHeap();
-    }
-
-    /**
-     * Initializes a PriorityMaxQueue from an initial array of elements.
-     */
-    public PriorityMaxQueue(T[] a) {
-        heap = new BinaryMaxHeap();
-        for (T item : a) {
-            heap.insert(item);
-        }
-    }
-
-    /**
-     * Returns true if the PriorityMaxQueue is empty, false otherwise.
-     *
-     * @return true if the PriorityMaxQueue is empty, false otherwise
-     */
-    public boolean isEmpty() {
-        return heap.isEmpty();
-    }
-
-    /**
-     * Returns the number of elements in the PriorityMaxQueue.
-     *
-     * @return the number of elements in the PriorityMaxQueue
-     */
-    public int size() {
-        return heap.size();
-    }
-
-    /**
-     * Inserts item into the PriorityMaxQueue.
-     *
-     * @param item, the item to be inserted
-     */
-    public void insert(T item) {
-        if (item == null)
-            throw new IllegalArgumentException("insert with null item");
-        heap.insert(item);
-    }
-
-    /**
-     * Removes element with the largest priority from the PriorityMaxQueue.
-     *
-     * @return element with the largest priority from the PriorityMaxQueue
-     * @throws IllegalArgumentException if the PriorityMaxQueue is empty
-     */
-    public T removeMax() {
-        if (isEmpty())
-            throw new IllegalArgumentException("removeMax with empty " +
-                    "PriorityMaxQueue");
-        return heap.extractMax();
-    }
-
-    /**
-     * Returns element with the largest priority from the PriorityMaxQueue,
-     * but does not remove it.
-     *
-     * @return element with the largest priority from the PriorityMaxQueue,
-     *         but does not remove it
-     * @throws IllegalArgumentException if the PriorityMaxQueue is empty
-     */
-    public T max() {
-        if (isEmpty())
-            throw new NoSuchElementException("max with empty " +
-                    "PriorityMaxQueue");
-        return heap.max();
-    }
-}
-```
+<script src="https://gist.github.com/eliucs/5aaa405a78c10d7d28a8b4f8ce57e03f.js"></script>
 
 ### Implementation (Priority Min Queue)
 
@@ -271,221 +182,20 @@ public class PriorityMaxQueue<T extends Comparable<T>> {
 
 View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/PriorityMinQueue.java).
 
-```
-package datastructures.trees;
+<script src="https://gist.github.com/eliucs/2e38db7af9f6f50520a67f2f888a442f.js"></script>
 
-import java.util.NoSuchElementException;
-
-public class PriorityMinQueue<T extends Comparable<T>> {
-
-    private BinaryMinHeap<T> heap;
-
-    /**
-     * Initializes an empty PriorityMinQueue.
-     */
-    public PriorityMinQueue() {
-        heap = new BinaryMinHeap();
-    }
-
-    /**
-     * Initializes a PriorityMinQueue from an initial array of elements.
-     */
-    public PriorityMinQueue(T[] a) {
-        heap = new BinaryMinHeap();
-        for (T item : a) {
-            heap.insert(item);
-        }
-    }
-
-    /**
-     * Returns true if the PriorityMinQueue is empty, false otherwise.
-     *
-     * @return true if the PriorityMinQueue is empty, false otherwise
-     */
-    public boolean isEmpty() {
-        return heap.isEmpty();
-    }
-
-    /**
-     * Returns the number of elements in the PriorityMinQueue.
-     *
-     * @return the number of elements in the PriorityMinQueue
-     */
-    public int size() {
-        return heap.size();
-    }
-
-    /**
-     * Inserts item into the PriorityMinQueue.
-     *
-     * @param item, the item to be inserted
-     */
-    public void insert(T item) {
-        if (item == null)
-            throw new IllegalArgumentException("insert with null item");
-        heap.insert(item);
-    }
-
-    /**
-     * Removes element with the smallest priority from the PriorityMinQueue.
-     *
-     * @return element with the smallest priority from the PriorityMinQueue
-     * @throws IllegalArgumentException if the PriorityMinQueue is empty
-     */
-    public T removeMin() {
-        if (isEmpty())
-            throw new IllegalArgumentException("removeMin with empty " +
-                    "PriorityMinQueue");
-        return heap.extractMin();
-    }
-
-    /**
-     * Returns element with the smallest priority from the PriorityMinQueue,
-     * but does not remove it.
-     *
-     * @return element with the smallest priority from the PriorityMinQueue,
-     *         but does not remove it
-     * @throws IllegalArgumentException if the PriorityMinQueue is empty
-     */
-    public T min() {
-        if (isEmpty())
-            throw new NoSuchElementException("min with empty " +
-                    "PriorityMinQueue");
-        return heap.min();
-    }
-}
-```
-
-### Implementation (Double Ended Priority Queue)
+### Implementation (Double Ended)
 
 ##### Java
 
 View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/DoubleEndedPriorityQueue.java).
 
-```
-package com.algorithmhelper.datastructures.trees;
-
-import java.util.NoSuchElementException;
-
-public class DoubleEndedPriorityQueue<T extends Comparable<T>> {
-
-    private RedBlackTreeSet pq;
-
-    /**
-     * Initializes an empty DoubleEndedPriorityQueue.
-     */
-    public DoubleEndedPriorityQueue() {
-        pq = new RedBlackTreeSet();
-    }
-
-    /**
-     * Initializes a DoubleEndedPriorityQueue from an initial array of elements.
-     */
-    public DoubleEndedPriorityQueue(T[] a) {
-        pq = new RedBlackTreeSet();
-        for (T item : a) {
-            pq.put(item);
-        }
-    }
-
-    /**
-     * Returns true if the DoubleEndedPriorityQueue is empty, false otherwise.
-     *
-     * @return true if the DoubleEndedPriorityQueue is empty, false otherwise
-     */
-    public boolean isEmpty() {
-        return pq.isEmpty();
-    }
-
-    /**
-     * Returns the number of elements in the DoubleEndedPriorityQueue.
-     *
-     * @return the number of elements in the DoubleEndedPriorityQueue
-     */
-    public int size() {
-        return pq.size();
-    }
-
-    /**
-     * Inserts item into the DoubleEndedPriorityQueue.
-     *
-     * @param item, the item to be inserted
-     */
-    public void insert(T item) {
-        if (item == null)
-            throw new IllegalArgumentException("insert with null item");
-        pq.put(item);
-    }
-
-    /**
-     * Removes element with the largest priority from the DoubleEndedPriorityQueue.
-     *
-     * @return element with the largest priority from the DoubleEndedPriorityQueue
-     * @throws IllegalArgumentException if the DoubleEndedPriorityQueue is empty
-     */
-    public T removeMax() {
-        if (isEmpty())
-            throw new IllegalArgumentException("removeMax with empty " +
-                    "DoubleEndedPriorityQueue");
-        T maxElement = (T) pq.max();
-        pq.deleteMax();
-        return maxElement;
-    }
-
-    /**
-     * Removes element with the smallest priority from the DoubleEndedPriorityQueue.
-     *
-     * @return element with the smallest priority from the DoubleEndedPriorityQueue
-     * @throws IllegalArgumentException if the DoubleEndedPriorityQueue is empty
-     */
-    public T removeMin() {
-        if (isEmpty())
-            throw new IllegalArgumentException("removeMin with empty " +
-                    "DoubleEndedPriorityQueue");
-        T minElement = (T) pq.min();
-        pq.deleteMin();
-        return minElement;
-    }
-
-    /**
-     * Returns element with the largest priority from the DoubleEndedPriorityQueue,
-     * but does not remove it.
-     *
-     * @return element with the largest priority from the DoubleEndedPriorityQueue,
-     *         but does not remove it
-     * @throws IllegalArgumentException if the DoubleEndedPriorityQueue is empty
-     */
-    public T max() {
-        if (isEmpty())
-            throw new NoSuchElementException("max with empty " +
-                    "DoubleEndedPriorityQueue");
-        T maxElement = (T) pq.max();
-        return maxElement;
-    }
-
-    /**
-     * Returns element with the smallest priority from the DoubleEndedPriorityQueue,
-     * but does not remove it.
-     *
-     * @return element with the smallest priority from the DoubleEndedPriorityQueue,
-     *         but does not remove it
-     * @throws IllegalArgumentException if the DoubleEndedPriorityQueue is empty
-     */
-    public T min() {
-        if (isEmpty())
-            throw new NoSuchElementException("min with empty " +
-                    "DoubleEndedPriorityQueue");
-        T minElement = (T) pq.min();
-        return minElement;
-    }
-}
-```
+<script src="https://gist.github.com/eliucs/30f63846b5a15df27f9fff188479a9e0.js"></script>
 
 ### Time Complexity
 
-The following table describes the time complexity for performing the 
-operations above on an priority max queue, priority min queue, and a double 
-ended priority queue:
+The following table describes the time complexity for performing the operations above on an priority 
+max queue, priority min queue, and a double ended priority queue:
 
 ```
 | Data Structure              | insert | extractMax | extractMin | max    | min    |

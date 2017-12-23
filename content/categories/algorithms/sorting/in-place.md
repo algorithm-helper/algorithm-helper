@@ -1,19 +1,18 @@
 # In-Place
 
-In-place, or in-placeness in the context of sorting algorithms refers to whether 
-or not we need auxiliary space in order to perform the sort. This is important 
-in the context of memory usage and space complexity. We do still need O(1) extra 
-space for auxiliary variables, which are commonly pointers.
+In-place, or in-placeness in the context of sorting algorithms refers to whether or not we need 
+auxiliary space in order to perform the sort. This is important in the context of memory usage and 
+space complexity. We do still need `O(1)` extra space for auxiliary variables, which are commonly 
+pointers.
 
 From Wikipedia:
 
-> [In-place algorithm](https://en.wikipedia.org/wiki/In-place_algorithm) - An 
-in-place algorithm is an algorithm which transforms input using no auxiliary 
-data structure. However a small amount of extra storage space is allowed for 
-auxiliary variables. The input is usually overwritten by the output as the 
-algorithm executes. In-place algorithm updates input sequence only through 
-replacement or swapping of elements. An algorithm which is not in-place is 
-sometimes called not-in-place or out-of-place.
+> [In-place algorithm](https://en.wikipedia.org/wiki/In-place_algorithm) - An in-place algorithm is 
+an algorithm which transforms input using no auxiliary data structure. However a small amount of 
+extra storage space is allowed for auxiliary variables. The input is usually overwritten by the 
+output as the algorithm executes. In-place algorithm updates input sequence only through 
+replacement or swapping of elements. An algorithm which is not in-place is sometimes called 
+not-in-place or out-of-place.
 
 ### Example
 
