@@ -112,10 +112,7 @@ Since the set `visited` and the array `predecessor` can contain at most `|V|` ve
 `S` can have at most `|V|` elements, it uses `O(|V|)` space. Thus, depth first search uses `O(|V|)`
 auxiliary space.
 
-### Implementation (using Recursion, vertices)
-
-Note that this implementation is for retrieving an `Iterable` to the vertices found by the depth 
-first search algorithm.
+### Implementation (using Recursion)
 
 ##### Java
 
@@ -123,7 +120,7 @@ View the source code [here](https://github.com/algorithm-helper/implementations/
 
 <script src="https://gist.github.com/eliucs/362dc1f9a986ee83094823f1e9a041ac.js"></script>
 
-### Implementation (using Stack, vertices)
+### Implementation (using Stack)
 
 ##### Java
 
