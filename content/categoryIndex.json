@@ -568,9 +568,9 @@
         ]
     },
     {
-        "category": "paradigms",
-        "title": "Paradigms",
-        "url": "/categories/paradigms",
+        "category": "software-engineering",
+        "title": "Software Engineering",
+        "url": "/categories/software-engineering",
         "topics": [
             {
                 "topic": "object-oriented-programming",
@@ -659,14 +659,7 @@
                         "description": "Learn about currying, a technique in functional programming to translate the evaluation of a function with multiple arguments into a evaluating a sequence of functions."
                     }
                 ]
-            }
-        ]
-    },
-    {
-        "category": "software-engineering",
-        "title": "Software Engineering",
-        "url": "/categories/software-engineering",
-        "topics": [
+            },
             {
                 "topic": "design-patterns",
                 "title": "Design Patterns",

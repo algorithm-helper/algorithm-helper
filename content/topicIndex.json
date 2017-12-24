@@ -72,16 +72,16 @@
     {
         "topic": "object-oriented-programming",
         "title": "Object Oriented Programming",
-        "tags": ["paradigms"],
+        "tags": ["software engineering"],
         "description": "Learn about object oriented programming concepts like encapsulation, inheritance, and polymorphism.",
-        "url": "/categories/paradigms/object-oriented-programming"
+        "url": "/categories/software-engineering/object-oriented-programming"
     },
     {
         "topic": "functional-programming",
         "title": "Functional Programming",
-        "tags": ["paradigms"],
+        "tags": ["software engineering"],
         "description": "Learn about functional programming concepts like lambda notation, function composition, filter, map, and reduce.",
-        "url": "/categories/paradigms/functional-programming"
+        "url": "/categories/software-engineering/functional-programming"
     },
     {
         "topic": "design-patterns",
