@@ -1,26 +1,69 @@
 # Topological Sort
 
-Topological Sort, in the context of directed Graphs, is a linear ordering of
-Vertices such that for every directed Edge consisting of Vertices u and v, u
-comes before v. Often there is not necessarily a unique ordering to the
-Vertices. A topological ordering can only exist if there are no cycles in the
-Graph, meaning that the Graph must be a Directed Acyclic Graph (DAG), and a DAG
-has at least one topological ordering.
+Topological sort, in the context of directed graphs, is a linear ordering of vertices such that for
+every directed edge `e = (u, v)`, vertex `u` comes before `v`. Often there is not necessarily a 
+unique ordering of vertices. Note that a topological ordering can only exist if there are no cycles
+in the graph, meaning that the graph must be a directed acyclic graph (DAG), and a DAG has at least
+one topological ordering. Topological sort has various applications, and those may be the scheduling
+of tasks that have dependencies on previous tasks completed.
 
-For example:
+### Visualization
+
+The following is an example of a DAG:
+
+<img src="https://i.imgur.com/E49Ssuh.png" alt="Directed Acyclic Graph" width="400" height="300">
+
+Here, this graph has directed edges and has no cycles, and so is a DAG. Thus a topological ordering
+exists. One possible ordering could be that if we start from `1` and order by depth: 
+`[1, 3, 2, 4, 5, 9, 6, 7]`.
+
+We see the topologically sorted graph by redrawing the DAG such that all of the edges point 
+upwards:
+
+<img src="https://i.imgur.com/Dm1G3GD.png" alt="Topologically Sorted" width="400" height="300">
+
+### Using Depth First Search
+
+One method of obtaining a topological sorting is simply by using depth first search, and returning
+the vertices visited in reverse postorder. We can achieve this by maintaining a stack of vertices
+visited. Intuitively, we can see that depth first search produces a topologically sorted ordering 
+because when a vertex `u` is added to the stack, we are guaranteed that all vertices `v` that are 
+directed to by `u` have already been added to the stack.
+
+We give a proof of correctness that depth first search with reverse postordering gives a 
+topologically sorted ordering:
+
+Consider some directed edge `e = (u, v)` (that is, from vertex `u` to `v`). When we call 
+`depthFirstSearch(u)`, we have 3 cases:
+
+(1) `depthFirstSearch(v)` was already called and returned. Then `v` was processed before `u`, as
+required.
+
+(2) `depthFirstSearch(v)` was not already called. Since `depthFirstSearch` is recursively called on 
+all of `u`'s neighbors, then either `depthFirstSearch(v)` is called directly, or indirectly, after
+being recursively called later on when another one of `u`'s neighbors is processed. In either case,
+`v` is processed before `u`, as required.
+
+(3) `depthFirstSearch(v)` was already called and not yet returned. Then it follows that there was 
+some directed path from `v` to `u`, but then with edge `e` we form a cycle from `u` to `v`. This is
+a contradiction since this graph is a DAG. Thus this case is impossible.
+
+### Implementation
+
+##### Java
+
+View the source code [here]().
+
+<script src="https://gist.github.com/eliucs/432740d0bc175db41672e2c5d6ef1cac.js"></script>
+
+### Time Complexity
+
+Since this algorithm is virtually the same as depth first search except that we must store at most 
+`|V|` vertices in the stack to maintain a reverse postordering of the vertices, the time complexity
+is still `O(|V|+|E|)` and the space complexity is still `O(|V|)`.
 
 ```
-// Suppose we had the following Graph:
-
-3    4 -> 9
-^    ^
-|    |
-1 -> 2 -> 5 -> 6 -> 7
+| Algorithm          | time complexity | space complexity |
+|--------------------|-----------------|------------------|
+| depth first search | O(|V|+|E|)      | O(|V|)           |
 ```
-
-Here we have no cycles, so this is a DAG, and a topological ordering exists.
-One possible ordering could be if we start from 1 and order by depth: [1, 3, 2,
-4, 5, 9, 6, 7]. One application of Topological Sort is the scheduling of tasks
-that have dependencies on previous tasks completed.
-
-
