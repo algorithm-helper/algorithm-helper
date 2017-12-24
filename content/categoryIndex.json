@@ -426,6 +426,12 @@
                         "description": "Learn about breadth first search, a basic graph traversal algorithm with the property of always at the same level to be the next to be traversed."
                     },
                     {
+                        "article": "connected-components",
+                        "title": "Connected Components",
+                        "url": "/connected-components",
+                        "description": "Learn about connected components, and using the depth first search algorithm to determine if two vertices belong to the same component."
+                    },
+                    {
                         "article": "topological-sort",
                         "title": "Topological Sort",
                         "url": "/topological-sort",
