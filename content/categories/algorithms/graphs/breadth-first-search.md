@@ -72,7 +72,7 @@ can contain at most `|V|` vertices, it uses `O(|V|)` space. But since the queue 
 
 ##### Java
 
-View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/algorithms/graphs/BreadthFirstSearchVertices.java).
+View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/algorithms/graphs/BreadthFirstSearch.java).
 
 <script src="https://gist.github.com/eliucs/3edf468efd8bdfc677b4418ba5e3c8d3.js"></script>
 
