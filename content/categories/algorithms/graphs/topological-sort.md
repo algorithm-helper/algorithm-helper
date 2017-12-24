@@ -52,7 +52,7 @@ a contradiction since this graph is a DAG. Thus this case is impossible.
 
 ##### Java
 
-View the source code [here]().
+View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/algorithms/graphs/TopologicalSort.java).
 
 <script src="https://gist.github.com/eliucs/432740d0bc175db41672e2c5d6ef1cac.js"></script>
 
