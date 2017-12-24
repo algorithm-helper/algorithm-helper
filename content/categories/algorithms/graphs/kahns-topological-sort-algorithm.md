@@ -1,23 +1,25 @@
 # Kahn's Topological Sort Algorithm
 
-Kahn's Topological Sort Algorithm is an algorithm for finding the topological
-ordering of a Graph, and the main idea is that we maintain a Stack or a Queue
-and start off by adding all Vertices with no incoming Edges, then we run either
-Depth First Search (with a Stack) or Breadth First Search (with a Queue) with
-the modification that we delete Edges to adjacent Vertices, and only process
-them when they have no more incoming Edges to them.
+Kahn's topological sort algorithm is an algorithm for finding the topological ordering of a graph, 
+and the main idea is that we maintain a stack or a queue and start off by adding all vertices with 
+no incoming edges (i.e. with an indegree of 0) and then run either depth first search (in the case 
+of using a stack) or breadth first search (in the case of using a queue) with the modification that
+we delete edges to adjacent vertices, and only process them when they have no more incoming edges
+to them.
 
-Pseudocode (with Stack):
+### Using Stack
+
+Pseudocode:
 
 ```
-V : Set of all Vertices
-adjacent : Adjacency List
-S : Stack of Vertices, initialized to be empty
+V : set of all vertices
+adjacent : adjacency list
+S : stack of vertices, initialized to be empty
 
 kahnTopologicalSort(V):
-  result : Queue of Vertices, initialized to be empty
+  result : queue of vertices, initialized to be empty
 
-  for each Vertex x in V:
+  for each vertex x in V:
     if x has no incoming edges:
       S.push(x)
 
@@ -25,7 +27,7 @@ kahnTopologicalSort(V):
     current = S.pop()
     result.enqueue(current)
 
-    for each Vertex x in adjacent[current]:
+    for each vertex x in adjacent[current]:
       deleteEdge(current, x)
 
       if (x does not have any more incoming edges):
@@ -34,26 +36,27 @@ kahnTopologicalSort(V):
   return result
 ```
 
-Unlike the method with the Queue, we do not need to maintain the Set visited
-because we are only concerned with exploring Vertices as deep as possible which
-can be added to the result for a valid topological ordering. When we delete
-the Edge going from the current Vertex to each adjacent Vertex x, then
-intuitively if x still has incoming Edges, say from some other Vertex y, then it
-follows that we cannot add x to the result because y must go before x. But if x
-does not have anymore incoming Edges, then we can add it to the result.
+Unlike the method with the queue, we do not need to maintain the set `visited` because we are only
+concered with exploring vertices as deep as possible which can be added to the result for a valid
+topological ordering. When we delete the edge going from the current vertex to each adjacent vertex 
+`x`, then intuitively, if `x` still has incoming edges, say from some other vertex `y`, then it 
+follows that we cannot add `x` to the result because `y` must go before `x`. But if `x` does not
+have anymore incoming edges, then we can add it to the result.
 
-Pseudocode (with Queue):
+### Using Queue
+
+Pseudocode:
 
 ```
-V : Set of all Vertices
-adjacent : Adjacency List
-visited : Set containing all of the visited Vertices
-Q : Queue of Vertices, initialized to be empty
+V : set of all vertices
+adjacent : adjacency list
+visited : set containing all of the visited vertices
+Q : queue of vertices, initialized to be empty
 
 kahnsTopologicalSort(V):
-  result : Queue of Vertices, initialized to be empty
+  result : queue of vertices, initialized to be empty
 
-  for each Vertex x in V:
+  for each vertex x in V:
     if x has no incoming edges:
       Q.enqueue(x)
 
@@ -61,7 +64,7 @@ kahnsTopologicalSort(V):
     current = Q.dequeue()
     result.enqueue(current)
 
-    for each Vertex x in adjacent[current]:
+    for each vertex x in adjacent[current]:
       if (!visited.contains(x)):
         visited.add(x)
         Q.enqueue(x)
@@ -69,59 +72,68 @@ kahnsTopologicalSort(V):
   return result
 ```
 
-The Queue method is very similar to regular Breadth First Search, and unlike
-the Stack method, we do not need to delete Edges or check if adjacent Vertices
-still have incoming Edges, simply because the Breath First Search mechanism
-already guarantees that by the time we get to explore a certain Vertex x, all
-of the Vertices from its incoming Edges have already been visited. We see this
-intuitively because by definition of Breadth First Search, we process Vertices
-on the same level before going deeper into adjacent Vertices. When we get to a
-particular Vertex x, if there is a Vertex y that is from incoming Edge to x,
-y must come before x because otherwise we would have processed a Vertex from
-a deeper level before a Vertex from a higher level.
+The queue method is very similar to regular breadth first search, and unlike the stack method, we
+do not need to delete edges or check if adjacent vertices still have incoming edges, simply because
+the breadth first search mechanism already guarantees that by the time we get to explore a certain
+vertex x, all of the vertices from its incoming edges have already been visited. We see this 
+intuitively because by definition of breadth first search, we process vertices on the same level
+before going deeper into adjacent vertices. When we get to a particular vertex `x`, if there is a
+vertex `y` that is from incoming edge to `x`, `y` must come before `x` because otherwise we would
+have processed a vertex from a deeper level before a vertex from a higher level.
 
-Note that while both methods produce valid topological orderings for the Graph,
-they can be vastly different. This is because in the case of a DAG, if we
-consider a sequence of Vertices from one branch B, say 1 -> 2 -> 3 -> 4, and
-another sequence of Vertices from another branch C but on the same level of the
-Graph as Vertex 1, say 1 -> 5 -> 6 -> 7, then it makes no difference if we
-process B depth-first before processing C depth-first because they
-efficiently do not make a difference, by definition of a topological ordering.
-Likewise, if we process the branches B and C breadth-first, then it also does
-not matter that we are arbitrarily alternating between adding the Vertex from B
-or adding the Vertex from C to the final topological ordering.
+### Observations
 
-Determining the time complexity of this algorithm is straightforward and is the
-same with both Stack and Queue. In both, we are ultimately doing Depth-First
-Search and Breadth-First Search respectively. Since it is a DAG, even in the
-case of a disconnected graphs, all of the separate components are still
-processed because we add all of the Vertices with no incoming Edges to the final
-result, and since each component is a DAG itself, there must be at least one
-Vertex in that component that does not have an incoming Edge.
+Note that while both methods produce valid topological orderings for the graph, they can be vastly 
+different. This is because in the case of a DAG, if we consider a sequence of vertices from one 
+branch `B`, say `1 -> 2 -> 3 -> 4`, and another sequence of vertices from another branch `C` but on 
+the same level of the graph as vertex `1`, say `1 -> 5 -> 6 -> 7`, then it makes no difference if we
+process `B` depth-first before processing `C` depth-first because they effectively do not make a 
+difference, by definition of a topological ordering.
 
-We process every Vertex at most once, since in the Stack method we delete
-incoming Edges and this guarantees that by the time we process that Vertex,
-it is the first time, since prior times it still had incoming Edges, and were
-not processed. And in the Queue method, since we process all of the Vertices
-at the same level first before exploring deeper Vertices, it also guarantees
-tht by the time we process that Vertex, we must have processed all of the
-Vertices from incoming Edges already. In both cases, we process V Vertices.
+Likewise, if we process the branches `B` and `C` breadth-first, then it also does not matter that we
+are arbitrarily alternating between adding the Vertex from `B` or adding the Vertex from `C` to the 
+final topological ordering.
 
-Intuitively, since we process all of the adjacent Edges at most once for each
-Vertex, in total, we would have processed all E Edges once. Thus, this
-algorithm runs in O(V + E) time.
+Determining the time complexity of this algorithm is straightforward and is the same with both using 
+a stack and a queue. We are ultimately doing depth first search and breadth first search, 
+respectively. Since it is a DAG, even in the case of a disconnected graph, all of the separate 
+components are still processed because we add all of the vertices with no incoming edges to the 
+final result, and since each component is a DAG itself, there must be at least one vertex in that
+component that does not have an incoming edge.
 
-Since for the Stack or Queue we use to control which next Vertex to process
-can only be at most V large, thus the space complexity is O(V).
+We process every vertex at most once, since in the stack method we delete incoming edges and thus
+guarantees that by the time we process that vertex, it is the first time, since prior times it 
+still had incoming edges, and were not processed. And in the queue method, since we process all of 
+the vertices at the same level first before exploring deeper vertices, it also guarantees that by
+the time we process that vertex, we must have processed all of the vertices from incoming edges
+already. In both cases, we process `|V|` vertices.
 
-### Implementation 
+Intuitively, since we process all of the adjacent edges at most once for each vertex, in total we
+would have processed all `|E|` edges once. Thus this algorithm runs in `O(|V|+|E|)` time. Since for
+the stack or queue we use to control which next vertex to process can only be at most `|V|` large,
+the space complexity is thus `O(|V|)`.
+
+### Implementation (using Stack)
 
 ##### Java
 
-View the source code here.
+View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/algorithms/graphs/KahnsTopologicalSortAlgorithmStack.java).
 
-```
-```
+<script src="https://gist.github.com/eliucs/8e1124d862dd5474b8779bacf9ae9bc7.js"></script>
+
+### Implementation (using Queue)
+
+##### Java
+
+View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/algorithms/graphs/KahnsTopologicalSortAlgorithmQueue.java).
+
+<script src="https://gist.github.com/eliucs/55c75c80db2c213b066b4d9bb75192dc.js"></script>
 
 ### Time Complexity
 
+```
+| Algorithm                                       | time complexity | space complexity |
+|-------------------------------------------------|-----------------|------------------|
+| kahn's topological sort algorithm (using stack) | O(|V|+|E|)      | O(|V|)           |
+| kahn's topological sort algorithm (using queue) | O(|V|+|E|)      | O(|V|)           |
+```
