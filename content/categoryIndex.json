@@ -462,24 +462,6 @@
                         "description": "Learn about weighted graphs, which are graphs such that the edges are given a numerical weight, which may represent length, cost, or capacity."
                     },
                     {
-                        "article": "cycle-detection",
-                        "title": "Cycle Detection",
-                        "url": "/cycle-detection",
-                        "description": "Learn about cycle detection, which is the problem of determining the start and length of cycles within an graph, circular linked list, or iterated function."
-                    },
-                    {
-                        "article": "floyds-algorithm",
-                        "title": "Floyd's Algorithm",
-                        "url": "/floyds-algorithm",
-                        "description": "Learn about Floyd's Algorithm, which is a cycle detection algorithm that works by using two pointers that traverse the graph at different speeds."
-                    },
-                    {
-                        "article": "brents-algorithm",
-                        "title": "Brent's Algorithm",
-                        "url": "/brents-algorithm",
-                        "description": "Learn about Brent's Algorithm, which is a cycle detection algorithm that is an improvement over Floyd's Algorithm, but it uses exponential search."
-                    },
-                    {
                         "article": "shortest-path-finding",
                         "title": "Shortest Path Finding",
                         "url": "/shortest-path-finding",
