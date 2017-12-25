@@ -65,9 +65,9 @@ spanning tree has less weight than the minimum spanning tree, which is a contrad
 
 Our greedy algorithm is then to find a cut, and continuously add in the crossing edge of minimum
 weight, and we repeat this until all vertices are part of the minimum spanning tree (i.e. until we
-have `V - 1` edges).
+have `|V|-1` edges).
 
 (3) This approach gives a minimum spanning tree.
 
-When we have fewer than `V - 1` edges in the minimum spanning tree, then there must exist a cut with
+When we have fewer than `|V|-1` edges in the minimum spanning tree, then there must exist a cut with
 no edges that are already in the minimum spanning tree. 
