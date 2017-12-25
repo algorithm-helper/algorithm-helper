@@ -1,70 +1,75 @@
 # Kruskal's Algorithm
 
+Kruskal's algorithm is an algorithm used to find the minimum spanning tree of a connected, edge
+weighted, undirected graph. It is a greedy algorithm, and its main approach to finding the 
+minimum spanning tree is to use the union find data structure. It uses the same idea as the 
+algorithm described on the article on 
+[Minimum Spanning Trees](/categories/algorithms/graphs/minimum-spanning-tree), where we 
+continuously add the next minimum weight crossing edge, such that adding it does not create a cycle.
 
-Kruskal's Algorithm is an algorithm used to find the minimum spanning tree of a
-connected, edge-weighted, undirected graph. It is a greedy algorithm, and its
-main approach to finding the minimum spanning tree is to use the Union Find, or
-Disjoint Sets data structure.
+### Observations
 
-We maintain a sorted list L of the Edges by weight, and maintain a Union Find
-data structure (see notes on the Union Find data structure). For every Edge
-(i, j) in L, we check if i and j belong to the same connected component in the
-Union Find, if not, then we add this Edge to the current minimum spanning tree,
-and union(i, j) in the Union Find.
+We will start off with a sorted list `L` of all of the edges by weight, and maintain a union find.
+For every edge `(u, v)` in `L`, we check if `u` and `v` belong to the same connected component
+by calling `connected(u, v)`. If they do, we skip it, and move on to the next edge. Otherwise, we 
+add the edge (and its associated other vertex) to the minimum spanning tree, and `union(u, v)` in 
+the union find. We repeat this until our minimum spanning tree's edge set is of size `|V|-1`.
 
 Pseudocode:
 
 ```
-V : list of all Vertices
-
-kruskalsAlgorithm(V):
-  E: List of all Edges
-  MST : List of Edges representing the minimum spanning tree, initialized to be
-        empty
-  U : UnionFind data structure
-
+kruskalsAlgorithm(G):
+  MST: minimum spanning tree, initialized to be empty
+  U : union find data structure
+  L : list of all the edges of G
+  
   initialize U
-  sort E in ascending order by weight
-  i = 0
+  sort L in ascending order by weight
 
-  while (MST.length != V.length):
-    nextEdge : next Edge of least weight
-    nextEdge = E[i]
+  while |E(MST)| != |V(G)| - 1:
+    minEdge : next edge from L
+    u : first vertex in minEdge
+    v : second vertex in minEdge
 
-    a : first Vertex in nextEdge
-    b : second Vertex in nextEdge
+    if U.connected(u, v):
+      continue
 
-    if a and b are not both contained in MST and U.find(a) != U.find(b):
-      c = between a and b, the one that is not already in MST
-      MST.push(c)
-      U.union(a, b)
+    add u and v to V(MST)
+    add (u, v) to E(MST)
 
-    i++
+    union(u, v)
+
+  return MST
 ```
 
-Determining the time complexity of the algorithm is fairly straightforward.
-Sorting the Edges by Edge weight takes O(ElgE) time using a comparison sort, for
-example with Quick Sort. Checking if for every Edge (i, j) in L belong to the
-same connected component takes O(lglgV) time and union(i, j) takes O(1) time
-using a Union Find that is weighted and uses path compression. Since in sparse
-graphs we can consider E = O(V) and in dense graphs we can consider E = O(V^2),
-the operations on the Union Find can be ignored. Since we need to add Edges that
-connect all of the Vertices, we must add every Vertex to the minimum spanning
-tree, and takes O(V) time, but this is overpowered by O(ElgE). Thus this
-algorithm runs in O(ElgE) time.
+Determining time complexity of the algorithm is fairly straightforward. Sorting the edges by edge
+weight takes `O(|E|log|E|)` time using a comparison sort like quicksort. Checking an edge `(u, v)`
+in `L` belong to the same connected component takes `O(loglog|V|)` time, and `union(u, v)` takes 
+`O(1)` time using a union find that is weighted and uses path compression. 
 
-In terms of space complexity, we require a list of size E for sorting the
-Edges by Edge weight, that requires O(E) space. We require a Union Find that
-contains all V Vertices, that requires O(V) space. Thus the total space
-complexity is O(V + E).
+Since in sparse graphs, we have that `|E|` is proportional to `O(|V|)` and in dense graphs, `|E|`
+is proportional to `O(|V|^2)`, the operations done with the union find can be ignored. Since we
+need to add edges that connect all of the vertices, we must add every vertex to the minimum 
+spanning tree, and takes `O(|V|)` time, but this is overpowered by `O(|E|log|E|)`. Thus this
+algorithm runs in `O(|E|log|E|)` time.
+
+In terms of space complexity, we require a list of size `|E|` for a list of the edges sorted in 
+ascending order by edge weight, and thus that requires additional `O(|E|)` space. We require a 
+union find that contains all `|V|` vertices, that requires `O(|V|)` space. Thus the total space
+complexity is `O(|V|+|E|)`.
 
 ### Implementation
 
 ##### Java
 
-View the source code here.
+View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/algorithms/graphs/KruskalsAlgorithm.java).
 
-```
-```
+<script src="https://gist.github.com/eliucs/2e20343754b78e51768654c3569976a8.js"></script>
 
 ### Time Complexity
+
+```
+| Algorithm           | time complexity | space complexity |
+|---------------------|-----------------|------------------|
+| kruskal's algorithm | O(|E|log|E|)    | O(|V|+|E|)       |
+```
