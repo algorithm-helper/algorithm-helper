@@ -1,7 +1,7 @@
 # Greedy Algorithm
 
 A greedy algorithm is an algorthm that always makes locally optimal choices at each stage of the 
-algorith, with the hope that this overall results in a globallly optimal solution. 
+algorithm, with the hope that this overall results in a globallly optimal solution. 
 
 From Wikipedia:
 
