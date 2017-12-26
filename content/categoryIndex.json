@@ -480,12 +480,6 @@
                         "description": "Learn about Dijkstra's Algorithm, a shortest path finding algorithm that is efficient for finding shortest paths in a graph with non-negative edge weights."
                     },
                     {
-                        "article": "a-star-algorithm",
-                        "title": "A* Algorithm",
-                        "url": "/a-star-algorithm",
-                        "description": "Learn about the A* Algorithm, a shortest path finding algorithm that uses heuristics to achieve a more efficient, directed search."
-                    },
-                    {
                         "article": "bellman-ford-algorithm",
                         "title": "Bellman-Ford Algorithm",
                         "url": "/bellman-ford-algorithm",
