@@ -29,3 +29,7 @@ There are algorithms like the
 [Bellman-Ford algorithm](/categories/algorithms/graphs/bellman-ford-algorithm) 
 or the [Floyd-Warshall algorithm](/categories/algorithms/graphs/floyd-warshall-algorithm) that are
 able to detect negative weight cycles, and terminate when found. 
+
+For these algorithms, we will be considering the single source shortest paths, and build up what is 
+called the shortest paths tree, which is a spanning tree of the graph such that any path from the
+starting vertex to all other vertices on the tree are the shortest paths to those vertices.
