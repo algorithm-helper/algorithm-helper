@@ -1,6 +1,6 @@
 # Dijkstra's Algorithm
 
-Dijkstra's algorithm is an algorithm used to find the shortest paths in a graph, in the conext of 
+Dijkstra's algorithm is an algorithm used to find the shortest paths in a graph, in the context of 
 graphs with non-negative edge weights. We will be considering the single source shortest paths, 
 recall that we will be building up the shortest paths tree from a starting vertex `u` to all other 
 vertices in the graph.
@@ -46,6 +46,15 @@ dijkstrasAlgorithm(G, v):
                 prev[v] = u
 ```
 
+### Negative Weights
+
+Dijkstra's algorithm does not work with negative weights. Below is an example:
+
+<img src="https://i.imgur.com/fjFzniR.png" alt="Dijkstra's Algorithm Negative Weights" width="400" height="300">
+
+Suppose that we are looking for the shortest path from vertex `1` to `4`. Dijkstra's algorithm will 
+choose the path `(1, 3), (3, 5)` instead of the shortest one which is `(1, 2), (2, 4), (4, 5)`.
+
 ### Implementation
 
 ##### Java
@@ -58,7 +67,7 @@ View the source code [here](https://github.com/algorithm-helper/implementations/
 
 To maintain `dist` and `prev`, we need to map every one of the `|V|` vertices to some number, and 
 with `PQ`, we need to store at most `|V|` elements, and thus our space complexity is proportional 
-to `O(|V|)`. Since we will be needing to relax every `|E|` edge, and by doing so need to run the 
+to `O(|V|)`. Since we will be needing to relax `|E|` edges, and by doing so need to run the 
 `extractMin` operation to get the vertex of the next minimum shortest distance, taking `O(log|V|)`
 time because of the priority queue, this algorithm thus runs in `O(|E|log|V|)` time.
 
