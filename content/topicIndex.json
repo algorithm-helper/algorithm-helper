@@ -63,13 +63,6 @@
         "url": "/categories/algorithms/strings"
     },
     {
-        "topic": "randomized",
-        "title": "Randomized",
-        "tags": ["algorithms"],
-        "description": "Learn about Las Vegas and Monte Carlo algorithms, that use randomness to achieve approximate solutions.",
-        "url": "/categories/algorithms/randomized"
-    },
-    {
         "topic": "object-oriented-programming",
         "title": "Object Oriented Programming",
         "tags": ["software engineering"],

@@ -540,6 +540,160 @@
                         "description": "Learn about the time and space complexity of fundamental operations between the algorithms listed in this topic."                                                                        
                     }
                 ]
+            },
+            {
+                "topic": "mathematics",
+                "title": "Mathematics",
+                "url": "/mathematics",
+                "description": "Learn about efficient algorithms for multiplication and matrix multiplication, and computing convex hulls.",                
+                "articles": [
+                    {
+                        "article": "introduction",
+                        "title": "Introduction",
+                        "url": "/introduction",
+                        "description": "General overview of the various mathematical algorithms, terminology and concepts that will be covered in this topic."
+                    },
+                    {
+                        "article": "euclids-algorithm",
+                        "title": "Euclid's Algorithm",
+                        "url": "/euclids-algorithm",
+                        "description": "Learn about Euclid's algorithm, an efficient algorithm for computing the greatest common divisor (GCD) between two numbers."
+                    },
+                    {
+                        "article": "multiplication-algorithm",
+                        "title": "Multiplication Algorithm",
+                        "url": "/multiplication-algorithm",
+                        "description": "Learn about multiplication algorithms, which are algorithms used to multiply two numbers faster than standard multiplication."
+                    },
+                    {
+                        "article": "karatsuba-algorithm",
+                        "title": "Karatsuba Algorithm",
+                        "url": "/karatsuba-algorithm",
+                        "description": "Learn about the Karatsuba algorithm, a multiplication algorithm that runs in faster than quadratic time."
+                    },
+                    {
+                        "article": "newton-raphson-method",
+                        "title": "Newton-Raphson Method",
+                        "url": "/newton-raphson-method",
+                        "description": "Learn about the Newton-Raphson method, which is a method used for finding better approximations to the roots of a function."
+                    },
+                    {
+                        "article": "binary-exponentiation",
+                        "title": "Binary Exponentiation",
+                        "url": "/binary-exponentiation",
+                        "description": "Learn about binary exponentiation, a method for the fast computation of large integer powers of a number."
+                    },
+                    {
+                        "article": "modular-exponentiation",
+                        "title": "Modular Exponentiation",
+                        "url": "/modular-exponentiation",
+                        "description": "Learn about modular exponentiation, an efficient method of exponentiation over a modulus."
+                    },
+                    {
+                        "article": "convex-hull",
+                        "title": "Convex Hull",
+                        "url": "/convex-hull",
+                        "description": "Learn about the convex hull, which is the smallest convex set that contains a set of points, and algorithms to find it."
+                    },
+                    {
+                        "article": "graham-scan",
+                        "title": "Graham Scan",
+                        "url": "/graham-scan",
+                        "description": "Learn about the Graham scan, an efficient method for computing the convex hull of a set of points in linearithmic time."
+                    },
+                    {
+                        "article": "matrix-multiplication",
+                        "title": "Matrix Multiplication",
+                        "url": "/matrix-multiplication",
+                        "description": "Learn about matrix multiplication, which are algorithms used to multiply two matrices in faster than cubic time."
+                    },
+                    {
+                        "article": "strassen-algorithm",
+                        "title": "Strassen Algorithm",
+                        "url": "/strassen-algorithm",
+                        "description": "Learn about the Strassen algorithm, an efficient matrix multiplication algorithm that runs in faster than cubic time."
+                    }
+                ]
+            },
+            {
+                "topic": "strings",
+                "title": "Strings",
+                "url": "/strings",
+                "description": "Learn about data structures and algorithms for string matching and searching like tries, and the Rabin-Karp algorithm.",                
+                "articles": [
+                    {
+                        "article": "introduction",
+                        "title": "Introduction",
+                        "url": "/introduction",
+                        "description": "General overview of the string algorithms, data structures, terminology and concepts that will be covered in this topic."
+                    },
+                    {
+                        "article": "string-sorting",
+                        "title": "String Sorting",
+                        "url": "/string-sorting",
+                        "description": "Learn about the problem of string sorting, and how we can use non-comparison sorts to achieve more efficient results."
+                    },
+                    {
+                        "article": "lsd-string-sort",
+                        "title": "LSD String Sort",
+                        "url": "/lsd-string-sort",
+                        "description": "Learn about least-significant-digit (LSD) string sort, a sorting algorithm specific to strings that runs in faster than linearithmic time."
+                    },
+                    {
+                        "article": "msd-string-sort",
+                        "title": "MSD String Sort",
+                        "url": "/msd-string-sort",
+                        "description": "Learn about most-significant-digit (MSD) string sort, a sorting algorithm specific to strings that runs in faster than linearithmic time."
+                    },
+                    {
+                        "article": "3-way-radix-quicksort",
+                        "title": "3-Way Radix Quicksort",
+                        "url": "/3-way-radix-quicksort",
+                        "description": "Learn about 3-way radix quicksort, a string sorting algorithm that combines radix sort and MSD string sort for more efficient results."
+                    },
+                    {
+                        "article": "trie",
+                        "title": "Trie",
+                        "url": "/trie",
+                        "description": "Learn about the trie, a data structure for maps that uses string keys, and values stored in the suffixes."
+                    },
+                    {
+                        "article": "radix-search-trie",
+                        "title": "Radix Search Trie",
+                        "url": "/radix-search-trie",
+                        "description": "Learn about the radix search trie, a trie structure where each node has R (radix) amount of children."
+                    },
+                    {
+                        "article": "ternary-search-trie",
+                        "title": "Ternary Search Trie",
+                        "url": "/ternary-search-trie",
+                        "description": "Learn about the ternary search trie, a trie structure where each node has three children to store smaller, equal, and larger key nodes."
+                    },
+                    {
+                        "article": "substring-search",
+                        "title": "Substring Search",
+                        "url": "/substring-search",
+                        "description": "Learn about substring search, which is the problem of finding a smaller length pattern string in a larger body of text."
+                    },
+                    {
+                        "article": "knuth-morris-pratt-algorithm",
+                        "title": "Knuth-Morris-Pratt Algorithm",
+                        "url": "/knuth-morris-pratt-algorithm",
+                        "description": "Learn about the Knuth-Morris-Pratt algorithm, a substring search algorithm that re-examines the word in a mismatch to be more efficient."
+                    },
+                    {
+                        "article": "boyer-moore-algorithm",
+                        "title": "Boyer-Moore Algorithm",
+                        "url": "/boyer-moore-algorithm",
+                        "description": "Learn about the Boyer-Moore algorithm, a substring search algorithm that uses text preprocessing for more efficient search results."
+                    },
+                    {
+                        "article": "rabin-karp-algorithm",
+                        "title": "Rabin-Karp Algorithm",
+                        "url": "/rabin-karp-algorithm",
+                        "description": "Learn about the Rabin-Karp algorithm, a substring search algorithm that uses hashing to find a set of patterns in a text."
+                    }
+                ]
             }
         ]
     },
