@@ -39,18 +39,6 @@ name: default value: 0
 name: Mary Doe value: 200
 ```
 
-Since the `SubClassA` has an "is-a" relationship with `SuperClass`, we can always define a 
-`SuperClass` to be an instance of a `SubClassA`, and it will have the same functionality:
-
-<script src="https://gist.github.com/eliucs/47d412734ffd3836d6f708b11c87ad44.js"></script>
-
-And when run, this gives the output:
-
-```
-name: default value: 0
-name: Mary Doe value: 200
-```
-
 With `SubClassB`, it is very similar to `SubClassA` except that we override `method` from the
 `SuperClass`. This allows us to give `SubClassB` its own implementation of `method`, which in this
 example, just prints out its `valueB` field: 
@@ -59,7 +47,7 @@ example, just prints out its `valueB` field:
 
 Then to see that the `method` implementation has been overriden:
 
-<script src="https://gist.github.com/eliucs/9e7f3711c5d1484038a913a383ed9c9e.js"></script>
+<script src="https://gist.github.com/eliucs/47d412734ffd3836d6f708b11c87ad44.js"></script>
 
 Which gives the output:
 
