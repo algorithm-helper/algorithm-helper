@@ -1,10 +1,10 @@
 # Introduction
 
 The topic in this section is searching, and these algorithms are primarily concerned with searching 
-for elements in arrays in better than $O(N)$ time. Linear search of course, is what we are trying to beat, 
-which is simply iterating through every element one at a time until finding a particular element or 
-reaching the end of the array, and determining that the element indeed does not exist in the array. 
-It runs in $O(N)$ time for both unsorted and sorted arrays. 
+for elements in arrays in better than $O(N)$ time. Linear search of course, is what we are trying to 
+beat, which is simply iterating through every element one at a time until finding a particular 
+element or reaching the end of the array, and determining that the element indeed does not exist in 
+the array. It runs in $O(N)$ time for both unsorted and sorted arrays. 
 
 However, when the arrays has properties like being sorted, being a discrete unimodal functions, 
 being evenly distributed, there are algorithms that can take advantage of these properties and run 
