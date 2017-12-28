@@ -1,7 +1,7 @@
 # Interpolation Search
 
 Interpolation search is an algorithm for searching for elements in a sorted array that are evenly 
-distributed, in `O(lglgN)` time on average. The main idea behind this algorithm is to take advantage 
+distributed, in $O(loglogN)$ time on average. The main idea behind this algorithm is to take advantage 
 of the fact that the elements are evenly distributed, for example, if the array is a linearly 
 increasing sequence of numbers. Given two endpoints into this array, for example at index `lo` and
 `hi`, which are the first index and last index respectively, we can take `y = mx + b` (where `x` 
@@ -10,13 +10,13 @@ in other words, to approximate where the key will be.
 
 ### Visualization
 
-On average, this algorithm runs in `O(loglogN)` time when we have an evenly distributed, sorted 
+On average, this algorithm runs in $O(loglogN)$ time when we have an evenly distributed, sorted 
 array. It is intuitive why this algorithm would be faster than binary search for this case, and why 
-its time complexity is better than `O(logN)`. 
+its time complexity is better than $O(logN)$. 
 
 While with binary search we take successive halves one after the other, it has no other method to 
 approximate the location of the searched key except the fact that we know that we can eliminate half 
-the problem space each time. Whereas with interpolation search, taking `y = mx + b` can, in `O(1)` 
+the problem space each time. Whereas with interpolation search, taking `y = mx + b` can, in $O(1)$ 
 time, approximate the linear relationship of the data as a whole. This linear approximation is 
 useful because by interpolating into the index of where the key "ought" to be, we get close to the 
 key.
@@ -90,22 +90,20 @@ taking the slope at an index, or taking the derivative of the function. But the 
 exponential function is generally some constant multiplied by itself.
 
 If we continuously take the derivative of the index to find the next index, intuitively we would 
-have to do this `N` times until we reach the end. Thus in in this case, this algorithm runs in 
-`O(N)` time.
+have to do this $N$ times until we reach the end. Thus in in this case, this algorithm runs in 
+$O(N)$ time.
 
 ### Implementation 
 
 ##### Java
 
-View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/algorithms/searching/InterpolationSearch.java).
-
 <script src="https://gist.github.com/eliucs/4e7fc52549eb9954e386107bc66ba019.js"></script>
 
 ### Time Complexity
 
-The time complexity of this algorithm is `O(loglogN)`.
+The time complexity of this algorithm is $O(loglogN)$.
 
-Since it requires three pointers (`lo`, `mid`, and `hi`), we need `O(1)` auxiliary space.
+Since it requires three pointers (`lo`, `mid`, and `hi`), we need $O(1)$ auxiliary space.
 
 ```
 | Algorithm            | time complexity | space complexity |

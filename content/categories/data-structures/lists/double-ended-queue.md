@@ -9,9 +9,9 @@ queue), `removeFront` which removes an element at the front of the double ended 
 double ended queue, `peekFront` which returns the front-most element's `item` without removing it 
 from the double ended queue and `peekBack` which returns the back-most element's `item` without 
 removing it from the double ended queue. Since it is similar to a combination of first-in-first-out 
-(FIFO) and last-in-first-out (LIFO), if we were to insert 3 elements (A, B, C) into the double ended 
-queue in that order, we cannot get the second element B without either removing the first element A 
-or the third element C.
+(FIFO) and last-in-first-out (LIFO), if we were to insert 3 elements $(A, B, C)$ into the double 
+ended queue in that order, we cannot get the second element $B$ without either removing the first
+element $A$ or the third element $C$.
 
 ### Visualization
 
@@ -74,8 +74,6 @@ Exception: cannot removeFront from empty double ended queue.
 ### Implementation
 
 ##### Java
-
-View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/lists/DoubleEndedQueue.java).
 
 <script src="https://gist.github.com/eliucs/f38b24f47e1829c2b04833c54a073d2f.js"></script>
 

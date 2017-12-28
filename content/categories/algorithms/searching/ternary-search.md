@@ -1,14 +1,14 @@
 # Ternary Search
 
 Ternary search is an algorithm for finding the maximum or minimum element in a unimodal function in 
-`O(logN)` time. A unimodal function is one that has one minimum or one maximum, in other words, one 
+$O(logN)$ time. A unimodal function is one that has one minimum or one maximum, in other words, one 
 mode. 
 
-For example, suppose we have a function `f`. We know that some maximum lies between the interval 
-`[A, B]`. They have the property that:
+For example, suppose we have a function $f$. We know that some maximum lies between the interval 
+$[A, B]$. They have the property that:
 
-- For all `a`, `b` such that `A <= a < b <= x`, `f(a) < f(b)`
-- For all `a`, `b` such that `x <= a < b <= B`, `f(a) > f(b)`
+- For all $a$, $b$ such that $A <= a < b <= x$, $f(a) < f(b)$
+- For all $a$, $b$ such that $x <= a < b <= B$, $f(a) > f(b)$
 
 ### Visualization
 
@@ -26,7 +26,7 @@ case of a continuous unimodal function. We implement this but use an array to re
 unimodal function.
 
 Similar to binary search, since we are continuously splitting the array into three intervals, we can 
-only at most split it at most `log_3N` times. Thus, this algorithm runs in `O(logN)` time.
+only at most split it at most $log_3N$ times. Thus, this algorithm runs in $O(logN)$ time.
 
 The following is a visualization of ternary search:
 
@@ -72,12 +72,12 @@ View the source code [here](https://github.com/algorithm-helper/implementations/
 
 ### Time Complexity
 
-Intuitively, since we can divide the array at most `log_3N` times, thus this algorithm runs in 
-`O(logN)` time.
+Intuitively, since we can divide the array at most $log_3N$ times, thus this algorithm runs in 
+$O(logN)$ time.
 
-Since it requires four pointers (`left`, `right`, `leftThird`, `rightThird`), we need `O(1)` 
+Since it requires four pointers (`left`, `right`, `leftThird`, `rightThird`), we need $O(1)$ 
 auxiliary space. Since it requires four pointers (`left`, `right`, `leftThird`, `rightThird`), 
-we need `O(1)` auxiliary space.
+we need $O(1)$ auxiliary space.
 
 The following describes the time and space complexity of ternary search:
 

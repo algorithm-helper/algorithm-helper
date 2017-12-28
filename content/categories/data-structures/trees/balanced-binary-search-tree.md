@@ -10,13 +10,13 @@ binary search tree (more can be read on the article on the
 [Binary Search Tree](/categories/data-structures/trees/binary-search-tree)), which is that although 
 we would like to use the tree structure to take advantage of the idea of binary search, and be able 
 to perform operations like `get`, `put`, or `delete` in logarithmic time, we have no guarantee for 
-balance. We can only say that these operations are done in O(H) time, where H is the height of the 
+balance. We can only say that these operations are done in $O(H)$ time, where $H$ is the height of the 
 tree. And in some situations, the tree may degenerate into a linked list (such as if the elements 
 were inserted into the tree in sorted order, then all of the nodes would link to the `right` node), 
-and then all of those operations would run in `O(N)` time.
+and then all of those operations would run in $O(N)$ time.
 
 Being able to keep balance is a highly desirable property because it would mean that all of those 
-operations could be done in `O(lgN)` time guaranteed. There are several tree structures that provide 
+operations could be done in $O(logN)$ time guaranteed. There are several tree structures that provide 
 the mechanisms to do so: the [2-3 Tree](/categories/data-structures/trees/2-3-tree) gives an 
 abstract overview of a self-balacing tree structure, the 
 [Red-Black Tree](/categories/data-structures/trees/red-black-tree), and the 
@@ -59,8 +59,8 @@ Even if the keys were in a different order, like the following:
 ```
 
 We have no expectations for balance. Thus for operations like `get`, `put`, or `delete`, we can only 
-say that they run in `O(H)` time, where `H` is the height of the tree, which is less than or equal to
-`N`.
+say that they run in $O(H)$ time, where $H$ is the height of the tree, which is less than or equal to
+$N$.
 
 ```
     1
@@ -87,5 +87,5 @@ that self-balances, an example may be the following:
       1
 ```
 
-The distance from the root to any of the leaf nodes is at most `lgN`, so we are able to perform 
-operations like `get`, `put`, or `delete` in `O(lgN)` time guaranteed.
+The distance from the root to any of the leaf nodes is at most $logN$, so we are able to perform 
+operations like `get`, `put`, or `delete` in $O(logN)$ time guaranteed.

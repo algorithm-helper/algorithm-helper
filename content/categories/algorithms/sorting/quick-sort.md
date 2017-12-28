@@ -1,8 +1,8 @@
 # Quick Sort
 
 Quick Sort is a sorting algorithm based on the idea of partitioning, which is to bring an element
-`pivot` to an index `i` such that all elements at indices less than `i` (not necessarily in sorted 
-order) are less than the pivot, and all elements at indices greater than `i` are greater than the 
+`pivot` to an index $i$ such that all elements at indices less than $i$ (not necessarily in sorted 
+order) are less than the pivot, and all elements at indices greater than $i$ are greater than the 
 pivot. By recursively applying this method on both of the unsorted sides, we eventually reach the 
 point where both sides are sorted and thus the entire array is sorted.
 
@@ -25,11 +25,11 @@ the final order of the array. And if this process is continued recursively on bo
 final array in the end must be sorted.
 
 Since probabilistically and on average, we are partitioning the array into halves, at most we can 
-break it in halves `lgN` times. In addition to the partitioning operation itself, which takes `O(N)` 
-time, thus overall, quick sort runs in  `O(NlgN)` time.
+break it in halves $logN$ times. In addition to the partitioning operation itself, which takes $O(N)$ 
+time, thus overall, quick sort runs in  $O(NlogN)$ time.
 
 While it is possible that the partitioning element that we select can happen in the worst case to 
-always be the largest element in the array, and then the algorithm runs in `O(N^2)` time, the chance 
+always be the largest element in the array, and then the algorithm runs in $O(N^2)$ time, the chance 
 of this happening is probabilistically low.
 
 ### Visualization
@@ -129,7 +129,7 @@ variables for the pointers. It is probabilistically fast in most cases, easy to 
 with caching in terms of internal memory mechanisms.
 
 However, it is unstable, and stability may be a desirable property. It is possible for quick sort to 
-slow down to `O(N^2)` in situations where the `pivot` selections are bad, but this is guarded 
+slow down to $O(N^2)$ in situations where the `pivot` selections are bad, but this is guarded 
 against probabilistically.
 
 Another downside to a naive quick sort implementation is that it does not handle repeated elements 
@@ -262,15 +262,13 @@ p   gt
 ```
 
 Even though with quick sort three way, its `lt` and `gt` pointers divide this array into three 
-partitions, it can be misleading to say that the most we can divide this array is `log_3` times. We are 
+partitions, it can be misleading to say that the most we can divide this array is $log_3N$ times. We are 
 not necessarily able to take advantage of this fact in an array with no repeated values, and thus 
-quick sort three way just becomes regular quick sort. Thus this algorithm runs in `O(NlogN)` time.
+quick sort three way just becomes regular quick sort. Thus this algorithm runs in $O(NlogN)$ time.
 
 ### Implementation
 
 ##### Java
-
-View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/algorithms/sorting/QuickSort.java).
 
 <script src="https://gist.github.com/eliucs/730ad9e6d4cbebfacf9104fbadede754.js"></script>
 
@@ -278,17 +276,15 @@ View the source code [here](https://github.com/algorithm-helper/implementations/
 
 ##### Java
 
-View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/algorithms/sorting/QuickSortThreeWay.java).
-
 <script src="https://gist.github.com/eliucs/5cb35d2ded459d0577513f4b6b9910bf.js"></script>
 
 ### Time Complexity
 
-The time complexity of quick sort and quick sort three way is `O(NlogN)`, and random shuffling of 
-the elements probablistically guards against `O(N^2)`.
+The time complexity of quick sort and quick sort three way is $O(NlogN)$, and random shuffling of 
+the elements probablistically guards against $O(N^2)$.
 
-With regular quick sort, we require two pointers `lo` and `hi`, and thus require `O(1)` auxiliary 
-space. With quick sort three-way, we require pointers `lt` and `gt`, and thus require `O(1)` 
+With regular quick sort, we require two pointers `lo` and `hi`, and thus require $O(1)$ auxiliary 
+space. With quick sort three-way, we require pointers `lt` and `gt`, and thus require $O(1)$ 
 auxiliary space.
 
 It is an in-place sort, but is not stable.

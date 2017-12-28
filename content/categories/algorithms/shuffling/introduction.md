@@ -15,7 +15,7 @@ Some of the desirable properties we would want in a good shuffling algorithm are
 
 - Unbiased permutation, every permutation is equally likely, which simply says that all of the 
 random outcomes are uniformly distributed.
-- Runs in time proportional to the length of the array, that is, runs in `O(N)` time.
+- Runs in time proportional to the length of the array, that is, runs in $O(N)$ time.
 - In-place, that is, the algorithm does not require auxiliary memory during its operation, but 
 rather elements are changed via swap operations.
 
@@ -24,8 +24,8 @@ rather elements are changed via swap operations.
 There are some terminology that apply to shuffling that are relevant to the algorithms in this 
 topic.
 
-A permutation is rearranging the elements in an array to some order. For an array of `N` (distinct) 
-elements, there are `N!` permutations.
+A permutation is rearranging the elements in an array to some order. For an array of $N$ (distinct) 
+elements, there are $N!$ permutations.
 
 From Wikipedia:
 

@@ -75,23 +75,17 @@ The following provides the interface for the `Stack` class.
 
 ##### Java
 
-View the source code [here](https://github.com/algorithm-helper/implementations/tree/master/java/com/algorithmhelper/datastructures/interfaces/Stack.java).
-
 <script src="https://gist.github.com/eliucs/401f801b070f1deb3fb4ce73c435a5eb.js"></script>
 
 ### Implementation (using Linked List)
 
 ##### Java
 
-View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/lists/StackLinkedList.java).
-
 <script src="https://gist.github.com/eliucs/9c63ed46f51102c2e5efbf24cb4181bf.js"></script>
 
 ### Implementation (using Dynamic Array)
 
 ##### Java
-
-View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/lists/StackDynamicArray.java).
 
 <script src="https://gist.github.com/eliucs/972f87410dbbf18da96cb87cd918108f.js"></script>
 

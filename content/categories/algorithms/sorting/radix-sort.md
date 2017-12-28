@@ -112,42 +112,40 @@ a = [14, 25, 32, 42, 100, 202]
 ```
 
 Since we do not need to make any comparisons, and are just putting the numbers in the corresponding 
-bucket, that takes `O(N)` time. Since the number of times we have to do the bucket assigning is 
-dependent on the number with the maximum number of digits, define that as `W`, then the overall 
-running time of this algorithm is `O(N + W)`.
+bucket, that takes $O(N)$ time. Since the number of times we have to do the bucket assigning is 
+dependent on the number with the maximum number of digits, define that as $W$, then the overall 
+running time of this algorithm is $O(N + W)$.
 
-Furthermore, since we are in base 10, the maximum number, define that as `K`, can only have at most 
-about `logK` digits, since each digit corresponds to a exponent of 10. Thus we can see that although 
-the algorithm is in `O(N + W)` time, it is at most `O(N + logK)` time, when we have to consider the 
+Furthermore, since we are in base 10, the maximum number, define that as $K$, can only have at most 
+about $logK$ digits, since each digit corresponds to a exponent of 10. Thus we can see that although 
+the algorithm is in $O(N + W)$ time, it is at most $O(N + logK)$ time, when we have to consider the 
 (absolutely) maximum number in the array.
 
 The advantage to this algorithm is that it is stable as we are adding numbers to the buckets in the 
 same order they appeared in the original array. Furthermore, it solves one of the key flaws with 
 bucket sort which is where if we have a maximum number that is significantly larger than the others 
 then we waste space. We do not have that problem here, since our space is only constrained to the 
-bucket of size 10, and that the maximum number has little effect, since we only consider `log` of 
-that number (note this is `log` (base 10) and not `lg` (base 2)).
+bucket of size 10, and that the maximum number has little effect, since we only consider $log$ of 
+that number.
 
 ### Implementation
 
 ##### Java
 
-VIew the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/algorithms/sorting/RadixSort.java).
-
 <script src="https://gist.github.com/eliucs/fa9585309b9778704926a812b8cf4831.js"></script>
 
 ### Time Complexity
 
-The time complexity of this algorithm is `O(N + W)`, where `W` is the number of digits of the 
+The time complexity of this algorithm is $O(N + W)$, where $W$ is the number of digits of the 
 absolutely maximum number in the array.
 
 Unlike bucket sort, it requires a bucket size of exactly 10 for each digit, and thus it requires 
-`O(1)` auxiliary space.
+$O(1)$ auxiliary space.
 
 It is not in-place, since it requires copying elements to the buckets, and it is not stable.
 
 ```
 | Algorithm        | time complexity | space complexity | in-place | stable | type         |
 |------------------|-----------------|------------------|----------|--------|--------------|
-| radix sort (LSD) | O(N  + W)       | O(1)             | no       | no     | distribution |
+| radix sort (LSD) | O(N+W)          | O(1)             | no       | no     | distribution |
 ```

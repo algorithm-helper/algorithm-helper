@@ -2,8 +2,8 @@
 
 A collision is when two unequal keys hash to the same index in the hash table/hash map or hash set. 
 Intuitively, we must have some way to keep track of the keys that have been hashed to a certain slot 
-in the array. Say we have two different keys `x` and `y` that hash to the same slot, we must be able 
-to differentiate between `x` and `y` at that slot. The two main ides of collision resolution are 
+in the array. Say we have two different keys $x$ and $y$ that hash to the same slot, we must be able 
+to differentiate between $x$ and $y$ at that slot. The two main ides of collision resolution are 
 separate chaining and linear probing.
 
 ### Approaches
@@ -14,8 +14,8 @@ Whenever we need to insert a (`key`, `val`) pair into the hash map, we hash the 
 value to index into the array, and create a node with the (`key`, `val`) pair and insert that into 
 the linked list. The article on the 
 [Hash Table / Hash Map](/categories/data-structures/hashing/hash-table-hash-map) has more 
-information on how the ratio between the size of the array M and the total amount of keys `N` can be 
-kept so that on average, the size of the linked list is about 5, thus allowing for efficient `O(1)` 
+information on how the ratio between the size of the array $M$ and the total amount of keys $N$ can be 
+kept so that on average, the size of the linked list is about 5, thus allowing for efficient $O(1)$ 
 time for operations like `contains`, `get`, `put`, and `delete`.
 
 The following visualizes separate chaining:
@@ -83,9 +83,9 @@ pair there. Every time another adjacent slot must be checked is called a probe. 
 if many `keys` hash to the same slot, there will be a long series of unavailable slots to check 
 until finding the next empty slot. These called clusters. The article on the 
 [Hash Table / Hash Map](/categories/data-structures/hashing/hash-table-hash-map) has more 
-information on how the ratio between the size of the array M and the total amount of keys `N` can be
+information on how the ratio between the size of the array $M$ and the total amount of keys $N$ can be
 kept so that on average, the number of needed probes is between 1.5 and 2.5, thus allowing for 
-`O(1)` amortized time for operations like `contains`, `get`, `put`, and `delete`.
+$O(1)$ amortized time for operations like `contains`, `get`, `put`, and `delete`.
 
 The following visualizes linear probing:
 

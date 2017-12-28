@@ -12,8 +12,8 @@ vice versa.
 ### Visualization
 
 The following visualizes a (balanced) binary search tree. Since we are able to divide the problem 
-space by 2 each time, this results in a tree height of `lgN` where `N` is the number of elements in 
-the tree. Clearly, we can then access elements within `O(lgN)` time:
+space by 2 each time, this results in a tree height of $logN$ where $N$ is the number of elements in 
+the tree. Clearly, we can then access elements within $O(logN)$ time:
 
 ```
          5
@@ -24,7 +24,7 @@ the tree. Clearly, we can then access elements within `O(lgN)` time:
 ```
 
 However, with a simple implementation of the binary search tree, such as the one below, it is not 
-the case that we have `O(lgN)` guaranteed in any manner, because we have no guarantee that the tree 
+the case that we have $O(logN)$ guaranteed in any manner, because we have no guarantee that the tree 
 is balanced, which means that at any node in the tree, we have the left subtree and the right 
 subtree to be the same size or differ by one (more can be read in the article on 
 [Balanced Binary Search Trees](/categories/data-structures/trees/balanced-binary-search-tree)).
@@ -48,7 +48,7 @@ Consider the same tree as above, but the nodes were inserted in ascending order.
 
 This tree structure effectively degenerates into a linked list-like structure. Thus, as for the 
 peformance of using this naive binary search tree implementation, we can only say that its time 
-complexity for its operations is `O(H)`, where `H` is the height of the tree.
+complexity for its operations is $O(H)$, where $H$ is the height of the tree.
 
 Regardless, one advantage of this tree is that finding the maximum and minimum elements is very 
 intuitive, since we can simply traverse the `right` node each time until the `right` becomes `null`, 
@@ -129,15 +129,11 @@ or traverse the `left` node each time until the `left` becomes `null`, respectiv
 
 ##### Java
 
-View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/BinarySearchTreeMap.java).
-
 <script src="https://gist.github.com/eliucs/9d2388dd11ce04ff845cea6d68c927a9.js"></script>
 
 ### Implementation (Set)
 
 ##### Java
-
-View the souce code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/BinarySearchTreeSet.java).
 
 <script src="https://gist.github.com/eliucs/3112d1a94fb8ed9603fc87857663432e.js"></script>
 

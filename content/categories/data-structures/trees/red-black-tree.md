@@ -16,7 +16,7 @@ child's key is always greater than the `root`. For operations like `min`, `max`,
 
 The main motivation behind using a red-black tree is to take advantage of the fact that it is 
 balanced. Since the distance from the `root` node to any leaf is the same or differs by 1, and is 
-at most `lgN`, operations like `get`, `put`, `contains`, or `delete` run in `O(lgN)` time, 
+at most $logN$, operations like `get`, `put`, `contains`, or `delete` run in $O(logN)$ time, 
 guaranteed.
 
 ### Balancing Mechanism
@@ -99,10 +99,11 @@ The following visualizes a basic red-black tree, we will use double lines to den
 ```
 
 The link between nodes `A` and `B` is `RED`, but the parent link going up from `B` is `BLACK`, since 
-we cannot have two consecutive `RED` links. Just like with a 2-3 tree, C ≤ A ≤ D ≤ B ≤ E. Many 
-operations are identical to 2-3 trees and the regular binary search tree: `get`, `put`, `min`/`max`, 
-`delete`/`deleteMin`/`deleteMax`, `floor`/`ceil`, `select`, `rank`. These operations are identical 
-because they are completely independent from needing to know information on the `color` of the nodes.
+we cannot have two consecutive `RED` links. Just like with a 2-3 tree, 
+$C \leq A \leq D \leq B \leq E$. Many operations are identical to 2-3 trees and the regular binary 
+search tree: `get`, `put`, `min`/`max`, `delete`/`deleteMin`/`deleteMax`, `floor`/`ceil`, `select`, 
+`rank`. These operations are identical because they are completely independent from needing to know 
+information on the `color` of the nodes.
 
 The main idea behind using red-black trees is to maintain correspondence with 2-3 trees, and using 
 these three basic operations: `rotateLeft`, `rotateRight`, and `flipColors`.
@@ -204,8 +205,8 @@ being `RED` in a row, then apply `rotateRight`. Then we check if the `color` of 
 the `right` are `RED`, then apply `flipColors`.
 
 Since we are always able to balance the red-black tree, the height of the tree gets to be at most 
-precisely ≤ `2lgN`, and thus for operations like `get`, `put`, or `delete`, they run in `O(lgN)` 
-time.
+precisely $\leq 2logN$, and thus for operations like `get`, `put`, or `delete`, they run in 
+$O(logN)$ time.
 
 ### Operations
 
@@ -282,15 +283,11 @@ time.
 
 ##### Java
 
-View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/RedBlackTreeMap.java).
-
 <script src="https://gist.github.com/eliucs/05a202c652ae163e55771232372f82a4.js"></script>
 
 ### Implementation (Set)
 
 ##### Java
-
-View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/RedBlackTreeSet.java).
 
 <script src="https://gist.github.com/eliucs/f314ae7865eada0c3c7e52e66741c3d5.js"></script>
 
@@ -300,7 +297,7 @@ The following table describes the time complexity for performing the operations 
 red-black tree:
 
 ```
-| Data Structure | contains | get    | put    | min    | max    | delete | deleteMin | deleteMax | floor  | ceil   | select | rank   |
-|----------------|----------|--------|--------|--------|--------|--------|-----------|-----------|--------|--------|--------|--------|
-| red-black tree | O(lgN)   | O(lgN) | O(lgN) | O(lgN) | O(lgN) | O(lgN) | O(lgN)    | O(lgN)    | O(lgN) | O(lgN) | O(lgN) | O(lgN) |
+| Data Structure | contains  | get     | put     | min     | max     | delete  | deleteMin  | deleteMax  | floor   | ceil    | select  | rank    |
+|----------------|-----------|---------|---------|---------|---------|---------|------------|------------|---------|---------|---------|---------|
+| red-black tree | O(logN)   | O(logN) | O(logN) | O(logN) | O(logN) | O(logN) | O(logN)    | O(logN)    | O(logN) | O(logN) | O(logN) | O(logN) |
 ```

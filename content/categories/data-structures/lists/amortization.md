@@ -41,25 +41,23 @@ elements when we have to double the size of the underlying array when it becomes
 ```
 
 At first glance, we may naively say that the operation to insert elements to the back of the array 
-is done in `O(N)` time, since we would need to initialize an array of twice the size and copy all of 
+is done in $O(N)$ time, since we would need to initialize an array of twice the size and copy all of 
 the original elements over to the new array, whenever array doubling is needed. However, intuitively, 
-we only need to double at most `lgN` times, since after we double, we still have to completely fill 
+we only need to double at most $logN$ times, since after we double, we still have to completely fill 
 up the array again. We can amortize the cost of the array doubling over the calls to the operation 
 `insertBack` until we fill up the array again.
 
-Consider `N` number of insertions. We only have to double `lgN` times. So the total cost of the 
+Consider $N$ number of insertions. We only have to double $logN$ times. So the total cost of the 
 insertion becomes:
 
-```
-= O(2^0 + 2^1 + ... 2^lgN)
-= O(N)
-```
+$= O(2^0 + 2^1 + ... + 2^{logN})$
 
-But this is the total cost over N elements. So per element it becomes:
+$= O(N)$
 
-```
-= O(N)/N
-= O(1)
-```
+But this is the total cost over $N$ elements. So per element it becomes:
 
-Thus we say that we `insertBack` runs in `O(1)` amortized time.
+$= O(N)/N$
+
+$= O(1)$
+
+Thus we say that we `insertBack` runs in $O(1)$ amortized time.

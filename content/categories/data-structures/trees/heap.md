@@ -9,16 +9,17 @@ where each node has at most two children.
 They are most commonly implemented using a single dynamically resizing array, and to determine left 
 children nodes, right children nodes, and parent nodes, were can use array arithmetic.
 
-Heaps has the property that they are always balanced, and thus the height of a heap is always `lgN`. 
-Heaps are a useful data type for implementing priority queues, since we can extract the minimum or 
-the maximum element (depending on whether it is a max heap or a min heap) in `O(lgN)` time (more can
-be read on the article on the [Priority Queue](/categories/data-structures/trees/priority-queue)).
+Heaps has the property that they are always balanced, and thus the height of a heap is always 
+$logN$. Heaps are a useful data type for implementing priority queues, since we can extract the 
+minimum or the maximum element (depending on whether it is a max heap or a min heap) in $O(logN)$ 
+time (more can be read on the article on the 
+[Priority Queue](/categories/data-structures/trees/priority-queue)).
 
-Given an index `i`:
+Given an index $i$:
 
-- The parent node is at `i/2` (where `i/2 > 1`)
-- The left node is at `2*i` (where `2*1 <= the size of the binary heap`)
-- The right node is at `2*i+1` (where `2*1+1 <= the size of the binary heap`)
+- The parent node is at $i/2$ (where $i/2 \gt 1$)
+- The left node is at $2i$ (where $2i \leq the\,size\,of\,the\,binary\,heap$)
+- The right node is at $2i+1$ (where $2i+1 \leq the\,size\,of\,the\,binary\,heap$)
 
 ### Heapify Up / Heapify Down
 
@@ -143,10 +144,10 @@ and remove the last element in the array:
 // Now we have satisfied the max heap property, so we have a binary max heap.
 ```
 
-Since max is simply returning the element at array index 1, it is done in `O(1)` time. For the 
-operations `insert` and `extractMax`, intuitively because we have to swap at most `H` amount of 
-times, where `H` is the height of tree structure, and the tree is completely balanced, its time 
-complexity is `O(lgN)`.
+Since max is simply returning the element at array index 1, it is done in $O(1)$ time. For the 
+operations `insert` and `extractMax`, intuitively because we have to swap at most $H$ amount of 
+times, where $H$ is the height of tree structure, and the tree is completely balanced, its time 
+complexity is $O(logN)$.
 
 ### Binary Min Heap
 
@@ -206,10 +207,10 @@ element in the array:
 // Now we have satisfied the min heap property, so we have a binary min heap.
 ```
 
-Since min is simply returning the element at array index 1, it is done in `O(1)` time. For the 
-operations `insert` and `extractMin`, intuitively because we have to swap at most `H` amount of 
-times, where `H` is the height of tree structure, and the tree is completely balanced, its time 
-complexity is `O(lgN)`.
+Since min is simply returning the element at array index 1, it is done in $O(1)$ time. For the 
+operations `insert` and `extractMin`, intuitively because we have to swap at most $H$ amount of 
+times, where $H$ is the height of tree structure, and the tree is completely balanced, its time 
+complexity is $O(logN)$.
 
 ### Operations
 
@@ -257,15 +258,11 @@ For binary min heap:
 
 ##### Java
 
-View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/BinaryMaxHeap.java).
-
 <script src="https://gist.github.com/eliucs/b2e1269522ade4a8b7386dcd1b7d6663.js"></script>
 
 ### Implementation (Binary Min Heap)
 
 ##### Java
-
-View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/BinaryMinHeap.java).
 
 <script src="https://gist.github.com/eliucs/379477c3cb13add9c5a7d4e696766ed1.js"></script>
 
@@ -275,17 +272,17 @@ The following table describes the time complexity for performing the operations 
 max heap:
 
 ```
-| Data Structure  | insert | extractMax | max  |
-|-----------------|--------|------------|------|
-| binary max heap | O(lgN) | O(lgN)     | O(1) |
+| Data Structure  | insert  | extractMax  | max  |
+|-----------------|---------|-------------|------|
+| binary max heap | O(logN) | O(logN)     | O(1) |
 ```
 
 The following table describes the time complexity for performing the operations above on an binary 
 min heap:
 
 ```
-| Data Structure  | insert | extractMin | min  |
-|-----------------|--------|------------|------|
-| binary min heap | O(lgN) | O(lgN)     | O(1) |
+| Data Structure  | insert  | extractMin  | min  |
+|-----------------|---------|-------------|------|
+| binary min heap | O(logN) | O(logN)     | O(1) |
 ```
 

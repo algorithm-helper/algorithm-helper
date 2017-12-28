@@ -24,25 +24,23 @@ for i from 0 to n-2:
 
 The implication behind this algorithm is that it is biased, because of the fact that we lose all 
 permutations where any element is in the same position as it was in the original array. Whereas in 
-Fisher-Yates shuffle we can get all `n!` permutations, in Sattolo's algorithm we only get `(n-1)!` 
+Fisher-Yates shuffle we can get all $N!$ permutations, in Sattolo's algorithm we only get $(N-1)!$ 
 permutations.
 
-But likewise with Fisher-Yates, this algorithm runs in `O(N)` time.
+But likewise with Fisher-Yates, this algorithm runs in $O(N)$ time.
 
 ### Implementation
 
 ##### Java
 
-View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/algorithms/shuffling/SattoloShuffle.java).
-
 <script src="https://gist.github.com/eliucs/d02dd15602eb28f9707bc61e079452c1.js"></script>
 
 ### Time Complexity
 
-The time complexity of Sattolo's algorithm is `O(N)` since we do a random swap for each of the `N` 
+The time complexity of Sattolo's algorithm is $O(N)$ since we do a random swap for each of the $N$ 
 elements in the array.
 
-Since we just require a temporary variable `temp` to faciliate swapping elements, it requires `O(1)` 
+Since we just require a temporary variable `temp` to faciliate swapping elements, it requires $O(1)$ 
 auxiliary space.
 
 ```

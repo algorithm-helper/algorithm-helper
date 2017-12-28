@@ -8,8 +8,8 @@ subtree is less than the `key` of the node, and the `key` of the node is less th
 `right` subtree, just like in a regular binary search tree.
 
 Since we are always able to maintain balance, the distance from the root to any leaf in the tree is 
-always less than or equal to `lgN`, where `N` is the number of elements in the tree, and thus the 
-time complexity for operations like `get`, `put`, or `delete` is always `O(lgN)`.
+always less than or equal to $logN$, where $N$ is the number of elements in the tree, and thus the 
+time complexity for operations like `get`, `put`, or `delete` is always $O(logN)$.
 
 However, implementing this exact description of a 2-3 tree is difficult in practice, but this can be 
 done using the [Red-Black Tree](/categories/data-structures/trees/red-black-tree), which is modelled 

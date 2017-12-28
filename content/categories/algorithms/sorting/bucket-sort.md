@@ -7,7 +7,7 @@ then sorting the `buckets` using some comparison based sort or by making a bucke
 enough and reading out from each bucket from the first index to the last.
 
 The algorithm works by finding the maximum value in the array, and making that the bucket size. We 
-iterate through the array, and for each element at index `i`, we increment the bucket size at `i` 
+iterate through the array, and for each element at index $i$, we increment the bucket size at $i$ 
 by 1, thereby sorting by "counting". Then we can simply read the bucket sizes in order for the final 
 order of the array.
 
@@ -73,12 +73,12 @@ there is much wasted space just to accommodate for that number.
 In the average case and a more ideal case which is where the maximum (or minimum element) is not 
 substantially larger (or smaller) than the rest of the elements, or in other words, when the 
 relative size between the maximum element is negligible compared to all N elements, then this 
-algorithm runs in `O(N)` time.
+algorithm runs in $O(N)$ time.
 
-But generally and intuitively, since we always have to build an array of size `K`, where `K` is the 
-(absolutely) largest value in the array, then we take `O(K)` time to build the bucket. Then since 
-the bucket sort algorithm itself then takes `O(N)` time, then the overall running time of this 
-algorithm is `O(N + K)`.
+But generally and intuitively, since we always have to build an array of size $K$, where $K$ is the 
+(absolutely) largest value in the array, then we take $O(K)$ time to build the bucket. Then since 
+the bucket sort algorithm itself then takes $O(N)$ time, then the overall running time of this 
+algorithm is $O(N + K)$.
 
 The problem with this algorithm is that it is unstable, its efficiency is limited to integer keys, 
 and it is not in-place, but can potentially require a substantial amount of auxiliary space.
@@ -87,16 +87,14 @@ and it is not in-place, but can potentially require a substantial amount of auxi
 
 ##### Java
 
-View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/algorithms/sorting/BucketSort.java).
-
 <script src="https://gist.github.com/eliucs/56b63c2cb3d945e778383e95b0c5363a.js"></script>
 
 ### Time Complexity
 
-The time complexity of this algorithm is `O(N + K)`, where `K` is the absolutely maximum element in 
+The time complexity of this algorithm is $O(N + K)$, where $K$ is the absolutely maximum element in 
 the array.
 
-Since we need to initialize `buckets` by building an array of size `K`, we require `O(K)` auxiliary 
+Since we need to initialize `buckets` by building an array of size $K$, we require $O(K)$ auxiliary 
 space.
 
 It is not in-place since we require incrementing bucket values in the auxiliary array, and it is 
@@ -105,5 +103,5 @@ not stable.
 ```
 | Algorithm   | time complexity | space complexity | in-place | stable | type         |
 |-------------|-----------------|------------------|----------|--------|--------------|
-| bucket sort | O(N  + K)       | O(K)             | no       | no     | distribution |
+| bucket sort | O(N+K)          | O(K)             | no       | no     | distribution |
 ```

@@ -14,33 +14,31 @@ One of the concerns with the array is resizing is a question of when it becomes 
 we resize it by? Consider the naive implementation, where every time a new element is inserted, the 
 elements of the original array are copied over to an array of size 1 larger. The problem with this 
 is that this would mean that because the entire array needs to be copied each time, this operation 
-is done in `O(N)` time. Moreover, when elements get removed from the array, there is no mechanism to 
+is done in $O(N)$ time. Moreover, when elements get removed from the array, there is no mechanism to 
 make the array shrink to save space.
 
 We can amortize the cost of inserting (read more about this in the article on 
 [Amortization](/categories/data-structures/lists/amortization)). The resizing strategy is to double 
-the size of the array when it becomes full. Consider `N` number of insertions. For insertion, this 
-works because the cost of the doubling has been amortized overall the `N` insertions. We only have
-to double `lgN` times. So the total cost of the insertion becomes:
+the size of the array when it becomes full. Consider $N$ number of insertions. For insertion, this 
+works because the cost of the doubling has been amortized overall the $N$ insertions. We only have
+to double $logN$ times. So the total cost of the insertion becomes:
 
-```
-= O(2^0 + 2^1 + ... 2^lgN)
-= O(N)
-```
+$= O(2^0 + 2^1 + ... + 2^{logN})$
 
-But this is the total cost over N elements. So per element it becomes:
+$= O(N)$
 
-```
-= O(N)/N
-= O(1)
-```
+But this is the total cost over $N$ elements. So per element it becomes:
+
+$= O(N)/N$
+
+$= O(1)$
 
 Now we consider when elements get removed. The naive implementation of deletion is to never shrink 
 the array when elements are removed, or to halve the size of the array once the array becomes half 
 full. First, this wastes an unnecessary amount of space, and second, consider what happens when we 
 do a number of insertions and deletions of one element at example when the array is half full.
 Then each operation causes the data structure to be repeatedly doubled and halved, which take 
-uncessary `O(N)` time, each time. To avoid situations like this, the array size will be halved once 
+uncessary $O(N)$ time, each time. To avoid situations like this, the array size will be halved once 
 the array is a quarter full.
 
 ### Visualization
@@ -127,17 +125,15 @@ Vectors use the following operations:
     - Return the `item` at index `n-1`.
 
 It is clear that while we can retrieve elements at particular indices, and perform operations on the 
-end of the array efficiently in `O(1)` time since we can conveniently just increment and decrement 
+end of the array efficiently in $O(1)$ time since we can conveniently just increment and decrement 
 `n`, other operations like inserting or removing an element at an arbitrary position in the array 
-are done in `O(N)` time since they require shifting over elements in the array. Insertion or 
+are done in $O(N)$ time since they require shifting over elements in the array. Insertion or 
 removing the first item is even worse, as we need to shift the entire array's contents, also in 
-`O(N)` time.
+$O(N)$ time.
 
 ### Implementations
 
 ##### Java
-
-View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/lists/DynamicArray.java).
 
 <script src="https://gist.github.com/eliucs/e48f984426ed1ae08c1cbf3f3ef46c5b.js"></script>
 

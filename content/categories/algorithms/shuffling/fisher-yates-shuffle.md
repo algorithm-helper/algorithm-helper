@@ -27,24 +27,22 @@ elements left to choose, and since we are choosing from elements at `[1...n-1]`,
 have again the same chance of being selected (`1/(n-1)`), and so on, until we have one element left.
 
 One thing to note is that this algorithm is limited to the randomness of the the random number 
-generator itself, as well as how efficient it is. We assume that it generates the number in `O(1)` 
-time. Since we generate a random number `f` or each element in the array and swaps take `O(1)` time, 
-this algorithm runs in `O(N)` time.
+generator itself, as well as how efficient it is. We assume that it generates the number in $O(1)$ 
+time. Since we generate a random number $f$ or each element in the array and swaps take $O(1)$ time, 
+this algorithm runs in $O(N)$ time.
 
 ### Implementation
 
 ##### Java
 
-View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/algorithms/shuffling/FisherYatesShuffle.java).
-
 <script src="https://gist.github.com/eliucs/bac53840c5c28cb3ac2a0bf0bdfa3215.js"></script>
 
 ### Time Complexity
 
-The time complexity of Fisher-Yates shuffle is `O(N)` since we do a random swap for each of the `N` 
+The time complexity of Fisher-Yates shuffle is $O(N)$ since we do a random swap for each of the $N$ 
 elements in the array.
 
-Since we just require a temporary variable `temp` to faciliate swapping elements, it requires `O(1)` 
+Since we just require a temporary variable `temp` to faciliate swapping elements, it requires $O(1)$ 
 auxiliary space.
 
 ```

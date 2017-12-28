@@ -17,12 +17,12 @@ Note that operations like `max`/`min`, `deleteMax`/`deleteMin` are not necessari
 Consider a naive implementation of a hash map, where we use separate chaining. An operation like 
 `max` would require us to iterate through the keys until we determine the maximum `key`, and 
 `deleteMax` would depend on that operation to find the corresponding (`key`, `val`) pair to delete, 
-which of course, takes `O(N)` time. This can be improved by always saving the `min` or `max` `key` 
+which of course, takes $O(N)$ time. This can be improved by always saving the `min` or `max` `key` 
 every time we insert a (`key`, `val`) pair into the table. Determining if a new `key` is less than 
-the `min` or greater than the `max` only takes `O(1)` time, thus generally we have `min` and `max` 
-done in `O(1)` time. However, when we delete a `key`, we no longer have access to the `min` or 
+the `min` or greater than the `max` only takes $O(1)$ time, thus generally we have `min` and `max` 
+done in $O(1)$ time. However, when we delete a `key`, we no longer have access to the `min` or 
 the `max` element, and that would have to be recomputed by iterating through the keys and finding 
-the `min` or `max` key, which takes `O(N)` time.
+the `min` or `max` key, which takes $O(N)$ time.
 
 Note that if the operations `max`/`min`, `deleteMax`/`deleteMin` are important, 
 then balanced binary search trees like [Red-Black Trees](/categories/data-structures/trees/red-black-tree) 
@@ -32,10 +32,10 @@ or [AVL Trees](/categories/data-structures/trees/avl-tree) may be a better optio
 
 Separate chaining is a method for resolving collisions, and it is based on the idea that at a slot 
 in the table, we have a linked list structure that links all of the (`key`, `val`) pairs that hash 
-to that slot. If we have N keys and a table size of `M`, under the 
+to that slot. If we have $N$ keys and a table size of $M$, under the 
 [Simple Uniform Hashing Assumption](/categories/data-structures/hashing/simple-uniform-hashing-assumption), 
-the average length of these chains is `N/M`. Thus we have a lookup in `O(1 + N/M)` time, or if we 
-define `alpha = N/M` then lookup is in `O(1 + alpha)` time.
+the average length of these chains is $N/M$. Thus we have a lookup in $O(1 + N/M)$ time, or if we 
+define $\alpha = N/M$ then lookup is in $O(1 + \alpha)$ time.
 
 The following is a visualization of separate chaining in a hash map:
 
@@ -56,13 +56,13 @@ Table of size M:
     ... etc.
 ```
 
-The problem with this is that if `N` grows much larger than `M`, searching through this table could 
-degenerate to `O(N)` because the linked lists grow too large in length. The table size itself is 
+The problem with this is that if $N$ grows much larger than $M$, searching through this table could 
+degenerate to $O(N)$ because the linked lists grow too large in length. The table size itself is 
 able to dynamically resize.
 
-However, this raises another issue, which is what ratio to maintain `N/M`. If `M` is too large, then 
-we have too much empty slots not used, but if `M` is too small, the chains become too long. We 
-choose `M` to be `N/5` and thus we can maintain the load factor to be about 5. Thus on average, 
+However, this raises another issue, which is what ratio to maintain $N/M$. If $M$ is too large, then 
+we have too much empty slots not used, but if $M$ is too small, the chains become too long. We 
+choose $M$ to be $N/5$ and thus we can maintain the load factor to be about 5. Thus on average, 
 after we hash to an index, we have the search through about 5 linked list nodes before finding the 
 key.
 
@@ -118,7 +118,7 @@ that we reduce the number of probes necessary to find the next empty slot.
 
 Likewise with separate chaining, we can take advantage of the fact that we have the Simple Uniform 
 Hashing Assumption to analyze probabilistically, what the average number of probes will be. Knuth's 
-analysis of the average number of probes for a table of size `M`, with `N = alpha * M` keys is:
+analysis of the average number of probes for a table of size $M$, with $N = \alpha * M$ keys is:
 
 ```
 For search success:
@@ -128,9 +128,9 @@ For search fail or insert:
 ~ 1/2 (1 + 1 / (1 - alpha) ^ 2)
 ```
 
-Thus we see that if `M` is small, say close to `N`, then `alpha` becomes close to 1, and 
-`(1 - alpha)` becomes small, but since it is on the denominator, the whole number grows large. We 
-want to have `M` to be a number close to `2N`, and thus `alpha`, or our load factor is about 0.5. 
+Thus we see that if $M$ is small, say close to $N$, then $\alpha$ becomes close to 1, and 
+$(1 - \alpha)$ becomes small, but since it is on the denominator, the whole number grows large. We 
+want to have $M$ to be a number close to $2N$, and thus $\alpha$, or our load factor is about 0.5. 
 Then by Knuth's formula above, the number of probes for a search success is about 1.5 and for a 
 search fail or insert is about 2.5.
 
@@ -203,15 +203,11 @@ For linear probing:
 
 ##### Java
 
-View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/hashing/HashMapSeparateChaining.java).
-
 <script src="https://gist.github.com/eliucs/be489da89ca2b9344463390482cafb45.js"></script>
 
 ### Implementation (Linear Probing)
 
 ##### Java
-
-View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/hashing/HashMapLinearProbing.java).
 
 <script src="https://gist.github.com/eliucs/59df55d525f6f2de5973135089716d22.js"></script>
 
@@ -220,8 +216,6 @@ View the source code [here](https://github.com/algorithm-helper/implementations/
 A map version of the `LinkedList` class is needed for separate chaining.
 
 ##### Java
-
-View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/lists/LinkedListMap.java).
 
 <script src="https://gist.github.com/eliucs/316bd6d9518f78ea69424945dd101904.js"></script>
 

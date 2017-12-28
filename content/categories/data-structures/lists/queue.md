@@ -69,10 +69,9 @@ Note that we are using a double ended linked list, as well as a modified dynamic
     - Using dynamic array:
         - Return the element at the `first` index.
 
-With a linked list, a queue is essentially only limited to `insertBack`, 
-`removeFront` and `peekFront`. With a dynamic array,
-a stack is essentially only limited to `insertBack`, `removeFront` and 
-`peekBack`. 
+With a linked list, a queue is essentially only limited to `insertBack`, `removeFront` and 
+`peekFront`. With a dynamic array, a stack is essentially only limited to `insertBack`, 
+`removeFront` and `peekBack`. 
 
 Note that with the dynamic array implementation, because when we are dequeuing elements we need to 
 increment `first`, the `first` index does not necessarily correspond to index 0. It follows that 
@@ -84,23 +83,17 @@ we need to resize the array, the elements get copied to the new array starting a
 
 ##### Java
 
-View the source code [here](https://github.com/algorithm-helper/implementations/tree/master/java/com/algorithmhelper/datastructures/interfaces/Queue.java).
-
 <script src="https://gist.github.com/eliucs/b42be2fb7d50eb09c9f7868e20b4913e.js"></script>
 
 ### Implementation (using Linked List)
 
 ##### Java
 
-View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/lists/QueueLinkedList.java).
-
 <script src="https://gist.github.com/eliucs/c009375664ac0daf9ab4151000b47d0f.js"></script>
 
 ### Implementation (using Dynamic Array)
 
 ##### Java
-
-View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/lists/QueueDynamicArray.java).
 
 <script src="https://gist.github.com/eliucs/f17a23d0a7419953a7f9fe9ffa369372.js"></script>
 

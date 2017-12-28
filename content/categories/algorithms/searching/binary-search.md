@@ -1,6 +1,6 @@
 # Binary Search
 
-Binary search is an algorithm for searching for elements in a sorted array in `O(lgN)` time. It is 
+Binary search is an algorithm for searching for elements in a sorted array in $O(logN)$ time. It is 
 commonly used as it is fairly straightforward to implement and is intuitive, because it is generally 
 how humans search in a sorted list of elements, like a dictionary.
 
@@ -54,20 +54,18 @@ lo          mid              hi
 
 ##### Java
 
-View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/algorithms/searching/BinarySearch.java).
-
 <script src="https://gist.github.com/eliucs/a0f6788d17be8bf616cab52ef81cf658.js"></script>
 
 ### Time Complexity
 
-Intuitively, we can halve at most `lgN` times, and thus this algorithm runs in `O(lgN)` time.
+Intuitively, we can halve at most $logN$ times, and thus this algorithm runs in $O(logN)$ time.
 
-Since it requires three pointers (`lo`, `mid`, and `hi`), we need `O(1)` auxiliary space.
+Since it requires three pointers (`lo`, `mid`, and `hi`), we need $O(1)$ auxiliary space.
 
 The following describes the time and space complexity of binary search:
 
 ```
-| Algorithm     | time complexity | space complexity |
-|---------------|-----------------|------------------|
-| binary search | O(lgN)          | O(1)             |
+| Algorithm     | time complexity  | space complexity |
+|---------------|------------------|------------------|
+| binary search | O(logN)          | O(1)             |
 ```

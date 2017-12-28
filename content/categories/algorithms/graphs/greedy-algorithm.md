@@ -15,16 +15,16 @@ approximate a global optimal solution in a reasonable time.
 
 In many problems, greedy algorithms can fail to find globally optimal solutions because the 
 algorithm is "short-sighted". An example of this may be finding the shortest path from one vertex 
-`u` to another vertex `v`, such that we only take the next minimum weight adjacent edge.
+$u$ to another vertex $v$, such that we only take the next minimum weight adjacent edge.
 
 For example:
 
 <img src="https://i.imgur.com/OkRztYY.png" alt="Greedy Shortest Path" width="400" height="300">
 
-If we are trying to get the shortest path from vertex `1` to vertex `6`, if we use a greedy approach, 
-then we would take the path `1 -> 2 -> 3 -> 4 -> 6`, but this would have a total weight of 
-`1 + 1 + 100 + 100 = 202` to get to vertex `6`, while the actual shortest path is 
-`1 -> 2 -> 5 -> 6`, with a total weight of `1 + 2 + 1 = 3`. 
+If we are trying to get the shortest path from vertex $1$ to vertex $6$, if we use a greedy approach, 
+then we would take the path $1 \rightarrow 2 \rightarrow 3 \rightarrow 4 \rightarrow 6$, but this would have a total weight of 
+$1 + 1 + 100 + 100 = 202$ to get to vertex $6$, while the actual shortest path is 
+$1 \rightarrow 2 \rightarrow 5 \rightarrow 6$, with a total weight of $1 + 2 + 1 = 3$. 
 
 Greedy algorithms are often a good way to approximate optimal solutions or derive intuition for
 finding another algorithm that may be more involved, but optimal. However, in many problems, such 

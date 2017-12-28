@@ -66,8 +66,6 @@ Linked lists use the following operations:
 
 ##### Java
 
-View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/lists/LinkedList.java).
-
 <script src="https://gist.github.com/eliucs/4b5ca73445ac7f4ed5aa0049b5457f17.js"></script>
 
 ### Time Complexity

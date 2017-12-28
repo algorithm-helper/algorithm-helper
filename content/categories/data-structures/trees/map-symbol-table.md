@@ -56,6 +56,4 @@ The following provides an interface for maps.
 
 ##### Java
 
-View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/interfaces/Map.java).
-
 <script src="https://gist.github.com/eliucs/41d983e61ad70cca9feb972fb0353d4b.js"></script>

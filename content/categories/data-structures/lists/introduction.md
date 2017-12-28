@@ -77,12 +77,12 @@ class Node {
 ```
 
 It is clear what differentiates this "chain-like" structure of nodes with say, an array. While 
-accessing an element in an array, we would index into it in `O(1)` time, conceptually with a list 
+accessing an element in an array, we would index into it in $O(1)$ time, conceptually with a list 
 like this, we must iterate through the nodes one by one, until we find the node with the desired 
-value, which is done in `O(N)` time.
+value, which is done in $O(N)$ time.
 
 However, since we may have the `first` and `last` pointer, we would be able to directly access the 
-value associated with the first and last elements of the list in `O(1)` time, which proves itself to 
+value associated with the first and last elements of the list in $O(1)$ time, which proves itself to 
 be useful in stacks and queues, for example.
 
 ##### With Arrays
@@ -143,7 +143,5 @@ The following provides the interface for the `List` class, from which the `Linke
 `DynamicArray`, and `DoubleEndedLinkedList` classes will implement.
 
 ##### Java
-
-View the source code [here](https://github.com/algorithm-helper/implementations/tree/master/java/com/algorithmhelper/datastructures/interfaces/List.java).
 
 <script src="https://gist.github.com/eliucs/4f4d8baf9874843b7e6eccb4ea6f675d.js"></script>

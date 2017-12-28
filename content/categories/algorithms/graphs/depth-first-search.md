@@ -13,7 +13,7 @@ visit vertices, we skip the vertices that are already contained in `visited`.
 In both methods, we maintain an array or map `predecessor`, which gives us the previous vertex 
 explored at a certain vertex, and this forms a tree structure. When we reach the end of the 
 traversal, we index into `predecessor` at the ending vertex, and continuously find its parent
-vertex `p` until we reach the starting vertex again, adding `p` onto the stack. Thus when we 
+vertex $p$ until we reach the starting vertex again, adding $p$ onto the stack. Thus when we 
 iterate over the stack, we get the path from the starting vertex to the ending vertex.
 
 ### Using Recursion
@@ -100,31 +100,27 @@ for (i = v; i != u; i = predecessor[i]):
 
 ### Properties
 
-One of the properties of depth first search is that the algorithm runs in linear time, `O(|V|+|E|)`
-time and uses `O(|V|)` space. We can see this because depth first search will reach every vertex at
+One of the properties of depth first search is that the algorithm runs in linear time, $O(|V|+|E|)$
+time and uses $O(|V|)$ space. We can see this because depth first search will reach every vertex at
 most one (assuming we have a connected graph), since before exploring the vertex we add it to the
 set `visited`, and will never visit it again. At each vertex, we iterate over its adjacency list, 
 that is, we iterate over all outgoing edges from that vertex. Intuitively, we must have double 
-counted every edge, and thus considered `2|E|` edges. 
+counted every edge, and thus considered $2|E|$ edges. 
 
-Since the set `visited` and the array `predecessor` can contain at most `|V|` vertices, it uses 
-`O(|V|)` space. But since the recursion stack can get at most `|V|` deep, or equivalently the stack
-`S` can have at most `|V|` elements, it uses `O(|V|)` space. Thus, depth first search uses `O(|V|)`
+Since the set `visited` and the array `predecessor` can contain at most $|V|$ vertices, it uses 
+$O(|V|)$ space. But since the recursion stack can get at most $|V|$ deep, or equivalently the stack
+`S` can have at most $|V|$ elements, it uses $O(|V|)$ space. Thus, depth first search uses $O(|V|)$
 auxiliary space.
 
 ### Implementation (using Recursion)
 
 ##### Java
 
-View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/algorithms/graphs/DepthFirstSearchRecursion.java).
-
 <script src="https://gist.github.com/eliucs/362dc1f9a986ee83094823f1e9a041ac.js"></script>
 
 ### Implementation (using Stack)
 
 ##### Java
-
-View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/algorithms/graphs/DepthFirstSearchStack.java).
 
 <script src="https://gist.github.com/eliucs/9988a7547c8f2191c29fa8d205ef1fd9.js"></script>
 

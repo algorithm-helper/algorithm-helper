@@ -14,11 +14,11 @@ process until the heap is of size 0. The correctness of this algorithm can be se
 we move the root of the max heap, which is the current max element, to the back of the heap, then in 
 the finalized array that element must be in the correct position.
 
-Since heaps are completely balanced binary trees, the height of a heap is at most `lgN`. 
+Since heaps are completely balanced binary trees, the height of a heap is at most $logN$. 
 Furthermore, when we call the `heapifyDown` operation, the most we must displace a wrongly 
 positioned root item is at the bottom of the heap, so this element must travel the height of the 
-tree. Intuitively, since the height is `lgN`, and we must do this for all the `N` items, this 
-algorithm's running time is `O(NlgN)`.
+tree. Intuitively, since the height is $logN$, and we must do this for all the $N$ items, this 
+algorithm's running time is $O(NlogN)$.
 
 ### Visualization
 
@@ -200,7 +200,7 @@ a = [-1, 0, 5, 7, 8, 9, 12]
 ```
 
 The advantage to heap sort is that because it is in-place, as we can build up the heap structure 
-within the original array itself, so the extra space usage is only `O(1)`.
+within the original array itself, so the extra space usage is only $O(1)$.
 
 But heap sort is not stable, making it an undesirable property if stability is needed.
 
@@ -208,16 +208,14 @@ But heap sort is not stable, making it an undesirable property if stability is n
 
 ##### Java
 
-View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/algorithms/sorting/HeapSort.java).
-
 <script src="https://gist.github.com/eliucs/252f31aa7f59025b04b2fe8761220f68.js"></script>
 
 ### Time Complexity
 
-The time complexity of heap sort is O(NlogN).
+The time complexity of heap sort is $O(NlogN)$.
 
 Since it is done in-place in the array and requires variables `i` and `j` for the `heapifyDown` 
-operation, it requires `O(1)` auxiliary space.
+operation, it requires $O(1)$ auxiliary space.
 
 It is in-place, and not stable.
 

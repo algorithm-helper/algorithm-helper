@@ -63,15 +63,11 @@ For linear probing:
 
 ##### Java
 
-View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/hashing/HashSetSeparateChaining.java).
-
 <script src="https://gist.github.com/eliucs/4105ad88fd40890bd9b79e026b7cb6cd.js"></script>
 
 ### Implementation (Linear Probing)
 
 ##### Java
-
-View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/hashing/HashSetLinearProbing.java).
 
 <script src="https://gist.github.com/eliucs/71fd07009dee01daafdf6e86d5001ae6.js"></script>
 
@@ -80,8 +76,6 @@ View the source code [here](https://github.com/algorithm-helper/implementations/
 A set version of linked list is needed for separate chaining.
 
 ##### Java
-
-View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/lists/LinkedListSet.java).
 
 <script src="https://gist.github.com/eliucs/7fd3895d459d054d7f133ac104970f9c.js"></script>
 

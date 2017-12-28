@@ -2,7 +2,7 @@
 
 In-place, or in-placeness in the context of sorting algorithms refers to whether or not we need 
 auxiliary space in order to perform the sort. This is important in the context of memory usage and 
-space complexity. We do still need `O(1)` extra space for auxiliary variables, which are commonly 
+space complexity. We do still need $O(1)$ extra space for auxiliary variables, which are commonly 
 pointers.
 
 From Wikipedia:

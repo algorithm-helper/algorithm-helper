@@ -54,6 +54,4 @@ The following provides an interface for sets.
 
 ##### Java
 
-View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/interfaces/Set.java).
-
 <script src="https://gist.github.com/eliucs/01c32523c23cb57292e79bb8ac3df0f9.js"></script>

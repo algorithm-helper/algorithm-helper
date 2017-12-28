@@ -25,15 +25,11 @@ The following provides the interface for the `WeightedGraph` class.
 
 ##### Java
 
-View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/interfaces/WeightedGraph.java).
-
 <script src="https://gist.github.com/eliucs/1a699868c907146e7dc385aa7889e5dd.js"></script>
 
 ### Implementation (Weight Function)
 
 ##### Java
-
-View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/graphs/WeightFunction.java).
 
 <script src="https://gist.github.com/eliucs/bbb95b9a1e5e9aa480a0f301080774ff.js"></script>
 
@@ -41,28 +37,24 @@ View the source code [here](https://github.com/algorithm-helper/implementations/
 
 ##### Java
 
-View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/graphs/UndirectedWeightedGraph.java).
-
 <script src="https://gist.github.com/eliucs/27a866d3ae33b95f114223ab2920ca2e.js"></script>
 
 ### Implementation (Directed)
 
 ##### Java
 
-View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/graphs/DirectedWeightedGraph.java).
-
 <script src="https://gist.github.com/eliucs/35bd7ca3a231673d342e5e201a9f34d9.js"></script>
 
 ### Time Complexity
 
-The time and space complexity for the operations on the graph are identical to the ones for the `UndirectedGraph` and `DirectedGraph` classes. Since `WeightFunction` needs to map exactly `|E|`
-edges to weights, it uses an additional `O(|E|)` space, however, since the space complexity of 
-the original `UndirectedGraph` and `DirectedGraph` is already `O(|V|+|E|)`, it does not make a 
+The time and space complexity for the operations on the graph are identical to the ones for the `UndirectedGraph` and `DirectedGraph` classes. Since `WeightFunction` needs to map exactly $|E|$
+edges to weights, it uses an additional $O(|E|)$ space, however, since the space complexity of 
+the original `UndirectedGraph` and `DirectedGraph` is already $O(|V|+|E|)$, it does not make a 
 difference, complexity wise.
 
 ```
-| Data Structure            | space complexity | containsVertex | containsEdge | insertVertex | insertEdge | deleteVertex | deleteEdge | getDegree    | getAdjacent  |
-|---------------------------|------------------|----------------|--------------|--------------|------------|--------------|------------|--------------|--------------|
-| undirected weighted graph | O(V + E)         | O(1)           | O(degree(u)) | O(1)         | O(1)       | O(degree(u)) | O(1)       | O(degree(u)) | O(degree(u)) |
-| directed weighted graph   | O(V + E)         | O(1)           | O(degree(u)) | O(1)         | O(1)       | O(degree(u)) | O(1)       | O(degree(u)) | O(degree(u)) |
+| Data Structure            | space complexity   | containsVertex | containsEdge | insertVertex | insertEdge | deleteVertex | deleteEdge | getDegree    | getAdjacent  |
+|---------------------------|--------------------|----------------|--------------|--------------|------------|--------------|------------|--------------|--------------|
+| undirected weighted graph | O(|V|+|E|)         | O(1)           | O(degree(u)) | O(1)         | O(1)       | O(degree(u)) | O(1)       | O(degree(u)) | O(degree(u)) |
+| directed weighted graph   | O(|V|+|E|)         | O(1)           | O(degree(u)) | O(1)         | O(1)       | O(degree(u)) | O(1)       | O(degree(u)) | O(degree(u)) |
 ```

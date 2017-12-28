@@ -11,7 +11,7 @@ which vertices we have already encountered, and a queue which we enqueue adjacen
 Like with depth first search, we maintain an array `predecessor`, which gives us the previous vertex 
 explored at a certain vertex, and this forms a tree structure. When we reach the end of the 
 traversal, we index into `predecessor` at the ending vertex, and continuously find its parent 
-vertex `p`, until we reach the starting vertex again, adding `p` to a stack. Thus when we iterate
+vertex $p$, until we reach the starting vertex again, adding $p$ to a stack. Thus when we iterate
 over the stack, we get the path from the starting vertex to the ending vertex.
 
 ### Using Queue
@@ -59,20 +59,18 @@ for (i = v; i != u; i = predecessor[i]):
 
 The pseudocode for breadth first search is almost identical depth first search, except instead of 
 using a stack, we use a queue. One of the properties of breadth first search is that the algorithm 
-runs in `O(|V|+|E|)` time and uses `O(|V|)` space. We can see this because breadth first search will
+runs in $O(|V|+|E|)$ time and uses $O(|V|)$ space. We can see this because breadth first search will
 reach every vertex at most once (assuming we have a connected graph), since before exploring the 
 vertex we add it to the set `visited`, and will never visit it again. At each vertex, we iterate
 over its adjacency list before adding non-visited ones to the queue, that is, we iterate over all
 outgoing edges from that vertex. Intuitively, if we consider all outgoing edges from all vertices,
 we would have considered all edges in the graph. Since the set `visited` and the array `predecessor`
-can contain at most `|V|` vertices, it uses `O(|V|)` space. But since the queue `Q` can have at most
-`|V|` elements, it uses `O(|V|)` space. Thus, breadth first search uses `O(|V|)` auxiliary space.
+can contain at most $|V|$ vertices, it uses $O(|V|)$ space. But since the queue `Q` can have at most
+$|V|$ elements, it uses $O(|V|)$ space. Thus, breadth first search uses $O(|V|)$ auxiliary space.
 
 ### Implementation
 
 ##### Java
-
-View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/algorithms/graphs/BreadthFirstSearch.java).
 
 <script src="https://gist.github.com/eliucs/3edf468efd8bdfc677b4418ba5e3c8d3.js"></script>
 

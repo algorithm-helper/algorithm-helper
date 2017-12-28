@@ -130,10 +130,10 @@ rebalance the tree:
 
 Intuitively, because we are always able to keep the both `left` and `right` subtrees to be balanced 
 (and only differ by at most 1), it follows that the maximum `height` of the tree only gets to be 
-about `lgN`, and thus for operations on AVL Trees like `get`, `put`, or `delete`, we achieve 
-`O(lgN)` time, guaranteed. In addition, basic binary search tree operations like `min`/`max`, 
+about $logN$, and thus for operations on AVL Trees like `get`, `put`, or `delete`, we achieve 
+$O(logN)$ time, guaranteed. In addition, basic binary search tree operations like `min`/`max`, 
 `floor`/`ceil`, `select`, or `rank` work in exactly the same way since they work independently of 
-the `height` field, and also run in `O(lgN)` time.
+the `height` field, and also run in $O(logN)$ time.
 
 One thing to note about AVL Trees is that they are not weight-balanced, meaning that both `left` and 
 `right` subtrees contain the same amount of nodes. The same is true with red-black trees, but with 
@@ -214,15 +214,11 @@ left-leaning red-black trees, we know that the `left` side generally has more we
 
 ##### Java
 
-View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/AVLTreeMap.java).
-
 <script src="https://gist.github.com/eliucs/5580c40c5e2910052d8887b0fce6b5e9.js"></script>
 
 ### Implementation (Set)
 
 ##### Java
-
-View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/AVLTreeSet.java).
 
 <script src="https://gist.github.com/eliucs/92a51e5b0390ee02ad68f7870e16b596.js"></script>
 
@@ -231,7 +227,7 @@ View the source code [here](https://github.com/algorithm-helper/implementations/
 The following table describes the time complexity for performing the operations above on an AVL tree:
 
 ```
-| Data Structure | contains | get    | put    | min    | max    | delete | deleteMin | deleteMax | floor  | ceil   | select | rank   |
-|----------------|----------|--------|--------|--------|--------|--------|-----------|-----------|--------|--------|--------|--------|
-| red-black tree | O(lgN)   | O(lgN) | O(lgN) | O(lgN) | O(lgN) | O(lgN) | O(lgN)    | O(lgN)    | O(lgN) | O(lgN) | O(lgN) | O(lgN) |
+| Data Structure | contains  | get     | put     | min     | max     | delete  | deleteMin  | deleteMax  | floor   | ceil    | select  | rank    |
+|----------------|-----------|---------|---------|---------|---------|---------|------------|------------|---------|---------|---------|---------|
+| red-black tree | O(logN)   | O(logN) | O(logN) | O(logN) | O(logN) | O(logN) | O(logN)    | O(logN)    | O(logN) | O(logN) | O(logN) | O(logN) |
 ```

@@ -15,7 +15,7 @@ return the element of maximum priority, and return the element of maximum priori
 it from the priority max queue, respectively.
 
 This data structure is best suitable to be implemented with a binary max heap, and thus we are able 
-to run the operations `insert` and `extractMax` in `O(lgN)` time, and return the `max` in `O(1)` 
+to run the operations `insert` and `extractMax` in $O(logN)$ time, and return the `max` in $O(1)$ 
 time.
 
 ### Priority Min Queue
@@ -26,7 +26,7 @@ return the element of minimum priority, and return the element of minimum priori
 it from the priority min queue, respectively.
 
 This data structure is best suitable to be implemented with a binary min heap, and thus we are able 
-to run the operations `insert` and `extractMin` in `O(lgN)` time, and return the `min` in `O(1)`
+to run the operations `insert` and `extractMin` in $O(logN)$ time, and return the `min` in $O(1)$
 time.
 
 ### Double Ended Priority Queue
@@ -39,7 +39,7 @@ double ended priority queue, and return the element of minimum priority without 
 double ended priority queue.
 
 This data structure is best suitable to be implemented with some balanced tree structure, like a 
-red-black tree, and thus we are able to run all of the operations in `O(lgN)` time.
+red-black tree, and thus we are able to run all of the operations in $O(logN)$ time.
 
 ### Visualization
 
@@ -172,23 +172,17 @@ For double ended priority queue:
 
 ##### Java
 
-View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/PriorityMaxQueue.java).
-
 <script src="https://gist.github.com/eliucs/5aaa405a78c10d7d28a8b4f8ce57e03f.js"></script>
 
 ### Implementation (Priority Min Queue)
 
 ##### Java
 
-View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/PriorityMinQueue.java).
-
 <script src="https://gist.github.com/eliucs/2e38db7af9f6f50520a67f2f888a442f.js"></script>
 
 ### Implementation (Double Ended)
 
 ##### Java
-
-View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/DoubleEndedPriorityQueue.java).
 
 <script src="https://gist.github.com/eliucs/30f63846b5a15df27f9fff188479a9e0.js"></script>
 
@@ -198,9 +192,9 @@ The following table describes the time complexity for performing the operations 
 max queue, priority min queue, and a double ended priority queue:
 
 ```
-| Data Structure              | insert | extractMax | extractMin | max    | min    |
-|-----------------------------|--------|------------|------------|--------|--------|
-| priority max queue          | O(lgN) | O(lgN)     | n/a        | O(1)   | n/a    |
-| priority min queue          | O(lgN) | n/a        | O(lgN)     | n/a    | O(1)   |
-| double ended priority queue | O(lgN) | O(lgN)     | O(lgN)     | O(lgN) | O(lgN) |
+| Data Structure              | insert  | extractMax  | extractMin  | max     | min     |
+|-----------------------------|---------|-------------|-------------|---------|---------|
+| priority max queue          | O(logN) | O(logN)     | n/a         | O(1)    | n/a     |
+| priority min queue          | O(logN) | n/a         | O(logN)     | n/a     | O(1)    |
+| double ended priority queue | O(logN) | O(logN)     | O(logN)     | O(logN) | O(logN) |
 ```

@@ -46,28 +46,26 @@ for each vertex x in T:
     id++
 ```
 
-Kosaraju's algorithm is a linear time algorithm, that is, it runs in `O(|V|+|E|)` time. Determining
+Kosaraju's algorithm is a linear time algorithm, that is, it runs in $O(|V|+|E|)$ time. Determining
 the run time is straightforward since when we first get the topological order, we can use 
-topological sort, which is in `O(|V|+|E|)` time. Then when we iterate through the topological 
-ordering, we only process every vertex `u` at most once, because the first time we do, we add it to
+topological sort, which is in $O(|V|+|E|)$ time. Then when we iterate through the topological 
+ordering, we only process every vertex $u$ at most once, because the first time we do, we add it to
 the map `SCC` to indicate that it has already been processed and to not process it again.
 
 Intuitively, since we are processing the strongly connected components one after the other, say two
 distinct strongly connected components `A` and `B`, we are guaranteed that they do not overlap,
 overwise, by definition of a strongly connected component `A` and `B` are part of the same 
 strongly connected component. By the analysis above for depth first search, we will process every 
-vertex in the graph and every edge in the graph at most once, taking `O(|V|+|E|)` time.
+vertex in the graph and every edge in the graph at most once, taking $O(|V|+|E|)$ time.
 
-Determining the space complexity is also straightforward. Topological sort takes `O(|V|)` space. We
+Determining the space complexity is also straightforward. Topological sort takes $O(|V|)$ space. We
 require either recursion or a stack for depth first search, but the worst case is that the entire 
 itself is a strongly connected component, so at most the depth first search part of the algorithm 
-requires `O(|V|)` space.
+requires $O(|V|)$ space.
 
 ### Implementation
 
 ##### Java
-
-View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/algorithms/graphs/KosarajusAlgorithm.java).
 
 <script src="https://gist.github.com/eliucs/d44d18c5d2dc96ef093b5a9ee975ad4a.js"></script>
 

@@ -78,8 +78,6 @@ list, since they can be directly accessed, and done in `O(1)` time.
 
 ##### Java
 
-View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/lists/DoubleEndedLinkedList.java).
-
 <script src="https://gist.github.com/eliucs/2165c125c621e000ac05fa21c8823ccb.js"></script>
 
 ### Time Complexity

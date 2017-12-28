@@ -84,16 +84,16 @@ empty union find:
 Note that although this data structure is implemented in an array, when we perform `union` 
 operations, we build a tree. Consider a naive implementation of union find, where in an array `a` 
 at some index `i` we store value of the connected component of `i`. Then if we call `connected` on 
-two elements `i` and `j`, it can be done in `O(1)` time since all we have to do is compare `a[i]` 
+two elements `i` and `j`, it can be done in $O(1)$ time since all we have to do is compare `a[i]` 
 and `a[j]` and whether they are equal. However, when we need to call `union`, then, without loss of 
 generality, we would have to update all elements in the array that is of connected component `a[j]` 
-with `a[i]`, which is done in `O(N)` time.
+with `a[i]`, which is done in $O(N)$ time.
 
-However, the way to make both operations run in `O(lgN)` time, is to represent the connected 
-components as a forest. More on tree terminology can be read in the [Introduction]
-(/categories/data-structures/trees/introduction) article for trees. At `a[i]` we store the value of 
-the root of the tree, and all other elements that have the same root are part of the same connected 
-component.
+However, the way to make both operations run in $O(logN)$ time, is to represent the connected 
+components as a forest. More on tree terminology can be read in the 
+[Introduction](/categories/data-structures/trees/introduction) article for trees. At `a[i]` we store 
+the value of the root of the tree, and all other elements that have the same root are part of the 
+same connected component.
 
 However, one problem with a naive implementation of this is that we may end up with unbalanced 
 trees, which does not guarantee us logarithmic time. Instead, we always link the root of the smaller 
@@ -142,8 +142,6 @@ index `i`. All values in `size` are initialized to 1.
 ### Implementation
 
 ##### Java
-
-View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/UnionFind.java).
 
 <script src="https://gist.github.com/eliucs/580a704aa3bcffd6497cfd265485fffa.js"></script>
 

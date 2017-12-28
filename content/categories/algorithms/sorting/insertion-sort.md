@@ -1,9 +1,9 @@
 # Insertion Sort
 
 Insertion sort is a sorting algorithm based on the idea of iterating through the array with index 
-`i` and keeping the invariant that all elements to the left of `i` are sorted, and all elements to 
-the right of `i` must be inserted into the subarray `[0...i]`. "Inserting" is essentially an 
-operation to insert an element `i` into the correct place in an already sorted array.
+$i$ and keeping the invariant that all elements to the left of $i$ are sorted, and all elements to 
+the right of $i$ must be inserted into the subarray $[0...i]$. "Inserting" is essentially an 
+operation to insert an element $i$ into the correct place in an already sorted array.
 
 The `insert` operation can be implemented as a helper function, but in the implementations, it is 
 done, but rather done with the main algorithm because it is simple. This algorithm works because of 
@@ -11,7 +11,7 @@ the invariant that inserting an element into a sorted array results in a sorted 
 keep growing the size of the sorted subarray, it will eventually result in the entire array being 
 sorted.
 
-Insertion sort can run in `O(N)` time if the array has the property that it has a low amount of 
+Insertion sort can run in $O(N)$ time if the array has the property that it has a low amount of 
 inversions. An inversion in an array is where two elements are out of order:
 
 From Wikipedia:
@@ -67,15 +67,13 @@ advanced algorithms "cut-off" to insertion sort if the number of elements is bel
 
 ##### Java
 
-View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/algorithms/sorting/InsertionSort.java).
-
 <script src="https://gist.github.com/eliucs/382f1f1a77e3855bd1edd1ae036cd858.js"></script>
 
 ### Time Complexity
 
-This algorithm takes `O(N^2)` time in the worst case.
+This algorithm takes $O(N^2)$ time in the worst case.
 
-It requires `O(1)` auxiliary space.
+It requires $O(1)$ auxiliary space.
 
 It is in-place and stable.
 
