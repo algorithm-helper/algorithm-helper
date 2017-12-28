@@ -56,4 +56,5 @@ interchangeable modules, such that each contains everything necessary to execute
 the desired functionality.
 
 Another aspect is that design patterns are intuitive by name and thus self-documenting. Having 
-knowledge of design patterns makes it easy to communicate concepts concisely without the use of over-documentation to describe parts of the software.
+knowledge of design patterns makes it easy to communicate concepts concisely without the use of 
+over-documentation to describe parts of the software.
