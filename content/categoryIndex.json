@@ -821,7 +821,7 @@
                         "description": "Learn about the builder pattern, which is used for constructing and parsing complex objects."
                     },
                     {
-                        "article": "chain-of-responsiblity",
+                        "article": "chain-of-responsibility",
                         "title": "Chain of Responsibility",
                         "url": "/chain-of-responsibility",
                         "description": "Learn about the chain of responsibility pattern, which is using more than one object to handle a request."
