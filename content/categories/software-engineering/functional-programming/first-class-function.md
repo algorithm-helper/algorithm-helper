@@ -72,7 +72,7 @@ We get the expected output:
 3
 ```
 
-### Example Callback
+### Example (Callback)
 
 For the third example, we demonstrate the asynchronous property of callback functions. Suppose that
 we have to print three different messages with functions `printFirst`, `printSecond`, and 
