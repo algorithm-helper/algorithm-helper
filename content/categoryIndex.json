@@ -612,6 +612,12 @@
                         "title": "Strassen Algorithm",
                         "url": "/strassen-algorithm",
                         "description": "Learn about the Strassen algorithm, an efficient matrix multiplication algorithm that runs in faster than cubic time."
+                    },
+                    {
+                        "article": "time-and-space-complexity",
+                        "title": "Time and Space Complexity",
+                        "url": "/time-and-space-complexity",
+                        "description": "Learn about the time and space complexity of the mathematical algorithms listed in this topic."                                                                        
                     }
                 ]
             },
@@ -692,6 +698,12 @@
                         "title": "Rabin-Karp Algorithm",
                         "url": "/rabin-karp-algorithm",
                         "description": "Learn about the Rabin-Karp algorithm, a substring search algorithm that uses hashing to find a set of patterns in a text."
+                    },
+                    {
+                        "article": "time-and-space-complexity",
+                        "title": "Time and Space Complexity",
+                        "url": "/time-and-space-complexity",
+                        "description": "Learn about the time and space complexity of string algorithms and data structures listed in this topic."                                                                        
                     }
                 ]
             }
