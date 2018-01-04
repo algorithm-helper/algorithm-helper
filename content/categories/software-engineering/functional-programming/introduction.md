@@ -44,3 +44,13 @@ The following are terminology used in this section:
     Wikipedia [article](https://en.wikipedia.org/wiki/Lambda_calculus).
 - recursive function
     - A function that calls itself within its body.
+- callback function 
+    - A function that is called at a later point in time in the execution of a program.
+- arity
+    - The number of arguments that a function takes.
+- unary function    
+    - A function of arity 1.
+- binary function
+    - A function of arity 2.
+- k-ary function 
+    - A function of arity `k`.
