@@ -1,6 +1,6 @@
-# Substring Search
+# String Matching
 
-Substring search algorithms, also called string matching or string searching algorithms, are 
+String matching algorithms, also called string searching or substring searching algorithms, are 
 algorithms for finding whether or not a particular string $P$, called a pattern, is found within a
 larger body of text $T$. We say that string $P$ is of length $M$ and $T$, our search space, is of
 length $N$, and typically $N$ is much larger than $M$. Hence this is why $P$ is sometimes referred

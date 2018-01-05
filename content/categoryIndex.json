@@ -676,28 +676,28 @@
                         "description": "Learn about the ternary search trie, a trie structure where each node has three children to store smaller, equal, and larger key nodes."
                     },
                     {
-                        "article": "substring-search",
-                        "title": "Substring Search",
-                        "url": "/substring-search",
-                        "description": "Learn about substring search, which is the problem of finding a smaller length pattern string in a larger body of text."
+                        "article": "string-matching",
+                        "title": "String Matching",
+                        "url": "/string-matching",
+                        "description": "Learn about string matching, which is the problem of finding a smaller length pattern string in a larger body of text."
                     },
                     {
                         "article": "knuth-morris-pratt-algorithm",
                         "title": "Knuth-Morris-Pratt Algorithm",
                         "url": "/knuth-morris-pratt-algorithm",
-                        "description": "Learn about the Knuth-Morris-Pratt algorithm, a substring search algorithm that re-examines the word in a mismatch to be more efficient."
+                        "description": "Learn about the Knuth-Morris-Pratt algorithm, a string matching algorithm that re-examines the word in a mismatch to be more efficient."
                     },
                     {
                         "article": "boyer-moore-algorithm",
                         "title": "Boyer-Moore Algorithm",
                         "url": "/boyer-moore-algorithm",
-                        "description": "Learn about the Boyer-Moore algorithm, a substring search algorithm that uses text preprocessing for more efficient search results."
+                        "description": "Learn about the Boyer-Moore algorithm, a string matching algorithm that uses text preprocessing for more efficient search results."
                     },
                     {
                         "article": "rabin-karp-algorithm",
                         "title": "Rabin-Karp Algorithm",
                         "url": "/rabin-karp-algorithm",
-                        "description": "Learn about the Rabin-Karp algorithm, a substring search algorithm that uses hashing to find a set of patterns in a text."
+                        "description": "Learn about the Rabin-Karp algorithm, a string matching algorithm that uses hashing to find a set of patterns in a text."
                     },
                     {
                         "article": "time-and-space-complexity",
