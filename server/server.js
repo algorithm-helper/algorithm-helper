@@ -18,6 +18,7 @@ const { getSearchResults } = require('./utils/getSearchResults');
 const { renderCategoryPage } = require('./utils/renderCategoryPage');
 const { renderTopicPage } = require('./utils/renderTopicPage');
 const { renderArticlePage } = require('./utils/renderArticlePage');
+const { replaceEmWithUnderscores } = require('./utils/replaceEmWithUnderscores');
 
 // Configure markdown renderer:
 marked.setOptions({
@@ -176,7 +177,8 @@ app.get('/categories/:category/:topic/:article', (req, res) => {
         return res.redirect(`/categories/${category}/${topic}`);
       }
       // For debug purposes:
-      // console.log(marked(data));
+      // console.log(replaceEmWithUnderscores(marked(data)));
+      const articleFormatted = replaceEmWithUnderscores(marked(data));
 
       // Get full title and path of category, topic, article:
       let categoryData = categoryIndex.find((x) => {
@@ -192,7 +194,7 @@ app.get('/categories/:category/:topic/:article', (req, res) => {
       });
 
       return res.render('article.hbs', {
-        article: marked(data),
+        article: articleFormatted,
         articlePath: JSON.stringify({
           category: {
             title: categoryData.title,
