@@ -61,7 +61,7 @@ $|V|$ vertices in the stack to maintain a reverse postordering of the vertices, 
 is still $O(|V|+|E|)$ and the space complexity is still $O(|V|)$.
 
 ```
-| Algorithm          | time complexity | space complexity |
-|--------------------|-----------------|------------------|
-| depth first search | O(|V|+|E|)      | O(|V|)           |
+| Algorithm        | time complexity | space complexity |
+|------------------|-----------------|------------------|
+| topological sort | O(|V|+|E|)      | O(|V|)           |
 ```
