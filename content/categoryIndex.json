@@ -652,10 +652,10 @@
                         "description": "Learn about most-significant-digit (MSD) string sort, a sorting algorithm specific to strings that runs in faster than linearithmic time."
                     },
                     {
-                        "article": "3-way-radix-quicksort",
-                        "title": "3-Way Radix Quicksort",
-                        "url": "/3-way-radix-quicksort",
-                        "description": "Learn about 3-way radix quicksort, a string sorting algorithm that combines radix sort and MSD string sort for more efficient results."
+                        "article": "3-way-radix-quick-sort",
+                        "title": "3-Way Radix Quick Sort",
+                        "url": "/3-way-radix-quick-sort",
+                        "description": "Learn about 3-way radix quick sort, a string sorting algorithm that combines radix sort and MSD string sort for more efficient results."
                     },
                     {
                         "article": "trie",
