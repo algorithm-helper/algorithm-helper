@@ -664,10 +664,10 @@
                         "description": "Learn about the trie, a data structure for maps that uses string keys, and values stored in the suffixes."
                     },
                     {
-                        "article": "radix-search-trie",
-                        "title": "Radix Search Trie",
-                        "url": "/radix-search-trie",
-                        "description": "Learn about the radix search trie, a trie structure where each node has R (radix) amount of children."
+                        "article": "r-way-trie",
+                        "title": "R-Way Trie",
+                        "url": "/r-way-trie",
+                        "description": "Learn about the R-way trie, a trie structure where each node has R (radix) amount of children nodes."
                     },
                     {
                         "article": "ternary-search-trie",
