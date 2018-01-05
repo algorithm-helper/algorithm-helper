@@ -2,7 +2,9 @@ node_modules
 playground
 *.log
 server/config/config.json
+server/firebase/config.json
 .idea
 testing
 archive
 .vscode
+downloads
