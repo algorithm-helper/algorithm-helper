@@ -68,13 +68,7 @@ Thus with nodes, lists are recursively defined.
 
 Example of a Node (Java):
 
-```
-class Node {
-    Object item;
-    Node next;
-    // other fields may go here ...
-}
-```
+<script src="https://gist.github.com/eliucs/72c3bf2e27a4177aa575125dc0ddc979.js"></script>
 
 It is clear what differentiates this "chain-like" structure of nodes with say, an array. While 
 accessing an element in an array, we would index into it in $O(1)$ time, conceptually with a list 
