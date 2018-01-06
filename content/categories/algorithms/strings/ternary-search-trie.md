@@ -1,8 +1,20 @@
 # Ternary Search Trie
 
+A ternary search trie is a trie data structure 
+
+
 ### Visualization
 
 ### Operations
+
+- `get`
+    - asdf 
+- `contains`
+    - adsf
+- `put`
+    - asdf
+- `delete`
+    - asdf
 
 ### Implementation (Map)
 
@@ -14,8 +26,6 @@
 
 ### Time Complexity
 
-The following table describes the time complexity for performing the operations above on an ternary
-search trie:
 
 ```
 
