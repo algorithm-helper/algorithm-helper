@@ -48,9 +48,15 @@ Suppose that we have the following `(key, val)` pairs to store into a map:
 ("daba", 6)
 ```
 
-Then the tree becomes built starting from a sentinel node which $R$ children. We have a node with 
+Then the trie becomes built starting from a sentinel node with $R$ children. We have a node with 
 the character `a`, which has a branch to child node `b`, which has a branch to child node `r`, 
 which has a branch to child node `a`, where we store the value `0`. We do this for all of the 
 `(key, val)` pairs, and end up with the following trie:
 
 <img src="https://i.imgur.com/dZU8LuB.png" alt="Trie" width="400" height="400">
+
+Note that while all nodes have $R$ children, null child nodes are not drawn for brevity. Only for 
+the strings we inserted do we have a value associated with them, every other node is null. Thus, the
+main idea is that if we take a `key`, traverse down the trie by order of its characters, and arrive 
+at a final node that has a `val`, we get the `val` associated with that `key`. Otherwise, the `key`
+does not exist.
