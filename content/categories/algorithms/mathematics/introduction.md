@@ -32,5 +32,3 @@ We begin with a list of terminology and definitions that will be useful in this 
 - convex hull
     - Given a set of points $X$, the convex hull is the subset of those points that forms the 
     smallest convex set, or boundary, that emcompasses all the points of $X$.
-- matrix
-    - An array of numbers. An $M \times N$ matrix is one with $M$ rows and $N$ columns.

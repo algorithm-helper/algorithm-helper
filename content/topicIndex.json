@@ -52,7 +52,7 @@
         "topic": "mathematics",
         "title": "Mathematics",
         "tags": ["algorithms"],
-        "description": "Learn about efficient algorithms for multiplication and matrix multiplication, and computing convex hulls.",
+        "description": "Learn about efficient algorithms for multiplication, exponentiation and computing convex hulls.",
         "url": "/categories/algorithms/mathematics"
     },
     {

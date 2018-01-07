@@ -545,7 +545,7 @@
                 "topic": "mathematics",
                 "title": "Mathematics",
                 "url": "/mathematics",
-                "description": "Learn about efficient algorithms for multiplication and matrix multiplication, and computing convex hulls.",                
+                "description": "Learn about efficient algorithms for multiplication, exponentiation and computing convex hulls.",                
                 "articles": [
                     {
                         "article": "introduction",
@@ -594,18 +594,6 @@
                         "title": "Graham Scan",
                         "url": "/graham-scan",
                         "description": "Learn about the Graham scan, an efficient method for computing the convex hull of a set of points in linearithmic time."
-                    },
-                    {
-                        "article": "matrix-multiplication",
-                        "title": "Matrix Multiplication",
-                        "url": "/matrix-multiplication",
-                        "description": "Learn about matrix multiplication, which are algorithms used to multiply two matrices in faster than cubic time."
-                    },
-                    {
-                        "article": "strassen-algorithm",
-                        "title": "Strassen Algorithm",
-                        "url": "/strassen-algorithm",
-                        "description": "Learn about the Strassen algorithm, an efficient matrix multiplication algorithm that runs in faster than cubic time."
                     },
                     {
                         "article": "time-and-space-complexity",
