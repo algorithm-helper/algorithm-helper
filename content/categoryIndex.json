@@ -578,12 +578,6 @@
                         "description": "Learn about the Newton-Raphson method, which is a method used for finding better approximations to the roots of a function."
                     },
                     {
-                        "article": "binary-exponentiation",
-                        "title": "Binary Exponentiation",
-                        "url": "/binary-exponentiation",
-                        "description": "Learn about binary exponentiation, a method for the fast computation of large integer powers of a number."
-                    },
-                    {
                         "article": "modular-exponentiation",
                         "title": "Modular Exponentiation",
                         "url": "/modular-exponentiation",
