@@ -2,10 +2,10 @@
 
 The topic in this section is strings, and data structures and algorithms that operate on strings. We
 will be examining three topics related to strings: string sorting, tries, and string matching. For
-string sorting, we will examine the following algorithms: LSD string sort, MSD string sort, and 
-3-way radix quick sort. For tries, we will examine the following data structures: radix search trie,
-and ternary search trie. For string matching, we will examine the following algorithms: the 
-Knuth-Morris-Pratt algorithm, the Boyer-Moore algorithm, and the Rabin-Karp algorithm. 
+string sorting, we will examine the following algorithms: LSD string sort, and MSD string sort. For 
+tries, we will examine the following data structures: radix search trie, and ternary search trie. 
+For string matching, we will examine the following algorithms: the Knuth-Morris-Pratt algorithm, 
+the Boyer-Moore algorithm, and the Rabin-Karp algorithm. 
 
 ### Terminology
 
