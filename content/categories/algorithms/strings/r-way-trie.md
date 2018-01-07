@@ -30,10 +30,10 @@ which has a branch to child node `a`, where we store the value `0`. We do this f
 <img src="https://i.imgur.com/dZU8LuB.png" alt="Trie" width="400" height="400">
 
 Note that while all nodes have $R$ children, null child nodes are not drawn for brevity. Only for 
-the strings we inserted do we have a value associated with them, every other node is null. Thus, the
-main idea is that if we take a `key`, traverse down the R-way trie by order of its characters, and 
-arrive at a final node that has a `val`, we get the `val` associated with that `key`. Otherwise, the 
-`key` does not exist.
+the strings we inserted do we have a value associated with them, every other node is `null`. Thus, 
+the main idea is that if we take a `key`, traverse down the R-way trie by order of its characters, 
+and arrive at a final node that has a `val`, we get the `val` associated with that `key`. Otherwise, 
+the `key` does not exist.
 
 ### Nodes
 
