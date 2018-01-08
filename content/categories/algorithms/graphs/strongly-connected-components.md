@@ -9,7 +9,7 @@ is strongly connected.
 
 The following is an example of a directed graph with strongly connected components:
 
-<img src="https://i.imgur.com/Pff20f9.png" alt="Strongly Connected Components" width="400" height="300">
+<img src="https://firebasestorage.googleapis.com/v0/b/algorithm-helper-storage.appspot.com/o/img%2Falgorithms%2Fgraphs%2Fstrongly-connected-components.png?alt=media&token=0311e85b-50c8-4e4c-9585-7372006f165b" alt="Strongly Connected Components" width="400" height="300">
 
 Here, we have two strongly connected components: first with the set $A = \\{1, 2, 3, 4\\}$ since we have 
 a directed cycle amongst them, and thus can get to any of those vertices from any other vertex in 
@@ -24,7 +24,7 @@ within the group itself is not important.
 
 The following is a visualization of that grouping:
 
-<img src="https://i.imgur.com/vVcZgOM.png" alt="Strongly Connected Components Grouped" width="400" height="300">
+<img src="https://firebasestorage.googleapis.com/v0/b/algorithm-helper-storage.appspot.com/o/img%2Falgorithms%2Fgraphs%2Fstrongly-connected-components-grouped.png?alt=media&token=7e827a15-f10b-47c6-bb1c-ceaf71f81639" alt="Strongly Connected Components Grouped" width="400" height="300">
 
 Thus, for the example above, we should think of that graph as two vertices $A$ and $B$, where 
 $A = \\{1, 2, 3, 4\\}$ and $B = \\{5, 6, 7, 8, 9\\}$.

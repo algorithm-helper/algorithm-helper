@@ -13,7 +13,7 @@ shortest known path from $u$ to $v$. Then when we relax an edge $(v, w)$:
 
 The following visualizes edge relaxation:
 
-<img src="https://i.imgur.com/7Bntl23.png" alt="Edge Relaxation" width="400" height="300">
+<img src="https://firebasestorage.googleapis.com/v0/b/algorithm-helper-storage.appspot.com/o/img%2Falgorithms%2Fgraphs%2Fedge-relaxation.png?alt=media&token=4a075957-d6b0-4092-9274-eab4a9f574af" alt="Edge Relaxation" width="400" height="300">
 
 As described above, if $dist(w) \gt dist(v) + weight(v, w)$, we can clearly just take the path to $w$
 through the shortest path to $v$.

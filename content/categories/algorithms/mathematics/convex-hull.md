@@ -13,8 +13,8 @@ will be able to do so.
 
 Suppose that we have the following set of points on a plane, labelled $0...9$:
 
-<img src="https://i.imgur.com/urHBBp5.png" alt="Convex Hull 1" width="400" height="300">
+<img src="https://firebasestorage.googleapis.com/v0/b/algorithm-helper-storage.appspot.com/o/img%2Falgorithms%2Fmathematics%2Fconvex-hull-1.png?alt=media&token=9b9b1ff6-aefb-4f7d-b422-f0e1530596b2" alt="Convex Hull 1" width="400" height="300">
 
 Then the convex hull is:
 
-<img src="https://i.imgur.com/iLNoZiq.png" alt="Convex Hull 1" width="400" height="300">
+<img src="https://firebasestorage.googleapis.com/v0/b/algorithm-helper-storage.appspot.com/o/img%2Falgorithms%2Fmathematics%2Fconvex-hull-2.png?alt=media&token=5b5915e0-e25d-4a9e-9666-0c2cd3dd35a5" alt="Convex Hull 1" width="400" height="300">

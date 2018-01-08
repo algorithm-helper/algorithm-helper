@@ -7,7 +7,7 @@
  * 
  */
 
-const categoryIndex = require('./../../content/categoryIndex.json');
+const categoryIndex = require('./../../content/index.json');
 
 const flattenCategoryIndex = () => {
     let flatIndex = [];

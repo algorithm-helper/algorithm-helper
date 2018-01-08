@@ -12,7 +12,7 @@
 const { isValidCategory } = require('./isValidCategory');
 const { isValidTopic } = require('./isValidTopic');
 
-const categoryIndex = require('./../../content/categoryIndex.json');
+const categoryIndex = require('./../../content/index.json');
 
 const renderTopicPage = (params) => {
     let category = params.category.toLowerCase();

@@ -27,7 +27,7 @@ with the character `a`, which has a branch to child node `b`, which has a branch
 which has a branch to child node `a`, where we store the value `0`. We do this for all of the 
 `(key, val)` pairs, and end up with the following R-way trie:
 
-<img src="https://i.imgur.com/dZU8LuB.png" alt="Trie" width="400" height="400">
+<img src="https://firebasestorage.googleapis.com/v0/b/algorithm-helper-storage.appspot.com/o/img%2Falgorithms%2Fstrings%2Ftrie.png?alt=media&token=ca38f8ed-bac4-4deb-9d43-fb3dd0e2a983" alt="Trie" width="400" height="400">
 
 Note that while all nodes have $R$ children, null child nodes are not drawn for brevity. Only for 
 the strings we inserted do we have a value associated with them, every other node is `null`. Thus, 

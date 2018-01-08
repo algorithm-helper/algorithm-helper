@@ -8,7 +8,7 @@ edges, and $|V|$ is the number of vertices.
 
 Visualization of a sparse graph:
 
-<img src="https://i.imgur.com/tWmgrvx.png" alt="Sparse Graph" width="400" height="300">
+<img src="https://firebasestorage.googleapis.com/v0/b/algorithm-helper-storage.appspot.com/o/img%2Falgorithms%2Fgraphs%2Fsparse-graph.png?alt=media&token=ebde84e4-9dd4-452c-a8e4-80ef73354128" alt="Sparse Graph" width="400" height="300">
 
 ### Dense Graph
 
@@ -18,4 +18,4 @@ thus the number of edges to proportional to the number of vertices squared, or $
 
 Visualization of a dense graph ($K(8)$):
 
-<img src="https://i.imgur.com/juXLlUl.png" alt="Dense Graph" width="400" height="300">
+<img src="https://firebasestorage.googleapis.com/v0/b/algorithm-helper-storage.appspot.com/o/img%2Falgorithms%2Fgraphs%2Fdense-graph.png?alt=media&token=d7b2c3e7-8aff-4530-987a-4b233f282f00" alt="Dense Graph" width="400" height="300">

@@ -7,7 +7,7 @@
             {
                 "topic": "lists",
                 "title": "Lists",
-                "description": "Learn about linear data structures like linked lists, dynamic arrays, stacks, queues and amortization.",                
+                "description": "Learn about linear data structures like linked lists, dynamic arrays, stacks, queues and amortization.",            
                 "url": "/lists",
                 "articles": [
                     {
@@ -833,40 +833,16 @@
                         "description": "Learn about the decorator pattern, which is used to attach functionality to an object dynamically."
                     },
                     {
-                        "article": "facade",
-                        "title": "Facade",
-                        "url": "/facade",
-                        "description": "Learn about the facade pattern, which is used to provide a unified interface for a set of interfaces."
-                    },
-                    {
                         "article": "factory",
                         "title": "Factory",
                         "url": "/factory",
                         "description": "Learn about the factory pattern, which is used to create objects of different parameters."
                     },
                     {
-                        "article": "flyweight",
-                        "title": "Flyweight",
-                        "url": "/flyweight",
-                        "description": "Learn about the flyweight pattern, which is used to support large numbers of light weight objects."
-                    },
-                    {
                         "article": "iterator",
                         "title": "Iterator",
                         "url": "/iterator",
                         "description": "Learn about the iterator pattern, which is used to traverse through a collection of objects without breaking encapsulation."
-                    },
-                    {
-                        "article": "mediator",
-                        "title": "Mediator",
-                        "url": "/mediator",
-                        "description": "Learn about the mediator pattern, which is used to be an intermediary between a set of objects."
-                    },
-                    {
-                        "article": "memento",
-                        "title": "Memento",
-                        "url": "/memento",
-                        "description": "Learn about the memento pattern, which is used to save an object's internal state without breaking encapsulation."
                     },
                     {
                         "article": "null-object",
@@ -887,22 +863,10 @@
                         "description": "Learn about the prototype pattern, which is used to instantiate objects with specific parameters."
                     },
                     {
-                        "article": "proxy",
-                        "title": "Proxy",
-                        "url": "/proxy",
-                        "description": "Learn about the proxy pattern, which is used to provide an surrogate for another object to have access."
-                    },
-                    {
                         "article": "singleton",
                         "title": "Singleton",
                         "url": "/singleton",
                         "description": "Learn about the singleton pattern, which is used to instantiate an object of only one instance."
-                    },
-                    {
-                        "article": "state",
-                        "title": "State",
-                        "url": "/state",
-                        "description": "Learn about the state pattern, which is used to provide an internal state to an object."
                     },
                     {
                         "article": "strategy",

@@ -10,7 +10,7 @@
 
 const { isValidCategory } = require('./isValidCategory');
 
-const categoryIndex = require('./../../content/categoryIndex.json');
+const categoryIndex = require('./../../content/index.json');
 
 const renderCategoryPage = (params) => {
     let category = params.category.toLowerCase();

@@ -29,11 +29,11 @@ length (and thereby total cost) of the cables.
 
 Suppose we have the following connected, weighted, undirected graph $G$:
 
-<img src="https://i.imgur.com/BP5X3k7.png" alt="Minimum Spanning Tree Before" width="400" height="300">
+<img src="https://firebasestorage.googleapis.com/v0/b/algorithm-helper-storage.appspot.com/o/img%2Falgorithms%2Fgraphs%2Fminimum-spanning-tree-before.png?alt=media&token=975e90b5-a4b2-4938-be27-e85944e44164" alt="Minimum Spanning Tree Before" width="400" height="300">
 
 The minimum spanning tree $T$ is the following:
 
-<img src="https://i.imgur.com/C4R3hej.png" alt="Minimum Spanning Tree After" width="400" height="300">
+<img src="https://firebasestorage.googleapis.com/v0/b/algorithm-helper-storage.appspot.com/o/img%2Falgorithms%2Fgraphs%2Fminimum-spanning-tree-after.png?alt=media&token=a986078c-227c-4a24-962e-b9a39236690b" alt="Minimum Spanning Tree After" width="400" height="300">
 
 It connects all of the vertices with the minimum possible combined weight of the edges. $T$ has 
 $V(T) = \\{1, 2, 3, 4, 5, 6\\} = V(G)$, $E(T) = \\{(1, 4), (2, 4), (3, 6), (4, 6), (4, 7), (5, 7)\\}$, and

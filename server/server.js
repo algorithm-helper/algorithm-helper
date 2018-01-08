@@ -9,16 +9,17 @@ const marked = require('marked');
 const path = require('path');
 const session = require('express-session');
 
-// Data:
-const categoryIndex = require('./../content/categoryIndex.json');
-const topicIndex = require('./../content/topicIndex.json');
-
 // Utils:
 const { getSearchResults } = require('./utils/getSearchResults');
+const { getTopicIndexFromIndex } = require('./utils/getTopicIndexFromIndex');
 const { renderCategoryPage } = require('./utils/renderCategoryPage');
 const { renderTopicPage } = require('./utils/renderTopicPage');
 const { renderArticlePage } = require('./utils/renderArticlePage');
 const { replaceEmWithUnderscores } = require('./utils/replaceEmWithUnderscores');
+
+// Data:
+const categoryIndex = require('./../content/index.json');
+const topicIndex = getTopicIndexFromIndex(categoryIndex);
 
 // Configure markdown renderer:
 marked.setOptions({

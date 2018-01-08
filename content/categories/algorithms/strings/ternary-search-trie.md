@@ -44,7 +44,7 @@ than `d`. And then traverse downwards the middle to eventually assign the last n
 `1`. And so on, we do this for all of the `(key, val)` pairs, and end up with the following ternary
 search trie:
 
-<img src="https://i.imgur.com/kUBfzcE.png" alt="Ternary Search Trie" width="400" height="400">
+<img src="https://firebasestorage.googleapis.com/v0/b/algorithm-helper-storage.appspot.com/o/img%2Falgorithms%2Fstrings%2Fternary-search-trie.png?alt=media&token=d571bcd5-205c-4e9a-a658-aad22889c873" alt="Ternary Search Trie" width="400" height="400">
 
 Note that while all nodes have $3$ children, null child nodes are not drawn for brevity. Only for 
 the strings we inserted do we have a value associated with them, every other node is `null`. Thus, 
