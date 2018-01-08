@@ -851,12 +851,6 @@
                         "description": "Learn about the flyweight pattern, which is used to support large numbers of light weight objects."
                     },
                     {
-                        "article": "interpreter",
-                        "title": "Interpreter",
-                        "url": "/interpreter",
-                        "description": "Learn about the interpreter pattern, which is used to define a custom language and grammar."
-                    },
-                    {
                         "article": "iterator",
                         "title": "Iterator",
                         "url": "/iterator",
