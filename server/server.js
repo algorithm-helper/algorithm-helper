@@ -6,6 +6,7 @@ const express = require('express');
 const fs = require('fs');
 const hbs = require('hbs');
 const marked = require('marked');
+const request = require('request');
 const path = require('path');
 const session = require('express-session');
 
@@ -194,16 +195,17 @@ app.get('/categories/:category/:topic/:article', (req, res) => {
   .then((articleFilePath) => {
     articleFilePath = articleFilePath.substring(PREFIX_OFFSET, articleFilePath.length);
 
-    retrieveArticleContents(gcsStorage, articleFilePath)
-    .then(() => {
-      fs.readFile(TEMP_FILE_PATH, 'utf8', (err, data) => {
+    retrieveArticleSignedUrl(gcsStorage, articleFilePath)
+    .then((signedUrl) => {
+      request.get(signedUrl, function (err, resp, data) {
         if (err) {
-          console.log(err);
           return res.redirect(`/categories/${category}/${topic}`);
         }
-  
+
         // For debug purposes:
+        // console.log(data);
         // console.log(replaceEmWithUnderscores(marked(data)));
+
         const articleFormatted = replaceEmWithUnderscores(marked(data));
         
         // Get full title and path of category, topic, article:
@@ -238,7 +240,6 @@ app.get('/categories/:category/:topic/:article', (req, res) => {
           showTableOfContents: true
         });
       });
-
     })
     .catch((err) => {
       return res.redirect(`/categories/${category}/${topic}`);
