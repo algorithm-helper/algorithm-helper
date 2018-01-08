@@ -9,3 +9,4 @@ archive
 .vscode
 downloads
 temp
+server/gcsKeyFile.json

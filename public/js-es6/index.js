@@ -8,7 +8,7 @@
 
  $(document).ready(() => {
      // For debug purposes:
-     console.log(topicIndex);
+     // console.log(topicIndex);
 
      // Create card for each element, append to index-main-card-container
      const renderIndexCards = (callback) => {
