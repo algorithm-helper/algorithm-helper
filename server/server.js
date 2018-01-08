@@ -48,10 +48,22 @@ marked.setOptions({
 });
 
 // Configure Firebase/Google Cloud Storage:
-const gcsStorage = require('@google-cloud/storage')({
-  projectId: 'algorithm-helper-storage',
-  keyFilename: 'server/firebase/config.json'
-});
+let gcsStorage;
+if (process.env.GCS_JSON_TOKEN) {
+  const gcsKeyFilePath = path.join(`${__dirname}/gcsKeyFile.json`);
+  fs.writeFileSync(gcsKeyFilePath , process.env.GCS_JSON_TOKEN);
+  const gcsKeyFile = JSON.parse(process.env.GCS_JSON_TOKEN);
+
+  gcsStorage = require('@google-cloud/storage')({
+    projectId: 'algorithm-helper-storage',
+    keyFilename: gcsKeyFilePath
+  });
+} else {
+  gcsStorage = require('@google-cloud/storage')({
+    projectId: 'algorithm-helper-storage',
+    keyFilename: 'server/firebase/config.json'
+  });
+}
 // uploadAllArticles(gcsStorage, constructArticleSrcDestUrls(categoryIndex));
 
 var app = express();
@@ -242,6 +254,7 @@ app.get('/categories/:category/:topic/:article', (req, res) => {
       });
     })
     .catch((err) => {
+      console.log(err);
       return res.redirect(`/categories/${category}/${topic}`);
     });
   })
