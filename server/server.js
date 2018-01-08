@@ -10,6 +10,7 @@ const path = require('path');
 const session = require('express-session');
 
 // Utils:
+const { constructArticleSrcDestUrls } = require('./utils/constructArticleSrcDestUrls');
 const { getSearchResults } = require('./utils/getSearchResults');
 const { getTopicIndexFromIndex } = require('./utils/getTopicIndexFromIndex');
 const { renderCategoryPage } = require('./utils/renderCategoryPage');
@@ -17,9 +18,16 @@ const { renderTopicPage } = require('./utils/renderTopicPage');
 const { renderArticlePage } = require('./utils/renderArticlePage');
 const { replaceEmWithUnderscores } = require('./utils/replaceEmWithUnderscores');
 
+// Firebase:
+const { retrieveArticleSignedUrl } = require('./firebase/retrieveArticleSignedUrl');
+const { retrieveArticleContents } = require('./firebase/retrieveArticleContents');
+const { uploadAllArticles } = require('./firebase/uploadAllArticles');
+
 // Data:
 const categoryIndex = require('./../content/index.json');
 const topicIndex = getTopicIndexFromIndex(categoryIndex);
+const PREFIX_OFFSET = 8;
+const TEMP_FILE_PATH = 'temp/temp.md';
 
 // Configure markdown renderer:
 marked.setOptions({
@@ -32,6 +40,13 @@ marked.setOptions({
   smartLists: true,
   smartypants: false
 });
+
+// Configure Firebase/Google Cloud Storage:
+const gcsStorage = require('@google-cloud/storage')({
+  projectId: 'algorithm-helper-storage',
+  keyFilename: 'server/firebase/config.json'
+});
+// uploadAllArticles(gcsStorage, constructArticleSrcDestUrls(categoryIndex));
 
 var app = express();
 
@@ -172,46 +187,56 @@ app.get('/categories/:category/:topic/:article', (req, res) => {
 
   renderArticlePage({ category, topic, article })
   .then((articleFilePath) => {
-    fs.readFile(articleFilePath, 'utf8', (err, data) => {
-      if (err) {
-        console.log(err);
-        return res.redirect(`/categories/${category}/${topic}`);
-      }
-      // For debug purposes:
-      // console.log(replaceEmWithUnderscores(marked(data)));
-      const articleFormatted = replaceEmWithUnderscores(marked(data));
+    articleFilePath = articleFilePath.substring(PREFIX_OFFSET, articleFilePath.length);
 
-      // Get full title and path of category, topic, article:
-      let categoryData = categoryIndex.find((x) => {
-        return x.category == category;
+    retrieveArticleContents(gcsStorage, articleFilePath)
+    .then(() => {
+      fs.readFile(TEMP_FILE_PATH, 'utf8', (err, data) => {
+        if (err) {
+          console.log(err);
+          return res.redirect(`/categories/${category}/${topic}`);
+        }
+  
+        // For debug purposes:
+        // console.log(replaceEmWithUnderscores(marked(data)));
+        const articleFormatted = replaceEmWithUnderscores(marked(data));
+        
+        // Get full title and path of category, topic, article:
+        let categoryData = categoryIndex.find((x) => {
+          return x.category == category;
+        });
+  
+        let topicData = categoryData.topics.find((x) => {
+          return x.topic == topic;
+        });
+  
+        let articleData = topicData.articles.find((x) => {
+          return x.article == article;
+        });
+  
+        return res.render('article.hbs', {
+          article: articleFormatted,
+          articlePath: JSON.stringify({
+            category: {
+              title: categoryData.title,
+              url: categoryData.url
+            },
+            topic: {
+              title: topicData.title,
+              url: `${categoryData.url}${topicData.url}`
+            },
+            article: {
+              title: articleData.title,
+              url: `${categoryData.url}${topicData.url}${articleData.url}`
+            }
+          }),
+          showTableOfContents: true
+        });
       });
 
-      let topicData = categoryData.topics.find((x) => {
-        return x.topic == topic;
-      });
-
-      let articleData = topicData.articles.find((x) => {
-        return x.article == article;
-      });
-
-      return res.render('article.hbs', {
-        article: articleFormatted,
-        articlePath: JSON.stringify({
-          category: {
-            title: categoryData.title,
-            url: categoryData.url
-          },
-          topic: {
-            title: topicData.title,
-            url: `${categoryData.url}${topicData.url}`
-          },
-          article: {
-            title: articleData.title,
-            url: `${categoryData.url}${topicData.url}${articleData.url}`
-          }
-        }),
-        showTableOfContents: true
-      });
+    })
+    .catch((err) => {
+      return res.redirect(`/categories/${category}/${topic}`);
     });
   })
   .catch((err) => {
