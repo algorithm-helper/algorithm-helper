@@ -27,7 +27,12 @@ const { uploadAllArticles } = require('./firebase/uploadAllArticles');
 const categoryIndex = require('./../content/index.json');
 const topicIndex = getTopicIndexFromIndex(categoryIndex);
 const PREFIX_OFFSET = 8;
+const TEMP_DIR_PATH = './temp';
 const TEMP_FILE_PATH = 'temp/temp.md';
+
+if (!fs.existsSync(TEMP_DIR_PATH)){
+  fs.mkdirSync(TEMP_DIR_PATH);
+}
 
 // Configure markdown renderer:
 marked.setOptions({
