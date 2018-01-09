@@ -12,6 +12,7 @@ const session = require('express-session');
 
 // Utils:
 const { constructArticleSrcDestUrls } = require('./utils/constructArticleSrcDestUrls');
+const { getAllArticleContent } = require('./utils/getAllArticleContent');
 const { getSearchResults } = require('./utils/getSearchResults');
 const { getTopicIndexFromIndex } = require('./utils/getTopicIndexFromIndex');
 const { renderCategoryPage } = require('./utils/renderCategoryPage');
@@ -30,6 +31,7 @@ const topicIndex = getTopicIndexFromIndex(categoryIndex);
 const PREFIX_OFFSET = 8;
 const TEMP_DIR_PATH = './temp';
 const TEMP_FILE_PATH = 'temp/temp.md';
+const articleContent = getAllArticleContent(categoryIndex);
 
 if (!fs.existsSync(TEMP_DIR_PATH)){
   fs.mkdirSync(TEMP_DIR_PATH);
@@ -64,7 +66,7 @@ if (process.env.GCS_JSON_TOKEN) {
     keyFilename: 'server/firebase/config.json'
   });
 }
-uploadAllArticles(gcsStorage, constructArticleSrcDestUrls(categoryIndex));
+// uploadAllArticles(gcsStorage, constructArticleSrcDestUrls(categoryIndex));
 
 var app = express();
 
@@ -273,7 +275,7 @@ app.get('/search', (req, res) => {
   }
 
   let query = req.query.q;
-  getSearchResults(req.query.q)
+  getSearchResults(req.query.q, articleContent)
   .then((results) => {
     return res.render('search.hbs', {
       results: JSON.stringify(results)

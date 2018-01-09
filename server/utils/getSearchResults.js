@@ -14,22 +14,30 @@ const fuzzy = require('fuzzy');
 
 const { flattenCategoryIndex } = require('./flattenCategoryIndex'); 
 
-const getSearchResults = (query) => {
+const getSearchResults = (query, articleContent) => {
     return new Promise((resolve, reject) => {
-        flattenCategoryIndex()
-        .then((flatIndex) => {
-            let results = fuzzy.filter(query, flatIndex, {
+        if (!articleContent) {
+            reject();
+        } else {
+            let fuzzyResults = fuzzy.filter(query, articleContent, {
                 pre:  '<span class="highlight">',
                 post: '</span>',
                 extract: (item) => {
-                    return item.description
+                    return item.content
                 }
             });
+
+            let results = [];
+            fuzzyResults.forEach((result) => {
+                results.push({
+                    title: result.original.title,
+                    url: result.original.url.substr(8, result.original.url.length),
+                    string: '...' + result.string.substr(result.string.indexOf('<span'), 
+                        result.string.indexOf('<span') + 300) + '...'
+                });
+            });
             resolve(results);
-        })
-        .catch((err) => {
-            reject(err);
-        });
+        }
     });
 };
 
