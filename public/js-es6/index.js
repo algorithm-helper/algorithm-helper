@@ -44,7 +44,7 @@
                     tagClass = entry.replace(/\s/g, '-');                
                     let tag = $(document.createElement('span'))
                     .addClass(`card-tag tag-${tagClass}`)
-                    .text(entry)
+                    .text(entry.replace(/\-/g, ' '))
                     .appendTo(cardBody);
                 });
    
