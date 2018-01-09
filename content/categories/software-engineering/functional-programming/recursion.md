@@ -28,11 +28,25 @@ sequence are defined to be 1. Then we can recursively apply `fibonacci` by the s
 `fibonacci(n-1) + fibonacci(n-2)`, that is, the sum of the results of calling `fibonacci` on the 
 previous two terms:
 
-<script src="https://gist.github.com/eliucs/820b8ef83ae10648634cbcb438a9c529.js"></script>
+```
+const fibonacci = (n) => {
+    if (n == 0 || n == 1)
+        return 1;
+    return fibonacci(n-1) + fibonacci(n-2);
+};
+```
 
 Then for finding the 5th Fibonacci number, for example:
 
-<script src="https://gist.github.com/eliucs/cbb13628c9e8b0a68b0c999683c9b7ee.js"></script>
+```
+const fibonacci = (n) => {
+    if (n == 0 || n == 1)
+        return 1;
+    return fibonacci(n-1) + fibonacci(n-2);
+};
+
+console.log(fibonacci(5));
+```
 
 We get the expected output:
 
@@ -54,11 +68,29 @@ It is easy to reformulate this problem as a recursive function `collatz`, which 
 necessarily reducing the problem space each time. Then the result of `collatz(n)` will count the 
 number of times steps to get to `1`:
 
-<script src="https://gist.github.com/eliucs/b803cb7937901a3ba9533e9b581e9ce2.js"></script>
+```
+const collatz = (n) => {
+    if (n == 1)
+        return 0;
+    else if (n % 2 == 0)
+        return 1 + collatz(n/2);
+    return 1 + collatz(3*n+1);
+};
+```
 
 Then for finding `collatz(27)`, for example:
 
-<script src="https://gist.github.com/eliucs/47d02a9668da3d4a81d92c4b02364be0.js"></script>
+```
+const collatz = (n) => {
+    if (n == 1)
+        return 0;
+    else if (n % 2 == 0)
+        return 1 + collatz(n/2);
+    return 1 + collatz(3*n+1);
+};
+
+console.log(collatz(27));
+```
 
 We get the surprisingly high result:
 

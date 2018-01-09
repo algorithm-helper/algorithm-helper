@@ -80,7 +80,91 @@ priority queue.
 
 ##### Java
 
-<script src="https://gist.github.com/eliucs/3d53ae82897faaff7586c87d6768066b.js"></script>
+```
+package com.algorithmhelper.algorithms.graphs;
+
+import com.algorithmhelper.datastructures.graphs.UndirectedWeightedGraph;
+import com.algorithmhelper.datastructures.trees.PriorityMinQueue;
+
+public class PrimsAlgorithm<T extends Comparable<T>> {
+
+    private UndirectedWeightedGraph<T> mst;
+
+    private class Edge<T extends Comparable<T>> implements Comparable<Edge<T>> {
+        T u;
+        T v;
+        double weight;
+
+        Edge(T u, T v, double weight) {
+            this.u = u;
+            this.v = v;
+            this.weight = weight;
+        }
+
+        public int compareTo(Edge<T> that) {
+            if (this.weight < that.weight)
+                return -1;
+            else if (this.weight > that.weight)
+                return 1;
+            return 0;
+        }
+    }
+
+    /**
+     * Initializes a PrimsAlgorithm object, and runs primsAlgorithm on the graph G.
+     *
+     * @param G, the graph
+     * @throws IllegalArgumentException if the graph G is null
+     */
+    public PrimsAlgorithm(UndirectedWeightedGraph<T> G) {
+        if (G == null)
+            throw new IllegalArgumentException("constructor with null graph G");
+
+        mst = new UndirectedWeightedGraph<>();
+
+        if (G.V() == 0)
+            return;
+
+        primsAlgorithm(G);
+    }
+
+    /**
+     * Runs Prim's algorithm to build up the minimum spanning tree mst.
+     *
+     * @param G, the graph
+     */
+    private void primsAlgorithm(UndirectedWeightedGraph<T> G) {
+        PriorityMinQueue<Edge<T>> pq = new PriorityMinQueue<>();
+        T start = G.getVertices().iterator().next();
+        for (T v : G.getAdjacent(start))
+            pq.insert(new Edge<>(start, v, G.getWeight(start, v)));
+
+        while (mst.E() != G.V() - 1) {
+            Edge<T> minEdge = pq.removeMin();
+
+            if (G.containsVertex(minEdge.u) && G.containsVertex(minEdge.v))
+                continue;
+
+            mst.insertEdge(minEdge.u, minEdge.v, minEdge.weight);
+
+            for (T w : G.getAdjacent(minEdge.v)) {
+                if (!mst.containsVertex(w)) {
+                    pq.insert(new Edge<>(minEdge.v, w, G.getWeight(minEdge.v, w)));
+                }
+            }
+        }
+    }
+
+    /**
+     * Returns the minimum spanning tree.
+     *
+     * @return the minimum spanning tree
+     */
+    public UndirectedWeightedGraph<T> getMinimumSpanningTree() {
+        return mst;
+    }
+}
+```
 
 ### Time Complexity
 

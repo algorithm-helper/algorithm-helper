@@ -17,33 +17,184 @@ methods in whatever way they need. Then when we produce the requests, perhaps wi
 
 The following is the `Command` interface:
 
-<script src="https://gist.github.com/eliucs/f6fcbb1ec7374dbab3dc800b345d40da.js"></script>
+```
+package com.algorithmhelper.softwareengineering.designpatterns.command;
+
+public interface Command {
+
+    /**
+     * Performs some operation on the Command object.
+     */
+    void method();
+
+    /**
+     * Returns the id of this Command object.
+     *
+     * @return the id of this Command object
+     */
+    String getId();
+}
+```
 
 The following is one such concrete command class, `ConcreteCommandA`:
 
-<script src="https://gist.github.com/eliucs/2c5cd001cfade514f875e38053d60d3e.js"></script>
+```
+package com.algorithmhelper.softwareengineering.designpatterns.command;
+
+public class ConcreteCommandA implements Command {
+
+    private String id = "ConcreteCommandA";
+
+    /**
+     * Prints out a message saying it is from the implementation from ConcreteCommandA.
+     */
+    public void method() {
+        System.out.println("method from ConcreteCommandA");
+    }
+
+    /**
+     * Returns the id of this ConcreteCommandA object.
+     *
+     * @return the id of this ConcreteCommandA object
+     */
+    public String getId() {
+        return id;
+    }
+}
+```
 
 The following is another such concrete command class, `ConcreteCommandB`:
 
-<script src="https://gist.github.com/eliucs/ff0284053521f69dc9530607138f3dba.js"></script>
+```
+package com.algorithmhelper.softwareengineering.designpatterns.command;
+
+public class ConcreteCommandB implements Command {
+
+    private String id = "ConcreteCommandB";
+
+    /**
+     * Prints out a message saying it is from the implementation from ConcreteCommandB.
+     */
+    public void method() {
+        System.out.println("method from ConcreteCommandB");
+    }
+
+    /**
+     * Returns the id of this ConcreteCommandB object.
+     *
+     * @return the id of this ConcreteCommandB object
+     */
+    public String getId() {
+        return id;
+    }
+}
+```
 
 The following is another such concrete command class, `ConcreteCommandC`:
 
-<script src="https://gist.github.com/eliucs/f55854be1e2d0f482f8b581314c2cfeb.js"></script>
+```
+package com.algorithmhelper.softwareengineering.designpatterns.command;
+
+public class ConcreteCommandC implements Command {
+
+    private String id = "ConcreteCommandC";
+
+    /**
+     * Prints out a message saying it is from the implementation from ConcreteCommandC.
+     */
+    public void method() {
+        System.out.println("method from ConcreteCommandC");
+    }
+
+    /**
+     * Returns the id of this ConcreteCommandC object.
+     *
+     * @return the id of this ConcreteCommandC object
+     */
+    public String getId() {
+        return id;
+    }
+}
+```
 
 Then we have the `CommandProducer`, which generates `Command` objects based on their corresponding
 names:
 
-<script src="https://gist.github.com/eliucs/e7d0df80bbf3e3460ed8f458d9064b9b.js"></script>
+```
+package com.algorithmhelper.softwareengineering.designpatterns.command;
+
+public class CommandProducer {
+
+    /**
+     * Returns a Command by the specified name.
+     *
+     * @param name, the name of the Command
+     * @return a Command by the specified name
+     */
+    public Command getCommand(String name) {
+        if (name.equals("A"))
+            return new ConcreteCommandA();
+        else if (name.equals("B"))
+            return new ConcreteCommandB();
+        else if (name.equals("C"))
+            return new ConcreteCommandC();
+        return null;
+    }
+}
+```
 
 Then we have the `CommandConsumer`, which recieves and processes the `Command` objects based on 
 they corresponding `id` fields:
 
-<script src="https://gist.github.com/eliucs/38c009062e76d4ef2db4c5211986b84f.js"></script>
+```
+package com.algorithmhelper.softwareengineering.designpatterns.command;
+
+public class CommandConsumer {
+
+    /**
+     * Processed the given Command object.
+     *
+     * @param command, the Command object
+     */
+    public void process(Command command) {
+        if (command.getId().equals("ConcreteCommandA"))
+            System.out.println("processed ConcreteCommandA");
+        else if (command.getId().equals("ConcreteCommandB"))
+            System.out.println("processed ConcreteCommandB");
+        else if (command.getId().equals("ConcreteCommandC"))
+            System.out.println("processed ConcreteCommandC");
+        else
+            System.out.println("was not processed");
+    }
+}
+```
 
 We can then test the example, assuming that the `Command` objects represent requests:
 
-<script src="https://gist.github.com/eliucs/de3ff0fd164b5bdc88f7c444ece4bc92.js"></script>
+```
+package com.algorithmhelper.softwareengineering.designpatterns.command;
+
+import java.util.Scanner;
+
+public class CommandTest {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        CommandProducer commandProducer = new CommandProducer();
+        CommandConsumer commandConsumer = new CommandConsumer();
+
+        while (in.hasNext()) {
+            String next = in.next();
+
+            if (next.equals("done"))
+                break;
+
+            Command command = commandProducer.getCommand(next);
+            commandConsumer.process(command);
+        }
+    }
+}
+```
 
 Then suppose that our input is:
 

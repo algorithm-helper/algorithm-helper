@@ -25,16 +25,26 @@ callback function. Examples will be given below.
 For the first example, consider a function that can be assigned to a variable. This function takes 
 in two arguments, and returns their sum. Note that this uses ES6 arrow syntax:
 
-<script src="https://gist.github.com/eliucs/a2958e8fa5ba51339592be13b0bd17d1.js"></script>
+```
+const x = (a, b) => a + b;
+```
 
 Then, we can have another function that takes in three arguments, two values and a binary function,
 which is called with the other two values as arguments:
 
-<script src="https://gist.github.com/eliucs/ead5bddd27479c822c215f95e7c5d6e8.js"></script>
+```
+const someFunction = (a, b, c) => c(a, b);
+```
 
 Then, we can always pass function `x` in as the third argument to `someFunction`:
 
-<script src="https://gist.github.com/eliucs/056c8202087eedc41e581891c5599a35.js"></script>
+```
+const x = (a, b) => a + b;
+
+const someFunction = (a, b, c) => c(a, b);
+
+console.log(someFunction(1, 2, x));
+```
 
 Which gives the expected output:
 
@@ -48,12 +58,18 @@ In the second example, we will demonstrate returning a function from a function.
 want to have a function that takes in one argument, and returns a unary function such that this 
 function returns the result of its argument added to the original argument. Then we have:
 
-<script src="https://gist.github.com/eliucs/3e6fbb5579347bf3c7e10d631f0c99b3.js"></script>
+```
+const someFunction = (x) => (y) => x + y;
+```
 
 When we try to call `someFunction` with a single argument, we do not get a value, but a function
 itself:
 
-<script src="https://gist.github.com/eliucs/5ec9c6b64d4d36fc6ce54c318298a2a1.js"></script>
+```
+const someFunction = (x) => (y) => x + y;
+
+console.log(someFunction(1));
+```
 
 We get the expected output:
 
@@ -64,7 +80,11 @@ We get the expected output:
 This function itself adds `x` to whatever argument it is supplied with. Thus, we can call it like
 this:
 
-<script src="https://gist.github.com/eliucs/d9fa2046bd7a6f2cde3a1b8d9e277da4.js"></script>
+```
+const someFunction = (x) => (y) => x + y;
+
+console.log(someFunction(1)(2));
+```
 
 We get the expected output:
 
@@ -82,7 +102,25 @@ by definition not pure functions because they cause side effects, namely printin
 Then, we set a timeout and only print `"first"` only after 2 seconds (2000 ms), `"second"` only
 after 1 second (1000 ms), and `"third"` immediately:
 
-<script src="https://gist.github.com/eliucs/08d748dc10348eed41ff9d9c3cf3caf5.js"></script>
+```
+const printFirst = () => {
+    console.log("first");
+};
+
+const printSecond = () => {
+    console.log("second");
+};
+
+const printThird = () => {
+    console.log("third");
+};
+
+setTimeout(printFirst, 2000);
+
+setTimeout(printSecond, 1000);
+
+printThird();
+```
 
 The output is not what we would initially expect:
 

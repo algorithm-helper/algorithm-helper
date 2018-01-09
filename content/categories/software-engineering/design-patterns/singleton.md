@@ -23,7 +23,54 @@ method `getInstance`, which return this one instance. For the purposes of this e
 methods `getData` and `changeData` that return the data and change all of the data to 0's, 
 respectively:
 
-<script src="https://gist.github.com/eliucs/88fe7b1b4b3a18c9e46d345c798dd09d.js"></script>
+```
+package com.algorithmhelper.designpatterns.singleton;
+
+public class Singleton {
+
+    private int[] data;
+
+    /**
+     * Initializes an empty Singleton object.
+     */
+    private Singleton(int[] data) {
+        this.data = data;
+    }
+
+    /**
+     * Wrapper around the private Singleton instance, with the data [0, 1, 2, 3].
+     */
+    private static class SingletonWrapper {
+        private static Singleton instance = new Singleton(new int[]{0, 1, 2, 3});
+    }
+
+    /**
+     * Returns an instance to the Singleton.
+     *
+     * @return an instance to the Singleton
+     */
+    public static Singleton getInstance() {
+        return SingletonWrapper.instance;
+    }
+
+    /**
+     * Returns the data of the Singleton.
+     *
+     * @return the data of the Singleton
+     */
+    public int[] getData() {
+        return data;
+    }
+
+    /**
+     * Changes the data in the Singleton to be an array of 0's.
+     */
+    public void changeData() {
+        for (int i = 0; i < data.length; i++)
+            data[i] = 0;
+    }
+}
+```
 
 From the client's perspective, we can test this by trying to get multiple instances of the 
 `Singleton` and show that they indeed reference the same instance. The commented line with 
@@ -32,7 +79,36 @@ another `Singleton`. First we print out the contents of `s1` and `s2`, and then 
 `s1` to call the `changeData` method without doing the same from `s2`. Then we will print out the
 contents again:
 
-<script src="https://gist.github.com/eliucs/8951d6ac768380062095a0c3385e67ac.js"></script>
+```
+package com.algorithmhelper.designpatterns.singleton;
+
+public class SingletonTest {
+
+    public static void main(String[] args) {
+        Singleton s1 = Singleton.getInstance();
+        Singleton s2 = Singleton.getInstance();
+        // Singleton s3 = new Singleton();
+
+        for (int i : s1.getData())
+            System.out.print(i + " ");
+        System.out.println();
+
+        for (int i : s2.getData())
+            System.out.print(i + " ");
+        System.out.println();
+
+        s1.changeData();
+
+        for (int i : s1.getData())
+            System.out.print(i + " ");
+        System.out.println();
+
+        for (int i : s2.getData())
+            System.out.print(i + " ");
+        System.out.println();
+    }
+}
+```
 
 Then we get the expected output:
 

@@ -10,11 +10,41 @@ the function into 3 parts: `square`, `multiplyByConstant`, and `identity`, and c
 function to return. The returned function takes in a single argument `x`, and returns the result of 
 `ax*x + bx + c`:
 
-<script src="https://gist.github.com/eliucs/ae617d361d3eba90e12ca4023ae321a9.js"></script>
+```
+const identity = (x) => x;
+
+const multiplyByConstant = (c, x) => c*x;
+
+const square = (x) => x*x;
+
+const quadratic = (a, b, c) => {
+    return (x) => {
+        return multiplyByConstant(a, square(x)) + 
+               multiplyByConstant(b, x) + 
+               identity(c);
+    };
+};
+```
 
 Then, to return the function $x^2 + 2x+ 1$ itself, we have:
 
-<script src="https://gist.github.com/eliucs/0b9ae62b4e2a027f36ef5aa5711eb9ae.js"></script>
+```
+const identity = (x) => x;
+
+const multiplyByConstant = (c, x) => c*x;
+
+const square = (x) => x*x;
+
+const quadratic = (a, b, c) => {
+    return (x) => {
+        return multiplyByConstant(a, square(x)) + 
+               multiplyByConstant(b, x) + 
+               identity(c);
+    };
+};
+
+console.log(quadratic(1, 2, 1));
+```
 
 Which gives the expected output:
 
@@ -24,7 +54,23 @@ Which gives the expected output:
 
 To evaluate it at `x=1` for example, we have:
 
-<script src="https://gist.github.com/eliucs/481dd15d1a8b0a4cdab333a2bf5afcd7.js"></script>
+```
+const identity = (x) => x;
+
+const multiplyByConstant = (c, x) => c*x;
+
+const square = (x) => x*x;
+
+const quadratic = (a, b, c) => {
+    return (x) => {
+        return multiplyByConstant(a, square(x)) + 
+               multiplyByConstant(b, x) + 
+               identity(c);
+    };
+};
+
+console.log(quadratic(1, 2, 1)(1));
+```
 
 Which gives the expected output:
 

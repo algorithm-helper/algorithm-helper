@@ -143,7 +143,109 @@ index `i`. All values in `size` are initialized to 1.
 
 ##### Java
 
-<script src="https://gist.github.com/eliucs/580a704aa3bcffd6497cfd265485fffa.js"></script>
+```
+package com.algorithmhelper.datastructures.trees;
+
+public class UnionFind {
+
+    private int[] id;
+    private int[] size;
+    private int n;
+
+    /**
+     * Initializes a UnionFind, where all elements belong to their own individual connected
+     * component.
+     *
+     * @param n, the capacity of the UnionFind
+     * @throws IllegalArgumentException if n <= 0
+     */
+    public UnionFind(int n) {
+        if (n <= 0)
+            throw new IllegalArgumentException("constructor with invalid n");
+
+        this.n = n;
+        id = new int[n];
+        size = new int[n];
+        for (int i = 0; i < n; i++) {
+            id[i] = i;
+            size[i] = 1;
+        }
+    }
+
+    /**
+     * Returns the number of connected components contained in the UnionFind.
+     *
+     * @return the number of connected components contained in the UnionFind
+     */
+    public int size() {
+        return n;
+    }
+
+    /**
+     * Returns true if p and q belong to the same connected component, otherwise false.
+     *
+     * @param p, the first element to be searched
+     * @param q, the second element to be searched
+     * @return true if p and q belong to the same connected component, otherwise false
+     * @throws ArrayIndexOutOfBoundsException if p < 0 or p >= n
+     * @throws ArrayIndexOutOfBoundsException if q < 0 or q >= n
+     */
+    public boolean connected(int p, int q) {
+        if (p < 0 || p >= n)
+            throw new ArrayIndexOutOfBoundsException("connected with invalid p");
+        if (q < 0 || q >= n)
+            throw new ArrayIndexOutOfBoundsException("connected with invalid q");
+
+        return find(p) == find(q);
+    }
+
+    /**
+     * Returns the connected component of p by traversing up its parent to its connected component
+     * tree's root.
+     *
+     * @param p, the first element to be searched
+     * @return the connected component of p by traversing up its parent in its connected component
+     *         tree.
+     * @throws ArrayIndexOutOfBoundsException if p < 0 or p >= n
+     */
+    private int find(int p) {
+        if (p < 0 || p >= n)
+            throw new ArrayIndexOutOfBoundsException("connected with invalid p");
+
+        while (p != id[p])
+            p = id[id[p]];
+        return p;
+    }
+
+    /**
+     * Changes p to be in the same connected component as q, by pointing p's root to q's root.
+     *
+     * @throws ArrayIndexOutOfBoundsException if p < 0 or p >= n
+     * @throws ArrayIndexOutOfBoundsException if q < 0 or q >= n
+     */
+    public void union(int p, int q) {
+        if (p < 0 || p >= n)
+            throw new ArrayIndexOutOfBoundsException("connected with invalid p");
+        if (q < 0 || q >= n)
+            throw new ArrayIndexOutOfBoundsException("connected with invalid q");
+
+        int i = find(p);
+        int j = find(q);
+
+        if (i == j)
+            return;
+
+        if (size[i] < size[j]) {
+            id[i] = j;
+            size[j] += size[i];
+        } else {
+            id[j] = i;
+            size[i] += size[j];
+        }
+        n--;
+    }
+}
+```
 
 ### Time Complexity
 

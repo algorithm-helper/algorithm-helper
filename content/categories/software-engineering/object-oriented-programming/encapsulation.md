@@ -36,23 +36,122 @@ that represents someone's bank account. We would only want outside clients to be
 because then clients can simply set it to any amount they want. We want to control changing of the
 `balance`, so the only way for a client to change it is through the `deposit` method:
 
-<script src="https://gist.github.com/eliucs/02b20e760d914b51f1cd8b4b4568d265.js"></script>
+```
+package com.algorithmhelper.objectorientedprogramming.encapsulation;
+
+public class Account {
+
+    private int balance;
+
+    /**
+     * Initializes an empty Account.
+     */
+    public Account() {
+        balance = 0;
+    }
+
+    /**
+     * Returns the balance.
+     *
+     * @return balance
+     */
+    public int getBalance() {
+        return balance;
+    }
+
+    /**
+     * Deposits an amount and adds it to the balance.
+     *
+     * @param amount
+     */
+    public void deposit(int amount) {
+        balance += amount;
+    }
+}
+```
 
 Clearly, we are only able to access the `balance` data directed through the getter method 
 `getBalance` and modify it with the setter method `deposit`:
 
-<script src="https://gist.github.com/eliucs/eea91f352f9b4c2337f169bccca7186e.js"></script>
+```
+package com.algorithmhelper.objectorientedprogramming.encapsulation;
+
+public class EncapsulationTest1 {
+
+    public static void main(String[] args) {
+        Account account = new Account();
+        System.out.println(account.getBalance());
+        account.deposit(100);
+        System.out.println(account.getBalance());
+        // account.balance = 200;
+    }
+}
+```
 
 ### Example
 
 The following is an example of a class `Class` with a `private` field `secretID` and `private` method
 `modifySecretID` that no other class has access to:
 
-<script src="https://gist.github.com/eliucs/164e465115a13e7ce3c73f3da2f2790b.js"></script>
+```
+package com.algorithmhelper.objectorientedprogramming.encapsulation;
+
+public class Class {
+
+    private String name;
+    private int value;
+    private int secretID;
+
+    /**
+     * Constructor for the Class object.
+     */
+    public Class() {
+        name = "default";
+        value = 0;
+        secretID = 999;
+    }
+
+    /**
+     * Overloaded constructor for the Class object.
+     *
+     * @param name, the name
+     * @param value, the value
+     */
+    public Class(String name, int value) {
+        this.name = name;
+        this.value = value;
+        this.secretID = 999;
+    }
+
+    /**
+     * Method that prints out the name and value.
+     */
+    public void method() {
+        modifySecretID();
+        System.out.println("name: " + name + " value: " + value + " secretID: " + secretID);
+    }
+
+    /**
+     * Private method that modifies the secretID.
+     */
+    private void modifySecretID() {
+        secretID++;
+    }
+}
+```
 
 Note that trying to call the method `modifySecretID` outside `Class` does not work, and so it is
 commented out:
 
-<script src="https://gist.github.com/eliucs/8ef90c9b809fc79008d5c643f4479704.js"></script>
+```
+package com.algorithmhelper.objectorientedprogramming.encapsulation;
 
+public class EncapsulationTest2 {
 
+    public static void main(String[] args) {
+        Class obj = new Class();
+        obj.method();
+        // obj.modifySecretID();
+    }
+}
+```

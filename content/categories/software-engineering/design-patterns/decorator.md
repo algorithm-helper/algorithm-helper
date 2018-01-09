@@ -26,36 +26,147 @@ cell phone plan, for example.
 
 The following is the `Interface`:
 
-<script src="https://gist.github.com/eliucs/cae3ede5de894d341fd4236d7430ff1f.js"></script>
+```
+package com.algorithmhelper.designpatterns.decorator;
+
+public interface Interface {
+
+    /**
+     * Some method.
+     */
+    void method();
+}
+```
 
 The `Base` class, which implements the `Interface`, is the basic most version of the `Interface`. 
 Here, it has a method `method` to print out a message saying that it is from the `Base` class
 implementation:
 
-<script src="https://gist.github.com/eliucs/c855bae043e01f76c99f20a07f2c1886.js"></script>
+```
+package com.algorithmhelper.designpatterns.decorator;
+
+public class Base implements Interface {
+
+    /**
+     * Overrides method from Interface, prints out message that this method is called from the
+     * Base class.
+     */
+    public void method() {
+        System.out.println("method from Base");
+    }
+}
+```
 
 The `AbstractDecorator` takes in an `Interface` as an argument to its constructor, and this is 
 what enables the recursive wrapping of the `Interface` object with the needed concrete decorators:
 
-<script src="https://gist.github.com/eliucs/695771c4a89842eea52d166dbdddfba8.js"></script>
+```
+package com.algorithmhelper.designpatterns.decorator;
+
+public abstract class AbstractDecorator implements Interface {
+
+    private Interface component;
+
+    /**
+     * Initializes the AbstractDecorator with the Interface component.
+     * @param component
+     */
+    public AbstractDecorator(Interface component) {
+        this.component = component;
+    }
+
+    /**
+     * Overrides the method, calls component's method.
+     */
+    public void method() {
+        component.method();
+    }
+}
+```
 
 The `ConcreteDecoratorA` class is one such decorator that extends `AbstractDecorator`, and for 
 clarity overrides `method` to print out a message saying that it is from the `ConcreteDecoratorA`
 implementation:
 
-<script src="https://gist.github.com/eliucs/625255c90fed542fb8cdb5f7ea62835c.js"></script>
+```
+package com.algorithmhelper.designpatterns.decorator;
+
+public class ConcreteDecoratorA extends AbstractDecorator {
+
+    /**
+     * Initializes the ConcreteDecoratorA with the Interface component.
+     *
+     * @param component, the Interface
+     */
+    public ConcreteDecoratorA(Interface component) {
+        super(component);
+    }
+
+    /**
+     * Prints out message that this is being called from ConcreteDecoratorA.
+     */
+    public void method() {
+        super.method();
+        System.out.println("method from ConcreteDecoratorA");
+    }
+}
+```
 
 The `ConcreteDecoratorB` class is another decorator that extends `AbstractDecorator`, and 
 overrides `method` to print out a message saying that it is from the `ConcreteDecoratorB`
 implementation:
 
-<script src="https://gist.github.com/eliucs/0af464259484652c0dd2aca851300cd6.js"></script>
+```
+package com.algorithmhelper.designpatterns.decorator;
+
+public class ConcreteDecoratorB extends AbstractDecorator {
+
+    /**
+     * Initializes the ConcreteDecoratorB with the Interface component.
+     *
+     * @param component, the Interface
+     */
+    public ConcreteDecoratorB(Interface component) {
+        super(component);
+    }
+
+    /**
+     * Prints out message that this is being called from ConcreteDecoratorB.
+     */
+    public void method() {
+        super.method();
+        System.out.println("method from ConcreteDecoratorB");
+    }
+}
+```
 
 The `ConcreteDecoratorC` class is another decorator that extends `AbstractDecorator`, and 
 overrides `method` to print out a message saying that it is from the `ConcreteDecoratorC`
 implementation:
 
-<script src="https://gist.github.com/eliucs/49c3d626bdb3440e1c8347adb1a4bdb4.js"></script>
+```
+package com.algorithmhelper.designpatterns.decorator;
+
+public class ConcreteDecoratorC extends AbstractDecorator {
+
+    /**
+     * Initializes the ConcreteDecoratorC with the Interface component.
+     *
+     * @param component, the Interface
+     */
+    public ConcreteDecoratorC(Interface component) {
+        super(component);
+    }
+
+    /**
+     * Prints out message that this is being called from ConcreteDecoratorC.
+     */
+    public void method() {
+        super.method();
+        System.out.println("method from ConcreteDecoratorC");
+    }
+}
+```
 
 Then to test, suppose that we take in from the system's input to customize the `Interface`,
 which is initially instantiated as a `Base` object. When we type in the letter `A`, we add 
@@ -63,7 +174,34 @@ which is initially instantiated as a `Base` object. When we type in the letter `
 `ConcreteDecoratorB`'s functionality, and when we type in the letter `C`, we add 
 `ConcreteDecoratorC`'s functionality:
 
-<script src="https://gist.github.com/eliucs/fd439e641180a3cebae2b9d1e6e25aea.js"></script>
+```
+package com.algorithmhelper.designpatterns.decorator;
+
+import java.util.Scanner;
+
+public class DecoratorTest {
+
+    public static void main(String[] args) {
+        Interface base = new Base();
+
+        Scanner in = new Scanner(System.in);
+        while (true) {
+            String input = in.next();
+
+            if (input.equals("A"))
+                base = new ConcreteDecoratorA(base);
+            else if (input.equals("B"))
+                base = new ConcreteDecoratorB(base);
+            else if (input.equals("C"))
+                base = new ConcreteDecoratorC(base);
+            else if (input.equals("done"))
+                break;
+        }
+
+        base.method();
+    }
+}
+```
 
 Suppose our input is:
 

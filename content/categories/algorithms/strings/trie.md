@@ -22,13 +22,25 @@ In the case of using the trie as a map, the nodes store an $R$-sized array of no
 denoting their $R$ children. They also have a field `value`. The following is a snippet of Java code
 for the `Node` class:
 
-<script src="https://gist.github.com/eliucs/b685b0ff0ff6cc706cdef8d178f64892.js"></script>
+```
+class Node {
+    Object value;
+    Node[] children = new Node[65535];
+    // other fields may go here...
+}
+```
 
 In the case of using the trie as a set, the nodes store an $R$-sized array of nodes `children`, 
 denoting their $R$ children. They also have a boolean field `value`. The following is a snippet of
 Java code for the `Node` class:
 
-<script src="https://gist.github.com/eliucs/6d0e1dc54fda8d6778eb3f22a4842bea.js"></script>
+```
+class Node {
+    boolean value;
+    Node[] children = new Node[65535];
+    // other fields may go here...
+}
+```
 
 ### Visualization
 

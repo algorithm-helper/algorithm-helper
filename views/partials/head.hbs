@@ -16,6 +16,7 @@
 
   <title>Algorithm Helper</title>
 
+  <!-- Icons -->
   <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
@@ -35,9 +36,9 @@
   <link rel="stylesheet" href="/css-lib/select2.min.css">
   <!-- Highlight.js Mono Blue Theme CSS -->
   <link rel="stylesheet" href="/css-lib/mono-blue.css">
+
   <!-- Algorithm Helper CSS -->
   <link rel="stylesheet" href="/css/styles.css">
-
   <!-- jQuery Compressed and Minified JavaScript -->
   <script type="text/javascript" src="/js-lib/jquery-3.1.1.min.js"></script>
   <!-- Tether Compressed and Minified JavaScript -->
@@ -46,6 +47,8 @@
   <script type="text/javascript" src="/js-lib/popper.min.js"></script>
   <!-- Bootstrap Compressed and Minified JavaScript -->
   <script type="text/javascript" src="/js-lib/bootstrap.min.js"></script>
+  <!-- Marked Compressed and Minified JavaScript -->
+  <script type="text/javascript" src="/js-lib/marked.min.js"></script>
   <!-- Algorithm Helper Site-wide JavaScript -->
   <script type="text/javascript" src="/js-es6/script.js"></script>
   <!-- Algorithm Helper Search JavaScript -->
@@ -55,4 +58,19 @@
       MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
   </script>
   <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  <!-- Firebase Configuration -->
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase-storage.js"></script>
+  <script>
+    firebase.initializeApp({
+      apiKey: "AIzaSyAqWHCCEsK8CE01rLs8VGrhJJTz8XoKhlc",
+      authDomain: "algorithm-helper-storage.firebaseapp.com",
+      databaseURL: "https://algorithm-helper-storage.firebaseio.com",
+      projectId: "algorithm-helper-storage",
+      storageBucket: "algorithm-helper-storage.appspot.com",
+      messagingSenderId: "338808539522"
+    });
+  </script>
+
 </head>

@@ -11,7 +11,13 @@ first argument to `f`. It returns another function taking in one argument `b`, w
 argument to `f`. Then we return `f(a, b)`. Suppose that we want to curry a function that adds two
 numbers:
 
-<script src="https://gist.github.com/eliucs/f18cc718a8f8734ad751356b1b2eecae.js"></script>
+```
+const curry = (f) => (a) => (b) => f(a, b);
+
+const add = (a, b) => a + b;
+
+console.log(curry(add)(1)(2));
+```
 
 Which gives the expected output:
 
@@ -26,7 +32,15 @@ should return the function applied to two arguments. Thus, to undo the effects o
 return a function that takes in two arguments, `a` and `b`, and applies the curried function to 
 them, that is, `f(a)(b)`, and the result would be as if we had never curried in the first place:
 
-<script src="https://gist.github.com/eliucs/5e264d87ee3e7eb91e9a7af312f269bd.js"></script>
+```
+const curry = (f) => (a) => (b) => f(a, b);
+
+const uncurry = (f) => (a, b) => f(a)(b);
+
+const add = (a, b) => a + b;
+
+console.log(uncurry(curry(add))(1, 2));
+```
 
 Which also gives the expected output:
 

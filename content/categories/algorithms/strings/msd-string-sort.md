@@ -115,7 +115,75 @@ brada
 
 ##### Java
 
-<script src="https://gist.github.com/eliucs/11595a44566ace78f5d21ed706e03eb8.js"></script>
+```
+package com.algorithmhelper.algorithms.strings;
+
+public class MSDStringSort {
+
+    private static int R = Character.MAX_RADIX;
+    private static int OFFSET = 2;
+
+    /**
+     * Sorts the array arr.
+     *
+     * @param arr, the array to be sorted.
+     * @throws IllegalArgumentException if arr is null
+     */
+    public static void sort(String[] arr) {
+        if (arr == null || arr.length == 0)
+            throw new IllegalArgumentException("sort with null arr");
+        sort(arr, new String[arr.length], 0, arr.length, 0);
+    }
+
+    /**
+     * Helper method for sort.
+     *
+     * @param arr
+     * @param aux
+     * @param lo
+     * @param hi
+     * @param index
+     */
+    private static void sort(String[] arr, String[] aux, int lo, int hi, int index) {
+        if (hi <= lo)
+            return;
+
+        int[] count = new int[R+OFFSET];
+
+        for (int i = lo; i <= hi; i++)
+            count[charAt(arr[i], index)+OFFSET]++;
+
+        for (int i = 0; i < R+1; i++)
+            count[i+1] += count[i];
+
+        for (int i = lo; i <= hi; i++) {
+            aux[count[charAt(arr[i], index) + 1]] = arr[i];
+            count[charAt(arr[i], index) + 1]++;
+        }
+
+        for (int i = lo; i <= hi; i++)
+            arr[i] = aux[i-lo];
+
+        for (int i = 0; i < R; i++)
+            sort(arr, aux, lo+count[i], lo+count[i+1]-1, index+1);
+    }
+
+    /**
+     * Returns the character of s at the specified index if index is within the length of s,
+     * otherwise return -1.
+     *
+     * @param s, the String
+     * @param index, the index into s
+     * @return the character of s at the specified index if index is within the length of s,
+     *         otherwise return -1
+     */
+    private static int charAt(String s, int index) {
+        if (index < s.length())
+            return s.charAt(index);
+        return -1;
+    }
+}
+```
 
 ### Time Complexity
 

@@ -34,12 +34,90 @@ perform no other operation except iterating over its elements.
 Since it implements `Iterable`, we must provide the `iterator` method, and return an `Iterator`.
 The `Iterator` then must have methods `hasNext` and `next` implemented:
 
-<script src="https://gist.github.com/eliucs/5959f23f210f1228f8283bdcd2a8cb92.js"></script>
+```
+package com.algorithmhelper.designpatterns.iterator;
+
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
+public class FIFOList implements Iterable<Integer> {
+
+    private Node first;
+
+    private class Node {
+        int item;
+        Node next;
+
+        Node(int item, Node next) {
+            this.item = item;
+            this.next = next;
+        }
+    }
+
+    /**
+     * Initializes an empty FIFOList.
+     */
+    public FIFOList() {}
+
+    /**
+     * Inserts the item to the front of the FIFOList.
+     *
+     * @param item, the item to be inserted
+     */
+    public void insertFront(int item) {
+        if (first == null)
+            first = new Node(item, null);
+        else
+            first = new Node(item, first);
+    }
+
+    /**
+     * Returns an Iterator to the elements of the FIFOList.
+     *
+     * @return an Iterator to the elements of the FIFOList
+     */
+    public Iterator<Integer> iterator() {
+        return new Iterator<Integer>() {
+            private Node current = first;
+
+            @Override
+            public boolean hasNext() {
+                return current != null;
+            }
+
+            @Override
+            public Integer next() {
+                if (!hasNext()) {
+                    throw new NoSuchElementException("iterator does not have next element");
+                }
+
+                int item = current.item;
+                current = current.next;
+                return item;
+            }
+        };
+    }
+}
+```
 
 We can now test this data structure by inserting items into it, and using the Java enhanced `for`
 loop to iterate over the items of the `FIFOList`, printing out each item:
 
-<script src="https://gist.github.com/eliucs/9707096fc906b1824455caf1641b7888.js"></script>
+```
+package com.algorithmhelper.designpatterns.iterator;
+
+public class IteratorTest {
+
+    public static void main(String[] args) {
+        FIFOList list = new FIFOList();
+        for (int i = 0; i < 5; i++)
+            list.insertFront(i);
+
+        for (Integer i : list)
+            System.out.println(i);
+    }
+}
+```
 
 Which gives the expected output:
 

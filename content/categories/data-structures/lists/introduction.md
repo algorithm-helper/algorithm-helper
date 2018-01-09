@@ -68,7 +68,13 @@ Thus with nodes, lists are recursively defined.
 
 Example of a Node (Java):
 
-<script src="https://gist.github.com/eliucs/72c3bf2e27a4177aa575125dc0ddc979.js"></script>
+```
+class Node {
+    Object item;
+    Node next;
+    // other fields may go here ...
+}
+```
 
 It is clear what differentiates this "chain-like" structure of nodes with say, an array. While 
 accessing an element in an array, we would index into it in $O(1)$ time, conceptually with a list 
@@ -138,4 +144,88 @@ The following provides the interface for the `List` class, from which the `Linke
 
 ##### Java
 
-<script src="https://gist.github.com/eliucs/4f4d8baf9874843b7e6eccb4ea6f675d.js"></script>
+```
+package com.algorithmhelper.datastructures.interfaces;
+
+public interface List<T> extends Iterable<T> {
+
+    /**
+     * Returns true if the List contains no elements, otherwise false.
+     *
+     * @return true if the List contains no elements, otherwise false
+     */
+    boolean isEmpty();
+
+    /**
+     * Returns the number of elements contained in the List.
+     *
+     * @return the number of elements contained in the List
+     */
+    int size();
+
+    /**
+     * Returns the element at the specified index in the List.
+     *
+     * @param i, the index into the List
+     * @return the element at index i in the List
+     */
+    T get(int i);
+
+    /**
+     * Inserts the item at the specified index in the List.
+     *
+     * @param item, the item to be inserted
+     * @param i, the index into the List
+     */
+    void insert(int i, T item);
+
+    /**
+     * Inserts the item to the front of the List.
+     *
+     * @param item, the item to be inserted
+     */
+    void insertFront(T item);
+
+    /**
+     * Inserts the item to the back of the List.
+     *
+     * @param item, the item to be inserted
+     */
+    void insertBack(T item);
+
+    /**
+     * Removes the item at the specified index in the List.
+     *
+     * @param i, the index into the List
+     */
+    T remove(int i);
+
+    /**
+     * Removes the item at the front of the List, and returns it.
+     *
+     * @return the item at the front of the List
+     */
+    T removeFront();
+
+    /**
+     * Removes the item at the back of the List, and returns it.
+     *
+     * @return the item at the back of the List
+     */
+    T removeBack();
+
+    /**
+     * Returns the item at the front of the List.
+     *
+     * @return the item at the front of the List
+     */
+    T peekFront();
+
+    /**
+     * Returns the item at the back of the List.
+     *
+     * @return the item at the back of the List
+     */
+    T peekBack();
+}
+```

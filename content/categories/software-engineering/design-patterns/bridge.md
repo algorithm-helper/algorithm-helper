@@ -22,31 +22,120 @@ For the following example, suppose that we have the `Abstraction` interface, whi
 the interface hierarchy, and contains a reference to an `Implementor`, which is top-most in the 
 implementation hierarchy:
 
-<script src="https://gist.github.com/eliucs/ca3d2095af41ccf519b1615641a7a9b3.js"></script>
+```
+package com.algorithmhelper.designpatterns.bridge;
+
+public abstract class Abstraction {
+
+    protected Implementor impl;
+
+    /**
+     * Initializes an Abstraction, with an Implementor impl.
+     *
+     * @param impl, the Implementor object
+     */
+    public Abstraction(Implementor impl) {
+        this.impl = impl;
+    }
+
+    /**
+     * Performs the operation.
+     */
+    public abstract void operation();
+}
+```
 
 The method `operation` is not defined in `Abstraction` itself, but rather in `RefinedAbstraction`. 
 It follows that if we wanted to support other interfaces, we could always add more "refined 
 abstraction" classes (`RefinedAbstractionA`, `RefinedAbstractionB`, `RefinedAbstractionC`, etc.) 
 that extend `Abstraction`:
 
-<script src="https://gist.github.com/eliucs/fd843e811f727e7d444654eb4a8f887a.js"></script>
+```
+package com.algorithmhelper.designpatterns.bridge;
+
+public class RefinedAbstraction extends Abstraction {
+
+    /**
+     * Initializes the RefinedAbstraction with an Implementor impl.
+     *
+     * @param impl, the Implementor object
+     */
+    public RefinedAbstraction(Implementor impl) {
+        super(impl);
+    }
+
+    /**
+     * Performs the operation.
+     */
+    public void operation() {
+        impl.operation();
+    }
+}
+```
 
 The following is the `Implementor` interface, which is top-most in the inheritance hierarchy for
 all of the different implementations:
 
-<script src="https://gist.github.com/eliucs/738722961b37041d38d2f6f6e7b54b45.js"></script>
+```
+package com.algorithmhelper.designpatterns.bridge;
+
+public interface Implementor {
+
+    /**
+     * Performs the operation, this is to be overriden by a concrete implementor.
+     */
+    void operation();
+}
+```
 
 `ConcreteImplementorA` is one such implementation:
 
-<script src="https://gist.github.com/eliucs/bb01e1b0df1f71735e4f10becd97f709.js"></script>
+```
+package com.algorithmhelper.designpatterns.bridge;
+
+public class ConcreteImplementorA implements Implementor {
+
+    /**
+     * Prints out a message that the implementation is from ConcreteImplementorA.
+     */
+    public void operation() {
+        System.out.println("implementation from ConcreteImplementorA");
+    }
+}
+```
 
 `ConcreteImplementorB` is another such implementation:
 
-<script src="https://gist.github.com/eliucs/c285915070494a16ae99e58c5d8af1a5.js"></script>
+```
+package com.algorithmhelper.designpatterns.bridge;
+
+public class ConcreteImplementorB implements Implementor {
+
+    /**
+     * Prints out a message that the implementation is from ConcreteImplementorB.
+     */
+    public void operation() {
+        System.out.println("implementation from ConcreteImplementorB");
+    }
+}
+```
 
 Then to test using interfaces with different implementations:
 
-<script src="https://gist.github.com/eliucs/1c49815164e16f03fe1a1b588b05e941.js"></script>
+```
+package com.algorithmhelper.designpatterns.bridge;
+
+public class BridgeTest {
+
+    public static void main(String[] args) {
+        Abstraction objA = new RefinedAbstraction(new ConcreteImplementorA());
+        Abstraction objB = new RefinedAbstraction(new ConcreteImplementorB());
+
+        objA.operation();
+        objB.operation();
+    }
+}
+```
 
 Which gives the expected output:
 

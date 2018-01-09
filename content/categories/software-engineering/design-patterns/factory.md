@@ -19,29 +19,134 @@ of prototypical instances. The `getProduct` method is static.
 
 The following is the `Product` interface:
 
-<script src="https://gist.github.com/eliucs/2e67b1c383810b3b17712615accbf320.js"></script>
+```
+package com.algorithmhelper.softwareengineering.designpatterns.factory;
+
+public interface Product {
+
+    /**
+     * Returns the name of the Product.
+     *
+     * @return the name of the Product
+     */
+    String getName();
+}
+```
 
 The following is the `ConcreteProductA` class:
 
-<script src="https://gist.github.com/eliucs/5d072fb3b6277765184b5d4e4ecdecca.js"></script>
+```
+package com.algorithmhelper.softwareengineering.designpatterns.factory;
+
+public class ConcreteProductA implements Product {
+
+    private String name = "ConcreteProductA";
+
+    /**
+     * Returns the name of the ConcreteProductA.
+     *
+     * @return the name of the ConcreteProductA
+     */
+    public String getName() {
+        return name;
+    }
+}
+```
 
 The following is the `ConcreteProductB` class:
 
-<script src="https://gist.github.com/eliucs/66af25d56a97df76b455e41413cd40ad.js"></script>
+```
+package com.algorithmhelper.softwareengineering.designpatterns.factory;
+
+public class ConcreteProductB implements Product {
+
+    private String name = "ConcreteProductB";
+
+    /**
+     * Returns the name of the ConcreteProductB.
+     *
+     * @return the name of the ConcreteProductB
+     */
+    public String getName() {
+        return name;
+    }
+}
+```
 
 The following is the `ConcreteProductC` class:
 
-<script src="https://gist.github.com/eliucs/4567ef0551c0e196b039ebde7d58c585.js"></script>
+```
+package com.algorithmhelper.softwareengineering.designpatterns.factory;
+
+public class ConcreteProductC implements Product {
+
+    private String name = "ConcreteProductC";
+
+    /**
+     * Returns the name of the ConcreteProductC.
+     *
+     * @return the name of the ConcreteProductC
+     */
+    public String getName() {
+        return name;
+    }
+}
+```
 
 The following is the `Factory` class, which has the static `getProduct` method. It takes in a `name`
 as an argument and returns the corresponding `Product`:
 
-<script src="https://gist.github.com/eliucs/74a478b9aff60451e26a4ad1d53347be.js"></script>
+```
+package com.algorithmhelper.softwareengineering.designpatterns.factory;
+
+public class Factory {
+
+    /**
+     * Returns the Product with the give name.
+     *
+     * @param name, the name of the Product
+     */
+    public static Product getProduct(String name) {
+        if (name == null)
+            return null;
+
+        if (name.equals("A"))
+            return new ConcreteProductA();
+        else if (name.equals("B"))
+            return new ConcreteProductB();
+        else if (name.equals("C"))
+            return new ConcreteProductC();
+        else
+            return null;
+    }
+}
+```
 
 Then we can test it by taking in system input, and passing in the input to the `Factory` to 
 create them, and return them back to the client:
 
-<script src="https://gist.github.com/eliucs/a1b77253b293195461a6ca73892c49dd.js"></script>
+```
+package com.algorithmhelper.softwareengineering.designpatterns.factory;
+
+import java.util.Scanner;
+
+public class FactoryTest {
+
+    public static void main(String[] args){
+        Scanner in = new Scanner(System.in);
+
+        while (in.hasNext()) {
+            String next = in.next();
+
+            if (next.equals("done"))
+                break;
+
+            Product product = Factory.getProduct(next);
+            System.out.println(product.getName());
+        }
+    }
+}
+```
 
 Suppose that our input was:
 

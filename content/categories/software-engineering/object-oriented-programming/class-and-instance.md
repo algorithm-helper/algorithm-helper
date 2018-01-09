@@ -19,7 +19,41 @@ out of scope or explicitly being destroyed, then the destructor is called.
 
 The following is an example of a class definition:
 
-<script src="https://gist.github.com/eliucs/fc97d1faef72f873c38fa1da04c69589.js"></script>
+```
+package com.algorithmhelper.objectorientedprogramming.classinstance;
+
+public class Class {
+
+    private String name;
+    private int value;
+
+    /**
+     * Constructor for the Class object.
+     */
+    public Class() {
+        name = "default";
+        value = 0;
+    }
+
+    /**
+     * Overloaded constructor for the Class object.
+     *
+     * @param name, the name
+     * @param value, the value
+     */
+    public Class(String name, int value) {
+        this.name = name;
+        this.value = value;
+    }
+
+    /**
+     * Method that prints out the name and value.
+     */
+    public void method() {
+        System.out.println("name: " + name + " value: " + value);
+    }
+}
+```
 
 It has two fields `name` and `value`. It has two constructors: the first one is the default 
 constructor when no arguments are passed to the constructor, then the field `name` is set to 
@@ -30,7 +64,20 @@ itself does not represent an object we can use, just a template for its instanti
 
 The following is a test program that actually creates an instance of `Class`:
 
-<script src="https://gist.github.com/eliucs/177fdf943b174737ab06ea215e4d1275.js"></script>
+```
+package com.algorithmhelper.objectorientedprogramming.classinstance;
+
+public class ClassTest {
+
+    public static void main(String[] args) {
+        Class obj1 = new Class();
+        Class obj2 = new Class("John Smith", 100);
+
+        obj1.method();
+        obj2.method();
+    }
+}
+```
 
 The objects `obj1` and `obj2` are actual instances of the class `Class`, and thus they have data 
 specific to them. As a visualization, `obj1.method()` prints out `name: default value: 0` and 

@@ -143,3 +143,11 @@ footer {
   font-weight: bold;
   color: #3f3f3f;
 }
+
+pre {
+  border-style: solid;
+  border-radius: 3px;
+  border-width: 1px;
+  border-color: #E8E8E8;
+  font-size: 0.85em;
+}

@@ -34,7 +34,25 @@ $gcd(a, b) = gcd(r_{n-1}, r_n) = gcd(r_{n-1}, 0) = r_{n-1}$.
 
 ##### Java
 
-<script src="https://gist.github.com/eliucs/cdd28011630202f5442127dae3c781da.js"></script>
+```
+package com.algorithmhelper.algorithms.mathematics;
+
+public class EuclidsAlgorithm {
+
+    /**
+     * Computes the greatest common divisor between integers a and b.
+     *
+     * @param a, the first integer
+     * @param b, the second integer
+     * @return the greatest common divisor between integers a and b
+     */
+    public static int gcd(int a, int b) {
+        if (a % b == 0)
+            return b;
+        return gcd(b, a % b);
+    }
+}
+```
 
 ### Time Complexity
 

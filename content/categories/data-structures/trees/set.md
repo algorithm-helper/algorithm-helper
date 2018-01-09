@@ -54,4 +54,54 @@ The following provides an interface for sets.
 
 ##### Java
 
-<script src="https://gist.github.com/eliucs/01c32523c23cb57292e79bb8ac3df0f9.js"></script>
+```
+package com.algorithmhelper.datastructures.interfaces;
+
+public interface Set<K extends Comparable<K>> {
+
+    /**
+     * Returns true if the Set is empty, false otherwise.
+     *
+     * @return true if the Set is empty, false otherwise
+     */
+    boolean isEmpty();
+
+    /**
+     * Returns the number of elements in the Set.
+     *
+     * @return the number of elements in the Set
+     */
+    int size();
+
+    /**
+     * Returns true if the key is contained in the Set, false
+     * otherwise.
+     *
+     * @param key, the key to be searched for
+     * @return true if the key is contained in the Set, false
+     *         otherwise
+     */
+    boolean contains(K key);
+
+    /**
+     * Insert the key into the Set.
+     *
+     * @param key, the key to be inserted
+     */
+    void put(K key);
+
+    /**
+     * Remove the key from the Set.
+     *
+     * @param key, the key to be removed
+     */
+    void delete(K key);
+
+    /**
+     * Returns an Iterable to the elements of the Set.
+     *
+     * @return an Iterable to the elements of the Set
+     */
+    Iterable<K> keys();
+}
+```

@@ -75,19 +75,353 @@ The following provides the interface for the `Stack` class.
 
 ##### Java
 
-<script src="https://gist.github.com/eliucs/401f801b070f1deb3fb4ce73c435a5eb.js"></script>
+```
+package com.algorithmhelper.datastructures.interfaces;
+
+public interface Stack<T> extends Iterable<T> {
+
+    /**
+     * Returns true if the Stack contains no elements, otherwise false.
+     *
+     * @return true if the Stack contains no elements, otherwise false
+     */
+    boolean isEmpty();
+
+    /**
+     * Returns the number of elements contained in the Stack.
+     *
+     * @return the number of elements contained in the Stack
+     */
+    int size();
+
+    /**
+     * Inserts the item to the top of the Stack.
+     *
+     * @param item, the item to be inserted
+     */
+    void push(T item);
+
+    /**
+     * Removes the item at the top of the Stack, and returns it.
+     *
+     * @return the item at the top of the Stack
+     */
+    T pop();
+
+    /**
+     * Returns the item at the top of the Stack.
+     *
+     * @return the item at the top of the Stack
+     */
+    T peek();
+}
+```
 
 ### Implementation (using Linked List)
 
 ##### Java
 
-<script src="https://gist.github.com/eliucs/9c63ed46f51102c2e5efbf24cb4181bf.js"></script>
+```
+package com.algorithmhelper.datastructures.lists;
+
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+import com.algorithmhelper.datastructures.interfaces.Stack;
+
+public class StackLinkedList<T extends Comparable<T>> implements Stack<T> {
+
+    private Node<T> first;
+    private int n;
+
+    private class Node<T> {
+        private T item;
+        private Node<T> next;
+
+        public Node() {}
+
+        public Node(T item, Node<T> next) {
+            this.item = item;
+            this.next = next;
+        }
+    }
+
+    /**
+     * Initializes an empty StackLinkedList.
+     */
+    public StackLinkedList() {
+        first = null;
+        n = 0;
+    }
+
+    /**
+     * Returns true if this StackLinkedList contains no elements, otherwise false.
+     *
+     * @return true if this StackLinkedList contains no elements, otherwise false
+     */
+    public boolean isEmpty() {
+        return first == null;
+    }
+
+    /**
+     * Returns the number of elements contained in the StackLinkedList.
+     *
+     * @return the number of elements contained in the StackLinkedList
+     */
+    public int size() {
+        return n;
+    }
+
+    /**
+     * Inserts the item to the top of the StackLinkedList.
+     *
+     * @param item, the item to be inserted
+     * @throws IllegalArgumentException if the item is null
+     */
+    public void push(T item) {
+        if (item == null)
+            throw new IllegalArgumentException("push with null item");
+
+        Node<T> oldFirst = first;
+        first = new Node(item, oldFirst);
+        n++;
+    }
+
+    /**
+     * Removes the item at the top of the StackLinkedList, and returns it.
+     *
+     * @return the item at the top of the StackLinkedList
+     * @throws NoSuchElementException if this StackLinkedList is empty
+     */
+    public T pop() {
+        if (isEmpty())
+            throw new NoSuchElementException("pop from empty StackLinkedList");
+        T item = first.item;
+        first = first.next;
+        n--;
+        return item;
+    }
+
+    /**
+     * Returns the item at the top of the StackLinkedList.
+     *
+     * @return the item at the top of the StackLinkedList
+     * @throws NoSuchElementException if this StackLinkedList is empty
+     */
+    public T peek() {
+        if (isEmpty())
+            throw new NoSuchElementException("peek from empty StackLinkedList");
+
+        return first.item;
+    }
+
+    /**
+     * Returns a String representation of the StackLinkedList, in the form [x0, x1, ... xn] where
+     * x0...xn are elements of the StackLinkedList in reverse order.
+     *
+     * @return a String representation of the StackLinkedList, with elements separated by a comma
+     *         and space
+     */
+    public String toString() {
+        if (isEmpty())
+            return "[]";
+
+        StringBuilder sb = new StringBuilder();
+        sb.append('[');
+        for (T item : this) {
+            sb.append(item);
+            sb.append(',');
+            sb.append(' ');
+        }
+        sb.append(']');
+        return sb.toString();
+    }
+
+    /**
+     * Returns an Iterator to the StackLinkedList that iterates through the elements of the
+     * StackLinkedList in reverse order.
+     *
+     * @return an Iterator to the StackLinkedList that iterates through the elements of the
+     *         StackLinkedList in reverse order.
+     */
+    public Iterator<T> iterator() {
+        return new Iterator<T>() {
+
+            private Node<T> current = first;
+
+            @Override
+            public boolean hasNext() {
+                return current != null;
+            }
+
+            @Override
+            public T next() {
+                if (!hasNext())
+                    throw new NoSuchElementException("iterator does not have next element");
+                T item = current.item;
+                current = current.next;
+                return item;
+            }
+        };
+    }
+}
+```
 
 ### Implementation (using Dynamic Array)
 
 ##### Java
 
-<script src="https://gist.github.com/eliucs/972f87410dbbf18da96cb87cd918108f.js"></script>
+```
+package com.algorithmhelper.datastructures.lists;
+
+import com.algorithmhelper.datastructures.interfaces.Stack;
+
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
+public class StackDynamicArray<T extends Comparable<T>> implements Stack<T> {
+
+    private T[] arr;
+    private int n;
+
+    /**
+     * Initializes an empty StackDynamicArray.
+     */
+    public StackDynamicArray() {
+        arr = (T[]) new Object[1];
+        n = 0;
+    }
+
+    /**
+     * Returns true if this StackDynamicArray contains no elements, otherwise false.
+     *
+     * @return true if this StackDynamicArray contains no elements, otherwise
+     *         false
+     */
+    public boolean isEmpty() {
+        return n == 0;
+    }
+
+    /**
+     * Returns the number of elements contained in the StackDynamicArray.
+     *
+     * @return the number of elements contained in the StackDynamicArray
+     */
+    public int size() {
+        return n;
+    }
+
+    /**
+     * Resizes the StackDynamicArray arr field to newSize.
+     *
+     * @param newSize, the new size of the arr
+     * @throws IllegalArgumentException if newSize <= 0
+     */
+    private void resize(int newSize) {
+        if (newSize <= 0)
+            throw new IllegalArgumentException("resize with invalid newSize");
+
+        T[] temp = (T[]) new Object[newSize];
+        for (int i = 0; i < n; i++)
+            temp[i] = arr[i];
+        arr = temp;
+    }
+
+    /**
+     * Inserts the item to the top of the StackDynamicArray, but if the arr exceeds its capacity,
+     * then double the size of the arr.
+     *
+     * @param item, the item to be inserted
+     * @throws IllegalArgumentException if the item is null
+     */
+    public void push(T item) {
+        if (item == null)
+            throw new IllegalArgumentException("push with null item");
+
+        if (n == arr.length)
+            resize(2 * arr.length);
+        arr[n++] = item;
+    }
+
+    /**
+     * Removes the item at the top of the StackDynamicArray, and returns it, but if the arr is
+     * below a quarter of the arr capacity, halve the arr size.
+     *
+     * @return the item at the top of the StackDynamicArray
+     * @throws NoSuchElementException if this StackDynamicArray is empty
+     */
+    public T pop() {
+        if (isEmpty())
+            throw new NoSuchElementException("pop from empty StackDynamicArray");
+
+        T item = arr[--n];
+        arr[n] = null;
+        if (n > 0 && n == arr.length/4)
+            resize(arr.length/2);
+        return item;
+    }
+
+    /**
+     * Returns the item at the top of the StackDynamicArray.
+     *
+     * @return the item at the top of the StackDynamicArray
+     * @throws NoSuchElementException if this StackDynamicArray is empty
+     */
+    public T peek() {
+        if (isEmpty())
+            throw new NoSuchElementException("peek from empty StackDynamicArray");
+
+        return arr[n-1];
+    }
+
+    /**
+     * Returns a String representation of the StackDynamicArray, in the form [x0, x1, ... xn]
+     * where x0...xn are elements of the StackDynamicArray in reverse order.
+     *
+     * @return a String representation of the StackDynamicArray, with elements separated by a comma
+     *         and space
+     */
+    public String toString() {
+        if (isEmpty())
+            return "[]";
+
+        StringBuilder sb = new StringBuilder();
+        sb.append('[');
+        for (T item : this) {
+            sb.append(item);
+            sb.append(',');
+            sb.append(' ');
+        }
+        sb.append(']');
+        return sb.toString();
+    }
+
+    /**
+     * Returns an Iterator to the StackDynamicArray that iterates through the elements of the
+     * StackDynamicArray in reverse order.
+     *
+     * @return an Iterator to the StackDynamicArray that iterates through the elements of the
+     *         StackDynamicArray in reverse order.
+     */
+    public Iterator<T> iterator() {
+        return new Iterator<T>() {
+
+            private int i = n;
+
+            @Override
+            public boolean hasNext() {
+                return i > 0;
+            }
+
+            @Override
+            public T next() {
+                if (!hasNext())
+                    throw new NoSuchElementException("iterator does not have next element");
+                return arr[--i];
+            }
+        };
+    }
+}
+```
 
 ### Time Complexity
 

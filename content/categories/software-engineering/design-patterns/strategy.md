@@ -28,32 +28,149 @@ an array or integers, and we would like the following operations: add one to eve
 array, subtract one to every element in the array, and square every element in the array. To 
 conform to the strategy pattern, we start off with the `Strategy` interface:
 
-<script src="https://gist.github.com/eliucs/dcf3fe06fc27841ea5fd126d8d7aa2e0.js"></script>
+```
+package com.algorithmhelper.designpatterns.strategy;
+
+public interface Strategy {
+
+    /**
+     * Performs the operation on the array.
+     *
+     * @param a
+     */
+    void operation(int[] a);
+}
+```
 
 Then we have `ConcreteStrategyA`, which implements `operation`, adding one to every element in the
 array:
 
-<script src="https://gist.github.com/eliucs/cbb2a751ecad10ff03373fd88b111fd9.js"></script>
+```
+package com.algorithmhelper.designpatterns.strategy;
+
+public class ConcreteStrategyA implements Strategy {
+
+    /**
+     * Performs the operation on the array, by adding 1 to every element in the array.
+     *
+     * @param a
+     */
+    public void operation(int[] a) {
+        for (int i = 0; i < a.length; i++)
+            a[i]++;
+    }
+}
+```
 
 Then we have `ConcreteStrategyB`, which implements `operation`, subtracting one from every element 
 in the array:
 
-<script src="https://gist.github.com/eliucs/6d7c4cd9780db584e68c4e473d372b58.js"></script>
+```
+package com.algorithmhelper.designpatterns.strategy;
+
+public class ConcreteStrategyB implements Strategy {
+
+    /**
+     * Performs the operation on the array, by subtracting 1 from every element in the array.
+     *
+     * @param a
+     */
+    public void operation(int[] a) {
+        for (int i = 0; i < a.length; i++)
+            a[i]--;
+    }
+}
+```
 
 Then we have `ConcreteStrategyC`, which implements `operation`, squaring every element in the array:
 
-<script src="https://gist.github.com/eliucs/91f8baa3b1d4f68bc2bcbb8086e32c9b.js"></script>
+```
+package com.algorithmhelper.designpatterns.strategy;
+
+public class ConcreteStrategyC implements Strategy {
+
+    /**
+     * Performs the operation on the array, by squaring every element in the array.
+     *
+     * @param a
+     */
+    public void operation(int[] a) {
+        for (int i = 0; i < a.length; i++)
+            a[i] *= a[i];
+    }
+}
+```
 
 The `Context` then has an instance of `Strategy` called `strategy`, and method `operation` that
 performs the corresponding operation on the array, and prints out the contents of the array:
 
-<script src="https://gist.github.com/eliucs/a28d894d9d32f30f632ee840c311d3cd.js"></script>
+```
+package com.algorithmhelper.designpatterns.strategy;
+
+public class Context {
+
+    private Strategy strategy;
+
+    /**
+     * Initializes a Context with a strategy.
+     *
+     * @param strategy, the Strategy object
+     */
+    public Context(Strategy strategy) {
+        this.strategy = strategy;
+    }
+
+    /**
+     * Performs the operation on the array a by calling the operation from the strategy, and
+     * prints out the contents of a.
+     *
+     * @param a
+     */
+    public void operation(int[] a) {
+        strategy.operation(a);
+        for (int i : a)
+            System.out.print(i + " ");
+        System.out.println();
+    }
+}
+```
 
 We test that we are able to dynamically select the concrete strategy implementation at runtime by
 taking in user input on an array `[0, 1, 2, 3]`. If the user types in `A`, then we use 
 `ConcreteStrategyA`, if `B` then `ConcreteStrategyB`, and if `C` then `ConcreteStrategyC`:
 
-<script src="https://gist.github.com/eliucs/936d563a8adbe8eede7eeb3a5c2aaaa2.js"></script>
+```
+package com.algorithmhelper.designpatterns.strategy;
+
+import java.util.Scanner;
+
+public class StrategyTest {
+
+    public static void main(String[] args) {
+        Context context;
+
+        Scanner in = new Scanner(System.in);
+        while (true) {
+            int[] a = {0, 1, 2, 3};
+
+            String input = in.next();
+
+            if (input.equals("A"))
+                context = new Context(new ConcreteStrategyA());
+            else if (input.equals("B"))
+                context = new Context(new ConcreteStrategyB());
+            else if (input.equals("C"))
+                context = new Context(new ConcreteStrategyC());
+            else if (input.equals("done"))
+                break;
+            else
+                continue;
+
+            context.operation(a);
+        }
+    }
+}
+```
 
 Suppose the input is:
 

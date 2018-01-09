@@ -64,7 +64,7 @@ if (process.env.GCS_JSON_TOKEN) {
     keyFilename: 'server/firebase/config.json'
   });
 }
-// uploadAllArticles(gcsStorage, constructArticleSrcDestUrls(categoryIndex));
+uploadAllArticles(gcsStorage, constructArticleSrcDestUrls(categoryIndex));
 
 var app = express();
 
@@ -213,12 +213,8 @@ app.get('/categories/:category/:topic/:article', (req, res) => {
         if (err) {
           return res.redirect(`/categories/${category}/${topic}`);
         }
-
         // For debug purposes:
         // console.log(data);
-        // console.log(replaceEmWithUnderscores(marked(data)));
-
-        const articleFormatted = replaceEmWithUnderscores(marked(data));
         
         // Get full title and path of category, topic, article:
         let categoryData = categoryIndex.find((x) => {
@@ -234,7 +230,6 @@ app.get('/categories/:category/:topic/:article', (req, res) => {
         });
   
         return res.render('article.hbs', {
-          article: articleFormatted,
           articlePath: JSON.stringify({
             category: {
               title: categoryData.title,
@@ -247,7 +242,8 @@ app.get('/categories/:category/:topic/:article', (req, res) => {
             article: {
               title: articleData.title,
               url: `${categoryData.url}${topicData.url}${articleData.url}`
-            }
+            },
+            gcsSignedUrl: signedUrl
           }),
           showTableOfContents: true
         });

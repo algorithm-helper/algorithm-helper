@@ -30,21 +30,136 @@ methods.
 The following is the `Subject` class, which is able to attach and detach `AbstractObserver` objects
 to its list `observers`, as well as :
 
-<script src="https://gist.github.com/eliucs/54fd7a12fbec42d1aa9f621caa1d88ff.js"></script>
+```
+package com.algorithmhelper.designpatterns.observer;
+
+import com.algorithmhelper.datastructures.interfaces.List;
+import com.algorithmhelper.datastructures.lists.DynamicArray;
+
+public class Subject<State> {
+
+    private List<AbstractObserver> observers = new DynamicArray<>();
+    protected State state;
+
+    /**
+     * Attaches the AbstractObserver observer to the list of observers.
+     *
+     * @param observer, the AbstractObserver object
+     */
+    public void attach(AbstractObserver observer) {
+        observers.insertBack(observer);
+    }
+
+    /**
+     * Detaches the AbstractObserver observer from the list of observers.
+     *
+     * @param observer, the AbstractObserver object
+     */
+    public void detach(AbstractObserver observer) {
+        int i = 0;
+        for (AbstractObserver ob : observers) {
+            if (ob == observer)
+                break;
+            i++;
+        }
+        observers.remove(i);
+    }
+
+    /**
+     * Updates all of the AbstractObserver objects in the list of observers.
+     */
+    public void updateObservers() {
+        for (AbstractObserver ob : observers)
+            ob.update(this);
+    }
+
+    /**
+     * Returns the state of the Subject.
+     *
+     * @return the state of the Subject
+     */
+    public State getState() {
+        return state;
+    }
+
+    /**
+     * Sets the state of the Subject.
+     *
+     * @param state, the State
+     */
+    public void setState(State state) {
+        this.state = state;
+    }
+}
+```
 
 The following is the `AbstractObserver` class:
 
-<script src="https://gist.github.com/eliucs/e9ae8fec3182ccce2e440597671400b4.js"></script>
+```
+package com.algorithmhelper.designpatterns.observer;
+
+public interface AbstractObserver<State> {
+
+    /**
+     * Updates the AbstractObserver.
+     */
+    void update(Subject<State> subject);
+}
+```
 
 The following is the `ConcreteObserver` class:
 
-<script src="https://gist.github.com/eliucs/bb296b6132b70971a0eb4bc0c51fa3e7.js"></script>
+```
+package com.algorithmhelper.designpatterns.observer;
+
+public class ConcreteObserver<State> implements AbstractObserver<State> {
+
+    private String name;
+
+    /**
+     * Initializes the ConcreteObserver.
+     */
+    public ConcreteObserver(String name) {
+        this.name = name;
+    }
+
+    /**
+     * Updates the ConcreteObserver.
+     */
+    public void update(Subject<State> subject) {
+        System.out.println("update from ConcreteObserver: " + name);
+    }
+}
+```
 
 Then to test that this model works, we have one `Subject` object called `subject` and multiple 
 `ConcreteObserver` objects get attached onto `subject`. Then we call `updateObservers` from on
 `subject`:
 
-<script src="https://gist.github.com/eliucs/b73d54bdfd34d92f9d1e9c686e852743.js"></script>
+```
+package com.algorithmhelper.designpatterns.observer;
+
+public class ObserverTest {
+
+    private class State {
+        // Anything can go in here to control State...
+    }
+
+    public static void main(String[] args) {
+        Subject<State> subject = new Subject<>();
+
+        AbstractObserver<State> ob1 = new ConcreteObserver<>("1");
+        AbstractObserver<State> ob2 = new ConcreteObserver<>("2");
+        AbstractObserver<State> ob3 = new ConcreteObserver<>("3");
+
+        subject.attach(ob1);
+        subject.attach(ob2);
+        subject.attach(ob3);
+
+        subject.updateObservers();
+    }
+}
+```
 
 We get the expected output:
 

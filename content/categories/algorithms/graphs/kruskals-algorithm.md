@@ -62,7 +62,99 @@ complexity is $O(|V|+|E|)$.
 
 ##### Java
 
-<script src="https://gist.github.com/eliucs/2e20343754b78e51768654c3569976a8.js"></script>
+```
+package com.algorithmhelper.algorithms.graphs;
+
+import com.algorithmhelper.algorithms.sorting.QuickSort;
+import com.algorithmhelper.datastructures.graphs.UndirectedWeightedGraph;
+import com.algorithmhelper.datastructures.hashing.HashMapLinearProbing;
+import com.algorithmhelper.datastructures.interfaces.Map;
+import com.algorithmhelper.datastructures.trees.UnionFind;
+
+public class KruskalsAlgorithm<T extends Comparable<T>> {
+
+    private UndirectedWeightedGraph<T> mst;
+
+    private class Edge<T extends Comparable<T>> implements Comparable<Edge<T>> {
+        T u;
+        T v;
+        double weight;
+
+        Edge(T u, T v, double weight) {
+            this.u = u;
+            this.v = v;
+            this.weight = weight;
+        }
+
+        public int compareTo(Edge<T> that) {
+            if (this.weight < that.weight)
+                return -1;
+            else if (this.weight > that.weight)
+                return 1;
+            return 0;
+        }
+    }
+
+    /**
+     * Initializes a KruskalsAlgorithm object, and runs kruskalsAlgorithm on the graph G.
+     *
+     * @param G, the graph
+     * @throws IllegalArgumentException if the graph G is null
+     */
+    public KruskalsAlgorithm(UndirectedWeightedGraph<T> G) {
+        if (G == null)
+            throw new IllegalArgumentException("constructor with null graph G");
+
+        mst = new UndirectedWeightedGraph<>();
+
+        if (G.V() == 0)
+            return;
+
+        kruskalsAlgorithm(G);
+    }
+
+    /**
+     * Runs Kruskal's algorithm to build up the minimum spanning tree mst.
+     *
+     * @param G, the graph
+     */
+    private void kruskalsAlgorithm(UndirectedWeightedGraph<T> G) {
+        Map<T, Integer> numMap = new HashMapLinearProbing<>();
+        UnionFind unionFind = new UnionFind(G.V());
+        Edge<T>[] edges = new Edge[G.E()];
+
+        int i = 0, j = 0;
+        for (T u : G.getVertices()) {
+            numMap.put(u, i);
+            i++;
+
+            for (T v : G.getAdjacent(u)) {
+                edges[j] = new Edge<>(u, v, G.getWeight(u, v));
+                j++;
+            }
+        }
+
+        QuickSort.sort(edges);
+
+        for (Edge<T> edge : edges) {
+            if (unionFind.connected(numMap.get(edge.u), numMap.get(edge.v)))
+                continue;
+
+            mst.insertEdge(edge.u, edge.v, edge.weight);
+            unionFind.union(numMap.get(edge.u), numMap.get(edge.v));
+        }
+    }
+
+    /**
+     * Returns the minimum spanning tree.
+     *
+     * @return the minimum spanning tree
+     */
+    public UndirectedWeightedGraph<T> getMinimumSpanningTree() {
+        return mst;
+    }
+}
+```
 
 ### Time Complexity
 

@@ -19,19 +19,100 @@ able to do these operations on a `List`.
 Suppose that `NewComponentInterface` is the interface that we are expecting, to be able to perform
 the operation on a `List`, not an array.
 
-<script src="https://gist.github.com/eliucs/811533c32023363fcdcea139624fa354.js"></script>
+```
+package com.algorithmhelper.designpatterns.adapter;
+
+import com.algorithmhelper.datastructures.interfaces.List;
+
+public interface NewComponentInterface {
+
+    /**
+     * Performs the operation on a List, and returns the result of the operation.
+     *
+     * @param list, the List object
+     * @return the result of the operation on the list
+     */
+    int operation(List<Integer> list);
+}
+```
 
 The `OldComponent` has the method `operation`, but it expects an array of integers:
 
-<script src="https://gist.github.com/eliucs/fe3ddb6ec096f5e7b70b647219c54b67.js"></script>
+```
+package com.algorithmhelper.designpatterns.adapter;
+
+public class OldComponent {
+
+    /**
+     * Sums the values of the array.
+     *
+     * @param array
+     */
+    public int operation(int[] array) {
+        int sum = 0;
+        for (int i : array)
+            sum += i;
+        return sum;
+    }
+}
+```
 
 Then to reuse the `OldComponent`, we create a class `OldComponentAdapter`, which takes in an 
 `OldComponent` object as a parameter, and wraps the old `operation` method with the new one, which
 expects a `List`, as required by the interface.
 
-<script src="https://gist.github.com/eliucs/74ce656f42be0b97062f00e1dbef5cec.js"></script>
+```
+package com.algorithmhelper.designpatterns.adapter;
+
+import com.algorithmhelper.datastructures.interfaces.List;
+
+public class OldComponentAdapter implements NewComponentInterface {
+
+    private OldComponent adaptee;
+
+    /**
+     * Initializes the OldComponentAdapter with the OldComponent.
+     *
+     * @param adaptee, the OldComponent being adapted
+     */
+    public OldComponentAdapter(OldComponent adaptee) {
+        this.adaptee = adaptee;
+    }
+
+    /**
+     * Performs the adapted operation (i.e. summing the values of the list).
+     *
+     * @param list, the List object
+     * @return the sum of the values of the list
+     */
+    public int operation(List<Integer> list) {
+        int[] array = new int[list.size()];
+        for (int i = 0; i < list.size(); i++)
+            array[i] = list.get(i);
+        return adaptee.operation(array);
+    }
+}
+```
 
 Then when we actually have to use `operation` on a `List` of integers, we instantiate the 
 `NewComponentInterface` with an `OldComponentAdapter` that wraps around a `OldComponent`:
 
-<script src="https://gist.github.com/eliucs/8ef3c0d339f242b6e89e7d32b8a086b5.js"></script>
+```
+package com.algorithmhelper.designpatterns.adapter;
+
+import com.algorithmhelper.datastructures.interfaces.List;
+import com.algorithmhelper.datastructures.lists.DynamicArray;
+
+public class AdapterTest {
+
+    public static void main(String[] args) {
+        List<Integer> list = new DynamicArray<>();
+        list.insertBack(1);
+        list.insertBack(2);
+        list.insertBack(3);
+
+        NewComponentInterface newComponentInterface = new OldComponentAdapter(new OldComponent());
+        System.out.println(newComponentInterface.operation(list));
+    }
+}
+```

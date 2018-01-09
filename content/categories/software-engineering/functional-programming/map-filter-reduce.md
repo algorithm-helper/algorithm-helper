@@ -33,7 +33,13 @@ Then, given the array `arr`, we call the method `map`, passing in an anonymous f
 computes the square of the argument that it is passed, and storing the result of that operation, 
 namely a new array, to `newArr`:
 
-<script src="https://gist.github.com/eliucs/3ce5ef3ce8016512dca1224ff4ec423c.js"></script>
+```
+const arr = [0, 1, 2, 3, 4, 5];
+
+const newArr = arr.map((x) => x*x);
+
+console.log(newArr);
+```
 
 We get the expected output:
 
@@ -44,7 +50,21 @@ We get the expected output:
 We can write the `map` function from scratch, which takes in two arguments `list` and `fn`. With a
 new array `result`, we iterate over each element `x` of `list`, appending `fn(x)` to `result`:
 
-<script src="https://gist.github.com/eliucs/be9beed31c90b04e35c99047c08c8baf.js"></script>
+```
+const map = (list, fn) => {
+    let result = [];
+    list.forEach(x => {
+        result.push(fn(x));
+    });
+    return result;
+};
+
+const arr = [0, 1, 2, 3, 4, 5];
+
+const newArr = map(arr, (x) => x*x);
+
+console.log(newArr);
+```
 
 We get the same output:
 
@@ -59,7 +79,13 @@ numbers. Then, given the array `arr`, we call the method `filter`, passing in an
 function that returns `true` only if the argument that it is passed is even, and storing the result 
 of that operation, namely a new array, to `newArr`:
 
-<script src="https://gist.github.com/eliucs/391345ce7bb4a34b39333aed74369d1a.js"></script>
+```
+const arr = [0, 1, 2, 3, 4, 5];
+
+const newArr = arr.filter((x) => x%2==0);
+
+console.log(newArr);
+```
 
 We get the expected output:
 
@@ -71,7 +97,22 @@ We can write the `filter` function from scratch, which takes in two arguments `l
 a new array `result`, we iterate over each element `x` of `list`, appending `x` to `result` only 
 if `fn(x)` returns `true`:
 
-<script src="https://gist.github.com/eliucs/0ef4ed429511ada137a87a2cb0f27f18.js"></script>
+```
+const filter = (list, fn) => {
+    let result = [];
+    list.forEach(x => {
+        if (fn(x) === true)
+            result.push(x);
+    });
+    return result;
+};
+
+const arr = [0, 1, 2, 3, 4, 5];
+
+const newArr = filter(arr, (x) => x%2==0);
+
+console.log(newArr);
+```
 
 We get the same output:
 
@@ -86,7 +127,13 @@ list. Then, give the array `arr`, we call the method `reduce`, passing in an ano
 function that takes in two arguments `previousValue`, and `currentValue`, and returns the sum of 
 the two arguments. Then, storing the result of that operation, namely a value, to `sum`:
 
-<script src="https://gist.github.com/eliucs/2d32a9710730321efeadda81561c54f1.js"></script>
+```
+const arr = [0, 1, 2, 3, 4, 5];
+
+const sum = arr.reduce((previousValue, currentValue) => previousValue + currentValue);
+
+console.log(sum);
+```
 
 We get the expected output:
 
@@ -101,7 +148,32 @@ object. Then we define a recursive helper function called `reduceHelper` inside 
 in three arguments: `list`, `fn`, and `start`. Then it calls `fn` on `start` and the last element 
 of `list`, added to the recursive result of `reduceHelper` except shrinking the array size by 1:
 
-<script src="https://gist.github.com/eliucs/1d5f379e67d4e17b37200b88b8f3d276.js"></script>
+```
+const reduce = (list, fn) => {
+    if (!Array.isArray(list)) 
+        throw Error("list is not an Array");
+    if (list.length === 0) 
+        return undefined;
+
+    const reduceHelper = (list, fn, start) => {
+        if (list.length === 0) 
+            return start;
+        else if (list.length === 1)
+            return list[0];
+        else
+            return fn(start, list[list.length-1]) + 
+                   reduceHelper(list.slice(0, list.length - 1), fn, start);
+    };
+
+    return reduceHelper(list, fn, list[0]);
+};
+
+const arr = [0, 1, 2, 3, 4, 5];
+
+const sum = reduce(arr, (previousValue, currentValue) => previousValue + currentValue);
+
+console.log(sum);
+```
 
 We get the same output:
 

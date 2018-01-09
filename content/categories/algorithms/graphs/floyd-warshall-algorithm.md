@@ -67,7 +67,107 @@ floydWarshallAlgorithm(G, v):
 
 ##### Java
 
-<script src="https://gist.github.com/eliucs/920eadaf92a446fec6f97c0ba09cbd9d.js"></script>
+```
+package com.algorithmhelper.algorithms.graphs;
+
+import com.algorithmhelper.datastructures.hashing.HashMapLinearProbing;
+import com.algorithmhelper.datastructures.interfaces.Map;
+import com.algorithmhelper.datastructures.interfaces.Queue;
+import com.algorithmhelper.datastructures.interfaces.WeightedGraph;
+import com.algorithmhelper.datastructures.lists.QueueDynamicArray;
+
+public class FloydWarshallAlgorithm<T extends Comparable<T>> {
+
+    private Map<T, Integer> numMap;
+    private double[][] dist;
+    private T[][] next;
+
+    /**
+     * Initializes the FloydWarshallAlgorithm object, and runs floydWarshallAlgorithm on the
+     * graph G.
+     *
+     * @param G, the graph
+     */
+    public FloydWarshallAlgorithm(WeightedGraph<T> G) {
+        if (G == null)
+            throw new IllegalArgumentException("constructor with null graph G");
+
+        numMap = new HashMapLinearProbing<>();
+        dist = new double[G.V()][G.V()];
+        next = (T[][]) new Object[G.V()][G.V()];
+
+        int i = 0;
+        for (T u : G.getVertices()) {
+            numMap.put(u, i);
+            i++;
+        }
+
+        floydWarshallAlgorithm(G);
+    }
+
+    /**
+     * Runs the Floyd-Warshall algorithm on the WeightedGraph G, and builds up the dist and
+     * next matrix.
+     *
+     * @param G, the graph
+     */
+    private void floydWarshallAlgorithm(WeightedGraph<T> G) {
+        for (T u : G.getVertices()) {
+            for (T v : G.getAdjacent(u)) {
+                dist[numMap.get(u)][numMap.get(v)] = G.getWeight(u, v);
+                next[numMap.get(u)][numMap.get(v)] = v;
+            }
+        }
+
+        for (int k = 0; k < G.V() - 1; k++) {
+            for (int j = 0; j < G.V() - 1; j++) {
+                for (int i = 0; i < G.V() - 1; i++) {
+                    if (dist[i][j] > dist[i][k] + dist[k][j]) {
+                        dist[i][j] = dist[i][k] + dist[k][j];
+                        next[i][j] = next[i][k];
+                    }
+                }
+            }
+        }
+
+        for (int i = 0; i < G.V() - 1; i++) {
+            for (int j = 0; j < G.V() - 1; j++) {
+                if (dist[i][j] < 0)
+                    throw new RuntimeException("negative weight cycle detected in graph G");
+            }
+        }
+
+    }
+
+    /**
+     * Returns an Iterable to the shortest path from vertex u to vertex v in the graph.
+     *
+     * @param u, the first vertex
+     * @param v, the second vertex
+     * @return an Iterable to the shortest path from vertex u to vertex v in the graph
+     */
+    public Iterable<T> getShortestPath(T u, T v) {
+        if (u == null)
+            throw new IllegalArgumentException("getShortestPath with null vertex u");
+        if (v == null)
+            throw new IllegalArgumentException("getShortestPath with null vertex v");
+        if (next[numMap.get(u)][numMap.get(v)] == null)
+            throw new IllegalArgumentException("getShortestPath with non-existent path from " +
+                    "vertex u to v");
+
+        Queue<T> queue = new QueueDynamicArray<>();
+        T current = u;
+        queue.enqueue(current);
+
+        while (current != v) {
+            current = next[numMap.get(current)][numMap.get(v)];
+            queue.enqueue(current);
+        }
+
+        return queue;
+    }
+}
+```
 
 ### Time Complexity
 

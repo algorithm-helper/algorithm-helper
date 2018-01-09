@@ -58,13 +58,29 @@ In the case of using the ternary search trie as a map, the nodes store $3$ child
 and `right`. They also have a field `value`. The following is a snippet of Java code for the `Node` 
 class:
 
-<script src="https://gist.github.com/eliucs/3f4b098e1f43bd2b8ae16104a47a6068.js"></script>
+```
+class Node {
+    Object value;
+    Node left;
+    Node mid;
+    Node right;
+    // other fields may go here...
+}
+```
 
 In the case of using the ternary search trie as a set, the nodes store $3$ children: `left`, `mid`,
 and `right`. They also have a boolean field `value`. The following is a snippet of Java code for the 
 `Node` class:
 
-<script src="https://gist.github.com/eliucs/6f06f7c33a041d3dd0960c0801510e0b.js"></script>
+```
+class Node {
+    boolean value;
+    Node left;
+    Node mid;
+    Node right;
+    // other fields may go here...
+}
+```
 
 ### Operations
 
@@ -109,13 +125,421 @@ and `right`. They also have a boolean field `value`. The following is a snippet 
 
 ##### Java
 
-<script src="https://gist.github.com/eliucs/7ad338de27e385d5ab46c95038e0e02b.js"></script>
+```
+package com.algorithmhelper.datastructures.strings;
+
+import com.algorithmhelper.datastructures.interfaces.Map;
+import com.algorithmhelper.datastructures.interfaces.Queue;
+import com.algorithmhelper.datastructures.lists.QueueDynamicArray;
+
+public class TernarySearchTrieMap<V> implements Map<String, V> {
+
+    private int n;
+    private Node root;
+
+    private class Node {
+        V val;
+        char c;
+        Node left;
+        Node mid;
+        Node right;
+    }
+
+    /**
+     * Initializes an empty TernarySearchTrieMap.
+     */
+    public TernarySearchTrieMap() {
+        n = 0;
+        root = new Node();
+    }
+
+    /**
+     * Returns true if the TernarySearchTrieMap is empty, false otherwise.
+     *
+     * @return true if the TernarySearchTrieMap is empty, false otherwise
+     */
+    public boolean isEmpty() {
+        return n == 0;
+    }
+
+    /**
+     * Returns the number of elements in the TernarySearchTrieMap.
+     *
+     * @return the number of elements in the TernarySearchTrieMap
+     */
+    public int size() {
+        return n;
+    }
+
+    /**
+     * Returns the value associated with the key in the TernarySearchTrieMap.
+     *
+     * @param key, the key to be searched for
+     * @return the value associated with the key in the TernarySearchTrieMap
+     * @throws IllegalArgumentException if the key is null
+     */
+    public V get(String key) {
+        if (key == null)
+            throw new IllegalArgumentException("get with null key");
+
+        Node result = get(root, key, 0);
+
+        if (result == null)
+            return null;
+        return result.val;
+    }
+
+    /**
+     * Helper function to return the value associated with the key in the TernarySearchTrieMap.
+     *
+     * @param node, the current Node being traversed
+     * @param key, the key to be searched for
+     * @param index, the current char index into the key
+     * @return the value associated with the key in the TernarySearchTrieMap
+     */
+    private Node get(Node node, String key, int index) {
+        if (node == null)
+            return null;
+
+        char c = key.charAt(index);
+
+        if (c < node.c)
+            return get(node.left, key, index);
+        else if (c > node.c)
+            return get(node.right, key, index);
+        else if (index < key.length()-1)
+            return get(node.mid, key, index+1);
+        return node;
+    }
+
+    /**
+     * Returns true if the key is contained in the TernarySearchTrieMap, false otherwise.
+     *
+     * @param key, the key to be searched for
+     * @return true if the key is contained in the TernarySearchTrieMap, false otherwise
+     * @throws IllegalArgumentException if the key is null
+     */
+    public boolean contains(String key) {
+        if (key == null)
+            throw new IllegalArgumentException("contains with null key");
+        return get(root, key, 0) != null;
+    }
+
+    /**
+     * Inserts the (key, val) pair into the TernarySearchTrieMap, but if the value is null, then
+     * delete the element with the associated key.
+     *
+     * @param key, the key to be inserted
+     * @param val, the val associated with the key
+     * @throws IllegalArgumentException if the key is null
+     */
+    public void put(String key, V val) {
+        if (key == null)
+            throw new IllegalArgumentException("put with null key");
+        root = put(root, key, val, 0);
+        n++;
+    }
+
+    /**
+     * Helper function to insert the (key, val) pair into the TernarySearchTrieMap.
+     *
+     * @param node, the current Node being traversed
+     * @param key, the key to be searched for
+     * @param val, the val associated with the key
+     * @param index, the current char index into the key
+     * @return the node after being updated
+     */
+    private Node put(Node node, String key, V val, int index) {
+        char c = key.charAt(index);
+        if (node == null) {
+            node = new Node();
+            node.c = c;
+        }
+
+        if (c < node.c)
+            node.left = put(node.left, key, val, index);
+        else if (c > node.c)
+            node.right = put(node.right, key, val, index);
+        else if (index < key.length()-1)
+            node.mid = put(node.mid, key, val, index+1);
+        else
+            node.val = val;
+        return node;
+    }
+
+    /**
+     * Removes the key from the TernarySearchTrieMap.
+     *
+     * @param key, the key to be removed
+     * @throws IllegalArgumentException if the key is null
+     */
+    public void delete(String key) {
+        if (key == null)
+            throw new IllegalArgumentException("delete with null key");
+
+        root = delete(root, key, 0);
+        n--;
+    }
+
+    /**
+     * Helper function for delete.
+     *
+     * @param node, the current Node being traversed
+     * @param key, the key to be searched for
+     * @param index, the current char index into the key
+     * @return the node after being updated
+     */
+    private Node delete(Node node, String key, int index) {
+        char c = key.charAt(index);
+        if (node == null) {
+            node = new Node();
+            node.c = c;
+        }
+
+        if (c < node.c)
+            node.left = delete(node.left, key, index);
+        else if (c > node.c)
+            node.right = delete(node.right, key, index);
+        else if (index < key.length()-1)
+            node.mid = delete(node.mid, key, index+1);
+        else
+            node.val = null;
+        return node;
+    }
+
+    /**
+     * Returns an Iterable to the keys of the TernarySearchTrieMap.
+     *
+     * @return an Iterable to the keys of the TernarySearchTrieMap
+     */
+    public Iterable<String> keys() {
+        Queue<String> queue = new QueueDynamicArray<>();
+        keys(root.left, queue, Character.toString(root.left.c));
+        keys(root.mid, queue, Character.toString(root.left.c));
+        keys(root.right, queue, Character.toString(root.left.c));
+        return queue;
+    }
+
+    /**
+     * Helper function for keys.
+     *
+     * @param node, the current Node being traversed
+     * @param key, the key to be searched for
+     * @return an Iterable to the keys found at this current node
+     */
+    private void keys(Node node, Queue<String> queue, String key) {
+        if (node == null)
+            return;
+
+        if (node.val != null)
+            queue.enqueue(key);
+
+        keys(node.left, queue, key + Character.toString(node.left.c));
+        keys(node.mid, queue, key + Character.toString(node.left.c));
+        keys(node.right, queue, key + Character.toString(node.left.c));
+    }
+}
+```
 
 ### Implementation (Set)
 
 ##### Java
 
-<script src="https://gist.github.com/eliucs/692298624d62a07c1dc5d9a7b09e4db7.js"></script>
+```
+package com.algorithmhelper.datastructures.strings;
+
+import com.algorithmhelper.datastructures.interfaces.Queue;
+import com.algorithmhelper.datastructures.interfaces.Set;
+import com.algorithmhelper.datastructures.lists.QueueDynamicArray;
+
+public class TernarySearchTrieSet implements Set<String> {
+
+    private int n;
+    private Node root;
+
+    private class Node {
+        boolean val = false;
+        char c;
+        Node left;
+        Node mid;
+        Node right;
+    }
+
+    /**
+     * Initializes an empty TernarySearchTrieSet.
+     */
+    public TernarySearchTrieSet() {
+        n = 0;
+        root = new Node();
+    }
+
+    /**
+     * Returns true if the TernarySearchTrieSet is empty, false otherwise.
+     *
+     * @return true if the TernarySearchTrieSet is empty, false otherwise
+     */
+    public boolean isEmpty() {
+        return n == 0;
+    }
+
+    /**
+     * Returns the number of elements in the TernarySearchTrieSet.
+     *
+     * @return the number of elements in the TernarySearchTrieSet
+     */
+    public int size() {
+        return n;
+    }
+
+    /**
+     * Returns true if the key is contained in the TernarySearchTrieSet, false otherwise.
+     *
+     * @param key, the key to be searched for
+     * @return true if the key is contained in the TernarySearchTrieSet, false otherwise
+     * @throws IllegalArgumentException if the key is null
+     */
+    public boolean contains(String key) {
+        if (key == null)
+            throw new IllegalArgumentException("contains with null key");
+        return contains(root, key, 0);
+    }
+
+    /**
+     * Helper function to return true if the key is contained in the TernarySearchTrieSet, false
+     * otherwise.
+     *
+     * @param node, the current Node being traversed
+     * @param key, the key to be searched for
+     * @param index, the current char index into the key
+     * @return true if the key is contained in the TernarySearchTrieSet, false otherwise
+     */
+    private boolean contains(Node node, String key, int index) {
+        if (node == null)
+            return false;
+
+        char c = key.charAt(index);
+
+        if (c < node.c)
+            return contains(node.left, key, index);
+        else if (c > node.c)
+            return contains(node.right, key, index);
+        else if (index < key.length()-1)
+            return contains(node.mid, key, index+1);
+        return true;
+    }
+
+    /**
+     * Inserts the key into the TernarySearchTrieSet.
+     *
+     * @param key, the key to be inserted
+     * @throws IllegalArgumentException if the key is null
+     */
+    public void put(String key) {
+        if (key == null)
+            throw new IllegalArgumentException("put with null key");
+        root = put(root, key, 0);
+        n++;
+    }
+
+    /**
+     * Helper function to insert the key into the TernarySearchTrieSet.
+     *
+     * @param node, the current Node being traversed
+     * @param key, the key to be searched for
+     * @param index, the current char index into the key
+     * @return the node after being updated
+     */
+    private Node put(Node node, String key, int index) {
+        char c = key.charAt(index);
+        if (node == null) {
+            node = new Node();
+            node.c = c;
+        }
+
+        if (c < node.c)
+            node.left = put(node.left, key, index);
+        else if (c > node.c)
+            node.right = put(node.right, key, index);
+        else if (index < key.length()-1)
+            node.mid = put(node.mid, key, index+1);
+        else
+            node.val = true;
+        return node;
+    }
+
+    /**
+     * Removes the key from the TernarySearchTrieSet.
+     *
+     * @param key, the key to be removed
+     * @throws IllegalArgumentException if the key is null
+     */
+    public void delete(String key) {
+        if (key == null)
+            throw new IllegalArgumentException("delete with null key");
+
+        root = delete(root, key, 0);
+        n--;
+    }
+
+    /**
+     * Helper function for delete.
+     *
+     * @param node, the current Node being traversed
+     * @param key, the key to be searched for
+     * @param index, the current char index into the key
+     * @return the node after being updated
+     */
+    private Node delete(Node node, String key, int index) {
+        char c = key.charAt(index);
+        if (node == null) {
+            node = new Node();
+            node.c = c;
+        }
+
+        if (c < node.c)
+            node.left = delete(node.left, key, index);
+        else if (c > node.c)
+            node.right = delete(node.right, key, index);
+        else if (index < key.length()-1)
+            node.mid = delete(node.mid, key, index+1);
+        else
+            node.val = false;
+        return node;
+    }
+
+    /**
+     * Returns an Iterable to the keys of the TernarySearchTrieSet.
+     *
+     * @return an Iterable to the keys of the TernarySearchTrieSet
+     */
+    public Iterable<String> keys() {
+        Queue<String> queue = new QueueDynamicArray<>();
+        keys(root.left, queue, Character.toString(root.left.c));
+        keys(root.mid, queue, Character.toString(root.left.c));
+        keys(root.right, queue, Character.toString(root.left.c));
+        return queue;
+    }
+
+    /**
+     * Helper function for keys.
+     *
+     * @param node, the current Node being traversed
+     * @param key, the key to be searched for
+     * @return an Iterable to the keys found at this current node
+     */
+    private void keys(Node node, Queue<String> queue, String key) {
+        if (node == null)
+            return;
+
+        if (node.val)
+            queue.enqueue(key);
+
+        keys(node.left, queue, key + Character.toString(node.left.c));
+        keys(node.mid, queue, key + Character.toString(node.left.c));
+        keys(node.right, queue, key + Character.toString(node.left.c));
+    }
+}
+```
 
 ### Time Complexity
 

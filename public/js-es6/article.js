@@ -10,6 +10,41 @@
     // For debug purposes:
     // console.log(articlePath);
 
+    const replaceEmWithUnderscores = (text) => {
+        text = text
+            .replace(/\<em\>/g, '_')
+            .replace(/\<\/em\>/g, '_');
+        return text;
+    };
+
+    function loadGist(element, gistId) {
+        var callbackName = "gist_callback";
+        window[callbackName] = function (gistData) {
+            delete window[callbackName];
+            var html = '<link rel="stylesheet" href="' + escapeHtml(gistData.stylesheet) + '"></link>';
+            html += gistData.div;
+            element.innerHTML = html;
+            script.parentNode.removeChild(script);
+        };
+        var script = document.createElement("script");
+        script.setAttribute("src", "https://gist.github.com/" + gistId + ".json?callback=" + callbackName);
+        document.body.appendChild(script);
+    }
+
+    // Render article:
+    $.ajax({
+        url: articlePath.gcsSignedUrl,
+        async: false,
+        success: function (data){
+            document.getElementById('article-markdown').innerHTML = 
+                replaceEmWithUnderscores(marked(data));
+            hljs.initHighlightingOnLoad();
+        },
+        error: function(err) {
+            console.log(err);
+        }
+    });
+
     // Create breadcrumbs, put below first h1 occurence:
     (global => {
         let breadcrumbs = $(document.createElement('div'))

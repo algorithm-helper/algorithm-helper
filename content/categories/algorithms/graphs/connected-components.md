@@ -21,7 +21,78 @@ next available, unvisited vertex and repeat the process, this time with a differ
 
 ##### Java
 
-<script src="https://gist.github.com/eliucs/dcad13017477cf116c4e8528b91e599d.js"></script>
+```
+package com.algorithmhelper.algorithms.graphs;
+
+import com.algorithmhelper.datastructures.hashing.HashSetLinearProbing;
+import com.algorithmhelper.datastructures.interfaces.Graph;
+import com.algorithmhelper.datastructures.interfaces.Map;
+import com.algorithmhelper.datastructures.interfaces.Set;
+
+public class ConnectedComponents<T extends Comparable<T>> {
+
+    private Map<T, Integer> component;
+    private int id;
+
+    /**
+     * Initializes a ConnectedComponents object, and runs connectedComponents on the
+     * graph G.
+     *
+     * @param G, the graph
+     * @throws IllegalArgumentException if the graph G is null
+     */
+    public ConnectedComponents(Graph<T> G) {
+        if (G == null)
+            throw new IllegalArgumentException("constructor with null graph G");
+
+        id = 0;
+        connectedComponents(G);
+    }
+
+    /**
+     * Iterates over every vertex u in G, running depth first search to find every vertex v
+     * contained in the component with u, and mapping v to the current id.
+     *
+     * @param G, the graph
+     */
+    private void connectedComponents(Graph<T> G) {
+        Set<T> visited = new HashSetLinearProbing<>();
+
+        for (T u : G.getVertices()) {
+            if (visited.contains(u))
+                continue;
+
+            DepthFirstSearchRecursion<T> dfs = new DepthFirstSearchRecursion<>(G, u);
+            for (T v : dfs.getVisited()) {
+                visited.put(v);
+                component.put(v, id);
+            }
+            id++;
+        }
+    }
+
+    /**
+     * Returns true if both vertices u and v belong to the same component (i.e. are mapped to the
+     * same id in the Map component, otherwise false.
+     *
+     * @param u, the first vertex
+     * @param v, the second vertex
+     * @return true if both vertices u and v belong to the same component (i.e. are mapped to the
+     *         same id in the Map component, otherwise false
+     * @throws IllegalArgumentException if the vertex u is null
+     * @throws IllegalArgumentException if the vertex v is null
+     */
+    public boolean isConnected(T u, T v) {
+        if (u == null)
+            throw new IllegalArgumentException("isConnected with null vertex u");
+        if (v == null)
+            throw new IllegalArgumentException("isConnected with null vertex v");
+        if (!component.contains(u) || !component.contains(v))
+            return false;
+        return component.get(u).equals(component.get(v));
+    }
+}
+```
 
 ### Time Complexity
 

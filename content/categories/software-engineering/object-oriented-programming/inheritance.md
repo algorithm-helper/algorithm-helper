@@ -18,19 +18,92 @@ Java for example, this is via the `super` keyword.
 The following is an example of inheritance. We start off with the class `SuperClass` from which 
 the classes `SubClassA` and `SubClassB` will inherit from:
 
-<script src="https://gist.github.com/eliucs/d1a52e5b81e194b1392b2881d5e3dd26.js"></script>
+```
+package com.algorithmhelper.objectorientedprogramming.inheritance;
+
+public class SuperClass {
+
+    private String name;
+    private int value;
+
+    /**
+     * Constructor for the SuperClass object.
+     */
+    public SuperClass() {
+        name = "default";
+        value = 0;
+    }
+
+    /**
+     * Overloaded constructor for the SuperClass object.
+     *
+     * @param name, the name
+     * @param value, the value
+     */
+    public SuperClass(String name, int value) {
+        this.name = name;
+        this.value = value;
+    }
+
+    /**
+     * Method that prints out the name and value.
+     */
+    public void method() {
+        System.out.println("name: " + name + " value: " + value);
+    }
+}
+```
 
 The class `SubClassA` inherits from `SuperClass`, meaning that we have access to the superclass
 object through the keyword `super`. Thus to be able to set the `name` and `value` fields in the
 superclass, we can call the superclass constructor. As usual, the constructor can be overloaded
 with different parameters, and also call the other superclass constructor:
 
-<script src="https://gist.github.com/eliucs/2d79551c5b5ffcfa8b613025461c41bd.js"></script>
+```
+package com.algorithmhelper.objectorientedprogramming.inheritance;
+
+public class SubClassA extends SuperClass {
+
+    private int valueA;
+
+    /**
+     * Constructor for the SubClassA object.
+     */
+    public SubClassA() {
+        super();
+        valueA = 0;
+    }
+
+    /**
+     * Overloaded constructor for the SubClassA object.
+     *
+     * @param name, the name
+     * @param value, the value
+     */
+    public SubClassA(String name, int value, int valueA) {
+        super(name, value);
+        this.valueA = valueA;
+    }
+}
+```
 
 Note that `SubClassA` does not have `method`. However, because it inherits from method, we have
 access to the `method` in `SuperClass`:
 
-<script src="https://gist.github.com/eliucs/cb658d0fa9c2a8b6e20832f977e80b47.js"></script>
+```
+package com.algorithmhelper.objectorientedprogramming.inheritance;
+
+public class InheritanceTest1 {
+
+    public static void main(String[] args) {
+        SubClassA obj3 = new SubClassA();
+        SubClassA obj4 = new SubClassA("Mary Doe", 200, 100);
+
+        obj3.method();
+        obj4.method();
+    }
+}
+```
 
 And when run, this gives the output:
 
@@ -43,11 +116,57 @@ With `SubClassB`, it is very similar to `SubClassA` except that we override `met
 `SuperClass`. This allows us to give `SubClassB` its own implementation of `method`, which in this
 example, just prints out its `valueB` field: 
 
-<script src="https://gist.github.com/eliucs/e91064c7817e6a5c9d6dc1b1a873e37a.js"></script>
+```
+package com.algorithmhelper.objectorientedprogramming.inheritance;
+
+public class SubClassB extends SuperClass {
+
+    private int valueB;
+
+    /**
+     * Constructor for the SubClassB object.
+     */
+    public SubClassB() {
+        super();
+        valueB = 0;
+    }
+
+    /**
+     * Overloaded constructor for the SubClassB object.
+     *
+     * @param name, the name
+     * @param value, the value
+     */
+    public SubClassB(String name, int value, int valueB) {
+        super(name, value);
+        this.valueB = valueB;
+    }
+
+    /**
+     * Overrided method that prints out the valueB.
+     */
+    public void method() {
+        System.out.println("valueB: " + valueB);
+    }
+}
+```
 
 Then to see that the `method` implementation has been overriden:
 
-<script src="https://gist.github.com/eliucs/47d412734ffd3836d6f708b11c87ad44.js"></script>
+```
+package com.algorithmhelper.objectorientedprogramming.inheritance;
+
+public class InheritanceTest2 {
+
+    public static void main(String[] args) {
+        SubClassB obj1 = new SubClassB();
+        SubClassB obj2 = new SubClassB("Mary Doe", 200, 100);
+
+        obj1.method();
+        obj2.method();
+    }
+}
+```
 
 Which gives the output:
 

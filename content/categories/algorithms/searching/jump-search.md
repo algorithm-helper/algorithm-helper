@@ -78,7 +78,51 @@ search to index 15 until we have found the element or not:
 
 ##### Java
 
-<script src="https://gist.github.com/eliucs/abc9ee8995a9cd3258fe5535b0718f90.js"></script>
+```
+package com.algorithmhelper.algorithms.searching;
+
+public class JumpSearch {
+
+    /**
+     * Returns the index of the search key x in the sorted array arr, or
+     * -1 if the key is not found.
+     *
+     * @param arr, the array to be searched in
+     * @param x, the key to be searched for
+     * @return the index of the search key x in the array arr, or
+     *         -1 if the key is not found
+     * @throws IllegalArgumentException if arr is null
+     * @throws IllegalArgumentException if x is null
+     */
+    public static int search(Comparable[] arr, Comparable x) {
+        if (arr == null)
+            throw new IllegalArgumentException("search with null arr");
+        if (x == null)
+            throw new IllegalArgumentException("search with null x");
+
+        int jump = (int) Math.sqrt(arr.length);
+
+        int prev = 0;
+        while (arr[Math.min(jump, arr.length) - 1].compareTo(x) == -1) {
+            prev = jump;
+            jump += (int) Math.sqrt(arr.length);
+            if (prev >= arr.length)
+                return -1;
+        }
+
+        while (arr[prev].compareTo(x) == -1) {
+            prev++;
+
+            if (prev == Math.min(jump, arr.length))
+                return -1;
+        }
+
+        if (arr[prev] == x)
+            return prev;
+        return -1;
+    }
+}
+```
 
 ### Time Complexity
 

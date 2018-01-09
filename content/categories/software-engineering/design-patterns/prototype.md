@@ -20,23 +20,110 @@ needing to explicitly call the `new` keyword to instantiate that object.
 
 The following is the `Prototype` interface, which has a `clone` method:
 
-<script src="https://gist.github.com/eliucs/5cf0a5006b7f2f2c6c3bd2ba2d3886a7.js"></script>
+```
+package com.algorithmhelper.softwareengineering.designpatterns.prototype;
+
+public interface Prototype {
+
+    /**
+     * Returns a copy of this Prototype object.
+     *
+     * @return a copy of this Prototype object
+     */
+    Prototype clone();
+}
+```
 
 The following class `ConcretePrototypeA` is one such concrete prototype that implements `Prototype`.
 Note that it has an `id` field, which we will use later to verify that we are instantiating the 
 correct class:
 
-<script src="https://gist.github.com/eliucs/4b5d9a98bb9a03a66249f8ebf601304c.js"></script>
+```
+package com.algorithmhelper.softwareengineering.designpatterns.prototype;
+
+public class ConcretePrototypeA implements Prototype {
+
+    private final String id = "ConcretePrototypeA";
+
+    /**
+     * Returns a copy of this ConcretePrototypeA object.
+     *
+     * @return a copy of this ConcretePrototypeA object
+     */
+    public Prototype clone() {
+        return new ConcretePrototypeA();
+    }
+
+    /**
+     * Returns the String representation of this ConcretePrototypeA object.
+     *
+     * @return the String representation of this ConcretePrototypeA object
+     */
+    public String toString() {
+        return id;
+    }
+}
+```
 
 The following class `ConcretePrototypeB` is another such concrete prototype that implements 
 `Prototype`:
 
-<script src="https://gist.github.com/eliucs/efd65ec3bdd556c21628624a0b3e1e16.js"></script>
+```
+package com.algorithmhelper.softwareengineering.designpatterns.prototype;
+
+public class ConcretePrototypeB implements Prototype {
+
+    private final String id = "ConcretePrototypeB";
+
+    /**
+     * Returns a copy of this ConcretePrototypeB object.
+     *
+     * @return a copy of this ConcretePrototypeB object
+     */
+    public Prototype clone() {
+        return new ConcretePrototypeB();
+    }
+
+    /**
+     * Returns the String representation of this ConcretePrototypeB object.
+     *
+     * @return the String representation of this ConcretePrototypeB object
+     */
+    public String toString() {
+        return id;
+    }
+}
+```
 
 The following class `ConcretePrototypeC` is another such concrete prototype that implements 
 `Prototype`:
 
-<script src="https://gist.github.com/eliucs/c84271ecaf4b144f0fe4020637906929.js"></script>
+```
+package com.algorithmhelper.softwareengineering.designpatterns.prototype;
+
+public class ConcretePrototypeC implements Prototype {
+
+    private final String id = "ConcretePrototypeC";
+
+    /**
+     * Returns a copy of this ConcretePrototypeC object.
+     *
+     * @return a copy of this ConcretePrototypeC object
+     */
+    public Prototype clone() {
+        return new ConcretePrototypeC();
+    }
+
+    /**
+     * Returns the String representation of this ConcretePrototypeC object.
+     *
+     * @return the String representation of this ConcretePrototypeC object
+     */
+    public String toString() {
+        return id;
+    }
+}
+```
 
 Then suppose that for the purposes of this example, we want to use a `Factory` to instantiate
 `Prototype` object, but we do not want to use the `new` keyword when doing so. Instead, we have a 
@@ -44,12 +131,62 @@ map that maps the names of these concrete `Prototype` objects to an instance, a 
 instance, from which we `clone` whenever neeeded, instead of using the `new` keyword for
 instantiation:
 
-<script src="https://gist.github.com/eliucs/4b4286810708292cc8bc2ae3765e9e95.js"></script>
+```
+package com.algorithmhelper.softwareengineering.designpatterns.prototype;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Factory {
+
+    private static final Map<String, Prototype> prototypes = new HashMap<>();
+    static {
+        prototypes.put("A", new ConcretePrototypeA());
+        prototypes.put("B", new ConcretePrototypeB());
+        prototypes.put("C", new ConcretePrototypeC());
+    }
+
+    /**
+     * Returns the correct Prototype corresponding to the name.
+     *
+     * @param name, the class name of the Prototype
+     * @return the correct Prototype corresponding to the name
+     */
+    public static Prototype getPrototype(String name) {
+        if (!prototypes.containsKey(name))
+            return null;
+        return prototypes.get(name).clone();
+    }
+}
+```
 
 Then we can test this by taking in system input, instantiating the corresponding concrete 
 `Prototype` object from the `Factory`, and printing out the `id` of the `Prototype`:
 
-<script src="https://gist.github.com/eliucs/87e51ad1781788d84dd35906c8cb44fe.js"></script>
+```
+package com.algorithmhelper.softwareengineering.designpatterns.prototype;
+
+import java.util.Scanner;
+
+public class PrototypeTest {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+        while (in.hasNext()) {
+            String name = in.next();
+
+            if (name.equals("done"))
+                break;
+
+            Prototype prototype = Factory.getPrototype(name);
+
+            if (prototype != null)
+                System.out.println(prototype);
+        }
+    }
+}
+```
 
 Then suppose we have the following input:
 

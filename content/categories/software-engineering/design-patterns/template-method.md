@@ -26,21 +26,99 @@ For this example, we start off with the base class, which is the abstract class 
 since it implements the `drawHead` method, it is private, and the operations that need to be 
 deferred to other classes that extend `DrawBase`, which are `drawBody` and `drawLegs`, are `public`:
 
-<script src="https://gist.github.com/eliucs/1e2ae12b79e1f10cefd59ef0c7965c8e.js"></script>
+```
+package com.algorithmhelper.softwareengineering.designpatterns.templatemethod;
+
+public abstract class DrawBase {
+
+    /**
+     * Draws the DrawBase.
+     */
+    public void draw() {
+        drawHead();
+        drawBody();
+        drawLegs();
+    }
+
+    /**
+     * Draws the head of the DrawBase.
+     */
+    private void drawHead() {
+        System.out.println("head from DrawBase");
+    }
+
+    /**
+     * Draws the body of the DrawBase.
+     */
+    public abstract void drawBody();
+
+    /**
+     * Draws the legs of the DrawBase.
+     */
+    public abstract void drawLegs();
+}
+```
 
 The following is the abstract class `DrawBodyLegs`, which implements the `drawBody` and `drawlegs` 
 methods, however, in addition to drawing the legs, we need to draw the feet with the `drawFeet`
 method, however, this is deferred to a subclass:
 
-<script src="https://gist.github.com/eliucs/1d8a3e6c33cb8b2a2ab24cb5a30f6cfc.js"></script>
+```
+package com.algorithmhelper.softwareengineering.designpatterns.templatemethod;
+
+public abstract class DrawBodyLegs extends DrawBase {
+
+    /**
+     * Draws the body of the DrawBodyLegs.
+     */
+    public void drawBody() {
+        System.out.println("body from DrawBodyLegs");
+    }
+
+    /**
+     * Draws the legs of the DrawBodyLegs.
+     */
+    public void drawLegs() {
+        System.out.println("legs from DrawBodyLegs");
+        drawFeet();
+    }
+
+    /**
+     * Draws the feet of the DrawBodyLegs.
+     */
+    public abstract void drawFeet();
+}
+```
 
 The following is the `DrawFeet` class, which implements the `drawFeet` method:
 
-<script src="https://gist.github.com/eliucs/b614078641e3d3e59a5a9216b1112a87.js"></script>
+```
+package com.algorithmhelper.softwareengineering.designpatterns.templatemethod;
+
+public class DrawFeet extends DrawBodyLegs {
+
+    /**
+     * Draws the feet of the DrawFeet.
+     */
+    public void drawFeet() {
+        System.out.println("feet from DrawFeet");
+    }
+}
+```
 
 Then we can test it by drawing out the whole body:
 
-<script src="https://gist.github.com/eliucs/5d40c0ba8983d14ebc247ce6e904d2b3.js"></script>
+```
+package com.algorithmhelper.softwareengineering.designpatterns.templatemethod;
+
+public class TemplateMethodTest {
+
+    public static void main(String[] args) {
+        DrawBase drawing = new DrawFeet();
+        drawing.draw();
+    }
+}
+```
 
 We get the expected output:
 

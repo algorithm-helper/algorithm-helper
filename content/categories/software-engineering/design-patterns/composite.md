@@ -23,19 +23,82 @@ composed of `AbstractComponent` objects, whether as fields or in a list, each of
 
 We start off wth the `AbstractComponent`, which specifies an `operation`:
 
-<script src="https://gist.github.com/eliucs/f4776af41c77293b28711629ada27548.js"></script>
+```
+package com.algorithmhelper.softwareengineering.designpatterns.composite;
+
+public interface AbstractComponent {
+
+    /**
+     * Performs some operation on the AbstractComponent.
+     */
+    void operation();
+}
+```
 
 Then we have the following `BasicComponent`, which has a unique `id` and whose `operation` prints
 out a message saying that the implementation is from `BasicComponent` with the `id`:
 
-<script src="https://gist.github.com/eliucs/a2b38ef9c7dca76a2ee89226993eddc2.js"></script>
+```
+package com.algorithmhelper.softwareengineering.designpatterns.composite;
+
+public class BasicComponent implements AbstractComponent {
+
+    private static int globalID = 0;
+    private int id = globalID++;
+
+    /**
+     * Performs some operation on the BasicComponent.
+     */
+    public void operation() {
+        System.out.println("from BasicComponent with id " + id);
+    }
+}
+```
 
 Then we have the following `CompositeComponent`, which has a unique `id`, list of 
 `AbstractComponent` objects, and `operation` that prints out a message saying that the 
 implementation is from `CompositeComponent` with the `id`, and iterates over its list of 
 `AbstractComponent` objects, calling their `operation` method:
 
-<script src="https://gist.github.com/eliucs/19c81cc785d8dfed84bc852a0488c810.js"></script>
+```
+package com.algorithmhelper.softwareengineering.designpatterns.composite;
+
+import com.algorithmhelper.datastructures.interfaces.List;
+import com.algorithmhelper.datastructures.lists.DynamicArray;
+
+public class CompositeComponent implements AbstractComponent {
+
+    private static int globalID = 0;
+    private int id = globalID++;
+    private List<AbstractComponent> components;
+
+    /**
+     * Initializes a CompositeComponent.
+     */
+    public CompositeComponent() {
+        components = new DynamicArray<>();
+    }
+
+    /**
+     * Inserts an AbstractComponent to the list of components.
+     *
+     * @param component, the AbstractComponent
+     */
+    public void addComponent(AbstractComponent component) {
+        components.insertBack(component);
+    }
+
+    /**
+     * Performs some operation on the CompositeComponent.
+     */
+    public void operation() {
+        System.out.println("from CompositeComponent with id " + id);
+
+        for (AbstractComponent component : components)
+            component.operation();
+    }
+}
+```
 
 We can then test it by building up the following tree, let `C` denote `CompositeComponent` objects, 
 and let `B` denote `BasicComponent` objects:
@@ -44,7 +107,41 @@ and let `B` denote `BasicComponent` objects:
 
 Then we have:
 
-<script src="https://gist.github.com/eliucs/169d33fd41df67fd2f40f117c3ee5768.js"></script>
+```
+package com.algorithmhelper.softwareengineering.designpatterns.composite;
+
+public class CompositeTest {
+
+    public static void main(String[] args) {
+        AbstractComponent component0 = new BasicComponent();
+        AbstractComponent component1 = new BasicComponent();
+        AbstractComponent component2 = new BasicComponent();
+        AbstractComponent component3 = new BasicComponent();
+        AbstractComponent component4 = new BasicComponent();
+        AbstractComponent component5 = new BasicComponent();
+
+        CompositeComponent composite0 = new CompositeComponent();
+        CompositeComponent composite1 = new CompositeComponent();
+        CompositeComponent composite2 = new CompositeComponent();
+
+        // Add component 3 and 4 to composite 2:
+        composite2.addComponent(component3);
+        composite2.addComponent(component4);
+
+        // Add composite 2 and component 5 to composite 1:
+        composite1.addComponent(composite2);
+        composite1.addComponent(component5);
+
+        // Add component 0, 1, 2 and composite 1 to composite 0:
+        composite0.addComponent(component0);
+        composite0.addComponent(component1);
+        composite0.addComponent(composite1);
+        composite0.addComponent(component2);
+
+        composite0.operation();
+    }
+}
+```
 
 Which gives the expected output:
 

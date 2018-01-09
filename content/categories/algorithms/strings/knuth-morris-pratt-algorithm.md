@@ -68,7 +68,66 @@ for each state i and char c != P[i]:
 
 ##### Java
 
-<script src="https://gist.github.com/eliucs/d5f074db13b0f638f7aba6305be39a70.js"></script>
+```
+package com.algorithmhelper.algorithms.strings;
+
+public class KnuthMorrisPrattAlgorithm {
+
+    private String pattern;
+    private int M;
+    private int R;
+    private int[][] dfa;
+
+    /**
+     * Initializes the KnuthMorrisPrattAlgorithm object with the pattern.
+     *
+     * @param pattern, the String to be search for
+     * @throws IllegalArgumentException if the pattern is null
+     */
+    public KnuthMorrisPrattAlgorithm(String pattern) {
+        if (pattern == null)
+            throw new IllegalArgumentException("constructor with null pattern");
+
+        this.pattern = pattern;
+        M = pattern.length();
+        R = Character.MAX_RADIX;
+        dfa = new int[R][M];
+
+        for (int s = 0, i = 1; i < M; i++) {
+            for (int c = 0; c < R; c++)
+                dfa[c][i] = dfa[c][s];
+            dfa[pattern.charAt(i)][i] = i+1;
+            s = dfa[pattern.charAt(i)][s];
+        }
+    }
+
+    /**
+     * Searches for a match of the pattern in the text, and returns the starting index of the
+     * match if found, and -1 otherwise.
+     *
+     * @param text, the String body of text to be searched in
+     * @return the starting index of the match if found, and -1 otherwise
+     */
+    public int search(String text) {
+        int i, j;
+        for (i = 0, j = 0; i < text.length() && j < M; i++)
+            j = dfa[text.charAt(i)][j];
+        if (j == M)
+            return i - M;
+        return -1;
+    }
+
+    /**
+     * Returns true if the pattern is contained in the text, false otherwise.
+     *
+     * @param text, the String body of text to be searched in
+     * @return true if the pattern is contained in the text, false otherwise
+     */
+    public boolean isContainedIn(String text) {
+        return search(text) != -1;
+    }
+}
+```
 
 ### Time Complexity
 

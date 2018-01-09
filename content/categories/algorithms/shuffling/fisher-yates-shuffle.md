@@ -35,7 +35,33 @@ this algorithm runs in $O(N)$ time.
 
 ##### Java
 
-<script src="https://gist.github.com/eliucs/bac53840c5c28cb3ac2a0bf0bdfa3215.js"></script>
+```
+package com.algorithmhelper.algorithms.shuffling;
+
+public class FisherYatesShuffle {
+
+    /**
+     * Shuffles the elements in array arr in uniformly random
+     * order with Java's Math.random() to generate pseudorandom
+     * numbers.
+     *
+     * @param arr, the array to be shuffled
+     * @throws IllegalArgumentException if the arr is null
+     */
+    public static void shuffle(Comparable[] arr) {
+        if (arr == null)
+            throw new IllegalArgumentException("shuffle with null arr");
+
+        int n = arr.length;
+        for (int i = 0; i < n-1; i++) {
+            int random = (int) (Math.random() * (n - 1));
+            Comparable temp = arr[random];
+            arr[random] = arr[i];
+            arr[i] = temp;
+        }
+    }
+}
+```
 
 ### Time Complexity
 

@@ -55,7 +55,81 @@ And thus we can compute the hash in $O(1)$ time.
 
 ##### Java
 
-<script src="https://gist.github.com/eliucs/fa5151d951415cef327f73d750e4a5f5.js"></script>
+```
+package com.algorithmhelper.algorithms.strings;
+
+public class RabinKarpAlgorithm {
+
+    private long patternHash;
+    private int M;
+    private int R;
+    private long Q;
+    private long RM;
+
+    /**
+     * Initializes the RabinKarpAlgorithm object with the pattern.
+     *
+     * @param pattern, the String to be search for
+     * @throws IllegalArgumentException if the pattern is null
+     */
+    public RabinKarpAlgorithm(String pattern) {
+        if (pattern == null)
+            throw new IllegalArgumentException("constructor with null pattern");
+
+        M = pattern.length();
+        R = Character.MAX_RADIX;
+        Q = 999001999;
+        RM = 1;
+        for (int i = 1; i < M-1; i++)
+            RM = (R * RM) % Q;
+        patternHash = hash(pattern);
+    }
+
+    /**
+     * Helper function to computes the hash of the key.
+     *
+     * @param key
+     * @return the hash of the key
+     */
+    private long hash(String key) {
+        long hash = 0;
+        for (int i = 0; i < M; i++)
+            hash = (R * hash + key.charAt(i)) % Q;
+        return hash;
+    }
+
+    /**
+     * Searches for a match of the pattern in the text, and returns the starting index of the
+     * match if found, and -1 otherwise.
+     *
+     * @param text, the String body of text to be searched in
+     * @return the starting index of the match if found, and -1 otherwise
+     */
+    public int search(String text) {
+        int N = text.length();
+        long textHash = hash(text);
+        if (patternHash == textHash)
+            return 0;
+        for (int i = M; i < N; i++) {
+            textHash = (textHash + Q - RM*text.charAt(i-M) % Q) % Q;
+            textHash = (textHash*R + text.charAt(i)) % Q;
+            if (patternHash == textHash)
+                return i-M+1;
+        }
+        return -1;
+    }
+
+    /**
+     * Returns true if the pattern is contained in the text, false otherwise.
+     *
+     * @param text, the String body of text to be searched in
+     * @return true if the pattern is contained in the text, false otherwise
+     */
+    public boolean isContainedIn(String text) {
+        return search(text) != -1;
+    }
+}
+```
 
 ### Time Complexity
 

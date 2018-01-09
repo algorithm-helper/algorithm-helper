@@ -7,13 +7,10 @@
         {{> navbar}}
 
         <div class="container-fluid main-container">
-
-            <div id="article-main-card-container" class="container main-card-container article-content-container">
+            <div id="article-main-card-container" class="container main-card-container article-content-container">                
                 <div class="row markdown-container">
                     <div class="col-md-3"></div>
-                    <div id="article-markdown" class="col-md-8">
-                        {{{article}}}
-                    </div>
+                    <div id="article-markdown" class="col-md-8"></div>
                     <div class="col-md-1"></div>
                 </div>
 
@@ -28,13 +25,23 @@
         {{> footer}}
 
         <!-- Highlight.js Markdown Code Highlighting JavaScript -->
-        <script type="text/javascript" src="/js-lib/highlight.pack.js"></script>
+        <script type="text/javascript" src="/js-lib/highlight.pack.js"></script>        
         <!-- Bootstrap Material Design Compressed and Minified JavaScript -->
         <script type="text/javascript" src="/js-lib/mdb.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script>
+        <script>
+            marked.setOptions({
+                renderer: new marked.Renderer(),
+                gfm: true,
+                tables: true,
+                breaks: false,
+                pedantic: false,
+                sanitize: false,
+                smartLists: true,
+                smartypants: false
+            });
+        </script>
         <script>
             let articlePath = {{{articlePath}}};
-            let articleContent;
         </script>
         <script type="text/javascript" src="/js-es6/article.js"></script>
     </body>

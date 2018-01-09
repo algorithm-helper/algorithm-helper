@@ -29,37 +29,259 @@ on a particular hierarchy, and for each class of that hierarchy to accept those 
 The following is the `AbstractNode` class, from which we extend the `UnaryNode` and `BinaryNode` 
 classes:
 
-<script src="https://gist.github.com/eliucs/cce10f4f92b6333668bbd926644670d5.js"></script>
+```
+package com.algorithmhelper.designpatterns.visitor;
+
+public abstract class AbstractNode {
+
+    private int data;
+
+    /**
+     * Initializes an AbstractNode with data.
+     *
+     * @param data
+     */
+    public AbstractNode(int data) {
+        this.data = data;
+    }
+
+    /**
+     * Returns the data.
+     *
+     * @return data
+     */
+    public int getData() {
+        return data;
+    }
+
+    /**
+     * Accepts a Visitor object to perform an operation on this AbstractNode.
+     *
+     * @param visitor
+     */
+    public abstract void accept(Visitor visitor);
+}
+```
 
 The following is the `UnaryNode` class:
 
-<script src="https://gist.github.com/eliucs/fa72898460d35dc45a1d8e30b494c069.js"></script>
+```
+package com.algorithmhelper.designpatterns.visitor;
+
+public class UnaryNode extends AbstractNode {
+
+    AbstractNode next;
+
+    /**
+     * Initializes a UnaryNode.
+     *
+     * @param data
+     * @param next
+     */
+    public UnaryNode(int data, AbstractNode next) {
+        super(data);
+        this.next = next;
+    }
+
+    /**
+     * Returns the next AbstractNode.
+     *
+     * @return the next AbstractNode
+     */
+    public AbstractNode getNext() {
+        return next;
+    }
+
+    /**
+     * Accepts a Visitor to process this UnaryNode.
+     *
+     * @param visitor
+     */
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
+    }
+}
+```
 
 The following is the `BinaryNode` class:
 
-<script src="https://gist.github.com/eliucs/fb456f122bffd3c44d80a09ff153b7fc.js"></script>
+```
+package com.algorithmhelper.designpatterns.visitor;
+
+public class BinaryNode extends AbstractNode {
+
+    AbstractNode left;
+    AbstractNode right;
+
+    /**
+     * Initializes a BinaryNode.
+     *
+     * @param data
+     * @param left
+     * @param right
+     */
+    public BinaryNode(int data, AbstractNode left, AbstractNode right) {
+        super(data);
+        this.left = left;
+        this.right = right;
+    }
+
+    /**
+     * Returns the left AbstractNode.
+     *
+     * @return the left AbstractNode
+     */
+    public AbstractNode getLeft() {
+        return left;
+    }
+
+    /**
+     * Returns the right AbstractNode.
+     *
+     * @return the right AbstractNode
+     */
+    public AbstractNode getRight() {
+        return right;
+    }
+
+    /**
+     * Accepts a Visitor to process this BinaryNode.
+     *
+     * @param visitor
+     */
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
+    }
+}
+```
 
 Then we have the `Visitor` interface, which has a method `visit` overloaded for each concrete type 
 of `AbstractNode`, that is, `UnaryNode` and `BinaryNode`:
 
-<script src="https://gist.github.com/eliucs/898fdfe7e838e2ba902130862fedbc40.js"></script>
+```
+package com.algorithmhelper.designpatterns.visitor;
+
+public interface Visitor {
+
+    /**
+     * Visits a UnaryNode and performs some operation.
+     *
+     * @param binaryNode, the UnaryNode object
+     */
+    void visit(UnaryNode binaryNode);
+
+    /**
+     * Visits a BinaryNode and performs some operation.
+     *
+     * @param binaryNode, the BinaryNode object
+     */
+    void visit(BinaryNode binaryNode);
+}
+```
 
 The following is the `ConcreteVisitorA` class, which prints out the contents of the `data` of the
 `AbstractNode` that it is visiting and a message that it is from the `ConcreteVisitorA` 
 implementation of `visit`:
 
-<script src="https://gist.github.com/eliucs/0e583b36e72c86162107071a62cd506a.js"></script>
+```
+package com.algorithmhelper.designpatterns.visitor;
+
+public class ConcreteVisitorA implements Visitor {
+
+    /**
+     * Visits a UnaryNode.
+     *
+     * @param unaryNode
+     */
+    public void visit(UnaryNode unaryNode) {
+        System.out.println("ConcreteVisitorA visiting UnaryNode: " + unaryNode.getData());
+
+        if (unaryNode.getNext() != null)
+            unaryNode.getNext().accept(this);
+    }
+
+    /**
+     * Visits a BinaryNode.
+     *
+     * @param binaryNode
+     */
+    public void visit(BinaryNode binaryNode) {
+        System.out.println("ConcreteVisitorA visiting BinaryNode: " + binaryNode.getData());
+
+        if (binaryNode.getLeft() != null)
+            binaryNode.getLeft().accept(this);
+
+        if (binaryNode.getRight() != null)
+            binaryNode.getRight().accept(this);
+    }
+}
+```
 
 The following is the `ConcreteVisitorB` class, which prints out the contents of the `data` of the
 `AbstractNode` that it is visiting and a message that it is from the `ConcreteVisitorA` 
 implementation of `visit`:
 
-<script src="https://gist.github.com/eliucs/dc0ad4dd3a12ce9793ecfc66523212a5.js"></script>
+```
+package com.algorithmhelper.designpatterns.visitor;
+
+public class ConcreteVisitorB implements Visitor {
+
+    /**
+     * Visits a UnaryNode.
+     *
+     * @param unaryNode
+     */
+    public void visit(UnaryNode unaryNode) {
+        System.out.println("ConcreteVisitorB visiting UnaryNode: " + unaryNode.getData());
+
+        if (unaryNode.getNext() != null)
+            unaryNode.getNext().accept(this);
+    }
+
+    /**
+     * Visits a BinaryNode.
+     *
+     * @param binaryNode
+     */
+    public void visit(BinaryNode binaryNode) {
+        System.out.println("ConcreteVisitorB visiting BinaryNode: " + binaryNode.getData());
+
+        if (binaryNode.getLeft() != null)
+            binaryNode.getLeft().accept(this);
+
+        if (binaryNode.getRight() != null)
+            binaryNode.getRight().accept(this);
+    }
+}
+```
 
 We can then test that it is working by constructing a tree of `AbstractNode` objects and then 
 accepting an instance of `ConcreteVisitorA` and `ConcreteVisitorB` from the root of the tree:
 
-<script src="https://gist.github.com/eliucs/4c44b438965a082ef3f3df8ee9c8c8ea.js"></script>
+```
+package com.algorithmhelper.designpatterns.visitor;
+
+public class VisitorTest {
+
+    public static void main(String[] args) {
+        AbstractNode tree =
+            new BinaryNode(1,
+                new BinaryNode(2,
+                        new UnaryNode(3, null),
+                        new UnaryNode(4, null)),
+                new BinaryNode(5,
+                        new UnaryNode(6, null),
+                        new UnaryNode(7, null))
+            );
+
+        Visitor visitorA = new ConcreteVisitorA();
+        Visitor visitorB = new ConcreteVisitorB();
+
+        tree.accept(visitorA);
+        tree.accept(visitorB);
+    }
+}
+```
 
 We get the expected output:
 

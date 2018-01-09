@@ -67,7 +67,83 @@ requires $O(|V|)$ space.
 
 ##### Java
 
-<script src="https://gist.github.com/eliucs/d44d18c5d2dc96ef093b5a9ee975ad4a.js"></script>
+```
+package com.algorithmhelper.algorithms.graphs;
+
+import com.algorithmhelper.datastructures.graphs.DirectedGraph;
+import com.algorithmhelper.datastructures.hashing.HashMapLinearProbing;
+import com.algorithmhelper.datastructures.interfaces.Map;
+
+public class KosarajusAlgorithm<T extends Comparable<T>> {
+
+    private Map<T, Integer> scc;
+    private int id;
+
+    /**
+     * Initializes a KosarajusAlgorithm object, and runs kosarajusAlgorithm on the
+     * graph G.
+     *
+     * @param G, the graph
+     * @throws IllegalArgumentException if the graph G is null
+     */
+    public KosarajusAlgorithm(DirectedGraph<T> G) {
+        if (G == null)
+            throw new IllegalArgumentException("constructor with null graph G");
+
+        scc = new HashMapLinearProbing<>();
+        id = 0;
+
+        if (G.V() == 0)
+            return;
+
+        kosarajusAlgorithm(G);
+    }
+
+    /**
+     * Runs Kosaraju's algorithm on the graph G, by first reversing G, running topological sort
+     * on the reversed graph, then iterating over every vertex u of the topological order and
+     * running depth first search on u, mapping every vertex found by the depth first search to
+     * the current id.
+     *
+     * @param G, the graph
+     */
+    private void kosarajusAlgorithm(DirectedGraph<T> G) {
+        DirectedGraph<T> reversedGraph = G.getReverseGraph();
+        TopologicalSort<T> topologicalOrdering = new TopologicalSort<>(reversedGraph);
+
+        for (T u : topologicalOrdering.getTopologicalOrdering()) {
+            if (scc.contains(u))
+                continue;
+
+            DepthFirstSearchRecursion<T> dfs = new DepthFirstSearchRecursion<>(G, u);
+            for (T v : dfs.getVisited())
+                scc.put(v, id);
+            id++;
+        }
+    }
+
+    /**
+     * Returns true if both vertices u and v belong to the same strongly connected component (i.e.
+     * are mapped to the same id in the Map scc, otherwise false.
+     *
+     * @param u, the first vertex
+     * @param v, the second vertex
+     * @return true if both vertices u and v belong to the same strongly connected component (i.e.
+     *         are mapped to the same id in the Map scc, otherwise false
+     * @throws IllegalArgumentException if the vertex u is null
+     * @throws IllegalArgumentException if the vertex v is null
+     */
+    public boolean isStronglyConnected(T u, T v) {
+        if (u == null)
+            throw new IllegalArgumentException("isStronglyConnected with null vertex u");
+        if (v == null)
+            throw new IllegalArgumentException("isStronglyConnected with null vertex v");
+        if (!scc.contains(u) || !scc.contains(v))
+            return false;
+        return scc.get(u).equals(scc.get(v));
+    }
+}
+```
 
 ### Time Complexity
 

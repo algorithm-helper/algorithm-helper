@@ -73,7 +73,73 @@ pattern string, and for each character `c`, its value to be the index of the rig
 
 ##### Java
 
-<script src="https://gist.github.com/eliucs/21f4c517a85a61e21a57467a7fef2247.js"></script>
+```
+package com.algorithmhelper.algorithms.strings;
+
+public class BoyerMooreAlgorithm {
+
+    private String pattern;
+    private int M;
+    private int R;
+    private int[] skipTable;
+
+    /**
+     * Initializes the BoyerMooreAlgorithm object with the pattern.
+     *
+     * @param pattern, the String to be search for
+     * @throws IllegalArgumentException if the pattern is null
+     */
+    public BoyerMooreAlgorithm(String pattern) {
+        if (pattern == null)
+            throw new IllegalArgumentException("constructor with null pattern");
+
+        this.pattern = pattern;
+        M = pattern.length();
+        R = Character.MAX_RADIX;
+
+        skipTable = new int[R];
+        for (int i = 0; i < R; i++)
+            skipTable[i] = -1;
+        for (int i = 0; i < M; i++)
+            skipTable[pattern.charAt(i)] = i;
+    }
+
+    /**
+     * Searches for a match of the pattern in the text, and returns the starting index of the
+     * match if found, and -1 otherwise.
+     *
+     * @param text, the String body of text to be searched in
+     * @return the starting index of the match if found, and -1 otherwise
+     */
+    public int search(String text) {
+        int N = text.length();
+        int skip;
+        for (int i = 0; i < N-M; i += skip) {
+            skip = 0;
+            for (int j = M-1; j >= 0; j--) {
+                if (pattern.charAt(j) != text.charAt(i+j)) {
+                    skip = Math.max(j - skipTable[text.charAt(i+j)], 1);
+                    break;
+                }
+            }
+
+            if (skip == 0)
+                return i;
+        }
+        return -1;
+    }
+
+    /**
+     * Returns true if the pattern is contained in the text, false otherwise.
+     *
+     * @param text, the String body of text to be searched in
+     * @return true if the pattern is contained in the text, false otherwise
+     */
+    public boolean isContainedIn(String text) {
+        return search(text) != -1;
+    }
+}
+```
 
 ### Time and Space Complexity
 

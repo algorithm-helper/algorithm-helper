@@ -10,7 +10,7 @@
 
 $(document).ready(function () {
     // For debug purposes:
-    console.log(results);
+    // console.log(results);
 
     // Display the number of search results:
     (function (global) {

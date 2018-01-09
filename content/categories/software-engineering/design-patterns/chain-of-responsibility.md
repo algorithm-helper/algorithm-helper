@@ -23,22 +23,129 @@ other `Handlers` as well as determine whether the `Handler` handles the request 
 next in the chain by a random number, and give each `Handler` a 10% probability of handling the 
 request:
 
-<script src="https://gist.github.com/eliucs/5fb1558b2e7996c0ad20ea691631ec3b.js"></script>
+```
+package com.algorithmhelper.designpatterns.chainofresponsibility;
+
+public class Handler {
+
+    private static int globalID = 0;
+    private int id;
+    private Handler next;
+
+    /**
+     * Initializes a Handler object.
+     *
+     */
+    public Handler() {
+        id = globalID++;
+    }
+
+    /**
+     * Inserts the next Handler to the chain.
+     *
+     * @param next, the next Handler
+     */
+    public void insertHandler(Handler next) {
+        if (this.next == null)
+            this.next = next;
+        else
+            this.next.insertHandler(next);
+    }
+
+    /**
+     * Handles the request with a 0.1 probability.
+     *
+     * @param request, the Request object
+     */
+    public void handleRequest(Request request) {
+        if (Math.random() < 0.1)
+            System.out.println("handler: " + id + ", request: " + request.getID());
+        else
+            next.handleRequest(request);
+    }
+}
+```
 
 Then the `Pipeline` class wraps around the `root` of the chain of `Handler` objects, and gives the 
 client an abstraction away from the actual chaining of the `Handler` objects. To handle a 
 `Request` object, it passes it into the `root` of the chain:
 
-<script src="https://gist.github.com/eliucs/1a96ec4ab4a5e1435fdb8a257d914520.js"></script>
+```
+package com.algorithmhelper.designpatterns.chainofresponsibility;
+
+public class Pipeline {
+
+    private Handler root;
+
+    /**
+     * Initializes a Pipeline, and inserts n Handlers to the root Handler, then wraps the
+     * root Handler to itself.
+     *
+     * @param n, the number of Handler objects to include in the Pipeline
+     */
+    public Pipeline(int n) {
+        root = new Handler();
+        for (int i = 0; i < n-1; i++)
+            root.insertHandler(new Handler());
+        root.insertHandler(root);
+    }
+
+    /**
+     * Handles the request by passing it in to the root Handler.
+     *
+     * @param request, the Request object
+     */
+    public void handleRequest(Request request) {
+        root.handleRequest(request);
+    }
+}
+```
 
 For the purposes of this example, the `Request` object contains nothing more than a unique `id`:
 
-<script src="https://gist.github.com/eliucs/7bd9da7ade521a931191c2d2c355b1d0.js"></script>
+```
+package com.algorithmhelper.designpatterns.chainofresponsibility;
+
+public class Request {
+
+    private static int globalID = 0;
+    private int id;
+
+    /**
+     * Initializes a Request.
+     */
+    public Request() {
+        id = globalID++;
+    }
+
+    /**
+     * Returns the id of the Request.
+     * @return the id
+     */
+    public int getID() {
+        return id;
+    }
+}
+```
 
 To test it, we initialize a `Pipeline` with 10 `Handler` objects, then make handle 5 `Request` 
 objects:
 
-<script src="https://gist.github.com/eliucs/af34fbc99db37252ff4ae85e3bd41c05.js"></script>
+```
+package com.algorithmhelper.designpatterns.chainofresponsibility;
+
+public class ChainOfResponsibilityTest {
+
+    public static void main(String[] args) {
+        Pipeline pipeline = new Pipeline(10);
+
+        for (int i = 0; i < 5; i++) {
+            Request request = new Request();
+            pipeline.handleRequest(request);
+        }
+    }
+}
+```
 
 We get the output:
 

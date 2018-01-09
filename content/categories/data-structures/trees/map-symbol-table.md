@@ -56,4 +56,61 @@ The following provides an interface for maps.
 
 ##### Java
 
-<script src="https://gist.github.com/eliucs/41d983e61ad70cca9feb972fb0353d4b.js"></script>
+```
+package com.algorithmhelper.datastructures.interfaces;
+
+public interface Map<K extends Comparable<K>, V> {
+
+    /**
+     * Returns true if the Map is empty, false otherwise.
+     *
+     * @return true if the Map is empty, false otherwise
+     */
+    boolean isEmpty();
+
+    /**
+     * Returns the number of elements in the Map.
+     *
+     * @return the number of elements in the Map
+     */
+    int size();
+
+    /**
+     * Returns the value associated with the key in the Map.
+     *
+     * @param key, the key to be searched for
+     * @return the value associated with the key in the Map
+     */
+    V get(K key);
+
+    /**
+     * Returns true if the key is contained in the Map, false otherwise.
+     *
+     * @param key, the key to be searched for
+     * @return true if the key is contained in the Map, false otherwise
+     */
+    boolean contains(K key);
+
+    /**
+     * Inserts the (key, value) pair into the Map.
+     *
+     * @param key, the key to be inserted
+     * @param val, the val associated with the key
+     */
+    void put(K key, V val);
+
+    /**
+     * Removes the key from the Map.
+     *
+     * @param key, the key to be removed
+     */
+    void delete(K key);
+
+    /**
+     * Returns an Iterable to the elements of the Map.
+     *
+     * @return an Iterable to the elements of the Map
+     */
+    Iterable<K> keys();
+}
+```

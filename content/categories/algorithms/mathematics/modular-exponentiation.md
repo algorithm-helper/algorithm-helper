@@ -23,7 +23,32 @@ ultimately end up with the final result.
 
 ##### Java
 
-<script src="https://gist.github.com/eliucs/6a14f43d63b617fd8860840ccfed42e3.js"></script>
+```
+package com.algorithmhelper.algorithms.mathematics;
+
+public class ModularExponentiation {
+
+    /**
+     * Computes the modular power of base to the exponent exp.
+     *
+     * @param base, the base
+     * @param exp, the exponent
+     * @param mod, the modulus
+     * @return the modular power of base to the exponent exp
+     */
+    public static double modPow(double base, double exp, double mod) {
+        if (mod == 1)
+            return 0;
+
+        double result = 1;
+
+        for (int i  = 1; i <= exp; i++)
+            result = (result * base) % mod;
+
+        return result;
+    }
+}
+```
 
 ### Time Complexity
 

@@ -56,7 +56,104 @@ between the same vertices.
 
 ##### Java
 
-<script src="https://gist.github.com/eliucs/2a09e6458c415220afeb9ac94721f359.js"></script>
+```
+package com.algorithmhelper.datastructures.interfaces;
+
+public interface Graph<T extends Comparable<T>> {
+
+    /**
+     * Returns the number of vertices.
+     *
+     * @return the number of vertices
+     */
+    int V();
+
+    /**
+     * Returns the number of edges.
+     *
+     * @return the number of edges
+     */
+    int E();
+
+    /**
+     * Returns true if the Graph contains vertex u, false otherwise.
+     *
+     * @param u, the vertex
+     * @return true if the Graph contains vertex u, false otherwise
+     */
+    boolean containsVertex(T u);
+
+    /**
+     * Returns true if the Graph contains edge (u, v) in its graph representation, false otherwise.
+     *
+     * @param u, the first vertex
+     * @param v, the second vertex
+     * @return true if the Graph contains edge (u, v) in its graph representation, false otherwise
+     */
+    boolean containsEdge(T u, T v);
+
+    /**
+     * Inserts the vertex u into the Graph, u must be an isolated vertex, and cannot already be
+     * contained in the Graph.
+     *
+     * @param u, the vertex
+     */
+    void insertVertex(T u);
+
+    /**
+     * Inserts an edge (u, v) into the Graph.
+     *
+     * @param u, the first vertex
+     * @param v, the second vertex
+     */
+    void insertEdge(T u, T v);
+
+    /**
+     * Deletes a vertex u and all of the edges incident to u.
+     *
+     * @param u, the vertex
+     */
+    void deleteVertex(T u);
+
+    /**
+     * Deletes an edge (u, v) from the Graph.
+     *
+     * @param u, the first vertex
+     * @param v, the second vertex
+     */
+    void deleteEdge(T u, T v);
+
+    /**
+     * Returns the degree of a vertex u (i.e. the number of adjacent vertices to u).
+     *
+     * @param u, the vertex
+     * @return the degree of u
+     */
+    int getDegree(T u);
+
+    /**
+     * Returns an Iterable adjacency list of the vertex u.
+     *
+     * @param u, the vertex
+     * @return an Iterable adjacency list of the vertex u
+     */
+    Iterable<T> getAdjacent(T u);
+
+    /**
+     * Returns an Iterable to all of the vertices of the Graph.
+     *
+     * @return an Iterable to all of the vertices of the Graph
+     */
+    Iterable<T> getVertices();
+
+    /**
+     * Returns a copy of the Graph.
+     *
+     * @return a copy of the Graph
+     */
+    Graph<T> clone();
+}
+```
 
 ### Implementation (Undirected Graph)
 
@@ -66,7 +163,158 @@ Note that this uses an [Adjacency List](/categories/algorithms/graphs/graph-repr
 the same as `DirectedGraph` except that every time we insert, delete, or check if the graph contains
 edge $(u, v)$, we do so for edge $(u, v)$ and $(v, u)$.
 
-<script src="https://gist.github.com/eliucs/f68464e467a5fa2630a270bee70a1c81.js"></script>
+```
+package com.algorithmhelper.datastructures.graphs;
+
+import com.algorithmhelper.datastructures.interfaces.Graph;
+import com.algorithmhelper.datastructures.interfaces.GraphRepresentation;
+
+public class UndirectedGraph<T extends Comparable<T>> implements Graph<T> {
+
+    /**
+     * Internal graph representation structure.
+     */
+    private GraphRepresentation<T> graphRepresentation;
+
+    /**
+     * Initializes an empty UndirectedGraph.
+     */
+    public UndirectedGraph() {
+        graphRepresentation = new AdjacencyList<>();
+    }
+
+    /**
+     * Returns the number of vertices.
+     *
+     * @return the number of vertices
+     */
+    public int V() {
+        return graphRepresentation.V();
+    }
+
+    /**
+     * Returns the number of edges.
+     *
+     * @return the number of edges
+     */
+    public int E() {
+        return graphRepresentation.E();
+    }
+
+    /**
+     * Returns true if the UndirectedGraph contains vertex u, false otherwise.
+     *
+     * @param u, the vertex
+     * @return true if the UndirectedGraph contains vertex u, false otherwise
+     */
+    public boolean containsVertex(T u) {
+        return graphRepresentation.containsVertex(u);
+    }
+
+    /**
+     * Returns true if the UndirectedGraph contains edge (u, v) or (v, u) in its graph
+     * representation, false otherwise.
+     *
+     * @param u, the first vertex
+     * @param v, the second vertex
+     * @return true if the UndirectedGraph contains edge (u, v) or (v, u) in its graph
+     * representation, false otherwise
+     */
+    public boolean containsEdge(T u, T v) {
+        return graphRepresentation.containsEdge(u, v) || graphRepresentation.containsEdge(v, u);
+    }
+
+    /**
+     * Inserts the vertex u into the UndirectedGraph, u must be an isolated vertex, and cannot
+     * already be contained in the UndirectedGraph.
+     *
+     * @param u, the vertex
+     */
+    public void insertVertex(T u) {
+        graphRepresentation.insertVertex(u);
+    }
+
+    /**
+     * Inserts an edge (u, v) into the UndirectedGraph by inserting edge (u, v) and (v, u) into
+     * its graph representation.
+     *
+     * @param u, the first vertex
+     * @param v, the second vertex
+     */
+    public void insertEdge(T u, T v) {
+        graphRepresentation.insertEdge(u, v);
+        graphRepresentation.insertEdge(v, u);
+    }
+
+    /**
+     * Deletes a vertex u and all of the edges incident to u.
+     *
+     * @param u, the vertex
+     */
+    public void deleteVertex(T u) {
+        graphRepresentation.deleteVertex(u);
+    }
+
+    /**
+     * Deletes an edge (u, v) from the UndirectedGraph by deleting edge (u, v) and (v, u) from its
+     * graph representation.
+     *
+     * @param u, the first vertex
+     * @param v, the second vertex
+     */
+    public void deleteEdge(T u, T v) {
+        graphRepresentation.deleteEdge(u, v);
+        graphRepresentation.deleteEdge(v, u);
+    }
+
+    /**
+     * Returns the degree of a vertex u (i.e. the number of adjacent vertices to u).
+     *
+     * @return the degree of u
+     */
+    public int getDegree(T u) {
+        return graphRepresentation.getDegree(u);
+    }
+
+    /**
+     * Returns the Iterable adjacency list of the vertex u.
+     *
+     * @param u, the vertex
+     * @return the Iterable adjacency list of the vertex u
+     */
+    public Iterable<T> getAdjacent(T u) {
+        return graphRepresentation.getAdjacent(u);
+    }
+
+    /**
+     * Returns an Iterable to all of the vertices of the UndirectedGraph.
+     *
+     * @return an Iterable to all of the vertices of the UndirectedGraph
+     */
+    public Iterable<T> getVertices() {
+        return graphRepresentation.getVertices();
+    }
+
+    /**
+     * Returns a copy of the UndirectedGraph.
+     *
+     * @return
+     */
+    public UndirectedGraph<T> clone() {
+        UndirectedGraph<T> cloneGraph = new UndirectedGraph<>();
+        for (T u : getVertices()) {
+            if (getDegree(u) == 0) {
+                cloneGraph.insertVertex(u);
+                continue;
+            }
+
+            for (T v : getAdjacent(u))
+                cloneGraph.insertEdge(u, v);
+        }
+        return cloneGraph;
+    }
+}
+```
 
 ### Implementation (Directed Graph)
 
@@ -74,7 +322,176 @@ edge $(u, v)$, we do so for edge $(u, v)$ and $(v, u)$.
 
 Note that this uses an [Adjacency List](/categories/algorithms/graphs/graph-representation) for graph representation.
 
-<script src="https://gist.github.com/eliucs/03cfa5edcc22d10cb1f07cdeed03628d.js"></script>
+```
+package com.algorithmhelper.datastructures.graphs;
+
+import com.algorithmhelper.datastructures.interfaces.Graph;
+import com.algorithmhelper.datastructures.interfaces.GraphRepresentation;
+
+public class DirectedGraph<T extends Comparable<T>> implements Graph<T> {
+
+    /**
+     * Internal graph representation structure.
+     */
+    private GraphRepresentation<T> graphRepresentation;
+
+    /**
+     * Initializes an empty DirectedGraph.
+     */
+    public DirectedGraph() {
+        graphRepresentation = new AdjacencyList<>();
+    }
+
+    /**
+     * Returns the number of vertices.
+     *
+     * @return the number of vertices
+     */
+    public int V() {
+        return graphRepresentation.V();
+    }
+
+    /**
+     * Returns the number of edges.
+     *
+     * @return the number of edges
+     */
+    public int E() {
+        return graphRepresentation.E();
+    }
+
+    /**
+     * Returns true if the DirectedGraph contains vertex u, false otherwise.
+     *
+     * @param u, the vertex
+     * @return true if the DirectedGraph contains vertex u, false otherwise
+     */
+    public boolean containsVertex(T u) {
+        return graphRepresentation.containsVertex(u);
+    }
+
+    /**
+     * Returns true if the DirectedGraph contains edge (u, v) in its graph representation, false
+     * otherwise.
+     *
+     * @param u, the first vertex
+     * @param v, the second vertex
+     * @return true if the DirectedGraph contains edge (u, v) in its graph representation, false
+     * otherwise
+     */
+    public boolean containsEdge(T u, T v) {
+        return graphRepresentation.containsEdge(u, v);
+    }
+
+    /**
+     * Inserts the vertex u into the DirectedGraph, u must be an isolated vertex, and cannot
+     * already be contained in the DirectedGraph.
+     *
+     * @param u, the vertex
+     */
+    public void insertVertex(T u) {
+        graphRepresentation.insertVertex(u);
+    }
+
+    /**
+     * Inserts an edge (u, v) into the DirectedGraph by inserting edge (u, v) into its graph
+     * representation.
+     *
+     * @param u, the first vertex
+     * @param v, the second vertex
+     */
+    public void insertEdge(T u, T v) {
+        graphRepresentation.insertEdge(u, v);
+    }
+
+    /**
+     * Deletes a vertex u and all of the edges incident to u.
+     *
+     * @param u, the vertex
+     */
+    public void deleteVertex(T u) {
+        graphRepresentation.deleteVertex(u);
+    }
+
+    /**
+     * Deletes an edge (u, v) from the DirectedGraph by deleting edge (u, v) from its graph
+     * representation.
+     *
+     * @param u, the first vertex
+     * @param v, the second vertex
+     */
+    public void deleteEdge(T u, T v) {
+        graphRepresentation.deleteEdge(u, v);
+    }
+
+    /**
+     * Returns the degree of a vertex u (i.e. the number of adjacent vertices to u).
+     *
+     * @return the degree of u
+     */
+    public int getDegree(T u) {
+        return graphRepresentation.getDegree(u);
+    }
+
+    /**
+     * Returns the Iterable adjacency list of the vertex u.
+     *
+     * @param u, the vertex
+     * @return the Iterable adjacency list of the vertex u
+     */
+    public Iterable<T> getAdjacent(T u) {
+        return graphRepresentation.getAdjacent(u);
+    }
+
+    /**
+     * Returns an Iterable to all of the vertices of the DirectedGraph.
+     *
+     * @return an Iterable to all of the vertices of the DirectedGraph
+     */
+    public Iterable<T> getVertices() {
+        return graphRepresentation.getVertices();
+    }
+
+    /**
+     * Returns the reversed graph, that is, for each edge (u, v) in this DirectedGraph, we
+     * add edge (v, u) in the reverse graph.
+     *
+     * @return the reversed graph
+     */
+    public DirectedGraph<T> getReverseGraph() {
+        DirectedGraph<T> reverseGraph = new DirectedGraph<>();
+        for (T u : getVertices()) {
+            if (getDegree(u) == 0) {
+                reverseGraph.insertVertex(u);
+                continue;
+            }
+
+            for (T v : getAdjacent(u))
+                reverseGraph.insertEdge(v, u);
+        }
+        return reverseGraph;
+    }
+
+    /**
+     * Returns a copy of the DirectedGraph.
+     *
+     * @return a copy of the DirectedGraph
+     */
+    public DirectedGraph<T> clone() {
+        DirectedGraph<T> cloneGraph = new DirectedGraph<>();
+        for (T u : getVertices()) {
+            if (getDegree(u) == 0) {
+                cloneGraph.insertVertex(u);
+                continue;
+            }
+
+            for (T v : getAdjacent(u))
+                cloneGraph.insertEdge(u, v);
+        }
+        return cloneGraph;
+    }
+}
+```
 
 ### Time Complexity
 

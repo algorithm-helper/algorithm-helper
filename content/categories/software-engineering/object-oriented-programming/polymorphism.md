@@ -11,20 +11,92 @@ implementation, and this is called dynamic dispatch.
 
 Suppose that we have `ClassA` which have methods `method1` and `other`: 
 
-<script src="https://gist.github.com/eliucs/62008e4f88e0e0a594059a4b210e0ba5.js"></script>
+```
+package com.algorithmhelper.objectorientedprogramming.polymorphism;
+
+public class ClassA {
+
+    /**
+     * Prints out message.
+     */
+    public void method1() {
+        System.out.println("from ClassA");
+    }
+
+    /**
+     * Prints out other message.
+     */
+    public void other() {
+        System.out.println("other from ClassA");
+    }
+}
+```
 
 Then we have `ClassB` that inherits from `ClassA` and has the method `method2`:
 
-<script src="https://gist.github.com/eliucs/4ff76130e4797e07c29267de7c142764.js"></script>
+```
+package com.algorithmhelper.objectorientedprogramming.polymorphism;
+
+public class ClassB extends ClassA {
+
+    /**
+     * Prints out message.
+     */
+    public void method2() {
+        System.out.println("from ClassB");
+    }
+}
+```
 
 Then we have `ClassC` that inherits from `ClassB` and has the method `method3` and `other`:
 
-<script src="https://gist.github.com/eliucs/6ac51976520f189da1ae03b84d9924d9.js"></script>
+```
+package com.algorithmhelper.objectorientedprogramming.polymorphism;
+
+public class ClassC extends ClassB {
+
+    /**
+     * Prints out message.
+     */
+    public void method3() {
+        System.out.println("from ClassC");
+    }
+
+    /**
+     * Prints out other message.
+     */
+    public void other() {
+        System.out.println("other from ClassC");
+    }
+}
+```
 
 We then create an instance of `ClassA` called `objA`, an instance of `ClassB` called `objB`, and 
 an instance of `ClassC` called `objC`. And call all of the methods available on each object:
 
-<script src="https://gist.github.com/eliucs/165e01273d124de5ad6f16bf7f14991a.js"></script>
+```
+package com.algorithmhelper.objectorientedprogramming.polymorphism;
+
+public class PolymorphismTest1 {
+
+    public static void main(String[] args) {
+        ClassA objA = new ClassA();
+        objA.method1();
+        objA.other();
+
+        ClassB objB = new ClassB();
+        objB.method1();
+        objB.method2();
+        objB.other();
+
+        ClassC objC = new ClassC();
+        objC.method1();
+        objC.method2();
+        objC.method3();
+        objC.other();
+    }
+}
+```
 
 We get the expected output:
 
@@ -55,7 +127,25 @@ its own implementation for the method `other`.
 As a further example on the polymorphic properties of `ClassA`, `ClassB`, and `ClassC`, we have the
 following example:
 
-<script src="https://gist.github.com/eliucs/0789bc20739a2a34ad9b4a2e754bd93c.js"></script>
+```
+package com.algorithmhelper.objectorientedprogramming.polymorphism;
+
+public class PolymorphismTest2 {
+
+    public static void main(String[] args) {
+        ClassA objAA = new ClassA();
+        ClassA objAB = new ClassB();
+        ClassA objAC = new ClassC();
+
+        ClassB objBB = new ClassB();
+        ClassB objBC = new ClassC();
+
+        // ClassB objBA = new ClassA();
+        // ClassC objCB = new ClassB();
+        // ClassC objCA = new ClassA();
+    }
+}
+```
 
 Since `ClassC` "is-a" `ClassB` and `ClassA`, where we reference a `ClassA`, we can refer to an 
 instance of a `ClassC` object. Since `ClassB` "is-a" `ClassA`, where we reference a `ClassA`, we can 

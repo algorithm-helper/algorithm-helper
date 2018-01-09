@@ -19,7 +19,29 @@ root of a number.
 
 ##### Java
 
-<script src="https://gist.github.com/eliucs/dc5734c244a2420ff55d7eaf7496c914.js"></script>
+```
+package com.algorithmhelper.algorithms.mathematics;
+
+public class NewtonRaphsonMethod {
+
+    /**
+     * Returns the square root of x.
+     *
+     * @param x
+     * @return the square root of x
+     */
+    public static double sqrt(double x) {
+        if (x < 0)
+            return Double.NaN;
+
+        double EPSILON = 1E-15;
+        double t = x;
+        while (Math.abs(t - x/t) > EPSILON*t)
+            t = (x/t + t) / 2.0;
+        return t;
+    }
+}
+```
 
 ### Time Complexity
 

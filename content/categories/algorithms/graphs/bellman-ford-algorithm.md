@@ -47,7 +47,109 @@ bellmanFordAlgorithm(G, v):
 
 ##### Java
 
-<script src="https://gist.github.com/eliucs/a71a69b646f2c4c283455f86a6abbb0e.js"></script>
+```
+package com.algorithmhelper.algorithms.graphs;
+
+import com.algorithmhelper.datastructures.hashing.HashMapLinearProbing;
+import com.algorithmhelper.datastructures.interfaces.Map;
+import com.algorithmhelper.datastructures.interfaces.Stack;
+import com.algorithmhelper.datastructures.interfaces.WeightedGraph;
+import com.algorithmhelper.datastructures.lists.StackDynamicArray;
+
+public class BellmanFordAlgorithm<T extends Comparable<T>> {
+
+    private Map<T, Double> dist;
+    private Map<T, T> prev;
+
+    /**
+     * Initializes the BellmanFordAlgorithm object, and runs bellmanFordAlgorithm on the graph G
+     * with starting vertex u.
+     *
+     * @param G, the graph
+     * @param u, the starting vertex
+     */
+    public BellmanFordAlgorithm(WeightedGraph<T> G, T u) {
+        if (G == null)
+            throw new IllegalArgumentException("constructor with null graph G");
+        if (u == null)
+            throw new IllegalArgumentException("constructor with null vertex u");
+
+        dist = new HashMapLinearProbing<>();
+        prev = new HashMapLinearProbing<>();
+
+        bellmanFordAlgorithm(G, u);
+    }
+
+    /**
+     * Runs the Bellman-Ford algorithm on the WeightedGraph G and vertex u, and builds up the dist
+     * and prev map.
+     *
+     * @param G, the graph
+     * @param u, the vertex
+     * @throws RuntimeException if a negative weight cycle was detected in graph G
+     */
+    private void bellmanFordAlgorithm(WeightedGraph<T> G, T u) {
+        for (T v : G.getVertices()) {
+            dist.put(v, Double.MAX_VALUE);
+            prev.put(v, null);
+        }
+
+        dist.put(u, 0.0);
+
+        for (int i = 0; i < G.V(); i++) {
+            for (T v : G.getVertices()) {
+                for (T w : G.getAdjacent(v))
+                    relax(v, w, G.getWeight(v, w));
+            }
+        }
+
+        for (T v : G.getVertices()) {
+            for (T w : G.getAdjacent(v)) {
+                if (dist.get(w) > dist.get(v) + G.getWeight(v, w))
+                    throw new RuntimeException("negative weight cycle detected in graph G");
+            }
+        }
+    }
+
+    /**
+     * Helper method for relaxing the edge (u, v).
+     *
+     * @param u, the first vertex
+     * @param v, the second vertex
+     */
+    private void relax(T u, T v, double weight) {
+        if (dist.get(v) > dist.get(u) + weight) {
+            dist.put(v, dist.get(u) + weight);
+            prev.put(v, u);
+        }
+    }
+
+    /**
+     * Returns an Iterable to the shortest path from the starting vertex to some other vertex v
+     * in the graph.
+     *
+     * @param v, the vertex
+     * @return an Iterable to the shortest path from the starting vertex to some other vertex v
+     * in the graph
+     */
+    public Iterable<T> getShortestPath(T v) {
+        if (v == null)
+            throw new IllegalArgumentException("getShortestPath with null vertex v");
+        Stack<T> stack = new StackDynamicArray<>();
+        stack.push(v);
+        T current = v;
+        while (true) {
+            current = prev.get(current);
+
+            if (current == null)
+                break;
+
+            stack.push(current);
+        }
+        return stack;
+    }
+}
+```
 
 ### Time Complexity
 

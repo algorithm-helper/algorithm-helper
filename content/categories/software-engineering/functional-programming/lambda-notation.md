@@ -12,13 +12,19 @@ Suppose that we have a function `someFunction` that takes in two arguments, a un
 and a value `n`, that returns the result of calling `fn` passing in `n` as an argument. Note that
 this uses ES6 arrow notation:
 
-<script src="https://gist.github.com/eliucs/6e7bef0c24c2cb4421071f4403dbc1f3.js"></script>
+```
+const someFunction = (fn, n) => fn(n);
+```
 
 Then, instead of defining a named function, that is, assigning a function to a variable, or having
 a function with an identifier, we can simply pass in an anonymous function as the first argument to
 `someFunction`:
 
-<script src="https://gist.github.com/eliucs/f560535d5e08a8624f614546a7f0afbf.js"></script>
+```
+const someFunction = (fn, n) => fn(n);
+
+console.log(someFunction((n) => n + 1, 10));
+```
 
 We get the expected output:
 
@@ -35,7 +41,16 @@ anonymous functions, since we have no identifier to invoke them. In the followin
 a named function `f` and an IIFE. Clearly, we must take the extra step to invoke `f` as opposed to
 the IIFE:
 
-<script src="https://gist.github.com/eliucs/30b9ea89281d19e258cb81805034006b.js"></script>
+```
+const f = () => {
+    console.log("from f");
+};
+f();
+
+(() => {
+    console.log("from IIFE");
+})();
+```
 
 We get the expected output:
 

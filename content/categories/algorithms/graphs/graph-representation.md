@@ -132,25 +132,771 @@ The following provides the interface for the `GraphRepresentation` class.
 
 ##### Java
 
-<script src="https://gist.github.com/eliucs/7b0157d77b04c5e0ba817701dc04481e.js"></script>
+```
+package com.algorithmhelper.datastructures.interfaces;
+
+public interface GraphRepresentation<T extends Comparable<T>> {
+
+    /**
+     * Returns the number of vertices.
+     *
+     * @return the number of vertices
+     */
+    int V();
+
+    /**
+     * Returns the number of edges.
+     *
+     * @return the number of edges
+     */
+    int E();
+
+    /**
+     * Returns true if the GraphRepresentation contains vertex u, false otherwise.
+     *
+     * @param u, the vertex
+     * @return true if the GraphRepresentation contains vertex u, false otherwise
+     */
+    boolean containsVertex(T u);
+
+    /**
+     * Returns true if the GraphRepresentation contains edge (u, v), false otherwise.
+     *
+     * @param u, the first vertex
+     * @param v, the second vertex
+     * @return true if the GraphRepresentation contains edge (u, v), false otherwise
+     */
+    boolean containsEdge(T u, T v);
+
+    /**
+     * Inserts the vertex u into the GraphRepresentation, u must be an isolated vertex, and cannot
+     * already be contained in the GraphRepresentation.
+     *
+     * @param u, the vertex
+     */
+    void insertVertex(T u);
+
+    /**
+     * Inserts an edge (u, v) into the GraphRepresentation.
+     *
+     * @param u, the first vertex
+     * @param v, the second vertex
+     */
+    void insertEdge(T u, T v);
+
+    /**
+     * Deletes a vertex u and all of the edges incident to u.
+     *
+     * @param u, the vertex
+     */
+    void deleteVertex(T u);
+
+    /**
+     * Deletes an edge (u, v) from the GraphRepresentation.
+     *
+     * @param u, the first vertex
+     * @param v, the second vertex
+     */
+    void deleteEdge(T u, T v);
+
+    /**
+     * Returns the degree of a vertex u (i.e. the number of adjacent vertices to u).
+     *
+     * @return the degree of u
+     */
+    int getDegree(T u);
+
+    /**
+     * Returns an Iterable adjacency list of the vertex u.
+     *
+     * @param u, the vertex
+     * @return the Iterable adjacency list of the vertex u
+     */
+    Iterable<T> getAdjacent(T u);
+
+    /**
+     * Returns an Iterable to all of the vertices of the GraphRepresentation.
+     *
+     * @return an Iterable to all of the vertices of the GraphRepresentation
+     */
+    Iterable<T> getVertices();
+}
+```
 
 ### Implementation (Edge List)
 
 ##### Java
 
-<script src="https://gist.github.com/eliucs/95a47555aa53ef781feae6234fec8555.js"></script>
+```
+package com.algorithmhelper.datastructures.graphs;
+
+import com.algorithmhelper.datastructures.hashing.HashSetLinearProbing;
+import com.algorithmhelper.datastructures.interfaces.GraphRepresentation;
+import com.algorithmhelper.datastructures.interfaces.Set;
+import com.algorithmhelper.datastructures.lists.DynamicArray;
+
+public class EdgeList<T extends Comparable<T>> implements GraphRepresentation<T> {
+
+    /**
+     * Edge class.
+     */
+    private class Edge {
+        T u;
+        T v;
+
+        /**
+         * Initializes an Edge with vertices u and v.
+         *
+         * @param u, the first vertex
+         * @param v, the second vertex
+         */
+        Edge(T u, T v) {
+            this.u = u;
+            this.v = v;
+        }
+
+        boolean equals(Edge that) {
+            return this.u.equals(that.u) && this.v.equals(that.v);
+        }
+    }
+
+    private DynamicArray<Edge> edgeList;
+    private int E;
+    private int V;
+
+    /**
+     * Initializes an empty EdgeList.
+     */
+    public EdgeList() {
+        edgeList = new DynamicArray<>();
+        E = 0;
+        V = 0;
+    }
+
+    /**
+     * Returns the number of vertices.
+     *
+     * @return the number of vertices
+     */
+    public int V() {
+        return V;
+    }
+
+    /**
+     * Returns the number of edges.
+     *
+     * @return the number of edges
+     */
+    public int E() {
+        return E;
+    }
+
+    /**
+     * Returns true if the EdgeList contains vertex u, false otherwise.
+     *
+     * @param u, the vertex
+     * @return true if the EdgeList contains vertex u, false otherwise
+     * @throws IllegalArgumentException if the vertex u is null
+     */
+    public boolean containsVertex(T u) {
+        if (u == null)
+            throw new IllegalArgumentException("containsVertex with null vertex u");
+
+        for (Edge edge : edgeList) {
+            if (edge.u.equals(u) || edge.v.equals(u))
+                return true;
+        }
+        return false;
+    }
+
+    /**
+     * Returns true if the EdgeList contains edge (u, v), false otherwise.
+     *
+     * @param u, the first vertex
+     * @param v, the second vertex
+     * @return true if the EdgeList contains edge (u, v), false otherwise
+     * @throws IllegalArgumentException if the vertex u is null
+     * @throws IllegalArgumentException if the vertex v is null
+     */
+    public boolean containsEdge(T u, T v) {
+        if (u == null)
+            throw new IllegalArgumentException("containsEdge with null vertex u");
+        if (v == null)
+            throw new IllegalArgumentException("containsEdge with null vertex v");
+
+        for (Edge edge : edgeList) {
+            if (edge.u.equals(u) && edge.v.equals(v))
+                return true;
+        }
+        return false;
+    }
+
+    /**
+     * This is not supported.
+     *
+     * @throws IllegalArgumentException
+     */
+    public void insertVertex(T u) {
+        throw new IllegalArgumentException("insertVertex not supported");
+    }
+
+    /**
+     * Inserts an edge (u, v) into the EdgeList.
+     *
+     * @param u, the first vertex
+     * @param v, the second vertex
+     * @throws IllegalArgumentException if the vertex u is null
+     * @throws IllegalArgumentException if the vertex v is null
+     */
+    public void insertEdge(T u, T v) {
+        if (u == null)
+            throw new IllegalArgumentException("insertEdge with null vertex u");
+        if (v == null)
+            throw new IllegalArgumentException("insertEdge with null vertex v");
+
+        if (containsEdge(u, v))
+            return;
+        if (!containsVertex(u))
+            V++;
+        if (!containsVertex(v))
+            V++;
+        edgeList.insertBack(new Edge(u, v));
+        E++;
+    }
+
+    /**
+     * Deletes a vertex u and all of the edges incident to u.
+     *
+     * @param u, the vertex
+     * @throws IllegalArgumentException if the vertex u is null
+     */
+    public void deleteVertex(T u) {
+        if (u == null)
+            throw new IllegalArgumentException("deleteVertex with null vertex u");
+        if (!containsVertex(u))
+            return;
+
+        DynamicArray<Edge> newEdgeList = new DynamicArray<>();
+        E = 0;
+        for (Edge edge : edgeList) {
+            if (!edge.u.equals(u) && !edge.v.equals(u)) {
+                newEdgeList.insertBack(edge);
+                E++;
+            }
+        }
+        edgeList = newEdgeList;
+        V--;
+    }
+
+    /**
+     * Deletes an edge (u, v) from the EdgeList.
+     *
+     * @param u, the first vertex
+     * @param v, the second vertex
+     * @throws IllegalArgumentException if the vertex u is null
+     * @throws IllegalArgumentException if the vertex v is null
+     */
+    public void deleteEdge(T u, T v) {
+        if (u == null)
+            throw new IllegalArgumentException("deleteEdge with null vertex u");
+        if (v == null)
+            throw new IllegalArgumentException("deleteEdge with null vertex v");
+        if (!containsEdge(u, v))
+            return;
+
+        int i = 0;
+        Edge temp = new Edge(u, v);
+        for (Edge edge : edgeList) {
+            if (temp.equals(edge))
+                return;
+            i++;
+        }
+        edgeList.remove(i);
+
+        if (!containsVertex(u))
+            V--;
+        if (!containsVertex(v))
+            V--;
+        E--;
+    }
+
+    /**
+     * Returns the degree of a vertex u (i.e. the number of adjacent vertices to u).
+     *
+     * @return the degree of u
+     * @throws IllegalArgumentException if the vertex u is null
+     * @throws IllegalArgumentException if the vertex u is not contained in the EdgeList
+     */
+    public int getDegree(T u) {
+        if (u == null)
+            throw new IllegalArgumentException("getDegree with null vertex u");
+        if (!containsVertex(u))
+            throw new IllegalArgumentException("getDegree with non-existent vertex u");
+
+        int degree = 0;
+        Set<T> set = new HashSetLinearProbing<>();
+        for (Edge edge : edgeList) {
+            if (edge.u.equals(u) && !edge.v.equals(u)) {
+                if (!set.contains(edge.v)) {
+                    degree++;
+                    set.put(edge.v);
+                }
+            } else if (!edge.u.equals(u) && edge.v.equals(u)) {
+                if (!set.contains(edge.u)) {
+                    degree++;
+                    set.put(edge.u);
+                }
+            }
+        }
+        return degree;
+    }
+
+    /**
+     * Returns an Iterable to all of the vertices adjacent to vertex u.
+     *
+     * @param u, the vertex
+     * @return the Iterable adjacency list of the vertex u
+     * @throws IllegalArgumentException if the vertex u is null
+     * @throws IllegalArgumentException if the vertex u is not contained in the EdgeList
+     */
+    public Iterable<T> getAdjacent(T u) {
+        if (u == null)
+            throw new IllegalArgumentException("getAdjacent with null vertex u");
+        if (!containsVertex(u))
+            throw new IllegalArgumentException("getAdjacent with non-existent vertex u");
+
+        Set<T> set = new HashSetLinearProbing<>();
+        for (Edge edge : edgeList) {
+            if (edge.u.equals(u) && !edge.v.equals(u))
+                set.put(edge.v);
+        }
+        return set.keys();
+    }
+
+    /**
+     * Returns an Iterable to all of the vertices of the EdgeList.
+     *
+     * @return an Iterable to all of the vertices of the EdgeList
+     */
+    public Iterable<T> getVertices() {
+        Set<T> set = new HashSetLinearProbing<>();
+        for (Edge edge : edgeList) {
+            set.put(edge.u);
+            set.put(edge.v);
+        }
+        return set.keys();
+    }
+}
+```
 
 ### Implementation (Vertex Matrix)
 
 ##### Java
 
-<script src="https://gist.github.com/eliucs/e86f5592d82300f82334870acaaf5caa.js"></script>
+```
+package com.algorithmhelper.datastructures.graphs;
+
+import com.algorithmhelper.datastructures.hashing.HashMapLinearProbing;
+import com.algorithmhelper.datastructures.hashing.HashSetLinearProbing;
+import com.algorithmhelper.datastructures.interfaces.GraphRepresentation;
+
+/**
+ * Note: Using a VertexMatrix for non-integer types makes using a 2D array unusable.
+ * We implement the matrix as a sparse matrix using HashMaps/HashSets, but this ends up
+ * being nearly the same as the AdjacencyList. Use that instead.
+ */
+public class VertexMatrix<T extends Comparable<T>> implements GraphRepresentation<T> {
+
+    private HashMapLinearProbing<T, HashSetLinearProbing<T>> vertexMatrix;
+    private int V;
+    private int E;
+
+    /**
+     * Initializes an empty VertexMatrix.
+     */
+    public VertexMatrix() {
+        E = 0;
+        V = 0;
+    }
+
+    /**
+     * Returns the number of vertices.
+     *
+     * @return the number of vertices
+     */
+    public int V() {
+        return V;
+    }
+
+    /**
+     * Returns the number of edges.
+     *
+     * @return the number of edges
+     */
+    public int E() {
+        return E;
+    }
+
+    /**
+     * Returns true if the VertexMatrix contains vertex u, false otherwise.
+     *
+     * @param u, the vertex
+     * @return true if the VertexMatrix contains vertex u, false otherwise
+     * @throws IllegalArgumentException if the vertex u is null
+     */
+    public boolean containsVertex(T u) {
+        if (u == null)
+            throw new IllegalArgumentException("containsVertex with null vertex u");
+
+        return vertexMatrix.contains(u);
+    }
+
+    /**
+     * Returns true if the VertexMatrix contains edge (u, v), false otherwise.
+     *
+     * @param u, the first vertex
+     * @param v, the second vertex
+     * @return true if the VertexMatrix contains edge (u, v), false otherwise
+     * @throws IllegalArgumentException if the vertex u is null
+     * @throws IllegalArgumentException if the vertex v is null
+     */
+    public boolean containsEdge(T u, T v) {
+        if (u == null)
+            throw new IllegalArgumentException("containsEdge with null vertex u");
+        if (v == null)
+            throw new IllegalArgumentException("containsEdge with null vertex v");
+
+        if (!containsVertex(u))
+            return false;
+        return vertexMatrix.get(u).contains(v);
+    }
+
+    /**
+     * Inserts the vertex u into the VertexMatrix, u must be an isolated vertex, and cannot
+     * already be contained in the VertexMatrix.
+     *
+     * @param u, the vertex
+     * @throws IllegalArgumentException if the vertex u is null
+     */
+    public void insertVertex(T u) {
+        if (u == null)
+            throw new IllegalArgumentException("insertVertex with null vertex u");
+
+        if (containsVertex(u))
+            return;
+        vertexMatrix.put(u, new HashSetLinearProbing<>());
+        V++;
+    }
+
+    /**
+     * Inserts an edge (u, v) into the VertexMatrix.
+     *
+     * @param u, the first vertex
+     * @param v, the second vertex
+     */
+    public void insertEdge(T u, T v) {
+        if (u == null)
+            throw new IllegalArgumentException("insertEdge with null vertex u");
+        if (v == null)
+            throw new IllegalArgumentException("insertEdge with null vertex v");
+
+        if (containsEdge(u, v))
+            return;
+        if (!containsVertex(u))
+            insertVertex(u);
+        if (!containsVertex(v))
+            insertVertex(v);
+        vertexMatrix.get(u).put(v);
+        E++;
+    }
+
+    /**
+     * Deletes a vertex u and all of the edges incident to u.
+     *
+     * @param u, the vertex
+     * @throws IllegalArgumentException if the vertex u is null
+     */
+    public void deleteVertex(T u) {
+        if (u == null)
+            throw new IllegalArgumentException("deleteVertex with null vertex u");
+        if (!containsVertex(u))
+            return;
+
+        vertexMatrix.delete(u);
+        for (T v : vertexMatrix.keys()) {
+            if (vertexMatrix.get(v).contains(u)) {
+                vertexMatrix.get(v).delete(u);
+                E--;
+            }
+        }
+        V--;
+    }
+
+    /**
+     * Deletes an edge (u, v) from the VertexMatrix.
+     *
+     * @param u, the first vertex
+     * @param v, the second vertex
+     * @throws IllegalArgumentException if the vertex u is null
+     * @throws IllegalArgumentException if the vertex v is null
+     */
+    public void deleteEdge(T u, T v) {
+        if (u == null)
+            throw new IllegalArgumentException("deleteEdge with null vertex u");
+        if (v == null)
+            throw new IllegalArgumentException("deleteEdge with null vertex v");
+        if (!containsEdge(u, v))
+            return;
+
+        vertexMatrix.get(u).delete(v);
+        E--;
+    }
+
+    /**
+     * Returns the degree of a vertex u (i.e. the number of adjacent vertices to u).
+     *
+     * @return the degree of u
+     */
+    public int getDegree(T u) {
+        if (u == null)
+            throw new IllegalArgumentException("getDegree with null vertex u");
+        if (!containsVertex(u))
+            throw new IllegalArgumentException("getDegree with non-existent vertex u");
+
+        return vertexMatrix.get(u).size();
+    }
+
+    /**
+     * Returns the Iterable adjacency list of the vertex u.
+     *
+     * @param u, the vertex
+     * @return the Iterable adjacency list of the vertex u
+     */
+    public Iterable<T> getAdjacent(T u) {
+        if (u == null)
+            throw new IllegalArgumentException("getAdjacent with null vertex u");
+        if (!containsVertex(u))
+            throw new IllegalArgumentException("getAdjacent with non-existent vertex u");
+
+        return vertexMatrix.get(u).keys();
+    }
+
+    /**
+     * Returns an Iterable to all of the vertices of the VertexMatrix.
+     *
+     * @return an Iterable to all of the vertices of the VertexMatrix
+     */
+    public Iterable<T> getVertices() {
+        return vertexMatrix.keys();
+    }
+}
+```
 
 ### Implementation (Adjacency List)
 
 ##### Java
 
-<script src="https://gist.github.com/eliucs/88a4b84231e1a8ee61579c5101e2aee5.js"></script>
+```
+package com.algorithmhelper.datastructures.graphs;
+
+import com.algorithmhelper.datastructures.hashing.HashMapLinearProbing;
+import com.algorithmhelper.datastructures.lists.LinkedList;
+import com.algorithmhelper.datastructures.interfaces.GraphRepresentation;
+
+public class AdjacencyList<T extends Comparable<T>> implements GraphRepresentation<T> {
+
+    private HashMapLinearProbing<T, LinkedList<T>> adjacencyList;
+    private int E;
+    private int V;
+
+    /**
+     * Initializes an empty AdjacencyList.
+     */
+    public AdjacencyList() {
+        adjacencyList = new HashMapLinearProbing<>();
+        E = 0;
+        V = 0;
+    }
+
+    /**
+     * Returns the number of vertices.
+     *
+     * @return the number of vertices
+     */
+    public int V() {
+        return V;
+    }
+
+    /**
+     * Returns the number of edges.
+     *
+     * @return the number of edges
+     */
+    public int E() {
+        return E;
+    }
+
+    /**
+     * Returns true if the AdjacencyList contains vertex u, false otherwise.
+     *
+     * @param u, the vertex
+     * @return true if the AdjacencyList contains vertex u, false otherwise
+     * @throws IllegalArgumentException if the vertex u is null
+     */
+    public boolean containsVertex(T u) {
+        if (u == null)
+            throw new IllegalArgumentException("containsVertex with null vertex u");
+
+        return adjacencyList.contains(u);
+    }
+
+    /**
+     * Returns true if the AdjacencyList contains edge (u, v), false otherwise.
+     *
+     * @param u, the first vertex
+     * @param v, the second vertex
+     * @return true if the AdjacencyList contains edge (u, v), false otherwise
+     * @throws IllegalArgumentException if the vertex u is null
+     * @throws IllegalArgumentException if the vertex v is null
+     */
+    public boolean containsEdge(T u, T v) {
+        if (u == null)
+            throw new IllegalArgumentException("containsEdge with null vertex u");
+        if (v == null)
+            throw new IllegalArgumentException("containsEdge with null vertex v");
+
+        if (!containsVertex(u))
+            return false;
+        return adjacencyList.get(u).contains(v);
+    }
+
+    /**
+     * Inserts the vertex u into the AdjacencyList, u must be an isolated vertex, and cannot
+     * already be contained in the AdjacencyList.
+     *
+     * @param u, the vertex
+     * @throws IllegalArgumentException if the vertex u is null
+     */
+    public void insertVertex(T u) {
+        if (u == null)
+            throw new IllegalArgumentException("insertVertex with null vertex u");
+
+        if (containsVertex(u))
+            return;
+        adjacencyList.put(u, new LinkedList<>());
+        V++;
+    }
+
+    /**
+     * Inserts an edge (u, v) into the AdjacencyList.
+     *
+     * @param u, the first vertex
+     * @param v, the second vertex
+     * @throws IllegalArgumentException if the vertex u is null
+     * @throws IllegalArgumentException if the vertex v is null
+     */
+    public void insertEdge(T u, T v) {
+        if (u == null)
+            throw new IllegalArgumentException("insertEdge with null vertex u");
+        if (v == null)
+            throw new IllegalArgumentException("insertEdge with null vertex v");
+
+        if (containsEdge(u, v))
+            return;
+        if (!adjacencyList.contains(u))
+            insertVertex(u);
+        if (!adjacencyList.contains(v))
+            insertVertex(v);
+        adjacencyList.get(u).insertFront(v);
+        E++;
+    }
+
+    /**
+     * Deletes a vertex u and all of the edges incident to u.
+     *
+     * @param u, the vertex
+     * @throws IllegalArgumentException if the vertex u is null
+     */
+    public void deleteVertex(T u) {
+        if (u == null)
+            throw new IllegalArgumentException("deleteVertex with null vertex u");
+        if (!containsVertex(u))
+            return;
+
+        LinkedList<T> adjacent = adjacencyList.get(u);
+        for (T v : adjacent) {
+            if (adjacencyList.get(v).contains(u)) {
+                adjacencyList.get(v).remove(u);
+                E--;
+            }
+        }
+        adjacencyList.delete(u);
+        V--;
+    }
+
+    /**
+     * Deletes an edge (u, v) from the AdjacencyList.
+     *
+     * @param u, the first vertex
+     * @param v, the second vertex
+     * @throws IllegalArgumentException if the vertex u is null
+     * @throws IllegalArgumentException if the vertex v is null
+     */
+    public void deleteEdge(T u, T v) {
+        if (u == null)
+            throw new IllegalArgumentException("deleteEdge with null vertex u");
+        if (v == null)
+            throw new IllegalArgumentException("deleteEdge with null vertex v");
+        if (!containsEdge(u, v))
+            return;
+
+        adjacencyList.get(u).remove(v);
+        E--;
+    }
+
+    /**
+     * Returns the degree of a vertex u (i.e. the number of adjacent vertices to u).
+     *
+     * @return the degree of u
+     * @throws IllegalArgumentException if the vertex u is null
+     * @throws IllegalArgumentException if the vertex u is not contained in the AdjacencyList
+     */
+    public int getDegree(T u) {
+        if (u == null)
+            throw new IllegalArgumentException("getDegree with null vertex u");
+        if (!containsVertex(u))
+            throw new IllegalArgumentException("getDegree with non-existent vertex u");
+
+        return adjacencyList.get(u).size();
+    }
+
+    /**
+     * Returns an Iterable to all of the vertices adjacent to vertex u.
+     *
+     * @param u, the vertex
+     * @return the Iterable adjacency list of the vertex u
+     * @throws IllegalArgumentException if the vertex u is null
+     * @throws IllegalArgumentException if the vertex u is not contained in the AdjacencyList
+     */
+    public Iterable<T> getAdjacent(T u) {
+        if (u == null)
+            throw new IllegalArgumentException("getAdjacent with null vertex u");
+        if (!containsVertex(u))
+            throw new IllegalArgumentException("getAdjacent with non-existent vertex u");
+
+        return adjacencyList.get(u);
+    }
+
+    /**
+     * Returns an Iterable to all of the vertices of the AdjacencyList.
+     *
+     * @return an Iterable to all of the vertices of the AdjacencyList
+     */
+    public Iterable<T> getVertices() {
+        return adjacencyList.keys();
+    }
+}
+```
 
 ### Time Complexity
 

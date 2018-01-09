@@ -280,7 +280,47 @@ YFSC
 
 ##### Java
 
-<script src="https://gist.github.com/eliucs/b6baf5f983bce5609e6a771cea279d84.js"></script>
+```
+package com.algorithmhelper.algorithms.strings;
+
+public class LSDStringSort {
+
+    /**
+     * Sorts the array arr.
+     *
+     * @param arr, the array to be sorted.
+     * @throws IllegalArgumentException if arr is null
+     */
+    public static void sort(String[] arr) {
+        if (arr == null || arr.length == 0)
+            throw new IllegalArgumentException("sort with null arr");
+
+        int R = 65536;
+        String[] aux = new String[arr.length];
+
+        for (int i = arr.length - 1; i >= 0; i--) {
+            int[] count = new int[R+1];
+
+            for (int j = 0; j < count.length; j++)
+                count[j] = 0;
+
+            for (int j = 0; j < arr.length; j++)
+                count[arr[j].charAt(i)+1]++;
+
+            for (int j = 0; j < R; j++)
+                count[j+1] += count[j];
+
+            for (int j = 0; j < arr.length; j++) {
+                aux[count[arr[j].charAt(i)]] = arr[j];
+                count[arr[j].charAt(i)]++;
+            }
+
+            for (int j = 0; j < arr.length; j++)
+                arr[j] = aux[j];
+        }
+    }
+}
+```
 
 ### Time Complexity
 

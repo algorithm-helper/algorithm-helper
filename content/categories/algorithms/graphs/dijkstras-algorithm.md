@@ -59,9 +59,130 @@ choose the path $(1, 3), (3, 5)$ instead of the shortest one which is $(1, 2), (
 
 ##### Java
 
-View the source code [here](https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/algorithms/graphs/DijkstrasAlgorithm.java).
+```
+package com.algorithmhelper.algorithms.graphs;
 
-<script src="https://gist.github.com/eliucs/cc38ee2aad31eb7b4f034c63a7102b2f.js"></script>
+import com.algorithmhelper.datastructures.hashing.HashMapLinearProbing;
+import com.algorithmhelper.datastructures.interfaces.Map;
+import com.algorithmhelper.datastructures.interfaces.Stack;
+import com.algorithmhelper.datastructures.interfaces.WeightedGraph;
+import com.algorithmhelper.datastructures.lists.StackDynamicArray;
+import com.algorithmhelper.datastructures.trees.PriorityMinQueue;
+
+public class DijkstrasAlgorithm<T extends Comparable<T>> {
+
+    private Map<T, Double> dist;
+    private Map<T, T> prev;
+    PriorityMinQueue<Node<T>> pq;
+
+    private class Node<T extends Comparable<T>> implements Comparable<Node<T>> {
+        T u;
+        double dist;
+
+        Node(T u, double dist) {
+            this.u = u;
+            this.dist = dist;
+        }
+
+        public int compareTo(Node<T> that) {
+            if (this.dist < that.dist)
+                return -1;
+            else if (this.dist > that.dist)
+                return 1;
+            return 0;
+        }
+    }
+
+    /**
+     * Initializes the DijkstrasAlgorithm object, and runs dijkstrasAlgorithm on the graph G with
+     * starting vertex u.
+     *
+     * @param G, the graph
+     * @param u, the starting vertex
+     */
+    public DijkstrasAlgorithm(WeightedGraph<T> G, T u) {
+        if (G == null)
+            throw new IllegalArgumentException("constructor with null graph G");
+        if (u == null)
+            throw new IllegalArgumentException("constructor with null vertex u");
+
+        dist = new HashMapLinearProbing<>();
+        prev = new HashMapLinearProbing<>();
+        pq = new PriorityMinQueue<>();
+
+        dijkstrasAlgorithm(G, u);
+    }
+
+    /**
+     * Runs Dijkstra's algorithm on the WeightedGraph G and vertex u, and builds up the dist and
+     * prev map.
+     *
+     * @param G, the graph
+     * @param u, the vertex
+     */
+    private void dijkstrasAlgorithm(WeightedGraph<T> G, T u) {
+        for (T v : G.getVertices()) {
+            dist.put(v, Double.MAX_VALUE);
+            prev.put(v, null);
+            pq.insert(new Node<>(u, dist.get(u)));
+        }
+
+        dist.put(u, 0.0);
+        pq.insert(new Node<>(u, dist.get(u)));
+
+        while (!pq.isEmpty()) {
+            Node<T> min = pq.removeMin();
+            if (min.dist != dist.get(min.u))
+                continue;
+
+            T current = min.u;
+
+            for (T v : G.getAdjacent(current)) {
+                relax(current, v, G.getWeight(current, v));
+            }
+        }
+    }
+
+    /**
+     * Helper method for relaxing the edge (u, v).
+     *
+     * @param u, the first vertex
+     * @param v, the second vertex
+     */
+    private void relax(T u, T v, double weight) {
+        if (dist.get(v) > dist.get(u) + weight) {
+            dist.put(v, dist.get(u) + weight);
+            prev.put(v, u);
+            pq.insert(new Node<>(v, dist.get(v)));
+        }
+    }
+
+    /**
+     * Returns an Iterable to the shortest path from the starting vertex to some other vertex v
+     * in the graph.
+     *
+     * @param v, the vertex
+     * @return an Iterable to the shortest path from the starting vertex to some other vertex v
+     * in the graph
+     */
+    public Iterable<T> getShortestPath(T v) {
+        if (v == null)
+            throw new IllegalArgumentException("getShortestPath with null vertex v");
+        Stack<T> stack = new StackDynamicArray<>();
+        stack.push(v);
+        T current = v;
+        while (true) {
+            current = prev.get(current);
+
+            if (current == null)
+                break;
+
+            stack.push(current);
+        }
+        return stack;
+    }
+}
+```
 
 ### Time Complexity
 

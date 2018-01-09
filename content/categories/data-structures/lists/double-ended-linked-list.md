@@ -78,7 +78,307 @@ list, since they can be directly accessed, and done in `O(1)` time.
 
 ##### Java
 
-<script src="https://gist.github.com/eliucs/2165c125c621e000ac05fa21c8823ccb.js"></script>
+```
+package com.algorithmhelper.datastructures.lists;
+
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+import com.algorithmhelper.datastructures.interfaces.List;
+
+public class DoubleEndedLinkedList<T> implements List<T> {
+
+    private Node<T> first;
+    private Node<T> last;
+    private int n;
+
+    private class Node<T> {
+        private T item;
+        private Node<T> next;
+        private Node<T> prev;
+
+        public Node() {}
+
+        public Node(T item, Node<T> next, Node<T> prev) {
+            this.item = item;
+            this.next = next;
+            this.prev = prev;
+        }
+    }
+
+    /**
+     * Initializes an empty DoubleEndedLinkedList.
+     */
+    public DoubleEndedLinkedList() {
+        first = null;
+        last = null;
+        n = 0;
+    }
+
+    /**
+     * Returns true if this DoubleEndedLinkedList contains no elements, otherwise false.
+     *
+     * @return true if this DoubleEndedLinkedList contains no elements, otherwise false
+     */
+    public boolean isEmpty() {
+        return n == 0;
+    }
+
+    /**
+     * Returns the number of elements contained in the DoubleEndedLinkedList.
+     *
+     * @return the number of elements contained in the DoubleEndedLinkedList
+     */
+    public int size() {
+        return n;
+    }
+
+    /**
+     * Returns the element at the specified index in the DoubleEndedLinkedList.
+     *
+     * @param i, the index into the DoubleEndedLinkedList
+     * @return the element at index i in the DoubleEndedLinkedList
+     * @throws IndexOutOfBoundsException if i is greater or equal to the length of the
+     *         DoubleEndedLinkedList or a negative number
+     */
+    public T get(int i) {
+        if (i >= n || i < 0)
+            throw new IndexOutOfBoundsException("get index out of bounds");
+
+        if (i == 0 && first == null ||
+                i == n-1 && last == null)
+            return null;
+
+        if (i == 0)
+            return first.item;
+        else if (i == n-1)
+            return last.item;
+
+        Node<T> current = first;
+        for (int j = 0; j < i; j++)
+            current = current.next;
+        return current.item;
+    }
+
+    /**
+     * Inserts the item at the specified index in the DoubleEndedLinkedList.
+     *
+     * @param item, the item to be inserted
+     * @param i, the index into the DoubleEndedLinkedList
+     * @throws IllegalArgumentException if the item is null
+     * @throws IndexOutOfBoundsException if i is greater or equal to the length
+     *         of the DoubleEndedLinkedList or a negative number
+     */
+    public void insert(int i, T item) {
+        if (item == null)
+            throw new IllegalArgumentException("insert with null item");
+        if (i >= n || i < 0)
+            throw new IndexOutOfBoundsException("insert index out of bounds");
+
+        if (i == 0) {
+            insertFront(item);
+        } else if (i == n-1) {
+            insertBack(item);
+        } else {
+            Node<T> current = first;
+            for (int j = 0; j < i; j++)
+                current = current.next;
+
+            Node<T> newNode = new Node(item, current, current.prev);
+            current.prev = newNode;
+            current.prev.next = newNode;
+            n++;
+        }
+    }
+
+    /**
+     * Inserts the item to the front of the DoubleEndedLinkedList.
+     *
+     * @param item, the item to be inserted
+     * @throws IllegalArgumentException if the item is null
+     */
+    public void insertFront(T item) {
+        if (item == null)
+            throw new IllegalArgumentException("insertFront with null item");
+
+        Node<T> oldFirst = first;
+        first = new Node(item, oldFirst, null);
+
+        if (isEmpty())
+            last = first;
+        else
+            oldFirst.prev = first;
+        n++;
+    }
+
+    /**
+     * Inserts the item to the back of the DoubleEndedLinkedList.
+     *
+     * @param item, the item to be inserted
+     * @throws IllegalArgumentException if the item is null
+     */
+    public void insertBack(T item) {
+        if (item == null)
+            throw new IllegalArgumentException("insertBack with null item");
+
+        Node<T> oldLast = last;
+        last = new Node(item, null, oldLast);
+
+        if (isEmpty())
+            first = last;
+        else
+            oldLast.next = last;
+        n++;
+    }
+
+    /**
+     * Removes the item at the specified index in the DoubleEndedLinkedList.
+     *
+     * @param i, the index into the DoubleEndedLinkedList
+     * @throws IndexOutOfBoundsException if i is greater or equal to the length
+     *         of the DoubleEndedLinkedList or a negative number
+     */
+    public T remove(int i) {
+        if (i >= n || i < 0)
+            throw new IndexOutOfBoundsException("insert index out of bounds");
+
+        if (i == 0) {
+            return removeFront();
+        } else if (i == n-1) {
+            return removeBack();
+        } else {
+            Node<T> current = first;
+            for (int j = 0; j < i-1; j++)
+                current = current.next;
+
+            T item = current.next.item;
+            current.next = null;
+            current.next = current.next.next;
+            current.next.prev = current;
+            n--;
+            return item;
+        }
+    }
+
+    /**
+     * Removes the item at the front of the DoubleEndedLinkedList, and returns it.
+     *
+     * @return the item at the front of the DoubleEndedLinkedList
+     * @throws NoSuchElementException if this DoubleEndedLinkedList is empty
+     */
+    public T removeFront() {
+        if (isEmpty()) {
+            throw new NoSuchElementException("removeFront from empty DoubleEndedLinkedList");
+        }
+
+        T item = first.item;
+        first = first.next;
+        first.prev = null;
+
+        n--;
+
+        if (isEmpty())
+            last = null;
+        return item;
+    }
+
+    /**
+     * Removes the item at the back of the DoubleEndedLinkedList, and returns it.
+     *
+     * @return the item at the back of the DoubleEndedLinkedList
+     * @throws NoSuchElementException if this DoubleEndedLinkedList is empty
+     */
+    public T removeBack() {
+        if (isEmpty()) {
+            throw new NoSuchElementException("removeBack from empty DoubleEndedLinkedList");
+        }
+
+        T item = last.item;
+        last = last.prev;
+        last.next = null;
+
+        n--;
+
+        if (isEmpty())
+            first = null;
+        return item;
+    }
+
+    /**
+     * Returns the item at the front of the DoubleEndedLinkedList.
+     *
+     * @return the item at the front of the DoubleEndedLinkedList
+     * @throws NoSuchElementException if this DoubleEndedLinkedList is empty
+     */
+    public T peekFront() {
+        if (isEmpty()) {
+            throw new NoSuchElementException("peekFront from empty DoubleEndedLinkedList");
+        }
+        return first.item;
+    }
+
+    /**
+     * Returns the item at the back of the DoubleEndedLinkedList.
+     *
+     * @return the item at the back of the DoubleEndedLinkedList
+     * @throws NoSuchElementException if this DoubleEndedLinkedList is empty
+     */
+    public T peekBack() {
+        if (isEmpty()) {
+            throw new NoSuchElementException("peekBack from empty DoubleEndedLinkedList");
+        }
+        return last.item;
+    }
+
+    /**
+     * Returns a String representation of the DoubleEndedLinkedList, in the form [x0, x1, ... xn]
+     * where x0...xn are elements of the DoubleEndedLinkedList in forward order.
+     *
+     * @return a String representation of the DoubleEndedLinkedList, with elements separated by a
+     *         comma and space
+     */
+    public String toString() {
+        if (isEmpty())
+            return "[]";
+
+        StringBuilder sb = new StringBuilder();
+        sb.append('[');
+        for (T item : this) {
+            sb.append(item);
+            sb.append(',');
+            sb.append(' ');
+        }
+        sb.append(']');
+        return sb.toString();
+    }
+
+    /**
+     * Returns an Iterator to the DoubleEndedLinkedList that iterates through the elements of the
+     * DoubleEndedLinkedList in forward order.
+     *
+     * @return an Iterator to the DoubleEndedLinkedList that iterates through the elements of the
+     *         in forward order.
+     */
+    public Iterator<T> iterator() {
+        return new Iterator<T>() {
+            private Node<T> current = first;
+
+            @Override
+            public boolean hasNext() {
+                return current != null;
+            }
+
+            @Override
+            public T next() {
+                if (!hasNext())
+                    throw new NoSuchElementException("iterator does not have next element");
+                T item = current.item;
+                current = current.next;
+                return item;
+            }
+        };
+    }
+}
+```
 
 ### Time Complexity
 
