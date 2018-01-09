@@ -904,9 +904,9 @@ The following table describes the time and space complexity for performing the
 operations above on an edge list, vertex matrix, adjacency list:
 
 ```
-| Data Structure | space complexity   | containsVertex   | containsEdge   | insertVertex | insertEdge | deleteVertex   | deleteEdge   | getDegree      | getAdjacent    |
-|----------------|--------------------|------------------|----------------|--------------|------------|----------------|--------------|----------------|----------------|
-| edge list      | O(|E|)             | O(|E|)           | O(|E|)         | n/a          | O(1)       | O(|E|)         | O(|E|)       | O(|E|)         | O(|E|)         |
-| vertex matrix  | O(|V|^2)           | O(1)             | O(1)           | n/a          | O(1)       | n/a            | O(1)         | O(V)           | O(V)           |
-| adjacency list | O(|V|+|E|)         | O(1)             | O(degree(u))   | O(1)         | O(1)       | O(degree(u))   | O(1)         | O(degree(u))   | O(degree(u))   |
+| Data Structure | space complexity   | containsVertex   | containsEdge   | insertVertex | insertEdge | deleteVertex   | deleteEdge   | getDegree    | getAdjacent    |
+|----------------|--------------------|------------------|----------------|--------------|------------|----------------|--------------|--------------|----------------|
+| edge list      | O(|E|)             | O(|E|)           | O(|E|)         | n/a          | O(1)       | O(|E|)         | O(|E|)       | O(|E|)       | O(|E|)         |
+| vertex matrix  | O(|V|^2)           | O(1)             | O(1)           | n/a          | O(1)       | n/a            | O(1)         | O(V)         | O(V)           |
+| adjacency list | O(|V|+|E|)         | O(1)             | O(degree(u))   | O(1)         | O(1)       | O(degree(u))   | O(1)         | O(1)         | O(degree(u))   |
 ```

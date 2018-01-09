@@ -19,9 +19,9 @@ necessary to map edges to weights, which are `double` values. Now, in addition t
 vertices and edges in the `GraphRepresentation`, every edge and its associated weight that is added 
 must also be added to `WeightFunction`, and similarly with deleting edges (and vertices).
 
-### Implementation (WeightedGraph)
+### Implementation (Weighted Graph)
 
-The following provides the interface for the `WeightedGraph` class.
+The following provides the implementation for the `WeightedGraph` interface.
 
 ##### Java
 
@@ -546,16 +546,16 @@ public class DirectedWeightedGraph<T extends Comparable<T>> implements WeightedG
     }
 
     /**
-     * Returns true if the DirectedWeightedGraph contains edge (u, v) or (v, u) in its graph
+     * Returns true if the DirectedWeightedGraph contains edge (u, v) in its graph
      * representation, false otherwise.
      *
      * @param u, the first vertex
      * @param v, the second vertex
-     * @return true if the DirectedWeightedGraph contains edge (u, v) or (v, u) in its graph
+     * @return true if the DirectedWeightedGraph contains edge (u, v) in its graph
      * representation, false otherwise
      */
     public boolean containsEdge(T u, T v) {
-        return graphRepresentation.containsEdge(u, v) || graphRepresentation.containsEdge(v, u);
+        return graphRepresentation.containsEdge(u, v);
     }
 
     /**
@@ -569,7 +569,7 @@ public class DirectedWeightedGraph<T extends Comparable<T>> implements WeightedG
     }
 
     /**
-     * Inserts an edge (u, v) into the DirectedWeightedGraph by inserting edge (u, v) and (v, u)
+     * Inserts an edge (u, v) into the DirectedWeightedGraph by inserting edge (u, v)
      * into its graph representation, and its weight to its weightFunction.
      *
      * @param u, the first vertex
@@ -599,7 +599,7 @@ public class DirectedWeightedGraph<T extends Comparable<T>> implements WeightedG
     }
 
     /**
-     * Deletes an edge (u, v) from the DirectedWeightedGraph by deleting edge (u, v) and (v, u)
+     * Deletes an edge (u, v) from the DirectedWeightedGraph by deleting edge (u, v)
      * from its graph representation, and its weightFunction.
      *
      * @param u, the first vertex
@@ -660,7 +660,7 @@ public class DirectedWeightedGraph<T extends Comparable<T>> implements WeightedG
     }
 
     /**
-     * Returns the reversed graph, that is, for each edge (u, v) in this DirectedGraph, we
+     * Returns the reversed graph, that is, for each edge (u, v) in this DirectedWeightedGraph, we
      * add edge (v, u) in the reverse graph.
      *
      * @return the reversed graph
@@ -708,8 +708,8 @@ the original `UndirectedGraph` and `DirectedGraph` is already $O(|V|+|E|)$, it d
 difference, complexity wise.
 
 ```
-| Data Structure            | space complexity   | containsVertex | containsEdge | insertVertex | insertEdge | deleteVertex | deleteEdge | getDegree    | getAdjacent  |
-|---------------------------|--------------------|----------------|--------------|--------------|------------|--------------|------------|--------------|--------------|
-| undirected weighted graph | O(|V|+|E|)         | O(1)           | O(degree(u)) | O(1)         | O(1)       | O(degree(u)) | O(1)       | O(degree(u)) | O(degree(u)) |
-| directed weighted graph   | O(|V|+|E|)         | O(1)           | O(degree(u)) | O(1)         | O(1)       | O(degree(u)) | O(1)       | O(degree(u)) | O(degree(u)) |
+| Data Structure            | space complexity | containsVertex | containsEdge | insertVertex | insertEdge | deleteVertex | deleteEdge | getWeight | getDegree  | getAdjacent  |
+|---------------------------|------------------|----------------|--------------|--------------|------------|--------------|------------|-----------|------------|--------------|
+| undirected weighted graph | O(|V|+|E|)       | O(1)           | O(degree(u)) | O(1)         | O(1)       | O(degree(u)) | O(1)       | O(1)      | O(1)       | O(degree(u)) |
+| directed weighted graph   | O(|V|+|E|)       | O(1)           | O(degree(u)) | O(1)         | O(1)       | O(degree(u)) | O(1)       | O(1)      | O(1)       | O(degree(u)) |
 ```

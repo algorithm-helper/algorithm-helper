@@ -591,11 +591,11 @@
                         "description": "Learn about Kruskal's Algorithm, an algorithm for finding the minimum spanning tree by always choosing the next least weight edge overall such that no cycles are formed."
                     },
                     {
-                        "article": "network-flow",
-                        "title": "Network Flow",
-                        "url": "/network-flow",
+                        "article": "flow-network",
+                        "title": "Flow Network",
+                        "url": "/flow-network",
                         "firebaseUrl": "",
-                        "description": "Learn about network flow, a type of graph such that all edges have capacities, and recieve flows, and the flow cannot exceed the capacity."
+                        "description": "Learn about flow networks, a type of graph such that all edges have capacities, and recieve flows, and the flow cannot exceed the capacity."
                     },
                     {
                         "article": "max-flow-min-cut",

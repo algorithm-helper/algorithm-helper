@@ -9,11 +9,11 @@ We start off by describing the time and space complexities of the operations for
 representation data structures: edge list, vertex matrix, adjacency list:
 
 ```
-| Data Structure | space complexity   | containsVertex   | containsEdge   | insertVertex | insertEdge | deleteVertex   | deleteEdge   | getDegree      | getAdjacent    |
-|----------------|--------------------|------------------|----------------|--------------|------------|----------------|--------------|----------------|----------------|
-| edge list      | O(|E|)             | O(|E|)           | O(|E|)         | n/a          | O(1)       | O(|E|)         | O(|E|)       | O(|E|)         | O(|E|)         |
-| vertex matrix  | O(|V|^2)           | O(1)             | O(1)           | n/a          | O(1)       | n/a            | O(1)         | O(|V|)         | O(|V|)         |
-| adjacency list | O(|V|+|E|)         | O(1)             | O(degree(u))   | O(1)         | O(1)       | O(degree(u))   | O(1)         | O(degree(u))   | O(degree(u))   |
+| Data Structure | space complexity   | containsVertex   | containsEdge   | insertVertex | insertEdge | deleteVertex   | deleteEdge   | getDegree    | getAdjacent    |
+|----------------|--------------------|------------------|----------------|--------------|------------|----------------|--------------|--------------|----------------|
+| edge list      | O(|E|)             | O(|E|)           | O(|E|)         | n/a          | O(1)       | O(|E|)         | O(|E|)       | O(|E|)       | O(|E|)         |
+| vertex matrix  | O(|V|^2)           | O(1)             | O(1)           | n/a          | O(1)       | n/a            | O(1)         | O(|V|)       | O(|V|)         |
+| adjacency list | O(|V|+|E|)         | O(1)             | O(degree(u))   | O(1)         | O(1)       | O(degree(u))   | O(1)         | O(1)         | O(degree(u))   |
 ```
 
 For the edge list, since we simply need to store a list of each edge, it follows that we need
@@ -56,8 +56,8 @@ which takes $O(degree(u))$ time. To insert an isolated vertex `u`, we simply nee
 table, which takes $O(1)$ time. To delete a vertex `u`, we need to index into the adjacency list at 
 `u` and delete all of its adjacent vertices, which takes $O(degree(u))$ time. To delete an edge
 `e = (u, v)`, we index into the adjacency list at `u`, and delete `v`, which takes $O(1)$ time. To 
-get the degree of a vertex `u`, we can index into the adjacency list at `u`, and count its neighbors,
-which takes $O(degree(u))$ time. Similarly, to get an iterable to the adjacent vertices of a vertex 
+get the degree of a vertex `u`, we can index into the adjacency list at `u`, and get the size of the 
+list, which takes $O(1)$ time. Similarly, to get an iterable to the adjacent vertices of a vertex 
 `u`, we can index into the adjacency list at `u`, and include all of its neighbors.
 
 ---
@@ -67,12 +67,12 @@ graph structures: undirected graph, directed graph, undirected weighted graph, d
 graph:
 
 ```
-| Data Structure            | space complexity     | containsVertex | containsEdge | insertVertex | insertEdge | deleteVertex | deleteEdge | getDegree    | getAdjacent  |
-|---------------------------|----------------------|----------------|--------------|--------------|------------|--------------|------------|--------------|--------------|
-| undirected graph          | O(|V|+|E|)           | O(1)           | O(degree(u)) | O(1)         | O(1)       | O(degree(u)) | O(1)       | O(degree(u)) | O(degree(u)) |
-| directed graph            | O(|V|+|E|)           | O(1)           | O(degree(u)) | O(1)         | O(1)       | O(degree(u)) | O(1)       | O(degree(u)) | O(degree(u)) |
-| undirected weighted graph | O(|V|+|E|)           | O(1)           | O(degree(u)) | O(1)         | O(1)       | O(degree(u)) | O(1)       | O(degree(u)) | O(degree(u)) |
-| directed weighted graph   | O(|V|+|E|)           | O(1)           | O(degree(u)) | O(1)         | O(1)       | O(degree(u)) | O(1)       | O(degree(u)) | O(degree(u)) |
+| Data Structure            | space complexity     | containsVertex | containsEdge | insertVertex | insertEdge | deleteVertex | deleteEdge | getDegree  | getAdjacent  |
+|---------------------------|----------------------|----------------|--------------|--------------|------------|--------------|------------|------------|--------------|
+| undirected graph          | O(|V|+|E|)           | O(1)           | O(degree(u)) | O(1)         | O(1)       | O(degree(u)) | O(1)       | O(1)       | O(degree(u)) |
+| directed graph            | O(|V|+|E|)           | O(1)           | O(degree(u)) | O(1)         | O(1)       | O(degree(u)) | O(1)       | O(1)       | O(degree(u)) |
+| undirected weighted graph | O(|V|+|E|)           | O(1)           | O(degree(u)) | O(1)         | O(1)       | O(degree(u)) | O(1)       | O(1)       | O(degree(u)) |
+| directed weighted graph   | O(|V|+|E|)           | O(1)           | O(degree(u)) | O(1)         | O(1)       | O(degree(u)) | O(1)       | O(1)       | O(degree(u)) |
 ```
 
 Note that undirected graph and undirected weighted graph, and directed graph and directed weighted

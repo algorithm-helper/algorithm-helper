@@ -7,15 +7,9 @@ Generally, we draw these edges as straight lines. Edges with vertex $u$ and vert
 "go from $u$ to $v$, but rather are "between $u$ and $v$, thus an edge $(u, v)$ is equal to an
 edge $(v, u)$.
 
-For example:
+For example, suppose that we had the following graph:
 
-```
-// Supposed we had the graph G:
-
-1 - 2 - 3
-|   |
-4   5
-```
+<img src="https://firebasestorage.googleapis.com/v0/b/algorithm-helper-storage.appspot.com/o/img%2Falgorithms%2Fgraphs%2Fundirected-graph.png?alt=media&token=3ee5d5ef-3a6f-42fb-9f6f-a3fa87f5eccc" alt="Undirected Graph" width="400" height="300">
 
 Then all pairwise connections are in both directions, and we have the edges $(1, 2), (2, 1), (2, 3), 
 (3, 2), (1, 4), (4, 1), (2, 5), (5, 2)$.
@@ -27,16 +21,9 @@ and it becomes important to distinguish between the starting and ending vertex o
 Generally, we draw these edges as an arrow pointing from the starting vertex to the ending vertex.
 If we had an edge $(u, v)$, unlike with undirected graphs, `(u, v) != (v, u)`.
 
-For example:
+For example, suppose that we have the following graph:
 
-```
-// Supposed we had the graph G:
-
-1 -> 2 -> 3
-^    ^
-|    |
-4    5
-```
+<img src="https://firebasestorage.googleapis.com/v0/b/algorithm-helper-storage.appspot.com/o/img%2Falgorithms%2Fgraphs%2Fdirected-graph.png?alt=media&token=9d7555a7-524a-4b67-80b6-c2f11b7000e0" alt="Directed Graph" width="400" height="300">
 
 Then all pairwise connections are in one direction, and we have the edges $(1, 2), (2, 3), (4, 5),  
 (5, 2)$ only. Note that an undirected graph could be represented easily as a directed graph if we had 
@@ -159,9 +146,10 @@ public interface Graph<T extends Comparable<T>> {
 
 ##### Java
 
-Note that this uses an [Adjacency List](/categories/algorithms/graphs/graph-representation) for graph representation, and that it virtually
-the same as `DirectedGraph` except that every time we insert, delete, or check if the graph contains
-edge $(u, v)$, we do so for edge $(u, v)$ and $(v, u)$.
+Note that this uses an [Adjacency List](/categories/algorithms/graphs/graph-representation) for 
+graph representation, and that it virtually the same as `DirectedGraph` except that every time we 
+insert, delete, or check if the graph contains edge $(u, v)$, we do so for edge $(u, v)$ and 
+$(v, u)$.
 
 ```
 package com.algorithmhelper.datastructures.graphs;
@@ -500,8 +488,8 @@ an undirected graph and directed graph. It is identical to the one for adjacency
 both use an adjacency list structure for graph representation as the back-end.
 
 ```
-| Data Structure   | space complexity     | containsVertex | containsEdge | insertVertex | insertEdge | deleteVertex | deleteEdge | getDegree    | getAdjacent  |
-|------------------|----------------------|----------------|--------------|--------------|------------|--------------|------------|--------------|--------------|
-| undirected graph | O(|V|+|E|)           | O(1)           | O(degree(u)) | O(1)         | O(1)       | O(degree(u)) | O(1)       | O(degree(u)) | O(degree(u)) |
-| directed graph   | O(|V|+|E|)           | O(1)           | O(degree(u)) | O(1)         | O(1)       | O(degree(u)) | O(1)       | O(degree(u)) | O(degree(u)) |
+| Data Structure   | space complexity     | containsVertex | containsEdge | insertVertex | insertEdge | deleteVertex | deleteEdge | getDegree  | getAdjacent  |
+|------------------|----------------------|----------------|--------------|--------------|------------|--------------|------------|------------|--------------|
+| undirected graph | O(|V|+|E|)           | O(1)           | O(degree(u)) | O(1)         | O(1)       | O(degree(u)) | O(1)       | O(1)       | O(degree(u)) |
+| directed graph   | O(|V|+|E|)           | O(1)           | O(degree(u)) | O(1)         | O(1)       | O(degree(u)) | O(1)       | O(1)       | O(degree(u)) |
 ```
