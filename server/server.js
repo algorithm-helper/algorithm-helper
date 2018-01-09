@@ -66,7 +66,7 @@ if (process.env.GCS_JSON_TOKEN) {
     keyFilename: 'server/firebase/config.json'
   });
 }
-// uploadAllArticles(gcsStorage, constructArticleSrcDestUrls(categoryIndex));
+uploadAllArticles(gcsStorage, constructArticleSrcDestUrls(categoryIndex));
 
 var app = express();
 
