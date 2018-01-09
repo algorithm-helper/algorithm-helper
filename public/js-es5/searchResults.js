@@ -27,7 +27,7 @@ $(document).ready(function () {
     var renderSearchResults = function renderSearchResults(callback) {
         var searchContainer = $('#search-container');
         results.forEach(function (result) {
-            searchContainer.append($(document.createElement('div')).addClass('search-result').append($(document.createElement('div')).addClass('search-title').append($(document.createElement('a')).attr('href', result.original.url).append($(document.createElement('h4')).text(result.original.title)))).append($(document.createElement('div')).addClass('search-desc').append($(document.createElement('p')).html(result.string))));
+            searchContainer.append($(document.createElement('div')).addClass('search-result').append($(document.createElement('div')).addClass('search-title').append($(document.createElement('a')).attr('href', result.url).append($(document.createElement('h4')).text(result.title)))).append($(document.createElement('div')).addClass('search-desc').append($(document.createElement('p')).html(result.string))));
         });
         callback();
     };

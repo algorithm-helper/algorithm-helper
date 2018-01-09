@@ -29,11 +29,14 @@ const getSearchResults = (query, articleContent) => {
 
             let results = [];
             fuzzyResults.forEach((result) => {
+                let str = result.string.substr(result.string.indexOf('<span'), 
+                    result.string.length);
+                str = str.substr(0, Math.min(300, str.length));
+
                 results.push({
                     title: result.original.title,
                     url: result.original.url.substr(8, result.original.url.length),
-                    string: '...' + result.string.substr(result.string.indexOf('<span'), 
-                        result.string.indexOf('<span') + 300) + '...'
+                    string: `...${str}...`
                 });
             });
             resolve(results);
