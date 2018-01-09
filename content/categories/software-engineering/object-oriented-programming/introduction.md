@@ -22,7 +22,7 @@ The general idea behind the use of objects is to model the relationships between
 of different types. They hold data that is relevant to their type, and that data is called a field,
 property or record. One such example could be if we have the following situation:
 
-<img src="https://i.imgur.com/JcAVs8a.png" alt="OOP Basic Example" width="400" height="300">
+<img src="https://i.imgur.com/JcAVs8a.png" alt="OOP Basic Example" class="img-fluid">
 
 `Car` and `Motorcycle` are types of `Vehicle`, but there is no such thing as a "vehicle" itself. 
 "Vehicle" represents the abstract concept of an object for transportation, but it is "cars", 

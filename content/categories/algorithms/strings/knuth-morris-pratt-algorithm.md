@@ -24,7 +24,7 @@ to necessarily always go back to the starting state when there has been a mismat
 Suppose that we have the pattern string `ADABRA`, and some large body of text. Then we have the 
 following DFA:
 
-<img src="https://firebasestorage.googleapis.com/v0/b/algorithm-helper-storage.appspot.com/o/img%2Falgorithms%2Fstrings%2Fdfa.png?alt=media&token=6f555037-10f7-463f-a6f6-a9f499bbd1ce" alt="DFA" width="400" height="300">
+<img src="https://firebasestorage.googleapis.com/v0/b/algorithm-helper-storage.appspot.com/o/img%2Falgorithms%2Fstrings%2Fdfa.png?alt=media&token=6f555037-10f7-463f-a6f6-a9f499bbd1ce" alt="DFA" class="img-fluid">
 
 Clearly there is a path from the starting state `0` to the ending state `6`, and the only path of
 this kind is when we have a sequence of characters that exactly match `ADABRA`. Note the behavior 

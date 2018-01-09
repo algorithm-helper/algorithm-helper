@@ -50,7 +50,7 @@ dijkstrasAlgorithm(G, v):
 
 Dijkstra's algorithm does not work with negative weights. Below is an example:
 
-<img src="https://firebasestorage.googleapis.com/v0/b/algorithm-helper-storage.appspot.com/o/img%2Falgorithms%2Fgraphs%2Fdijkstras-algorithm-negative-weights.png?alt=media&token=1f87c1f3-4ae6-4801-ba30-dada6db03c23" alt="Dijkstra's Algorithm Negative Weights" width="400" height="300">
+<img src="https://firebasestorage.googleapis.com/v0/b/algorithm-helper-storage.appspot.com/o/img%2Falgorithms%2Fgraphs%2Fdijkstras-algorithm-negative-weights.png?alt=media&token=1f87c1f3-4ae6-4801-ba30-dada6db03c23" alt="Dijkstra's Algorithm Negative Weights" class="img-fluid">
 
 Suppose that we are looking for the shortest path from vertex $1$ to $4$. Dijkstra's algorithm will 
 choose the path $(1, 3), (3, 5)$ instead of the shortest one which is $(1, 2), (2, 4), (4, 5)$.

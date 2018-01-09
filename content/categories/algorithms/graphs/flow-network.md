@@ -28,7 +28,7 @@ this interface.
 We draw flow networks like directed weighted graphs, except that now all edges have two associated
 values, its flow and its capacity. 
 
-<img src="https://firebasestorage.googleapis.com/v0/b/algorithm-helper-storage.appspot.com/o/img%2Falgorithms%2Fgraphs%2Fflow-network.png?alt=media&token=3bdcf3af-042b-468d-8c55-2d477e965f38" alt="Flow Network" width="400" height="300">
+<img src="https://firebasestorage.googleapis.com/v0/b/algorithm-helper-storage.appspot.com/o/img%2Falgorithms%2Fgraphs%2Fflow-network.png?alt=media&token=3bdcf3af-042b-468d-8c55-2d477e965f38" alt="Flow Network" class="img-fluid">
 
 ### Implementation (Flow Network)
 

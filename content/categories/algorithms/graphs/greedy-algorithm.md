@@ -19,7 +19,7 @@ $u$ to another vertex $v$, such that we only take the next minimum weight adjace
 
 For example:
 
-<img src="https://firebasestorage.googleapis.com/v0/b/algorithm-helper-storage.appspot.com/o/img%2Falgorithms%2Fgraphs%2Fgreedy-shortest-path.png?alt=media&token=5f61667d-04d6-4c1a-9ad9-901e8818a8dc" alt="Greedy Shortest Path" width="400" height="300">
+<img src="https://firebasestorage.googleapis.com/v0/b/algorithm-helper-storage.appspot.com/o/img%2Falgorithms%2Fgraphs%2Fgreedy-shortest-path.png?alt=media&token=5f61667d-04d6-4c1a-9ad9-901e8818a8dc" alt="Greedy Shortest Path" class="img-fluid">
 
 If we are trying to get the shortest path from vertex $1$ to vertex $6$, if we use a greedy approach, 
 then we would take the path $1 \rightarrow 2 \rightarrow 3 \rightarrow 4 \rightarrow 6$, but this would have a total weight of 

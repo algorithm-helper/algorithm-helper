@@ -23,30 +23,30 @@ we have maximum flow.
 The following are visualizations of these two operations that may be taken. Suppose that we start 
 off with the following flow network, we initialize the flow of all edges to be $0$:
 
-<img src="https://firebasestorage.googleapis.com/v0/b/algorithm-helper-storage.appspot.com/o/img%2Falgorithms%2Fgraphs%2Fford-fulkerson-algorithm-1.png?alt=media&token=49ad6893-4f08-4f59-8ef0-6f7be7024a95" alt="Ford-Fulkerson Algorithm 1" width="400" height="300">
+<img src="https://firebasestorage.googleapis.com/v0/b/algorithm-helper-storage.appspot.com/o/img%2Falgorithms%2Fgraphs%2Fford-fulkerson-algorithm-1.png?alt=media&token=49ad6893-4f08-4f59-8ef0-6f7be7024a95" alt="Ford-Fulkerson Algorithm 1" class="img-fluid">
 
 Clearly, we can forward augment the flow along the following edges to be equal to $3$, and now the
 target recieves a total flow of $3$:
 
-<img src="https://firebasestorage.googleapis.com/v0/b/algorithm-helper-storage.appspot.com/o/img%2Falgorithms%2Fgraphs%2Fford-fulkerson-algorithm-2.png?alt=media&token=c952e74e-cc1a-4474-b9c6-18d5f956962e" alt="Ford-Fulkerson Algorithm 2" width="400" height="300">
+<img src="https://firebasestorage.googleapis.com/v0/b/algorithm-helper-storage.appspot.com/o/img%2Falgorithms%2Fgraphs%2Fford-fulkerson-algorithm-2.png?alt=media&token=c952e74e-cc1a-4474-b9c6-18d5f956962e" alt="Ford-Fulkerson Algorithm 2" class="img-fluid">
 
 We can forward augment the flow along the middle two edges to be $5$, but that involves decreasing
 flow along the backward edge which has $3$ flow to be $0$, but then this allows that flow to go 
 through the bottom set of edges. Now the target receives a total flow of $8$:
 
-<img src="https://firebasestorage.googleapis.com/v0/b/algorithm-helper-storage.appspot.com/o/img%2Falgorithms%2Fgraphs%2Fford-fulkerson-algorithm-3.png?alt=media&token=16e60bba-961c-4041-9160-187b087dd651" alt="Ford-Fulkerson Algorithm 3" width="400" height="300">
+<img src="https://firebasestorage.googleapis.com/v0/b/algorithm-helper-storage.appspot.com/o/img%2Falgorithms%2Fgraphs%2Fford-fulkerson-algorithm-3.png?alt=media&token=16e60bba-961c-4041-9160-187b087dd651" alt="Ford-Fulkerson Algorithm 3" class="img-fluid">
 
 We can forward augment the flow along the top set of edges to be $5$, and now the target recieves
 a total flow of $13$:
 
-<img src="https://firebasestorage.googleapis.com/v0/b/algorithm-helper-storage.appspot.com/o/img%2Falgorithms%2Fgraphs%2Fford-fulkerson-algorithm-4.png?alt=media&token=271f23d2-bfe5-40c5-b7cc-29eba91dd59c" alt="Ford-Fulkerson Algorithm 4" width="400" height="300">
+<img src="https://firebasestorage.googleapis.com/v0/b/algorithm-helper-storage.appspot.com/o/img%2Falgorithms%2Fgraphs%2Fford-fulkerson-algorithm-4.png?alt=media&token=271f23d2-bfe5-40c5-b7cc-29eba91dd59c" alt="Ford-Fulkerson Algorithm 4" class="img-fluid">
 
 Along the bottom set of edges, we can still forward augment the flow from $3$ to $5$, without 
 affecting any other flow, and now the target recieves a total flow of $15$. Clearly, this flow 
 network has recieved the maximum amount of flow, and we know this because the target can only take
 in a maximum flow of $15$ from its incoming edges:
 
-<img src="https://firebasestorage.googleapis.com/v0/b/algorithm-helper-storage.appspot.com/o/img%2Falgorithms%2Fgraphs%2Fford-fulkerson-algorithm-5.png?alt=media&token=b1316bd6-deb8-4cbf-9bc7-18249bd993a6" alt="Ford-Fulkerson Algorithm 5" width="400" height="300">
+<img src="https://firebasestorage.googleapis.com/v0/b/algorithm-helper-storage.appspot.com/o/img%2Falgorithms%2Fgraphs%2Fford-fulkerson-algorithm-5.png?alt=media&token=b1316bd6-deb8-4cbf-9bc7-18249bd993a6" alt="Ford-Fulkerson Algorithm 5" class="img-fluid">
 
 Although the example was simple, it demonstrates a powerful idea from which we can compute the 
 maximum flow, and hence the minimum cut.

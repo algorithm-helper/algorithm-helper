@@ -1,6 +1,0 @@
-# Proxy
-
-### Implementation
-
-##### Java
-

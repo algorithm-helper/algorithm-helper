@@ -1,6 +1,0 @@
-# Mediator
-
-### Implementation
-
-##### Java
-

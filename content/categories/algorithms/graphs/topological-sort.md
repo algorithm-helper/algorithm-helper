@@ -11,7 +11,7 @@ of tasks that have dependencies on previous tasks completed.
 
 The following is an example of a DAG:
 
-<img src="https://firebasestorage.googleapis.com/v0/b/algorithm-helper-storage.appspot.com/o/img%2Falgorithms%2Fgraphs%2Fdirected-acyclic-graph.png?alt=media&token=e15f1f88-ad53-4a39-8bfc-e2e6db556798" alt="Directed Acyclic Graph" width="400" height="300">
+<img src="https://firebasestorage.googleapis.com/v0/b/algorithm-helper-storage.appspot.com/o/img%2Falgorithms%2Fgraphs%2Fdirected-acyclic-graph.png?alt=media&token=e15f1f88-ad53-4a39-8bfc-e2e6db556798" alt="Directed Acyclic Graph" class="img-fluid">
 
 Here, this graph has directed edges and has no cycles, and so is a DAG. Thus a topological ordering
 exists. One possible ordering could be that if we start from $1$ and order by depth: 
@@ -20,7 +20,7 @@ $[1, 3, 2, 4, 5, 9, 6, 7]$.
 We see the topologically sorted graph by redrawing the DAG such that all of the edges point 
 upwards:
 
-<img src="https://firebasestorage.googleapis.com/v0/b/algorithm-helper-storage.appspot.com/o/img%2Falgorithms%2Fgraphs%2Ftopologically-sorted.png?alt=media&token=c0722294-68fe-4baf-b604-fee7701a338a" alt="Topologically Sorted" width="400" height="300">
+<img src="https://firebasestorage.googleapis.com/v0/b/algorithm-helper-storage.appspot.com/o/img%2Falgorithms%2Fgraphs%2Ftopologically-sorted.png?alt=media&token=c0722294-68fe-4baf-b604-fee7701a338a" alt="Topologically Sorted" class="img-fluid">
 
 ### Using Depth First Search
 

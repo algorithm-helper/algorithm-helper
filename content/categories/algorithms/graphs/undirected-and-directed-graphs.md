@@ -9,7 +9,7 @@ edge $(v, u)$.
 
 For example, suppose that we had the following graph:
 
-<img src="https://firebasestorage.googleapis.com/v0/b/algorithm-helper-storage.appspot.com/o/img%2Falgorithms%2Fgraphs%2Fundirected-graph.png?alt=media&token=3ee5d5ef-3a6f-42fb-9f6f-a3fa87f5eccc" alt="Undirected Graph" width="400" height="300">
+<img src="https://firebasestorage.googleapis.com/v0/b/algorithm-helper-storage.appspot.com/o/img%2Falgorithms%2Fgraphs%2Fundirected-graph.png?alt=media&token=3ee5d5ef-3a6f-42fb-9f6f-a3fa87f5eccc" alt="Undirected Graph" class="img-fluid">
 
 Then all pairwise connections are in both directions, and we have the edges $(1, 2), (2, 1), (2, 3), 
 (3, 2), (1, 4), (4, 1), (2, 5), (5, 2)$.
@@ -23,7 +23,7 @@ If we had an edge $(u, v)$, unlike with undirected graphs, `(u, v) != (v, u)`.
 
 For example, suppose that we have the following graph:
 
-<img src="https://firebasestorage.googleapis.com/v0/b/algorithm-helper-storage.appspot.com/o/img%2Falgorithms%2Fgraphs%2Fdirected-graph.png?alt=media&token=9d7555a7-524a-4b67-80b6-c2f11b7000e0" alt="Directed Graph" width="400" height="300">
+<img src="https://firebasestorage.googleapis.com/v0/b/algorithm-helper-storage.appspot.com/o/img%2Falgorithms%2Fgraphs%2Fdirected-graph.png?alt=media&token=9d7555a7-524a-4b67-80b6-c2f11b7000e0" alt="Directed Graph" class="img-fluid">
 
 Then all pairwise connections are in one direction, and we have the edges $(1, 2), (2, 3), (4, 5),  
 (5, 2)$ only. Note that an undirected graph could be represented easily as a directed graph if we had 

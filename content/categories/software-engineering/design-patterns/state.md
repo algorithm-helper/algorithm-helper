@@ -1,6 +1,0 @@
-# State
-
-### Implementation
-
-##### Java
-

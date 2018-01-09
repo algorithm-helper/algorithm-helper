@@ -103,7 +103,7 @@ public class CompositeComponent implements AbstractComponent {
 We can then test it by building up the following tree, let `C` denote `CompositeComponent` objects, 
 and let `B` denote `BasicComponent` objects:
 
-<img src="https://i.imgur.com/HvcK75F.png" alt="Composite" width="400" height="300">
+<img src="https://i.imgur.com/HvcK75F.png" alt="Composite" class="img-fluid">
 
 Then we have:
 

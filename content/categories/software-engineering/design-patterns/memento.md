@@ -1,6 +1,0 @@
-# Memento
-
-### Implementation
-
-##### Java
-

@@ -1,6 +1,0 @@
-# Flyweight
-
-### Implementation
-
-##### Java
-
