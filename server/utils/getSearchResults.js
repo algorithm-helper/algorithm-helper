@@ -12,7 +12,8 @@
 
 const fuzzy = require('fuzzy');
 
-const { flattenCategoryIndex } = require('./flattenCategoryIndex'); 
+const { flattenCategoryIndex } = require('./flattenCategoryIndex');
+const { parseSearchResult } = require('./parseSearchResult');
 
 const getSearchResults = (query, articleContent) => {
     return new Promise((resolve, reject) => {
@@ -27,11 +28,13 @@ const getSearchResults = (query, articleContent) => {
                 }
             });
 
+
+
             let results = [];
             fuzzyResults.forEach((result) => {
                 let str = result.string.substr(result.string.indexOf('<span'), 
                     result.string.length);
-                str = str.substr(0, Math.min(300, str.length));
+                str = str.substr(0, Math.min(parseSearchResult(str, 200), str.length));
 
                 results.push({
                     title: result.original.title,
