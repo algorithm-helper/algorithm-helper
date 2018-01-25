@@ -33,7 +33,7 @@ $(document).ready(function () {
 
                 topicIndex[i + j].tags.forEach(function (entry) {
                     tagClass = entry.replace(/\s/g, '-');
-                    var tag = $(document.createElement('span')).addClass('card-tag tag-' + tagClass).text(entry).appendTo(cardBody);
+                    var tag = $(document.createElement('span')).addClass('card-tag tag-' + tagClass).text(entry.replace(/\-/g, ' ')).appendTo(cardBody);
                 });
 
                 var description = $(document.createElement('p')).addClass('card-text').text(topicIndex[i + j].description).appendTo(cardBody);

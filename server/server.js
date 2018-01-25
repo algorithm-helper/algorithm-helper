@@ -9,6 +9,7 @@ const marked = require('marked');
 const request = require('request');
 const path = require('path');
 const session = require('express-session');
+const argv = require('yargs').argv;
 
 // Utils:
 const { constructArticleSrcDestUrls } = require('./utils/constructArticleSrcDestUrls');
@@ -66,7 +67,10 @@ if (process.env.GCS_JSON_TOKEN) {
     keyFilename: 'server/firebase/config.json'
   });
 }
-uploadAllArticles(gcsStorage, constructArticleSrcDestUrls(categoryIndex));
+
+if (argv.upload == true) {
+  uploadAllArticles(gcsStorage, constructArticleSrcDestUrls(categoryIndex));
+}
 
 var app = express();
 

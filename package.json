@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node server/server.js",
+    "upload": "node server/server.js upload=true",
     "test": "babel ./public/js-es6 --out-dir ./public/js-es5 && gulp compress && nodemon server/server.js"
   },
   "author": "Algorithm Helper",
@@ -20,7 +21,8 @@
     "lodash": "^4.17.4",
     "marked": "^0.3.6",
     "natural": "^0.5.4",
-    "request": "^2.83.0"
+    "request": "^2.83.0",
+    "yargs": "^11.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
