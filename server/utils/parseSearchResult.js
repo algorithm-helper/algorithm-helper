@@ -18,16 +18,14 @@ const parseSearchResult = (searchResult, maxLength) => {
 
         if (isInBracket && searchResult[ptr] == '>') {
             isInBracket = false;
-            ptr++;
         } else if (!isInBracket && searchResult[ptr] == '<') {
             isInBracket = true;
-            ptr++;
         } else if (isInBracket) {
-            ptr++;
+            // Do nothing.
         } else {
-            ptr++;
             len++;
         }
+        ptr++;
     }
     return ptr;
 };
