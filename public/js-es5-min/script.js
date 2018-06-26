@@ -1,1 +1,0 @@
-"use strict";var offsetAnchor=function(){0!==location.hash.length&&window.scrollTo(window.scrollX,window.scrollY-80)};$(window).on("hashchange",function(){offsetAnchor()}),$(document).ready(function(){offsetAnchor(),$("#link-categories").click(function(){setTimeout(function(){window.location.href="/categories"},500)})});

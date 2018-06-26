@@ -1,0 +1,30 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.ah-logo-container {
+  text-align: center;
+}
+
+.ah-logo-small {
+  width: 100px;
+  height: 100px;
+}
+
+.container-full {
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 2em;
+  background-color: #072A60;
+}
+
+#container-full-particle-bg {
+  position: absolute;
+  width: 100%;
+  height: calc(100% + 2em);
+  padding-bottom: 2em;
+  background-color: #072A60;
+}

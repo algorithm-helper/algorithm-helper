@@ -1,0 +1,29 @@
+.jumbotron-sm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 12em;
+}
+
+.jumbotron-sm-text-container {
+  margin-top: 2.5em;
+  margin-left: 3em;
+  margin-right: 3em;
+}
+
+.jumbotron-sm-title {
+  text-align: left;
+  font-weight: 400;
+  font-size: 2.5em;
+  color: #fff;
+}
+
+.jumbotron-sm-subtitle {
+  font-weight: 400;
+  font-size: 1.25em;
+  color: #fff;
+}
+
+.jumbotron-sm-subtitle a {
+  color: #fff;
+}

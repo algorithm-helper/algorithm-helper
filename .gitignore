@@ -1,13 +1,23 @@
-node_modules
-playground
-*.log
-server/config/config.json
-server/firebase/config.json
-.idea
-testing
-archive
+# General
+.DS_Store
 .vscode
+.idea
+node_modules
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Archiving, Testing
+archive
+testing
+playground
+out
 downloads
 temp
-server/gcsKeyFile.json
 
+# Temporary
+*.tmp
