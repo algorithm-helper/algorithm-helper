@@ -1,11 +1,11 @@
-# Time and Space Complexity
+# Time and Space Complexity Comparison
 
 This article describes the time and space complexities of the algorithms described in this topic.
 
 ### Comparisons
 
 The following is the time and space complexities of the following algorithms: Euclid's algorithm,
-the Karatsuba algorithm, the Newton-Raphson method, modular exponentiation, and the Graham scan 
+the Karatsuba algorithm, the Newton-Raphson method, modular exponentiation, and the Graham scan
 algorithm:
 
 ```
