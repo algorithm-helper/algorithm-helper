@@ -20,6 +20,7 @@ class TopicItemContainer extends React.Component {
     };
 
     this.handleContentLoaded = this.handleContentLoaded.bind(this);
+    this.getTopicItemComponent = this.getTopicItemComponent.bind(this);
   }
 
   componentWillMount() {
@@ -46,44 +47,45 @@ class TopicItemContainer extends React.Component {
     this.setState({ showTopicItemBar: true });
   }
 
-  render() {
-    let topicItemComponent;
+  getTopicItemComponent() {
     switch(this.props.topicItem.type) {
       case 'article':
-        topicItemComponent = (
+        return (
           <TopicItemArticleContainer
             contentLoaded={this.handleContentLoaded}
           />
         );
-        break;
       case 'code':
-        topicItemComponent = (
+        return (
           <TopicItemCodeContainer
             contentLoaded={this.handleContentLoaded}
           />
         );
-        break;
       case 'video':
-        topicItemComponent = (
+        return (
           <TopicItemVideoContainer
             contentLoaded={this.handleContentLoaded}
           />
         );
-        break;
       default:
-        break;
+        return null;
     }
+  }
 
+  render() {
     return (
       <div className="row">
         <div className="col-md-2"/>
         <div className="col-md-8">
           {
             this.state.showTopicItemBar &&
-            <TopicItemBar />
+            <TopicItemBar
+              onMarkAsCompleted={this.props.onMarkAsCompleted}
+              onSaveToBookmarks={this.props.onSaveToBookmarks}
+            />
           }
           <div className="topic-item-container">
-            { topicItemComponent }
+            { this.getTopicItemComponent() }
           </div>
         </div>
         <div className="col-md-2"/>
@@ -93,7 +95,7 @@ class TopicItemContainer extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  colorKey: state.colorKey
+  colorKey: state.colorKey,
 });
 
 export default connect(mapStateToProps)(TopicItemContainer);

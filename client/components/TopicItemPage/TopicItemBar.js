@@ -14,11 +14,8 @@ class TopicItemBar extends React.Component {
       <div className="topic-item-bar-container">
         <div className="topic-item-bar-item">
           <button
-            type="button"
-            className="btn btn-topic-item-bar"
-            style={{
-              backgroundColor: colors[this.props.colorKey]
-            }}
+            className="btn btn-blue-grey btn-topic-item-bar"
+            onClick={this.props.onMarkAsCompleted}
           >
             <i
               className="fas fa-check"
@@ -31,11 +28,8 @@ class TopicItemBar extends React.Component {
         </div>
         <div className="topic-item-bar-item">
           <button
-            type="button"
-            className="btn btn-topic-item-bar"
-            style={{
-              backgroundColor: colors[this.props.colorKey]
-            }}
+            className="btn btn-blue-grey btn-topic-item-bar"
+            onClick={this.props.onSaveToBookmarks}
           >
             <i
               className="fas fa-star"

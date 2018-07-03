@@ -36,6 +36,8 @@ class TopicItemPage extends React.Component {
       }],
     };
     this.handleChangeIndex = this.handleChangeIndex.bind(this);
+    this.handleMarkAsCompleted = this.handleMarkAsCompleted.bind(this);
+    this.handleSaveToBookmarks = this.handleSaveToBookmarks.bind(this);
   }
 
   componentWillMount() {
@@ -76,6 +78,14 @@ class TopicItemPage extends React.Component {
     });
   }
 
+  handleMarkAsCompleted() {
+    console.log('handleMarkAsCompleted');
+  }
+
+  handleSaveToBookmarks() {
+    console.log('handleSaveToBookmarks');
+  }
+
   render() {
     return (
       <div>
@@ -92,6 +102,8 @@ class TopicItemPage extends React.Component {
 
         <TopicItemContainer
           topicItem={this.state.topicItems[this.state.indexSelected]}
+          onMarkAsCompleted={this.handleMarkAsCompleted}
+          onSaveToBookmarks={this.handleSaveToBookmarks}
         />
       </div>
     );
