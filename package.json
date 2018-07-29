@@ -1,6 +1,6 @@
 {
   "name": "algorithm-helper",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Online educational reference tool for learning about algorithms, data structures, and other software engineering topics.",
   "repository": "git@github.com:algorithm-helper/algorithm-helper.git",
   "main": "index.js",
@@ -9,17 +9,20 @@
   "scripts": {
     "build:dev": "webpack",
     "build:prod": "webpack -p --env PROD",
-    "dev-server": "webpack-dev-server",
-    "start": "concurrently --kill-others-on-fail \"node server/server.js\" \"open http://localhost:5000\"",
-    "server": "nodemon server/server.js",
-    "dev": "concurrently --kill-others-on-fail \"webpack --watch\" \"yarn run server\""
+    "dev:wds": "webpack-dev-server",
+    "dev:client": "webpack --watch",
+    "dev:server": "nodemon server/server.js",
+    "start": "yarn run build:dev && node server/server.js",
+    "dev:all": "concurrently --kill-others-on-fail \"yarn run dev:client\" \"yarn run dev:server\" \"open http://localhost:5000\""
   },
   "dependencies": {
     "@material-ui/core": "^1.2.1",
     "body-parser": "^1.18.2",
+    "bootstrap": "4.1.1",
     "chart.js": "^2.7.2",
     "express": "^4.16.3",
     "express-session": "^1.15.6",
+    "extract-text-webpack-plugin": "3.0.0",
     "highlight.js": "^9.12.0",
     "history": "^4.7.2",
     "jquery": "^3.3.1",
@@ -32,17 +35,18 @@
     "particles.js": "^2.0.0",
     "prop-types": "^15.6.1",
     "query-string": "^6.1.0",
-    "react": "^16.4.1",
+    "react": "^16.3.2",
     "react-addons-shallow-compare": "15.6.0",
     "react-chartjs-2": "^2.7.2",
-    "react-dom": "^16.4.1",
+    "react-dom": "^16.3.2",
     "react-md-spinner": "^0.2.5",
-    "react-particles-js": "^2.2.0",
+    "react-particles-js": "^2.3.0",
     "react-redux": "^5.0.7",
     "react-router": "^4.3.1",
     "react-router-dom": "4.2.2",
     "react-spinners": "^0.2.6",
     "react-syntax-highlighter": "^7.0.4",
+    "reactstrap": "^6.3.0",
     "redux": "3.7.2",
     "request": "2.83.0",
     "uuid": "3.2.1",
@@ -63,7 +67,6 @@
     "css-loader": "0.28.4",
     "eslint": "^4.5.0",
     "expect": "^1.20.2",
-    "extract-text-webpack-plugin": "3.0.0",
     "gulp": "^3.9.1",
     "gulp-uglify": "^3.0.0",
     "live-server": "1.2.0",
@@ -72,6 +75,7 @@
     "pump": "^1.0.2",
     "sass-loader": "6.0.6",
     "style-loader": "0.18.2",
-    "supertest": "^3.0.0"
+    "supertest": "^3.0.0",
+    "uglifyjs-webpack-plugin": "^1.2.7"
   }
 }
