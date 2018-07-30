@@ -7,12 +7,7 @@ import MDSpinner from 'react-md-spinner';
 
 import colors from '../../../data/colors.json';
 
-const S3_URL_PREFIX = 'https://s3.amazonaws.com/algorithm-helper/content-articles';
-
-const getPathname = pathname => {
-  const prefix = '/categories';
-
-};
+const S3_URL_PREFIX = 'https://s3.amazonaws.com/algorithm-helper/content/categories';
 
 class TopicItemArticleContainer extends React.Component {
   constructor(props) {
@@ -28,9 +23,11 @@ class TopicItemArticleContainer extends React.Component {
 
     const { categoryKey, subcategoryKey, topicKey } = this.props.match.params;
     const s3Url = `${S3_URL_PREFIX}/${categoryKey}/${subcategoryKey}/${topicKey}.md`;
+    console.log(s3Url);
     fetch(s3Url)
     .then(res => res.text())
     .then(res => {
+      console.log(res);
       this.setState({
         contentFormatted: marked(res),
       });
