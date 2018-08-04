@@ -72,8 +72,21 @@
   border-radius: 1em;
 }
 
+.main-area-card:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.main-area-card-img {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
 .main-area-card-title {
   color: #fff;
+  font-size: 1.5em;
+  font-weight: 500;
 }
 
 .main-area-card-subtitle {

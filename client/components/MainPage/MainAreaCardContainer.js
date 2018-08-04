@@ -51,7 +51,7 @@ const MainAreaCardContainer = props => {
                     <CardTitle className="main-area-card-title">{card.title}</CardTitle>
                     <CardSubtitle className="main-area-card-subtitle"></CardSubtitle>
                   </CardBody>
-                  <img width="100%" src="http://via.placeholder.com/320x180" alt={card.title} />
+
                   <CardBody>
                     <CardText className="main-area-card-description">{card.description}</CardText>
                   </CardBody>
@@ -72,3 +72,5 @@ MainAreaCardContainer.propTypes = {
 };
 
 export default MainAreaCardContainer;
+
+//                   <img className="main-area-card-img" width="100%" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Apple_Music_Logo.png/256px-Apple_Music_Logo.png" alt={card.title} />
