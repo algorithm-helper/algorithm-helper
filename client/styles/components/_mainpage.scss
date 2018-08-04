@@ -35,58 +35,99 @@
   background-color: #072a60;
 }
 
-
-
-
-
-
-
-
-
-.container-main {
-  width: 100%;
-  height: 100%;
-}
-
-.main-area {
+.main-area-container {
   margin-top: 2em;
-  margin-bottom: 4em;
+  margin-bottom: 2em;
 }
 
-.main-area-search-container {
-  text-align: center;
+.main-area-search-bar:focus {
+  outline: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 
-.main-area-search-form {
-  display: inline-block;
-  width: 100%;
-}
-
-.main-area-search-icon,
-.main-area-search-bar {
-  font-size: 1.5em;
-  white-space: nowrap;
-}
-
-.main-area-search-bar {
-  font-weight: 400;
+.main-area-card-container {
+  margin-top: 2em;
 }
 
 .main-area-no-results-container {
-  width: 100%;
-  margin-top: 1em;
+  margin-top: 2em;
   text-align: center;
 }
 
 .main-area-no-results-title {
-  font-size: 2em;
   font-weight: 500;
+  font-size: 2em;
+  color: #424242;
 }
 
 .main-area-no-results-subtitle {
-  font-weight: 400;
-  color: #757575;
+  font-weight: 300;
+  font-size: 1.25em;
+  color: #424242;
 }
+
+.main-area-card {
+  margin-bottom: 2em;
+  border-radius: 1em;
+}
+
+.main-area-card-title {
+  color: #fff;
+}
+
+.main-area-card-subtitle {
+  color: #fff;
+}
+
+.main-area-card-description {
+  color: #fff;
+}
+
+// .container-main {
+//   width: 100%;
+//   height: 100%;
+// }
+
+// .main-area {
+//   margin-top: 2em;
+//   margin-bottom: 4em;
+// }
+
+// .main-area-search-container {
+//   text-align: center;
+// }
+
+// .main-area-search-form {
+//   display: inline-block;
+//   width: 100%;
+// }
+
+// .main-area-search-icon,
+// .main-area-search-bar {
+//   font-size: 1.5em;
+//   white-space: nowrap;
+// }
+
+// .main-area-search-bar {
+//   font-weight: 400;
+// }
+
+// .main-area-no-results-container {
+//   width: 100%;
+//   margin-top: 1em;
+//   text-align: center;
+// }
+
+// .main-area-no-results-title {
+//   font-size: 2em;
+//   font-weight: 500;
+// }
+
+// .main-area-no-results-subtitle {
+//   font-weight: 400;
+//   color: #757575;
+// }
 
 
 

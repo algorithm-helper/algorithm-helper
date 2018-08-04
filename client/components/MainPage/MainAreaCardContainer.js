@@ -1,25 +1,74 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {
+  Col,
+  Container,
+  Row,
+
+  Card,
+  CardImg,
+  CardBody,
+  CardTitle,
+  CardSubtitle,
+  CardText,
+} from 'reactstrap';
+
+const mapColorKeyToColor = {
+  0: '#072A60',
+  1: '#33B5E5',
+  2: '#AA66CC',
+  3: '#81C784',
+  4: '#F06292',
+  5: '#7986CB',
+  6: '#4DB6AC',
+  7: '#FFB74D',
+  8: '#E57373',
+  9: '#90A4AE',
+};
 
 /**
  * Renders the MainAreaCardContainer stateless functional component.
  *
  * @param {object} props
  */
-const MainAreaCardContainer = props => (
-  <div className="main-area-card-deck-container">
-    <div className="row">
-      {
-        !props.children || props.children.length > 0 ?
-        props.children.map((child, i) => (
-          <div className="col-md-4" key={i}>
-            {child}
-          </div>
-        )) :
-        props.children
-      }
-    </div>
-  </div>
-);
+const MainAreaCardContainer = props => {
+  console.log('main-area-card-container', props.cardData);
+
+  return (<div className="main-area-card-container">
+    <Container fluid>
+      <Row>
+        <Col md="1" />
+        <Col md="10">
+          <Row>
+            {
+              props.cardData.map((card, i) => (
+                <Col key={i} md="4">
+                  <Card className="main-area-card" style={{
+                    backgroundColor: mapColorKeyToColor[card.colorKey],
+                    borderColor: mapColorKeyToColor[card.colorKey],
+                  }}>
+                  <CardBody>
+                    <CardTitle className="main-area-card-title">{card.title}</CardTitle>
+                    <CardSubtitle className="main-area-card-subtitle"></CardSubtitle>
+                  </CardBody>
+                  <img width="100%" src="http://via.placeholder.com/320x180" alt={card.title} />
+                  <CardBody>
+                    <CardText className="main-area-card-description">{card.description}</CardText>
+                  </CardBody>
+                  </Card>
+                </Col>
+              ))
+            }
+          </Row>
+        </Col>
+        <Col md="1" />
+      </Row>
+    </Container>
+  </div>);
+};
+
+MainAreaCardContainer.propTypes = {
+  cardData: PropTypes.array.isRequired,
+};
 
 export default MainAreaCardContainer;
