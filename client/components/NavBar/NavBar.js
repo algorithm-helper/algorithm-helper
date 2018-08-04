@@ -1,112 +1,88 @@
 import React from 'react';
-import { compose } from 'redux';
-import { connect } from 'react-redux';
-import { Link, withRouter } from 'react-router-dom';
+import {
+  Collapse,
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle,
+  Input,
+  InputGroup,
+  InputGroupAddon,
+  Nav,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  NavItem,
+  NavLink,
+  UncontrolledDropdown,
+} from 'reactstrap';
+import { Link } from 'react-router-dom';
 
-class NavBar extends React.Component {
+export default class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      isOpen: false,
       searchQuery: '',
-      shouldRedirect: false,
     };
-    this.handleSearchQuery = this.handleSearchQuery.bind(this);
-    this.handleSearch = this.handleSearch.bind(this);
   }
 
-  handleSearchQuery(e) {
+  /**
+   * Toggles the NavItems.
+   */
+  toggle = () => {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+  };
+
+  /**
+   * Handler for changes in the NavBar search field.
+   *
+   * @param {Event} e
+   */
+  onSearchChange = e => {
     const searchQuery = e.target.value.trim();
-    if (!searchQuery) {
-      return;
-    }
     this.setState({ searchQuery });
-  }
+  };
 
-  handleSearch(e) {
-    e.preventDefault();
-    if (this.state.searchQuery) {
-      this.setState({ shouldRedirect: true });
-    }
-  }
-
+  /**
+   * Renders the NavBar component.
+   */
   render() {
-    if (this.state.shouldRedirect) {
-      // this.props.history.push('/search');
-    }
-
-    const bgClass = this.props.colorKey !== undefined ? `bg-${this.props.colorKey}` : 'bg-main';
-
     return (
-      <nav className={`navbar navbar-expand-md fixed-top navbar-dark navbar-main ${bgClass}`}>
-        <div className="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-          <ul className="navbar-nav mr-auto">
-            <li className="nav-item">
-              <Link id="btn-explore" className="nav-link" to={'/categories'}>Explore</Link>
-            </li>
-            <li className="nav-item">
-              <form
-                id="form-search"
-                className="form-inline"
-                onSubmit={this.handleSearch}
-                >
-                <div className="md-form my-0">
-                  <input
-                    id="search"
-                    className="form-control mr-sm-2"
+      <div>
+        <Navbar fixed="top" className="navbar-main" dark expand="md">
+          <NavbarBrand className="navbar-brand-title" tag={Link} to="/">Algorithmica</NavbarBrand>
+          <NavbarToggler onClick={this.toggle} />
+          <Collapse isOpen={this.state.isOpen} navbar>
+            <Nav className="ml-auto" navbar>
+              <NavItem>
+                <NavLink className="navbar-link" tag={Link} to="/categories">Categories</NavLink>
+              </NavItem>
+              <NavItem>
+                <InputGroup>
+                  <Input
+                    className="navbar-link navbar-search"
                     type="text"
-                    placeholder="Search"
-                    aria-label="Search"
-                    autoComplete="off"
-                    onChange={this.handleSearchQuery}
+                    aria-label="search"
+                    placeholder="Search..."
+                    onChange={this.onSearchChange}
                   />
-                </div>
-              </form>
-            </li>
-          </ul>
-        </div>
-
-        <div className="mx-auto order-0">
-          <Link className="navbar-brand mx-auto navbar-title" to={'/'}>Algorithm Helper</Link>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target=".dual-collapse2"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-        </div>
-
-        <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
-          <ul className="navbar-nav ml-auto">
-            <li className="nav-item">
-              <Link
-                className="nav-link"
-                to={'/login'}
-              >
-                Login
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                className="nav-link navbar-btn-outline navbar-btn-signup"
-                to={'/signup'}
-              >
-                Sign Up
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </nav>
+                </InputGroup>
+              </NavItem>
+              <NavItem>
+                <NavLink className="navbar-link" tag={Link} to="/premium">Premium</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink className="navbar-link" tag={Link} to="/login">Login</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink className="navbar-link navbar-btn-signup" tag={Link} to="/signup">Sign Up</NavLink>
+              </NavItem>
+            </Nav>
+          </Collapse>
+        </Navbar>
+      </div>
     );
   }
 }
-
-const mapStateToProps = state => ({
-  colorKey: state.colorKey
-});
-
-export default compose(
-  withRouter,
-  connect(mapStateToProps)
-)(NavBar);

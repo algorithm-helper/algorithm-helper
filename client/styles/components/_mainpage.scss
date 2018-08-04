@@ -1,3 +1,48 @@
+.main-page-container {
+  margin-top: 60px;
+  width: 100%;
+}
+
+.main-page-jumbotron {
+  width: 100%;
+  position: relative;
+}
+
+.main-page-jumbotron-text-container {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 40%;
+  transform: translate(0, -50%);
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+.main-page-jumbotron-title {
+  color: #fff;
+  font-size: 3em;
+  font-weight: 200;
+  margin-bottom: 1em;
+}
+
+.main-page-jumbotron-subtitle {
+  color: #fff;
+  font-size: 1.25em;
+  font-weight: 200;
+}
+
+.main-page-particle-bg {
+  background-color: #072a60;
+}
+
+
+
+
+
+
+
+
+
 .container-main {
   width: 100%;
   height: 100%;

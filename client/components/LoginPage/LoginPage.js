@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 // Components:
-import Particles from '../Particles/';
+// import Particles from '../Particles/';
 
 // Actions:
 import { resetColorTheme } from '../../actions/ColorThemeActions';
@@ -39,7 +39,7 @@ class LoginPage extends React.Component {
     return (
       <div>
         <div id="container-full-particle-bg">
-          <Particles />
+
         </div>
         <div className="container-fluid container-full">
           <div className="row">
@@ -103,3 +103,5 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps)(LoginPage);
+
+//           <Particles />

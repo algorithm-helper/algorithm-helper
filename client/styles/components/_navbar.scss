@@ -1,12 +1,46 @@
 .navbar-main {
+  background-color: #072A60;
   height: 60px;
 }
 
-.navbar-btn-outline {
-  border: 1px solid #fff;
-  border-radius: 5px;
+.navbar-brand-title {
+  font-weight: 300;
+}
+
+.navbar-link {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  color: #fff !important;
+  font-weight: 200;
+}
+
+.navbar-link:hover {
+  color: #E0E0E0 !important;
 }
 
 .navbar-btn-signup {
-  margin-left: 0.5em;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+}
+
+.navbar-search {
+  border-color: #1f3f6f;
+  background-color: #1f3f6f !important;
+  color: #fff !important;
+}
+
+.navbar-search:focus {
+  outline: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.navbar-search::placeholder {
+  color: #fff !important;
+}
+
+.navbar-collapse {
+  background-color: #072A60 !important;
 }

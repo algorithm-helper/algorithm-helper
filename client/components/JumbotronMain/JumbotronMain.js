@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Particles from '../Particles/';
+// import Particles from '../Particles/';
 
 /**
  * Renders the JumbotronMain stateless functional component.
@@ -10,7 +10,7 @@ import Particles from '../Particles/';
 const JumbotronMain = props => (
   <div>
     <div className="jumbotron-main-particle-bg">
-      <Particles />
+
     </div>
     <div className="container-fluid">
       <div className="row jumbotron-main">
@@ -31,3 +31,5 @@ JumbotronMain.propTypes = {
 };
 
 export default JumbotronMain;
+
+//       <Particles />

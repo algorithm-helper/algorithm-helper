@@ -45,6 +45,36 @@ class AppRouter extends React.Component {
             />
 
             <Route
+              path="/premium"
+              component={MainPage}
+              exact={true}
+            />
+
+            <Route
+              path="/about"
+              component={MainPage}
+              exact={true}
+            />
+
+            <Route
+              path="/best-strategies"
+              component={MainPage}
+              exact={true}
+            />
+
+            <Route
+              path="/terms-and-conditions"
+              component={MainPage}
+              exact={true}
+            />
+
+            <Route
+              path="/privacy-policy"
+              component={MainPage}
+              exact={true}
+            />
+
+            <Route
               path="/dashboard"
               component={DashboardPage}
               exact={true}
