@@ -9,7 +9,6 @@ import DashboardPage from '../components/DashboardPage/';
 import SearchPage from '../components/SearchPage/';
 import ContentPage from '../components/ContentPage/';
 import TopicItemPage from '../components/TopicItemPage/';
-import Footer from '../components/Footer/';
 
 class AppRouter extends React.Component {
   constructor(props) {
@@ -115,8 +114,6 @@ class AppRouter extends React.Component {
               component={() => <Redirect to={'/'} />}
             />
           </Switch>
-
-          <Footer />
         </div>
       </BrowserRouter>
     );

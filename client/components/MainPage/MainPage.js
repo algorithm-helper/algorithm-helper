@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import MainPageJumbotron from './MainPageJumbotron';
 import MainArea from './MainArea';
+import Footer from '../Footer/';
 
 import data from '../../../data/index.json';
 
@@ -17,7 +18,6 @@ class MainPage extends React.Component {
   componentWillMount() {
     // Reset color theme
 
-    // Get the card data for each of the subcategories:
     const cardData = [];
     data.categories.forEach(category => {
       const colorKey = category.colorKey;
@@ -44,6 +44,7 @@ class MainPage extends React.Component {
         <MainArea
           cardData={this.state.cardData}
         />
+        <Footer />
       </div>
     );
   }

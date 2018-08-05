@@ -16,6 +16,7 @@ const MainAreaCard = props => (
     style={{
       backgroundColor: getColorFromKey(props.colorKey),
       borderColor: getColorFromKey(props.colorKey),
+      backgroundImage: `url(${'https://s3.amazonaws.com/algorithm-helper/misc/test.png'})`,
     }}
   >
     <Link className="main-area-card-link" to={props.url}>
@@ -23,8 +24,7 @@ const MainAreaCard = props => (
         <CardTitle className="main-area-card-title">{props.title}</CardTitle>
         <CardSubtitle className="main-area-card-subtitle"></CardSubtitle>
       </CardBody>
-
-      <CardBody>
+      <CardBody className="main-area-card-body-bottom">
         <CardText className="main-area-card-description">{props.description}</CardText>
       </CardBody>
     </Link>
@@ -39,5 +39,3 @@ MainAreaCard.propTypes = {
 };
 
 export default MainAreaCard;
-
-// <img className="main-area-card-img" width="100%" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Apple_Music_Logo.png/256px-Apple_Music_Logo.png" alt={card.title} />

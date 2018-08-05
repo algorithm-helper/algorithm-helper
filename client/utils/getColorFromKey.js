@@ -1,14 +1,15 @@
+// From Material Design Colors:
 const mapColorKeyToColor = {
   0: '#072A60',
-  1: '#33B5E5',
-  2: '#AA66CC',
-  3: '#81C784',
-  4: '#F06292',
-  5: '#7986CB',
-  6: '#4DB6AC',
-  7: '#FFB74D',
-  8: '#E57373',
-  9: '#90A4AE',
+  1: '#64B5F6', // Light Blue 300
+  2: '#BA68C8', // Purple 300
+  3: '#81C784', // Green 300
+  4: '#7986CB', // Indigo 300
+  5: '#9575CD', // Deep Purple 300
+  6: '#4DB6AC', // Teal 300
+  7: '#FFB74D', // Orange 300
+  8: '#E57373', // Red 300
+  9: '#90A4AE', // Blue Grey 300
 };
 
 /**

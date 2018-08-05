@@ -49,6 +49,7 @@
 }
 
 .main-area-card-link {
+  height: 100%;
   text-decoration: none !important;
 }
 
@@ -74,9 +75,12 @@
 }
 
 .main-area-card {
+  height: 20em;
   margin-bottom: 2em;
   border-radius: 0.5em;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .main-area-card:hover {
@@ -85,6 +89,8 @@
 }
 
 .main-area-card-img {
+  opacity: 0.75;
+  width: 100%;
   -moz-user-select: none;
   -webkit-user-select: none;
   user-select: none;
@@ -98,9 +104,15 @@
 
 .main-area-card-subtitle {
   color: #fff;
+  bottom: 1em;
 }
 
 .main-area-card-description {
   color: #fff;
   font-weight: 400;
+}
+
+.main-area-card-body-bottom {
+  bottom: 1em;
+  position: absolute;
 }

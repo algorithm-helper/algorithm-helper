@@ -172,7 +172,7 @@ categories:
             children: ['Article', 'Code']
       - key: probabilistic
         title: Probabilistic
-        description: Learn about probabilistic data structures, which use randomization to lead to operations and properties that are probabilistically expected to be efficient.
+        description: Learn about probabilistic data structures, which use randomization to lead to operations that are probabilistically expected to be efficient.
         orderKey: 3
         children:
           - key: introduction
@@ -816,7 +816,7 @@ categories:
     children:
       - key: randomized-algorithms
         title: Randomized Algorithms
-        description: Learn about randomized algorithms, which are algorithms that use randomization as part of its implementation, to lead to performance that is probabilistically expected to be efficient.
+        description: Learn about randomized algorithms, which are algorithms that use randomization as part of its implementation.
         orderKey: 0
         children:
           - key: introduction
@@ -962,7 +962,7 @@ categories:
             children: ['Article', 'Code']
       - key: computational-geometry
         title: Computational Geometry
-        description: Learn about computational geometry, which refer to algorithms that deal with data with geometric properties, like determining the convex hull of a set of points.
+        description: Learn about computational geometry, which refer to algorithms that deal with data with geometric properties, like determining the convex hull.
         orderKey: 1
         children:
           - key: introduction
@@ -1109,7 +1109,7 @@ categories:
     children:
       - key: computational-complexity
         title: Computational Complexity
-        description: Learn about computational complexity, which refers to the various methods we use to determine the rate of growth in the requirement of resources like time and space for a particular problem.
+        description: Learn about computational complexity, which refers to the various methods we use to determine the rate of growth in the requirement of time and space.
         orderKey: 0
         children:
           - key: introduction
