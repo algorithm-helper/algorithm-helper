@@ -1,10 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Container } from 'reactstrap';
 
-import NavBar from '../NavBar/';
+import MainPageJumbotron from './MainPageJumbotron';
 import MainArea from './MainArea';
-import Particles from './Particles';
 
 import data from '../../../data/index.json';
 
@@ -38,18 +36,11 @@ class MainPage extends React.Component {
   render() {
     return (
       <div className="main-page-container">
-        <div className="main-page-jumbotron">
-          <div className="main-page-jumbotron-text-container">
-            <div className="main-page-jumbotron-title">
-              Learn about algorithms and data structures.
-            </div>
-            <div className="main-page-jumbotron-subtitle">
-              Algorithmica is an educational resource for learning about algorithms, data
-              structures, and software engineering topics.
-            </div>
-          </div>
-          <Particles />
-        </div>
+        <MainPageJumbotron
+          title={'Learn about algorithms and data structures.'}
+          subtitle={'Algorithmica is an educational resource for learning about algorithms, ' +
+            'data structures, and software engineering topics.'}
+        />
         <MainArea
           cardData={this.state.cardData}
         />

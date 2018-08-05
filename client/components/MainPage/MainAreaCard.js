@@ -11,10 +11,13 @@ import getColorFromKey from '../../utils/getColorFromKey';
  * @param {object} props
  */
 const MainAreaCard = props => (
-  <Card className="main-area-card" style={{
-    backgroundColor: getColorFromKey(props.colorKey),
-    borderColor: getColorFromKey(props.colorKey),
-  }}>
+  <Card
+    className="main-area-card"
+    style={{
+      backgroundColor: getColorFromKey(props.colorKey),
+      borderColor: getColorFromKey(props.colorKey),
+    }}
+  >
     <Link className="main-area-card-link" to={props.url}>
       <CardBody>
         <CardTitle className="main-area-card-title">{props.title}</CardTitle>

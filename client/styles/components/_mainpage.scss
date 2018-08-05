@@ -75,7 +75,8 @@
 
 .main-area-card {
   margin-bottom: 2em;
-  border-radius: 1em;
+  border-radius: 0.5em;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
 }
 
 .main-area-card:hover {
