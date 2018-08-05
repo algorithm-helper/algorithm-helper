@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ParticlesJS from 'react-particles-js';
 
-import particlesSettings from './settings.json';
+import particlesSettings from './particlesSettings.json';
 
 /**
  * Renders the Particles stateless functional component.
@@ -16,5 +17,7 @@ const Particles = props => {
     />
   );
 };
+
+Particles.propTypes = {};
 
 export default Particles;

@@ -9,6 +9,7 @@ categories:
         title: Lists
         description: Learn about fundamental linear data structures like linked lists, dynamic arrays, stacks, and queues, where data is generally organized in sequence.
         orderKey: 0
+        imageUrl: 'https://s3.amazonaws.com/algorithm-helper/assets/icons/data-structures/lists.png'
         children:
           - key: introduction
             title: Introduction
@@ -54,6 +55,7 @@ categories:
         title: Trees
         description: Learn about tree data structures like binary search trees, heaps, B-trees, and union find, where operations tend to have logarithmic performance or better.
         orderKey: 1
+        imageUrl: 'https://s3.amazonaws.com/algorithm-helper/assets/icons/data-structures/trees.png'
         children:
           - key: introduction
             title: Introduction
@@ -134,6 +136,7 @@ categories:
         title: Hashing
         description: Learn about using hash functions to implement fundamental data structures called hash maps and hash sets with efficient (constant, amortized) time for operations.
         orderKey: 2
+        imageUrl: 'https://s3.amazonaws.com/algorithm-helper/assets/icons/data-structures/hashing.png'
         children:
           - key: introduction
             title: Introduction
@@ -174,6 +177,7 @@ categories:
         title: Probabilistic
         description: Learn about probabilistic data structures, which use randomization to lead to operations that are probabilistically expected to be efficient.
         orderKey: 3
+        imageUrl: 'https://s3.amazonaws.com/algorithm-helper/assets/icons/data-structures/probabilistic.png'
         children:
           - key: introduction
             title: Introduction
@@ -214,6 +218,7 @@ categories:
         title: Multidimensional
         description: Learn about multidimensional data structures, which are used to efficiently store and query data represented in a multidimensional space.
         orderKey: 7
+        imageUrl: 'https://s3.amazonaws.com/algorithm-helper/assets/icons/data-structures/multidimensional.png'
         children:
           - key: introduction
             title: Introduction
@@ -249,6 +254,7 @@ categories:
         title: Abstract Data Types
         description: Learn about abstract data types, which are data structures that have a general description of their operations but whose implementations can vary.
         orderKey: 4
+        imageUrl: 'https://s3.amazonaws.com/algorithm-helper/assets/icons/data-structures/abstract-data-types.png'
         children:
           - key: introduction
             title: Introduction
@@ -275,6 +281,7 @@ categories:
         title: Searching
         description: Learn about algorithms for searching for elements in arrays efficiently, in logarithmic time and better.
         orderKey: 0
+        imageUrl: 'https://s3.amazonaws.com/algorithm-helper/assets/icons/general-algorithms/searching.png'
         children:
           - key: introduction
             title: Introduction
@@ -310,6 +317,7 @@ categories:
         title: Sorting
         description: Learn about the fundamental problem of sorting, and algorithms like merge sort, quick sort and heap sort.
         orderKey: 1
+        imageUrl: 'https://s3.amazonaws.com/algorithm-helper/assets/icons/general-algorithms/sorting.png'
         children:
           - key: introduction
             title: Introduction
@@ -385,6 +393,7 @@ categories:
         title: Shuffling
         description: Learn about algorithms like Fisher-Yates and Sattolo's Algorithm to order elements in arrays uniformly randomly.
         orderKey: 2
+        imageUrl: 'https://s3.amazonaws.com/algorithm-helper/assets/icons/general-algorithms/shuffling.png'
         children:
           - key: introduction
             title: Introduction
@@ -410,6 +419,7 @@ categories:
         title: Selecting
         description: Learn about algorithms like quick select and median finding, which have general uses in being able to selecting elements from a set of data with desired properties.
         orderKey: 3
+        imageUrl: 'https://s3.amazonaws.com/algorithm-helper/assets/icons/general-algorithms/selecting.png'
         children:
           - key: introduction
             title: Introduction
@@ -451,6 +461,7 @@ categories:
         title: String Data Structures
         description: Learn about data structures that have special and useful properties when we know that the data or keys being stored are strictly strings.
         orderKey: 0
+        imageUrl: 'https://s3.amazonaws.com/algorithm-helper/assets/icons/strings/string-data-structures.png'
         children:
           - key: introduction
             title: Introduction
@@ -486,6 +497,7 @@ categories:
         title: String Sorting
         description: Learn about the problem of string sorting, and how we can use non-comparison sorts to achieve more efficient results.
         orderKey: 1
+        imageUrl: 'https://s3.amazonaws.com/algorithm-helper/assets/icons/strings/string-sorting.png'
         children:
           - key: introduction
             title: Introduction
@@ -511,6 +523,7 @@ categories:
         title: String Matching
         description: Learn about string matching, which is the problem of finding a smaller length pattern string in a larger body of text.
         orderKey: 2
+        imageUrl: 'https://s3.amazonaws.com/algorithm-helper/assets/icons/strings/string-matching.png'
         children:
           - key: introduction
             title: Introduction
@@ -551,6 +564,7 @@ categories:
         title: String Metrics
         description: Learn about string metrics, which refers to the different techniques and heuristics used to determine the distance between two strings.
         orderKey: 3
+        imageUrl: 'https://s3.amazonaws.com/algorithm-helper/assets/icons/strings/string-metrics.png'
         children:
           - key: introduction
             title: Introduction
@@ -586,6 +600,7 @@ categories:
         title: Compression
         description: Learn about the fundamental problem of compression, which refers to being able to encode the same data using fewer bits.
         orderKey: 4
+        imageUrl: 'https://s3.amazonaws.com/algorithm-helper/assets/icons/strings/compression.png'
         children:
           - key: introduction
             title: Introduction
@@ -632,6 +647,7 @@ categories:
         title: Graphs
         description: Learn about the various ways, advantages, and disadvantages to representing graphs in a data structure as well as useful properties of graphs.
         orderKey: 0
+        imageUrl: 'https://s3.amazonaws.com/algorithm-helper/assets/icons/graphs/graphs.png'
         children:
           - key: introduction
             title: Introduction
@@ -662,6 +678,7 @@ categories:
         title: Path Finding
         description: Learn about path finding, the fundamental problem within graphs of being able to find a sequence of edges that go from a starting vertex to ending vertex.
         orderKey: 1
+        imageUrl: 'https://s3.amazonaws.com/algorithm-helper/assets/icons/graphs/path-finding.png'
         children:
           - key: introduction
             title: Introduction
@@ -712,6 +729,7 @@ categories:
         title: Shortest Path Finding
         description: Learn about shorted path finding, which is a fundamental problem in graph theory of being able to find the path from one vertex to another with the least combined weight.
         orderKey: 2
+        imageUrl: 'https://s3.amazonaws.com/algorithm-helper/assets/icons/graphs/shortest-path-finding.png'
         children:
           - key: introduction
             title: Introduction
@@ -752,6 +770,7 @@ categories:
         title: Minimum Spanning Trees
         description: Learn about minimum spanning trees, which are a set of edges of a graph such that they connect all of the vertices with no cycles between them.
         orderKey: 3
+        imageUrl: 'https://s3.amazonaws.com/algorithm-helper/assets/icons/graphs/minimum-spanning-trees.png'
         children:
           - key: introduction
             title: Introduction
@@ -787,6 +806,7 @@ categories:
         title: Flow Networks
         description: Learn about flow networks, a type of graph such that all edges have capacities, and recieve flows, and the flow cannot exceed the capacity.
         orderKey: 4
+        imageUrl: 'https://s3.amazonaws.com/algorithm-helper/assets/icons/graphs/flow-networks.png'
         children:
           - key: introduction
             title: Introduction
@@ -818,6 +838,7 @@ categories:
         title: Randomized Algorithms
         description: Learn about randomized algorithms, which are algorithms that use randomization as part of its implementation.
         orderKey: 0
+        imageUrl: 'https://s3.amazonaws.com/algorithm-helper/assets/icons/randomization/randomized-algorithms.png'
         children:
           - key: introduction
             title: Introduction
@@ -858,6 +879,7 @@ categories:
         title: Random Number Generators
         description: Learn about techniques for implementing random number generators such as with the lagged Fibonacci generator and linear congruential generator.
         orderKey: 1
+        imageUrl: 'https://s3.amazonaws.com/algorithm-helper/assets/icons/randomization/random-number-generators.png'
         children:
           - key: introduction
             title: Introduction
@@ -904,6 +926,7 @@ categories:
         title: Numerical Computation
         description: Learn about numerical computation, which refers to algorithms that deal with efficient computation in the context of mathematics.
         orderKey: 0
+        imageUrl: 'https://s3.amazonaws.com/algorithm-helper/assets/icons/mathematics/numerical-computation.png'
         children:
           - key: introduction
             title: Introduction
@@ -964,6 +987,7 @@ categories:
         title: Computational Geometry
         description: Learn about computational geometry, which refer to algorithms that deal with data with geometric properties, like determining the convex hull.
         orderKey: 1
+        imageUrl: 'https://s3.amazonaws.com/algorithm-helper/assets/icons/mathematics/computational-geometry.png'
         children:
           - key: introduction
             title: Introduction
@@ -1000,6 +1024,7 @@ categories:
         title: Dynamic Programming
         description: Learn about the basics, techniques and motivations behind dynamic programming, and how memoization is used to facilitate it.
         orderKey: 0
+        imageUrl: 'https://s3.amazonaws.com/algorithm-helper/assets/icons/dynamic-programming/dynamic-programming.png'
         children:
           - key: introduction
             title: Introduction
@@ -1020,6 +1045,7 @@ categories:
         title: Dynamic Programming Problems
         description: Learn about dynamic programming techniques applied to a canonical list of problems.
         orderKey: 1
+        imageUrl: 'https://s3.amazonaws.com/algorithm-helper/assets/icons/dynamic-programming/dynamic-programming-problems.png'
         children:
           - key: introduction
             title: Introduction
@@ -1111,6 +1137,7 @@ categories:
         title: Computational Complexity
         description: Learn about computational complexity, which refers to the various methods we use to determine the rate of growth in the requirement of time and space.
         orderKey: 0
+        imageUrl: 'https://s3.amazonaws.com/algorithm-helper/assets/icons/algorithmic-analysis/computational-complexity.png'
         children:
           - key: introduction
             title: Introduction
@@ -1136,6 +1163,7 @@ categories:
         title: Complexity Classes
         description: Learn about complexity classes, which refers to classifiying problems by the rate of growth in necessary time and space needed to solve a particular problem.
         orderKey: 1
+        imageUrl: 'https://s3.amazonaws.com/algorithm-helper/assets/icons/algorithmic-analysis/complexity-classes.png'
         children:
           - key: introduction
             title: Introduction
@@ -1162,6 +1190,7 @@ categories:
         title: Object Oriented Programming
         description: Learn about object oriented programming concepts like encapsulation, inheritance, and polymorphism.
         orderKey: 0
+        imageUrl: 'https://s3.amazonaws.com/algorithm-helper/assets/icons/software-engineering/object-oriented-programming.png'
         children:
           - key: introduction
             title: Introduction
@@ -1192,6 +1221,7 @@ categories:
         title: Functional Programming
         description: Learn about functional programming concepts like lambda notation, function composition, filter, map, and reduce.
         orderKey: 1
+        imageUrl: 'https://s3.amazonaws.com/algorithm-helper/assets/icons/software-engineering/functional-programming.png'
         children:
           - key: introduction
             title: Introduction
@@ -1247,6 +1277,7 @@ categories:
         title: Design Patterns
         description: Learn about software design patterns like factories, builders, and observers, for solving common problems that occur often in software development.
         orderKey: 2
+        imageUrl: 'https://s3.amazonaws.com/algorithm-helper/assets/icons/software-engineering/design-patterns.png'
         children:
           - key: introduction
             title: Introduction
@@ -1337,6 +1368,7 @@ categories:
         title: Bash Scripting
         description: Learn about the syntax of scripting in Bash, a commonly used shell and command language, as well as useful functions and operations.
         orderKey: 3
+        imageUrl: 'https://s3.amazonaws.com/algorithm-helper/assets/icons/software-engineering/bash-scripting.png'
         children:
           - key: introduction
             title: Introduction
@@ -1367,6 +1399,7 @@ categories:
         title: Regular Expressions
         description: Learn about regular expressions, which are sequences of characters that define a search pattern, commonly used to search for matches within a piece of text.
         orderKey: 4
+        imageUrl: 'https://s3.amazonaws.com/algorithm-helper/assets/icons/software-engineering/regular-expressions.png'
         children:
           - key: introduction
             title: Introduction

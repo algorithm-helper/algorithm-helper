@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import MainPageJumbotron from './MainPageJumbotron';
 import MainArea from './MainArea';
 import Footer from '../Footer/';
-
 import data from '../../../data/index.json';
 
 class MainPage extends React.Component {
@@ -22,9 +21,9 @@ class MainPage extends React.Component {
     data.categories.forEach(category => {
       const colorKey = category.colorKey;
       category.children.forEach(subcategory => {
-        const { title, description } = subcategory;
+        const { title, description, imageUrl } = subcategory;
         const url = `/categories/${category.key}/${subcategory.key}`;
-        cardData.push({ title, description, colorKey, url });
+        cardData.push({ title, description, imageUrl, colorKey, url });
       });
     });
     this.setState({ cardData });

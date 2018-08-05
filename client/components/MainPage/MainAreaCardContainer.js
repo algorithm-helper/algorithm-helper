@@ -21,6 +21,7 @@ const MainAreaCardContainer = props => (
                 <Col key={i} md="4">
                   <MainAreaCard
                     colorKey={card.colorKey}
+                    imageUrl={card.imageUrl}
                     url={card.url}
                     title={card.title}
                     description={card.description}

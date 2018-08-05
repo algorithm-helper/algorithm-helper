@@ -16,7 +16,7 @@ const MainAreaCard = props => (
     style={{
       backgroundColor: getColorFromKey(props.colorKey),
       borderColor: getColorFromKey(props.colorKey),
-      backgroundImage: `url(${'https://s3.amazonaws.com/algorithm-helper/misc/test.png'})`,
+      backgroundImage: `url(${props.imageUrl})`,
     }}
   >
     <Link className="main-area-card-link" to={props.url}>
@@ -33,6 +33,7 @@ const MainAreaCard = props => (
 
 MainAreaCard.propTypes = {
   colorKey: PropTypes.number.isRequired,
+  imageUrl: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
