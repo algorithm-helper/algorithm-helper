@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
-// Components:
 import NavBar from '../components/NavBar/';
 import MainPage from '../components/MainPage/';
 import LoginPage from '../components/LoginPage/';
@@ -13,7 +12,7 @@ import TopicItemPage from '../components/TopicItemPage/';
 
 class AppRouter extends React.Component {
   constructor(props) {
-  super(props);
+    super(props);
   }
 
   /**

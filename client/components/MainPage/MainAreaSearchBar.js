@@ -1,12 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  Col,
-  Container,
-  Input,
-  InputGroup,
-  Row,
-} from 'reactstrap';
+import { Col, Container, Input, InputGroup, Row } from 'reactstrap';
 
 /**
  * Renders the MainAreaSearchBar stateless functional component.
@@ -16,7 +10,7 @@ import {
 const MainAreaSearchBar = props => (
   <Container className="main-area-search-bar" fluid>
     <Row>
-      <Col md="2"></Col>
+      <Col md="2" />
       <Col md="8">
         <InputGroup>
           <Input
@@ -28,7 +22,7 @@ const MainAreaSearchBar = props => (
           />
         </InputGroup>
       </Col>
-      <Col md="2"></Col>
+      <Col md="2" />
     </Row>
   </Container>
 );

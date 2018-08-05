@@ -40,6 +40,7 @@
     "react-addons-shallow-compare": "15.6.0",
     "react-chartjs-2": "^2.7.2",
     "react-dom": "^16.4.2",
+    "react-intl": "^2.4.0",
     "react-md-spinner": "^0.2.5",
     "react-particles-js": "^2.3.0",
     "react-redux": "^5.0.7",

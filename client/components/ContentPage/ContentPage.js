@@ -11,7 +11,6 @@ import ContentAreaItemContainer from './ContentAreaItemContainer';
 
 // Utils:
 import i18n from '../../utils/i18n';
-import { stripHyphens } from '../../utils/utils';
 import { getCategory, getSubcategory } from '../../utils/dataUtils';
 import { getContentUrlKey } from '../../utils/routeUtils';
 

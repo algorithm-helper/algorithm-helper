@@ -1,10 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  Col,
-  Container,
-  Row,
-} from 'reactstrap';
 
 import MainAreaSearchBar from './MainAreaSearchBar';
 import MainAreaCardContainer from './MainAreaCardContainer';
@@ -27,6 +22,11 @@ class MainArea extends React.Component {
     });
   }
 
+  /**
+   * Normalizes the search query and filters the visibleCards.
+   *
+   * @param {Event} e
+   */
   handleSearchChange = e => {
     const searchQuery = e.target.value.trim().replace(/\s/g, '').toLowerCase();
 
@@ -39,6 +39,9 @@ class MainArea extends React.Component {
     this.setState({ searchQuery, visibleCards });
   };
 
+  /**
+   * Renders the MainArea component.
+   */
   render() {
     return (
       <div className="main-area-container">

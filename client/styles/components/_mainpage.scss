@@ -1,6 +1,7 @@
 .main-page-container {
   margin-top: 60px;
   width: 100%;
+  overflow-x: hidden;
 }
 
 .main-page-jumbotron {
@@ -33,6 +34,7 @@
 
 .main-page-particle-bg {
   background-color: #072a60;
+  height: 30em;
 }
 
 .main-area-container {
@@ -44,6 +46,10 @@
   outline: 0;
   -webkit-box-shadow: none;
   box-shadow: none;
+}
+
+.main-area-card-link {
+  text-decoration: none !important;
 }
 
 .main-area-card-container {
@@ -85,7 +91,7 @@
 
 .main-area-card-title {
   color: #fff;
-  font-size: 1.5em;
+  font-size: 1.75em;
   font-weight: 500;
 }
 
@@ -95,52 +101,5 @@
 
 .main-area-card-description {
   color: #fff;
+  font-weight: 300;
 }
-
-// .container-main {
-//   width: 100%;
-//   height: 100%;
-// }
-
-// .main-area {
-//   margin-top: 2em;
-//   margin-bottom: 4em;
-// }
-
-// .main-area-search-container {
-//   text-align: center;
-// }
-
-// .main-area-search-form {
-//   display: inline-block;
-//   width: 100%;
-// }
-
-// .main-area-search-icon,
-// .main-area-search-bar {
-//   font-size: 1.5em;
-//   white-space: nowrap;
-// }
-
-// .main-area-search-bar {
-//   font-weight: 400;
-// }
-
-// .main-area-no-results-container {
-//   width: 100%;
-//   margin-top: 1em;
-//   text-align: center;
-// }
-
-// .main-area-no-results-title {
-//   font-size: 2em;
-//   font-weight: 500;
-// }
-
-// .main-area-no-results-subtitle {
-//   font-weight: 400;
-//   color: #757575;
-// }
-
-
-

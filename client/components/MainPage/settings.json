@@ -1,5 +1,12 @@
 {
   "particles": {
+    "number": {
+      "value": 50,
+      "density": {
+        "enable": true,
+        "value_area": 2000
+      }
+    },
     "color": {
       "value": "#fff"
     },
@@ -44,5 +51,6 @@
         "rotateY": 1200
       }
     }
-  }
+  },
+  "retina_detect": true
 }

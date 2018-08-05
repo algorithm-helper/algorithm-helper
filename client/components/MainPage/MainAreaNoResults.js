@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Col, Container, Row } from 'reactstrap';
 
 /**
  * Renders the MainAreaNoResults stateless functional component.

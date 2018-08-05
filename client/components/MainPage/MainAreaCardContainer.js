@@ -1,40 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  Col,
-  Container,
-  Row,
+import { Col, Container, Row } from 'reactstrap';
 
-  Card,
-  CardImg,
-  CardBody,
-  CardTitle,
-  CardSubtitle,
-  CardText,
-} from 'reactstrap';
-
-const mapColorKeyToColor = {
-  0: '#072A60',
-  1: '#33B5E5',
-  2: '#AA66CC',
-  3: '#81C784',
-  4: '#F06292',
-  5: '#7986CB',
-  6: '#4DB6AC',
-  7: '#FFB74D',
-  8: '#E57373',
-  9: '#90A4AE',
-};
+import MainAreaCard from './MainAreaCard';
 
 /**
  * Renders the MainAreaCardContainer stateless functional component.
  *
  * @param {object} props
  */
-const MainAreaCardContainer = props => {
-  console.log('main-area-card-container', props.cardData);
-
-  return (<div className="main-area-card-container">
+const MainAreaCardContainer = props => (
+  <div className="main-area-card-container">
     <Container fluid>
       <Row>
         <Col md="1" />
@@ -43,19 +19,12 @@ const MainAreaCardContainer = props => {
             {
               props.cardData.map((card, i) => (
                 <Col key={i} md="4">
-                  <Card className="main-area-card" style={{
-                    backgroundColor: mapColorKeyToColor[card.colorKey],
-                    borderColor: mapColorKeyToColor[card.colorKey],
-                  }}>
-                  <CardBody>
-                    <CardTitle className="main-area-card-title">{card.title}</CardTitle>
-                    <CardSubtitle className="main-area-card-subtitle"></CardSubtitle>
-                  </CardBody>
-
-                  <CardBody>
-                    <CardText className="main-area-card-description">{card.description}</CardText>
-                  </CardBody>
-                  </Card>
+                  <MainAreaCard
+                    colorKey={card.colorKey}
+                    url={card.url}
+                    title={card.title}
+                    description={card.description}
+                  />
                 </Col>
               ))
             }
@@ -64,13 +33,11 @@ const MainAreaCardContainer = props => {
         <Col md="1" />
       </Row>
     </Container>
-  </div>);
-};
+  </div>
+);
 
 MainAreaCardContainer.propTypes = {
   cardData: PropTypes.array.isRequired,
 };
 
 export default MainAreaCardContainer;
-
-//                   <img className="main-area-card-img" width="100%" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Apple_Music_Logo.png/256px-Apple_Music_Logo.png" alt={card.title} />

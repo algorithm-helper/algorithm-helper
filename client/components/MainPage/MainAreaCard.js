@@ -1,9 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { Card, CardBody, CardSubtitle, CardText, CardTitle } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
-// Utils:
-import i18n from '../../utils/i18n';
+import getColorFromKey from '../../utils/getColorFromKey';
 
 /**
  * Renders the MainAreaCard stateless functional component.
@@ -11,24 +11,30 @@ import i18n from '../../utils/i18n';
  * @param {object} props
  */
 const MainAreaCard = props => (
-  <div className="card mb-4">
-    <div className="card-body">
-      <h4 className="card-title">{props.title}</h4>
-      <div className={`card-pill color-white ${props.pillBg}`}>{props.pillText}</div>
-      <p className="card-text">{props.description}</p>
-      <Link to={props.urlKey}>
-        <button type="button" className="btn btn-blue btn-md">{i18n.mainAreaCard.btnText['en']}</button>
-      </Link>
-    </div>
-  </div>
+  <Card className="main-area-card" style={{
+    backgroundColor: getColorFromKey(props.colorKey),
+    borderColor: getColorFromKey(props.colorKey),
+  }}>
+    <Link className="main-area-card-link" to={props.url}>
+      <CardBody>
+        <CardTitle className="main-area-card-title">{props.title}</CardTitle>
+        <CardSubtitle className="main-area-card-subtitle"></CardSubtitle>
+      </CardBody>
+
+      <CardBody>
+        <CardText className="main-area-card-description">{props.description}</CardText>
+      </CardBody>
+    </Link>
+  </Card>
 );
 
 MainAreaCard.propTypes = {
-  description: PropTypes.string.isRequired,
-  pillBg: PropTypes.string.isRequired,
-  pillText: PropTypes.string.isRequired,
+  colorKey: PropTypes.number.isRequired,
+  url: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  urlKey: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
 };
 
 export default MainAreaCard;
+
+// <img className="main-area-card-img" width="100%" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Apple_Music_Logo.png/256px-Apple_Music_Logo.png" alt={card.title} />
