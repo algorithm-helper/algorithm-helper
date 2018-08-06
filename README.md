@@ -1,321 +1,1736 @@
 # Algorithm Helper
 
-Algorithm Helper is an online educational tool for students and software developers to learn about
+Algorithm Helper is an educational resource for students and software developers to learn about
 a multitude of algorithms, data structures, and other software engineering topics. It is meant to
-be a comprehensive reference tool. For the algorithms and data structures, they will have articles
-explaining their approach and intuition, analyze their time and space complexities, describe their
-real world applications as well as practical implications. Implementations are currently in
-Java, Python, JavaScript and C++. This project is a work in progress, and is a web application
-developed with JavaScript/Node.js, React.js/Redux, MongoDB, AWS EC2/S3, and Docker.
+be a comprehensive reference tool. Each topic will have articles explaining their approach, main
+ideas, and analysis of time and space complexities, where applicable. Implementations are currently
+available in Java, Python, C++, and JavaScript.
 
-## Table of Contents
+This project is a work in progress, and contributions are welcome. It is developed with
+JavaScript/Node.js, React.js/Redux, MongoDB, AWS EC2/S3, and Docker.
 
-The following table describes the current state of the project, a listing of all of the finished and
-in progress topics, including the programming languages available for the code implementations:
+## Contents
 
-- Data Structures
-  - Lists
-    - Introduction
-    - Linked List
-    - Double Ended Linked List
-    - Dynamic Array
-    - Stack
-    - Queue
-    - Double Ended Queue
-    - Time and Space Complexity Comparison
-  - Trees
-    - Introduction
-    - Map / Symbol Table
-    - Set
-    - Binary Search Tree
-    - Balanced Binary Search Tree
-    - 2-3 Tree
-    - Red-Black Tree
-    - AVL Tree
-    - Heap
-    - Priority Queue
-    - Union Find / Disjoint Set
-    - B-Tree
-    - Fibonacci Heap
-    - Van Emde Boas Tree
-    - Time and Space Complexity Comparison
-  - Hashing
-    - Introduction
-    - Hash Function
-    - Collision Resolution
-    - Simple Uniform Hashing Assumption
-    - Hash Map
-    - Hash Set
-    - Time and Space Complexity Comparison
-  - Probabilistic
-    - Introduction
-    - Skip List
-    - Bloom Filter
-    - Count Min Sketch
-    - Random Binary Tree
-    - Treap
-    - Time and Space Complexity Comparison
-  - Multidimensional
-    - Introduction
-    - Range Searching
-    - Quad Tree
-    - k-d Tree
-    - Range Tree
-    - Time and Space Complexity Comparison
-  - Abstract Data Types
-    - Introduction
-    - Iterator / Iterable
-    - Comparator / Comparable
-- General Algorithms
-  - Searching
-    - Introduction
-    - Binary Search
-    - Ternary Search
-    - Jump Search
-    - Interpolation Search
-    - Time and Space Complexity Comparison
-  - Sorting
-    - Introduction
-    - Stability
-    - In-Place
-    - Selection Sort
-    - Insertion Sort
-    - Shell Sort
-    - Divide and Conquer
-    - Merge Sort
-    - Quick Sort
-    - Heap Sort
-    - Bucket Sort
-    - Count Sort
-    - Radix Sort
-    - Time and Space Complexity Comparison
-  - Shuffling
-    - Introduction
-    - Fisher-Yates Shuffle
-    - Sattolo's Algorithm
-    - Time and Space Complexity Comparison
-  - Selecting
-    - Introduction
-    - Quick Select
-    - Median Finding
-    - Median of Medians Algorithm
-    - Peak Finding
-    - Time and Space Complexity Comparison
-- Strings
-  - String Data Structures
-    - Introduction
-    - Trie
-    - R-Way Trie
-    - Ternary Search Trie
-    - Suffix Tree
-    - Time and Space Complexity Comparison
-  - String Sorting
-    - Introduction
-    - LSD Radix Sort
-    - MSD Radix Sort
-    - Time and Space Complexity Comparison
-  - String Matching
-    - Introduction
-    - Knuth-Morris-Pratt Algorithm
-    - Boyer-Moore Algorithm
-    - Rabin-Karp Algorithm
-    - Approximate String Matching
-    - Bitap Algorithm
-    - Time and Space Complexity Comparison
-  - String Metrics
-    - Introduction
-    - Edit Distance
-    - Damerau-Levenshtein Distance
-    - Hamming Distance
-    - Wagner-Fischer Algorithm
-    - Time and Space Complexity Comparison
-  - Compression
-    - Introduction
-    - Huffman Coding
-    - Lempel-Ziv-Welch Algorithm
-    - Run-Length Encoding
-    - Text Transforms
-    - Burrows-Wheeler Transform
-    - Time and Space Complexity Comparison
-- Graphs
-  - Graphs
-    - Introduction
-    - Graph Representation
-    - Undirected and Directed Graphs
-    - Sparse and Dense Graphs
-    - Time and Space Complexity Comparison
-  - Path Finding
-    - Introduction
-    - Depth First Search
-    - Breadth First Search
-    - Connected Components
-    - Topological Sort
-    - Kahn's Topological Sort Algorithm
-    - Strongly Connected Components
-    - Kosaraju's Algorithm
-    - Time and Space Complexity Comparison
-  - Shortest Path Finding
-    - Introduction
-    - Weighted Graph
-    - Edge Relaxation
-    - Dijkstra's Algorithm
-    - Bellman-Ford Algorithm
-    - Floyd-Warshall Algorithm
-    - Time and Space Complexity Comparison
-  - Minimum Spanning Trees
-    - Introduction
-    - Greedy Algorithm
-    - Prim's Algorithm
-    - Kruskal's Algorithm
-    - Clustering
-    - Time and Space Complexity Comparison
-  - Flow Networks
-    - Introduction
-    - Max Flow Min Cut
-    - Ford-Fulkerson Algorithm
-    - Time and Space Complexity Comparison
-- Randomization
-  - Randomized Algorithms
-    - Introduction
-    - Expected Time
-    - Quick Select (Revisited)
-    - Quick Sort (Revisited)
-    - Monte Carlo Algorithm
-    - Las Vegas Algorithm
-    - Time and Space Complexity Comparison
-  - Random Number Generators
-    - Introduction
-    - Pseudo Random Number Generators
-    - Blum Blum Shub
-    - Lagged Fibonacci Generator
-    - Linear Congruential Generator
-    - Mersenne Twister
-    - Time and Space Complexity Comparison
-- Mathematics
-  - Numerical Computation
-    - Introduction
-    - Euclid's Algorithm
-    - Multiplication Algorithm
-    - Karatsuba Algorithm
-    - Newton-Raphson Method
-    - Modular Exponentiation
-    - Linear Programming
-    - Simplex Algorithm
-    - Polynomial Multiplication
-    - Fast Fourier Transform
-    - Time and Space Complexity Comparison
-  - Computational Geometry
-    - Introduction
-    - Convex Hull
-    - Graham Scan
-    - Jarvis's Algorithm
-    - Time and Space Complexity Comparison
-- Dynamic Programming
-  - Dynamic Programming
-    - Introduction
-    - Overlapping Subproblems and Optimal Substructures
-    - Memoization
-  - Dynamic Programming Problems
-    - Introduction
-    - Fibonacci Number
-    - Maximum Sum Contiguous Subarray
-    - Kadane's Algorithm
-    - Longest Common Subsequence
-    - Longest Increasing Subsequence
-    - Longest Common Substring
-    - Longest Palindromic Substring
-    - Binomial Coefficient
-    - Coin Change Problem
-    - Maximum Size Square Submatrix
-    - Assembly Line Scheduling
-    - Rod Cutting
-    - Minimum Edit Distance
-    - Levenschtein Edit Distance
-    - 0-1 Knapsack Problem
-    - Time and Space Complexity Comparison
-- Algorithmic Analysis
-  - Computational Complexity
-    - Introduction
-    - Big-O Notation
-    - Small-O Notation
-    - Amortization
-  - Complexity Classes
-    - Introduction
-    - P Complexity
-    - NP Complexity
-- Software Engineering
-  - Object Oriented Programming
-    - Introduction
-    - Class and Instance
-    - Inheritance
-    - Encapsulation
-    - Polymorphism
-  - Functional Programming
-    - Introduction
-    - First Class Function
-    - Recursion
-    - Lambda Notation
-    - Function Composition
-    - Map, Filter, Reduce
-    - Compose
-    - Currying
-    - Piping
-    - Zip, Unzip
-  - Design Patterns
-    - Introduction
-    - Adapter
-    - Bridge
-    - Builder
-    - Chain of Responsibility
-    - Command
-    - Composite
-    - Decorator
-    - Factory
-    - Iterator
-    - Null Object
-    - Observer
-    - Prototype
-    - Singleton
-    - Strategy
-    - Template Method
-    - Visitor
-  - Bash Scripting
-    - Introduction
-    - Shell Scripts
-    - Common Functions
-    - Exit Status Codes
-    - File Access in Scripts
-  - Regular Expressions
-    - Introduction
-    - Basic Syntax
-    - Regex Flags
-    - Grouping and Capturing
-    - Look Ahead, Look Behind
+- Getting Started
+- Content & Implementations
+- Mobile Version (iOS & Android)
 
-## Development
+### Getting Started
 
 Get a copy of the project so that you can use Algorithm Helper offline as reference, or for
-testing purposes. Algorithm Helper uses `webpack` to transpile and use ES6 syntax,
-`webpack-dev-server` to watch for changes in the client-side code, `nodemon` to watch for changes
-in the server-side code, and `concurrently` to startup both the client-side and server-side for
-development.
+testing purposes. Algorithm Helper uses `webpack`, `babel` to transpile and use ES6, JSX, and SCSS
+syntax. For client-side development, it uses `webpack-dev-sever`. For server-side development, it
+uses `nodemon`, `concurrently`, amongst other tools.
 
-For a development environment that watches for both client and server side changes, run:
+For a client-side development with `webpack-dev-server`, run:
+
 ```
-yarn run dev
+yarn run dev:wds
 ```
 
-To only watch for client side changes, run:
+For a client-side development with live updates, run:
+```
+yarn run dev:client
+```
+
+For a server-side development with live updates, run:
+```
+yarn run dev:server
+```
+
+For a client and server-side development with live updates, run:
+```
+yarn run dev:all
+```
+
+To build for development, run:
+
+```
+yarn run build:dev
+```
+
+To build for production, run:
+
+```
+yarn run build:prod
+```
+
+For production, run:
+
 ```
 yarn run start
 ```
 
-To only develop on the client-side, run:
-```
-yarn run dev-server
-```
+### Content & Implementations
 
-To build for production, run:
-```
-yarn run build:prod
-```
+For a full listing of all the article content (in Markdown format) and implentations of the
+algorithms, data structures, and other software engineering related material, see the following
+repositories:
+- [algorithm-helper/content](https://github.com/algorithm-helper/content)
+- [algorithm-helper/implementations](https://github.com/algorithm-helper/implementations)
+
+The following table describes the current state of the project, a listing of all of the finished
+and in progress topics, including the programming languages available for the implementations:
+
+<table>
+  <tr>
+    <th>Category</th>
+    <th>Subcategory</th>
+    <th>Topic</th>
+    <th>Current State</th>
+    <th>Implementation Languages Available</th>
+  </tr>
+  <tr>
+    <td>Data Structures</td>
+    <td>Lists</td>
+    <td>Introduction</td>
+    <td>Complete</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Data Structures</td>
+    <td>Lists</td>
+    <td>Linked List</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Data Structures</td>
+    <td>Lists</td>
+    <td>Double Ended Linked List</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Data Structures</td>
+    <td>Lists</td>
+    <td>Dynamic Array</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Data Structures</td>
+    <td>Lists</td>
+    <td>Stack</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Data Structures</td>
+    <td>Lists</td>
+    <td>Queue</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Data Structures</td>
+    <td>Lists</td>
+    <td>Double Ended Queue</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Data Structures</td>
+    <td>Lists</td>
+    <td>Time and Space Complexity Comparison</td>
+    <td>Complete</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Data Structures</td>
+    <td>Trees</td>
+    <td>Introduction</td>
+    <td>Complete</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Data Structures</td>
+    <td>Trees</td>
+    <td>Map / Symbol Table</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Data Structures</td>
+    <td>Trees</td>
+    <td>Set</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Data Structures</td>
+    <td>Trees</td>
+    <td>Binary Search Tree</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Data Structures</td>
+    <td>Trees</td>
+    <td>Balanced Binary Search Tree</td>
+    <td>Complete</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Data Structures</td>
+    <td>Trees</td>
+    <td>2-3 Tree</td>
+    <td>Complete</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Data Structures</td>
+    <td>Trees</td>
+    <td>Red-Black Tree</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Data Structures</td>
+    <td>Trees</td>
+    <td>AVL Tree</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Data Structures</td>
+    <td>Trees</td>
+    <td>Heap</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Data Structures</td>
+    <td>Trees</td>
+    <td>Priority Queue</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Data Structures</td>
+    <td>Trees</td>
+    <td>Union Find / Disjoint Set</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Data Structures</td>
+    <td>Trees</td>
+    <td>B-Tree</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Data Structures</td>
+    <td>Trees</td>
+    <td>Fibonacci Heap</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Data Structures</td>
+    <td>Trees</td>
+    <td>Van Emde Boas Tree</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Data Structures</td>
+    <td>Trees</td>
+    <td>Time and Space Complexity Comparison</td>
+    <td>Complete</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Data Structures</td>
+    <td>Hashing</td>
+    <td>Introduction</td>
+    <td>Complete</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Data Structures</td>
+    <td>Hashing</td>
+    <td>Hash Function</td>
+    <td>Complete</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Data Structures</td>
+    <td>Hashing</td>
+    <td>Collision Resolution</td>
+    <td>Complete</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Data Structures</td>
+    <td>Hashing</td>
+    <td>Simple Uniform Hashing Assumpption</td>
+    <td>Complete</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Data Structures</td>
+    <td>Hashing</td>
+    <td>Hash Map</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Data Structures</td>
+    <td>Hashing</td>
+    <td>Hash Set</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Data Structures</td>
+    <td>Hashing</td>
+    <td>Time and Space Complexity Comparison</td>
+    <td>Complete</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Data Structures</td>
+    <td>Probabilistic</td>
+    <td>Introduction</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Data Structures</td>
+    <td>Probabilistic</td>
+    <td>Skip List</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Data Structures</td>
+    <td>Probabilistic</td>
+    <td>Bloom Filter</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Data Structures</td>
+    <td>Probabilistic</td>
+    <td>Count Min Sketch</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Data Structures</td>
+    <td>Probabilistic</td>
+    <td>Random Binary Tree</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Data Structures</td>
+    <td>Probabilistic</td>
+    <td>Treap</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Data Structures</td>
+    <td>Probabilistic</td>
+    <td>Time and Space Complexity Comparison</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Data Structures</td>
+    <td>Multidimensional</td>
+    <td>Introduction</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Data Structures</td>
+    <td>Multidimensional</td>
+    <td>Range Searching</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Data Structures</td>
+    <td>Multidimensional</td>
+    <td>Quad Tree</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Data Structures</td>
+    <td>Multidimensional</td>
+    <td>k-d Tree</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Data Structures</td>
+    <td>Multidimensional</td>
+    <td>Range Tree</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Data Structures</td>
+    <td>Multidimensional</td>
+    <td>Time and Space Complexity Comparison</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Data Structures</td>
+    <td>Abstract Data Types</td>
+    <td>Introduction</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Data Structures</td>
+    <td>Abstract Data Types</td>
+    <td>Iterator / Iterable</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Data Structures</td>
+    <td>Abstract Data Types</td>
+    <td>Comparator / Comparable</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>General Algorithms</td>
+    <td>Searching</td>
+    <td>Introduction</td>
+    <td>Complete</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>General Algorithms</td>
+    <td>Searching</td>
+    <td>Binary Search</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>General Algorithms</td>
+    <td>Searching</td>
+    <td>Ternary Search</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>General Algorithms</td>
+    <td>Searching</td>
+    <td>Jump Search</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>General Algorithms</td>
+    <td>Searching</td>
+    <td>Interpolation Search</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>General Algorithms</td>
+    <td>Searching</td>
+    <td>Time and Space Complexity Comparison</td>
+    <td>Complete</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>General Algorithms</td>
+    <td>Sorting</td>
+    <td>Introduction</td>
+    <td>Complete</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>General Algorithms</td>
+    <td>Sorting</td>
+    <td>Stability</td>
+    <td>Complete</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>General Algorithms</td>
+    <td>Sorting</td>
+    <td>In-Place</td>
+    <td>Complete</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>General Algorithms</td>
+    <td>Sorting</td>
+    <td>Selection Sort</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>General Algorithms</td>
+    <td>Sorting</td>
+    <td>Insertion Sort</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>General Algorithms</td>
+    <td>Sorting</td>
+    <td>Shell Sort</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>General Algorithms</td>
+    <td>Sorting</td>
+    <td>Divide and Conquer</td>
+    <td>Complete</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>General Algorithms</td>
+    <td>Sorting</td>
+    <td>Merge Sort</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>General Algorithms</td>
+    <td>Sorting</td>
+    <td>Quick Sort</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>General Algorithms</td>
+    <td>Sorting</td>
+    <td>Heap Sort</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>General Algorithms</td>
+    <td>Sorting</td>
+    <td>Bucket Sort</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>General Algorithms</td>
+    <td>Sorting</td>
+    <td>Count Sort</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>General Algorithms</td>
+    <td>Sorting</td>
+    <td>Radix Sort</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>General Algorithms</td>
+    <td>Sorting</td>
+    <td>Time and Space Complexity Comparison</td>
+    <td>Complete</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>General Algorithms</td>
+    <td>Shuffling</td>
+    <td>Introduction</td>
+    <td>Complete</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>General Algorithms</td>
+    <td>Shuffling</td>
+    <td>Fisher-Yates Shuffle</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>General Algorithms</td>
+    <td>Shuffling</td>
+    <td>Sattolo's Algorithm</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>General Algorithms</td>
+    <td>Shuffling</td>
+    <td>Time and Space Complexity Comparison</td>
+    <td>Complete</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>General Algorithms</td>
+    <td>Selecting</td>
+    <td>Introduction</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>General Algorithms</td>
+    <td>Selecting</td>
+    <td>Quick Select</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>General Algorithms</td>
+    <td>Selecting</td>
+    <td>Median Finding</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>General Algorithms</td>
+    <td>Selecting</td>
+    <td>Median of Medians Algorithm</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>General Algorithms</td>
+    <td>Selecting</td>
+    <td>Peak Finding</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>General Algorithms</td>
+    <td>Selecting</td>
+    <td>Time and Space Complexity Comparison</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Strings</td>
+    <td>String Data Structures</td>
+    <td>Introduction</td>
+    <td>Complete</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Strings</td>
+    <td>String Data Structures</td>
+    <td>Trie</td>
+    <td>Complete</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Strings</td>
+    <td>String Data Structures</td>
+    <td>R-Way Trie</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Strings</td>
+    <td>String Data Structures</td>
+    <td>Ternary Search Trie</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Strings</td>
+    <td>String Data Structures</td>
+    <td>Suffix Tree</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Strings</td>
+    <td>String Data Structures</td>
+    <td>Time and Space Complexity Comparison</td>
+    <td>Complete</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Strings</td>
+    <td>String Sorting</td>
+    <td>Introduction</td>
+    <td>Complete</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Strings</td>
+    <td>String Sorting</td>
+    <td>LSD Radix Sort</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Strings</td>
+    <td>String Sorting</td>
+    <td>MSD Radix Sort</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Strings</td>
+    <td>String Sorting</td>
+    <td>Time and Space Complexity Comparison</td>
+    <td>Complete</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Strings</td>
+    <td>String Matching</td>
+    <td>Introduction</td>
+    <td>Complete</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Strings</td>
+    <td>String Matching</td>
+    <td>Knuth-Morris-Pratt Algorithm</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Strings</td>
+    <td>String Matching</td>
+    <td>Boyer-Moore Algorithm</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Strings</td>
+    <td>String Matching</td>
+    <td>Rabin-Karp Algorithm</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Strings</td>
+    <td>String Matching</td>
+    <td>Approximate String Matching</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Strings</td>
+    <td>String Matching</td>
+    <td>Bitap Algorithm</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Strings</td>
+    <td>String Matching</td>
+    <td>Time and Space Complexity Comparison</td>
+    <td>Complete</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Strings</td>
+    <td>String Metrics</td>
+    <td>Introduction</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Strings</td>
+    <td>String Metrics</td>
+    <td>Edit Distance</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Strings</td>
+    <td>String Metrics</td>
+    <td>Damerau-Levenshtein Distance</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Strings</td>
+    <td>String Metrics</td>
+    <td>Hamming Distance</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Strings</td>
+    <td>String Metrics</td>
+    <td>Wagner-Fischer Algorithm</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Strings</td>
+    <td>String Metrics</td>
+    <td>Time and Space Complexity Comparison</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Strings</td>
+    <td>Compression</td>
+    <td>Introduction</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Strings</td>
+    <td>Compression</td>
+    <td>Run-Length Encoding</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Strings</td>
+    <td>Compression</td>
+    <td>Huffman Coding</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Strings</td>
+    <td>Compression</td>
+    <td>Lempel-Ziv-Welch Algorithm</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Strings</td>
+    <td>Compression</td>
+    <td>Text Transforms</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Strings</td>
+    <td>Compression</td>
+    <td>Burrows-Wheeler Transform</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Strings</td>
+    <td>Compression</td>
+    <td>Time and Space Complexity Comparison</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Graphs</td>
+    <td>Graphs</td>
+    <td>Introduction</td>
+    <td>Complete</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Graphs</td>
+    <td>Graphs</td>
+    <td>Graph Representation</td>
+    <td>Complete</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Graphs</td>
+    <td>Graphs</td>
+    <td>Undirected and Directed Graphs</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Graphs</td>
+    <td>Graphs</td>
+    <td>Sparse and Dense Graphs</td>
+    <td>Complete</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Graphs</td>
+    <td>Graphs</td>
+    <td>Time and Space Complexity Comparison</td>
+    <td>Complete</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Graphs</td>
+    <td>Path Finding</td>
+    <td>Introduction</td>
+    <td>Complete</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Graphs</td>
+    <td>Path Finding</td>
+    <td>Depth First Search</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Graphs</td>
+    <td>Path Finding</td>
+    <td>Breadth First Search</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Graphs</td>
+    <td>Path Finding</td>
+    <td>Connected Components</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Graphs</td>
+    <td>Path Finding</td>
+    <td>Topological Sort</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Graphs</td>
+    <td>Path Finding</td>
+    <td>Kahn's Topological Sort Algorithm</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Graphs</td>
+    <td>Path Finding</td>
+    <td>Strongly Connected Components</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Graphs</td>
+    <td>Path Finding</td>
+    <td>Kosaraju's Algorithm</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Graphs</td>
+    <td>Path Finding</td>
+    <td>Time and Space Complexity Comparison</td>
+    <td>Complete</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Graphs</td>
+    <td>Shortest Path Finding</td>
+    <td>Introduction</td>
+    <td>Complete</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Graphs</td>
+    <td>Shortest Path Finding</td>
+    <td>Weighted Graph</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Graphs</td>
+    <td>Shortest Path Finding</td>
+    <td>Edge Relaxation</td>
+    <td>Complete</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Graphs</td>
+    <td>Shortest Path Finding</td>
+    <td>Dijkstra's Algorithm</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Graphs</td>
+    <td>Shortest Path Finding</td>
+    <td>Bellman-Ford Algorithm</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Graphs</td>
+    <td>Shortest Path Finding</td>
+    <td>Floyd-Warshall Algorithm</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Graphs</td>
+    <td>Shortest Path Finding</td>
+    <td>Time and Space Complexity Comparison</td>
+    <td>Complete</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Graphs</td>
+    <td>Minimum Spanning Trees</td>
+    <td>Introduction</td>
+    <td>Complete</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Graphs</td>
+    <td>Minimum Spanning Trees</td>
+    <td>Greedy Algorithm</td>
+    <td>Complete</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Graphs</td>
+    <td>Minimum Spanning Trees</td>
+    <td>Prim's Algorithm</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Graphs</td>
+    <td>Minimum Spanning Trees</td>
+    <td>Kruskal's Algorithm</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Graphs</td>
+    <td>Minimum Spanning Trees</td>
+    <td>Clustering</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Graphs</td>
+    <td>Minimum Spanning Trees</td>
+    <td>Time and Space Complexity Comparison</td>
+    <td>Complete</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Graphs</td>
+    <td>Flow Networks</td>
+    <td>Introduction</td>
+    <td>Complete</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Graphs</td>
+    <td>Flow Networks</td>
+    <td>Max Flow Min Cut</td>
+    <td>Complete</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Graphs</td>
+    <td>Flow Networks</td>
+    <td>Ford-Fulkerson Algorithm</td>
+    <td>Complete</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Graphs</td>
+    <td>Flow Networks</td>
+    <td>Time and Space Complexity Comparison</td>
+    <td>Complete</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Randomization</td>
+    <td>Randomized Algorithms</td>
+    <td>Introduction</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Randomization</td>
+    <td>Randomized Algorithms</td>
+    <td>Expected Time</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Randomization</td>
+    <td>Randomized Algorithms</td>
+    <td>Quick Select (Revisited)</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Randomization</td>
+    <td>Randomized Algorithms</td>
+    <td>Quick Sort (Revisited)</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Randomization</td>
+    <td>Randomized Algorithms</td>
+    <td>Monte Carlo Algorithm</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Randomization</td>
+    <td>Randomized Algorithms</td>
+    <td>Las Vegas Algorithm</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Randomization</td>
+    <td>Randomized Algorithms</td>
+    <td>Time and Space Complexity Comparison</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Randomization</td>
+    <td>Random Number Generators</td>
+    <td>Introduction</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Randomization</td>
+    <td>Random Number Generators</td>
+    <td>Pseudo Random Number Generators</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Randomization</td>
+    <td>Random Number Generators</td>
+    <td>Blum Blum Shub</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Randomization</td>
+    <td>Random Number Generators</td>
+    <td>Lagged Fibonacci Generator</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Randomization</td>
+    <td>Random Number Generators</td>
+    <td>Linear Congruential Generator</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Randomization</td>
+    <td>Random Number Generators</td>
+    <td>Mersenne Twister</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Randomization</td>
+    <td>Random Number Generators</td>
+    <td>Time and Space Complexity Comparison</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Mathematics</td>
+    <td>Numerical Computation</td>
+    <td>Introduction</td>
+    <td>Complete</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Mathematics</td>
+    <td>Numerical Computation</td>
+    <td>Euclid's Algorithm</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Mathematics</td>
+    <td>Numerical Computation</td>
+    <td>Multiplication Algorithm</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Mathematics</td>
+    <td>Numerical Computation</td>
+    <td>Karatsuba Algorithm</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Mathematics</td>
+    <td>Numerical Computation</td>
+    <td>Newton-Raphson Method</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Mathematics</td>
+    <td>Numerical Computation</td>
+    <td>Modular Exponentiation</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Mathematics</td>
+    <td>Numerical Computation</td>
+    <td>Linear Programming</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Mathematics</td>
+    <td>Numerical Computation</td>
+    <td>Simplex Algorithm</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Mathematics</td>
+    <td>Numerical Computation</td>
+    <td>Polynomial Multiplication</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Mathematics</td>
+    <td>Numerical Computation</td>
+    <td>Fast Fourier Transform</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Mathematics</td>
+    <td>Numerical Computation</td>
+    <td>Time and Space Complexity Comparison</td>
+    <td>Complete</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Mathematics</td>
+    <td>Computational Geometry</td>
+    <td>Introduction</td>
+    <td>Complete</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Mathematics</td>
+    <td>Computational Geometry</td>
+    <td>Convex Hull</td>
+    <td>Complete</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Mathematics</td>
+    <td>Computational Geometry</td>
+    <td>Graham Scan</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Mathematics</td>
+    <td>Computational Geometry</td>
+    <td>Jarvis Algorithm</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Mathematics</td>
+    <td>Computational Geometry</td>
+    <td>Time and Space Complexity Comparison</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Dynamic Programming</td>
+    <td>Dynamic Programming</td>
+    <td>Introduction</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Dynamic Programming</td>
+    <td>Dynamic Programming</td>
+    <td>Overlapping Subproblems and Optimal Substructures</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Dynamic Programming</td>
+    <td>Dynamic Programming</td>
+    <td>Memoization</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Dynamic Programming</td>
+    <td>Dynamic Programming Problems</td>
+    <td>Introduction</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Dynamic Programming</td>
+    <td>Dynamic Programming Problems</td>
+    <td>Fibonacci Number</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Dynamic Programming</td>
+    <td>Dynamic Programming Problems</td>
+    <td>Maximum Sum Contiguous Subarray</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Dynamic Programming</td>
+    <td>Dynamic Programming Problems</td>
+    <td>Kadane's Algorithm</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Dynamic Programming</td>
+    <td>Dynamic Programming Problems</td>
+    <td>Longest Common Subsequence</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Dynamic Programming</td>
+    <td>Dynamic Programming Problems</td>
+    <td>Longest Increasing Subsequence</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Dynamic Programming</td>
+    <td>Dynamic Programming Problems</td>
+    <td>Longest Common Substring</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Dynamic Programming</td>
+    <td>Dynamic Programming Problems</td>
+    <td>Longest Palindromic Substring</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Dynamic Programming</td>
+    <td>Dynamic Programming Problems</td>
+    <td>Binomial Coefficient</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Dynamic Programming</td>
+    <td>Dynamic Programming Problems</td>
+    <td>Coin Change Problem</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Dynamic Programming</td>
+    <td>Dynamic Programming Problems</td>
+    <td>Maximum Size Square Submatrix</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Dynamic Programming</td>
+    <td>Dynamic Programming Problems</td>
+    <td>Assembly Line Scheduling</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Dynamic Programming</td>
+    <td>Dynamic Programming Problems</td>
+    <td>Rod Cutting</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Dynamic Programming</td>
+    <td>Dynamic Programming Problems</td>
+    <td>Levenschtein Edit Distance</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Dynamic Programming</td>
+    <td>Dynamic Programming Problems</td>
+    <td>0-1 Knapsack Problem</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Dynamic Programming</td>
+    <td>Dynamic Programming Problems</td>
+    <td>Time and Space Complexity Comparison</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Algorithmic Analysis</td>
+    <td>Computational Complexity</td>
+    <td>Introduction</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Algorithmic Analysis</td>
+    <td>Computational Complexity</td>
+    <td>Big-O Notarion</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Algorithmic Analysis</td>
+    <td>Computational Complexity</td>
+    <td>Small-O Notation</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Algorithmic Analysis</td>
+    <td>Computational Complexity</td>
+    <td>Amortization</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Algorithmic Analysis</td>
+    <td>Complexity Classes</td>
+    <td>Introduction</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Algorithmic Analysis</td>
+    <td>Complexity Classes</td>
+    <td>P Complexity</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Algorithmic Analysis</td>
+    <td>Complexity Classes</td>
+    <td>NP Complexity</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Software Engineering</td>
+    <td>Object Oriented Programming</td>
+    <td>Introduction</td>
+    <td>Complete</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Software Engineering</td>
+    <td>Object Oriented Programming</td>
+    <td>Class and Instance</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Software Engineering</td>
+    <td>Object Oriented Programming</td>
+    <td>Inheritance</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Software Engineering</td>
+    <td>Object Oriented Programming</td>
+    <td>Encapsulation</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Software Engineering</td>
+    <td>Object Oriented Programming</td>
+    <td>Polymorphism</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Software Engineering</td>
+    <td>Functional Programming</td>
+    <td>Introduction</td>
+    <td>Complete</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Software Engineering</td>
+    <td>Functional Programming</td>
+    <td>First Class Function</td>
+    <td>Complete</td>
+    <td>JavaScript</td>
+  </tr>
+  <tr>
+    <td>Software Engineering</td>
+    <td>Functional Programming</td>
+    <td>Recursion</td>
+    <td>Complete</td>
+    <td>JavaScript</td>
+  </tr>
+  <tr>
+    <td>Software Engineering</td>
+    <td>Functional Programming</td>
+    <td>Lambda Notation</td>
+    <td>Complete</td>
+    <td>JavaScript</td>
+  </tr>
+  <tr>
+    <td>Software Engineering</td>
+    <td>Functional Programming</td>
+    <td>Function Composition</td>
+    <td>Complete</td>
+    <td>JavaScript</td>
+  </tr>
+  <tr>
+    <td>Software Engineering</td>
+    <td>Functional Programming</td>
+    <td>Map, Filter, Reduce</td>
+    <td>Complete</td>
+    <td>JavaScript</td>
+  </tr>
+  <tr>
+    <td>Software Engineering</td>
+    <td>Functional Programming</td>
+    <td>Currying</td>
+    <td>Complete</td>
+    <td>JavaScript</td>
+  </tr>
+  <tr>
+    <td>Software Engineering</td>
+    <td>Functional Programming</td>
+    <td>Compose</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Software Engineering</td>
+    <td>Functional Programming</td>
+    <td>Piping</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Software Engineering</td>
+    <td>Functional Programming</td>
+    <td>Zip, Unzip</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Software Engineering</td>
+    <td>Design Patterns</td>
+    <td>Introduction</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Software Engineering</td>
+    <td>Design Patterns</td>
+    <td>Adapter</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Software Engineering</td>
+    <td>Design Patterns</td>
+    <td>Bridge</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Software Engineering</td>
+    <td>Design Patterns</td>
+    <td>Builder</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Software Engineering</td>
+    <td>Design Patterns</td>
+    <td>Chain of Responsibility</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Software Engineering</td>
+    <td>Design Patterns</td>
+    <td>Command</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Software Engineering</td>
+    <td>Design Patterns</td>
+    <td>Composite</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Software Engineering</td>
+    <td>Design Patterns</td>
+    <td>Decorator</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Software Engineering</td>
+    <td>Design Patterns</td>
+    <td>Factory</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Software Engineering</td>
+    <td>Design Patterns</td>
+    <td>Iterator</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Software Engineering</td>
+    <td>Design Patterns</td>
+    <td>Null Object</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Software Engineering</td>
+    <td>Design Patterns</td>
+    <td>Observer</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Software Engineering</td>
+    <td>Design Patterns</td>
+    <td>Prototype</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Software Engineering</td>
+    <td>Design Patterns</td>
+    <td>Singleton</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Software Engineering</td>
+    <td>Design Patterns</td>
+    <td>Strategy</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Software Engineering</td>
+    <td>Design Patterns</td>
+    <td>Template Method</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Software Engineering</td>
+    <td>Design Patterns</td>
+    <td>Visitor</td>
+    <td>Complete</td>
+    <td>Java</td>
+  </tr>
+  <tr>
+    <td>Software Engineering</td>
+    <td>Bash Scripting</td>
+    <td>Introduction</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Software Engineering</td>
+    <td>Bash Scripting</td>
+    <td>Shell Scripts</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Software Engineering</td>
+    <td>Bash Scripting</td>
+    <td>Common Functions</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Software Engineering</td>
+    <td>Bash Scripting</td>
+    <td>Exit Status Codes</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Software Engineering</td>
+    <td>Bash Scripting</td>
+    <td>File Access in Scripts</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Software Engineering</td>
+    <td>Regular Expressions</td>
+    <td>Introduction</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Software Engineering</td>
+    <td>Regular Expressions</td>
+    <td>Basic Syntax</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Software Engineering</td>
+    <td>Regular Expressions</td>
+    <td>Regex Flags</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Software Engineering</td>
+    <td>Regular Expressions</td>
+    <td>Grouping and Capturing</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Software Engineering</td>
+    <td>Regular Expressions</td>
+    <td>Look Ahead, Look Behind</td>
+    <td>In Progress</td>
+    <td>n/a</td>
+  </tr>
+</table>
+
+### Mobile Version (iOS & Android)
+
+Currently, a native iOS mobile version is available here:
+- [algorithm-helper/ios-app](https://github.com/algorithm-helper/ios-app)
+
+But it is going to be phased out in the future, as a React Native app is currently being developed
+so that it can be available for both iOS and Android.

@@ -23,14 +23,10 @@ class TopicItemArticleContainer extends React.Component {
 
     const { categoryKey, subcategoryKey, topicKey } = this.props.match.params;
     const s3Url = `${S3_URL_PREFIX}/${categoryKey}/${subcategoryKey}/${topicKey}.md`;
-    console.log(s3Url);
     fetch(s3Url)
     .then(res => res.text())
     .then(res => {
-      console.log(res);
-      this.setState({
-        contentFormatted: marked(res),
-      });
+      this.setState({ contentFormatted: marked(res) });
 
       setTimeout(() => {
         this.props.contentLoaded();
