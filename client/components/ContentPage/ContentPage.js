@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import MDSpinner from 'react-md-spinner';
+import { Col, Container, Row } from 'reactstrap';
 
 import NavBar from '../NavBar/';
 import JumbotronMedium from '../JumbotronMedium/';
@@ -11,8 +12,8 @@ import i18n from '../../utils/i18n';
 import { getCategory, getSubcategory } from '../../utils/dataUtils';
 import { getContentUrlKey } from '../../utils/routeUtils';
 import data from '../../../data/index.json';
-import colors from '../../../data/colors.json';
 import { setColorTheme, resetColorTheme } from '../../actions/ColorThemeActions';
+import getColorFromKey from '../../utils/getColorFromKey';
 
 class ContentPage extends React.Component {
   constructor(props) {
@@ -138,57 +139,45 @@ class ContentPage extends React.Component {
    */
   render() {
     if (this.state.error) {
-      return <Redirect to={'/'} />
+      return <Redirect to={'/'} />;
     }
 
     return (
-      <div>
-        <div className="container-main">
+      <div className="content-page-container">
+        <JumbotronMedium
+          title={this.state.title}
+        />
 
-          <JumbotronMedium
-            title={this.state.title}
-            bgName="bg-main"
-          />
-
-          {
-            this.state.loading ?
-            (
-              <div className="dynamic-content-page-loader">
-                <MDSpinner
-                  size={50}
-                  singleColor={colors[this.props.colorKey]}
-                />
-              </div>
-            ) :
-            (
-              <div className="container-fluid main-area">
-                <div className="categories-container">
-                  <div className="row">
-                    <div className="col-md-2 col-sm-2">
-                      <ContentAreaTableOfContents
-                        title={'Content'}
-                        contentData={
-                          this.state.contentData.map(item => ({
-                            title: item.title,
-                            key: item.key
-                          }))
-                        }
-                      />
-                    </div>
-
-                    <div className="col-md-8 col-sm-10">
-                      <ContentAreaItemContainer
-                        contentData={this.state.contentData}
-                      />
-                    </div>
-
-                    <div className="col-md-2 col-sm-0"></div>
-                  </div>
-                </div>
-              </div>
-            )
-          }
-        </div>
+        {
+          this.state.loading
+          ? <div className="content-page-loader">
+              <MDSpinner
+                size={50}
+                singleColor={getColorFromKey(this.props.colorKey)}
+              />
+            </div>
+          : <Container fluid>
+              <Row>
+                <Col md="2" sm="2">
+                  <ContentAreaTableOfContents
+                    title={'Content'}
+                    contentData={
+                      this.state.contentData.map(item => ({
+                        title: item.title,
+                        key: item.key
+                      }))
+                    }
+                  />
+                </Col>
+                <Col md="8" sm="10">
+                  <ContentAreaItemContainer
+                    contentData={this.state.contentData}
+                  />
+                </Col>
+                <Col md="2" sm="0" />
+              </Row>
+            </Container>
+        }
       </div>
     );
   }

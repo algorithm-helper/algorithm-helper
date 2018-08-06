@@ -1,45 +1,55 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default class ContentAreaTableOfContents extends React.Component {
+class ContentAreaTableOfContents extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       selectedIndex: -1,
     };
-    this.handleSelectTableItem = this.handleSelectTableItem.bind(this);
   }
 
-  handleSelectTableItem(index) {
+  /**
+   * Handles the selected index change when a table item is selected.
+   *
+   * @param {number} index
+   */
+  handleSelectTableItem = index => {
     this.setState({
       selectedIndex: index,
     });
-  }
+  };
 
+  /**
+   * Returns the class name corresponding to when the item is selected in the table of contents.
+   */
+  getSelectedClassName = index => {
+    return index === this.state.selectedIndex ? 'content-area-toc-item-selected' : '';
+  };
+
+  /**
+   * Renders the ContentAreaTableOfContents component.
+   */
   render() {
     return (
       <div className="content-area-toc">
-        <div className="content-area-toc-title">{this.props.title}</div>
+        <div className="content-area-toc-title">
+          {this.props.title}
+        </div>
         <div className="content-area-toc-container">
           {
-            this.props.contentData &&
-            this.props.contentData.map((item, i) => {
-              return (
-                <div
-                  className={`content-area-toc-item ${i === this.state.selectedIndex ?
-                    'content-area-toc-item-selected' : ''}`}
-                  key={i}>
-                  <a
-                    href={`#${item.key}`}
-                    onClick={() => {
-                      this.handleSelectTableItem(i);
-                    }}
-                  >
-                    {item.title}
-                  </a>
-                </div>
-              )
-            })
+            this.props.contentData
+            && this.props.contentData.map((item, i) => (
+              <div
+                className={`content-area-toc-item ${this.getSelectedClassName(i)}`}
+                key={i}>
+                <a
+                  href={`#${item.key}`}
+                  onClick={() => this.handleSelectTableItem(i)}>
+                  {item.title}
+                </a>
+              </div>
+            ))
           }
         </div>
       </div>
@@ -51,3 +61,5 @@ ContentAreaTableOfContents.propTypes = {
   contentData: PropTypes.array.isRequired,
   title: PropTypes.string.isRequired,
 };
+
+export default ContentAreaTableOfContents;
