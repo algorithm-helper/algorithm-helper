@@ -11,9 +11,9 @@ JavaScript/Node.js, React.js/Redux, MongoDB, AWS EC2/S3, and Docker.
 
 ## Contents
 
-- Getting Started
-- Content & Implementations
-- Mobile Version (iOS & Android)
+- [Getting Started](#getting-started)
+- [Content & Implementations](#content--implementations)
+- [Mobile Version (iOS & Android)](#mobile-version-ios--android)
 
 ### Getting Started
 
