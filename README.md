@@ -78,7 +78,7 @@ and in progress topics, including the programming languages available for the im
     <th>Subcategory</th>
     <th>Topic</th>
     <th>Current State</th>
-    <th>Implementation Languages Available</th>
+    <th>Languages Available</th>
   </tr>
   <tr>
     <td>Data Structures</td>
