@@ -10,9 +10,10 @@ import ContentAreaItemContainer from './ContentAreaItemContainer';
 
 import { getCategory, getSubcategory } from '../../utils/dataUtils';
 import { getContentUrlKey } from '../../utils/routeUtils';
-import data from '../../../data/index.json';
-import { setColorTheme, resetColorTheme } from '../../actions/ColorThemeActions';
 import getColorFromKey from '../../utils/getColorFromKey';
+import { setColorTheme, resetColorTheme } from '../../actions/ColorThemeActions';
+import data from '../../../data/index.json';
+
 
 class ContentPage extends React.Component {
   constructor(props) {
@@ -78,17 +79,15 @@ class ContentPage extends React.Component {
       }
 
       subcategoryObj.children.forEach(topic => {
-        const title = topic.title;
-        const key = topic.key;
-        const description = topic.description;
-        const colorKey = categoryObj.colorKey;
+        const { title, key, description } = topic;
+        const { colorKey } = categoryObj;
         const urlKey = `/categories/${categoryObj.key}/${subcategoryObj.key}/${key}`;
         const children = [{
           title: 'Article',
           key: 'article',
         }, {
-          title: 'Code Implementations',
-          key: 'code-implementations',
+          title: 'Implementations',
+          key: 'implementations',
         }];
         contentData.push({
           title,
@@ -116,7 +115,7 @@ class ContentPage extends React.Component {
 
       categoryObj.children.forEach(subcategory => {
         const { title, key, description } = subcategory;
-        const colorKey = categoryObj.colorKey;
+        const { colorKey } = categoryObj;
         const urlKey = `/categories/${categoryObj.key}/${key}`;
         const children = subcategory.children.map(({ title, key }) => ({ title, key }));
         contentData.push({
