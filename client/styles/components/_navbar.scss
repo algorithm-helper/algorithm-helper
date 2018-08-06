@@ -1,5 +1,4 @@
 .navbar-main {
-  background-color: #072A60;
   height: 60px;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
 }
@@ -26,8 +25,6 @@
 }
 
 .navbar-search {
-  border-color: #1f3f6f;
-  background-color: #1f3f6f !important;
   color: #fff !important;
 }
 
@@ -39,8 +36,4 @@
 
 .navbar-search::placeholder {
   color: #fff !important;
-}
-
-.navbar-collapse {
-  background-color: #072A60 !important;
 }

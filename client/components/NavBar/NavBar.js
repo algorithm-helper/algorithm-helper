@@ -1,4 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { compose } from 'redux';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import Color from 'color';
 import {
   Collapse,
   Input,
@@ -11,7 +16,8 @@ import {
   NavItem,
   NavLink,
 } from 'reactstrap';
-import { Link } from 'react-router-dom';
+
+import getColorFromKey from '../../utils/getColorFromKey';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -42,14 +48,31 @@ class NavBar extends React.Component {
   };
 
   /**
+   * Returns a lighter version of the current color theme using the `color` library. Used for making
+   * the background color of the search bar slightly lighter.
+   */
+  getLightenedColorTheme = () => {
+    const currentColor = getColorFromKey(this.props.colorKey);
+    return Color(currentColor).lighten(0.15).hex();
+  };
+
+  /**
    * Renders the NavBar component.
    */
   render() {
     return (
-      <Navbar fixed="top" className="navbar-main" dark expand="md">
+      <Navbar
+        fixed="top"
+        className="navbar-main"
+        dark
+        expand="md"
+        style={{ backgroundColor: getColorFromKey(this.props.colorKey) }}>
         <NavbarBrand className="navbar-brand-title" tag={Link} to="/">Algorithmica</NavbarBrand>
         <NavbarToggler onClick={this.toggle} />
-        <Collapse isOpen={this.state.isOpen} navbar>
+        <Collapse
+          isOpen={this.state.isOpen}
+          navbar
+          style={{ backgroundColor: getColorFromKey(this.props.colorKey) }}>
           <Nav className="ml-auto" navbar>
             <NavItem>
               <NavLink className="navbar-link" tag={Link} to="/categories">Categories</NavLink>
@@ -61,6 +84,7 @@ class NavBar extends React.Component {
                   type="text"
                   aria-label="search"
                   placeholder="Search..."
+                  style={{ backgroundColor: this.getLightenedColorTheme() }}
                   onChange={this.onSearchChange}
                 />
               </InputGroup>
@@ -81,4 +105,12 @@ class NavBar extends React.Component {
   }
 }
 
-export default NavBar;
+NavBar.propTypes = {};
+
+const mapStateToProps = state => ({
+  colorKey: state.colorKey,
+});
+
+export default compose(
+  connect(mapStateToProps),
+)(NavBar);

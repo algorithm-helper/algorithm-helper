@@ -1,34 +1,38 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { compose } from 'redux';
+import { connect } from 'react-redux';
+import { Col, Container, Row } from 'reactstrap';
+
+import getColorFromKey from '../../utils/getColorFromKey';
 
 /**
  * Renders the JumbotronMedium stateless functional component.
  *
  * @param {object} props
  */
-const JumbotronMedium = props => {
-  const bgClass = props.colorKey !== undefined ? `bg-${props.colorKey}` : 'bg-main';
-
-  return (
-    <div className="container-fluid">
-      <div className={`row jumbotron-md ${bgClass}`}>
-        <div className="col-md-12">
-          <div className="jumbotron-md-text-container">
-            <div className="jumbotron-md-title">{props.title}</div>
-          </div>
+const JumbotronMedium = props => (
+  <Container fluid>
+    <Row
+      className="jumbotron-md"
+      style={{ backgroundColor: getColorFromKey(props.colorKey) }}>
+      <Col md="12">
+        <div className="jumbotron-md-text-container">
+          <div className="jumbotron-md-title">{props.title}</div>
         </div>
-      </div>
-    </div>
-  );
-};
+      </Col>
+    </Row>
+  </Container>
+);
 
 JumbotronMedium.propTypes = {
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = state => ({
-  colorKey: state.colorKey
+  colorKey: state.colorKey,
 });
 
-export default connect(mapStateToProps)(JumbotronMedium);
+export default compose(
+  connect(mapStateToProps),
+)(JumbotronMedium);

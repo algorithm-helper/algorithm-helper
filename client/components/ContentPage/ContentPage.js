@@ -3,22 +3,15 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import MDSpinner from 'react-md-spinner';
 
-// Components:
 import NavBar from '../NavBar/';
 import JumbotronMedium from '../JumbotronMedium/';
 import ContentAreaTableOfContents from './ContentAreaTableOfContents';
 import ContentAreaItemContainer from './ContentAreaItemContainer';
-
-// Utils:
 import i18n from '../../utils/i18n';
 import { getCategory, getSubcategory } from '../../utils/dataUtils';
 import { getContentUrlKey } from '../../utils/routeUtils';
-
-// Data:
 import data from '../../../data/index.json';
 import colors from '../../../data/colors.json';
-
-// Actions:
 import { setColorTheme, resetColorTheme } from '../../actions/ColorThemeActions';
 
 class ContentPage extends React.Component {
@@ -56,7 +49,17 @@ class ContentPage extends React.Component {
     }
   }
 
-  configureDataByRouteParams(params) {
+  /**
+   * Configures the content page dynamically based on the route parameters. If the parameters are
+   * not valid, then it will redirect to the main page.
+   * i.e
+   * - categoryKey -> category page
+   * - categoryKey, subcategoryKey -> subctegory page
+   * - categoryKey, subcategoryKey, topicKey -> topic page
+   *
+   * @param {object} params
+   */
+  configureDataByRouteParams = params => {
     const { categoryKey, subcategoryKey, topicKey } = params;
     const contentData = [];
 
@@ -84,7 +87,6 @@ class ContentPage extends React.Component {
         const children = [
           { title: 'Article', key: 'article' },
           { title: 'Code Implementations', key: 'code-implementations' },
-          // { title: 'Video', key: 'video' },
         ];
         contentData.push({
           title,
@@ -117,7 +119,6 @@ class ContentPage extends React.Component {
       });
       this.setState({ title: categoryObj.title });
     } else {
-      // Categories:
       this.setState({ type: 'categories' });
       this.props.dispatch(resetColorTheme());
       data.categories.forEach(category => {
@@ -126,12 +127,15 @@ class ContentPage extends React.Component {
         const children = category.children.map(({ title, key }) => ({ title, key}));
         contentData.push({ title, key, description, children, colorKey, urlKey });
       });
-      this.setState({ title: i18n.dynamicContentPage.categoriesTitle['en'] });
+      this.setState({ title: 'Categories' });
     }
 
     this.setState({ contentData });
-  }
+  };
 
+  /**
+   * Renders the ContentPage component.
+   */
   render() {
     if (this.state.error) {
       return <Redirect to={'/'} />
@@ -162,7 +166,7 @@ class ContentPage extends React.Component {
                   <div className="row">
                     <div className="col-md-2 col-sm-2">
                       <ContentAreaTableOfContents
-                        title={i18n.contentAreaTableOfContents.title['en']}
+                        title={'Content'}
                         contentData={
                           this.state.contentData.map(item => ({
                             title: item.title,
