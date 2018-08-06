@@ -27,8 +27,6 @@ class ContentPage extends React.Component {
   }
 
   componentWillMount() {
-    window.scrollTo(0, 0);
-
     this.configureDataByRouteParams(this.props.match.params);
 
     this.setState({ loading: true });

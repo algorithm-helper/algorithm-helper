@@ -10,50 +10,47 @@ import getColorFromKey from '../../utils/getColorFromKey';
  *
  * @param {object} props
  */
-const ContentAreaItem = props => {
-
-  return (
-    <div id={props.itemKey} className="content-area-item">
-      <div className="content-area-item-header">
-        <Link to={`${props.urlKey}`}>
-          <div
-            className="content-area-item-header-icon"
-            style={{ backgroundColor: getColorFromKey(props.colorKey) }}
-          />
-          <div
-            className="content-area-item-header-title"
-            style={{ color: getColorFromKey(props.colorKey) }}>
-            {props.title}
-          </div>
-        </Link>
-
-        <div className="content-area-item-header-description">
-          {props.description}
+const ContentAreaItem = props => (
+  <div id={props.itemKey} className="content-area-item">
+    <div className="content-area-item-header">
+      <Link to={`${props.urlKey}`}>
+        <div
+          className="content-area-item-header-icon"
+          style={{ backgroundColor: getColorFromKey(props.colorKey) }}
+        />
+        <div
+          className="content-area-item-header-title"
+          style={{ color: getColorFromKey(props.colorKey) }}>
+          {props.title}
         </div>
-      </div>
-      <div className="content-area-item-children">
-        {
-          props.children &&
-          props.children.map((item, i) => (
-            <div className="content-area-item-children-area-item" key={i}>
-              <div className="content-area-item-children-area-item-link">
-                <Link
-                  to={ props.isTopicItem
-                    ? `${props.urlKey}?item=${i}`
-                    : `${props.urlKey}/${item.key}`
-                    }
-                  style={{ color: getColorFromKey(props.colorKey) }}>
-                  <i className="fa fa-star" />
-                  <span>{item.title}</span>
-                </Link>
-              </div>
-            </div>
-          ))
-        }
+      </Link>
+
+      <div className="content-area-item-header-description">
+        {props.description}
       </div>
     </div>
-  );
-}
+    <div className="content-area-item-children">
+      {
+        props.children &&
+        props.children.map((item, i) => (
+          <div className="content-area-item-children-area-item" key={i}>
+            <div className="content-area-item-children-area-item-link">
+              <Link
+                to={ props.isTopicItem
+                  ? `${props.urlKey}?item=${i}`
+                  : `${props.urlKey}/${item.key}`
+                  }
+                style={{ color: getColorFromKey(props.colorKey) }}>
+                <i className="fa fa-star" />
+                <span>{item.title}</span>
+              </Link>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+);
 
 ContentAreaItem.propTypes = {
   children: PropTypes.array.isRequired,

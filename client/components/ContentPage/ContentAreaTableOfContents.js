@@ -10,9 +10,6 @@ class ContentAreaTableOfContents extends React.Component {
     };
   }
 
-  componentWillMount() {
-  }
-
   /**
    * Handles the selected index change when a table item is selected.
    *
