@@ -27,6 +27,7 @@ class ContentPage extends React.Component {
   }
 
   componentWillMount() {
+    window.scrollTo(0, 0);
     this.configureDataByRouteParams(this.props.match.params);
 
     this.setState({ loading: true });
@@ -41,6 +42,7 @@ class ContentPage extends React.Component {
     const oldKey = getContentUrlKey(this.props.match.params).trim();
     const newKey = getContentUrlKey(newProps.match.params).trim();
     if (oldKey !== newKey) {
+      window.scrollTo(0, 0);
       this.setState({ loading: true });
       setTimeout(() => {
         this.setState({ loading: false });

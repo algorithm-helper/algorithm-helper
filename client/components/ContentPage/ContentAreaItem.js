@@ -15,10 +15,6 @@ const ContentAreaItem = props => (
     <div className="content-area-item-header">
       <Link to={`${props.urlKey}`}>
         <div
-          className="content-area-item-header-icon"
-          style={{ backgroundColor: getColorFromKey(props.colorKey) }}
-        />
-        <div
           className="content-area-item-header-title"
           style={{ color: getColorFromKey(props.colorKey) }}>
           {props.title}
