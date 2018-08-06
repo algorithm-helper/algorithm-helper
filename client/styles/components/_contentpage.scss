@@ -72,7 +72,8 @@
 
 // ContentAreaTableOfContents
 .content-area-toc {
-  position: fixed;
+  position: sticky;
+  top: calc(60px + 2em);
   width: 200px;
   margin-top: 1em;
 }
