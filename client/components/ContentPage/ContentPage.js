@@ -8,7 +8,6 @@ import JumbotronMedium from '../JumbotronMedium/';
 import ContentAreaTableOfContents from './ContentAreaTableOfContents';
 import ContentAreaItemContainer from './ContentAreaItemContainer';
 
-import i18n from '../../utils/i18n';
 import { getCategory, getSubcategory } from '../../utils/dataUtils';
 import { getContentUrlKey } from '../../utils/routeUtils';
 import data from '../../../data/index.json';
@@ -31,6 +30,7 @@ class ContentPage extends React.Component {
     window.scrollTo(0, 0);
 
     this.configureDataByRouteParams(this.props.match.params);
+
     this.setState({ loading: true });
     setTimeout(() => {
       this.setState({ loading: false });
