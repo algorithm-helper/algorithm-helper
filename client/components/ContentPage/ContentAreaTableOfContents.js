@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { HashLink as Link } from 'react-router-hash-link';
 
 class ContentAreaTableOfContents extends React.Component {
   constructor(props) {
@@ -9,15 +10,16 @@ class ContentAreaTableOfContents extends React.Component {
     };
   }
 
+  componentWillMount() {
+  }
+
   /**
    * Handles the selected index change when a table item is selected.
    *
    * @param {number} index
    */
   handleSelectTableItem = index => {
-    this.setState({
-      selectedIndex: index,
-    });
+    this.setState({ selectedIndex: index });
   };
 
   /**
@@ -43,11 +45,12 @@ class ContentAreaTableOfContents extends React.Component {
               <div
                 className={`content-area-toc-item ${this.getSelectedClassName(i)}`}
                 key={i}>
-                <a
-                  href={`#${item.key}`}
+                <Link
+                  smooth
+                  to={`#${item.key}`}
                   onClick={() => this.handleSelectTableItem(i)}>
                   {item.title}
-                </a>
+                </Link>
               </div>
             ))
           }

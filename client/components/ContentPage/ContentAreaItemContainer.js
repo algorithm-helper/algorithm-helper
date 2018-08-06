@@ -15,12 +15,6 @@ class ContentAreaItemContainer extends React.Component {
   }
 
   componentWillMount() {
-    // window.addEventListener('hashchange', () => {
-    //   if (window.location.hash && $(window.location.hash).length) {
-    //     var newTop = $(window.location.hash).offset().top - 80;
-    //     $(window).scrollTop(newTop);
-    //   }
-    // }, false);
   }
 
   render() {
