@@ -712,12 +712,12 @@ categories:
             children: ['Article', 'Code']
           - key: strongly-connected-components
             title: Strongly Connected Components
-            desciption: Learn about strongly connected components, a property such that there exists a path from any vertex to every other vertex in a subgraph.
+            description: Learn about strongly connected components, a property such that there exists a path from any vertex to every other vertex in a subgraph.
             orderKey: 6
             children: ['Article', 'Code']
           - key: kosarajus-algorithm
             title: Kosaraju's Algorithm
-            desciption: Learn about Kosaraju's Algorithm, an algorithm used for determining strongly connected components, by topological sorting and then using depth first search.
+            description: Learn about Kosaraju's Algorithm, an algorithm used for determining strongly connected components, by topological sorting and then using depth first search.
             orderKey: 7
             children: ['Article', 'Code']
           - key: time-and-space-complexity

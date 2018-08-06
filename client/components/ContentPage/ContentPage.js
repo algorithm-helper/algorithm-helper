@@ -4,10 +4,10 @@ import { Redirect } from 'react-router-dom';
 import MDSpinner from 'react-md-spinner';
 import { Col, Container, Row } from 'reactstrap';
 
-import NavBar from '../NavBar/';
 import JumbotronMedium from '../JumbotronMedium/';
 import ContentAreaTableOfContents from './ContentAreaTableOfContents';
 import ContentAreaItemContainer from './ContentAreaItemContainer';
+
 import i18n from '../../utils/i18n';
 import { getCategory, getSubcategory } from '../../utils/dataUtils';
 import { getContentUrlKey } from '../../utils/routeUtils';
@@ -19,14 +19,12 @@ class ContentPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      lang: 'en',
       contentData: [],
       type: '',
       title: '',
       isError: false,
       loading: true,
     };
-    this.configureDataByRouteParams = this.configureDataByRouteParams.bind(this);
   }
 
   componentWillMount() {

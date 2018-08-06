@@ -10,6 +10,7 @@
 
 // ContentAreaItemContainer
 .content-area-item-container {
+  margin-top: 2em;
   margin-left: 3em;
 }
 
@@ -40,6 +41,10 @@
   font-weight: 500;
 }
 
+.content-area-item-header-title:hover {
+  opacity: 0.8;
+}
+
 .content-area-item-header-description {
   margin-top: 1.25em;
 }
@@ -66,6 +71,13 @@
   font-weight: 400;
 }
 
+.content-area-item-children-area-item-link a {
+  text-decoration: none;
+}
+
+.content-area-item-children-area-item-link a:hover {
+  opacity: 0.8;
+}
 
 // ContentAreaTableOfContents
 .content-area-toc {

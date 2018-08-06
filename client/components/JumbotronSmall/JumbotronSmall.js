@@ -2,6 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { Col, Container, Row } from 'reactstrap';
+
+import getColorFromKey from '../../utils/getColorFromKey';
 
 /**
  * Renders the JumbotronSmall stateless functional component.
@@ -9,18 +12,22 @@ import { Link } from 'react-router-dom';
  * @param {object} props
  */
 const JumbotronSmall = props => (
-  <div className={`row jumbotron-sm bg-${props.colorKey}`}>
-    <div className="col-md-12">
-      <div className="jumbotron-sm-text-container">
-        <div className="jumbotron-sm-title">{props.title}</div>
-        <div className="jumbotron-sm-subtitle">
-          <Link to={props.urlKey}>
-            &lsaquo; {props.subtitle}
-          </Link>
+  <Container fluid>
+    <Row
+      className="jumbotron-sm"
+      style={{ backgroundColor: getColorFromKey(props.colorKey) }}>
+      <Col md="12">
+        <div className="jumbotron-sm-text-container">
+          <div className="jumbotron-sm-title">{props.title}</div>
+          <div className="jumbotron-sm-subtitle">
+            <Link to={props.urlKey}>
+              &larr; {props.subtitle}
+            </Link>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
+      </Col>
+    </Row>
+  </Container>
 );
 
 JumbotronSmall.propTypes = {
