@@ -22,23 +22,23 @@ testing purposes. Algorithm Helper uses `webpack`, `babel` to transpile and use 
 syntax. For client-side development, it uses `webpack-dev-sever`. For server-side development, it
 uses `nodemon`, `concurrently`, amongst other tools.
 
-For a client-side development with `webpack-dev-server`, run:
+For client-side development with `webpack-dev-server`, run:
 
 ```
 yarn run dev:wds
 ```
 
-For a client-side development with live updates, run:
+For client-side development with live updates, run:
 ```
 yarn run dev:client
 ```
 
-For a server-side development with live updates, run:
+For server-side development with live updates, run:
 ```
 yarn run dev:server
 ```
 
-For a client and server-side development with live updates, run:
+For client and server-side development with live updates, run:
 ```
 yarn run dev:all
 ```
