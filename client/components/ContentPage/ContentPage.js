@@ -65,8 +65,6 @@ class ContentPage extends React.Component {
     const contentData = [];
 
     if (categoryKey !== undefined && subcategoryKey !== undefined) {
-      this.setState({ type: 'subcategory' });
-
       const categoryObj = getCategory(data, categoryKey);
       if (!categoryObj) {
         return this.setState({ error: true });
@@ -85,10 +83,13 @@ class ContentPage extends React.Component {
         const description = topic.description;
         const colorKey = categoryObj.colorKey;
         const urlKey = `/categories/${categoryObj.key}/${subcategoryObj.key}/${key}`;
-        const children = [
-          { title: 'Article', key: 'article' },
-          { title: 'Code Implementations', key: 'code-implementations' },
-        ];
+        const children = [{
+          title: 'Article',
+          key: 'article',
+        }, {
+          title: 'Code Implementations',
+          key: 'code-implementations',
+        }];
         contentData.push({
           title,
           key,
@@ -99,10 +100,12 @@ class ContentPage extends React.Component {
           isTopicItem: true,
         });
       });
-      this.setState({ title: subcategoryObj.title });
-    } else if (categoryKey !== undefined) {
-      this.setState({ type: 'category' });
 
+      this.setState({
+        type: 'subcategory',
+        title: subcategoryObj.title,
+      });
+    } else if (categoryKey !== undefined) {
       const categoryObj = getCategory(data, categoryKey);
 
       if (!categoryObj) {
@@ -116,19 +119,43 @@ class ContentPage extends React.Component {
         const colorKey = categoryObj.colorKey;
         const urlKey = `/categories/${categoryObj.key}/${key}`;
         const children = subcategory.children.map(({ title, key }) => ({ title, key }));
-        contentData.push({ title, key, description, children, colorKey, urlKey });
+        contentData.push({
+          title,
+          key,
+          description,
+          children,
+          colorKey,
+          urlKey,
+          isTopicItem: false,
+        });
       });
-      this.setState({ title: categoryObj.title });
+
+      this.setState({
+        type: 'category',
+        title: categoryObj.title,
+      });
     } else {
-      this.setState({ type: 'categories' });
       this.props.dispatch(resetColorTheme());
+
       data.categories.forEach(category => {
         const { title, key, description, colorKey } = category;
         const urlKey = `/categories/${key}`;
         const children = category.children.map(({ title, key }) => ({ title, key}));
-        contentData.push({ title, key, description, children, colorKey, urlKey });
+        contentData.push({
+          title,
+          key,
+          description,
+          children,
+          colorKey,
+          urlKey,
+          isTopicItem: false,
+        });
       });
-      this.setState({ title: 'Categories' });
+
+      this.setState({
+        type: 'categories',
+        title: 'Categories',
+      });
     }
 
     this.setState({ contentData });
