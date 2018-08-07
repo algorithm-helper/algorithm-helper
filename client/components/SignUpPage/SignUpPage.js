@@ -1,6 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Button, Col, Container, Row } from 'reactstrap';
+import {
+  Button,
+  Card,
+  CardBody,
+  Col,
+  Container,
+  Form,
+  FormGroup,
+  Input,
+  InputGroup,
+  Row,
+} from 'reactstrap';
 
 // Actions:
 import { resetColorTheme } from '../../actions/ColorThemeActions';
@@ -14,102 +25,118 @@ class SignUpPage extends React.Component {
       fieldPassword: '',
       error: '',
     };
-    this.handleSignupClicked = this.handleSignupClicked.bind(this);
-    this.handleFieldChanged = this.handleFieldChanged.bind(this);
   }
 
   componentWillMount() {
     this.props.dispatch(resetColorTheme());
   }
 
-  handleSignupClicked() {
+  /**
+   * Handles submitting with the given sign up information.
+   */
+  handleSignupClicked = () => {
     console.log('signup clicked');
     console.log(this.state.fieldFullName);
     console.log(this.state.fieldEmail);
     console.log(this.state.fieldPassword);
-  }
+  };
 
-  handleFieldChanged(e, fieldKey) {
+  /**
+   * Handles the change the field with the given key.
+   *
+   * @param {Event} e
+   * @param {string} fieldKey
+   */
+  handleFieldChanged = (e, fieldKey) => {
     const text = e.target.value.trim();
-    this.setState({
-      [fieldKey]: text
-    });
-  }
+    this.setState({ [fieldKey]: text });
+  };
 
+  /**
+   * Renders the SignUpPage component.
+   */
   render() {
     return (
       <div>
         <Container className="container-full" fluid>
           <Row>
             <Col md="2"/>
-            <Col className="col-center" md="8">
-              <div className="mx-auto container-sign-up">
-                <div className="card">
-                  <div className="card-body">
-                    <div>
-                      <div className="ah-logo-container">
-                        <img
-                          className="ah-logo-small"
-                          src="img/logo/algorithm-helper-logo-1000x1000.png"
-                          alt="Algorithm Helper Logo"
-                          style={{
-                            width: '50%',
-                            textAlign: 'center',
-                          }}/>
-                      </div>
+            <Col md="8">
+              <div className="mx-auto sign-up-page-card-container">
+                <Card className="sign-up-page-card">
+                  <CardBody>
+                    <div className="sign-up-page-logo-container">
+                      <img
+                        className="sign-up-page-logo"
+                        src="img/logo/logo-dark.png"
+                        alt="Algorithmica Logo"
+                      />
+                    </div>
 
-                      <p className="h4 text-center py-4">
-                        Sign Up For An Account
-                      </p>
-                      <div className="md-form">
+                    <div className="sign-up-page-title">
+                      Sign Up For An Account
+                    </div>
+
+                    <Form className="sign-up-page-form">
+                      <FormGroup>
                         <i className="fa fa-user prefix grey-text"/>
-                        <label htmlFor="sign-up-page-full-name" className="font-weight-light">
+                        <label htmlFor="sign-up-page-full-name" className="sign-up-page-label">
                           Full Name
                         </label>
-                        <input
-                          type="text"
-                          id="sign-up-page-full-name"
-                          className="form-control"
-                          autoComplete="off"
-                          onChange={e => this.handleFieldChanged(e, 'fieldFullName')}
-                        />
-                      </div>
-                      <div className="md-form">
-                        <i className="fa fa-envelope prefix grey-text"/>
-                        <label htmlFor="sign-up-page-email" className="font-weight-light">
+                        <InputGroup>
+                          <Input
+                            className="sign-up-page-input"
+                            type="email"
+                            id="sign-up-page-full-name"
+                            autoComplete="off"
+                            onChange={e => this.handleFieldChanged(e, 'fieldFullName')}
+                          />
+                        </InputGroup>
+                      </FormGroup>
+
+                      <FormGroup>
+                        <i className="fa fa-lock prefix grey-text"/>
+                        <label htmlFor="sign-up-page-email" className="sign-up-page-label">
                           Email
                         </label>
-                        <input
-                          type="email"
-                          id="sign-up-page-email"
-                          className="form-control"
-                          autoComplete="off"
-                          onChange={e => this.handleFieldChanged(e, 'fieldEmail')}
-                        />
-                      </div>
-                      <div className="md-form">
+                        <InputGroup>
+                          <Input
+                            className="sign-up-page-input"
+                            type="email"
+                            id="sign-up-page-email"
+                            autoComplete="off"
+                            onChange={e => this.handleFieldChanged(e, 'fieldEmail')}
+                          />
+                        </InputGroup>
+                      </FormGroup>
+
+                      <FormGroup>
                         <i className="fa fa-lock prefix grey-text"/>
-                        <label htmlFor="sign-up-page-password" className="font-weight-light">
+                        <label htmlFor="sign-up-page-password" className="sign-up-page-label">
                           Password
                         </label>
-                        <input
-                          type="password"
-                          id="sign-up-page-password"
-                          className="form-control"
-                          autoComplete="off"
-                          onChange={e => this.handleFieldChanged(e, 'fieldPassword')}
-                        />
-                      </div>
-                      <div className="text-center py-4 mt-3">
-                        <Button
-                          className="sign-up-page-btn-register"
-                          onClick={this.handleSignupClicked}>
-                          Register
-                        </Button>
-                      </div>
+                        <InputGroup>
+                          <Input
+                            className="sign-up-page-input"
+                            type="password"
+                            id="sign-up-page-password"
+                            autoComplete="off"
+                            onChange={e => this.handleFieldChanged(e, 'fieldPassword')}
+                          />
+                        </InputGroup>
+                      </FormGroup>
+                    </Form>
+
+                    <div className="sign-up-page-btn-register-container">
+                      <Button
+                        className="sign-up-page-btn-register"
+                        color="secondary"
+                        onClick={this.handleSignupClicked}>
+                        Register
+                      </Button>
                     </div>
-                  </div>
-                </div>
+                  </CardBody>
+                </Card>
               </div>
             </Col>
             <Col md="2"/>
@@ -125,5 +152,3 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps)(SignUpPage);
-
-//           <Particles />

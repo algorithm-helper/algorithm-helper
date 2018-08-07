@@ -1,6 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Button, Card, CardBody, Col, Container, Form, FormGroup, Input, InputGroup, Row } from 'reactstrap';
+import {
+  Button,
+  Card,
+  CardBody,
+  Col,
+  Container,
+  Form,
+  FormGroup,
+  Input,
+  InputGroup,
+  Row,
+} from 'reactstrap';
 
 import { resetColorTheme } from '../../actions/ColorThemeActions';
 

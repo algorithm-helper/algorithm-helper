@@ -1,4 +1,55 @@
-.container-sign-up {
+.sign-up-page-card-container {
   margin-top: calc(60px + 3em);
   max-width: 400px;
+}
+
+.sign-up-page-card {
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+}
+
+.sign-up-page-logo-container {
+  text-align:  center;
+}
+
+.sign-up-page-logo {
+  width: 100px;
+  height: 100px;
+}
+
+.sign-up-page-title {
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-size: 1.5em;
+  font-weight: 500;
+}
+
+.sign-up-page-form {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.sign-up-page-label {
+  font-weight: 400;
+  margin-left: 0.75em;
+}
+
+.sign-up-page-input {
+  outline: none;
+  box-shadow: none !important;
+  border: 1px solid #ccc !important;
+}
+
+.sign-up-page-input:focus {
+  border-color: #072a60 !important;
+}
+
+.sign-up-page-btn-register-container {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.sign-up-page-btn-register {
+  outline: none;
+  box-shadow: none !important;
 }
