@@ -17,6 +17,8 @@ import {
   NavLink,
 } from 'reactstrap';
 
+import Logo from '../Logo/';
+
 import getColorFromKey from '../../utils/getColorFromKey';
 
 class NavBar extends React.Component {
@@ -67,7 +69,16 @@ class NavBar extends React.Component {
         dark
         expand="md"
         style={{ backgroundColor: getColorFromKey(this.props.colorKey) }}>
-        <NavbarBrand className="navbar-brand-title" tag={Link} to="/">Algorithmica</NavbarBrand>
+        <NavbarBrand className="navbar-brand-title" tag={Link} to="/">
+          <div className="navbar-logo-container">
+            <Logo
+              height="40px"
+              width="40px"
+              light
+            />
+          </div>
+          Algorithmica
+        </NavbarBrand>
         <NavbarToggler onClick={this.toggle} />
         <Collapse
           isOpen={this.state.isOpen}

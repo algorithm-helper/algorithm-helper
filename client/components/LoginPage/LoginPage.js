@@ -107,6 +107,7 @@ class LoginPage extends React.Component {
                     <Logo
                       width="100px"
                       height="100px"
+                      dark
                     />
                   </div>
 
