@@ -1,3 +1,5 @@
+@import '../base/colors';
+
 .navbar-main {
   height: 60px;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
@@ -9,23 +11,23 @@
 
 .navbar-link {
   margin-left: 0.5em;
-  color: #fff !important;
+  color: $WHITE !important;
   font-weight: 400;
 }
 
 .navbar-link:hover {
-  color: #E0E0E0 !important;
+  color: $NAVLINK_WHITE !important;
 }
 
 .navbar-btn-signup {
-  border-color: #fff;
+  border-color: $WHITE;
   border-style: solid;
   border-width: 1px;
   border-radius: 5px;
 }
 
 .navbar-search {
-  color: #fff !important;
+  color: $WHITE !important;
 }
 
 .navbar-search:focus {
@@ -35,5 +37,5 @@
 }
 
 .navbar-search::placeholder {
-  color: #fff !important;
+  color: $WHITE !important;
 }

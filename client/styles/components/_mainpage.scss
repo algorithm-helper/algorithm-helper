@@ -1,3 +1,5 @@
+@import '../base/colors';
+
 .main-page-container {
   margin-top: 60px;
   width: 100%;
@@ -20,20 +22,20 @@
 }
 
 .main-page-jumbotron-title {
-  color: #fff;
+  color: $WHITE;
   font-size: 3em;
   font-weight: 300;
   margin-bottom: 1em;
 }
 
 .main-page-jumbotron-subtitle {
-  color: #fff;
+  color: $WHITE;
   font-size: 1.25em;
   font-weight: 300;
 }
 
 .main-page-particle-bg {
-  background-color: #072a60;
+  background-color: $BASE_COLOR;
   height: 30em;
 }
 
@@ -65,13 +67,13 @@
 .main-area-no-results-title {
   font-weight: 500;
   font-size: 2em;
-  color: #424242;
+  color: $ACCENT_GREY_COLOR;
 }
 
 .main-area-no-results-subtitle {
   font-weight: 400;
   font-size: 1.25em;
-  color: #424242;
+  color: $ACCENT_GREY_COLOR;
 }
 
 .main-area-card {
@@ -98,18 +100,18 @@
 }
 
 .main-area-card-title {
-  color: #fff;
+  color: $WHITE;
   font-size: 1.75em;
   font-weight: 500;
 }
 
 .main-area-card-subtitle {
-  color: #fff;
+  color: $WHITE;
   bottom: 1em;
 }
 
 .main-area-card-description {
-  color: #fff;
+  color: $WHITE;
   font-weight: 400;
 }
 

@@ -1,3 +1,5 @@
+@import '../base/colors';
+
 // ContentPage
 .content-page-container {
   margin-top: 2em;
@@ -52,7 +54,7 @@
 .content-area-item-children-area-item {
   padding-top: 1.25em;
   padding-bottom: 1.25em;
-  border-bottom-color: #BDBDBD;
+  border-bottom-color: $GREY_LIGHT;
   border-bottom-width: 1px;
   border-bottom-style: solid;
 }
@@ -97,7 +99,7 @@
   font-size: 1.25em;
   font-weight: 500;
   margin-bottom: 0.5em;
-  color: #757575;
+  color: $GREY;
   text-transform: uppercase;
 }
 
@@ -109,19 +111,19 @@
 
 .content-area-toc-item a {
   text-decoration: none;
-  color: #000;
+  color: $BLACK;
 }
 
 .content-area-toc-item a:hover {
-  color: #42A5F5;
+  color: $ACCENT_COLOR;
 }
 
 .content-area-toc-item-selected {
-  border-left-color: #42A5F5;
+  border-left-color: $ACCENT_COLOR;
   border-left-width: 0.2em;
   border-left-style: solid;
 }
 
 .content-area-toc-item-selected a {
-  color: #42A5F5;
+  color: $ACCENT_COLOR;
 }

@@ -1,3 +1,5 @@
+@import '../base/colors';
+
 .footer-container {
   margin-top: 3em;
   margin-bottom: 3em;
@@ -8,7 +10,7 @@
   margin-left: 1em;
   margin-right: 1em;
   display: inline-block;
-  color: #072A60;
+  color: $BASE_COLOR;
 }
 
 .footer-item-link {
@@ -16,5 +18,5 @@
 }
 
 .footer-item-link:hover {
-  color: #6a7f9f;
+  color: $GREY_LIGHT;
 }

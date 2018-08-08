@@ -1,3 +1,5 @@
+@import '../base/colors';
+
 .sign-up-page-card-container {
   margin-top: calc(60px + 3em);
   max-width: 400px;
@@ -38,11 +40,11 @@
 .sign-up-page-input {
   outline: none;
   box-shadow: none !important;
-  border: 1px solid #ccc !important;
+  border: 1px solid $OUTLINE_COLOR !important;
 }
 
 .sign-up-page-input:focus {
-  border-color: #072a60 !important;
+  border-color: $BASE_COLOR !important;
 }
 
 .sign-up-page-btn-register-container {
