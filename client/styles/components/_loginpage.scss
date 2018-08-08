@@ -61,5 +61,12 @@
   margin-top: 0.1em;
   font-size: 1em;
   font-weight: 400;
-  color: #C62828;
+  color: $ERROR_RED;
+}
+
+.login-page-server-error {
+  font-size: 1em;
+  font-weight: 400;
+  color: $ERROR_RED;
+  text-align: center;
 }

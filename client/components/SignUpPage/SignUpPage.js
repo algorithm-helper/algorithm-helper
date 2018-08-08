@@ -14,6 +14,8 @@ import {
   Row,
 } from 'reactstrap';
 
+import Logo from '../Logo/';
+
 import { MIN_PASSWORD_LENGTH } from '../../settings/signupSettings';
 import { resetColorTheme } from '../../actions/ColorThemeActions';
 
@@ -27,6 +29,7 @@ class SignUpPage extends React.Component {
       isFullNameError: false,
       isEmailError: false,
       isPasswordError: false,
+      serverError: '',
     };
   }
 
@@ -39,11 +42,18 @@ class SignUpPage extends React.Component {
    */
   handleSignupClicked = () => {
     try {
-      this.setState({ isFullNameError: false, isEmailError: false, isPasswordError: false });
+      this.setState({
+        isFullNameError: false,
+        isEmailError: false,
+        isPasswordError: false,
+        serverError: '',
+      });
+
       this.validateFields();
 
       // Make request to server:
       // POST /accounts/sign-up
+
     } catch (errors) {
       errors.forEach(error => {
         this.setState({ [error.type]: true });
@@ -107,16 +117,22 @@ class SignUpPage extends React.Component {
               <Card className="sign-up-page-card">
                 <CardBody>
                   <div className="sign-up-page-logo-container">
-                    <img
-                      className="sign-up-page-logo"
-                      src="img/logo/logo-dark.png"
-                      alt="Algorithmica Logo"
+                    <Logo
+                      width="100px"
+                      height="100px"
                     />
                   </div>
 
                   <div className="sign-up-page-title">
                     Sign Up For An Account
                   </div>
+
+                  {
+                    this.state.serverError &&
+                    <div className="sign-up-page-server-error">
+                      {this.state.serverError}
+                    </div>
+                  }
 
                   <Form className="sign-up-page-form">
                     <FormGroup>

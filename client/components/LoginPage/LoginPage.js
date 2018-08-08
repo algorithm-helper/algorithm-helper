@@ -13,6 +13,8 @@ import {
   Row,
 } from 'reactstrap';
 
+import Logo from '../Logo/';
+
 import { resetColorTheme } from '../../actions/ColorThemeActions';
 
 class LoginPage extends React.Component {
@@ -23,6 +25,7 @@ class LoginPage extends React.Component {
       fieldPassword: '',
       isEmailError: false,
       isPasswordError: false,
+      serverError: '',
     };
   }
 
@@ -35,11 +38,16 @@ class LoginPage extends React.Component {
    */
   handleLoginClicked = () => {
     try {
-      this.setState({ isEmailError: false, isPasswordError: false });
+      this.setState({
+        isEmailError: false,
+        isPasswordError: false,
+        serverError: '',
+      });
       this.validateFields();
 
       // Make request to server:
       // POST /accounts/login
+
     } catch (errors) {
       errors.forEach(error => {
         this.setState({ [error.type]: true });
@@ -96,16 +104,22 @@ class LoginPage extends React.Component {
               <Card className="login-page-card">
                 <CardBody>
                   <div className="login-page-logo-container">
-                    <img
-                      className="login-page-logo"
-                      src="img/logo/logo-dark.png"
-                      alt="Algorithmica Logo"
+                    <Logo
+                      width="100px"
+                      height="100px"
                     />
                   </div>
 
                   <div className="login-page-title">
                     Login To Your Account
                   </div>
+
+                  {
+                    this.state.serverError &&
+                    <div className="login-page-server-error">
+                      {this.state.serverError}
+                    </div>
+                  }
 
                   <Form className="login-page-form">
                     <FormGroup>
