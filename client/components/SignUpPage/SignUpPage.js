@@ -30,6 +30,7 @@ class SignUpPage extends React.Component {
       isEmailError: false,
       isPasswordError: false,
       serverError: '',
+      isWaitingResponse: false,
     };
   }
 
@@ -51,14 +52,43 @@ class SignUpPage extends React.Component {
 
       this.validateFields();
 
-      // Make request to server:
-      // POST /accounts/sign-up
-
+      if (!this.state.isWaitingResponse) {
+        this.setState({ isWaitingResponse: true });
+        this.requestSignUp();
+      }
     } catch (errors) {
       errors.forEach(error => {
         this.setState({ [error.type]: true });
       });
     }
+  };
+
+  /**
+   * Makes request to server to attempt to sign up user with the given information.
+   */
+  requestSignUp = () => {
+    fetch('/accounts/sign-up', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        fullName: this.state.fieldFullName,
+        email: this.state.fieldEmail,
+        password: this.state.fieldPassword,
+      }),
+    })
+    .then(res => {
+      return res.json();
+    })
+    .then(res => {
+      console.log(res);
+      this.setState({ isWaitingResponse: false });
+    })
+    .catch(err => {
+      console.log(err);
+      this.setState({ isWaitingResponse: false });
+    });
   };
 
   /**

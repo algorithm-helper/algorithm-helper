@@ -11,9 +11,9 @@
     "build:prod": "webpack -p --env PROD",
     "dev:wds": "webpack-dev-server",
     "dev:client": "webpack --watch",
-    "dev:server": "nodemon server/server.js",
-    "start": "yarn run build:dev && node server/server.js",
-    "dev:all": "concurrently --kill-others-on-fail \"yarn run dev:client\" \"yarn run dev:server\" \"open http://localhost:5000\""
+    "dev:server": "nodemon server/server.js | bunyan -o short",
+    "dev:all": "concurrently --kill-others-on-fail \"yarn run dev:client\" \"yarn run dev:server\"",
+    "start": "yarn run build:dev && node server/server.js"
   },
   "dependencies": {
     "@material-ui/core": "^1.4.2",
