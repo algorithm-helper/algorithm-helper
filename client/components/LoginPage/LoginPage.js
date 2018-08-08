@@ -13,7 +13,6 @@ import {
   Row,
 } from 'reactstrap';
 
-import Particles from '../Particles/';
 import { resetColorTheme } from '../../actions/ColorThemeActions';
 
 class LoginPage extends React.Component {
@@ -21,7 +20,9 @@ class LoginPage extends React.Component {
     super(props);
     this.state = {
       fieldEmail: '',
-      fieldPassword: ''
+      fieldPassword: '',
+      isEmailError: false,
+      isPasswordError: false,
     };
   }
 
@@ -33,9 +34,42 @@ class LoginPage extends React.Component {
    * Handles submitting with the given login information.
    */
   handleLoginClicked = () => {
-    console.log('login clicked');
-    console.log(this.state.fieldEmail);
-    console.log(this.state.fieldPassword);
+    try {
+      this.setState({ isEmailError: false, isPasswordError: false });
+      this.validateFields();
+
+      // Make request to server:
+      // POST /accounts/login
+    } catch (errors) {
+      errors.forEach(error => {
+        this.setState({ [error.type]: true });
+      });
+    }
+  };
+
+  /**
+   * Validates the input fields, and throws list of errors if any are invalid.
+   */
+  validateFields = () => {
+    const errors = [];
+
+    const email = this.state.fieldEmail.trim();
+    if (email.length === 0) {
+      const error = new Error('`email` field must not be empty.');
+      error.type = 'isEmailError';
+      errors.push(error);
+    }
+
+    const password = this.state.fieldPassword.trim();
+    if (password.length === 0) {
+      const error = new Error('`password` field must not be empty.');
+      error.type = 'isPasswordError';
+      errors.push(error);
+    }
+
+    if (errors.length > 0) {
+      throw errors;
+    }
   };
 
   /**
@@ -54,77 +88,82 @@ class LoginPage extends React.Component {
    */
   render() {
     return (
-      <div>
-        <Particles/>
-        <Container fluid>
-          <Row>
-            <Col md="2"/>
-            <Col md="8">
-              <div className="mx-auto login-page-card-container">
-                <Card className="login-page-card">
-                  <CardBody>
-                    <div className="login-page-logo-container">
-                      <img
-                        className="login-page-logo"
-                        src="img/logo/logo-dark.png"
-                        alt="Algorithmica Logo"
-                      />
-                    </div>
+      <Container fluid>
+        <Row>
+          <Col md="2"/>
+          <Col md="8">
+            <div className="mx-auto login-page-card-container">
+              <Card className="login-page-card">
+                <CardBody>
+                  <div className="login-page-logo-container">
+                    <img
+                      className="login-page-logo"
+                      src="img/logo/logo-dark.png"
+                      alt="Algorithmica Logo"
+                    />
+                  </div>
 
-                    <div className="login-page-title">
-                      Login To Your Account
-                    </div>
+                  <div className="login-page-title">
+                    Login To Your Account
+                  </div>
 
-                    <Form className="login-page-form">
-                      <FormGroup>
-                        <i className="fa fa-envelope prefix grey-text"/>
-                        <label htmlFor="login-page-email" className="login-page-label">
-                          Email
-                        </label>
-                        <InputGroup>
-                          <Input
-                            className="login-page-input"
-                            type="email"
-                            id="login-page-email"
-                            autoComplete="off"
-                            onChange={e => this.handleFieldChanged(e, 'fieldEmail')}
-                          />
-                        </InputGroup>
-                      </FormGroup>
+                  <Form className="login-page-form">
+                    <FormGroup>
+                      <i className="fa fa-envelope prefix grey-text"/>
+                      <label htmlFor="login-page-email" className="login-page-label">
+                        Email
+                      </label>
+                      <InputGroup>
+                        <Input
+                          className="login-page-input"
+                          type="email"
+                          id="login-page-email"
+                          autoComplete="off"
+                          onChange={e => this.handleFieldChanged(e, 'fieldEmail')}
+                        />
+                      </InputGroup>
+                      {
+                        this.state.isEmailError &&
+                        <div className="login-page-input-error">Cannot be empty.</div>
+                      }
+                    </FormGroup>
 
-                      <FormGroup>
-                        <i className="fa fa-lock prefix grey-text"/>
-                        <label htmlFor="login-page-password" className="login-page-label">
-                          Password
-                        </label>
-                        <InputGroup>
-                          <Input
-                            className="login-page-input"
-                            type="password"
-                            id="login-page-password"
-                            autoComplete="off"
-                            onChange={e => this.handleFieldChanged(e, 'fieldPassword')}
-                          />
-                        </InputGroup>
-                      </FormGroup>
-                    </Form>
+                    <FormGroup>
+                      <i className="fa fa-lock prefix grey-text"/>
+                      <label htmlFor="login-page-password" className="login-page-label">
+                        Password
+                      </label>
+                      <InputGroup>
+                        <Input
+                          className="login-page-input"
+                          type="password"
+                          id="login-page-password"
+                          autoComplete="off"
+                          onChange={e => this.handleFieldChanged(e, 'fieldPassword')}
+                        />
+                      </InputGroup>
+                      {
+                        this.state.isPasswordError &&
+                        <div className="login-page-input-error">Cannot be empty.</div>
+                      }
+                    </FormGroup>
+                  </Form>
 
-                    <div className="login-page-btn-login-container">
-                      <Button
-                        className="login-page-btn-login"
-                        color="secondary"
-                        onClick={this.handleLoginClicked}>
-                        Login
-                      </Button>
-                    </div>
-                  </CardBody>
-                </Card>
-              </div>
-            </Col>
-            <Col md="2"/>
-          </Row>
-        </Container>
-      </div>
+                  <div className="login-page-btn-login-container">
+                    <Button
+                      className="login-page-btn-login"
+                      color="secondary"
+                      onClick={this.handleLoginClicked}>
+                      Login
+                    </Button>
+                  </div>
+                </CardBody>
+              </Card>
+            </div>
+          </Col>
+          <Col md="2"/>
+        </Row>
+      </Container>
     );
   }
 }

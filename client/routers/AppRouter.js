@@ -6,7 +6,7 @@ import MainPage from '../components/MainPage/';
 import LoginPage from '../components/LoginPage/';
 import SignUpPage from '../components/SignUpPage/';
 import DashboardPage from '../components/DashboardPage/';
-import SearchPage from '../components/SearchPage/';
+// import SearchPage from '../components/SearchPage/';
 import ContentPage from '../components/ContentPage/';
 import TopicItemPage from '../components/TopicItemPage/';
 
@@ -56,12 +56,6 @@ class AppRouter extends React.Component {
             />
 
             <Route
-              path="/best-strategies"
-              component={MainPage}
-              exact={true}
-            />
-
-            <Route
               path="/terms-and-conditions"
               component={MainPage}
               exact={true}
@@ -76,12 +70,6 @@ class AppRouter extends React.Component {
             <Route
               path="/dashboard"
               component={DashboardPage}
-              exact={true}
-            />
-
-            <Route
-              path="/search"
-              component={SearchPage}
               exact={true}
             />
 
@@ -121,3 +109,10 @@ class AppRouter extends React.Component {
 }
 
 export default AppRouter;
+
+
+// <Route
+//   path="/search"
+//   component={SearchPage}
+//   exact={true}
+// />

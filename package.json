@@ -55,6 +55,7 @@
     "redux": "^4.0.0",
     "request": "2.83.0",
     "uuid": "3.2.1",
+    "validator": "^10.5.0",
     "webpack": "3.1.0",
     "webpack-dev-server": "2.5.1",
     "yamljs": "^0.3.0"

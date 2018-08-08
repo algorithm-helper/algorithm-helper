@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import validator from 'validator';
 import {
   Button,
   Card,
@@ -13,7 +14,7 @@ import {
   Row,
 } from 'reactstrap';
 
-import Particles from '../Particles/';
+import { MIN_PASSWORD_LENGTH } from '../../settings/signupSettings';
 import { resetColorTheme } from '../../actions/ColorThemeActions';
 
 class SignUpPage extends React.Component {
@@ -23,7 +24,9 @@ class SignUpPage extends React.Component {
       fieldFullName: '',
       fieldEmail: '',
       fieldPassword: '',
-      error: '',
+      isFullNameError: false,
+      isEmailError: false,
+      isPasswordError: false,
     };
   }
 
@@ -35,10 +38,49 @@ class SignUpPage extends React.Component {
    * Handles submitting with the given sign up information.
    */
   handleSignupClicked = () => {
-    console.log('signup clicked');
-    console.log(this.state.fieldFullName);
-    console.log(this.state.fieldEmail);
-    console.log(this.state.fieldPassword);
+    try {
+      this.setState({ isFullNameError: false, isEmailError: false, isPasswordError: false });
+      this.validateFields();
+
+      // Make request to server:
+      // POST /accounts/sign-up
+    } catch (errors) {
+      errors.forEach(error => {
+        this.setState({ [error.type]: true });
+      });
+    }
+  };
+
+  /**
+   * Validates the input fields, and throws list of errors if any are invalid.
+   */
+  validateFields = () => {
+    const errors = [];
+
+    const fullName = this.state.fieldFullName.trim();
+    if (fullName.length === 0) {
+      const error = new Error('`fullName` field must not be empty.');
+      error.type = 'isFullNameError';
+      errors.push(error);
+    }
+
+    const email = this.state.fieldEmail.trim();
+    if (!validator.isEmail(email)) {
+      const error = new Error('`email` field must be a valid email.');
+      error.type = 'isEmailError';
+      errors.push(error);
+    }
+
+    const password = this.state.fieldPassword.trim();
+    if (password.length < MIN_PASSWORD_LENGTH) {
+      const error = new Error(`\`password\` field must be at least ${MIN_PASSWORD_LENGTH} characters long.`);
+      error.type = 'isPasswordError';
+      errors.push(error);
+    }
+
+    if (errors.length > 0) {
+      throw errors;
+    }
   };
 
   /**
@@ -57,93 +99,102 @@ class SignUpPage extends React.Component {
    */
   render() {
     return (
-      <div>
-        <Particles/>
-        <Container fluid>
-          <Row>
-            <Col md="2"/>
-            <Col md="8">
-              <div className="mx-auto sign-up-page-card-container">
-                <Card className="sign-up-page-card">
-                  <CardBody>
-                    <div className="sign-up-page-logo-container">
-                      <img
-                        className="sign-up-page-logo"
-                        src="img/logo/logo-dark.png"
-                        alt="Algorithmica Logo"
-                      />
-                    </div>
+      <Container fluid>
+        <Row>
+          <Col md="2"/>
+          <Col md="8">
+            <div className="mx-auto sign-up-page-card-container">
+              <Card className="sign-up-page-card">
+                <CardBody>
+                  <div className="sign-up-page-logo-container">
+                    <img
+                      className="sign-up-page-logo"
+                      src="img/logo/logo-dark.png"
+                      alt="Algorithmica Logo"
+                    />
+                  </div>
 
-                    <div className="sign-up-page-title">
-                      Sign Up For An Account
-                    </div>
+                  <div className="sign-up-page-title">
+                    Sign Up For An Account
+                  </div>
 
-                    <Form className="sign-up-page-form">
-                      <FormGroup>
-                        <i className="fa fa-user prefix grey-text"/>
-                        <label htmlFor="sign-up-page-full-name" className="sign-up-page-label">
-                          Full Name
-                        </label>
-                        <InputGroup>
-                          <Input
-                            className="sign-up-page-input"
-                            type="email"
-                            id="sign-up-page-full-name"
-                            autoComplete="off"
-                            onChange={e => this.handleFieldChanged(e, 'fieldFullName')}
-                          />
-                        </InputGroup>
-                      </FormGroup>
+                  <Form className="sign-up-page-form">
+                    <FormGroup>
+                      <i className="fa fa-user prefix grey-text"/>
+                      <label htmlFor="sign-up-page-full-name" className="sign-up-page-label">
+                        Full Name
+                      </label>
+                      <InputGroup>
+                        <Input
+                          className="sign-up-page-input"
+                          type="email"
+                          id="sign-up-page-full-name"
+                          autoComplete="off"
+                          onChange={e => this.handleFieldChanged(e, 'fieldFullName')}
+                        />
+                      </InputGroup>
+                      {
+                        this.state.isFullNameError &&
+                        <div className="sign-up-page-input-error">Cannot be empty.</div>
+                      }
+                    </FormGroup>
 
-                      <FormGroup>
-                        <i className="fa fa-envelope prefix grey-text"/>
-                        <label htmlFor="sign-up-page-email" className="sign-up-page-label">
-                          Email
-                        </label>
-                        <InputGroup>
-                          <Input
-                            className="sign-up-page-input"
-                            type="email"
-                            id="sign-up-page-email"
-                            autoComplete="off"
-                            onChange={e => this.handleFieldChanged(e, 'fieldEmail')}
-                          />
-                        </InputGroup>
-                      </FormGroup>
+                    <FormGroup>
+                      <i className="fa fa-envelope prefix grey-text"/>
+                      <label htmlFor="sign-up-page-email" className="sign-up-page-label">
+                        Email
+                      </label>
+                      <InputGroup>
+                        <Input
+                          className="sign-up-page-input"
+                          type="email"
+                          id="sign-up-page-email"
+                          autoComplete="off"
+                          onChange={e => this.handleFieldChanged(e, 'fieldEmail')}
+                        />
+                      </InputGroup>
+                      {
+                        this.state.isEmailError &&
+                        <div className="sign-up-page-input-error">Must be a valid email.</div>
+                      }
+                    </FormGroup>
 
-                      <FormGroup>
-                        <i className="fa fa-lock prefix grey-text"/>
-                        <label htmlFor="sign-up-page-password" className="sign-up-page-label">
-                          Password
-                        </label>
-                        <InputGroup>
-                          <Input
-                            className="sign-up-page-input"
-                            type="password"
-                            id="sign-up-page-password"
-                            autoComplete="off"
-                            onChange={e => this.handleFieldChanged(e, 'fieldPassword')}
-                          />
-                        </InputGroup>
-                      </FormGroup>
-                    </Form>
+                    <FormGroup>
+                      <i className="fa fa-lock prefix grey-text"/>
+                      <label htmlFor="sign-up-page-password" className="sign-up-page-label">
+                        Password
+                      </label>
+                      <InputGroup>
+                        <Input
+                          className="sign-up-page-input"
+                          type="password"
+                          id="sign-up-page-password"
+                          autoComplete="off"
+                          onChange={e => this.handleFieldChanged(e, 'fieldPassword')}
+                        />
+                      </InputGroup>
+                      {
+                        this.state.isPasswordError &&
+                        <div className="sign-up-page-input-error">Must be at least 8 characters long.</div>
+                      }
+                    </FormGroup>
+                  </Form>
 
-                    <div className="sign-up-page-btn-register-container">
-                      <Button
-                        className="sign-up-page-btn-register"
-                        color="secondary"
-                        onClick={this.handleSignupClicked}>
-                        Register
-                      </Button>
-                    </div>
-                  </CardBody>
-                </Card>
-              </div>
-            </Col>
-            <Col md="2"/>
-          </Row>
-        </Container>
-      </div>
+                  <div className="sign-up-page-btn-register-container">
+                    <Button
+                      className="sign-up-page-btn-register"
+                      color="secondary"
+                      onClick={this.handleSignupClicked}>
+                      Register
+                    </Button>
+                  </div>
+                </CardBody>
+              </Card>
+            </div>
+          </Col>
+          <Col md="2"/>
+        </Row>
+      </Container>
     );
   }
 }
