@@ -13,6 +13,7 @@ import {
   Row,
 } from 'reactstrap';
 
+import Particles from '../Particles/';
 import { resetColorTheme } from '../../actions/ColorThemeActions';
 
 class LoginPage extends React.Component {
@@ -54,7 +55,8 @@ class LoginPage extends React.Component {
   render() {
     return (
       <div>
-        <Container className="container-full" fluid>
+        <Particles/>
+        <Container fluid>
           <Row>
             <Col md="2"/>
             <Col md="8">

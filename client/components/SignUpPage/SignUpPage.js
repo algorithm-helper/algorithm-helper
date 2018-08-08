@@ -13,7 +13,7 @@ import {
   Row,
 } from 'reactstrap';
 
-// Actions:
+import Particles from '../Particles/';
 import { resetColorTheme } from '../../actions/ColorThemeActions';
 
 class SignUpPage extends React.Component {
@@ -58,7 +58,8 @@ class SignUpPage extends React.Component {
   render() {
     return (
       <div>
-        <Container className="container-full" fluid>
+        <Particles/>
+        <Container fluid>
           <Row>
             <Col md="2"/>
             <Col md="8">
@@ -95,7 +96,7 @@ class SignUpPage extends React.Component {
                       </FormGroup>
 
                       <FormGroup>
-                        <i className="fa fa-lock prefix grey-text"/>
+                        <i className="fa fa-envelope prefix grey-text"/>
                         <label htmlFor="sign-up-page-email" className="sign-up-page-label">
                           Email
                         </label>
