@@ -1,0 +1,549 @@
+[
+  {
+    "key": "lists",
+    "title": "Lists",
+    "parent": "data-structures",
+    "description": "Learn about fundamental linear data structures like linked lists, dynamic arrays, stacks, and queues, where data is generally organized in sequence.",
+    "imageUrl": "https://s3.amazonaws.com/algorithm-helper/assets/icons/data-structures/lists.png",
+    "children": [
+      "introduction",
+      "linked-list",
+      "double-ended-linked-list",
+      "dynamic-array",
+      "stack",
+      "queue",
+      "double-ended-queue",
+      "time-and-space-complexity-comparison"
+    ]
+  },
+  {
+    "key": "trees",
+    "title": "Trees",
+    "parent": "data-structures",
+    "description": "Learn about tree data structures like binary search trees, heaps, B-trees, and union find, where operations tend to have logarithmic performance or better.",
+    "imageUrl": "https://s3.amazonaws.com/algorithm-helper/assets/icons/data-structures/trees.png",
+    "children": [
+      "introduction",
+      "map-symbol-table",
+      "set",
+      "binary-search-tree",
+      "balanced-binary-search-tree",
+      "2-3-tree",
+      "red-black-tree",
+      "avl-tree",
+      "heap",
+      "priority-queue",
+      "union-find-disjoint-set",
+      "b-tree",
+      "fibonacci-heap",
+      "van-emde-boas-tree",
+      "time-and-space-complexity-comparison"
+    ]
+  },
+  {
+    "key": "hashing",
+    "title": "Hashing",
+    "parent": "data-structures",
+    "description": "Learn about using hash functions to implement fundamental data structures called hash maps and hash sets with efficient (constant, amortized) time for operations.",
+    "imageUrl": "https://s3.amazonaws.com/algorithm-helper/assets/icons/data-structures/hashing.png",
+    "children": [
+      "introduction",
+      "hash-function",
+      "collision-resolution",
+      "simple-uniform-hashing-assumption",
+      "hash-map",
+      "hash-set",
+      "time-and-space-complexity-comparison"
+    ]
+  },
+  {
+    "key": "probabilistic",
+    "title": "Probabilistic",
+    "parent": "data-structures",
+    "description": "Learn about probabilistic data structures, which use randomization to lead to operations that are probabilistically expected to be efficient.",
+    "imageUrl": "https://s3.amazonaws.com/algorithm-helper/assets/icons/data-structures/probabilistic.png",
+    "children": [
+      "introduction",
+      "skip-list",
+      "bloom-filter",
+      "count-min-sketch",
+      "random-binary-tree",
+      "treap",
+      "time-and-space-complexity-comparison"
+    ]
+  },
+  {
+    "key": "multidimensional",
+    "title": "Multidimensional",
+    "parent": "data-structures",
+    "description": "Learn about multidimensional data structures, which are used to efficiently store and query data represented in a multidimensional space.",
+    "imageUrl": "https://s3.amazonaws.com/algorithm-helper/assets/icons/data-structures/multidimensional.png",
+    "children": [
+      "introduction",
+      "range-searching",
+      "quad-tree",
+      "k-d-tree",
+      "range-tree",
+      "time-and-space-complexity-comparison"
+    ]
+  },
+  {
+    "key": "abstract-data-types",
+    "title": "Abstract Data Types",
+    "parent": "data-structures",
+    "description": "Learn about abstract data types, which are data structures that have a general description of their operations but whose implementations can vary.",
+    "imageUrl": "https://s3.amazonaws.com/algorithm-helper/assets/icons/data-structures/abstract-data-types.png",
+    "children": [
+      "introduction",
+      "iterator-iterable",
+      "comparator-comparable"
+    ]
+  },
+  {
+    "key": "searching",
+    "title": "Searching",
+    "parent": "general-algorithms",
+    "description": "Learn about algorithms for searching for elements in arrays efficiently, in logarithmic time and better.",
+    "imageUrl": "https://s3.amazonaws.com/algorithm-helper/assets/icons/general-algorithms/searching.png",
+    "children": [
+      "introduction",
+      "binary-search",
+      "ternary-search",
+      "jump-search",
+      "interpolation-search",
+      "time-and-space-complexity-comparison"
+    ]
+  },
+  {
+    "key": "sorting",
+    "title": "Sorting",
+    "parent": "general-algorithms",
+    "description": "Learn about the fundamental problem of sorting, and algorithms like merge sort, quick sort and heap sort.",
+    "imageUrl": "https://s3.amazonaws.com/algorithm-helper/assets/icons/general-algorithms/sorting.png",
+    "children": [
+      "introduction",
+      "stability",
+      "in-place",
+      "selection-sort",
+      "insertion-sort",
+      "shell-sort",
+      "divide-and-conquer",
+      "merge-sort",
+      "quick-sort",
+      "heap-sort",
+      "bucket-sort",
+      "count-sort",
+      "radix-sort",
+      "time-and-space-complexity-comparison"
+    ]
+  },
+  {
+    "key": "shuffling",
+    "title": "Shuffling",
+    "parent": "general-algorithms",
+    "description": "Learn about algorithms like Fisher-Yates and Sattolo's Algorithm to order elements in arrays uniformly randomly.",
+    "imageUrl": "https://s3.amazonaws.com/algorithm-helper/assets/icons/general-algorithms/shuffling.png",
+    "children": [
+      "introduction",
+      "fisher-yates-shuffle",
+      "sattolos-algorithm",
+      "time-and-space-complexity-comparison"
+    ]
+  },
+  {
+    "key": "selecting",
+    "title": "Selecting",
+    "parent": "general-algorithms",
+    "description": "Learn about algorithms like quick select and median finding, which have general uses in being able to selecting elements from a set of data with desired properties.",
+    "imageUrl": "https://s3.amazonaws.com/algorithm-helper/assets/icons/general-algorithms/selecting.png",
+    "children": [
+      "introduction",
+      "quick-select",
+      "median-finding",
+      "median-of-medians-algorithm",
+      "peak-finding",
+      "time-and-space-complexity-comparison"
+    ]
+  },
+  {
+    "key": "string-data-structures",
+    "title": "String Data Structures",
+    "parent": "strings",
+    "description": "Learn about data structures that have special and useful properties when we know that the data or keys being stored are strictly strings.",
+    "imageUrl": "https://s3.amazonaws.com/algorithm-helper/assets/icons/strings/string-data-structures.png",
+    "children": [
+      "introduction",
+      "trie",
+      "r-way-trie",
+      "ternary-search-trie",
+      "suffix-tree",
+      "time-and-space-complexity-comparison"
+    ]
+  },
+  {
+    "key": "string-sorting",
+    "title": "String Sorting",
+    "parent": "strings",
+    "description": "Learn about the problem of string sorting, and how we can use non-comparison sorts to achieve more efficient results.",
+    "imageUrl": "https://s3.amazonaws.com/algorithm-helper/assets/icons/strings/string-sorting.png",
+    "children": [
+      "introduction",
+      "lsd-radix-sort",
+      "msd-radix-sort",
+      "time-and-space-complexity-comparison"
+    ]
+  },
+  {
+    "key": "string-matching",
+    "title": "String Matching",
+    "parent": "strings",
+    "description": "Learn about string matching, which is the problem of finding a smaller length pattern string in a larger body of text.",
+    "imageUrl": "https://s3.amazonaws.com/algorithm-helper/assets/icons/strings/string-matching.png",
+    "children": [
+      "introduction",
+      "knuth-morris-pratt-algorithm",
+      "boyer-moore-algorithm",
+      "rabin-karp-algorithm",
+      "approximate-string-matching",
+      "bitap-algorithm",
+      "time-and-space-complexity-comparison"
+    ]
+  },
+  {
+    "key": "string-metrics",
+    "title": "String Metrics",
+    "parent": "strings",
+    "description": "Learn about string metrics, which refers to the different techniques and heuristics used to determine the distance between two strings.",
+    "imageUrl": "https://s3.amazonaws.com/algorithm-helper/assets/icons/strings/string-metrics.png",
+    "children": [
+      "introduction",
+      "edit-distance",
+      "damerau-levenshtein-distance",
+      "hamming-distance",
+      "wagner-fischer-algorithm",
+      "time-and-space-complexity-comparison"
+    ]
+  },
+  {
+    "key": "compression",
+    "title": "Compression",
+    "parent": "strings",
+    "description": "Learn about the fundamental problem of compression, which refers to being able to encode the same data using fewer bits.",
+    "imageUrl": "https://s3.amazonaws.com/algorithm-helper/assets/icons/strings/compression.png",
+    "children": [
+      "introduction",
+      "run-length-encoding",
+      "huffman-coding",
+      "lempel-ziv-welch-algorithm",
+      "text-transforms",
+      "burrows-wheeler-transform",
+      "time-and-space-complexity-comparison"
+    ]
+  },
+  {
+    "key": "graphs",
+    "title": "Graphs",
+    "parent": "graphs",
+    "description": "Learn about the various ways, advantages, and disadvantages to representing graphs in a data structure as well as useful properties of graphs.",
+    "imageUrl": "https://s3.amazonaws.com/algorithm-helper/assets/icons/graphs/graphs.png",
+    "children": [
+      "introduction",
+      "graph-representation",
+      "undirected-and-directed-graphs",
+      "sparse-and-dense-graphs",
+      "time-and-space-complexity-comparison"
+    ]
+  },
+  {
+    "key": "graphs",
+    "title": "Graphs",
+    "parent": "graphs",
+    "description": "Learn about the various ways, advantages, and disadvantages to representing graphs in a data structure as well as useful properties of graphs.",
+    "imageUrl": "https://s3.amazonaws.com/algorithm-helper/assets/icons/graphs/graphs.png",
+    "children": [
+      "introduction",
+      "graph-representation",
+      "undirected-and-directed-graphs",
+      "sparse-and-dense-graphs",
+      "time-and-space-complexity-comparison"
+    ]
+  },
+  {
+    "key": "path-finding",
+    "title": "Path Finding",
+    "parent": "graphs",
+    "description": "Learn about path finding, the fundamental problem within graphs of being able to find a sequence of edges that go from a starting vertex to ending vertex.",
+    "imageUrl": "https://s3.amazonaws.com/algorithm-helper/assets/icons/graphs/path-finding.png",
+    "children": [
+      "introduction",
+      "depth-first-search",
+      "breadth-first-search",
+      "connected-components",
+      "topological-sort",
+      "kahns-topological-sort-algorithm",
+      "strongly-connected-components",
+      "kosarajus-algorithm",
+      "time-and-space-complexity"
+    ]
+  },
+  {
+    "key": "shortest-path-finding",
+    "title": "Shortest Path Finding",
+    "parent": "graphs",
+    "description": "Learn about shorted path finding, which is a fundamental problem in graph theory of being able to find the path from one vertex to another with the least combined weight.",
+    "imageUrl": "https://s3.amazonaws.com/algorithm-helper/assets/icons/graphs/shortest-path-finding.png",
+    "children": [
+      "introduction",
+      "weighted-graph",
+      "edge-relaxation",
+      "dijkstras-algorithm",
+      "bellman-ford-algorithm",
+      "floyd-warshall-algorithm",
+      "time-and-space-complexity-comparison"
+    ]
+  },
+  {
+    "key": "minimum-spanning-trees",
+    "title": "Minimum Spanning Trees",
+    "parent": "graphs",
+    "description": "Learn about minimum spanning trees, which are a set of edges of a graph such that they connect all of the vertices with no cycles between them.",
+    "imageUrl": "https://s3.amazonaws.com/algorithm-helper/assets/icons/graphs/minimum-spanning-trees.png",
+    "children": [
+      "introduction",
+      "greedy-algorithm",
+      "prims-algorithm",
+      "kruskals-algorithm",
+      "clustering",
+      "time-and-space-complexity-comparison"
+    ]
+  },
+  {
+    "key": "flow-networks",
+    "title": "Flow Networks",
+    "parent": "graphs",
+    "description": "Learn about flow networks, a type of graph such that all edges have capacities, and recieve flows, and the flow cannot exceed the capacity.",
+    "imageUrl": "https://s3.amazonaws.com/algorithm-helper/assets/icons/graphs/flow-networks.png",
+    "children": [
+      "introduction",
+      "max-flow-min-cut",
+      "ford-fulkerson-algorithm",
+      "time-and-space-complexity-comparison"
+    ]
+  },
+  {
+    "key": "randomized-algorithms",
+    "title": "Randomized Algorithms",
+    "parent": "randomization",
+    "description": "Learn about randomized algorithms, which are algorithms that use randomization as part of its implementation.",
+    "imageUrl": "https://s3.amazonaws.com/algorithm-helper/assets/icons/randomization/randomized-algorithms.png",
+    "children": [
+      "introduction",
+      "expected-time",
+      "quick-select-revisited",
+      "quick-sort-revisited",
+      "monte-carlo-algorithm",
+      "las-vegas-algorithm",
+      "time-and-space-complexity-comparison"
+    ]
+  },
+  {
+    "key": "random-number-generators",
+    "title": "Random Number Generators",
+    "parent": "randomization",
+    "description": "Learn about techniques for implementing random number generators such as with the lagged Fibonacci generator and linear congruential generator.",
+    "imageUrl": "https://s3.amazonaws.com/algorithm-helper/assets/icons/randomization/random-number-generators.png",
+    "children": [
+      "introduction",
+      "pseudorandom-number-generators",
+      "blum-blum-shub",
+      "lagged-fibonacci-generator",
+      "linear-congruential-generator",
+      "mersenne-twister",
+      "time-and-space-complexity-comparison"
+    ]
+
+  },
+  {
+    "key": "numerical-computation",
+    "title": "Numerical Computation",
+    "parent": "mathematics",
+    "description": "Learn about numerical computation, which refers to algorithms that deal with efficient computation in the context of mathematics.",
+    "imageUrl": "https://s3.amazonaws.com/algorithm-helper/assets/icons/mathematics/numerical-computation.png",
+    "children": [
+      "introduction",
+      "euclids-algorithm",
+      "multiplication-algorithm",
+      "karatsuba-algorithm",
+      "newton-raphson-method",
+      "modular-exponentiation",
+      "linear-programming",
+      "simplex-algorithm",
+      "polynomial-multiplication",
+      "fast-fourier-transform",
+      "time-and-space-complexity-comparison"
+    ]
+  },
+  {
+    "key": "computational-geometry",
+    "title": "Computational Geometry",
+    "parent": "mathematics",
+    "description": "Learn about computational geometry, which refer to algorithms that deal with data with geometric properties, like determining the convex hull.",
+    "imageUrl": "https://s3.amazonaws.com/algorithm-helper/assets/icons/mathematics/computational-geometry.png",
+    "children": [
+      "introduction",
+      "convex-hull",
+      "graham-scan",
+      "jarvis-algorithm",
+      "time-and-space-complexity-comparison"
+    ]
+  },
+  {
+    "key": "dynamic-programming",
+    "title": "Dynamic Programming",
+    "parent": "dynamic-programming",
+    "description": "Learn about the basics, techniques and motivations behind dynamic programming, and how memoization is used to facilitate it.",
+    "imageUrl": "https://s3.amazonaws.com/algorithm-helper/assets/icons/dynamic-programming/dynamic-programming.png",
+    "children": [
+      "introduction",
+      "overlapping-subproblems-and-optimal-substructures",
+      "memoization"
+    ]
+  },
+  {
+    "key": "dynamic-programming-problems",
+    "title": "Dynamic Programming Problems",
+    "parent": "dynamic-programming",
+    "description": "Learn about dynamic programming techniques applied to a canonical list of problems.",
+    "imageUrl": "https://s3.amazonaws.com/algorithm-helper/assets/icons/dynamic-programming/dynamic-programming-problems.png",
+    "children": [
+      "introduction",
+      "fibonacci-number",
+      "maximum-sum-contiguous-subarray",
+      "kadanes-algorithm",
+      "longest-common-subsequence",
+      "longest-increasing-subsequence",
+      "longest-common-substring",
+      "longest-palindromic-substring",
+      "binomial-coefficient",
+      "coin-change-problem",
+      "maximum-size-square-submatrix",
+      "assembly-line-scheduling",
+      "rod-cutting",
+      "levenschtein-edit-distance",
+      "0-1-knapsack-problem",
+      "time-and-space-complexity-comparison"
+    ]
+  },
+  {
+    "key": "computational-complexity",
+    "title": "Computational Complexity",
+    "parent": "algorithmic-analysis",
+    "description": "Learn about computational complexity, which refers to the various methods we use to determine the rate of growth in the requirement of time and space.",
+    "imageUrl": "https://s3.amazonaws.com/algorithm-helper/assets/icons/algorithmic-analysis/computational-complexity.png",
+    "children": [
+      "introduction",
+      "big-o-notation",
+      "small-o-notation",
+      "amortization"
+    ]
+  },
+  {
+    "key": "complexity-classes",
+    "title": "Complexity Classes",
+    "parent": "algorithmic-analysis",
+    "description": "Learn about complexity classes, which refers to classifiying problems by the rate of growth in necessary time and space needed to solve a particular problem.",
+    "imageUrl": "https://s3.amazonaws.com/algorithm-helper/assets/icons/algorithmic-analysis/complexity-classes.png",
+    "children": [
+      "introduction",
+      "p-complexity",
+      "np-complexity"
+    ]
+  },
+  {
+    "key": "object-oriented-programming",
+    "title": "Object Oriented Programming",
+    "parent": "software-engineering",
+    "description": "Learn about object oriented programming concepts like encapsulation, inheritance, and polymorphism.",
+    "imageUrl": "https://s3.amazonaws.com/algorithm-helper/assets/icons/software-engineering/object-oriented-programming.png",
+    "children": [
+      "introduction",
+      "class-and-instance",
+      "inheritance",
+      "encapsulation",
+      "polymorphism"
+    ]
+  },
+  {
+    "key": "functional-programming",
+    "title": "Functional Programming",
+    "parent": "software-engineering",
+    "description": "Learn about functional programming concepts like lambda notation, function composition, filter, map, and reduce.",
+    "imageUrl": "https://s3.amazonaws.com/algorithm-helper/assets/icons/software-engineering/functional-programming.png",
+    "children": [
+      "introduction",
+      "first-class-function",
+      "recursion",
+      "lambda-notation",
+      "function-composition",
+      "map-filter-reduce",
+      "currying",
+      "compose",
+      "piping",
+      "zip-unzip"
+    ]
+  },
+  {
+    "key": "design-patterns",
+    "title": "Design Patterns",
+    "parent": "software-engineering",
+    "description": "Learn about software design patterns like factories, builders, and observers, for solving common problems that occur often in software development.",
+    "imageUrl": "https://s3.amazonaws.com/algorithm-helper/assets/icons/software-engineering/design-patterns.png",
+    "children": [
+      "introduction",
+      "adapter",
+      "bridge",
+      "builder",
+      "chain-of-responsibility",
+      "command",
+      "composite",
+      "decorator",
+      "factory",
+      "iterator",
+      "null-object",
+      "observer",
+      "prototype",
+      "singleton",
+      "strategy",
+      "template-method",
+      "visitor"
+    ]
+  },
+  {
+    "key": "bash-scripting",
+    "title": "Bash Scripting",
+    "parent": "software-engineering",
+    "description": "Learn about the syntax of scripting in Bash, a commonly used shell and command language, as well as useful functions and operations.",
+    "imageUrl": "https://s3.amazonaws.com/algorithm-helper/assets/icons/software-engineering/bash-scripting.png",
+    "children": [
+      "introduction",
+      "shell-scripts",
+      "common-functions",
+      "exit-status-codes",
+      "file-access-in-scripts"
+    ]
+  },
+  {
+    "key": "regular-expressions",
+    "title": "Regular Expressions",
+    "parent": "software-engineering",
+    "description": "Learn about regular expressions, which are sequences of characters that define a search pattern, commonly used to search for matches within a piece of text.",
+    "imageUrl": "https://s3.amazonaws.com/algorithm-helper/assets/icons/software-engineering/regular-expressions.png",
+    "children": [
+      "introduction",
+      "basic-syntax",
+      "regex-flags",
+      "grouping-and-capturing",
+      "look-ahead-look-behind"
+    ]
+  }
+]

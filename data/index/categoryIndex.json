@@ -1,0 +1,107 @@
+[
+  {
+    "key": "data-structures",
+    "title": "Data Structures",
+    "description": "Learn about different methods for data organization and storage that enable efficient access and allow for useful operations. This category will go over various data structures with linear, tree, hashing, probabilistic, and multidimensional properties.",
+    "colorKey": 1,
+    "children": [
+      "lists",
+      "trees",
+      "hashing",
+      "probabilistic",
+      "multidimensional",
+      "abstract-data-types"
+    ]
+  },
+  {
+    "key": "general-algorithms",
+    "title": "General Algorithms",
+    "description": "Learn about fundamental algorithms with very general and commonly used purposes like searching, sorting, selecting, and shuffling.",
+    "colorKey": 2,
+    "children": [
+      "searching",
+      "sorting",
+      "shuffling",
+      "selecting"
+    ]
+  },
+  {
+    "key": "strings",
+    "title": "Strings",
+    "description": "Learn about data structures and algorithms related to strings, such as efficient ways to store strings using tries, sorting strings with better than linearithmic time, and finding substring matches within a string efficiently.",
+    "colorKey": 3,
+    "children": [
+      "string-data-structures",
+      "string-sorting",
+      "string-matching",
+      "string-metrics",
+      "compression"
+    ]
+  },
+  {
+    "key": "graphs",
+    "title": "Graphs",
+    "description": "Learn about data structures and algorithms relating to graphs, a fundamental abstract data type used to model and generalize various types of network-like relationships between data using vertices and edges.",
+    "colorKey": 4,
+    "children": [
+      "graphs",
+      "path-finding",
+      "shortest-path-finding",
+      "minimum-spanning-trees",
+      "flow-networks"
+    ]
+  },
+  {
+    "key": "randomization",
+    "title": "Randomization",
+    "description": "Learn about algorithms that use randomization like quick select and quick sort that often lead to elegant solutions but whose time complexity can only be probabilistically determined, as well as random number generators.",
+    "colorKey": 5,
+    "children": [
+      "randomized-algorithms",
+      "random-number-generators"
+    ]
+  },
+  {
+    "key": "mathematics",
+    "title": "Mathematics",
+    "description": "Learn about general algorithms used in the context of mathematics, such as multiplication, polynomial multiplication, and computing convex hulls.",
+    "colorKey": 6,
+    "children": [
+      "numerical-computation",
+      "computational-geometry"
+    ]
+  },
+  {
+    "key": "dynamic-programming",
+    "title": "Dynamic Programming",
+    "description": "Learn about dynamic programming, an important and useful programming technique to solve problems by saving the results of successively smaller subproblems and using them to solve a larger problem.",
+    "colorKey": 7,
+    "children": [
+      "dynamic-programming",
+      "dynamic-programming-problems"
+    ]
+  },
+  {
+    "key": "algorithmic-analysis",
+    "title": "Algorithmic Analysis",
+    "description": "Learn about algorithmic analysis, which is a part of computational complexity theory, and refers to being able to determine the rate of growth in time and space of algorithms, and classifying them.",
+    "colorKey": 8,
+    "children": [
+      "computational-complexity",
+      "complexity-classes"
+    ]
+  },
+  {
+    "key": "software-engineering",
+    "title": "Software Engineering",
+    "description": "Learn about various aspects of software engineering, from programming paradigms like object oriented programming, software design principles like design patterns, and useful skills like Bash scripting and using regular expressions.",
+    "colorKey": 9,
+    "children": [
+      "object-oriented-programming",
+      "functional-programming",
+      "design-patterns",
+      "bash-scripting",
+      "regular-expressions"
+    ]
+  }
+]

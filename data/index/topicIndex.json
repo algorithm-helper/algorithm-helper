@@ -1,0 +1,1647 @@
+[
+  {
+    "key": "introduction",
+    "title": "Introduction",
+    "parent": "lists",
+    "description": "General overview of linear data structures, terminology, and concepts that will be covered in this topic.",
+    "children": []
+  },
+  {
+    "key": "linked-list",
+    "title": "Linked List",
+    "parent": "lists",
+    "description": "Learn about the linked list, a recursively defined sequence of nodes with pointers to the next nodes in the sequence.",
+    "children": []
+  },
+  {
+    "key": "double-ended-linked-list",
+    "title": "Double Ended Linked List",
+    "parent": "lists",
+    "description": "Learn about the double ended linked list, an augmentation to the linked list where nodes point to the next and previous nodes.",
+    "children": []
+  },
+  {
+    "key": "dynamic-array",
+    "title": "Dynamic Array",
+    "parent": "lists",
+    "description": "Learn about the dynamic array, an array-based data structure that allows for the expansion of the size of the array efficiently.",
+    "children": []
+  },
+  {
+    "key": "stack",
+    "title": "Stack",
+    "parent": "lists",
+    "description": "Learn about the stack, a fundamental last-in-first-out data structure, and its implementations with both a linked list and a dynamic array.",
+    "children": []
+  },
+  {
+    "key": "queue",
+    "title": "Queue",
+    "parent": "lists",
+    "description": "Learn about the queue, a fundamental first-in-first-out data structure, and its implementations with both a linked list and a dynamic array.",
+    "children": []
+  },
+  {
+    "key": "double-ended-queue",
+    "title": "Double Ended Queue",
+    "parent": "lists",
+    "description": "Learn about the double ended queue, an abstract data structure that supports adding and removing elements from the front and back.",
+    "children": []
+  },
+  {
+    "key": "time-and-space-complexity-comparison",
+    "title": "Time and Space Complexity Comparison",
+    "parent": "lists",
+    "description": "Learn about the time and space complexity comparisons of fundamental operations between the data structures listed in this topic.",
+    "children": []
+  },
+  {
+    "key": "introduction",
+    "title": "Introduction",
+    "parent": "trees",
+    "description": "General overview of tree data structures, terminology, and concepts that will be covered in this topic.",
+    "children": []
+  },
+  {
+    "key": "map-symbol-table",
+    "title": "Map / Symbol Table",
+    "parent": "trees",
+    "description": "Learn about the map / symbol table, an abstract data structure for maintaining a collection of (key, value) pairs.",
+    "children": []
+  },
+  {
+    "key": "set",
+    "title": "Set",
+    "parent": "trees",
+    "description": "Learn about the set, an abstract data structure for maintaining a collection of unique key elements.",
+    "children": []
+  },
+  {
+    "key": "binary-search-tree",
+    "title": "Binary Search Tree",
+    "parent": "trees",
+    "description": "Learn about the binary search tree, a tree data structure that uses binary search for the efficient retrieval of elements.",
+    "children": []
+  },
+  {
+    "key": "balanced-binary-search-tree",
+    "title": "Balanced Binary Search Tree",
+    "parent": "trees",
+    "description": "Learn about the balanced binary search tree, a tree data structure that guarantees logarithmic performance by keeping balanced.",
+    "children": []
+  },
+  {
+    "key": "2-3-tree",
+    "title": "2-3 Tree",
+    "parent": "trees",
+    "description": "Learn about the 2-3 tree, a tree data structure that keeps balance through the mechanism of 2-Nodes and 3-Nodes.",
+    "children": []
+  },
+  {
+    "key": "red-black-tree",
+    "title": "Red-Black Tree",
+    "parent": "trees",
+    "description": "Learn about the red-black tree, a tree data structure derived from the 2-3 tree, that keeps balance using red and black colored nodes.",
+    "children": []
+  },
+  {
+    "key": "avl-tree",
+    "title": "AVL Tree",
+    "parent": "trees",
+    "description": "Learn about the AVL tree, a tree data structure that keeps balance through maintaining balance between the heights of subtrees.",
+    "children": []
+  },
+  {
+    "key": "heap",
+    "title": "Heap",
+    "parent": "trees",
+    "description": "Learn about the heap, a tree data structure that represents the tree in a single array, and implementations for binary min/max heaps.",
+    "children": []
+  },
+  {
+    "key": "priority-queue",
+    "title": "Priority Queue",
+    "parent": "trees",
+    "description": "Learn about the priority queue, a data structure that uses the heap data structure to allow for efficient retrieval of min/max elements.",
+    "children": []
+  },
+  {
+    "key": "union-find-disjoint-set",
+    "title": "Union Find / Disjoint Set",
+    "parent": "trees",
+    "description": "Learn about the union find / disjoint set, a data structure used to represent connected components in the problem of dynamic connectivity.",
+    "children": []
+  },
+  {
+    "key": "b-tree",
+    "title": "B-Tree",
+    "parent": "trees",
+    "description": "Learn about the B-tree, a balanced tree structure that is a generalization of binary search trees, and are commonly used in secondary storage systems.",
+    "children": []
+  },
+  {
+    "key": "fibonacci-heap",
+    "title": "Fibonacci Heap",
+    "parent": "trees",
+    "description": "Learn about the Fibonacci heap, a heap structure for priority queue operations but that can perform key operations in constant, amortized time.",
+    "children": []
+  },
+  {
+    "key": "van-emde-boas-tree",
+    "title": "Van Emde Boas Tree",
+    "parent": "trees",
+    "description": "Learn about the Van Emde Boas Tree, a tree structure for implementing maps space efficiently, that supports efficient operations for finding successors and predecessors.",
+    "children": []
+  },
+  {
+    "key": "time-and-space-complexity-comparison",
+    "title": "Time and Space Complexity Comparison",
+    "parent": "trees",
+    "description": "Learn about the time and space complexity comparisons of fundamental operations between the data structures listed in this topic.",
+    "children": []
+  },
+  {
+    "key": "introduction",
+    "title": "Introduction",
+    "parent": "hashing",
+    "description": "General overview of data structures that use hashing, terminology, and concepts that will be covered in this topic.",
+    "children": []
+  },
+  {
+    "key": "hash-function",
+    "title": "Hash Function",
+    "parent": "hashing",
+    "description": "Learn about the hash function, a function that enables mapping data of an arbitrary size to data of fixed size.",
+    "children": []
+  },
+  {
+    "key": "collision-resolution",
+    "title": "Collision Resolution",
+    "parent": "hashing",
+    "description": "Learn about collision resolution, the techniques used when dealing with situations where more than one element hash to the same place.",
+    "children": []
+  },
+  {
+    "key": "simple-uniform-hashing-assumption",
+    "title": "Simple Uniform Hashing Assumption",
+    "parent": "hashing",
+    "description": "Learn about the Simple Uniform Hashing Assumption, the basic mathematical assumption that enables the analysis of hash maps.",
+    "children": []
+  },
+  {
+    "key": "hash-map",
+    "title": "Hash Map",
+    "parent": "hashing",
+    "description": "Learn about the hash map, and its implementations with separate chaining and linear probing, that allows for constant time for all operations.",
+    "children": []
+  },
+  {
+    "key": "hash-set",
+    "title": "Hash Set",
+    "parent": "hashing",
+    "description": "Learn about the hash set, and its use to represent the abstract data structure of a set, but using hashing to allow for constant time for all operations.",
+    "children": []
+  },
+  {
+    "key": "time-and-space-complexity-comparison",
+    "title": "Time and Space Complexity Comparison",
+    "parent": "hashing",
+    "description": "Learn about the time and space complexity comparisons of fundamental operations between the data structures listed in this topic.",
+    "children": []
+  },
+  {
+    "key": "introduction",
+    "title": "Introduction",
+    "parent": "probabilistic",
+    "description": "General overview of probabilistic data structures, terminology, and concepts that will be covered in this topic.",
+    "children": []
+  },
+  {
+    "key": "skip-list",
+    "title": "Skip List",
+    "parent": "probabilistic",
+    "description": "Learn about the skip list, a linked list-like data structure that allows for efficient search of a sequence of elements by skipping over elements, whose skips are determined randomly.",
+    "children": []
+  },
+  {
+    "key": "bloom-filter",
+    "title": "Bloom Filter",
+    "parent": "probabilistic",
+    "description": "Learn about the bloom filter, a data structure commonly used to implement sets that is space efficient, but whose probabilistic properties can lead to false positives.",
+    "children": []
+  },
+  {
+    "key": "count-min-sketch",
+    "title": "Count Min Sketch",
+    "parent": "probabilistic",
+    "description": "Learn about the count-min sketch, a data structure used to determine frequencies of events in a data stream.",
+    "children": []
+  },
+  {
+    "key": "random-binary-tree",
+    "title": "Random Binary Tree",
+    "parent": "probabilistic",
+    "description": "Learn about random binary trees, which are binary trees selected from a probability distribution of binary trees, which may be formed with various properties.",
+    "children": []
+  },
+  {
+    "key": "treap",
+    "title": "Treap",
+    "parent": "probabilistic",
+    "description": "Learn about the treap, which is a binary search tree that uses randomization that leads to a high probability of a tree structure that supports operations in logarithmic time.",
+    "children": []
+  },
+  {
+    "key": "time-and-space-complexity-comparison",
+    "title": "Time and Space Complexity Comparison",
+    "parent": "probabilistic",
+    "description": "Learn about the time and space complexity comparisons of fundamental operations between the data structures listed in this topic.",
+    "children": []
+  },
+  {
+    "key": "introduction",
+    "title": "Introduction",
+    "parent": "probabilistic",
+    "description": "General overview of multidimensional data structures, terminology, and concepts that will be covered in this topic.",
+    "children": []
+  },
+  {
+    "key": "range-searching",
+    "title": "Range Searching",
+    "parent": "probabilistic",
+    "description": "Learn about the problem of range searching, which refers to being able to query for elements within a multidimensional range.",
+    "children": []
+  },
+  {
+    "key": "quad-tree",
+    "title": "Quad Tree",
+    "parent": "probabilistic",
+    "description": "Learn about the quad tree, a tree structure with four children used to represent quadrants, and thereby commonly used to store data in a 2-dimensional space.",
+    "children": []
+  },
+  {
+    "key": "k-d-tree",
+    "title": "k-d Tree",
+    "parent": "probabilistic",
+    "description": "Learn about the k-d tree, a tree structure that partitions space to be able to efficiently organize data in a k-dimensional space.",
+    "children": []
+  },
+  {
+    "key": "range-tree",
+    "title": "Range Tree",
+    "parent": "probabilistic",
+    "description": "Learn about the range tree, a tree structure that uses multiple binary trees to represent data commonly in a 2 or 3-dimensional space, and allows for efficient range queries.",
+    "children": []
+  },
+  {
+    "key": "time-and-space-complexity-comparison",
+    "title": "Time and Space Complexity Comparison",
+    "parent": "probabilistic",
+    "description": "Learn about the time and space complexity comparisons of fundamental operations between the data structures listed in this topic.",
+    "children": []
+  },
+  {
+    "key": "introduction",
+    "title": "Introduction",
+    "parent": "abstract-data-types",
+    "description": "General overview of abstract data types, terminology, and concepts that will be covered in this topic.",
+    "children": []
+  },
+  {
+    "key": "iterator-iterable",
+    "title": "Iterator / Iterable",
+    "parent": "abstract-data-types",
+    "description": "Learn about the iterator, an abstract data type that is used to traverse through the elements of a data structure without exposing its internal implementation.",
+    "children": []
+  },
+  {
+    "key": "comparator-comparable",
+    "title": "Comparator / Comparable",
+    "parent": "abstract-data-types",
+    "description": "Learn about the comparator, an abstract data type used for comparing elements for ordering algorithms, commonly for sorting.",
+    "children": []
+  },
+  {
+    "key": "introduction",
+    "title": "Introduction",
+    "parent": "searching",
+    "description": "General overview of the fundamental problem of searching, terminology and concepts that will be covered in this topic.",
+    "children": []
+  },
+  {
+    "key": "binary-search",
+    "title": "Binary Search",
+    "parent": "searching",
+    "description": "Learn about binary search, a searching algorithm for retrieving elements in a sorted array in logarithmic time.",
+    "children": []
+  },
+  {
+    "key": "ternary-search",
+    "title": "Ternary Search",
+    "parent": "searching",
+    "description": "Learn about ternary search, a searching algorithm for finding the min/max element of a unimodal function.",
+    "children": []
+  },
+  {
+    "key": "jump-search",
+    "title": "Jump Search",
+    "parent": "searching",
+    "description": "Learn about jump search, a searching algorithm for retrieving elements in a sorted array by taking steps of size sqrt(N).",
+    "children": []
+  },
+  {
+    "key": "interpolation-search",
+    "title": "Interpolation Search",
+    "parent": "searching",
+    "description": "Learn about interpolation search, a searching algorithm for retrieving elements in a sorted array with elements uniformly distributed.",
+    "children": []
+  },
+  {
+    "key": "time-and-space-complexity-comparison",
+    "title": "Time and Space Complexity Comparison",
+    "parent": "searching",
+    "description": "Learn about the time and space complexity comparisons between the algorithms listed in this topic.",
+    "children": []
+  },
+  {
+    "key": "introduction",
+    "title": "Introduction",
+    "parent": "sorting",
+    "description": "General overview of the fundamental problem of sorting, terminology and concepts that will be covered in this topic.",
+    "children": []
+  },
+  {
+    "key": "stability",
+    "title": "Stability",
+    "parent": "sorting",
+    "description": "Learn about stability, which refers to the property of sorting algorithms to be able to keep identical elements in the same final order.",
+    "children": []
+  },
+  {
+    "key": "in-place",
+    "title": "In-Place",
+    "parent": "sorting",
+    "description": "Learn about in-place, where refers to the property of sorting algorithms to be able to be performed without the use of auxiliary space.",
+    "children": []
+  },
+  {
+    "key": "selection-sort",
+    "title": "Selection Sort",
+    "parent": "sorting",
+    "description": "Learn about selection sort, a sorting algorithm that works by iterating through the array, selecting the minimum element each time.",
+    "children": []
+  },
+  {
+    "key": "insertion-sort",
+    "title": "Insertion Sort",
+    "parent": "sorting",
+    "description": "Learn about insertion sort, a sorting algorithm that works by inserting the next element into the current sorted array.",
+    "children": []
+  },
+  {
+    "key": "shell-sort",
+    "title": "Shell Sort",
+    "parent": "sorting",
+    "description": "Learn about shell sort, a sorting algorithm that uses h-sorting, and takes advantage of insertion sort's efficiency with nearly sorted arrays.",
+    "children": []
+  },
+  {
+    "key": "divide-and-conquer",
+    "title": "Divide and Conquer",
+    "parent": "sorting",
+    "description": "Learn about divide and conquer, an algorithm design paradigm that recursively breaks down a larger problem into easier, smaller, subproblems.",
+    "children": []
+  },
+  {
+    "key": "merge-sort",
+    "title": "Merge Sort",
+    "parent": "sorting",
+    "description": "Learn about merge sort, an efficient sorting algorithm that works by recursively breaking down subarrays and merging sorted subarrays.",
+    "children": []
+  },
+  {
+    "key": "quick-sort",
+    "title": "Quick Sort",
+    "parent": "sorting",
+    "description": "Learn about quick sort, an efficient sorting algorithm that works by using a pivot and recurively sorting elements to the left and right of the pivot.",
+    "children": []
+  },
+  {
+    "key": "heap-sort",
+    "title": "Heap Sort",
+    "parent": "sorting",
+    "description": "Learn about heap sort, an efficient sorting algorithm that works by building a binary min heap out of the elements, and swapping the min element with the last element.",
+    "children": []
+  },
+  {
+    "key": "bucket-sort",
+    "title": "Bucket Sort",
+    "parent": "sorting",
+    "description": "Learn about bucket sort, a sorting algorithm that runs in linear time in the context of sorting integer elements, by moving them to array indices that match the element.",
+    "children": []
+  },
+  {
+    "key": "count-sort",
+    "title": "Count Sort",
+    "parent": "sorting",
+    "description": "Learn about count sort, a sorting algorithm that runs in linear time in the context of sorting integer elements, by using arithmetic to count elements and determine their final position.",
+    "children": []
+  },
+  {
+    "key": "radix-sort",
+    "title": "Radix Sort",
+    "parent": "sorting",
+    "description": "Learn about radix sort, a sorting algorithm that is used to sort integer elements through the use of looking at the least to most significant digits of the elements.",
+    "children": []
+  },
+  {
+    "key": "time-and-space-complexity-comparison",
+    "title": "Time and Space Complexity Comparison",
+    "parent": "sorting",
+    "description": "Learn about the time and space complexity comparisons between the algorithms listed in this topic.",
+    "children": []
+  },
+  {
+    "key": "introduction",
+    "title": "Introduction",
+    "parent": "shuffling",
+    "description": "General overview of the fundamental problem of shuffling, terminology and concepts that will be covered in this topic.",
+    "children": []
+  },
+  {
+    "key": "fisher-yates-shuffle",
+    "title": "Fisher-Yates Shuffle",
+    "parent": "shuffling",
+    "description": "Learn about the Fisher-Yates Shuffle, a shuffling algorithm used to uniformly randomly distribute elements within an array.",
+    "children": []
+  },
+  {
+    "key": "sattolos-algorithm",
+    "title": "Sattolo's Algorithm",
+    "parent": "shuffling",
+    "description": "Learn about Sattolo's Algorithm, a shuffling algorithm with the property that elements cannot be shuffled to their initial position.",
+    "children": []
+  },
+  {
+    "key": "time-and-space-complexity-comparison",
+    "title": "Time and Space Complexity Comparison",
+    "parent": "shuffling",
+    "description": "Learn about the time and space complexity comparisons between the algorithms listed in this topic.",
+    "children": []
+  },
+  {
+    "key": "introduction",
+    "title": "Introduction",
+    "parent": "selecting",
+    "description": "General overview of problems related to selecting elements of interest in an array, terminology and concepts that will be covered in this topic.",
+    "children": []
+  },
+  {
+    "key": "quick-select",
+    "title": "Quick Select",
+    "parent": "selecting",
+    "description": "Learn about quick select, which is used to find k-smallest elements in a list by using partitioning.",
+    "children": []
+  },
+  {
+    "key": "median-finding",
+    "title": "Median Finding",
+    "parent": "selecting",
+    "description": "Learn about the median finding problem, which refers to finding the element in a data set that is the median.",
+    "children": []
+  },
+  {
+    "key": "median-of-medians-algorithm",
+    "title": "Median of Medians Algorithm",
+    "parent": "selecting",
+    "description": "Learn about the median of medians algorithm, which uses small samples to find a sample median, commonly used for determining good pivots.",
+    "children": []
+  },
+  {
+    "key": "peak-finding",
+    "title": "Peak Finding",
+    "parent": "selecting",
+    "description": "Learn about peak finding, which refers to the problem and algorithm of finding elements that are local maxima (or minima).",
+    "children": []
+  },
+  {
+    "key": "time-and-space-complexity-comparison",
+    "title": "Time and Space Complexity Comparison",
+    "parent": "selecting",
+    "description": "Learn about the time and space complexity comparisons between the algorithms listed in this topic.",
+    "children": []
+  },
+  {
+    "key": "introduction",
+    "title": "Introduction",
+    "parent": "string-data-structures",
+    "description": "General overview of data structures related to strings, terminology and concepts that will be covered in this topic.",
+    "children": []
+  },
+  {
+    "key": "trie",
+    "title": "Trie",
+    "parent": "string-data-structures",
+    "description": "Learn about the trie, a data structure for maps that uses string keys, and values stored in the suffixes.",
+    "children": []
+  },
+  {
+    "key": "r-way-trie",
+    "title": "R-Way Trie",
+    "parent": "string-data-structures",
+    "description": "Learn about the R-way trie, a trie structure where each node has R (radix) amount of children nodes.",
+    "children": []
+  },
+  {
+    "key": "ternary-search-trie",
+    "title": "Ternary Search Trie",
+    "parent": "string-data-structures",
+    "description": "Learn about the ternary search trie, a trie structure where each node has three children to store smaller, equal, and larger key nodes.",
+    "children": []
+  },
+  {
+    "key": "suffix-tree",
+    "title": "Suffix Tree",
+    "parent": "string-data-structures",
+    "description": "Learn about the suffix tree, which is a compressed trie comprising of the suffixes of a given string, that leads to useful properties and operations.",
+    "children": []
+  },
+  {
+    "key": "time-and-space-complexity-comparison",
+    "title": "Time and Space Complexity Comparison",
+    "parent": "string-data-structures",
+    "description": "Learn about the time and space complexity comparisons of fundamental operations between the data structures listed in this topic.",
+    "children": []
+  },
+  {
+    "key": "introduction",
+    "title": "Introduction",
+    "parent": "string-sorting",
+    "description": "General overview of the algorithms used for sorting string keys, terminology and concepts that will be covered in this topic.",
+    "children": []
+  },
+  {
+    "key": "lsd-radix-sort",
+    "title": "LSD Radix Sort",
+    "parent": "string-sorting",
+    "description": "Learn about least-significant-digit (LSD) string sort, a sorting algorithm specific to strings that runs in faster than linearithmic time.",
+    "children": []
+  },
+  {
+    "key": "msd-radix-sort",
+    "title": "MSD Radix Sort",
+    "parent": "string-sorting",
+    "description": "Learn about most-significant-digit (MSD) string sort, a sorting algorithm specific to strings that runs in faster than linearithmic time.",
+    "children": []
+  },
+  {
+    "key": "time-and-space-complexity-comparison",
+    "title": "Time and Space Complexity Comparison",
+    "parent": "string-sorting",
+    "description": "Learn about the time and space complexity comparisons between the algorithms listed in this topic.",
+    "children": []
+  },
+  {
+    "key": "introduction",
+    "title": "Introduction",
+    "parent": "string-matching",
+    "description": "General overview of the algorithms used for string matching, terminology and concepts that will be covered in this topic.",
+    "children": []
+  },
+  {
+    "key": "knuth-morris-pratt-algorithm",
+    "title": "Knuth-Morris-Pratt Algorithm",
+    "parent": "string-matching",
+    "description": "Learn about the Knuth-Morris-Pratt algorithm, a string matching algorithm that uses a finite state machine to keep track of the matched string.",
+    "children": []
+  },
+  {
+    "key": "boyer-moore-algorithm",
+    "title": "Boyer-Moore Algorithm",
+    "parent": "string-matching",
+    "description": "Learn about the Boyer-Moore algorithm, a string matching algorithm that uses text preprocessing for more efficient search results.",
+    "children": []
+  },
+  {
+    "key": "rabin-karp-algorithm",
+    "title": "Rabin-Karp Algorithm",
+    "parent": "string-matching",
+    "description": "Learn about the Rabin-Karp algorithm, a string matching algorithm that uses hashing to find a set of patterns in a text.",
+    "children": []
+  },
+  {
+    "key": "approximate-string-matching",
+    "title": "Approximate String Matching",
+    "parent": "string-matching",
+    "description": "Learn about the approximate string matching problem, which refers to finding strings that match approximately rather than exactly, and the various metrics and heuristics that can be used.",
+    "children": []
+  },
+  {
+    "key": "bitap-algorithm",
+    "title": "Bitap Algorithm",
+    "parent": "string-matching",
+    "description": "Learn about the bitap algorithm, which uses a bit array to determine approximate string matches.",
+    "children": []
+  },
+  {
+    "key": "time-and-space-complexity-comparison",
+    "title": "Time and Space Complexity Comparison",
+    "parent": "string-matching",
+    "description": "Learn about the time and space complexity comparisons between the algorithms listed in this topic.",
+    "children": []
+  },
+  {
+    "key": "introduction",
+    "title": "Introduction",
+    "parent": "string-metrics",
+    "description": "General overview and motivation of the algorithms used for string metrics, terminology and concepts that will be covered in this topic.",
+    "children": []
+  },
+  {
+    "key": "edit-distance",
+    "title": "Edit Distance",
+    "parent": "string-metrics",
+    "description": "Learn about edit distance, which refers to the number of operations used to transform one string into another.",
+    "children": []
+  },
+  {
+    "key": "damerau-levenshtein-distance",
+    "title": "Damerau-Levenshtein Distance",
+    "parent": "string-metrics",
+    "description": "Learn about Damerau-Levenshtein distance, which is a string metric used to determine the number of operations to transform one string into another.",
+    "children": []
+  },
+  {
+    "key": "hamming-distance",
+    "title": "Hamming Distance",
+    "parent": "string-metrics",
+    "description": "Learn about Hamming distance, which refers to determining the number of positions at which two strings differ.",
+    "children": []
+  },
+  {
+    "key": "wagner-fischer-algorithm",
+    "title": "Wagner-Fischer Algorithm",
+    "parent": "string-metrics",
+    "description": "Learn about the Wagner-Fischer algorithm, which uses dynamic programming to compute the edit distance between two strings.",
+    "children": []
+  },
+  {
+    "key": "time-and-space-complexity-comparison",
+    "title": "Time and Space Complexity Comparison",
+    "parent": "string-metrics",
+    "description": "Learn about the time and space complexity comparisons between the algorithms listed in this topic.",
+    "children": []
+  },
+  {
+    "key": "introduction",
+    "title": "Introduction",
+    "parent": "compression",
+    "description": "General overview of compression algorithms, terminology and concepts that will be covered in this topic.",
+    "children": []
+  },
+  {
+    "key": "run-length-encoding",
+    "title": "Run-Length Encoding",
+    "parent": "compression",
+    "description": "Learn about run-length encoding, a basic method of data compression by counting runs of same bits.",
+    "children": []
+  },
+  {
+    "key": "huffman-coding",
+    "title": "Huffman Coding",
+    "parent": "compression",
+    "description": "Learn about Huffman coding, a technique and optimal prefix encoding for data compression.",
+    "children": []
+  },
+  {
+    "key": "lempel-ziv-welch-algorithm",
+    "title": "Lempel-Ziv-Welch Algorithm",
+    "parent": "compression",
+    "description": "Learn about the Lempel-Ziv-Welch algorithm, a compression algorithm that uses a dictionary to encode repeated patterns in a text.",
+    "children": []
+  },
+  {
+    "key": "text-transforms",
+    "title": "Text Transforms",
+    "parent": "compression",
+    "description": "Learn about text transforms, which refers to converting or rearranging the characters in a string to a more useful format.",
+    "children": []
+  },
+  {
+    "key": "burrows-wheeler-transform",
+    "title": "Burrows-Wheeler Transform",
+    "parent": "compression",
+    "description": "Learn about the Burrows-Wheeler transform, a text transform that leads to useful results for improving the efficiency of compression algorithms.",
+    "children": []
+  },
+  {
+    "key": "time-and-space-complexity-comparison",
+    "title": "Time and Space Complexity Comparison",
+    "parent": "compression",
+    "description": "Learn about the time and space complexity comparisons between the algorithms listed in this topic.",
+    "children": []
+  },
+  {
+    "key": "introduction",
+    "title": "Introduction",
+    "parent": "graphs",
+    "description": "General overview of graphs and the way to store them as data structures, terminology and concepts that will be covered in this topic.",
+    "children": []
+  },
+  {
+    "key": "graph-representation",
+    "title": "Graph Representation",
+    "parent": "graphs",
+    "description": "Learn about graph representation, and the three main implementations using edge lists, vertex matrices, and adjacency lists.",
+    "children": []
+  },
+  {
+    "key": "undirected-and-directed-graphs",
+    "title": "Undirected and Directed Graphs",
+    "parent": "graphs",
+    "description": "Learn about undirected and directed graphs, two types of graphs that greatly dictate the limitations of certain algorithms used on them.",
+    "children": []
+  },
+  {
+    "key": "sparse-and-dense-graphs",
+    "title": "Sparse and Dense Graphs",
+    "parent": "graphs",
+    "description": "Learn about sparse and dense graphs, two types of graphs that refer to the property of the number of vertex and edges within the graph.",
+    "children": []
+  },
+  {
+    "key": "time-and-space-complexity-comparison",
+    "title": "Time and Space Complexity Comparison",
+    "parent": "graphs",
+    "description": "Learn about the time and space complexity comparisons of fundamental operations between the data structures listed in this topic.",
+    "children": []
+  },
+  {
+    "key": "introduction",
+    "title": "Introduction",
+    "parent": "path-finding",
+    "description": "General overview of path finding algorithms in the context of graphs, terminology and concepts that will be covered in this topic.",
+    "children": []
+  },
+  {
+    "key": "depth-first-search",
+    "title": "Depth First Search",
+    "parent": "path-finding",
+    "description": "Learn about depth first search, a basic graph traversal algorithm with the property of always choosing adjacent vertices to be the next to be traversed.",
+    "children": []
+  },
+  {
+    "key": "breadth-first-search",
+    "title": "Breadth First Search",
+    "parent": "path-finding",
+    "description": "Learn about breadth first search, a basic graph traversal algorithm with the property of always at the same level to be the next to be traversed.",
+    "children": []
+  },
+  {
+    "key": "connected-components",
+    "title": "Connected Components",
+    "parent": "path-finding",
+    "description": "Learn about connected components, and using the depth first search algorithm to determine if two vertices belong to the same component.",
+    "children": []
+  },
+  {
+    "key": "topological-sort",
+    "title": "Topological Sort",
+    "parent": "path-finding",
+    "description": "Learn about topological sort, an algorithm for the linear ordering of vertices in a graph such that for all edges (u, v), u comes before v.",
+    "children": []
+  },
+  {
+    "key": "kahns-topological-sort-algorithm",
+    "title": "Kahn's Topological Sort Algorithm",
+    "parent": "path-finding",
+    "description": "Learn about Kahn's Topological Sort Algorithm, an algorithm for the topological ordering of a directed graph, by using depth first search.",
+    "children": []
+  },
+  {
+    "key": "strongly-connected-components",
+    "title": "Strongly Connected Components",
+    "parent": "path-finding",
+    "description": "Learn about strongly connected components, a property such that there exists a path from any vertex to every other vertex in a subgraph.",
+    "children": []
+  },
+  {
+    "key": "kosarajus-algorithm",
+    "title": "Kosaraju's Algorithm",
+    "parent": "path-finding",
+    "description": "Learn about Kosaraju's Algorithm, an algorithm used for determining strongly connected components, by topological sorting and then using depth first search.",
+    "children": []
+  },
+  {
+    "key": "time-and-space-complexity",
+    "title": "Time and Space Complexity Comparison",
+    "parent": "path-finding",
+    "description": "Learn about the time and space complexity comparisons between the algorithms listed in this topic.",
+    "children": []
+  },
+  {
+    "key": "introduction",
+    "title": "Introduction",
+    "parent": "shortest-path-finding",
+    "description": "General overview of shortest path finding algorithms in the context of graphs, terminology and concepts that will be covered in this topic.",
+    "children": []
+  },
+  {
+    "key": "weighted-graph",
+    "title": "Weighted Graph",
+    "parent": "shortest-path-finding",
+    "description": "Learn about weighted graphs, which are graphs such that the edges are given a numerical weight, which may represent length, cost, or capacity.",
+    "children": []
+  },
+  {
+    "key": "edge-relaxation",
+    "title": "Edge Relaxation",
+    "parent": "shortest-path-finding",
+    "description": "Learn about edge relaxation, which is a common operation used in shortest path finding algorithms, that is used to lower the cost of reaching a vertex by using another vertex.",
+    "children": []
+  },
+  {
+    "key": "dijkstras-algorithm",
+    "title": "Dijkstra's Algorithm",
+    "parent": "shortest-path-finding",
+    "description": "Learn about Dijkstra's Algorithm, a shortest path finding algorithm that is efficient for finding shortest paths in a graph with non-negative edge weights.",
+    "children": []
+  },
+  {
+    "key": "bellman-ford-algorithm",
+    "title": "Bellman-Ford Algorithm",
+    "parent": "shortest-path-finding",
+    "description": "Learn about the Bellman-Ford Algorithm, a shortest path finding algorithm that is used for finding shortest paths with potentially negative edge weights.",
+    "children": []
+  },
+  {
+    "key": "floyd-warshall-algorithm",
+    "title": "Floyd-Warshall Algorithm",
+    "parent": "shortest-path-finding",
+    "description": "Learn about the Floyd-Warshall Algorithm, a shortest path finding algorithm that is used for finding shortest paths with negative edge weights by using dynamic programming.",
+    "children": []
+  },
+  {
+    "key": "time-and-space-complexity-comparison",
+    "title": "Time and Space Complexity Comparison",
+    "parent": "shortest-path-finding",
+    "description": "Learn about the time and space complexity comparisons between the algorithms listed in this topic.",
+    "children": []
+  },
+  {
+    "key": "introduction",
+    "title": "Introduction",
+    "parent": "minimum-spanning-trees",
+    "description": "General overview of minimum spanning trees, terminology and concepts that will be covered in this topic.",
+    "children": []
+  },
+  {
+    "key": "greedy-algorithm",
+    "title": "Greedy Algorithm",
+    "parent": "minimum-spanning-trees",
+    "description": "Learn about greedy algorithms, a class of algorithms with the property of always choosing the locally optimal choice with the goal of achieving a globally optimal solution.",
+    "children": []
+  },
+  {
+    "key": "prims-algorithm",
+    "title": "Prim's Algorithm",
+    "parent": "minimum-spanning-trees",
+    "description": "Learn about Prim's Algorithm, an algorithm for finding the minimum spanning tree by always choosing the next least weight edge from the current minimum spanning tree.",
+    "children": []
+  },
+  {
+    "key": "kruskals-algorithm",
+    "title": "Kruskal's Algorithm",
+    "parent": "minimum-spanning-trees",
+    "description": "Learn about Kruskal's Algorithm, an algorithm for finding the minimum spanning tree by always choosing the next least weight edge overall such that no cycles are formed.",
+    "children": []
+  },
+  {
+    "key": "clustering",
+    "title": "Clustering",
+    "parent": "minimum-spanning-trees",
+    "description": "Learn about the clustering problem, which refers to organizing points into k groups or clusters that maximize the distance between them.",
+    "children": []
+  },
+  {
+    "key": "time-and-space-complexity-comparison",
+    "title": "Time and Space Complexity Comparison",
+    "parent": "minimum-spanning-trees",
+    "description": "Learn about the time and space complexity comparisons between the algorithms listed in this topic.",
+    "children": []
+  },
+  {
+    "key": "introduction",
+    "title": "Introduction",
+    "parent": "flow-networks",
+    "description": "General overview of the data structures and algorithms for representing flow networks, terminology and concepts that will be covered in this topic.",
+    "children": []
+  },
+  {
+    "key": "max-flow-min-cut",
+    "title": "Max Flow Min Cut",
+    "parent": "flow-networks",
+    "description": "Learn about max flow min cut, a concept in network flow that states the max flow from the source to sink is equal to the total weight fo the edges in the min cut.",
+    "children": []
+  },
+  {
+    "key": "ford-fulkerson-algorithm",
+    "title": "Ford-Fulkerson Algorithm",
+    "parent": "flow-networks",
+    "description": "Learn about the Ford-Fulkerson Algorithm, an algorithm for finding the max flow within a flow network by greedily augmenting paths.",
+    "children": []
+  },
+  {
+    "key": "time-and-space-complexity-comparison",
+    "title": "Time and Space Complexity Comparison",
+    "parent": "flow-networks",
+    "description": "Learn about the time and space complexity comparisons between the algorithms listed in this topic.",
+    "children": []
+  },
+  {
+    "key": "introduction",
+    "title": "Introduction",
+    "parent": "randomized-algorithms",
+    "description": "General overview of randomized algorithms, terminology and concepts that will be covered in this topic.",
+    "children": []
+  },
+  {
+    "key": "expected-time",
+    "title": "Expected Time",
+    "parent": "randomized-algorithms",
+    "description": "Learn about expected time, an aspect of algorithmic analysis that deals with determining probabilistically expected complexity of certain algorithms.",
+    "children": []
+  },
+  {
+    "key": "quick-select-revisited",
+    "title": "Quick Select (Revisited)",
+    "parent": "randomized-algorithms",
+    "description": "Learn about quick select, revisited but in the context of randomized algorithms, and how to analyze its time complexity more precisely.",
+    "children": []
+  },
+  {
+    "key": "quick-sort-revisited",
+    "title": "Quick Sort (Revisited)",
+    "parent": "randomized-algorithms",
+    "description": "Learn about quick sort, revisited but in the context of randomized algorithms, and how to analyze its time complexity more precisely.",
+    "children": []
+  },
+  {
+    "key": "monte-carlo-algorithm",
+    "title": "Monte Carlo Algorithm",
+    "parent": "randomized-algorithms",
+    "description": "Learn about Monte Carlo algorithms, which are a type of randomized algorithms that are guaranteed to be fast but only probabilistically correct.",
+    "children": []
+  },
+  {
+    "key": "las-vegas-algorithm",
+    "title": "Las Vegas Algorithm",
+    "parent": "randomized-algorithms",
+    "description": "Learn about Las Vegas algorithms, which are a type of randomized algorithms that are guaranteed to be correct but only probabilistically fast.",
+    "children": []
+  },
+  {
+    "key": "time-and-space-complexity-comparison",
+    "title": "Time and Space Complexity Comparison",
+    "parent": "randomized-algorithms",
+    "description": "Learn about the time and space complexity comparisons between the algorithms listed in this topic.",
+    "children": []
+  },
+  {
+    "key": "introduction",
+    "title": "Introduction",
+    "parent": "random-number-generators",
+    "description": "General overview of random number generators, terminology and concepts that will be covered in this topic.",
+    "children": []
+  },
+  {
+    "key": "pseudorandom-number-generators",
+    "title": "Pseudo Random Number Generators",
+    "parent": "random-number-generators",
+    "description": "Learn about pseudorandom number generators, which are deterministic algorithms for generating sequences of numbers with properties that approximate sequences of random numbers.",
+    "children": []
+  },
+  {
+    "key": "blum-blum-shub",
+    "title": "Blum Blum Shub",
+    "parent": "random-number-generators",
+    "description": "Learn about the Blum Blum Shub algorithm, an algorithm for pseudorandom number generation that uses primes and modularization.",
+    "children": []
+  },
+  {
+    "key": "lagged-fibonacci-generator",
+    "title": "Lagged Fibonacci Generator",
+    "parent": "random-number-generators",
+    "description": "Learn about the Lagged Fibonacci generator, an algorithm for pseudorandom number generation that uses a generalization of the Fibonacci sequence.",
+    "children": []
+  },
+  {
+    "key": "linear-congruential-generator",
+    "title": "Linear Congruential Generator",
+    "parent": "random-number-generators",
+    "description": "Learn about the linear congruential generator, an algorithm for pseudorandom number generation that uses a discontinuous piecewise linear function.",
+    "children": []
+  },
+  {
+    "key": "mersenne-twister",
+    "title": "Mersenne Twister",
+    "parent": "random-number-generators",
+    "description": "Learn about the Mersenne Twister, an algorithm for pseudorandom number generation that uses Mersenne primes.",
+    "children": []
+  },
+  {
+    "key": "time-and-space-complexity-comparison",
+    "title": "Time and Space Complexity Comparison",
+    "parent": "random-number-generators",
+    "description": "Learn about the time and space complexity comparisons between the algorithms listed in this topic.",
+    "children": []
+  },
+  {
+    "key": "introduction",
+    "title": "Introduction",
+    "parent": "numerical-computation",
+    "description": "General overview of numerical computation, terminology and concepts that will be covered in this topic.",
+    "children": []
+  },
+  {
+    "key": "euclids-algorithm",
+    "title": "Euclid's Algorithm",
+    "parent": "numerical-computation",
+    "description": "Learn about Euclid's algorithm, an efficient algorithm for computing the greatest common divisor (GCD) between two numbers.",
+    "children": []
+  },
+  {
+    "key": "multiplication-algorithm",
+    "title": "Multiplication Algorithm",
+    "parent": "numerical-computation",
+    "description": "Learn about multiplication algorithms, which are algorithms used to multiply two numbers faster than standard multiplication.",
+    "children": []
+  },
+  {
+    "key": "karatsuba-algorithm",
+    "title": "Karatsuba Algorithm",
+    "parent": "numerical-computation",
+    "description": "Learn about the Karatsuba algorithm, a multiplication algorithm that runs in faster than quadratic time.",
+    "children": []
+  },
+  {
+    "key": "newton-raphson-method",
+    "title": "Newton-Raphson Method",
+    "parent": "numerical-computation",
+    "description": "Learn about the Newton-Raphson method, which is a method used for finding better approximations to the roots of a function.",
+    "children": []
+  },
+  {
+    "key": "modular-exponentiation",
+    "title": "Modular Exponentiation",
+    "parent": "numerical-computation",
+    "description": "Learn about modular exponentiation, an efficient method of exponentiation over a modulus.",
+    "children": []
+  },
+  {
+    "key": "linear-programming",
+    "title": "Linear Programming",
+    "parent": "numerical-computation",
+    "description": "Learn about linear programming, which is the technique of maximizing and minimizing a linear function over a set of constraints, and bring linear programs to useful standard forms.",
+    "children": []
+  },
+  {
+    "key": "simplex-algorithm",
+    "title": "Simplex Algorithm",
+    "parent": "numerical-computation",
+    "description": "Learn about the simplex algorithm, a classic algorithm that uses simplex's to solve linear programs.",
+    "children": []
+  },
+  {
+    "key": "polynomial-multiplication",
+    "title": "Polynomial Multiplication",
+    "parent": "numerical-computation",
+    "description": "Learn about the fundamental problem of polynomial multiplication, which refers to methods of multiplying polynomials in faster than quadratic time.",
+    "children": []
+  },
+  {
+    "key": "fast-fourier-transform",
+    "title": "Fast Fourier Transform",
+    "parent": "numerical-computation",
+    "description": "Learn about the fast Fourier transform which uses the characteristics of roots of unity to perform polynomial multiplication in linearithmic time, as well as other important applications.",
+    "children": []
+  },
+  {
+    "key": "time-and-space-complexity-comparison",
+    "title": "Time and Space Complexity Comparison",
+    "parent": "numerical-computation",
+    "description": "Learn about the time and space complexity comparisons between the algorithms listed in this topic.",
+    "children": []
+  },
+  {
+    "key": "introduction",
+    "title": "Introduction",
+    "parent": "computational-geometry",
+    "description": "General overview of computational geometry, terminology and concepts that will be covered in this topic.",
+    "children": []
+  },
+  {
+    "key": "convex-hull",
+    "title": "Convex Hull",
+    "parent": "computational-geometry",
+    "description": "Learn about the convex hull problem, which is finding the smallest convex set that contains a set of points.",
+    "children": []
+  },
+  {
+    "key": "graham-scan",
+    "title": "Graham Scan",
+    "parent": "computational-geometry",
+    "description": "Learn about the Graham scan, an efficient method for computing the convex hull of a set of points in linearithmic time.",
+    "children": []
+  },
+  {
+    "key": "jarvis-algorithm",
+    "title": "Jarvis Algorithm",
+    "parent": "computational-geometry",
+    "description": "Learn about the Jarvis algorithm, an efficient method for computing the convex hull of a set of points.",
+    "children": []
+  },
+  {
+    "key": "time-and-space-complexity-comparison",
+    "title": "Time and Space Complexity Comparison",
+    "parent": "computational-geometry",
+    "description": "Learn about the time and space complexity comparisons between the algorithms listed in this topic.",
+    "children": []
+  },
+  {
+    "key": "introduction",
+    "title": "Introduction",
+    "parent": "dynamic-programming",
+    "description": "General overview of dynamic programming, terminology and concepts that will be covered in this topic.",
+    "children": []
+  },
+  {
+    "key": "overlapping-subproblems-and-optimal-substructures",
+    "title": "Overlapping Subproblems and Optimal Substructures",
+    "parent": "dynamic-programming",
+    "description": "Learn about the overlapping subproblem and optimal substructures, which are fundamental properties of a problem to be able to apply dynamic programming.",
+    "children": []
+  },
+  {
+    "key": "memoization",
+    "title": "Memoization",
+    "parent": "dynamic-programming",
+    "description": "Learn about memoization, which refers to a technique of storing result of previous subproblems that is crucial in dynamic programming.",
+    "children": []
+  },
+  {
+    "key": "introduction",
+    "title": "Introduction",
+    "parent": "dynamic-programming-problems",
+    "description": "General overview of canonical dynamic programming problems, terminology and concepts that will be covered in this topic.",
+    "children": []
+  },
+  {
+    "key": "fibonacci-number",
+    "title": "Fibonacci Number",
+    "parent": "dynamic-programming-problems",
+    "description": "Learn about the Fibonacci number problem, which refers to efficiently computing a particular Fibonacci number and the downsides of a naive solution.",
+    "children": []
+  },
+  {
+    "key": "maximum-sum-contiguous-subarray",
+    "title": "Maximum Sum Contiguous Subarray",
+    "parent": "dynamic-programming-problems",
+    "description": "Learn about the maximum sum contiguous subarray problem, which refers to finding a contiguous (in sequence) subarray that has the maximum sum.",
+    "children": []
+  },
+  {
+    "key": "kadanes-algorithm",
+    "title": "Kadane's Algorithm",
+    "parent": "dynamic-programming-problems",
+    "description": "Learn about Kadane's algorithm, a simple dynamic programming algorithm used to find the maximum contiguous subarray using linear time but constant space.",
+    "children": []
+  },
+  {
+    "key": "longest-common-subsequence",
+    "title": "Longest Common Subsequence",
+    "parent": "dynamic-programming-problems",
+    "description": "Learn about the longest common subsequence problem, which refers to finding the subsequence (elements not necessarily in order) of maximum length between two arrays.",
+    "children": []
+  },
+  {
+    "key": "longest-increasing-subsequence",
+    "title": "Longest Increasing Subsequence",
+    "parent": "dynamic-programming-problems",
+    "description": "Learn about the longest increasing subsequence problem, which refers to finding a subsequence (elements not necessarily in order) of maximum length where each successive element is greater than the previous.",
+    "children": []
+  },
+  {
+    "key": "longest-common-substring",
+    "title": "Longest Common Substring",
+    "parent": "dynamic-programming-problems",
+    "description": "Learn about the longest common substring problem, which refers to finding the substring in common between two strings of maximum length.",
+    "children": []
+  },
+  {
+    "key": "longest-palindromic-substring",
+    "title": "Longest Palindromic Substring",
+    "parent": "dynamic-programming-problems",
+    "description": "Learn about the longest palindromic substring problem, which refers to finding the substring of maximum length that is also a palindrome (same forwards as reversed).",
+    "children": []
+  },
+  {
+    "key": "binomial-coefficient",
+    "title": "Binomial Coefficient",
+    "parent": "dynamic-programming-problems",
+    "description": "Learn about the binomial coefficient problem, which refers to determining n choose k operations.",
+    "children": []
+  },
+  {
+    "key": "coin-change-problem",
+    "title": "Coin Change Problem",
+    "parent": "dynamic-programming-problems",
+    "description": "Learn about the coin change problem, which refers to being able to create the minimum amount of coins for change given an arbitrary set of values of possible denominations.",
+    "children": []
+  },
+  {
+    "key": "maximum-size-square-submatrix",
+    "title": "Maximum Size Square Submatrix",
+    "parent": "dynamic-programming-problems",
+    "description": "Learn about the maximum size square submatrix problem, which refers to finding the largest submatrix of all 1's in a matrix with binary values.",
+    "children": []
+  },
+  {
+    "key": "assembly-line-scheduling",
+    "title": "Assembly Line Scheduling",
+    "parent": "dynamic-programming-problems",
+    "description": "Learn about the assembly line scheduling problem, which refers to minimizing the time needed to \"assemble\" a certain product given multiple assembly lines.",
+    "children": []
+  },
+  {
+    "key": "rod-cutting",
+    "title": "Rod Cutting",
+    "parent": "dynamic-programming-problems",
+    "description": "Learn about the rod cutting problem, which refers to splitting up the length of a rod, and maximizing the total value of each individual piece.",
+    "children": []
+  },
+  {
+    "key": "levenschtein-edit-distance",
+    "title": "Levenschtein Edit Distance",
+    "parent": "dynamic-programming-problems",
+    "description": "Learn about the dynamic programming algorithm used for determining the Levenschtein edit distance.",
+    "children": []
+  },
+  {
+    "key": "0-1-knapsack-problem",
+    "title": "0-1 Knapsack Problem",
+    "parent": "dynamic-programming-problems",
+    "description": "Learn about the 0-1 Knapsack problem, which is the problem of determining which combination of items with weights and values maximizes value.",
+    "children": []
+  },
+  {
+    "key": "time-and-space-complexity-comparison",
+    "title": "Time and Space Complexity Comparison",
+    "parent": "dynamic-programming-problems",
+    "description": "Learn about the time and space complexity comparisons between the algorithms listed in this topic.",
+    "children": []
+  },
+  {
+    "key": "introduction",
+    "title": "Introduction",
+    "parent": "computational-complexity",
+    "description": "General overview of computational complexity, terminology and concepts that will be covered in this topic.",
+    "children": []
+  },
+  {
+    "key": "big-o-notation",
+    "title": "Big-O Notation",
+    "parent": "computational-complexity",
+    "description": "Learn abotu big-O notation in the context of O, Omega and Theta, which are used to determining lower, upper, and tight bounds on the complexity of a problem.",
+    "children": []
+  },
+  {
+    "key": "small-o-notation",
+    "title": "Small-O Notation",
+    "parent": "computational-complexity",
+    "description": "Learn about small-O notation, which is used in determining strict upper and lower bounds on the complexity of a problem.",
+    "children": []
+  },
+  {
+    "key": "amortization",
+    "title": "Amortization",
+    "parent": "computational-complexity",
+    "description": "Learn about amortization, an analysis method for time and space complexity, and its context within data structures and algorithms.",
+    "children": []
+  },
+  {
+    "key": "introduction",
+    "title": "Introduction",
+    "parent": "complexity-classes",
+    "description": "General overview of complexity classes, terminology and concepts that will be covered in this topic.",
+    "children": []
+  },
+  {
+    "key": "p-complexity",
+    "title": "P Complexity",
+    "parent": "complexity-classes",
+    "description": "Learn about polynomial time, a common class of problems for which polynomial time algorithms exist to solve them, and the various characteristic of those problems.",
+    "children": []
+  },
+  {
+    "key": "np-complexity",
+    "title": "NP Complexity",
+    "parent": "complexity-classes",
+    "description": "Learn about non-deterministic polynomial time, a class of problems for which no polynomial time algorithm exists to solve them, but which may be verified in polynomial time.",
+    "children": []
+  },
+  {
+    "key": "introduction",
+    "title": "Introduction",
+    "parent": "object-oriented-programming",
+    "description": "General overview of the motivations behind object oriented programming, terminology and concepts that will be covered in this topic.",
+    "children": []
+  },
+  {
+    "key": "class-and-instance",
+    "title": "Class and Instance",
+    "parent": "object-oriented-programming",
+    "description": "Learn about classes and instances, which are are structures for a template of creating objects, and concrete occurences of that object.",
+    "children": []
+  },
+  {
+    "key": "inheritance",
+    "title": "Inheritance",
+    "parent": "object-oriented-programming",
+    "description": "Learn about inheritance, which is when an object of a particular class is able to acquire all of the properties, methods and functions of its parent class.",
+    "children": []
+  },
+  {
+    "key": "encapsulation",
+    "title": "Encapsulation",
+    "parent": "object-oriented-programming",
+    "description": "Learn about encapsulation, which is a property of Objects to be able to restrict access to its internal fields, methods and functions.",
+    "children": []
+  },
+  {
+    "key": "polymorphism",
+    "title": "Polymorphism",
+    "parent": "object-oriented-programming",
+    "description": "Learn about polymorphism, which is the mechanism of being able to use some abstract interface to apply to multiple classes that implement that interface.",
+    "children": []
+  },
+  {
+    "key": "introduction",
+    "title": "Introduction",
+    "parent": "functional-programming",
+    "description": "General overview of the motivations behind functional programming, terminology and concepts that will be covered in this topic.",
+    "children": []
+  },
+  {
+    "key": "first-class-function",
+    "title": "First Class Function",
+    "parent": "functional-programming",
+    "description": "Learn about the first class function, which is a property of functional programming languages where functions can be passed as arguments to other functions.",
+    "children": []
+  },
+  {
+    "key": "recursion",
+    "title": "Recursion",
+    "parent": "functional-programming",
+    "description": "Learn about recursion, a programming method and general mechanism in functional programming, where solutions to problems depend on smaller subproblems.",
+    "children": []
+  },
+  {
+    "key": "lambda-notation",
+    "title": "Lambda Notation",
+    "parent": "functional-programming",
+    "description": "Learn about lambda notation, a system in mathematical logic for expressing computation based on function abstraction and application using variable binding and substitution.",
+    "children": []
+  },
+  {
+    "key": "function-composition",
+    "title": "Function Composition",
+    "parent": "functional-programming",
+    "description": "Learn about function composition, a technique in functional programming for applying functions to the result of another function to produce a third function.",
+    "children": []
+  },
+  {
+    "key": "map-filter-reduce",
+    "title": "Map, Filter, Reduce",
+    "parent": "functional-programming",
+    "description": "Learn about map, filter, and reduce, which are fundamental functions that operate on lists of elements, and are used to augment, remove, and combine elements.",
+    "children": []
+  },
+  {
+    "key": "currying",
+    "title": "Currying",
+    "parent": "functional-programming",
+    "description": "Learn about currying, a technique in functional programming to translate the evaluation of a function with multiple arguments into a evaluating a sequence of functions.",
+    "children": []
+  },
+  {
+    "key": "compose",
+    "title": "Compose",
+    "parent": "functional-programming",
+    "description": "Learn about compose, a technique in functional programming for simplifying function composition.",
+    "children": []
+  },
+  {
+    "key": "piping",
+    "title": "Piping",
+    "parent": "functional-programming",
+    "description": "Learn about piping, a technique in functional programming for feeding the output of one function as the input of a subsequent function.",
+    "children": []
+  },
+  {
+    "key": "zip-unzip",
+    "title": "Zip, Unzip",
+    "parent": "functional-programming",
+    "description": "Learn about zip and unzip, which are techniques in functional programming for combining two lists into a list of tuples and vice versa.",
+    "children": []
+  },
+  {
+    "key": "introduction",
+    "title": "Introduction",
+    "parent": "design-patterns",
+    "description": "General overview of the motivations behind using design patterns, terminology and concepts that will be covered in this topic.",
+    "children": []
+  },
+  {
+    "key": "adapter",
+    "title": "Adapter",
+    "parent": "design-patterns",
+    "description": "Learn about the adapter pattern, which is used for converting incompatible interfaces.",
+    "children": []
+  },
+  {
+    "key": "bridge",
+    "title": "Bridge",
+    "parent": "design-patterns",
+    "description": "Learn about the bridge pattern, which is used for decoupling abstractions from their implementations.",
+    "children": []
+  },
+  {
+    "key": "builder",
+    "title": "Builder",
+    "parent": "design-patterns",
+    "description": "Learn about the builder pattern, which is used for constructing and parsing complex objects.",
+    "children": []
+  },
+  {
+    "key": "chain-of-responsibility",
+    "title": "Chain of Responsibility",
+    "parent": "design-patterns",
+    "description": "Learn about the chain of responsibility pattern, which is using more than one object to handle a request.",
+    "children": []
+  },
+  {
+    "key": "command",
+    "title": "Command",
+    "parent": "design-patterns",
+    "description": "Learn about the command pattern, which is used to encapsulate and parameterize a request object.",
+    "children": []
+  },
+  {
+    "key": "composite",
+    "title": "Composite",
+    "parent": "design-patterns",
+    "description": "Learn about the composite pattern, which is used to represent objects in a recursive tree structure.",
+    "children": []
+  },
+  {
+    "key": "decorator",
+    "title": "Decorator",
+    "parent": "design-patterns",
+    "description": "Learn about the decorator pattern, which is used to attach functionality to an object dynamically.",
+    "children": []
+  },
+  {
+    "key": "factory",
+    "title": "Factory",
+    "parent": "design-patterns",
+    "description": "Learn about the factory pattern, which is used to create objects of different parameters.",
+    "children": []
+  },
+  {
+    "key": "iterator",
+    "title": "Iterator",
+    "parent": "design-patterns",
+    "description": "Learn about the iterator pattern, which is used to traverse through a collection of objects without breaking encapsulation.",
+    "children": []
+  },
+  {
+    "key": "null-object",
+    "title": "Null Object",
+    "parent": "design-patterns",
+    "description": "Learn about the null object pattern, which is used to encapsulate the absence of an object.",
+    "children": []
+  },
+  {
+    "key": "observer",
+    "title": "Observer",
+    "parent": "design-patterns",
+    "description": "Learn about the observer pattern, which is used for objects to automatically update its dependents.",
+    "children": []
+  },
+  {
+    "key": "prototype",
+    "title": "Prototype",
+    "parent": "design-patterns",
+    "description": "Learn about the prototype pattern, which is used to instantiate objects with specific parameters.",
+    "children": []
+  },
+  {
+    "key": "singleton",
+    "title": "Singleton",
+    "parent": "design-patterns",
+    "description": "Learn about the singleton pattern, which is used to instantiate an object of only one instance.",
+    "children": []
+  },
+  {
+    "key": "strategy",
+    "title": "Strategy",
+    "parent": "design-patterns",
+    "description": "Learn about the strategy pattern, which is used to encapsulate a family of algorithms.",
+    "children": []
+  },
+  {
+    "key": "template-method",
+    "title": "Template Method",
+    "parent": "design-patterns",
+    "description": "Learn about the template method pattern, which is used to provide a skeleton for a particular class.",
+    "children": []
+  },
+  {
+    "key": "visitor",
+    "title": "Visitor",
+    "parent": "design-patterns",
+    "description": "Learn about the visitor pattern, which is used to perform dynamic dispatch on multiple polymorphic objects.",
+    "children": []
+  },
+  {
+    "key": "introduction",
+    "title": "Introduction",
+    "parent": "bash-scripting",
+    "description": "General overview of Bash scripting, terminology, and concepts that will be covered in this topic.",
+    "children": []
+  },
+  {
+    "key": "shell-scripts",
+    "title": "Shell Scripts",
+    "parent": "bash-scripting",
+    "description": "Learn about creating shell scripts, variables, and working with standard streams.",
+    "children": []
+  },
+  {
+    "key": "common-functions",
+    "title": "Common Functions",
+    "parent": "bash-scripting",
+    "description": "Learn about common and useful functions in shell scripts, and how they can be used in conjunction.",
+    "children": []
+  },
+  {
+    "key": "exit-status-codes",
+    "title": "Exit Status Codes",
+    "parent": "bash-scripting",
+    "description": "Learn about the purpose and use of exit status codes, which give shell scripts useful information, often of other shell scripts themselves.",
+    "children": []
+  },
+  {
+    "key": "file-access-in-scripts",
+    "title": "File Access in Scripts",
+    "parent": "bash-scripting",
+    "description": "Learn about various functions and techniques for file access and manipulation using shell scripts.",
+    "children": []
+  },
+  {
+    "key": "introduction",
+    "title": "Introduction",
+    "parent": "regular-expressions",
+    "description": "General overview of regular expressions in the context of computer science theory, terminology, and concepts that will be covered in this topic.",
+    "children": []
+  },
+  {
+    "key": "basic-syntax",
+    "title": "Basic Syntax",
+    "parent": "regular-expressions",
+    "description": "Learn about the various syntax used to construct regular expressions, and how they can be combined to create concise and useful patterns.",
+    "children": []
+  },
+  {
+    "key": "regex-flags",
+    "title": "Regex Flags",
+    "parent": "regular-expressions",
+    "description": "Learn about regex flags, which refers to common flags used to modifying the behavior of matches.",
+    "children": []
+  },
+  {
+    "key": "grouping-and-capturing",
+    "title": "Grouping and Capturing",
+    "parent": "regular-expressions",
+    "description": "Learn about grouping and capturing, which refers to finding matches around some defined group of tokens, but being able to return those tokens themselves.",
+    "children": []
+  },
+  {
+    "key": "look-ahead-look-behind",
+    "title": "Look Ahead, Look Behind",
+    "parent": "regular-expressions",
+    "description": "Learn about look ahead and look behind, which refers to making assertions about next or previous characters.",
+    "children": []
+  }
+]

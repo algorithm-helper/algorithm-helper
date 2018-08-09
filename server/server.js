@@ -34,10 +34,14 @@ app.listen(port, () => {
 /**
  * POST /accounts/login
  * Logs user in with the given credentials.
+ *
  * @param {string} email
  * @param {string} password
  */
 app.post('/accounts/login', (req, res) => {
+  const userData = _.pick(req.body, ['email', 'password']);
+
+
   const { email, password } = req.body;
   log.debug(email);
   log.debug(password);
@@ -46,6 +50,7 @@ app.post('/accounts/login', (req, res) => {
 /**
  * POST /accounts/sign-up
  * Registers user with the given information.
+ *
  * @param {string} fullName
  * @param {string} email
  * @param {string} password
