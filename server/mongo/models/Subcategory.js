@@ -2,16 +2,6 @@ const mongoose = require('mongoose');
 const validator = require('validator');
 
 const Subcategory = mongoose.model('Subcategory', {
-
-});
-
-module.exports = { Subcategory };
-
-
-const mongoose = require('mongoose');
-const validator = require('validator');
-
-const Category = mongoose.model('Category', {
   key: {
     type: String,
     required: true,
@@ -25,17 +15,27 @@ const Category = mongoose.model('Category', {
     trim: true,
     minlength: 1,
   },
+  parent: {
+    type: String,
+    required: true,
+    trim: true,
+    minlength: 1,
+  },
   description: {
     type: String,
     required: true,
     trim: true,
     minlength: 1,
   },
-  orderKey: {
-    type: Number,
+  imageUrl: {
+    type: String,
     required: true,
+    validate: {
+      validator: validator.isURL,
+      message: '{VALUE} is an invalid url',
+    },
   },
-  colorKey: {
+  orderKey: {
     type: Number,
     required: true,
   },
@@ -45,4 +45,4 @@ const Category = mongoose.model('Category', {
   },
 });
 
-module.exports = { Category };
+module.exports = { Subcategory };
