@@ -8,20 +8,17 @@ class TopicItemNavBar extends React.Component {
     this.state = {
       indexSelected: 0,
     };
-
-    this.handleClick = this.handleClick.bind(this);
   }
 
   componentWillMount() {
     this.setState({ indexSelected: this.props.indexStart });
   }
 
-  handleClick(index) {
+  handleClick = index => {
     this.setState({ indexSelected: index });
   }
 
   render() {
-    // const topicItemsTest = ['Article', 'Code', 'Video'];
     const topicItemsTest = ['Article', 'Code'];
     const colorName = `color-${this.props.colorKey}`;
 

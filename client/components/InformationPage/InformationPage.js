@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { Col, Container, Row } from 'reactstrap';
 
 import JumbotronMedium from '../JumbotronMedium/';
-import Markdown from '../Markdown';
+import MarkdownContainer from '../MarkdownContainer';
 import Footer from '../Footer';
 
 import { resetColorTheme } from '../../actions/ColorThemeActions';
@@ -22,7 +22,7 @@ const InformationPage = props => {
         <Row>
           <Col md="2"/>
           <Col md="8">
-            <Markdown url={url}/>
+            <MarkdownContainer url={url}/>
           </Col>
           <Col md="2"/>
         </Row>

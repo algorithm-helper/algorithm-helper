@@ -5,6 +5,7 @@ import { withRouter } from 'react-router-dom';
 import marked from 'marked';
 import MDSpinner from 'react-md-spinner';
 
+import MarkdownContainer from './MarkdownContainer';
 import colors from '../../../data/colors.json';
 
 const S3_URL_PREFIX = 'https://s3.amazonaws.com/algorithm-helper/content/categories';
