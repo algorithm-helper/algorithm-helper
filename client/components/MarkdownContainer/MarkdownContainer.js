@@ -22,6 +22,10 @@ class MarkdownContainer extends React.Component {
     .then(result => result.text())
     .then(result => {
       this.setState({ markdownContent: marked(result) });
+
+      if (this.props.onLoaded) {
+        this.props.onLoaded();
+      }
     })
     .catch(() => {});
   }

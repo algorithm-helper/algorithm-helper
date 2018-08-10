@@ -1,3 +1,5 @@
+@import '../base/colors';
+
 .markdown-container h1 {
   font-size: 1.75em;
 }
@@ -27,9 +29,9 @@
 }
 
 .markdown-container code {
-  background-color: #282a36;
-  color: white;
-  padding: 5px;
+  background-color: $CODE_BG_COLOR;
+  color: $BLACK;
+  padding: 2px;
   border-radius: 2px;
 }
 
@@ -37,9 +39,15 @@
   border-radius: 2px;
 }
 
+.markdown-container pre code {
+  color: $WHITE;
+  background-color: $PRE_CODE_BG_COLOR;
+  padding: 1em;
+}
+
 .markdown-container blockquote {
-  background: #f9f9f9;
-  border-left: 10px solid #ccc;
+  background: $BLOCKQUOTE_BG_COLOR;
+  border-left: 10px solid $OUTLINE_COLOR;
   margin: 1.5em 10px;
   padding: 0.5em;
   quotes: "\201C""\201D""\2018""\2019";

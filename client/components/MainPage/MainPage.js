@@ -38,7 +38,7 @@ class MainPage extends React.Component {
       <div className="main-page-container">
         <MainPageJumbotron
           title={'Learn about algorithms and data structures.'}
-          subtitle={'Algorithmica is an educational resource for learning about algorithms, ' +
+          subtitle={'Algorithm Helper is an educational resource for learning about algorithms, ' +
             'data structures, and software engineering topics.'}
         />
         <MainArea

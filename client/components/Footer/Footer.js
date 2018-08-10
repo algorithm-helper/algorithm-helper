@@ -24,7 +24,7 @@ const Footer = props => (
             Privacy Policy
           </Link>
           <div className="footer-item">
-            &copy; 2018 Algorithmica. All rights reserved.
+            &copy; 2018 Algorithm Helper. All rights reserved.
           </div>
         </Col>
         <Col md="2" />

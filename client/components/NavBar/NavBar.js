@@ -77,7 +77,7 @@ class NavBar extends React.Component {
               light
             />
           </div>
-          Algorithmica
+          Algorithm Helper
         </NavbarBrand>
         <NavbarToggler onClick={this.toggle} />
         <Collapse

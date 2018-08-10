@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({
   extended: false
 }));
 app.use(session({
-  secret: '<Algorithmica Secret>',
+  secret: '<Algorithm Helper Secret>',
   resave: false,
   saveUninitialized: true,
   cookie: {

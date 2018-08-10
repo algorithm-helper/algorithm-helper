@@ -1,6 +1,6 @@
 Effective: August 1, 2018
 
-Algorithmica ("us", "we", or "our") operates the [https://algorithmica.io](https://algorithmica.io) website (the "Service").
+Algorithm Helper ("us", "we", or "our") operates the [https://algorithmica.io](https://algorithmica.io) website (the "Service").
 
 This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data.
 
@@ -39,7 +39,7 @@ Examples of Cookies we use:
 
 ## Section 2 - Use of Data
 
-Algorithmica uses the collected data for various purposes:
+Algorithm Helper uses the collected data for various purposes:
 
 - To provide and maintain the Service
 - To notify you about changes to our Service
@@ -56,16 +56,16 @@ If you are located outside Canada and choose to provide information to us, pleas
 
 Your consent to this Privacy Policy followed by your submission of such information represents your agreement to that transfer.
 
-Algorithmica will take all steps reasonably necessary to ensure that your data is treated securely and in accordance with this Privacy Policy and no transfer of your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of your data and other personal information.
+Algorithm Helper will take all steps reasonably necessary to ensure that your data is treated securely and in accordance with this Privacy Policy and no transfer of your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of your data and other personal information.
 
 ## Section 4 - Disclosure Of Data
 
 ### Legal Requirements
 
-Algorithmica may disclose your Personal Data in the good faith belief that such action is necessary to:
+Algorithm Helper may disclose your Personal Data in the good faith belief that such action is necessary to:
 
 - To comply with a legal obligation
-- To protect and defend the rights or property of Algorithmica
+- To protect and defend the rights or property of Algorithm Helper
 - To prevent or investigate possible wrongdoing in connection with the Service
 - To protect the personal safety of users of the Service or the public
 - To protect against legal liability
