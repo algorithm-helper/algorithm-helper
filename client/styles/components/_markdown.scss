@@ -1,0 +1,51 @@
+.markdown-container h1 {
+  font-size: 1.75em;
+}
+
+.markdown-container h2 {
+  font-size: 1.6em;
+}
+
+.markdown-container h3 {
+  font-size: 1.5em;
+}
+
+.markdown-container h4 {
+  font-size: 1.4em;
+}
+
+.markdown-container h5 {
+  font-size: 1.3em;
+}
+
+.markdown-container h6 {
+  font-size: 1.25em;
+}
+
+.markdown-container a {
+  text-decoration: none;
+}
+
+.markdown-container code {
+  background-color: #282a36;
+  color: white;
+  padding: 5px;
+  border-radius: 2px;
+}
+
+.markdown-container pre {
+  border-radius: 2px;
+}
+
+.markdown-container blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+
+.markdown-container blockquote p {
+  display: inline;
+}
+

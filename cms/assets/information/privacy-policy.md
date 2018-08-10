@@ -6,7 +6,7 @@ This page informs you of our policies regarding the collection, use, and disclos
 
 We use your data to provide and improve the Service. By using the Service, you agree to the collection and use of information in accordance with this policy. Unless otherwise defined in this Privacy Policy, terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, accessible from [https://algorithmica.io](https://algorithmica.io).
 
-## Section 1 - Information Collection and User
+## Section 1 - Information Collection and User Data
 
 We collect several different types of information for various purposes to provide and improve our Service to you.
 

@@ -1,37 +1,35 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Col, Container, Row } from 'reactstrap';
 
 import JumbotronMedium from '../JumbotronMedium/';
+import Markdown from '../Markdown';
+import Footer from '../Footer';
 
 import { resetColorTheme } from '../../actions/ColorThemeActions';
 import settings from './settings.json';
 
-class InformationPage extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      articleUrl: '',
-    };
-  }
+const InformationPage = props => {
+  props.dispatch(resetColorTheme());
 
-  componentWillMount() {
-    this.props.dispatch(resetColorTheme());
+  const { title, url } = settings[props.informationKey];
 
-
-  }
-
-  render() {
-    const { title } = settings[this.props.informationKey];
-
-    return (
-      <div>
-        <JumbotronMedium
-          title={title}
-        />
-      </div>
-    );
-  }
+  return (
+    <div>
+      <JumbotronMedium title={title}/>
+      <Container className="information-page-markdown-container" fluid>
+        <Row>
+          <Col md="2"/>
+          <Col md="8">
+            <Markdown url={url}/>
+          </Col>
+          <Col md="2"/>
+        </Row>
+      </Container>
+      <Footer />
+    </div>
+  );
 }
 
 InformationPage.propTypes = {
