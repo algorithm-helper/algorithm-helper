@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom';
 import marked from 'marked';
 import MDSpinner from 'react-md-spinner';
 
-import MarkdownContainer from './MarkdownContainer';
+import MarkdownContainer from '../MarkdownContainer/';
 import colors from '../../../data/colors.json';
 
 const S3_URL_PREFIX = 'https://s3.amazonaws.com/algorithm-helper/content/categories';
@@ -16,25 +16,15 @@ class TopicItemArticleContainer extends React.Component {
     this.state = {
       loading: false,
       contentFormatted: '',
+      url: '',
     };
   }
 
   componentWillMount() {
-    this.setState({ loading: true });
-
+    // this.setState({ loading: true });
     const { categoryKey, subcategoryKey, topicKey } = this.props.match.params;
-    const s3Url = `${S3_URL_PREFIX}/${categoryKey}/${subcategoryKey}/${topicKey}.md`;
-    fetch(s3Url)
-    .then(res => res.text())
-    .then(res => {
-      this.setState({ contentFormatted: marked(res) });
-
-      setTimeout(() => {
-        this.props.contentLoaded();
-        this.setState({ loading: false });
-      }, 500);
-    })
-    .catch(err => {});
+    const url = `${S3_URL_PREFIX}/${categoryKey}/${subcategoryKey}/${topicKey}.md`;
+    this.setState({ url });
   }
 
   render() {
@@ -51,7 +41,9 @@ class TopicItemArticleContainer extends React.Component {
             </div>
           ) :
           (
-            <div dangerouslySetInnerHTML={{__html: this.state.contentFormatted}} />
+            <MarkdownContainer
+              url={this.state.url}
+            />
           )
         }
       </div>
@@ -67,3 +59,5 @@ export default compose(
   withRouter,
   connect(mapStateToProps)
 )(TopicItemArticleContainer);
+
+// <div dangerouslySetInnerHTML={{__html: this.state.contentFormatted}} />
