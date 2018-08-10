@@ -5,7 +5,7 @@ import marked from 'marked';
 import katexSettings from './katexSettings';
 import markedSettings from './markedSettings';
 
-class MarkdownContainer extends React.Component {
+class Markdown extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -43,9 +43,9 @@ class MarkdownContainer extends React.Component {
   }
 }
 
-MarkdownContainer.propTypes = {
+Markdown.propTypes = {
   url: PropTypes.string,
   onLoaded: PropTypes.func,
 };
 
-export default MarkdownContainer;
+export default Markdown;

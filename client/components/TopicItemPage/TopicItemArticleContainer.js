@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom';
 import marked from 'marked';
 import MDSpinner from 'react-md-spinner';
 
-import MarkdownContainer from '../MarkdownContainer/';
+import Markdown from '../Markdown/';
 import getColorFromKey from '../../utils/getColorFromKey';
 
 const S3_URL_PREFIX = 'https://s3.amazonaws.com/algorithm-helper/content/categories';
@@ -42,7 +42,7 @@ class TopicItemArticleContainer extends React.Component {
             />
           </div>
         }
-        <MarkdownContainer
+        <Markdown
           url={this.state.url}
           onLoaded={this.handleLoadedArticle}
         />
