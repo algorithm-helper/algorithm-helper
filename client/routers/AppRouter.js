@@ -9,6 +9,7 @@ import DashboardPage from '../components/DashboardPage/';
 // import SearchPage from '../components/SearchPage/';
 import ContentPage from '../components/ContentPage/';
 import TopicItemPage from '../components/TopicItemPage/';
+import InformationPage from '../components/InformationPage';
 
 class AppRouter extends React.Component {
   constructor(props) {
@@ -51,19 +52,19 @@ class AppRouter extends React.Component {
 
             <Route
               path="/about"
-              component={MainPage}
+              component={props => <InformationPage {...props} informationKey="about" />}
               exact={true}
             />
 
             <Route
               path="/terms-and-conditions"
-              component={MainPage}
+              component={props => <InformationPage {...props} informationKey="terms-and-conditions" />}
               exact={true}
             />
 
             <Route
               path="/privacy-policy"
-              component={MainPage}
+              component={props => <InformationPage {...props} informationKey="privacy-policy" />}
               exact={true}
             />
 
@@ -109,10 +110,3 @@ class AppRouter extends React.Component {
 }
 
 export default AppRouter;
-
-
-// <Route
-//   path="/search"
-//   component={SearchPage}
-//   exact={true}
-// />

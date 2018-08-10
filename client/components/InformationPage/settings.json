@@ -1,0 +1,14 @@
+{
+  "about": {
+    "title": "About",
+    "url": "https://s3.amazonaws.com/algorithm-helper/assets/information/about.md"
+  },
+  "terms-and-conditions": {
+    "title": "Terms and Conditions",
+    "url": "https://s3.amazonaws.com/algorithm-helper/assets/information/terms-and-conditions.md"
+  },
+  "privacy-policy": {
+    "title": "Privacy Policy",
+    "url": "https://s3.amazonaws.com/algorithm-helper/assets/information/privacy-policy.md"
+  }
+}
