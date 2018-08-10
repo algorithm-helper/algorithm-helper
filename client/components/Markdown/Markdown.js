@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import marked from 'marked';
 
+import katexSettings from './katexSettings';
 import markedSettings from './markedSettings';
 
 class Markdown extends React.Component {
@@ -23,6 +24,10 @@ class Markdown extends React.Component {
       this.setState({ markdownContent: marked(result) });
     })
     .catch(() => {});
+  }
+
+  componentDidUpdate() {
+    window.renderMathInElement(document.body, katexSettings);
   }
 
   render() {

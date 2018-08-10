@@ -55,3 +55,11 @@ int main() {
   std::cout << "Hello World" << std::endl;
 }
 ```
+
+Inline LaTex expression: $a = b + c$
+
+Block LaTex expression:
+
+$$
+\sum_{i = 0}^{n}{i^2}
+$$
