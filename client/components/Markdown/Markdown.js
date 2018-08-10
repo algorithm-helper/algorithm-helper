@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import marked from 'marked';
 
-import katexSettings from './katexSettings';
-import markedSettings from './markedSettings';
+import katexOptions from './katexOptions';
+import markedOptions from './markedOptions';
 
 class Markdown extends React.Component {
   constructor(props) {
@@ -14,7 +14,7 @@ class Markdown extends React.Component {
   }
 
   componentWillMount() {
-    marked.setOptions(markedSettings);
+    marked.setOptions(markedOptions);
 
     fetch(this.props.url, {
       method: 'GET'
@@ -31,7 +31,7 @@ class Markdown extends React.Component {
   }
 
   componentDidUpdate() {
-    window.renderMathInElement(document.body, katexSettings);
+    window.renderMathInElement(document.body, katexOptions);
   }
 
   render() {

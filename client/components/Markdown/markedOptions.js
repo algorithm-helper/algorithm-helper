@@ -8,7 +8,7 @@ renderer.code = (code, language) => {
   return `<pre><code class="hljs ${language}">${highlighted}</code></pre>`;
 };
 
-const settings = {
+const options = {
   renderer,
   pedantic: false,
   gfm: true,
@@ -20,4 +20,4 @@ const settings = {
   xhtml: false,
 };
 
-export default settings;
+export default options;
