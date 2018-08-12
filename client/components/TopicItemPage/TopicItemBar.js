@@ -1,8 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
-// Data:
-import colors from '../../../data/colors.json';
+import { Button } from 'reactstrap';
 
 class TopicItemBar extends React.Component {
   constructor(props) {
@@ -13,8 +11,7 @@ class TopicItemBar extends React.Component {
     return (
       <div className="topic-item-bar-container">
         <div className="topic-item-bar-item">
-          <button
-            className="btn btn-blue-grey btn-topic-item-bar"
+          <Button
             onClick={this.props.onMarkAsCompleted}
           >
             <i
@@ -24,11 +21,10 @@ class TopicItemBar extends React.Component {
               }}
             />
             Mark as Completed
-          </button>
+          </Button>
         </div>
         <div className="topic-item-bar-item">
-          <button
-            className="btn btn-blue-grey btn-topic-item-bar"
+          <Button
             onClick={this.props.onSaveToBookmarks}
           >
             <i
@@ -38,7 +34,7 @@ class TopicItemBar extends React.Component {
               }}
             />
             Save to Bookmarks
-          </button>
+          </Button>
         </div>
       </div>
     );
@@ -50,3 +46,5 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps)(TopicItemBar);
+
+//             className="btn btn-blue-grey btn-topic-item-bar"

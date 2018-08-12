@@ -7,8 +7,7 @@ import MDSpinner from 'react-md-spinner';
 
 import Markdown from '../Markdown/';
 import getColorFromKey from '../../utils/getColorFromKey';
-
-const S3_URL_PREFIX = 'https://s3.amazonaws.com/algorithm-helper/content/categories';
+import getS3ArticleUrl from '../../utils/getS3ArticleUrl';
 
 class TopicItemArticleContainer extends React.Component {
   constructor(props) {
@@ -21,21 +20,28 @@ class TopicItemArticleContainer extends React.Component {
   }
 
   componentWillMount() {
-    const { categoryKey, subcategoryKey, topicKey } = this.props.match.params;
-    const url = `${S3_URL_PREFIX}/${categoryKey}/${subcategoryKey}/${topicKey}.md`;
-    this.setState({ loading: true, url });
+    this.setState({
+      loading: true,
+      url: getS3ArticleUrl(this.props.match.params),
+    });
   }
 
+  /**
+   * Handles when the article is finished loading by setting the loading state to false.
+   */
   handleLoadedArticle = () => {
     this.setState({ loading: false });
   };
 
+  /**
+   * Renders the TopicItemArticleContainer component.
+   */
   render() {
     return (
       <div>
         {
           this.state.loading &&
-          <div className="dynamic-content-page-loader">
+          <div className="topic-item-page-spinner-container">
             <MDSpinner
               size={50}
               singleColor={getColorFromKey(this.props.colorKey)}

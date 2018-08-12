@@ -1,6 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { Col, Container, Row } from 'reactstrap';
+
+import getColorFromKey from '../../utils/getColorFromKey';
 
 class TopicItemNavBar extends React.Component {
   constructor(props) {
@@ -18,33 +21,43 @@ class TopicItemNavBar extends React.Component {
     this.setState({ indexSelected: index });
   }
 
+  /**
+   * Renders the TopicItemNavBar component.
+   */
   render() {
     const topicItemsTest = ['Article', 'Code'];
-    const colorName = `color-${this.props.colorKey}`;
 
     return (
-      <div className="row">
-        <div className="navbar-topic-container">
-          <ul className="nav justify-content-center grey lighten-4 navbar-topic">
-            {
-              topicItemsTest &&
-              topicItemsTest.map((item, i) => {
-                return (
-                  <li key={i} className={`nav-item ${i === this.state.indexSelected ?
-                    `navbar-topic-item-active ${colorName}` : ''}`}>
-                    <div className="navbar-topic-item">
-                      <a onClick={() => {
-                        this.handleClick(i);
-                        this.props.handleChangeIndex(i);
-                      }}>{item}</a>
-                    </div>
-                  </li>
-                );
-              })
-            }
-          </ul>
-        </div>
-      </div>
+      <Container fluid>
+        <Row>
+          <div className="topic-item-navbar-container">
+            <ul className="nav justify-content-center grey lighten-4 navbar-topic">
+              {
+                topicItemsTest &&
+                topicItemsTest.map((item, i) => {
+                  const activeClass = i === this.state.indexSelected
+                    ? 'topic-item-navbar-item-active'
+                    : '';
+
+                  return (
+                    <li
+                      key={i}
+                      className={`nav-item ${activeClass}`}
+                      style={{ color: getColorFromKey(this.props.colorKey) }}>
+                      <div className="topic-item-navbar-item">
+                        <a onClick={() => {
+                          this.handleClick(i);
+                          this.props.handleChangeIndex(i);
+                        }}>{item}</a>
+                      </div>
+                    </li>
+                  );
+                })
+              }
+            </ul>
+          </div>
+        </Row>
+      </Container>
     );
   }
 }

@@ -33,7 +33,7 @@ class TopicItemVideoContainer extends React.Component {
         {
           this.state.loading &&
           (
-            <div className="dynamic-content-page-loader">
+            <div className="topic-item-page-spinner-container">
               <MDSpinner
                 size={50}
                 singleColor={colors[this.props.colorKey]}
