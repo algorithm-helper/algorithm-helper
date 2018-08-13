@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
@@ -13,49 +14,30 @@ class TopicItemArticleContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      loading: false,
-      contentFormatted: '',
       url: '',
     };
   }
 
   componentWillMount() {
-    this.setState({
-      loading: true,
-      url: getS3ArticleUrl(this.props.match.params),
-    });
+    this.setState({ url: getS3ArticleUrl(this.props.match.params) });
   }
-
-  /**
-   * Handles when the article is finished loading by setting the loading state to false.
-   */
-  handleLoadedArticle = () => {
-    this.setState({ loading: false });
-  };
 
   /**
    * Renders the TopicItemArticleContainer component.
    */
   render() {
     return (
-      <div>
-        {
-          this.state.loading &&
-          <div className="topic-item-page-spinner-container">
-            <MDSpinner
-              size={50}
-              singleColor={getColorFromKey(this.props.colorKey)}
-            />
-          </div>
-        }
-        <Markdown
-          url={this.state.url}
-          onLoaded={this.handleLoadedArticle}
-        />
-      </div>
+      <Markdown
+        url={this.state.url}
+        onLoaded={this.props.contentLoaded()}
+      />
     );
   }
 }
+
+TopicItemArticleContainer.propTypes = {
+  contentLoaded: PropTypes.func.isRequired,
+};
 
 const mapStateToProps = state => ({
   colorKey: state.colorKey

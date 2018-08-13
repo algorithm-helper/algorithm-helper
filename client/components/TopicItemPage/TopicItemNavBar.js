@@ -17,6 +17,9 @@ class TopicItemNavBar extends React.Component {
     this.setState({ indexSelected: this.props.indexStart });
   }
 
+  /**
+   * Handles when an item in the navbar is clicked by changing the index.
+   */
   handleClick = index => {
     this.setState({ indexSelected: index });
   }

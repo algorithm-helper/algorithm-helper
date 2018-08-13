@@ -86,8 +86,8 @@ class ContentPage extends React.Component {
           title: 'Article',
           key: 'article',
         }, {
-          title: 'Implementations',
-          key: 'implementations',
+          title: 'Code',
+          key: 'code',
         }];
         contentData.push({
           title,

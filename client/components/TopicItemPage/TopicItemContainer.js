@@ -1,53 +1,42 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import MDSpinner from 'react-md-spinner';
 import { connect } from 'react-redux';
+import { Col, Container, Row } from 'reactstrap';
 
-// Components:
 import TopicItemArticleContainer from './TopicItemArticleContainer';
 import TopicItemCodeContainer from './TopicItemCodeContainer';
-import TopicItemVideoContainer from './TopicItemVideoContainer';
 import TopicItemBar from './TopicItemBar';
 
-// Data:
-import colors from '../../../data/colors.json';
+import getColorFromKey from '../../utils/getColorFromKey';
 
 class TopicItemContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       loading: false,
-      showTopicItemBar: false,
     };
-
-    this.handleContentLoaded = this.handleContentLoaded.bind(this);
-    this.getTopicItemComponent = this.getTopicItemComponent.bind(this);
   }
 
   componentWillMount() {
-    this.setState({
-      loading: true,
-      showTopicItemBar: false,
-    });
-    setTimeout(() => {
-      this.setState({ loading: false });
-    }, 500);
+    this.setState({ loading: true });
   }
 
   componentWillReceiveProps() {
-    this.setState({
-      loading: true,
-      showTopicItemBar: false,
-    });
-    setTimeout(() => {
-      this.setState({ loading: false });
-    }, 500);
+    this.setState({ loading: true });
   }
 
-  handleContentLoaded() {
-    this.setState({ showTopicItemBar: true });
-  }
+  /**
+   * Handles when the content finishes loading.
+   */
+  handleContentLoaded = () => {
+    this.setState({ loading: false });
+  };
 
-  getTopicItemComponent() {
+  /**
+   * Returns the topic item component that corresponds to the topic item type.
+   */
+  getTopicItemComponent = () => {
     switch(this.props.topicItem.type) {
       case 'article':
         return (
@@ -61,38 +50,51 @@ class TopicItemContainer extends React.Component {
             contentLoaded={this.handleContentLoaded}
           />
         );
-      case 'video':
-        return (
-          <TopicItemVideoContainer
-            contentLoaded={this.handleContentLoaded}
-          />
-        );
       default:
         return null;
     }
-  }
+  };
 
+  /**
+   * Renders the TopicItemContainer component.
+   */
   render() {
     return (
-      <div className="row">
-        <div className="col-md-2"/>
-        <div className="col-md-8">
-          {
-            this.state.showTopicItemBar &&
-            <TopicItemBar
-              onMarkAsCompleted={this.props.onMarkAsCompleted}
-              onSaveToBookmarks={this.props.onSaveToBookmarks}
-            />
-          }
-          <div className="topic-item-container">
-            { this.getTopicItemComponent() }
-          </div>
-        </div>
-        <div className="col-md-2"/>
-      </div>
+      <Container fluid>
+        <Row>
+          <Col md="2"/>
+          <Col md="8">
+            {
+              this.state.loading
+              && <div className="topic-item-page-spinner-container">
+                  <MDSpinner
+                    size={50}
+                    singleColor={getColorFromKey(this.props.colorKey)}
+                  />
+                </div>
+            }
+            {
+              !this.state.loading
+              && <TopicItemBar
+                  onMarkAsCompleted={this.props.onMarkAsCompleted}
+                  onSaveToBookmarks={this.props.onSaveToBookmarks}
+                />
+            }
+            <div className="topic-item-container">
+              { this.getTopicItemComponent() }
+            </div>
+          </Col>
+          <Col md="2"/>
+        </Row>
+      </Container>
     );
   }
 }
+
+TopicItemContainer.propTypes = {
+  onMarkAsCompleted: PropTypes.func.isRequired,
+  onSaveToBookmarks: PropTypes.func.isRequired,
+};
 
 const mapStateToProps = state => ({
   colorKey: state.colorKey,

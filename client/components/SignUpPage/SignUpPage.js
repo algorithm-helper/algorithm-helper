@@ -230,7 +230,7 @@ class SignUpPage extends React.Component {
                   <div className="sign-up-page-btn-register-container">
                     <Button
                       className="sign-up-page-btn-register"
-                      color="secondary"
+                      color="primary"
                       onClick={this.handleSignupClicked}>
                       Register
                     </Button>

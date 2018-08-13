@@ -63,8 +63,53 @@ app.post('/accounts/sign-up', (req, res) => {
 });
 
 /**
- * Data Routes
+ * GET /actions/get-item-completed
+ * Returns true/false based on whether the currently logged in user has the item as completed. If
+ * no user is logged in, then returns an error response.
+ *
+ * @param {string} topicItemKey
+ * @param {string} authKey
  */
+app.get('/actions/get-item-completed', (req, res) => {
+  // TODO
+});
+
+/**
+ * GET /actions/get-item-bookmarked
+ * Returns true/false based on whether the currently logged in user has the item as bookmarked. If
+ * no user is logged in, then returns an error response.
+ *
+ * @param {string} topicItemKey
+ * @param {string} authKey
+ */
+app.get('/actions/get-item-bookmarked', (req, res) => {
+  // TODO
+});
+
+/**
+ * POST /actions/mark-as-completed
+ * Toggles the completion for this current item for the currently logged in user. If no user
+ * is logged in, then returns an error response.
+ *
+ * @param {string} topicItemKey
+ * @param {string} authKey
+ *
+ */
+app.post('/actions/mark-as-completed', (req, res) => {
+  // TODO
+});
+
+/**
+ * POST /actions/save-to-bookmarks
+ * Adds or removes the bookmark for this current item for the currently logged in user. If no user
+ * is logged in, then returns an error response.
+ *
+ * @param {string} topicItemKey
+ * @param {string} authKey
+ */
+app.post('/actions/save-to-bookmarks', (req, res) => {
+  // TODO
+});
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(publicPath, 'index.html'));

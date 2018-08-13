@@ -55,36 +55,35 @@ class TopicItemPage extends React.Component {
       this.setState({ indexSelected: 0 });
     }
 
-    // Need to update global colors:
-    const categoryObj = getCategory(data, this.props.match.params.categoryKey);
-    this.props.dispatch(setColorTheme(categoryObj.colorKey));
+    const category = getCategory(data, this.props.match.params.categoryKey);
+    const subcategory = getSubcategory(category, this.props.match.params.subcategoryKey);
+    const topic = getTopic(subcategory, this.props.match.params.topicKey);
 
-    // Query for parent subcategory, category:
-    const subcategoryObj = getSubcategory(categoryObj, this.props.match.params.subcategoryKey);
-    const topicObj = getTopic(subcategoryObj, this.props.match.params.topicKey);
-
-    this.setState({
-      category: categoryObj,
-      subcategory: subcategoryObj,
-      topic: topicObj,
-    });
+    this.props.dispatch(setColorTheme(category.colorKey));
+    this.setState({ category, subcategory, topic });
   }
 
-  handleChangeIndex(index) {
+  handleChangeIndex = index => {
     this.setState({ indexSelected: index });
     this.history.push({
       pathname: this.props.match.url,
       search: `?item=${index}`
     });
-  }
+  };
 
-  handleMarkAsCompleted() {
+  handleMarkAsCompleted = () => {
     console.log('handleMarkAsCompleted');
-  }
+    console.log(this.state.category);
+    console.log(this.state.subcategory);
+    console.log(this.state.indexSelected);
+  };
 
-  handleSaveToBookmarks() {
+  handleSaveToBookmarks = () => {
     console.log('handleSaveToBookmarks');
-  }
+    console.log(this.state.category);
+    console.log(this.state.subcategory);
+    console.log(this.state.indexSelected);
+  };
 
   render() {
     return (

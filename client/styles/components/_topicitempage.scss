@@ -1,4 +1,27 @@
+// TopicItemContainer
+.topic-item-container {
+  margin-bottom: 4em;
+  margin-top: 2em;
+  width: 100%;
+}
 
+// TopicItemBar
+.topic-item-bar-container {
+  margin-top: 2em;
+}
+
+.topic-item-bar-item {
+  display: inline-block;
+  margin-right: 0.5em;
+}
+
+.topic-item-bar-btn {
+  font-size: .75em;
+  outline: none;
+  box-shadow: none !important;
+}
+
+// TopicItemNavBar
 .topic-item-navbar-container {
   width: 100%;
 }
@@ -17,35 +40,14 @@
   border-bottom-width: 2px;
 }
 
-.topic-item-container {
-  margin-bottom: 4em;
-  margin-top: 1em;
+// Spinner container
+.topic-item-page-spinner-container {
+  margin-top: 3em;
+  text-align: center;
   width: 100%;
 }
 
 .topic-item-video {
   height: auto;
-  width: 100%;
-}
-
-.topic-item-bar-container {
-  margin-bottom: 1em;
-  margin-top: 1em;
-  padding-bottom: 1em;
-}
-
-.topic-item-bar-item {
-  display: inline-block;
-}
-
-.btn-topic-item-bar {
-  font-size: .75em;
-  padding: 1em;
-}
-
-// Spinner container
-.topic-item-page-spinner-container {
-  margin-top: 2em;
-  text-align: center;
   width: 100%;
 }

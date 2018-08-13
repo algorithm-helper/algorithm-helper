@@ -43,6 +43,8 @@ class TopicItemCodeContainer extends React.Component {
   }
 
   componentWillMount() {
+    this.props.contentLoaded();
+
     const sample1 = `// Sample 1 - Imports the Google Cloud client library
 const Storage = require('@google-cloud/storage');
 
@@ -131,57 +133,43 @@ storage
     this.setState({ value });
   }
 
+  /**
+   * Renders the TopicItemCodeContainer component.
+   */
   render() {
-
     return (
       <div>
+        <Tabs
+          style={{
+            backgroundColor: colors[this.props.colorKey],
+            color: '#fff',
+          }}
+          value={this.state.value}
+          onChange={this.handleChange}
+          classes={{
+            indicator: this.props.classes.tabsIndicator
+          }}>
+          <Tab
+            label="Java"
+            style={{
+              outline: 'none'
+            }}
+          />
+          <Tab
+            label="Python"
+            style={{
+              outline: 'none'
+            }}
+          />
+          <Tab
+            label="JavaScript"
+            style={{
+              outline: 'none'
+            }}
+          />
+        </Tabs>
         {
-          this.state.loading ?
-          (
-            <div className="topic-item-page-spinner-container">
-              <MDSpinner
-                size={50}
-                singleColor={colors[this.props.colorKey]}
-              />
-            </div>
-          ) :
-          (
-            <div>
-              <Tabs
-              style={{
-                backgroundColor: colors[this.props.colorKey],
-                color: '#fff',
-              }}
-              value={this.state.value}
-              onChange={this.handleChange}
-              classes={{
-                indicator: this.props.classes.tabsIndicator
-              }}
-            >
-              <Tab
-                label="Java"
-                style={{
-                  outline: 'none'
-                }}
-              />
-              <Tab
-                label="Python"
-                style={{
-                  outline: 'none'
-                }}
-              />
-              <Tab
-                label="JavaScript"
-                style={{
-                  outline: 'none'
-                }}
-              />
-            </Tabs>
-            {
-              <TabContainer codeContent={this.state.codeContent[this.state.value]}/>
-            }
-            </div>
-          )
+          <TabContainer codeContent={this.state.codeContent[this.state.value]}/>
         }
       </div>
     );

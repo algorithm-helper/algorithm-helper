@@ -196,7 +196,7 @@ class LoginPage extends React.Component {
                   <div className="login-page-btn-login-container">
                     <Button
                       className="login-page-btn-login"
-                      color="secondary"
+                      color="primary"
                       onClick={this.handleLoginClicked}>
                       Login
                     </Button>
