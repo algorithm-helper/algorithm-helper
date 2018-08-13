@@ -8,6 +8,12 @@
       {
         "type": "article",
         "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/lists/introduction.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/lists/List.java",
+        "language": "java",
+        "title": "Java (List)"
       }
     ]
   },
@@ -20,6 +26,24 @@
       {
         "type": "article",
         "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/lists/linked-list.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/lists/LinkedList.java",
+        "language": "java",
+        "title": "Java (LinkedList)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/lists/LinkedListMap.java",
+        "language": "java",
+        "title": "Java (LinkedListMap)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/lists/LinkedListSet.java",
+        "language": "java",
+        "title": "Java (LinkedListSet)"
       }
     ]
   },
@@ -32,6 +56,12 @@
       {
         "type": "article",
         "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/lists/double-ended-linked-list.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/lists/DoubleEndedLinkedList.java",
+        "language": "java",
+        "title": "Java (DoubleEndedLinkedList)"
       }
     ]
   },
@@ -44,6 +74,12 @@
       {
         "type": "article",
         "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/lists/dynamic-array.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/lists/DynamicArray.java",
+        "language": "java",
+        "title": "Java (DynamicArray)"
       }
     ]
   },
@@ -56,6 +92,24 @@
       {
         "type": "article",
         "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/lists/stack.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/lists/Stack.java",
+        "language": "java",
+        "title": "Java (Stack)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/lists/StackDynamicArray.java",
+        "language": "java",
+        "title": "Java (StackDynamicArray)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/lists/StackLinkedList.java",
+        "language": "java",
+        "title": "Java (StackLinkedList)"
       }
     ]
   },
@@ -68,6 +122,12 @@
       {
         "type": "article",
         "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/lists/queue.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/lists/Queue.java",
+        "language": "java",
+        "title": "Java (Queue)"
       }
     ]
   },
@@ -80,6 +140,12 @@
       {
         "type": "article",
         "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/lists/double-ended-queue.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/lists/DoubleEndedQueue.java",
+        "language": "java",
+        "title": "Java (DoubleEndedQueue)"
       }
     ]
   },
@@ -116,6 +182,12 @@
       {
         "type": "article",
         "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/trees/map-symbol-table.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/Map.java",
+        "language": "java",
+        "title": "Java (Map)"
       }
     ]
   },
@@ -128,6 +200,12 @@
       {
         "type": "article",
         "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/trees/set.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/Set.java",
+        "language": "java",
+        "title": "Java (Set)"
       }
     ]
   },
@@ -136,110 +214,222 @@
     "title": "Binary Search Tree",
     "parent": "trees",
     "description": "Learn about the binary search tree, a tree data structure that uses binary search for the efficient retrieval of elements.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/trees/binary-search-tree.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/trees/binary-search-tree.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/BinarySearchTree.java",
+        "language": "java",
+        "title": "Java (BinarySearchTree)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/BinarySearchTreeMap.java",
+        "language": "java",
+        "title": "Java (BinarySearchTreeMap)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/BinarySearchTreeSet.java",
+        "language": "java",
+        "title": "Java (BinarySearchTreeSet)"
+      }
+    ]
   },
   {
     "key": "balanced-binary-search-tree",
     "title": "Balanced Binary Search Tree",
     "parent": "trees",
     "description": "Learn about the balanced binary search tree, a tree data structure that guarantees logarithmic performance by keeping balanced.",
-    "children": {
+    "children": [
+      {
       "type": "article",
       "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/trees/balanced-binary-search-tree.md"
-    }
+      }
+    ]
   },
   {
     "key": "2-3-tree",
     "title": "2-3 Tree",
     "parent": "trees",
     "description": "Learn about the 2-3 tree, a tree data structure that keeps balance through the mechanism of 2-Nodes and 3-Nodes.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/trees/2-3-tree.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/trees/2-3-tree.md"
+      }
+    ]
   },
   {
     "key": "red-black-tree",
     "title": "Red-Black Tree",
     "parent": "trees",
     "description": "Learn about the red-black tree, a tree data structure derived from the 2-3 tree, that keeps balance using red and black colored nodes.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/trees/red-black-tree.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/trees/red-black-tree.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/RedBlackTreeMap.java",
+        "language": "java",
+        "title": "Java (RedBlackTreeMap)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/RedBlackTreeSet.java",
+        "language": "java",
+        "title": "Java (RedBlackTreeSet)"
+      }
+    ]
   },
   {
     "key": "avl-tree",
     "title": "AVL Tree",
     "parent": "trees",
     "description": "Learn about the AVL tree, a tree data structure that keeps balance through maintaining balance between the heights of subtrees.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/trees/avl-tree.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/trees/avl-tree.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/AVLTreeMap.java",
+        "language": "java",
+        "title": "Java (AVLTreeMap)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/AVLTreeSet.java",
+        "language": "java",
+        "title": "Java (AVLTreeSet)"
+      }
+    ]
   },
   {
     "key": "heap",
     "title": "Heap",
     "parent": "trees",
     "description": "Learn about the heap, a tree data structure that represents the tree in a single array, and implementations for binary min/max heaps.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/trees/heap.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/trees/heap.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/BinaryMaxHeap.java",
+        "language": "java",
+        "title": "Java (BinaryMaxHeap)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/BinaryMinHeap.java",
+        "language": "java",
+        "title": "Java (BinaryMinHeap)"
+      }
+    ]
   },
   {
     "key": "priority-queue",
     "title": "Priority Queue",
     "parent": "trees",
     "description": "Learn about the priority queue, a data structure that uses the heap data structure to allow for efficient retrieval of min/max elements.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/trees/priority-queue.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/trees/priority-queue.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/PriorityMaxHeap.java",
+        "language": "java",
+        "title": "Java (PriorityMaxHeap)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/PriorityMinHeap.java",
+        "language": "java",
+        "title": "Java (PriorityMinHeap)"
+      }
+    ]
   },
   {
     "key": "union-find-disjoint-set",
     "title": "Union Find / Disjoint Set",
     "parent": "trees",
     "description": "Learn about the union find / disjoint set, a data structure used to represent connected components in the problem of dynamic connectivity.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/trees/union-find-disjoint-set.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/trees/union-find-disjoint-set.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/UnionFind.java",
+        "language": "java",
+        "title": "Java (UnionFind)"
+      }
+    ]
   },
   {
     "key": "b-tree",
     "title": "B-Tree",
     "parent": "trees",
     "description": "Learn about the B-tree, a balanced tree structure that is a generalization of binary search trees, and are commonly used in secondary storage systems.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/trees/b-tree.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/trees/b-tree.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/BTree.java",
+        "language": "java",
+        "title": "Java (BTree)"
+      }
+    ]
   },
   {
     "key": "fibonacci-heap",
     "title": "Fibonacci Heap",
     "parent": "trees",
     "description": "Learn about the Fibonacci heap, a heap structure for priority queue operations but that can perform key operations in constant, amortized time.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/trees/fibonacci-heap.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/trees/fibonacci-heap.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/FibonacciHeap.java",
+        "language": "java",
+        "title": "Java (FibonacciHeap)"
+      }
+    ]
   },
   {
     "key": "van-emde-boas-tree",
     "title": "Van Emde Boas Tree",
     "parent": "trees",
     "description": "Learn about the Van Emde Boas Tree, a tree structure for implementing maps space efficiently, that supports efficient operations for finding successors and predecessors.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/trees/van-emde-boas-tree.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/trees/van-emde-boas-tree.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/VanEmdeBoasTree.java",
+        "language": "java",
+        "title": "Java (VanEmdeBoasTree)"
+      }
+    ]
   },
   {
     "key": "time-and-space-complexity-comparison",
@@ -270,50 +460,84 @@
     "title": "Hash Function",
     "parent": "hashing",
     "description": "Learn about the hash function, a function that enables mapping data of an arbitrary size to data of fixed size.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/hashing/hash-function.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/hashing/hash-function.md"
+      }
+    ]
   },
   {
     "key": "collision-resolution",
     "title": "Collision Resolution",
     "parent": "hashing",
     "description": "Learn about collision resolution, the techniques used when dealing with situations where more than one element hash to the same place.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/hashing/collision-resolution.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/hashing/collision-resolution.md"
+      }
+    ]
   },
   {
     "key": "simple-uniform-hashing-assumption",
     "title": "Simple Uniform Hashing Assumption",
     "parent": "hashing",
     "description": "Learn about the Simple Uniform Hashing Assumption, the basic mathematical assumption that enables the analysis of hash maps.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/hashing/simple-uniform-hashing-assumption.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/hashing/simple-uniform-hashing-assumption.md"
+      }
+    ]
   },
   {
     "key": "hash-map",
     "title": "Hash Map",
     "parent": "hashing",
     "description": "Learn about the hash map, and its implementations with separate chaining and linear probing, that allows for constant time for all operations.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/hashing/hash-map.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/hashing/hash-map.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/hashing/HashMapSeparateChaining.java",
+        "language": "java",
+        "title": "Java (HashMapSeparateChaining)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/hashing/HashMapLinearProbing.java",
+        "language": "java",
+        "title": "Java (HashMapLinearProbing)"
+      }
+    ]
   },
   {
     "key": "hash-set",
     "title": "Hash Set",
     "parent": "hashing",
     "description": "Learn about the hash set, and its use to represent the abstract data structure of a set, but using hashing to allow for constant time for all operations.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/hashing/hash-set.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/hashing/hash-set.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/hashing/HashSetSeparateChaining.java",
+        "language": "java",
+        "title": "Java (HashSetSeparateChaining)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/hashing/HashSetLinearProbing.java",
+        "language": "java",
+        "title": "Java (HashSetLinearProbing)"
+      }
+    ]
   },
   {
     "key": "time-and-space-complexity-comparison",
@@ -344,50 +568,90 @@
     "title": "Skip List",
     "parent": "probabilistic",
     "description": "Learn about the skip list, a linked list-like data structure that allows for efficient search of a sequence of elements by skipping over elements, whose skips are determined randomly.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/probabilistic/skip-list.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/probabilistic/skip-list.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/probabilistic/SkipList.java",
+        "language": "java",
+        "title": "Java (SkipList)"
+      }
+    ]
   },
   {
     "key": "bloom-filter",
     "title": "Bloom Filter",
     "parent": "probabilistic",
     "description": "Learn about the bloom filter, a data structure commonly used to implement sets that is space efficient, but whose probabilistic properties can lead to false positives.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/probabilistic/bloom-filter.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/probabilistic/bloom-filter.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/probabilistic/BloomFilter.java",
+        "language": "java",
+        "title": "Java (BloomFilter)"
+      }
+    ]
   },
   {
     "key": "count-min-sketch",
     "title": "Count Min Sketch",
     "parent": "probabilistic",
     "description": "Learn about the count-min sketch, a data structure used to determine frequencies of events in a data stream.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/probabilistic/count-min-sketch.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/probabilistic/count-min-sketch.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/probabilistic/CountMinSketch.java",
+        "language": "java",
+        "title": "Java (CountMinSketch)"
+      }
+    ]
   },
   {
     "key": "random-binary-tree",
     "title": "Random Binary Tree",
     "parent": "probabilistic",
     "description": "Learn about random binary trees, which are binary trees selected from a probability distribution of binary trees, which may be formed with various properties.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/probabilistic/random-binary-tree.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/probabilistic/random-binary-tree.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/probabilistic/SkipList.java",
+        "language": "java",
+        "title": "Java (SkipList)"
+      }
+    ]
   },
   {
     "key": "treap",
     "title": "Treap",
     "parent": "probabilistic",
     "description": "Learn about the treap, which is a binary search tree that uses randomization that leads to a high probability of a tree structure that supports operations in logarithmic time.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/probabilistic/treap.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/probabilistic/treap.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/probabilistic/Treap.java",
+        "language": "java",
+        "title": "Java (Treap)"
+      }
+    ]
   },
   {
     "key": "time-and-space-complexity-comparison",
@@ -418,40 +682,66 @@
     "title": "Range Searching",
     "parent": "multidimensional",
     "description": "Learn about the problem of range searching, which refers to being able to query for elements within a multidimensional range.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/multidimensional/range-searching.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/multidimensional/range-searching.md"
+      }
+    ]
   },
   {
     "key": "quad-tree",
     "title": "Quad Tree",
     "parent": "multidimensional",
     "description": "Learn about the quad tree, a tree structure with four children used to represent quadrants, and thereby commonly used to store data in a 2-dimensional space.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/multidimensional/quad-tree.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/multidimensional/quad-tree.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/multidimensional/QuadTree.java",
+        "language": "java",
+        "title": "Java (QuadTree)"
+      }
+    ]
   },
   {
     "key": "k-d-tree",
     "title": "k-d Tree",
     "parent": "multidimensional",
     "description": "Learn about the k-d tree, a tree structure that partitions space to be able to efficiently organize data in a k-dimensional space.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/multidimensional/k-d-tree.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/multidimensional/k-d-tree.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/multidimensional/KDTree.java",
+        "language": "java",
+        "title": "Java (KDTree)"
+      }
+    ]
   },
   {
     "key": "range-tree",
     "title": "Range Tree",
     "parent": "multidimensional",
     "description": "Learn about the range tree, a tree structure that uses multiple binary trees to represent data commonly in a 2 or 3-dimensional space, and allows for efficient range queries.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/multidimensional/range-tree.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/multidimensional/range-tree.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/multidimensional/RangeTree.java",
+        "language": "java",
+        "title": "Java (RangeTree)"
+      }
+    ]
   },
   {
     "key": "time-and-space-complexity-comparison",
@@ -482,20 +772,24 @@
     "title": "Iterator / Iterable",
     "parent": "abstract-data-types",
     "description": "Learn about the iterator, an abstract data type that is used to traverse through the elements of a data structure without exposing its internal implementation.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/abstract-data-types/iterator-iterable.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/abstract-data-types/iterator-iterable.md"
+      }
+    ]
   },
   {
     "key": "comparator-comparable",
     "title": "Comparator / Comparable",
     "parent": "abstract-data-types",
     "description": "Learn about the comparator, an abstract data type used for comparing elements for ordering algorithms, commonly for sorting.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/abstract-data-types/comparator-comparable.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/data-structures/abstract-data-types/comparator-comparable.md"
+      }
+    ]
   },
   {
     "key": "introduction",
@@ -514,40 +808,72 @@
     "title": "Binary Search",
     "parent": "searching",
     "description": "Learn about binary search, a searching algorithm for retrieving elements in a sorted array in logarithmic time.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/general-algorithms/searching/binary-search.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/general-algorithms/searching/binary-search.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/generalalgorithms/searching/BinarySearch.java",
+        "language": "java",
+        "title": "Java (BinarySearch)"
+      }
+    ]
   },
   {
     "key": "ternary-search",
     "title": "Ternary Search",
     "parent": "searching",
     "description": "Learn about ternary search, a searching algorithm for finding the min/max element of a unimodal function.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/general-algorithms/searching/ternary-search.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/general-algorithms/searching/ternary-search.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/generalalgorithms/searching/TernarySearch.java",
+        "language": "java",
+        "title": "Java (TernarySearch)"
+      }
+    ]
   },
   {
     "key": "jump-search",
     "title": "Jump Search",
     "parent": "searching",
     "description": "Learn about jump search, a searching algorithm for retrieving elements in a sorted array by taking steps of size sqrt(N).",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/general-algorithms/searching/jump-search.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/general-algorithms/searching/jump-search.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/generalalgorithms/searching/JumpSearch.java",
+        "language": "java",
+        "title": "Java (JumpSearch)"
+      }
+    ]
   },
   {
     "key": "interpolation-search",
     "title": "Interpolation Search",
     "parent": "searching",
     "description": "Learn about interpolation search, a searching algorithm for retrieving elements in a sorted array with elements uniformly distributed.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/general-algorithms/searching/interpolation-search.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/general-algorithms/searching/interpolation-search.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/generalalgorithms/searching/InterpolationSearch.java",
+        "language": "java",
+        "title": "Java (InterpolationSearch)"
+      }
+    ]
   },
   {
     "key": "time-and-space-complexity-comparison",
@@ -578,120 +904,210 @@
     "title": "Stability",
     "parent": "sorting",
     "description": "Learn about stability, which refers to the property of sorting algorithms to be able to keep identical elements in the same final order.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/general-algorithms/sorting/stability.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/general-algorithms/sorting/stability.md"
+      }
+    ]
   },
   {
     "key": "in-place",
     "title": "In-Place",
     "parent": "sorting",
     "description": "Learn about in-place, where refers to the property of sorting algorithms to be able to be performed without the use of auxiliary space.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/general-algorithms/sorting/in-place.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/general-algorithms/sorting/in-place.md"
+      }
+    ]
   },
   {
     "key": "selection-sort",
     "title": "Selection Sort",
     "parent": "sorting",
     "description": "Learn about selection sort, a sorting algorithm that works by iterating through the array, selecting the minimum element each time.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/general-algorithms/sorting/selection-sort.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/general-algorithms/sorting/selection-sort.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/generalalgorithms/sorting/SelectionSort.java",
+        "language": "java",
+        "title": "Java (SelectionSort)"
+      }
+    ]
   },
   {
     "key": "insertion-sort",
     "title": "Insertion Sort",
     "parent": "sorting",
     "description": "Learn about insertion sort, a sorting algorithm that works by inserting the next element into the current sorted array.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/general-algorithms/sorting/insertion-sort.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/general-algorithms/sorting/insertion-sort.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/generalalgorithms/sorting/InsertionSort.java",
+        "language": "java",
+        "title": "Java (InsertionSort)"
+      }
+    ]
   },
   {
     "key": "shell-sort",
     "title": "Shell Sort",
     "parent": "sorting",
     "description": "Learn about shell sort, a sorting algorithm that uses h-sorting, and takes advantage of insertion sort's efficiency with nearly sorted arrays.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/general-algorithms/sorting/shell-sort.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/general-algorithms/sorting/shell-sort.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/generalalgorithms/sorting/ShellSort.java",
+        "language": "java",
+        "title": "Java (ShellSort)"
+      }
+    ]
   },
   {
     "key": "divide-and-conquer",
     "title": "Divide and Conquer",
     "parent": "sorting",
     "description": "Learn about divide and conquer, an algorithm design paradigm that recursively breaks down a larger problem into easier, smaller, subproblems.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/general-algorithms/sorting/divide-and-conquer.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/general-algorithms/sorting/divide-and-conquer.md"
+      }
+    ]
   },
   {
     "key": "merge-sort",
     "title": "Merge Sort",
     "parent": "sorting",
     "description": "Learn about merge sort, an efficient sorting algorithm that works by recursively breaking down subarrays and merging sorted subarrays.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/general-algorithms/sorting/merge-sort.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/general-algorithms/sorting/merge-sort.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/generalalgorithms/sorting/MergeSort.java",
+        "language": "java",
+        "title": "Java (MergeSort)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/generalalgorithms/sorting/MergeSortBottomUp.java",
+        "language": "java",
+        "title": "Java (MergeSortBottomUp)"
+      }
+    ]
   },
   {
     "key": "quick-sort",
     "title": "Quick Sort",
     "parent": "sorting",
     "description": "Learn about quick sort, an efficient sorting algorithm that works by using a pivot and recurively sorting elements to the left and right of the pivot.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/general-algorithms/sorting/quick-sort.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/general-algorithms/sorting/quick-sort.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/generalalgorithms/sorting/QuickSort.java",
+        "language": "java",
+        "title": "Java (QuickSort)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/generalalgorithms/sorting/QuickSortThreeWay.java",
+        "language": "java",
+        "title": "Java (QuickSortThreeWay)"
+      }
+    ]
   },
   {
     "key": "heap-sort",
     "title": "Heap Sort",
     "parent": "sorting",
     "description": "Learn about heap sort, an efficient sorting algorithm that works by building a binary min heap out of the elements, and swapping the min element with the last element.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/general-algorithms/sorting/heap-sort.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/general-algorithms/sorting/heap-sort.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/generalalgorithms/sorting/HeapSort.java",
+        "language": "java",
+        "title": "Java (HeapSort)"
+      }
+    ]
   },
   {
     "key": "bucket-sort",
     "title": "Bucket Sort",
     "parent": "sorting",
     "description": "Learn about bucket sort, a sorting algorithm that runs in linear time in the context of sorting integer elements, by moving them to array indices that match the element.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/general-algorithms/sorting/bucket-sort.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/general-algorithms/sorting/bucket-sort.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/generalalgorithms/sorting/BucketSort.java",
+        "language": "java",
+        "title": "Java (BucketSort)"
+      }
+    ]
   },
   {
     "key": "count-sort",
     "title": "Count Sort",
     "parent": "sorting",
     "description": "Learn about count sort, a sorting algorithm that runs in linear time in the context of sorting integer elements, by using arithmetic to count elements and determine their final position.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/general-algorithms/sorting/count-sort.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/general-algorithms/sorting/count-sort.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/generalalgorithms/sorting/CountSort.java",
+        "language": "java",
+        "title": "Java (CountSort)"
+      }
+    ]
   },
   {
     "key": "radix-sort",
     "title": "Radix Sort",
     "parent": "sorting",
     "description": "Learn about radix sort, a sorting algorithm that is used to sort integer elements through the use of looking at the least to most significant digits of the elements.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/general-algorithms/sorting/radix-sort.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/general-algorithms/sorting/radix-sort.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/generalalgorithms/sorting/RadixSort.java",
+        "language": "java",
+        "title": "Java (RadixSort)"
+      }
+    ]
   },
   {
     "key": "time-and-space-complexity-comparison",
@@ -722,20 +1138,36 @@
     "title": "Fisher-Yates Shuffle",
     "parent": "shuffling",
     "description": "Learn about the Fisher-Yates Shuffle, a shuffling algorithm used to uniformly randomly distribute elements within an array.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/general-algorithms/shuffling/fisher-yates-shuffle.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/general-algorithms/shuffling/fisher-yates-shuffle.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/generalalgorithms/shuffling/FisherYatesShuffle.java",
+        "language": "java",
+        "title": "Java (FisherYatesShuffle)"
+      }
+    ]
   },
   {
     "key": "sattolos-algorithm",
     "title": "Sattolo's Algorithm",
     "parent": "shuffling",
     "description": "Learn about Sattolo's Algorithm, a shuffling algorithm with the property that elements cannot be shuffled to their initial position.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/general-algorithms/shuffling/sattolos-algorithm.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/general-algorithms/shuffling/sattolos-algorithm.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/generalalgorithms/shuffling/SattolosAlgorithm.java",
+        "language": "java",
+        "title": "Java (SattolosAlgorithm)"
+      }
+    ]
   },
   {
     "key": "time-and-space-complexity-comparison",
@@ -766,40 +1198,66 @@
     "title": "Quick Select",
     "parent": "selecting",
     "description": "Learn about quick select, which is used to find k-smallest elements in a list by using partitioning.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/general-algorithms/selecting/quick-select.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/general-algorithms/selecting/quick-select.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/generalalgorithms/selecting/QuickSelect.java",
+        "language": "java",
+        "title": "Java (QuickSelect)"
+      }
+    ]
   },
   {
     "key": "median-finding",
     "title": "Median Finding",
     "parent": "selecting",
     "description": "Learn about the median finding problem, which refers to finding the element in a data set that is the median.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/general-algorithms/selecting/median-finding.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/general-algorithms/selecting/median-finding.md"
+      }
+    ]
   },
   {
     "key": "median-of-medians-algorithm",
     "title": "Median of Medians Algorithm",
     "parent": "selecting",
     "description": "Learn about the median of medians algorithm, which uses small samples to find a sample median, commonly used for determining good pivots.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/general-algorithms/selecting/median-of-medians-algorithm.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/general-algorithms/selecting/median-of-medians-algorithm.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/generalalgorithms/selecting/MedianOfMediansAlgorithm.java",
+        "language": "java",
+        "title": "Java (MedianOfMediansAlgorithm)"
+      }
+    ]
   },
   {
     "key": "peak-finding",
     "title": "Peak Finding",
     "parent": "selecting",
     "description": "Learn about peak finding, which refers to the problem and algorithm of finding elements that are local maxima (or minima).",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/general-algorithms/selecting/peak-finding.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/general-algorithms/selecting/peak-finding.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/generalalgorithms/selecting/PeakFinding.java",
+        "language": "java",
+        "title": "Java (PeakFinding)"
+      }
+    ]
   },
   {
     "key": "time-and-space-complexity-comparison",
@@ -830,40 +1288,72 @@
     "title": "Trie",
     "parent": "string-data-structures",
     "description": "Learn about the trie, a data structure for maps that uses string keys, and values stored in the suffixes.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/strings/string-data-structures/trie.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/strings/string-data-structures/trie.md"
+      }
+    ]
   },
   {
     "key": "r-way-trie",
     "title": "R-Way Trie",
     "parent": "string-data-structures",
     "description": "Learn about the R-way trie, a trie structure where each node has R (radix) amount of children nodes.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/strings/string-data-structures/r-way-trie.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/strings/string-data-structures/r-way-trie.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/strings/stringdatastructures/RWayTrieMap.java",
+        "language": "java",
+        "title": "Java (RWayTrieMap)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/strings/stringdatastructures/RWayTrieSet.java",
+        "language": "java",
+        "title": "Java (RWayTrieSet)"
+      }
+    ]
   },
   {
     "key": "ternary-search-trie",
     "title": "Ternary Search Trie",
     "parent": "string-data-structures",
     "description": "Learn about the ternary search trie, a trie structure where each node has three children to store smaller, equal, and larger key nodes.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/strings/string-data-structures/ternary-search-trie.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/strings/string-data-structures/ternary-search-trie.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/strings/stringdatastructures/TernarySearchTrieMap.java",
+        "language": "java",
+        "title": "Java (TernarySearchTrieMap)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/strings/stringdatastructures/TernarySearchTrieSet.java",
+        "language": "java",
+        "title": "Java (TernarySearchTrieSet)"
+      }
+    ]
   },
   {
     "key": "suffix-tree",
     "title": "Suffix Tree",
     "parent": "string-data-structures",
     "description": "Learn about the suffix tree, which is a compressed trie comprising of the suffixes of a given string, that leads to useful properties and operations.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/strings/string-data-structures/suffix-tree.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/strings/string-data-structures/suffix-tree.md"
+      }
+    ]
   },
   {
     "key": "time-and-space-complexity-comparison",
@@ -894,20 +1384,36 @@
     "title": "LSD Radix Sort",
     "parent": "string-sorting",
     "description": "Learn about least-significant-digit (LSD) string sort, a sorting algorithm specific to strings that runs in faster than linearithmic time.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/strings/string-sorting/lsd-radix-sort.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/strings/string-sorting/lsd-radix-sort.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/strings/stringsorting/LSDRadixSort.java",
+        "language": "java",
+        "title": "Java (LSDRadixSort)"
+      }
+    ]
   },
   {
     "key": "msd-radix-sort",
     "title": "MSD Radix Sort",
     "parent": "string-sorting",
     "description": "Learn about most-significant-digit (MSD) string sort, a sorting algorithm specific to strings that runs in faster than linearithmic time.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/strings/string-sorting/msd-radix-sort"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/strings/string-sorting/msd-radix-sort"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/strings/stringsorting/MSDRadixSort.java",
+        "language": "java",
+        "title": "Java (MSDRadixSort)"
+      }
+    ]
   },
   {
     "key": "time-and-space-complexity-comparison",
@@ -938,50 +1444,78 @@
     "title": "Knuth-Morris-Pratt Algorithm",
     "parent": "string-matching",
     "description": "Learn about the Knuth-Morris-Pratt algorithm, a string matching algorithm that uses a finite state machine to keep track of the matched string.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/strings/string-matching/knuth-morris-pratt-algorithm.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/strings/string-matching/knuth-morris-pratt-algorithm.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/strings/stringmatching/KnuthMorrisPrattAlgorithm.java",
+        "language": "java",
+        "title": "Java (KnuthMorrisPrattAlgorithm)"
+      }
+    ]
   },
   {
     "key": "boyer-moore-algorithm",
     "title": "Boyer-Moore Algorithm",
     "parent": "string-matching",
     "description": "Learn about the Boyer-Moore algorithm, a string matching algorithm that uses text preprocessing for more efficient search results.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/strings/string-matching/boyer-moore-algorithm.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/strings/string-matching/boyer-moore-algorithm.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/strings/stringmatching/BoyerMooreAlgorithm.java",
+        "language": "java",
+        "title": "Java (BoyerMooreAlgorithm)"
+      }
+    ]
   },
   {
     "key": "rabin-karp-algorithm",
     "title": "Rabin-Karp Algorithm",
     "parent": "string-matching",
     "description": "Learn about the Rabin-Karp algorithm, a string matching algorithm that uses hashing to find a set of patterns in a text.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/strings/string-matching/rabin-karp-algorithm.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/strings/string-matching/rabin-karp-algorithm.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/strings/stringmatching/RabinKarpAlgorithm.java",
+        "language": "java",
+        "title": "Java (RabinKarpAlgorithm)"
+      }
+    ]
   },
   {
     "key": "approximate-string-matching",
     "title": "Approximate String Matching",
     "parent": "string-matching",
     "description": "Learn about the approximate string matching problem, which refers to finding strings that match approximately rather than exactly, and the various metrics and heuristics that can be used.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/strings/string-matching/approximate-string-matching.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/strings/string-matching/approximate-string-matching.md"
+      }
+    ]
   },
   {
     "key": "bitap-algorithm",
     "title": "Bitap Algorithm",
     "parent": "string-matching",
     "description": "Learn about the bitap algorithm, which uses a bit array to determine approximate string matches.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/strings/string-matching/bitap-algorithm.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/strings/string-matching/bitap-algorithm.md"
+      }
+    ]
   },
   {
     "key": "time-and-space-complexity-comparison",
@@ -1012,40 +1546,66 @@
     "title": "Edit Distance",
     "parent": "string-metrics",
     "description": "Learn about edit distance, which refers to the number of operations used to transform one string into another.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/strings/string-metrics/edit-distance.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/strings/string-metrics/edit-distance.md"
+      }
+    ]
   },
   {
     "key": "damerau-levenshtein-distance",
     "title": "Damerau-Levenshtein Distance",
     "parent": "string-metrics",
     "description": "Learn about Damerau-Levenshtein distance, which is a string metric used to determine the number of operations to transform one string into another.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/strings/string-metrics/damerau-levenshtein-distance.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/strings/string-metrics/damerau-levenshtein-distance.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/strings/stringmetrics/DamerauLevenshteinDistance.java",
+        "language": "java",
+        "title": "Java (DamerauLevenshteinDistance)"
+      }
+    ]
   },
   {
     "key": "hamming-distance",
     "title": "Hamming Distance",
     "parent": "string-metrics",
     "description": "Learn about Hamming distance, which refers to determining the number of positions at which two strings differ.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/strings/string-metrics/hamming-distance.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/strings/string-metrics/hamming-distance.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/strings/stringmetrics/HammingDistance.java",
+        "language": "java",
+        "title": "Java (HammingDistance)"
+      }
+    ]
   },
   {
     "key": "wagner-fischer-algorithm",
     "title": "Wagner-Fischer Algorithm",
     "parent": "string-metrics",
     "description": "Learn about the Wagner-Fischer algorithm, which uses dynamic programming to compute the edit distance between two strings.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/strings/string-metrics/wagner-fischer-algorithm.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/strings/string-metrics/wagner-fischer-algorithm.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/strings/stringmetrics/WagnerFischerAlgorithm.java",
+        "language": "java",
+        "title": "Java (WagnerFischerAlgorithm)"
+      }
+    ]
   },
   {
     "key": "time-and-space-complexity-comparison",
@@ -1076,50 +1636,60 @@
     "title": "Run-Length Encoding",
     "parent": "compression",
     "description": "Learn about run-length encoding, a basic method of data compression by counting runs of same bits.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/strings/compression/run-length-encoding.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/strings/compression/run-length-encoding.md"
+      }
+    ]
   },
   {
     "key": "huffman-coding",
     "title": "Huffman Coding",
     "parent": "compression",
     "description": "Learn about Huffman coding, a technique and optimal prefix encoding for data compression.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/strings/compression/huffman-coding.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/strings/compression/huffman-coding.md"
+      }
+    ]
   },
   {
     "key": "lempel-ziv-welch-algorithm",
     "title": "Lempel-Ziv-Welch Algorithm",
     "parent": "compression",
     "description": "Learn about the Lempel-Ziv-Welch algorithm, a compression algorithm that uses a dictionary to encode repeated patterns in a text.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/strings/compression/lempel-ziv-welch-algorithm.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/strings/compression/lempel-ziv-welch-algorithm.md"
+      }
+    ]
   },
   {
     "key": "text-transforms",
     "title": "Text Transforms",
     "parent": "compression",
     "description": "Learn about text transforms, which refers to converting or rearranging the characters in a string to a more useful format.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/strings/compression/text-transforms.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/strings/compression/text-transforms.md"
+      }
+    ]
   },
   {
     "key": "burrows-wheeler-transform",
     "title": "Burrows-Wheeler Transform",
     "parent": "compression",
     "description": "Learn about the Burrows-Wheeler transform, a text transform that leads to useful results for improving the efficiency of compression algorithms.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/strings/compression/burrows-wheeler-transform.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/strings/compression/burrows-wheeler-transform.md"
+      }
+    ]
   },
   {
     "key": "time-and-space-complexity-comparison",
@@ -1150,30 +1720,78 @@
     "title": "Graph Representation",
     "parent": "graphs",
     "description": "Learn about graph representation, and the three main implementations using edge lists, vertex matrices, and adjacency lists.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/graphs/graphs/graph-representation.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/graphs/graphs/graph-representation.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/graphs/GraphRepresentation.java",
+        "language": "java",
+        "title": "Java (GraphRepresentation)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/graphs/EdgeList.java",
+        "language": "java",
+        "title": "Java (EdgeList)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/graphs/VertexMatrix.java",
+        "language": "java",
+        "title": "Java (VertexMatrix)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/graphs/AdjacencyList.java",
+        "language": "java",
+        "title": "Java (AdjacencyList)"
+      }
+    ]
   },
   {
     "key": "undirected-and-directed-graphs",
     "title": "Undirected and Directed Graphs",
     "parent": "graphs",
     "description": "Learn about undirected and directed graphs, two types of graphs that greatly dictate the limitations of certain algorithms used on them.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/graphs/graphs/undirected-and-directed-graphs.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/graphs/graphs/undirected-and-directed-graphs.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/graphs/Graph.java",
+        "language": "java",
+        "title": "Java (Graph)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/graphs/UndirectedGraph.java",
+        "language": "java",
+        "title": "Java (UndirectedGraph)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/graphs/DirectedGraph.java",
+        "language": "java",
+        "title": "Java (DirectedGraph)"
+      }
+    ]
   },
   {
     "key": "sparse-and-dense-graphs",
     "title": "Sparse and Dense Graphs",
     "parent": "graphs",
     "description": "Learn about sparse and dense graphs, two types of graphs that refer to the property of the number of vertex and edges within the graph.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/graphs/graphs/sparse-and-dense-graphs.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/graphs/graphs/sparse-and-dense-graphs.md"
+      }
+    ]
   },
   {
     "key": "time-and-space-complexity-comparison",
@@ -1204,70 +1822,132 @@
     "title": "Depth First Search",
     "parent": "path-finding",
     "description": "Learn about depth first search, a basic graph traversal algorithm with the property of always choosing adjacent vertices to be the next to be traversed.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/graphs/path-finding/depth-first-search.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/graphs/path-finding/depth-first-search.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/pathfinding/DepthFirstSearchRecursion.java",
+        "language": "java",
+        "title": "Java (DepthFirstSearchRecursion)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/pathfinding/DepthFirstSearchStack.java",
+        "language": "java",
+        "title": "Java (DepthFirstSearchStack)"
+      }
+    ]
   },
   {
     "key": "breadth-first-search",
     "title": "Breadth First Search",
     "parent": "path-finding",
     "description": "Learn about breadth first search, a basic graph traversal algorithm with the property of always at the same level to be the next to be traversed.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/graphs/path-finding/breadth-first-search.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/graphs/path-finding/breadth-first-search.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/pathfinding/BreadthFirstSearch.java",
+        "language": "java",
+        "title": "Java (BreadthFirstSearch)"
+      }
+    ]
   },
   {
     "key": "connected-components",
     "title": "Connected Components",
     "parent": "path-finding",
     "description": "Learn about connected components, and using the depth first search algorithm to determine if two vertices belong to the same component.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/graphs/path-finding/connected-components.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/graphs/path-finding/connected-components.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/pathfinding/ConnectedComponents.java",
+        "language": "java",
+        "title": "Java (ConnectedComponents)"
+      }
+    ]
   },
   {
     "key": "topological-sort",
     "title": "Topological Sort",
     "parent": "path-finding",
     "description": "Learn about topological sort, an algorithm for the linear ordering of vertices in a graph such that for all edges (u, v), u comes before v.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/graphs/path-finding/topological-sort.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/graphs/path-finding/topological-sort.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/pathfinding/TopologicalSort.java",
+        "language": "java",
+        "title": "Java (TopologicalSort)"
+      }
+    ]
   },
   {
     "key": "kahns-topological-sort-algorithm",
     "title": "Kahn's Topological Sort Algorithm",
     "parent": "path-finding",
     "description": "Learn about Kahn's Topological Sort Algorithm, an algorithm for the topological ordering of a directed graph, by using depth first search.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/graphs/path-finding/kahns-topological-sort-algorithm.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/graphs/path-finding/kahns-topological-sort-algorithm.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/pathfinding/KahnsTopologicalSortAlgorithmStack.java",
+        "language": "java",
+        "title": "Java (KahnsTopologicalSortAlgorithmStack)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/pathfinding/KahnsTopologicalSortAlgorithmQueue.java",
+        "language": "java",
+        "title": "Java (KahnsTopologicalSortAlgorithmQueue)"
+      }
+    ]
   },
   {
     "key": "strongly-connected-components",
     "title": "Strongly Connected Components",
     "parent": "path-finding",
     "description": "Learn about strongly connected components, a property such that there exists a path from any vertex to every other vertex in a subgraph.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/graphs/path-finding/strongly-connected-components.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/graphs/path-finding/strongly-connected-components.md"
+      }
+    ]
   },
   {
     "key": "kosarajus-algorithm",
     "title": "Kosaraju's Algorithm",
     "parent": "path-finding",
     "description": "Learn about Kosaraju's Algorithm, an algorithm used for determining strongly connected components, by topological sorting and then using depth first search.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/graphs/path-finding/kosarajus-algorithm.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/graphs/path-finding/kosarajus-algorithm.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/pathfinding/KosarajusAlgorithm.java",
+        "language": "java",
+        "title": "Java (KosarajusAlgorithm)"
+      }
+    ]
   },
   {
     "key": "time-and-space-complexity",
@@ -1298,50 +1978,102 @@
     "title": "Weighted Graph",
     "parent": "shortest-path-finding",
     "description": "Learn about weighted graphs, which are graphs such that the edges are given a numerical weight, which may represent length, cost, or capacity.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/graphs/shortest-path-finding/weighted-graph.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/graphs/shortest-path-finding/weighted-graph.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/graphs/WeightedGraph.java",
+        "language": "java",
+        "title": "Java (WeightedGraph)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/graphs/WeightFunction.java",
+        "language": "java",
+        "title": "Java (WeightFunction)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/graphs/UndirectedWeightedGraph.java",
+        "language": "java",
+        "title": "Java (UndirectedWeightedGraph)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/graphs/DirectedWeightedGraph.java",
+        "language": "java",
+        "title": "Java (DirectedWeightedGraph)"
+      }
+    ]
   },
   {
     "key": "edge-relaxation",
     "title": "Edge Relaxation",
     "parent": "shortest-path-finding",
     "description": "Learn about edge relaxation, which is a common operation used in shortest path finding algorithms, that is used to lower the cost of reaching a vertex by using another vertex.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/graphs/shortest-path-finding/edge-relaxation.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/graphs/shortest-path-finding/edge-relaxation.md"
+      }
+    ]
   },
   {
     "key": "dijkstras-algorithm",
     "title": "Dijkstra's Algorithm",
     "parent": "shortest-path-finding",
     "description": "Learn about Dijkstra's Algorithm, a shortest path finding algorithm that is efficient for finding shortest paths in a graph with non-negative edge weights.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/graphs/shortest-path-finding/dijkstras-algorithm.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/graphs/shortest-path-finding/dijkstras-algorithm.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/shortestpathfinding/DijkstrasAlgorithm.java",
+        "language": "java",
+        "title": "Java (DijkstrasAlgorithm)"
+      }
+    ]
   },
   {
     "key": "bellman-ford-algorithm",
     "title": "Bellman-Ford Algorithm",
     "parent": "shortest-path-finding",
     "description": "Learn about the Bellman-Ford Algorithm, a shortest path finding algorithm that is used for finding shortest paths with potentially negative edge weights.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/graphs/shortest-path-finding/bellman-ford-algorithm.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/graphs/shortest-path-finding/bellman-ford-algorithm.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/shortestpathfinding/BellmanFordAlgorithm.java",
+        "language": "java",
+        "title": "Java (BellmanFordAlgorithm)"
+      }
+    ]
   },
   {
     "key": "floyd-warshall-algorithm",
     "title": "Floyd-Warshall Algorithm",
     "parent": "shortest-path-finding",
     "description": "Learn about the Floyd-Warshall Algorithm, a shortest path finding algorithm that is used for finding shortest paths with negative edge weights by using dynamic programming.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/graphs/shortest-path-finding/floyd-warshall-algorithm.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/graphs/shortest-path-finding/floyd-warshall-algorithm.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/shortestpathfinding/FloydWarshallAlgorithm.java",
+        "language": "java",
+        "title": "Java (FloydWarshallAlgorithm)"
+      }
+    ]
   },
   {
     "key": "time-and-space-complexity-comparison",
@@ -1372,40 +2104,60 @@
     "title": "Greedy Algorithm",
     "parent": "minimum-spanning-trees",
     "description": "Learn about greedy algorithms, a class of algorithms with the property of always choosing the locally optimal choice with the goal of achieving a globally optimal solution.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/graphs/minimum-spanning-trees/greedy-algorithm.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/graphs/minimum-spanning-trees/greedy-algorithm.md"
+      }
+    ]
   },
   {
     "key": "prims-algorithm",
     "title": "Prim's Algorithm",
     "parent": "minimum-spanning-trees",
     "description": "Learn about Prim's Algorithm, an algorithm for finding the minimum spanning tree by always choosing the next least weight edge from the current minimum spanning tree.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/graphs/minimum-spanning-trees/prims-algorithm.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/graphs/minimum-spanning-trees/prims-algorithm.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/minimumspanningtrees/PrimsAlgorithm.java",
+        "language": "java",
+        "title": "Java (PrimsAlgorithm)"
+      }
+    ]
   },
   {
     "key": "kruskals-algorithm",
     "title": "Kruskal's Algorithm",
     "parent": "minimum-spanning-trees",
     "description": "Learn about Kruskal's Algorithm, an algorithm for finding the minimum spanning tree by always choosing the next least weight edge overall such that no cycles are formed.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/graphs/minimum-spanning-trees/kruskals-algorithm.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/graphs/minimum-spanning-trees/kruskals-algorithm.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/minimumspanningtrees/KruskalsAlgorithm.java",
+        "language": "java",
+        "title": "Java (KruskalsAlgorithm)"
+      }
+    ]
   },
   {
     "key": "clustering",
     "title": "Clustering",
     "parent": "minimum-spanning-trees",
     "description": "Learn about the clustering problem, which refers to organizing points into k groups or clusters that maximize the distance between them.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/graphs/minimum-spanning-trees/clustering.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/graphs/minimum-spanning-trees/clustering.md"
+      }
+    ]
   },
   {
     "key": "time-and-space-complexity-comparison",
@@ -1428,6 +2180,24 @@
       {
         "type": "article",
         "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/graphs/flow-networks/introduction.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/flownetworks/FlowNetwork.java",
+        "language": "java",
+        "title": "Java (FlowNetwork)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/flownetworks/FlowNetworkGraph.java",
+        "language": "java",
+        "title": "Java (FlowNetworkGraph)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/flownetworks/FlowCapacityFunction.java",
+        "language": "java",
+        "title": "Java (FlowCapacityFunction)"
       }
     ]
   },
@@ -1436,20 +2206,30 @@
     "title": "Max Flow Min Cut",
     "parent": "flow-networks",
     "description": "Learn about max flow min cut, a concept in network flow that states the max flow from the source to sink is equal to the total weight fo the edges in the min cut.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/graphs/flow-networks/max-flow-min-cut.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/graphs/flow-networks/max-flow-min-cut.md"
+      }
+    ]
   },
   {
     "key": "ford-fulkerson-algorithm",
     "title": "Ford-Fulkerson Algorithm",
     "parent": "flow-networks",
     "description": "Learn about the Ford-Fulkerson Algorithm, an algorithm for finding the max flow within a flow network by greedily augmenting paths.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/graphs/flow-networks/ford-fulkerson-algorithm.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/graphs/flow-networks/ford-fulkerson-algorithm.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/flownetworks/FordFulkersonAlgorithm.java",
+        "language": "java",
+        "title": "Java (FordFulkersonAlgorithm)"
+      }
+    ]
   },
   {
     "key": "time-and-space-complexity-comparison",
@@ -1480,50 +2260,72 @@
     "title": "Expected Time",
     "parent": "randomized-algorithms",
     "description": "Learn about expected time, an aspect of algorithmic analysis that deals with determining probabilistically expected complexity of certain algorithms.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/randomization/randomized-algorithms/expected-time.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/randomization/randomized-algorithms/expected-time.md"
+      }
+    ]
   },
   {
     "key": "quick-select-revisited",
     "title": "Quick Select (Revisited)",
     "parent": "randomized-algorithms",
     "description": "Learn about quick select, revisited but in the context of randomized algorithms, and how to analyze its time complexity more precisely.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/randomization/randomized-algorithms/quick-select-revisited.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/randomization/randomized-algorithms/quick-select-revisited.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/generalalgorithms/selecting/QuickSelect.java",
+        "language": "java",
+        "title": "Java (QuickSelect)"
+      }
+    ]
   },
   {
     "key": "quick-sort-revisited",
     "title": "Quick Sort (Revisited)",
     "parent": "randomized-algorithms",
     "description": "Learn about quick sort, revisited but in the context of randomized algorithms, and how to analyze its time complexity more precisely.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/randomization/randomized-algorithms/quick-sort-revisited.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/randomization/randomized-algorithms/quick-sort-revisited.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/generalalgorithms/sorting/QuickSort.java",
+        "language": "java",
+        "title": "Java (QuickSort)"
+      }
+    ]
   },
   {
     "key": "monte-carlo-algorithm",
     "title": "Monte Carlo Algorithm",
     "parent": "randomized-algorithms",
     "description": "Learn about Monte Carlo algorithms, which are a type of randomized algorithms that are guaranteed to be fast but only probabilistically correct.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/randomization/randomized-algorithms/monte-carlo-algorithm.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/randomization/randomized-algorithms/monte-carlo-algorithm.md"
+      }
+    ]
   },
   {
     "key": "las-vegas-algorithm",
     "title": "Las Vegas Algorithm",
     "parent": "randomized-algorithms",
     "description": "Learn about Las Vegas algorithms, which are a type of randomized algorithms that are guaranteed to be correct but only probabilistically fast.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/randomization/randomized-algorithms/las-vegas-algorithm.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/randomization/randomized-algorithms/las-vegas-algorithm.md"
+      }
+    ]
   },
   {
     "key": "time-and-space-complexity-comparison",
@@ -1554,50 +2356,84 @@
     "title": "Pseudo Random Number Generators",
     "parent": "random-number-generators",
     "description": "Learn about pseudorandom number generators, which are deterministic algorithms for generating sequences of numbers with properties that approximate sequences of random numbers.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/randomization/random-number-generators/pseudorandom-number-generators.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/randomization/random-number-generators/pseudorandom-number-generators.md"
+      }
+    ]
   },
   {
     "key": "blum-blum-shub",
     "title": "Blum Blum Shub",
     "parent": "random-number-generators",
     "description": "Learn about the Blum Blum Shub algorithm, an algorithm for pseudorandom number generation that uses primes and modularization.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/randomization/random-number-generators/blum-blum-shub.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/randomization/random-number-generators/blum-blum-shub.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/randomization/randomnumbergenerators/BlumBlumShub.java",
+        "language": "java",
+        "title": "Java (BlumBlumShub)"
+      }
+    ]
   },
   {
     "key": "lagged-fibonacci-generator",
     "title": "Lagged Fibonacci Generator",
     "parent": "random-number-generators",
     "description": "Learn about the Lagged Fibonacci generator, an algorithm for pseudorandom number generation that uses a generalization of the Fibonacci sequence.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/randomization/random-number-generators/lagged-fibonacci-generator.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/randomization/random-number-generators/lagged-fibonacci-generator.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/randomization/randomnumbergenerators/LaggedFibonacciGenerator.java",
+        "language": "java",
+        "title": "Java (LaggedFibonacciGenerator)"
+      }
+    ]
   },
   {
     "key": "linear-congruential-generator",
     "title": "Linear Congruential Generator",
     "parent": "random-number-generators",
     "description": "Learn about the linear congruential generator, an algorithm for pseudorandom number generation that uses a discontinuous piecewise linear function.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/randomization/random-number-generators/linear-congruential-generator.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/randomization/random-number-generators/linear-congruential-generator.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/randomization/randomnumbergenerators/LinearCongruentialGenerator.java",
+        "language": "java",
+        "title": "Java (LinearCongruentialGenerator)"
+      }
+    ]
   },
   {
     "key": "mersenne-twister",
     "title": "Mersenne Twister",
     "parent": "random-number-generators",
     "description": "Learn about the Mersenne Twister, an algorithm for pseudorandom number generation that uses Mersenne primes.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/randomization/random-number-generators/mersenne-twister.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/randomization/random-number-generators/mersenne-twister.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/randomization/randomnumbergenerators/MersenneTwister.java",
+        "language": "java",
+        "title": "Java (MersenneTwister)"
+      }
+    ]
   },
   {
     "key": "time-and-space-complexity-comparison",
@@ -1628,90 +2464,132 @@
     "title": "Euclid's Algorithm",
     "parent": "numerical-computation",
     "description": "Learn about Euclid's algorithm, an efficient algorithm for computing the greatest common divisor (GCD) between two numbers.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/mathematics/numerical-computation/euclids-algorithm.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/mathematics/numerical-computation/euclids-algorithm.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/mathematics/numericalcomputation/EuclidsAlgorithm.java",
+        "language": "java",
+        "title": "Java (EuclidsAlgorithm)"
+      }
+    ]
   },
   {
     "key": "multiplication-algorithm",
     "title": "Multiplication Algorithm",
     "parent": "numerical-computation",
     "description": "Learn about multiplication algorithms, which are algorithms used to multiply two numbers faster than standard multiplication.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/mathematics/numerical-computation/multiplication-algorithm.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/mathematics/numerical-computation/multiplication-algorithm.md"
+      }
+    ]
   },
   {
     "key": "karatsuba-algorithm",
     "title": "Karatsuba Algorithm",
     "parent": "numerical-computation",
     "description": "Learn about the Karatsuba algorithm, a multiplication algorithm that runs in faster than quadratic time.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/mathematics/numerical-computation/karatsuba-algorithm.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/mathematics/numerical-computation/karatsuba-algorithm.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/mathematics/numericalcomputation/KaratsubaAlgorithm.java",
+        "language": "java",
+        "title": "Java (KaratsubaAlgorithm)"
+      }
+    ]
   },
   {
     "key": "newton-raphson-method",
     "title": "Newton-Raphson Method",
     "parent": "numerical-computation",
     "description": "Learn about the Newton-Raphson method, which is a method used for finding better approximations to the roots of a function.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/mathematics/numerical-computation/newton-raphson-method.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/mathematics/numerical-computation/newton-raphson-method.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/mathematics/numericalcomputation/NewtonRaphsonMethod.java",
+        "language": "java",
+        "title": "Java (NewtonRaphsonMethod)"
+      }
+    ]
   },
   {
     "key": "modular-exponentiation",
     "title": "Modular Exponentiation",
     "parent": "numerical-computation",
     "description": "Learn about modular exponentiation, an efficient method of exponentiation over a modulus.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/mathematics/numerical-computation/modular-exponentiation.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/mathematics/numerical-computation/modular-exponentiation.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/mathematics/numericalcomputation/ModularExponentiation.java",
+        "language": "java",
+        "title": "Java (ModularExponentiation)"
+      }
+    ]
   },
   {
     "key": "linear-programming",
     "title": "Linear Programming",
     "parent": "numerical-computation",
     "description": "Learn about linear programming, which is the technique of maximizing and minimizing a linear function over a set of constraints, and bring linear programs to useful standard forms.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/mathematics/numerical-computation/linear-programming.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/mathematics/numerical-computation/linear-programming.md"
+      }
+    ]
   },
   {
     "key": "simplex-algorithm",
     "title": "Simplex Algorithm",
     "parent": "numerical-computation",
     "description": "Learn about the simplex algorithm, a classic algorithm that uses simplex's to solve linear programs.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/mathematics/numerical-computation/simplex-algorithm.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/mathematics/numerical-computation/simplex-algorithm.md"
+      }
+    ]
   },
   {
     "key": "polynomial-multiplication",
     "title": "Polynomial Multiplication",
     "parent": "numerical-computation",
     "description": "Learn about the fundamental problem of polynomial multiplication, which refers to methods of multiplying polynomials in faster than quadratic time.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/mathematics/numerical-computation/polynomial-multiplication.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/mathematics/numerical-computation/polynomial-multiplication.md"
+      }
+    ]
   },
   {
     "key": "fast-fourier-transform",
     "title": "Fast Fourier Transform",
     "parent": "numerical-computation",
     "description": "Learn about the fast Fourier transform which uses the characteristics of roots of unity to perform polynomial multiplication in linearithmic time, as well as other important applications.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/mathematics/numerical-computation/fast-fourier-transform.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/mathematics/numerical-computation/fast-fourier-transform.md"
+      }
+    ]
   },
   {
     "key": "time-and-space-complexity-comparison",
@@ -1742,30 +2620,48 @@
     "title": "Convex Hull",
     "parent": "computational-geometry",
     "description": "Learn about the convex hull problem, which is finding the smallest convex set that contains a set of points.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/mathematics/computational-geometry/convex-hull.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/mathematics/computational-geometry/convex-hull.md"
+      }
+    ]
   },
   {
     "key": "graham-scan",
     "title": "Graham Scan",
     "parent": "computational-geometry",
     "description": "Learn about the Graham scan, an efficient method for computing the convex hull of a set of points in linearithmic time.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/mathematics/computational-geometry/graham-scan.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/mathematics/computational-geometry/graham-scan.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/mathematics/computationalgeometry/GrahamScan.java",
+        "language": "java",
+        "title": "Java (GrahamScan)"
+      }
+    ]
   },
   {
     "key": "jarvis-algorithm",
     "title": "Jarvis Algorithm",
     "parent": "computational-geometry",
     "description": "Learn about the Jarvis algorithm, an efficient method for computing the convex hull of a set of points.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/mathematics/computational-geometry/jarvis-algorithm.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/mathematics/computational-geometry/jarvis-algorithm.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/mathematics/computationalgeometry/JarvisAlgorithm.java",
+        "language": "java",
+        "title": "Java (JarvisAlgorithm)"
+      }
+    ]
   },
   {
     "key": "time-and-space-complexity-comparison",
@@ -1796,20 +2692,24 @@
     "title": "Overlapping Subproblems and Optimal Substructures",
     "parent": "dynamic-programming",
     "description": "Learn about the overlapping subproblem and optimal substructures, which are fundamental properties of a problem to be able to apply dynamic programming.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/dynamic-programming/dynamic-programming/overlapping-subproblems-and-optimal-substructures.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/dynamic-programming/dynamic-programming/overlapping-subproblems-and-optimal-substructures.md"
+      }
+    ]
   },
   {
     "key": "memoization",
     "title": "Memoization",
     "parent": "dynamic-programming",
     "description": "Learn about memoization, which refers to a technique of storing result of previous subproblems that is crucial in dynamic programming.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/dynamic-programming/dynamic-programming/memoization.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/dynamic-programming/dynamic-programming/memoization.md"
+      }
+    ]
   },
   {
     "key": "introduction",
@@ -1828,140 +2728,252 @@
     "title": "Fibonacci Number",
     "parent": "dynamic-programming-problems",
     "description": "Learn about the Fibonacci number problem, which refers to efficiently computing a particular Fibonacci number and the downsides of a naive solution.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/dynamic-programming/dynamic-programming-problems/fibonacci-number.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/dynamic-programming/dynamic-programming-problems/fibonacci-number.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/dynamicprogramming/dynamicprogrammingproblems/FibonacciNumber.java",
+        "language": "java",
+        "title": "Java (FibonacciNumber)"
+      }
+    ]
   },
   {
     "key": "maximum-sum-contiguous-subarray",
     "title": "Maximum Sum Contiguous Subarray",
     "parent": "dynamic-programming-problems",
     "description": "Learn about the maximum sum contiguous subarray problem, which refers to finding a contiguous (in sequence) subarray that has the maximum sum.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/dynamic-programming/dynamic-programming-problems/maximum-sum-contiguous-subarray.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/dynamic-programming/dynamic-programming-problems/maximum-sum-contiguous-subarray.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/dynamicprogramming/dynamicprogrammingproblems/MaximumSumContiguousSubarray.java",
+        "language": "java",
+        "title": "Java (MaximumSumContiguousSubarray)"
+      }
+    ]
   },
   {
     "key": "kadanes-algorithm",
     "title": "Kadane's Algorithm",
     "parent": "dynamic-programming-problems",
     "description": "Learn about Kadane's algorithm, a simple dynamic programming algorithm used to find the maximum contiguous subarray using linear time but constant space.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/dynamic-programming/dynamic-programming-problems/kadanes-algorithm.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/dynamic-programming/dynamic-programming-problems/kadanes-algorithm.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/dynamicprogramming/dynamicprogrammingproblems/KadanesAlgorithm.java",
+        "language": "java",
+        "title": "Java (KadanesAlgorithm)"
+      }
+    ]
   },
   {
     "key": "longest-common-subsequence",
     "title": "Longest Common Subsequence",
     "parent": "dynamic-programming-problems",
     "description": "Learn about the longest common subsequence problem, which refers to finding the subsequence (elements not necessarily in order) of maximum length between two arrays.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/dynamic-programming/dynamic-programming-problems/longest-common-subsequence.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/dynamic-programming/dynamic-programming-problems/longest-common-subsequence.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/dynamicprogramming/dynamicprogrammingproblems/LongestCommonSubsequence.java",
+        "language": "java",
+        "title": "Java (LongestCommonSubsequence)"
+      }
+    ]
   },
   {
     "key": "longest-increasing-subsequence",
     "title": "Longest Increasing Subsequence",
     "parent": "dynamic-programming-problems",
     "description": "Learn about the longest increasing subsequence problem, which refers to finding a subsequence (elements not necessarily in order) of maximum length where each successive element is greater than the previous.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/dynamic-programming/dynamic-programming-problems/longest-increasing-subsequence.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/dynamic-programming/dynamic-programming-problems/longest-increasing-subsequence.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/dynamicprogramming/dynamicprogrammingproblems/LongestIncreasingSubsequence.java",
+        "language": "java",
+        "title": "Java (LongestIncreasingSubsequence)"
+      }
+    ]
   },
   {
     "key": "longest-common-substring",
     "title": "Longest Common Substring",
     "parent": "dynamic-programming-problems",
     "description": "Learn about the longest common substring problem, which refers to finding the substring in common between two strings of maximum length.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/dynamic-programming/dynamic-programming-problems/longest-common-substring.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/dynamic-programming/dynamic-programming-problems/longest-common-substring.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/dynamicprogramming/dynamicprogrammingproblems/LongestCommonSubstring.java",
+        "language": "java",
+        "title": "Java (LongestCommonSubstring)"
+      }
+    ]
   },
   {
     "key": "longest-palindromic-substring",
     "title": "Longest Palindromic Substring",
     "parent": "dynamic-programming-problems",
     "description": "Learn about the longest palindromic substring problem, which refers to finding the substring of maximum length that is also a palindrome (same forwards as reversed).",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/dynamic-programming/dynamic-programming-problems/longest-palindromic-substring.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/dynamic-programming/dynamic-programming-problems/longest-palindromic-substring.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/dynamicprogramming/dynamicprogrammingproblems/LongestPalindromicSubstring.java",
+        "language": "java",
+        "title": "Java (LongestPalindromicSubstring)"
+      }
+    ]
   },
   {
     "key": "binomial-coefficient",
     "title": "Binomial Coefficient",
     "parent": "dynamic-programming-problems",
     "description": "Learn about the binomial coefficient problem, which refers to determining n choose k operations.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/dynamic-programming/dynamic-programming-problems/binomial-coefficient.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/dynamic-programming/dynamic-programming-problems/binomial-coefficient.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/dynamicprogramming/dynamicprogrammingproblems/BinomialCoefficient.java",
+        "language": "java",
+        "title": "Java (BinomialCoefficient)"
+      }
+    ]
   },
   {
     "key": "coin-change-problem",
     "title": "Coin Change Problem",
     "parent": "dynamic-programming-problems",
     "description": "Learn about the coin change problem, which refers to being able to create the minimum amount of coins for change given an arbitrary set of values of possible denominations.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/dynamic-programming/dynamic-programming-problems/coin-change-problem.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/dynamic-programming/dynamic-programming-problems/coin-change-problem.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/dynamicprogramming/dynamicprogrammingproblems/CoinChangeProblem.java",
+        "language": "java",
+        "title": "Java (CoinChangeProblem)"
+      }
+    ]
   },
   {
     "key": "maximum-size-square-submatrix",
     "title": "Maximum Size Square Submatrix",
     "parent": "dynamic-programming-problems",
     "description": "Learn about the maximum size square submatrix problem, which refers to finding the largest submatrix of all 1's in a matrix with binary values.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/dynamic-programming/dynamic-programming-problems/maximum-size-square-submatrix.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/dynamic-programming/dynamic-programming-problems/maximum-size-square-submatrix.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/dynamicprogramming/dynamicprogrammingproblems/MaximumSizeSquareSubmatrix.java",
+        "language": "java",
+        "title": "Java (MaximumSizeSquareSubmatrix)"
+      }
+    ]
   },
   {
     "key": "assembly-line-scheduling",
     "title": "Assembly Line Scheduling",
     "parent": "dynamic-programming-problems",
     "description": "Learn about the assembly line scheduling problem, which refers to minimizing the time needed to \"assemble\" a certain product given multiple assembly lines.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/dynamic-programming/dynamic-programming-problems/assembly-line-scheduling.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/dynamic-programming/dynamic-programming-problems/assembly-line-scheduling.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/dynamicprogramming/dynamicprogrammingproblems/AssemblyLineScheduling.java",
+        "language": "java",
+        "title": "Java (AssemblyLineScheduling)"
+      }
+    ]
   },
   {
     "key": "rod-cutting",
     "title": "Rod Cutting",
     "parent": "dynamic-programming-problems",
     "description": "Learn about the rod cutting problem, which refers to splitting up the length of a rod, and maximizing the total value of each individual piece.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/dynamic-programming/dynamic-programming-problems/rod-cutting.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/dynamic-programming/dynamic-programming-problems/rod-cutting.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/dynamicprogramming/dynamicprogrammingproblems/RodCutting.java",
+        "language": "java",
+        "title": "Java (RodCutting)"
+      }
+    ]
   },
   {
     "key": "levenschtein-edit-distance",
     "title": "Levenschtein Edit Distance",
     "parent": "dynamic-programming-problems",
     "description": "Learn about the dynamic programming algorithm used for determining the Levenschtein edit distance.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/dynamic-programming/dynamic-programming-problems/levenschtein-edit-distance.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/dynamic-programming/dynamic-programming-problems/levenschtein-edit-distance.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/dynamicprogramming/dynamicprogrammingproblems/LevenschteinEditDistance.java",
+        "language": "java",
+        "title": "Java (LevenschteinEditDistance)"
+      }
+    ]
   },
   {
     "key": "0-1-knapsack-problem",
     "title": "0-1 Knapsack Problem",
     "parent": "dynamic-programming-problems",
     "description": "Learn about the 0-1 Knapsack problem, which is the problem of determining which combination of items with weights and values maximizes value.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/dynamic-programming/dynamic-programming-problems/0-1-knapsack-problem.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/dynamic-programming/dynamic-programming-problems/0-1-knapsack-problem.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/dynamicprogramming/dynamicprogrammingproblems/KnapsackProblem.java",
+        "language": "java",
+        "title": "Java (KnapsackProblem)"
+      }
+    ]
   },
   {
     "key": "time-and-space-complexity-comparison",
@@ -1992,30 +3004,36 @@
     "title": "Big-O Notation",
     "parent": "computational-complexity",
     "description": "Learn abotu big-O notation in the context of O, Omega and Theta, which are used to determining lower, upper, and tight bounds on the complexity of a problem.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/algorithmic-analysis/computational-complexity/big-o-notation.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/algorithmic-analysis/computational-complexity/big-o-notation.md"
+      }
+    ]
   },
   {
     "key": "small-o-notation",
     "title": "Small-O Notation",
     "parent": "computational-complexity",
     "description": "Learn about small-O notation, which is used in determining strict upper and lower bounds on the complexity of a problem.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/algorithmic-analysis/computational-complexity/small-o-notation.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/algorithmic-analysis/computational-complexity/small-o-notation.md"
+      }
+    ]
   },
   {
     "key": "amortization",
     "title": "Amortization",
     "parent": "computational-complexity",
     "description": "Learn about amortization, an analysis method for time and space complexity, and its context within data structures and algorithms.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/algorithmic-analysis/computational-complexity/amortization.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/algorithmic-analysis/computational-complexity/amortization.md"
+      }
+    ]
   },
   {
     "key": "introduction",
@@ -2034,20 +3052,24 @@
     "title": "P Complexity",
     "parent": "complexity-classes",
     "description": "Learn about polynomial time, a common class of problems for which polynomial time algorithms exist to solve them, and the various characteristic of those problems.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/algorithmic-analysis/complexity-classes/p-complexity.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/algorithmic-analysis/complexity-classes/p-complexity.md"
+      }
+    ]
   },
   {
     "key": "np-complexity",
     "title": "NP Complexity",
     "parent": "complexity-classes",
     "description": "Learn about non-deterministic polynomial time, a class of problems for which no polynomial time algorithm exists to solve them, but which may be verified in polynomial time.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/algorithmic-analysis/complexity-classes/np-complexity.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/algorithmic-analysis/complexity-classes/np-complexity.md"
+      }
+    ]
   },
   {
     "key": "introduction",
@@ -2066,40 +3088,144 @@
     "title": "Class and Instance",
     "parent": "object-oriented-programming",
     "description": "Learn about classes and instances, which are are structures for a template of creating objects, and concrete occurences of that object.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/object-oriented-programming/class-and-instance.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/object-oriented-programming/class-and-instance.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/objectorientedprogramming/classinstance/Class.java",
+        "language": "java",
+        "title": "Java (Class)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/objectorientedprogramming/classinstance/ClassTest.java",
+        "language": "java",
+        "title": "Java (ClassTest)"
+      }
+    ]
   },
   {
     "key": "inheritance",
     "title": "Inheritance",
     "parent": "object-oriented-programming",
     "description": "Learn about inheritance, which is when an object of a particular class is able to acquire all of the properties, methods and functions of its parent class.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/object-oriented-programming/inheritance.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/object-oriented-programming/inheritance.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/objectorientedprogramming/inheritance/SuperClass.java",
+        "language": "java",
+        "title": "Java (SuperClass)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/objectorientedprogramming/inheritance/SubClassA.java",
+        "language": "java",
+        "title": "Java (SubClassA)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/objectorientedprogramming/inheritance/SubClassB.java",
+        "language": "java",
+        "title": "Java (SubClassB)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/objectorientedprogramming/inheritance/InheritanceTest1.java",
+        "language": "java",
+        "title": "Java (InheritanceTest1)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/objectorientedprogramming/inheritance/InheritanceTest2.java",
+        "language": "java",
+        "title": "Java (InheritanceTest2)"
+      }
+    ]
   },
   {
     "key": "encapsulation",
     "title": "Encapsulation",
     "parent": "object-oriented-programming",
     "description": "Learn about encapsulation, which is a property of Objects to be able to restrict access to its internal fields, methods and functions.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/object-oriented-programming/encapsulation.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/object-oriented-programming/encapsulation.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/objectorientedprogramming/encapsulation/Class.java",
+        "language": "java",
+        "title": "Java (Class)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/objectorientedprogramming/encapsulation/Account.java",
+        "language": "java",
+        "title": "Java (Account)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/objectorientedprogramming/encapsulation/EncapsulationTest1.java",
+        "language": "java",
+        "title": "Java (EncapsulationTest1)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/objectorientedprogramming/encapsulation/EncapsulationTest2.java",
+        "language": "java",
+        "title": "Java (EncapsulationTest2)"
+      }
+    ]
   },
   {
     "key": "polymorphism",
     "title": "Polymorphism",
     "parent": "object-oriented-programming",
     "description": "Learn about polymorphism, which is the mechanism of being able to use some abstract interface to apply to multiple classes that implement that interface.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/object-oriented-programming/polymorphism.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/object-oriented-programming/polymorphism.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/objectorientedprogramming/polymorphism/ClassA.java",
+        "language": "java",
+        "title": "Java (ClassA)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/objectorientedprogramming/polymorphism/ClassB.java",
+        "language": "java",
+        "title": "Java (ClassB)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/objectorientedprogramming/polymorphism/ClassC.java",
+        "language": "java",
+        "title": "Java (ClassC)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/objectorientedprogramming/polymorphism/PolymorphismTest1.java",
+        "language": "java",
+        "title": "Java (PolymorphismTest1)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/objectorientedprogramming/polymorphism/PolymorphismTest2.java",
+        "language": "java",
+        "title": "Java (PolymorphismTest2)"
+      }
+    ]
   },
   {
     "key": "introduction",
@@ -2118,90 +3244,108 @@
     "title": "First Class Function",
     "parent": "functional-programming",
     "description": "Learn about the first class function, which is a property of functional programming languages where functions can be passed as arguments to other functions.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/functional-programming/first-class-function.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/functional-programming/first-class-function.md"
+      }
+    ]
   },
   {
     "key": "recursion",
     "title": "Recursion",
     "parent": "functional-programming",
     "description": "Learn about recursion, a programming method and general mechanism in functional programming, where solutions to problems depend on smaller subproblems.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/functional-programming/recursion.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/functional-programming/recursion.md"
+      }
+    ]
   },
   {
     "key": "lambda-notation",
     "title": "Lambda Notation",
     "parent": "functional-programming",
     "description": "Learn about lambda notation, a system in mathematical logic for expressing computation based on function abstraction and application using variable binding and substitution.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/functional-programming/lambda-notation.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/functional-programming/lambda-notation.md"
+      }
+    ]
   },
   {
     "key": "function-composition",
     "title": "Function Composition",
     "parent": "functional-programming",
     "description": "Learn about function composition, a technique in functional programming for applying functions to the result of another function to produce a third function.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/functional-programming/function-composition.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/functional-programming/function-composition.md"
+      }
+    ]
   },
   {
     "key": "map-filter-reduce",
     "title": "Map, Filter, Reduce",
     "parent": "functional-programming",
     "description": "Learn about map, filter, and reduce, which are fundamental functions that operate on lists of elements, and are used to augment, remove, and combine elements.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/functional-programming/map-filter-reduce.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/functional-programming/map-filter-reduce.md"
+      }
+    ]
   },
   {
     "key": "currying",
     "title": "Currying",
     "parent": "functional-programming",
     "description": "Learn about currying, a technique in functional programming to translate the evaluation of a function with multiple arguments into a evaluating a sequence of functions.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/functional-programming/currying.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/functional-programming/currying.md"
+      }
+    ]
   },
   {
     "key": "compose",
     "title": "Compose",
     "parent": "functional-programming",
     "description": "Learn about compose, a technique in functional programming for simplifying function composition.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/functional-programming/compose.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/functional-programming/compose.md"
+      }
+    ]
   },
   {
     "key": "piping",
     "title": "Piping",
     "parent": "functional-programming",
     "description": "Learn about piping, a technique in functional programming for feeding the output of one function as the input of a subsequent function.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/functional-programming/piping.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/functional-programming/piping.md"
+      }
+    ]
   },
   {
     "key": "zip-unzip",
     "title": "Zip, Unzip",
     "parent": "functional-programming",
     "description": "Learn about zip and unzip, which are techniques in functional programming for combining two lists into a list of tuples and vice versa.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/functional-programming/zip-unzip.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/functional-programming/zip-unzip.md"
+      }
+    ]
   },
   {
     "key": "introduction",
@@ -2220,160 +3364,666 @@
     "title": "Adapter",
     "parent": "design-patterns",
     "description": "Learn about the adapter pattern, which is used for converting incompatible interfaces.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/design-patterns/adapter.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/design-patterns/adapter.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/adapter/OldComponent.java",
+        "language": "java",
+        "title": "Java (OldComponent)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/adapter/OldComponentAdapter.java",
+        "language": "java",
+        "title": "Java (OldComponentAdapter)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/adapter/NewClassInterface.java",
+        "language": "java",
+        "title": "Java (NewClassInterface)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/adapter/AdapterTest.java",
+        "language": "java",
+        "title": "Java (AdapterTest)"
+      }
+    ]
   },
   {
     "key": "bridge",
     "title": "Bridge",
     "parent": "design-patterns",
     "description": "Learn about the bridge pattern, which is used for decoupling abstractions from their implementations.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/design-patterns/bridge.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/design-patterns/bridge.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/bridge/Abstraction.java",
+        "language": "java",
+        "title": "Java (Abstraction)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/bridge/RefinedAbstraction.java",
+        "language": "java",
+        "title": "Java (RefinedAbstraction)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/bridge/Implementor.java",
+        "language": "java",
+        "title": "Java (Implementor)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/bridge/ConcreteImplementorA.java",
+        "language": "java",
+        "title": "Java (ConcreteImplementorA)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/bridge/ConcreteImplementorB.java",
+        "language": "java",
+        "title": "Java (ConcreteImplementorB)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/bridge/BridgeTest.java",
+        "language": "java",
+        "title": "Java (BridgeTest)"
+      }
+    ]
   },
   {
     "key": "builder",
     "title": "Builder",
     "parent": "design-patterns",
     "description": "Learn about the builder pattern, which is used for constructing and parsing complex objects.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/design-patterns/builder.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/design-patterns/builder.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/builder/HouseDirector.java",
+        "language": "java",
+        "title": "Java (HouseDirector)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/builder/HouseBuilder.java",
+        "language": "java",
+        "title": "Java (HouseBuilder)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/builder/House.java",
+        "language": "java",
+        "title": "Java (House)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/builder/ModernHouseBuilder.java",
+        "language": "java",
+        "title": "Java (ModernHouseBuilder)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/builder/FrenchHouseBuilder.java",
+        "language": "java",
+        "title": "Java (FrenchHouseBuilder)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/builder/BuilderTest.java",
+        "language": "java",
+        "title": "Java (BuilderTest)"
+      }
+    ]
   },
   {
     "key": "chain-of-responsibility",
     "title": "Chain of Responsibility",
     "parent": "design-patterns",
     "description": "Learn about the chain of responsibility pattern, which is using more than one object to handle a request.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/design-patterns/chain-of-responsibility.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/design-patterns/chain-of-responsibility.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/chainofresponsibility/Handler.java",
+        "language": "java",
+        "title": "Java (Handler)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/chainofresponsibility/Pipeline.java",
+        "language": "java",
+        "title": "Java (Pipeline)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/chainofresponsibility/Request.java",
+        "language": "java",
+        "title": "Java (Request)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/chainofresponsibility/ChainOfResponsibilityTest.java",
+        "language": "java",
+        "title": "Java (ChainOfResponsibilityTest)"
+      }
+    ]
   },
   {
     "key": "command",
     "title": "Command",
     "parent": "design-patterns",
     "description": "Learn about the command pattern, which is used to encapsulate and parameterize a request object.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/design-patterns/command.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/design-patterns/command.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/command/Command.java",
+        "language": "java",
+        "title": "Java (Command)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/command/ConcreteCommandA.java",
+        "language": "java",
+        "title": "Java (ConcreteCommandA)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/command/ConcreteCommandB.java",
+        "language": "java",
+        "title": "Java (ConcreteCommandB)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/command/ConcreteCommandC.java",
+        "language": "java",
+        "title": "Java (ConcreteCommandC)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/command/CommandProducer.java",
+        "language": "java",
+        "title": "Java (CommandProducer)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/command/CommandConsumer.java",
+        "language": "java",
+        "title": "Java (CommandConsumer)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/command/CommandTest.java",
+        "language": "java",
+        "title": "Java (CommandTest)"
+      }
+    ]
   },
   {
     "key": "composite",
     "title": "Composite",
     "parent": "design-patterns",
     "description": "Learn about the composite pattern, which is used to represent objects in a recursive tree structure.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/design-patterns/composite.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/design-patterns/composite.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/composite/AbstractComponent.java",
+        "language": "java",
+        "title": "Java (AbstractComponent)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/composite/BasicComponent.java",
+        "language": "java",
+        "title": "Java (BasicComponent)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/composite/CompositeComponent.java",
+        "language": "java",
+        "title": "Java (CompositeComponent)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/composite/CompositeTest.java",
+        "language": "java",
+        "title": "Java (CompositeTest)"
+      }
+    ]
   },
   {
     "key": "decorator",
     "title": "Decorator",
     "parent": "design-patterns",
     "description": "Learn about the decorator pattern, which is used to attach functionality to an object dynamically.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/design-patterns/decorator.md"
-    }
+    "children": [
+      {
+        "type": "article",
+       "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/design-patterns/decorator.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/decorator/Interface.java",
+        "language": "java",
+        "title": "Java (Interface)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/decorator/Base.java",
+        "language": "java",
+        "title": "Java (Base)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/decorator/AbstractDecorator.java",
+        "language": "java",
+        "title": "Java (AbstractDecorator)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/decorator/ConcreteDecoratorA.java",
+        "language": "java",
+        "title": "Java (ConcreteDecoratorA)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/decorator/ConcreteDecoratorB.java",
+        "language": "java",
+        "title": "Java (ConcreteDecoratorB)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/decorator/ConcreteDecoratorC.java",
+        "language": "java",
+        "title": "Java (ConcreteDecoratorC)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/decorator/DecoratorTest.java",
+        "language": "java",
+        "title": "Java (DecoratorTest)"
+      }
+    ]
   },
   {
     "key": "factory",
     "title": "Factory",
     "parent": "design-patterns",
     "description": "Learn about the factory pattern, which is used to create objects of different parameters.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/design-patterns/factory.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/design-patterns/factory.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/factory/Product.java",
+        "language": "java",
+        "title": "Java (Product)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/factory/ConcreteProductA.java",
+        "language": "java",
+        "title": "Java (ConcreteProductA)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/factory/ConcreteProductB.java",
+        "language": "java",
+        "title": "Java (ConcreteProductB)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/factory/ConcreteProductC.java",
+        "language": "java",
+        "title": "Java (ConcreteProductC)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/factory/Factory.java",
+        "language": "java",
+        "title": "Java (Factory)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/factory/FactoryTest.java",
+        "language": "java",
+        "title": "Java (FactoryTest)"
+      }
+    ]
   },
   {
     "key": "iterator",
     "title": "Iterator",
     "parent": "design-patterns",
     "description": "Learn about the iterator pattern, which is used to traverse through a collection of objects without breaking encapsulation.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/design-patterns/iterator.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/design-patterns/iterator.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/iterator/FIFOList.java",
+        "language": "java",
+        "title": "Java (FIFOList)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/iterator/IteratorTest.java",
+        "language": "java",
+        "title": "Java (IteratorTest)"
+      }
+    ]
   },
   {
     "key": "null-object",
     "title": "Null Object",
     "parent": "design-patterns",
     "description": "Learn about the null object pattern, which is used to encapsulate the absence of an object.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/design-patterns/null-object.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/design-patterns/null-object.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/nullobject/AbstractRequest.java",
+        "language": "java",
+        "title": "Java (AbstractRequest)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/nullobject/RealRequest.java",
+        "language": "java",
+        "title": "Java (RealRequest)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/nullobject/NullRequest.java",
+        "language": "java",
+        "title": "Java (NullRequest)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/nullobject/NullObjectTest.java",
+        "language": "java",
+        "title": "Java (NullObjectTest)"
+      }
+    ]
   },
   {
     "key": "observer",
     "title": "Observer",
     "parent": "design-patterns",
     "description": "Learn about the observer pattern, which is used for objects to automatically update its dependents.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/design-patterns/observer.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/design-patterns/observer.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/observer/Subject.java",
+        "language": "java",
+        "title": "Java (Subject)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/observer/AbstractObserver.java",
+        "language": "java",
+        "title": "Java (AbstractObserver)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/observer/ConcreteObserver.java",
+        "language": "java",
+        "title": "Java (ConcreteObserver)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/observer/ObserverTest.java",
+        "language": "java",
+        "title": "Java (ObserverTest)"
+      }
+    ]
   },
   {
     "key": "prototype",
     "title": "Prototype",
     "parent": "design-patterns",
     "description": "Learn about the prototype pattern, which is used to instantiate objects with specific parameters.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/design-patterns/prototype.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/design-patterns/prototype.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/prototype/Prototype.java",
+        "language": "java",
+        "title": "Java (Prototype)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/prototype/ConcretePrototypeA.java",
+        "language": "java",
+        "title": "Java (ConcretePrototypeA)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/prototype/ConcretePrototypeB.java",
+        "language": "java",
+        "title": "Java (ConcretePrototypeB)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/prototype/ConcretePrototypeC.java",
+        "language": "java",
+        "title": "Java (ConcretePrototypeC)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/prototype/Factory.java",
+        "language": "java",
+        "title": "Java (Factory)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/prototype/PrototypeTest.java",
+        "language": "java",
+        "title": "Java (PrototypeTest)"
+      }
+    ]
   },
   {
     "key": "singleton",
     "title": "Singleton",
     "parent": "design-patterns",
     "description": "Learn about the singleton pattern, which is used to instantiate an object of only one instance.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/design-patterns/singleton.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/design-patterns/singleton.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/singleton/Singleton.java",
+        "language": "java",
+        "title": "Java (Singleton)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/singleton/SingletonTest.java",
+        "language": "java",
+        "title": "Java (SingletonTest)"
+      }
+    ]
   },
   {
     "key": "strategy",
     "title": "Strategy",
     "parent": "design-patterns",
     "description": "Learn about the strategy pattern, which is used to encapsulate a family of algorithms.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/design-patterns/strategy.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/design-patterns/strategy.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/strategy/Strategy.java",
+        "language": "java",
+        "title": "Java (Strategy)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/strategy/ConcreteStrategyA.java",
+        "language": "java",
+        "title": "Java (ConcreteStrategyA)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/strategy/ConcreteStrategyB.java",
+        "language": "java",
+        "title": "Java (ConcreteStrategyB)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/strategy/ConcreteStrategyC.java",
+        "language": "java",
+        "title": "Java (ConcreteStrategyC)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/strategy/Context.java",
+        "language": "java",
+        "title": "Java (Context)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/strategy/StrategyTest.java",
+        "language": "java",
+        "title": "Java (StrategyTest)"
+      }
+    ]
   },
   {
     "key": "template-method",
     "title": "Template Method",
     "parent": "design-patterns",
     "description": "Learn about the template method pattern, which is used to provide a skeleton for a particular class.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/design-patterns/template-method.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/design-patterns/template-method.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/templatemethod/DrawBase.java",
+        "language": "java",
+        "title": "Java (DrawBase)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/templatemethod/DrawBodyLegs.java",
+        "language": "java",
+        "title": "Java (DrawBodyLegs)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/templatemethod/DrawFeet.java",
+        "language": "java",
+        "title": "Java (DrawFeet)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/templatemethod/TemplateMethodTest.java",
+        "language": "java",
+        "title": "Java (TemplateMethodTest)"
+      }
+    ]
   },
   {
     "key": "visitor",
     "title": "Visitor",
     "parent": "design-patterns",
     "description": "Learn about the visitor pattern, which is used to perform dynamic dispatch on multiple polymorphic objects.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/design-patterns/visitor.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/design-patterns/visitor.md"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/visitor/AbstractNode.java",
+        "language": "java",
+        "title": "Java (AbstractNode)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/visitor/UnaryNode.java",
+        "language": "java",
+        "title": "Java (UnaryNode)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/visitor/BinaryNode.java",
+        "language": "java",
+        "title": "Java (BinaryNode)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/visitor/Visitor.java",
+        "language": "java",
+        "title": "Java (Visitor)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/visitor/ConcreteVisitorA.java",
+        "language": "java",
+        "title": "Java (ConcreteVisitorA)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/visitor/ConcreteVisitorB.java",
+        "language": "java",
+        "title": "Java (ConcreteVisitorB)"
+      },
+      {
+        "type": "code",
+        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/visitor/VisitorTest.java",
+        "language": "java",
+        "title": "Java (VisitorTest)"
+      }
+    ]
   },
   {
     "key": "introduction",
@@ -2392,40 +4042,48 @@
     "title": "Shell Scripts",
     "parent": "bash-scripting",
     "description": "Learn about creating shell scripts, variables, and working with standard streams.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/bash-scripting/shell-scripts.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/bash-scripting/shell-scripts.md"
+      }
+    ]
   },
   {
     "key": "common-functions",
     "title": "Common Functions",
     "parent": "bash-scripting",
     "description": "Learn about common and useful functions in shell scripts, and how they can be used in conjunction.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/bash-scripting/common-functions.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/bash-scripting/common-functions.md"
+      }
+    ]
   },
   {
     "key": "exit-status-codes",
     "title": "Exit Status Codes",
     "parent": "bash-scripting",
     "description": "Learn about the purpose and use of exit status codes, which give shell scripts useful information, often of other shell scripts themselves.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/bash-scripting/exit-status-codes.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/bash-scripting/exit-status-codes.md"
+      }
+    ]
   },
   {
     "key": "file-access-in-scripts",
     "title": "File Access in Scripts",
     "parent": "bash-scripting",
     "description": "Learn about various functions and techniques for file access and manipulation using shell scripts.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/bash-scripting/file-access-in-scripts.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/bash-scripting/file-access-in-scripts.md"
+      }
+    ]
   },
   {
     "key": "introduction",
@@ -2444,39 +4102,47 @@
     "title": "Basic Syntax",
     "parent": "regular-expressions",
     "description": "Learn about the various syntax used to construct regular expressions, and how they can be combined to create concise and useful patterns.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/regular-expressions/basic-syntax.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/regular-expressions/basic-syntax.md"
+      }
+    ]
   },
   {
     "key": "regex-flags",
     "title": "Regex Flags",
     "parent": "regular-expressions",
     "description": "Learn about regex flags, which refers to common flags used to modifying the behavior of matches.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/regular-expressions/regex-flags.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/regular-expressions/regex-flags.md"
+      }
+    ]
   },
   {
     "key": "grouping-and-capturing",
     "title": "Grouping and Capturing",
     "parent": "regular-expressions",
     "description": "Learn about grouping and capturing, which refers to finding matches around some defined group of tokens, but being able to return those tokens themselves.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/regular-expressions/grouping-and-capturing.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/regular-expressions/grouping-and-capturing.md"
+      }
+    ]
   },
   {
     "key": "look-ahead-look-behind",
     "title": "Look Ahead, Look Behind",
     "parent": "regular-expressions",
     "description": "Learn about look ahead and look behind, which refers to making assertions about next or previous characters.",
-    "children": {
-      "type": "article",
-      "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/regular-expressions/look-ahead-look-behind.md"
-    }
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/software-engineering/regular-expressions/look-ahead-look-behind.md"
+      }
+    ]
   }
 ]
