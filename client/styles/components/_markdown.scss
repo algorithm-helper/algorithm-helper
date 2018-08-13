@@ -57,3 +57,24 @@
   display: inline;
 }
 
+.markdown-container table {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.markdown-container table tr {
+  border-bottom-color: $OUTLINE_COLOR;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+
+.markdown-container table th,
+.markdown-container table td {
+  padding: 1em;
+}
+
+
+.markdown-container table tr:last-child {
+  border-bottom: none;
+}

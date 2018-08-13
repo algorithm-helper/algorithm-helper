@@ -87,7 +87,7 @@ class TopicItemPage extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="topic-item-page-container">
         <JumbotronSmall
           title={this.state.topic.title}
           subtitle={this.state.subcategory.title}

@@ -12,7 +12,7 @@ const options = {
   renderer,
   pedantic: false,
   gfm: true,
-  tables: true,
+  tables: false,
   breaks: false,
   sanitize: false,
   smartLists: true,
