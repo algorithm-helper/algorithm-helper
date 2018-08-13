@@ -61,8 +61,13 @@ class TopicItemPage extends React.Component {
 
     this.props.dispatch(setColorTheme(category.colorKey));
     this.setState({ category, subcategory, topic });
+
+    // getTopicItemTypes
   }
 
+  /**
+   * Handles changing the index for the TopicItemNavbar.
+   */
   handleChangeIndex = index => {
     this.setState({ indexSelected: index });
     this.history.push({
@@ -71,20 +76,37 @@ class TopicItemPage extends React.Component {
     });
   };
 
+  /**
+   * Returns the key parameters for this current topic item, including the type (`article`, `code`,
+   * etc.)
+   */
+  getCurrentKeyParameters = () => {
+    const categoryKey = this.state.category.key;
+    const subcategoryKey = this.state.subcategory.key;
+    const topicKey = this.state.topic.key;
+    const topicItemType = this.state.topicItems[this.state.indexSelected].type;
+    return { categoryKey, subcategoryKey, topicKey, topicItemType };
+  };
+
+  /**
+   * Handles mark as completed for the current topic item.
+   */
   handleMarkAsCompleted = () => {
-    console.log('handleMarkAsCompleted');
-    console.log(this.state.category);
-    console.log(this.state.subcategory);
-    console.log(this.state.indexSelected);
+    const params = this.getCurrentKeyParameters();
+    console.log(params);
   };
 
+  /**
+   * Handles save to bookmarks for the current topic item.
+   */
   handleSaveToBookmarks = () => {
-    console.log('handleSaveToBookmarks');
-    console.log(this.state.category);
-    console.log(this.state.subcategory);
-    console.log(this.state.indexSelected);
+    const params = this.getCurrentKeyParameters();
+    console.log(params);
   };
 
+  /**
+   * Renders the TopicItemPage component.
+   */
   render() {
     return (
       <div className="topic-item-page-container">

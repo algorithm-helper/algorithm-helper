@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Button } from 'reactstrap';
 
@@ -18,7 +19,11 @@ const TopicItemBar = props => (
           className="fas fa-check"
           style={{ marginRight: '0.5em' }}
         />
-        Mark as Completed
+        {
+          !props.isCompleted
+          ? "Mark as Completed"
+          : "Mark as Uncompleted"
+        }
       </Button>
     </div>
     <div className="topic-item-bar-item">
@@ -30,11 +35,20 @@ const TopicItemBar = props => (
           className="fas fa-star"
           style={{ marginRight: '0.5em' }}
         />
-        Save to Bookmarks
+        {
+          !props.isBookmarked
+          ? "Save to Bookmarks"
+          : "Remove from Bookmarks"
+        }
       </Button>
     </div>
   </div>
 );
+
+TopicItemBar.propTypes = {
+  isCompleted: PropTypes.bool.isRequired,
+  isBookmarked: PropTypes.bool.isRequired,
+};
 
 const mapStateToProps = state => ({
   colorKey: state.colorKey

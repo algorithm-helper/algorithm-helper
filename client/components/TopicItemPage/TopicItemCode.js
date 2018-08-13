@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import SyntaxHighlighter from 'react-syntax-highlighter';
@@ -31,7 +32,7 @@ const styles = theme => ({
   },
 });
 
-class TopicItemCodeContainer extends React.Component {
+class TopicItemCode extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -134,7 +135,7 @@ storage
   }
 
   /**
-   * Renders the TopicItemCodeContainer component.
+   * Renders the TopicItemCode component.
    */
   render() {
     return (
@@ -176,6 +177,10 @@ storage
   }
 }
 
+TopicItemCode.propTypes = {
+  contentLoaded: PropTypes.func.isRequired,
+};
+
 const mapStateToProps = state => ({
   colorKey: state.colorKey
 });
@@ -183,4 +188,4 @@ const mapStateToProps = state => ({
 export default compose(
   withStyles(styles),
   connect(mapStateToProps)
-)(TopicItemCodeContainer);
+)(TopicItemCode);

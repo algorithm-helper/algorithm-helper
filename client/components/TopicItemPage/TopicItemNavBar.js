@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Col, Container, Row } from 'reactstrap';
@@ -64,6 +65,10 @@ class TopicItemNavBar extends React.Component {
     );
   }
 }
+
+TopicItemNavBar.propTypes = {
+  indexStart: PropTypes.number.isRequired,
+};
 
 const mapStateToProps = state => ({
   colorKey: state.colorKey

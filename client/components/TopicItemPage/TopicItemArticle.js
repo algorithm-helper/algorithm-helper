@@ -10,12 +10,10 @@ import Markdown from '../Markdown/';
 import getColorFromKey from '../../utils/getColorFromKey';
 import getS3ArticleUrl from '../../utils/getS3ArticleUrl';
 
-class TopicItemArticleContainer extends React.Component {
+class TopicItemArticle extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      url: '',
-    };
+    this.state = { url: '' };
   }
 
   componentWillMount() {
@@ -23,7 +21,7 @@ class TopicItemArticleContainer extends React.Component {
   }
 
   /**
-   * Renders the TopicItemArticleContainer component.
+   * Renders the TopicItemArticle component.
    */
   render() {
     return (
@@ -35,7 +33,7 @@ class TopicItemArticleContainer extends React.Component {
   }
 }
 
-TopicItemArticleContainer.propTypes = {
+TopicItemArticle.propTypes = {
   contentLoaded: PropTypes.func.isRequired,
 };
 
@@ -46,4 +44,4 @@ const mapStateToProps = state => ({
 export default compose(
   withRouter,
   connect(mapStateToProps)
-)(TopicItemArticleContainer);
+)(TopicItemArticle);

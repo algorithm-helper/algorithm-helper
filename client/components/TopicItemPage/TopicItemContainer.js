@@ -4,8 +4,8 @@ import MDSpinner from 'react-md-spinner';
 import { connect } from 'react-redux';
 import { Col, Container, Row } from 'reactstrap';
 
-import TopicItemArticleContainer from './TopicItemArticleContainer';
-import TopicItemCodeContainer from './TopicItemCodeContainer';
+import TopicItemArticle from './TopicItemArticle';
+import TopicItemCode from './TopicItemCode';
 import TopicItemBar from './TopicItemBar';
 
 import getColorFromKey from '../../utils/getColorFromKey';
@@ -15,6 +15,8 @@ class TopicItemContainer extends React.Component {
     super(props);
     this.state = {
       loading: false,
+      isCompleted: false,
+      isBookmarked: false,
     };
   }
 
@@ -25,6 +27,14 @@ class TopicItemContainer extends React.Component {
   componentWillReceiveProps() {
     this.setState({ loading: true });
   }
+
+  /**
+   * Makes a request to the server to check the completion and bookmark status of this current
+   * topic item for this current logged in user.
+   */
+  requestCompletionAndBookmarkStatus = () => {
+    // TODO
+  };
 
   /**
    * Handles when the content finishes loading.
@@ -40,13 +50,13 @@ class TopicItemContainer extends React.Component {
     switch(this.props.topicItem.type) {
       case 'article':
         return (
-          <TopicItemArticleContainer
+          <TopicItemArticle
             contentLoaded={this.handleContentLoaded}
           />
         );
       case 'code':
         return (
-          <TopicItemCodeContainer
+          <TopicItemCode
             contentLoaded={this.handleContentLoaded}
           />
         );
@@ -78,6 +88,8 @@ class TopicItemContainer extends React.Component {
               && <TopicItemBar
                   onMarkAsCompleted={this.props.onMarkAsCompleted}
                   onSaveToBookmarks={this.props.onSaveToBookmarks}
+                  isCompleted={this.state.isCompleted}
+                  isBookmarked={this.state.isBookmarked}
                 />
             }
             <div className="topic-item-container">
