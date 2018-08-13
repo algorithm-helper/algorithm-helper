@@ -1,36 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { compose } from 'redux';
 import { connect } from 'react-redux';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { monoBlue } from 'react-syntax-highlighter/styles/hljs';
-import { Tab, Tabs, Typography } from '@material-ui/core';
-import { withStyles } from '@material-ui/core/styles';
-import MDSpinner from 'react-md-spinner';
+import Tabs, { TabPane } from 'rc-tabs';
+import TabContent from 'rc-tabs/lib/TabContent';
+import ScrollableInkTabBar from 'rc-tabs/lib/ScrollableInkTabBar';
 
-// Date:
-import colors from '../../../data/colors.json';
+import getColorFromKey from '../../utils/getColorFromKey';
 
-function TabContainer(props) {
-  return (
-    <Typography component="div" style={{ padding: 0 }}>
-      <SyntaxHighlighter
-      language='javascript'
-      className="topic-item-code"
-      showLineNumbers={true}
-      style={monoBlue}
-      >
-      {props.codeContent}
-      </SyntaxHighlighter>
-    </Typography>
-  );
-}
-
-const styles = theme => ({
-  tabsIndicator: {
-    backgroundColor: '#fff',
-  },
-});
+import 'rc-tabs/assets/index.css';
 
 class TopicItemCode extends React.Component {
   constructor(props) {
@@ -40,7 +17,6 @@ class TopicItemCode extends React.Component {
       value: 0,
       loading: false,
     };
-    this.handleChange = this.handleChange.bind(this);
   }
 
   componentWillMount() {
@@ -130,10 +106,6 @@ storage
     }, 500);
   }
 
-  handleChange(event, value) {
-    this.setState({ value });
-  }
-
   /**
    * Renders the TopicItemCode component.
    */
@@ -141,37 +113,19 @@ storage
     return (
       <div>
         <Tabs
-          style={{
-            backgroundColor: colors[this.props.colorKey],
-            color: '#fff',
-          }}
-          value={this.state.value}
-          onChange={this.handleChange}
-          classes={{
-            indicator: this.props.classes.tabsIndicator
-          }}>
-          <Tab
-            label="Java"
-            style={{
-              outline: 'none'
-            }}
-          />
-          <Tab
-            label="Python"
-            style={{
-              outline: 'none'
-            }}
-          />
-          <Tab
-            label="JavaScript"
-            style={{
-              outline: 'none'
-            }}
-          />
+          defaultActiveKey="0"
+          renderTabBar={() => <ScrollableInkTabBar/>}
+          renderTabContent={() => <TabContent/>}>
+          <TabPane tab="Java" key="0">
+            Test content here
+          </TabPane>
+          <TabPane tab="Python" key="1">
+            Test content here
+          </TabPane>
+          <TabPane tab="JavaScript" key="2">
+            Test content here
+          </TabPane>
         </Tabs>
-        {
-          <TabContainer codeContent={this.state.codeContent[this.state.value]}/>
-        }
       </div>
     );
   }
@@ -185,7 +139,4 @@ const mapStateToProps = state => ({
   colorKey: state.colorKey
 });
 
-export default compose(
-  withStyles(styles),
-  connect(mapStateToProps)
-)(TopicItemCode);
+export default connect(mapStateToProps)(TopicItemCode);
