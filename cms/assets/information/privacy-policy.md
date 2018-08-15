@@ -1,10 +1,10 @@
 Effective: August 1, 2018
 
-Algorithm Helper ("us", "we", or "our") operates the [https://algorithmica.io](https://algorithmica.io) website (the "Service").
+Algorithm Helper ("us", "we", or "our") operates the [https://algorithmhelper.com](https://algorithmhelper.com) website (the "Service").
 
 This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data.
 
-We use your data to provide and improve the Service. By using the Service, you agree to the collection and use of information in accordance with this policy. Unless otherwise defined in this Privacy Policy, terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, accessible from [https://algorithmica.io](https://algorithmica.io).
+We use your data to provide and improve the Service. By using the Service, you agree to the collection and use of information in accordance with this policy. Unless otherwise defined in this Privacy Policy, terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, accessible from [https://algorithmhelper.com](https://algorithmhelper.com).
 
 ## Section 1 - Information Collection and User Data
 
@@ -113,4 +113,4 @@ You are advised to review this Privacy Policy periodically for any changes. Chan
 
 ## Section 10 - Contact Information
 
-Questions about the Privacy Policy should be sent to us at contact@algorithmica.com.
+Questions about the Privacy Policy should be sent to us at contact@algorithmhelper.com.

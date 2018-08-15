@@ -136,4 +136,4 @@ We reserve the right, at our sole discretion, to update, change or replace any p
 
 ## Section 19 - Contact Information
 
-Questions about the Terms of Service should be sent to us at contact@algorithmica.com.
+Questions about the Terms of Service should be sent to us at contact@algorithmhelper.com.
