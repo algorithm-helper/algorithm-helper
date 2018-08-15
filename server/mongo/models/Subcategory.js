@@ -5,27 +5,23 @@ const Subcategory = mongoose.model('Subcategory', {
   key: {
     type: String,
     required: true,
-    trim: true,
-    minlength: 1,
     unique: true,
+  },
+  slug: {
+    type: String,
+    required: true,
   },
   title: {
     type: String,
     required: true,
-    trim: true,
-    minlength: 1,
   },
   parent: {
     type: String,
     required: true,
-    trim: true,
-    minlength: 1,
   },
   description: {
     type: String,
     required: true,
-    trim: true,
-    minlength: 1,
   },
   imageUrl: {
     type: String,
@@ -35,14 +31,10 @@ const Subcategory = mongoose.model('Subcategory', {
       message: '{VALUE} is an invalid url',
     },
   },
-  orderKey: {
-    type: Number,
-    required: true,
-  },
   children: {
     type: [String],
     required: true,
   },
-});
+}, 'Subcategories');
 
-module.exports = { Subcategory };
+module.exports = Subcategory;

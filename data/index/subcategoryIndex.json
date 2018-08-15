@@ -1,6 +1,7 @@
 [
   {
-    "key": "lists",
+    "key": "data-structures/lists",
+    "slug": "lists",
     "title": "Lists",
     "parent": "data-structures",
     "description": "Learn about fundamental linear data structures like linked lists, dynamic arrays, stacks, and queues, where data is generally organized in sequence.",
@@ -17,7 +18,8 @@
     ]
   },
   {
-    "key": "trees",
+    "key": "data-structures/trees",
+    "slug": "trees",
     "title": "Trees",
     "parent": "data-structures",
     "description": "Learn about tree data structures like binary search trees, heaps, B-trees, and union find, where operations tend to have logarithmic performance or better.",
@@ -41,7 +43,8 @@
     ]
   },
   {
-    "key": "hashing",
+    "key": "data-structures/hashing",
+    "slug": "hashing",
     "title": "Hashing",
     "parent": "data-structures",
     "description": "Learn about using hash functions to implement fundamental data structures called hash maps and hash sets with efficient (constant, amortized) time for operations.",
@@ -57,7 +60,8 @@
     ]
   },
   {
-    "key": "probabilistic",
+    "key": "data-structures/probabilistic",
+    "slug": "probabilistic",
     "title": "Probabilistic",
     "parent": "data-structures",
     "description": "Learn about probabilistic data structures, which use randomization to lead to operations that are probabilistically expected to be efficient.",
@@ -73,7 +77,8 @@
     ]
   },
   {
-    "key": "multidimensional",
+    "key": "data-structures/multidimensional",
+    "slug": "multidimensional",
     "title": "Multidimensional",
     "parent": "data-structures",
     "description": "Learn about multidimensional data structures, which are used to efficiently store and query data represented in a multidimensional space.",
@@ -88,7 +93,8 @@
     ]
   },
   {
-    "key": "abstract-data-types",
+    "key": "data-structures/abstract-data-types",
+    "slug": "abstract-data-types",
     "title": "Abstract Data Types",
     "parent": "data-structures",
     "description": "Learn about abstract data types, which are data structures that have a general description of their operations but whose implementations can vary.",
@@ -100,7 +106,8 @@
     ]
   },
   {
-    "key": "searching",
+    "key": "general-algorithms/searching",
+    "slug": "searching",
     "title": "Searching",
     "parent": "general-algorithms",
     "description": "Learn about algorithms for searching for elements in arrays efficiently, in logarithmic time and better.",
@@ -115,7 +122,8 @@
     ]
   },
   {
-    "key": "sorting",
+    "key": "general-algorithms/sorting",
+    "slug": "sorting",
     "title": "Sorting",
     "parent": "general-algorithms",
     "description": "Learn about the fundamental problem of sorting, and algorithms like merge sort, quick sort and heap sort.",
@@ -138,7 +146,8 @@
     ]
   },
   {
-    "key": "shuffling",
+    "key": "general-algorithms/shuffling",
+    "slug": "shuffling",
     "title": "Shuffling",
     "parent": "general-algorithms",
     "description": "Learn about algorithms like Fisher-Yates and Sattolo's Algorithm to order elements in arrays uniformly randomly.",
@@ -151,7 +160,8 @@
     ]
   },
   {
-    "key": "selecting",
+    "key": "general-algorithms/selecting",
+    "slug": "selecting",
     "title": "Selecting",
     "parent": "general-algorithms",
     "description": "Learn about algorithms like quick select and median finding, which have general uses in being able to selecting elements from a set of data with desired properties.",
@@ -166,7 +176,8 @@
     ]
   },
   {
-    "key": "string-data-structures",
+    "key": "strings/string-data-structures",
+    "slug": "string-data-structures",
     "title": "String Data Structures",
     "parent": "strings",
     "description": "Learn about data structures that have special and useful properties when we know that the data or keys being stored are strictly strings.",
@@ -181,7 +192,8 @@
     ]
   },
   {
-    "key": "string-sorting",
+    "key": "strings/string-sorting",
+    "slug": "string-sorting",
     "title": "String Sorting",
     "parent": "strings",
     "description": "Learn about the problem of string sorting, and how we can use non-comparison sorts to achieve more efficient results.",
@@ -194,7 +206,8 @@
     ]
   },
   {
-    "key": "string-matching",
+    "key": "strings/string-matching",
+    "slug": "string-matching",
     "title": "String Matching",
     "parent": "strings",
     "description": "Learn about string matching, which is the problem of finding a smaller length pattern string in a larger body of text.",
@@ -210,7 +223,8 @@
     ]
   },
   {
-    "key": "string-metrics",
+    "key": "strings/string-metrics",
+    "slug": "string-metrics",
     "title": "String Metrics",
     "parent": "strings",
     "description": "Learn about string metrics, which refers to the different techniques and heuristics used to determine the distance between two strings.",
@@ -225,7 +239,8 @@
     ]
   },
   {
-    "key": "compression",
+    "key": "strings/compression",
+    "slug": "compression",
     "title": "Compression",
     "parent": "strings",
     "description": "Learn about the fundamental problem of compression, which refers to being able to encode the same data using fewer bits.",
@@ -241,7 +256,8 @@
     ]
   },
   {
-    "key": "graphs",
+    "key": "graphs/graphs",
+    "slug": "graphs",
     "title": "Graphs",
     "parent": "graphs",
     "description": "Learn about the various ways, advantages, and disadvantages to representing graphs in a data structure as well as useful properties of graphs.",
@@ -255,21 +271,8 @@
     ]
   },
   {
-    "key": "graphs",
-    "title": "Graphs",
-    "parent": "graphs",
-    "description": "Learn about the various ways, advantages, and disadvantages to representing graphs in a data structure as well as useful properties of graphs.",
-    "imageUrl": "https://s3.amazonaws.com/algorithm-helper/assets/icons/graphs/graphs.png",
-    "children": [
-      "introduction",
-      "graph-representation",
-      "undirected-and-directed-graphs",
-      "sparse-and-dense-graphs",
-      "time-and-space-complexity-comparison"
-    ]
-  },
-  {
-    "key": "path-finding",
+    "key": "graphs/path-finding",
+    "slug": "path-finding",
     "title": "Path Finding",
     "parent": "graphs",
     "description": "Learn about path finding, the fundamental problem within graphs of being able to find a sequence of edges that go from a starting vertex to ending vertex.",
@@ -287,7 +290,8 @@
     ]
   },
   {
-    "key": "shortest-path-finding",
+    "key": "graphs/shortest-path-finding",
+    "slug": "shortest-path-finding",
     "title": "Shortest Path Finding",
     "parent": "graphs",
     "description": "Learn about shorted path finding, which is a fundamental problem in graph theory of being able to find the path from one vertex to another with the least combined weight.",
@@ -303,7 +307,8 @@
     ]
   },
   {
-    "key": "minimum-spanning-trees",
+    "key": "graphs/minimum-spanning-trees",
+    "slug": "minimum-spanning-trees",
     "title": "Minimum Spanning Trees",
     "parent": "graphs",
     "description": "Learn about minimum spanning trees, which are a set of edges of a graph such that they connect all of the vertices with no cycles between them.",
@@ -318,7 +323,8 @@
     ]
   },
   {
-    "key": "flow-networks",
+    "key": "graphs/flow-networks",
+    "slug": "flow-networks",
     "title": "Flow Networks",
     "parent": "graphs",
     "description": "Learn about flow networks, a type of graph such that all edges have capacities, and recieve flows, and the flow cannot exceed the capacity.",
@@ -331,7 +337,8 @@
     ]
   },
   {
-    "key": "randomized-algorithms",
+    "key": "randomization/randomized-algorithms",
+    "slug": "randomized-algorithms",
     "title": "Randomized Algorithms",
     "parent": "randomization",
     "description": "Learn about randomized algorithms, which are algorithms that use randomization as part of its implementation.",
@@ -347,7 +354,8 @@
     ]
   },
   {
-    "key": "random-number-generators",
+    "key": "randomization/random-number-generators",
+    "slug": "random-number-generators",
     "title": "Random Number Generators",
     "parent": "randomization",
     "description": "Learn about techniques for implementing random number generators such as with the lagged Fibonacci generator and linear congruential generator.",
@@ -364,7 +372,8 @@
 
   },
   {
-    "key": "numerical-computation",
+    "key": "mathematics/numerical-computation",
+    "slug": "numerical-computation",
     "title": "Numerical Computation",
     "parent": "mathematics",
     "description": "Learn about numerical computation, which refers to algorithms that deal with efficient computation in the context of mathematics.",
@@ -384,7 +393,8 @@
     ]
   },
   {
-    "key": "computational-geometry",
+    "key": "mathematics/computational-geometry",
+    "slug": "computational-geometry",
     "title": "Computational Geometry",
     "parent": "mathematics",
     "description": "Learn about computational geometry, which refer to algorithms that deal with data with geometric properties, like determining the convex hull.",
@@ -398,7 +408,8 @@
     ]
   },
   {
-    "key": "dynamic-programming",
+    "key": "dynamic-programming/dynamic-programming",
+    "slug": "dynamic-programming",
     "title": "Dynamic Programming",
     "parent": "dynamic-programming",
     "description": "Learn about the basics, techniques and motivations behind dynamic programming, and how memoization is used to facilitate it.",
@@ -410,7 +421,8 @@
     ]
   },
   {
-    "key": "dynamic-programming-problems",
+    "key": "dynamic-programming/dynamic-programming-problems",
+    "slug": "dynamic-programming-problems",
     "title": "Dynamic Programming Problems",
     "parent": "dynamic-programming",
     "description": "Learn about dynamic programming techniques applied to a canonical list of problems.",
@@ -435,7 +447,8 @@
     ]
   },
   {
-    "key": "computational-complexity",
+    "key": "algorithmic-analysis/computational-complexity",
+    "slug": "computational-complexity",
     "title": "Computational Complexity",
     "parent": "algorithmic-analysis",
     "description": "Learn about computational complexity, which refers to the various methods we use to determine the rate of growth in the requirement of time and space.",
@@ -448,7 +461,8 @@
     ]
   },
   {
-    "key": "complexity-classes",
+    "key": "algorithmic-analysis/complexity-classes",
+    "slug": "complexity-classes",
     "title": "Complexity Classes",
     "parent": "algorithmic-analysis",
     "description": "Learn about complexity classes, which refers to classifiying problems by the rate of growth in necessary time and space needed to solve a particular problem.",
@@ -460,7 +474,8 @@
     ]
   },
   {
-    "key": "object-oriented-programming",
+    "key": "software-engineering/object-oriented-programming",
+    "slug": "object-oriented-programming",
     "title": "Object Oriented Programming",
     "parent": "software-engineering",
     "description": "Learn about object oriented programming concepts like encapsulation, inheritance, and polymorphism.",
@@ -474,7 +489,8 @@
     ]
   },
   {
-    "key": "functional-programming",
+    "key": "software-engineering/functional-programming",
+    "slug": "functional-programming",
     "title": "Functional Programming",
     "parent": "software-engineering",
     "description": "Learn about functional programming concepts like lambda notation, function composition, filter, map, and reduce.",
@@ -493,7 +509,8 @@
     ]
   },
   {
-    "key": "design-patterns",
+    "key": "software-engineering/design-patterns",
+    "slug": "design-patterns",
     "title": "Design Patterns",
     "parent": "software-engineering",
     "description": "Learn about software design patterns like factories, builders, and observers, for solving common problems that occur often in software development.",
@@ -519,7 +536,8 @@
     ]
   },
   {
-    "key": "bash-scripting",
+    "key": "software-engineering/bash-scripting",
+    "slug": "bash-scripting",
     "title": "Bash Scripting",
     "parent": "software-engineering",
     "description": "Learn about the syntax of scripting in Bash, a commonly used shell and command language, as well as useful functions and operations.",
@@ -533,7 +551,8 @@
     ]
   },
   {
-    "key": "regular-expressions",
+    "key": "software-engineering/regular-expressions",
+    "slug": "regular-expressions",
     "title": "Regular Expressions",
     "parent": "software-engineering",
     "description": "Learn about regular expressions, which are sequences of characters that define a search pattern, commonly used to search for matches within a piece of text.",

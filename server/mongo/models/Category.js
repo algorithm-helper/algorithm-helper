@@ -4,24 +4,18 @@ const Category = mongoose.model('Category', {
   key: {
     type: String,
     required: true,
-    trim: true,
-    minlength: 1,
     unique: true,
+  },
+  slug: {
+    type: String,
+    required: true,
   },
   title: {
     type: String,
     required: true,
-    trim: true,
-    minlength: 1,
   },
   description: {
     type: String,
-    required: true,
-    trim: true,
-    minlength: 1,
-  },
-  orderKey: {
-    type: Number,
     required: true,
   },
   colorKey: {
@@ -32,6 +26,6 @@ const Category = mongoose.model('Category', {
     type: [String],
     required: true,
   },
-});
+}, 'Categories');
 
-module.exports = { Category };
+module.exports = Category;
