@@ -59,7 +59,29 @@ const User = mongoose.model('User', {
       type: Number,
       required: true,
     },
-  }]
+  }],
+  bookmarks: [{
+    categoryKey: {
+      type: String,
+      required: true,
+    },
+    subcategoryKey: {
+      type: String,
+      required: true,
+    },
+    topicKey: {
+      type: String,
+      required: true,
+    },
+    topicItemType: {
+      type: String,
+      required: true,
+    },
+    dateBookmarked: {
+      type: Number,
+      required: true,
+    },
+  }],
 });
 
 module.exports = { User };
