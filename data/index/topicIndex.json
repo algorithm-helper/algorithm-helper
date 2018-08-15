@@ -11,7 +11,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/lists/List.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/datastructures/lists/List.java",
         "language": "java",
         "title": "Java (List)"
       }
@@ -29,19 +29,19 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/lists/LinkedList.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/datastructures/lists/LinkedList.java",
         "language": "java",
         "title": "Java (LinkedList)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/lists/LinkedListMap.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/datastructures/lists/LinkedListMap.java",
         "language": "java",
         "title": "Java (LinkedListMap)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/lists/LinkedListSet.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/datastructures/lists/LinkedListSet.java",
         "language": "java",
         "title": "Java (LinkedListSet)"
       }
@@ -59,7 +59,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/lists/DoubleEndedLinkedList.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/datastructures/lists/DoubleEndedLinkedList.java",
         "language": "java",
         "title": "Java (DoubleEndedLinkedList)"
       }
@@ -77,7 +77,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/lists/DynamicArray.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/datastructures/lists/DynamicArray.java",
         "language": "java",
         "title": "Java (DynamicArray)"
       }
@@ -95,19 +95,19 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/lists/Stack.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/datastructures/lists/Stack.java",
         "language": "java",
         "title": "Java (Stack)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/lists/StackDynamicArray.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/datastructures/lists/StackDynamicArray.java",
         "language": "java",
         "title": "Java (StackDynamicArray)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/lists/StackLinkedList.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/datastructures/lists/StackLinkedList.java",
         "language": "java",
         "title": "Java (StackLinkedList)"
       }
@@ -125,7 +125,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/lists/Queue.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/datastructures/lists/Queue.java",
         "language": "java",
         "title": "Java (Queue)"
       }
@@ -143,7 +143,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/lists/DoubleEndedQueue.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/datastructures/lists/DoubleEndedQueue.java",
         "language": "java",
         "title": "Java (DoubleEndedQueue)"
       }
@@ -185,7 +185,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/Map.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/datastructures/trees/Map.java",
         "language": "java",
         "title": "Java (Map)"
       }
@@ -203,7 +203,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/Set.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/datastructures/trees/Set.java",
         "language": "java",
         "title": "Java (Set)"
       }
@@ -221,19 +221,13 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/BinarySearchTree.java",
-        "language": "java",
-        "title": "Java (BinarySearchTree)"
-      },
-      {
-        "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/BinarySearchTreeMap.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/datastructures/trees/BinarySearchTreeMap.java",
         "language": "java",
         "title": "Java (BinarySearchTreeMap)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/BinarySearchTreeSet.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/datastructures/trees/BinarySearchTreeSet.java",
         "language": "java",
         "title": "Java (BinarySearchTreeSet)"
       }
@@ -275,13 +269,13 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/RedBlackTreeMap.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/datastructures/trees/RedBlackTreeMap.java",
         "language": "java",
         "title": "Java (RedBlackTreeMap)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/RedBlackTreeSet.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/datastructures/trees/RedBlackTreeSet.java",
         "language": "java",
         "title": "Java (RedBlackTreeSet)"
       }
@@ -299,13 +293,13 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/AVLTreeMap.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/datastructures/trees/AVLTreeMap.java",
         "language": "java",
         "title": "Java (AVLTreeMap)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/AVLTreeSet.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/datastructures/trees/AVLTreeSet.java",
         "language": "java",
         "title": "Java (AVLTreeSet)"
       }
@@ -323,13 +317,13 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/BinaryMaxHeap.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/datastructures/trees/BinaryMaxHeap.java",
         "language": "java",
         "title": "Java (BinaryMaxHeap)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/BinaryMinHeap.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/datastructures/trees/BinaryMinHeap.java",
         "language": "java",
         "title": "Java (BinaryMinHeap)"
       }
@@ -347,15 +341,15 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/PriorityMaxHeap.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/datastructures/trees/PriorityMaxQueue.java",
         "language": "java",
-        "title": "Java (PriorityMaxHeap)"
+        "title": "Java (PriorityMaxQueue)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/PriorityMinHeap.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/datastructures/trees/PriorityMinQueue.java",
         "language": "java",
-        "title": "Java (PriorityMinHeap)"
+        "title": "Java (PriorityMinQueue)"
       }
     ]
   },
@@ -371,7 +365,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/UnionFind.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/datastructures/trees/UnionFind.java",
         "language": "java",
         "title": "Java (UnionFind)"
       }
@@ -389,7 +383,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/BTree.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/datastructures/trees/BTree.java",
         "language": "java",
         "title": "Java (BTree)"
       }
@@ -407,7 +401,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/FibonacciHeap.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/datastructures/trees/FibonacciHeap.java",
         "language": "java",
         "title": "Java (FibonacciHeap)"
       }
@@ -425,7 +419,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/trees/VanEmdeBoasTree.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/datastructures/trees/VanEmdeBoasTree.java",
         "language": "java",
         "title": "Java (VanEmdeBoasTree)"
       }
@@ -503,13 +497,13 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/hashing/HashMapSeparateChaining.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/datastructures/hashing/HashMapSeparateChaining.java",
         "language": "java",
         "title": "Java (HashMapSeparateChaining)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/hashing/HashMapLinearProbing.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/datastructures/hashing/HashMapLinearProbing.java",
         "language": "java",
         "title": "Java (HashMapLinearProbing)"
       }
@@ -527,13 +521,13 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/hashing/HashSetSeparateChaining.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/datastructures/hashing/HashSetSeparateChaining.java",
         "language": "java",
         "title": "Java (HashSetSeparateChaining)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/hashing/HashSetLinearProbing.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/datastructures/hashing/HashSetLinearProbing.java",
         "language": "java",
         "title": "Java (HashSetLinearProbing)"
       }
@@ -575,7 +569,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/probabilistic/SkipList.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/datastructures/probabilistic/SkipList.java",
         "language": "java",
         "title": "Java (SkipList)"
       }
@@ -593,7 +587,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/probabilistic/BloomFilter.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/datastructures/probabilistic/BloomFilter.java",
         "language": "java",
         "title": "Java (BloomFilter)"
       }
@@ -611,7 +605,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/probabilistic/CountMinSketch.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/datastructures/probabilistic/CountMinSketch.java",
         "language": "java",
         "title": "Java (CountMinSketch)"
       }
@@ -629,9 +623,9 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/probabilistic/SkipList.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/datastructures/probabilistic/RandomBinaryTree.java",
         "language": "java",
-        "title": "Java (SkipList)"
+        "title": "Java (RandomBinaryTree)"
       }
     ]
   },
@@ -647,7 +641,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/probabilistic/Treap.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/datastructures/probabilistic/Treap.java",
         "language": "java",
         "title": "Java (Treap)"
       }
@@ -701,7 +695,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/multidimensional/QuadTree.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/datastructures/multidimensional/QuadTree.java",
         "language": "java",
         "title": "Java (QuadTree)"
       }
@@ -719,7 +713,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/multidimensional/KDTree.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/datastructures/multidimensional/KDTree.java",
         "language": "java",
         "title": "Java (KDTree)"
       }
@@ -737,7 +731,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/datastructures/multidimensional/RangeTree.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/datastructures/multidimensional/RangeTree.java",
         "language": "java",
         "title": "Java (RangeTree)"
       }
@@ -815,7 +809,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/generalalgorithms/searching/BinarySearch.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/generalalgorithms/searching/BinarySearch.java",
         "language": "java",
         "title": "Java (BinarySearch)"
       }
@@ -833,7 +827,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/generalalgorithms/searching/TernarySearch.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/generalalgorithms/searching/TernarySearch.java",
         "language": "java",
         "title": "Java (TernarySearch)"
       }
@@ -851,7 +845,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/generalalgorithms/searching/JumpSearch.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/generalalgorithms/searching/JumpSearch.java",
         "language": "java",
         "title": "Java (JumpSearch)"
       }
@@ -869,7 +863,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/generalalgorithms/searching/InterpolationSearch.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/generalalgorithms/searching/InterpolationSearch.java",
         "language": "java",
         "title": "Java (InterpolationSearch)"
       }
@@ -935,7 +929,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/generalalgorithms/sorting/SelectionSort.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/generalalgorithms/sorting/SelectionSort.java",
         "language": "java",
         "title": "Java (SelectionSort)"
       }
@@ -953,7 +947,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/generalalgorithms/sorting/InsertionSort.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/generalalgorithms/sorting/InsertionSort.java",
         "language": "java",
         "title": "Java (InsertionSort)"
       }
@@ -971,7 +965,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/generalalgorithms/sorting/ShellSort.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/generalalgorithms/sorting/ShellSort.java",
         "language": "java",
         "title": "Java (ShellSort)"
       }
@@ -1001,13 +995,13 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/generalalgorithms/sorting/MergeSort.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/generalalgorithms/sorting/MergeSort.java",
         "language": "java",
         "title": "Java (MergeSort)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/generalalgorithms/sorting/MergeSortBottomUp.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/generalalgorithms/sorting/MergeSortBottomUp.java",
         "language": "java",
         "title": "Java (MergeSortBottomUp)"
       }
@@ -1025,13 +1019,13 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/generalalgorithms/sorting/QuickSort.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/generalalgorithms/sorting/QuickSort.java",
         "language": "java",
         "title": "Java (QuickSort)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/generalalgorithms/sorting/QuickSortThreeWay.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/generalalgorithms/sorting/QuickSortThreeWay.java",
         "language": "java",
         "title": "Java (QuickSortThreeWay)"
       }
@@ -1049,7 +1043,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/generalalgorithms/sorting/HeapSort.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/generalalgorithms/sorting/HeapSort.java",
         "language": "java",
         "title": "Java (HeapSort)"
       }
@@ -1067,7 +1061,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/generalalgorithms/sorting/BucketSort.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/generalalgorithms/sorting/BucketSort.java",
         "language": "java",
         "title": "Java (BucketSort)"
       }
@@ -1085,7 +1079,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/generalalgorithms/sorting/CountSort.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/generalalgorithms/sorting/CountSort.java",
         "language": "java",
         "title": "Java (CountSort)"
       }
@@ -1103,7 +1097,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/generalalgorithms/sorting/RadixSort.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/generalalgorithms/sorting/RadixSort.java",
         "language": "java",
         "title": "Java (RadixSort)"
       }
@@ -1145,7 +1139,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/generalalgorithms/shuffling/FisherYatesShuffle.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/generalalgorithms/shuffling/FisherYatesShuffle.java",
         "language": "java",
         "title": "Java (FisherYatesShuffle)"
       }
@@ -1163,7 +1157,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/generalalgorithms/shuffling/SattolosAlgorithm.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/generalalgorithms/shuffling/SattolosAlgorithm.java",
         "language": "java",
         "title": "Java (SattolosAlgorithm)"
       }
@@ -1205,7 +1199,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/generalalgorithms/selecting/QuickSelect.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/generalalgorithms/selecting/QuickSelect.java",
         "language": "java",
         "title": "Java (QuickSelect)"
       }
@@ -1235,7 +1229,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/generalalgorithms/selecting/MedianOfMediansAlgorithm.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/generalalgorithms/selecting/MedianOfMediansAlgorithm.java",
         "language": "java",
         "title": "Java (MedianOfMediansAlgorithm)"
       }
@@ -1253,7 +1247,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/generalalgorithms/selecting/PeakFinding.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/generalalgorithms/selecting/PeakFinding.java",
         "language": "java",
         "title": "Java (PeakFinding)"
       }
@@ -1307,13 +1301,13 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/strings/stringdatastructures/RWayTrieMap.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/strings/stringdatastructures/RWayTrieMap.java",
         "language": "java",
         "title": "Java (RWayTrieMap)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/strings/stringdatastructures/RWayTrieSet.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/strings/stringdatastructures/RWayTrieSet.java",
         "language": "java",
         "title": "Java (RWayTrieSet)"
       }
@@ -1331,13 +1325,13 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/strings/stringdatastructures/TernarySearchTrieMap.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/strings/stringdatastructures/TernarySearchTrieMap.java",
         "language": "java",
         "title": "Java (TernarySearchTrieMap)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/strings/stringdatastructures/TernarySearchTrieSet.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/strings/stringdatastructures/TernarySearchTrieSet.java",
         "language": "java",
         "title": "Java (TernarySearchTrieSet)"
       }
@@ -1391,7 +1385,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/strings/stringsorting/LSDRadixSort.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/strings/stringsorting/LSDRadixSort.java",
         "language": "java",
         "title": "Java (LSDRadixSort)"
       }
@@ -1409,7 +1403,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/strings/stringsorting/MSDRadixSort.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/strings/stringsorting/MSDRadixSort.java",
         "language": "java",
         "title": "Java (MSDRadixSort)"
       }
@@ -1451,7 +1445,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/strings/stringmatching/KnuthMorrisPrattAlgorithm.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/strings/stringmatching/KnuthMorrisPrattAlgorithm.java",
         "language": "java",
         "title": "Java (KnuthMorrisPrattAlgorithm)"
       }
@@ -1469,7 +1463,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/strings/stringmatching/BoyerMooreAlgorithm.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/strings/stringmatching/BoyerMooreAlgorithm.java",
         "language": "java",
         "title": "Java (BoyerMooreAlgorithm)"
       }
@@ -1487,7 +1481,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/strings/stringmatching/RabinKarpAlgorithm.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/strings/stringmatching/RabinKarpAlgorithm.java",
         "language": "java",
         "title": "Java (RabinKarpAlgorithm)"
       }
@@ -1565,7 +1559,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/strings/stringmetrics/DamerauLevenshteinDistance.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/strings/stringmetrics/DamerauLevenshteinDistance.java",
         "language": "java",
         "title": "Java (DamerauLevenshteinDistance)"
       }
@@ -1583,7 +1577,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/strings/stringmetrics/HammingDistance.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/strings/stringmetrics/HammingDistance.java",
         "language": "java",
         "title": "Java (HammingDistance)"
       }
@@ -1601,7 +1595,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/strings/stringmetrics/WagnerFischerAlgorithm.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/strings/stringmetrics/WagnerFischerAlgorithm.java",
         "language": "java",
         "title": "Java (WagnerFischerAlgorithm)"
       }
@@ -1727,25 +1721,25 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/graphs/GraphRepresentation.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/graphs/graphs/GraphRepresentation.java",
         "language": "java",
         "title": "Java (GraphRepresentation)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/graphs/EdgeList.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/graphs/graphs/EdgeList.java",
         "language": "java",
         "title": "Java (EdgeList)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/graphs/VertexMatrix.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/graphs/graphs/VertexMatrix.java",
         "language": "java",
         "title": "Java (VertexMatrix)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/graphs/AdjacencyList.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/graphs/graphs/AdjacencyList.java",
         "language": "java",
         "title": "Java (AdjacencyList)"
       }
@@ -1763,19 +1757,19 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/graphs/Graph.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/graphs/graphs/Graph.java",
         "language": "java",
         "title": "Java (Graph)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/graphs/UndirectedGraph.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/graphs/graphs/UndirectedGraph.java",
         "language": "java",
         "title": "Java (UndirectedGraph)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/graphs/DirectedGraph.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/graphs/graphs/DirectedGraph.java",
         "language": "java",
         "title": "Java (DirectedGraph)"
       }
@@ -1829,13 +1823,13 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/pathfinding/DepthFirstSearchRecursion.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/graphs/pathfinding/DepthFirstSearchRecursion.java",
         "language": "java",
         "title": "Java (DepthFirstSearchRecursion)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/pathfinding/DepthFirstSearchStack.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/graphs/pathfinding/DepthFirstSearchStack.java",
         "language": "java",
         "title": "Java (DepthFirstSearchStack)"
       }
@@ -1853,7 +1847,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/pathfinding/BreadthFirstSearch.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/graphs/pathfinding/BreadthFirstSearch.java",
         "language": "java",
         "title": "Java (BreadthFirstSearch)"
       }
@@ -1871,7 +1865,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/pathfinding/ConnectedComponents.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/graphs/pathfinding/ConnectedComponents.java",
         "language": "java",
         "title": "Java (ConnectedComponents)"
       }
@@ -1889,7 +1883,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/pathfinding/TopologicalSort.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/graphs/pathfinding/TopologicalSort.java",
         "language": "java",
         "title": "Java (TopologicalSort)"
       }
@@ -1907,13 +1901,13 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/pathfinding/KahnsTopologicalSortAlgorithmStack.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/graphs/pathfinding/KahnsTopologicalSortAlgorithmStack.java",
         "language": "java",
         "title": "Java (KahnsTopologicalSortAlgorithmStack)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/pathfinding/KahnsTopologicalSortAlgorithmQueue.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/graphs/pathfinding/KahnsTopologicalSortAlgorithmQueue.java",
         "language": "java",
         "title": "Java (KahnsTopologicalSortAlgorithmQueue)"
       }
@@ -1943,7 +1937,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/pathfinding/KosarajusAlgorithm.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/graphs/pathfinding/KosarajusAlgorithm.java",
         "language": "java",
         "title": "Java (KosarajusAlgorithm)"
       }
@@ -1985,25 +1979,25 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/graphs/WeightedGraph.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/graphs/graphs/WeightedGraph.java",
         "language": "java",
         "title": "Java (WeightedGraph)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/graphs/WeightFunction.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/graphs/graphs/WeightFunction.java",
         "language": "java",
         "title": "Java (WeightFunction)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/graphs/UndirectedWeightedGraph.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/graphs/graphs/UndirectedWeightedGraph.java",
         "language": "java",
         "title": "Java (UndirectedWeightedGraph)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/graphs/DirectedWeightedGraph.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/graphs/graphs/DirectedWeightedGraph.java",
         "language": "java",
         "title": "Java (DirectedWeightedGraph)"
       }
@@ -2033,7 +2027,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/shortestpathfinding/DijkstrasAlgorithm.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/graphs/shortestpathfinding/DijkstrasAlgorithm.java",
         "language": "java",
         "title": "Java (DijkstrasAlgorithm)"
       }
@@ -2051,7 +2045,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/shortestpathfinding/BellmanFordAlgorithm.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/graphs/shortestpathfinding/BellmanFordAlgorithm.java",
         "language": "java",
         "title": "Java (BellmanFordAlgorithm)"
       }
@@ -2069,7 +2063,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/shortestpathfinding/FloydWarshallAlgorithm.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/graphs/shortestpathfinding/FloydWarshallAlgorithm.java",
         "language": "java",
         "title": "Java (FloydWarshallAlgorithm)"
       }
@@ -2123,7 +2117,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/minimumspanningtrees/PrimsAlgorithm.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/graphs/minimumspanningtrees/PrimsAlgorithm.java",
         "language": "java",
         "title": "Java (PrimsAlgorithm)"
       }
@@ -2141,7 +2135,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/minimumspanningtrees/KruskalsAlgorithm.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/graphs/minimumspanningtrees/KruskalsAlgorithm.java",
         "language": "java",
         "title": "Java (KruskalsAlgorithm)"
       }
@@ -2183,19 +2177,19 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/flownetworks/FlowNetwork.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/graphs/flownetworks/FlowNetwork.java",
         "language": "java",
         "title": "Java (FlowNetwork)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/flownetworks/FlowNetworkGraph.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/graphs/flownetworks/FlowNetworkGraph.java",
         "language": "java",
         "title": "Java (FlowNetworkGraph)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/flownetworks/FlowCapacityFunction.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/graphs/flownetworks/FlowCapacityFunction.java",
         "language": "java",
         "title": "Java (FlowCapacityFunction)"
       }
@@ -2225,7 +2219,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/graphs/flownetworks/FordFulkersonAlgorithm.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/graphs/flownetworks/FordFulkersonAlgorithm.java",
         "language": "java",
         "title": "Java (FordFulkersonAlgorithm)"
       }
@@ -2279,7 +2273,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/generalalgorithms/selecting/QuickSelect.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/generalalgorithms/selecting/QuickSelect.java",
         "language": "java",
         "title": "Java (QuickSelect)"
       }
@@ -2297,7 +2291,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/generalalgorithms/sorting/QuickSort.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/generalalgorithms/sorting/QuickSort.java",
         "language": "java",
         "title": "Java (QuickSort)"
       }
@@ -2375,7 +2369,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/randomization/randomnumbergenerators/BlumBlumShub.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/randomization/randomnumbergenerators/BlumBlumShub.java",
         "language": "java",
         "title": "Java (BlumBlumShub)"
       }
@@ -2393,7 +2387,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/randomization/randomnumbergenerators/LaggedFibonacciGenerator.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/randomization/randomnumbergenerators/LaggedFibonacciGenerator.java",
         "language": "java",
         "title": "Java (LaggedFibonacciGenerator)"
       }
@@ -2411,7 +2405,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/randomization/randomnumbergenerators/LinearCongruentialGenerator.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/randomization/randomnumbergenerators/LinearCongruentialGenerator.java",
         "language": "java",
         "title": "Java (LinearCongruentialGenerator)"
       }
@@ -2429,7 +2423,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/randomization/randomnumbergenerators/MersenneTwister.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/randomization/randomnumbergenerators/MersenneTwister.java",
         "language": "java",
         "title": "Java (MersenneTwister)"
       }
@@ -2471,7 +2465,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/mathematics/numericalcomputation/EuclidsAlgorithm.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/mathematics/numericalcomputation/EuclidsAlgorithm.java",
         "language": "java",
         "title": "Java (EuclidsAlgorithm)"
       }
@@ -2501,7 +2495,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/mathematics/numericalcomputation/KaratsubaAlgorithm.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/mathematics/numericalcomputation/KaratsubaAlgorithm.java",
         "language": "java",
         "title": "Java (KaratsubaAlgorithm)"
       }
@@ -2519,7 +2513,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/mathematics/numericalcomputation/NewtonRaphsonMethod.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/mathematics/numericalcomputation/NewtonRaphsonMethod.java",
         "language": "java",
         "title": "Java (NewtonRaphsonMethod)"
       }
@@ -2537,7 +2531,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/mathematics/numericalcomputation/ModularExponentiation.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/mathematics/numericalcomputation/ModularExponentiation.java",
         "language": "java",
         "title": "Java (ModularExponentiation)"
       }
@@ -2639,7 +2633,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/mathematics/computationalgeometry/GrahamScan.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/mathematics/computationalgeometry/GrahamScan.java",
         "language": "java",
         "title": "Java (GrahamScan)"
       }
@@ -2657,7 +2651,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/mathematics/computationalgeometry/JarvisAlgorithm.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/mathematics/computationalgeometry/JarvisAlgorithm.java",
         "language": "java",
         "title": "Java (JarvisAlgorithm)"
       }
@@ -2735,7 +2729,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/dynamicprogramming/dynamicprogrammingproblems/FibonacciNumber.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/dynamicprogramming/dynamicprogrammingproblems/FibonacciNumber.java",
         "language": "java",
         "title": "Java (FibonacciNumber)"
       }
@@ -2753,7 +2747,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/dynamicprogramming/dynamicprogrammingproblems/MaximumSumContiguousSubarray.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/dynamicprogramming/dynamicprogrammingproblems/MaximumSumContiguousSubarray.java",
         "language": "java",
         "title": "Java (MaximumSumContiguousSubarray)"
       }
@@ -2771,7 +2765,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/dynamicprogramming/dynamicprogrammingproblems/KadanesAlgorithm.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/dynamicprogramming/dynamicprogrammingproblems/KadanesAlgorithm.java",
         "language": "java",
         "title": "Java (KadanesAlgorithm)"
       }
@@ -2789,7 +2783,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/dynamicprogramming/dynamicprogrammingproblems/LongestCommonSubsequence.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/dynamicprogramming/dynamicprogrammingproblems/LongestCommonSubsequence.java",
         "language": "java",
         "title": "Java (LongestCommonSubsequence)"
       }
@@ -2807,7 +2801,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/dynamicprogramming/dynamicprogrammingproblems/LongestIncreasingSubsequence.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/dynamicprogramming/dynamicprogrammingproblems/LongestIncreasingSubsequence.java",
         "language": "java",
         "title": "Java (LongestIncreasingSubsequence)"
       }
@@ -2825,7 +2819,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/dynamicprogramming/dynamicprogrammingproblems/LongestCommonSubstring.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/dynamicprogramming/dynamicprogrammingproblems/LongestCommonSubstring.java",
         "language": "java",
         "title": "Java (LongestCommonSubstring)"
       }
@@ -2843,7 +2837,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/dynamicprogramming/dynamicprogrammingproblems/LongestPalindromicSubstring.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/dynamicprogramming/dynamicprogrammingproblems/LongestPalindromicSubstring.java",
         "language": "java",
         "title": "Java (LongestPalindromicSubstring)"
       }
@@ -2861,7 +2855,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/dynamicprogramming/dynamicprogrammingproblems/BinomialCoefficient.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/dynamicprogramming/dynamicprogrammingproblems/BinomialCoefficient.java",
         "language": "java",
         "title": "Java (BinomialCoefficient)"
       }
@@ -2879,7 +2873,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/dynamicprogramming/dynamicprogrammingproblems/CoinChangeProblem.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/dynamicprogramming/dynamicprogrammingproblems/CoinChangeProblem.java",
         "language": "java",
         "title": "Java (CoinChangeProblem)"
       }
@@ -2897,7 +2891,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/dynamicprogramming/dynamicprogrammingproblems/MaximumSizeSquareSubmatrix.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/dynamicprogramming/dynamicprogrammingproblems/MaximumSizeSquareSubmatrix.java",
         "language": "java",
         "title": "Java (MaximumSizeSquareSubmatrix)"
       }
@@ -2915,7 +2909,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/dynamicprogramming/dynamicprogrammingproblems/AssemblyLineScheduling.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/dynamicprogramming/dynamicprogrammingproblems/AssemblyLineScheduling.java",
         "language": "java",
         "title": "Java (AssemblyLineScheduling)"
       }
@@ -2933,7 +2927,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/dynamicprogramming/dynamicprogrammingproblems/RodCutting.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/dynamicprogramming/dynamicprogrammingproblems/RodCutting.java",
         "language": "java",
         "title": "Java (RodCutting)"
       }
@@ -2951,7 +2945,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/dynamicprogramming/dynamicprogrammingproblems/LevenschteinEditDistance.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/dynamicprogramming/dynamicprogrammingproblems/LevenschteinEditDistance.java",
         "language": "java",
         "title": "Java (LevenschteinEditDistance)"
       }
@@ -2969,7 +2963,7 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/dynamicprogramming/dynamicprogrammingproblems/KnapsackProblem.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/dynamicprogramming/dynamicprogrammingproblems/KnapsackProblem.java",
         "language": "java",
         "title": "Java (KnapsackProblem)"
       }
@@ -3095,13 +3089,13 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/objectorientedprogramming/classinstance/Class.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/objectorientedprogramming/classinstance/Class.java",
         "language": "java",
         "title": "Java (Class)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/objectorientedprogramming/classinstance/ClassTest.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/objectorientedprogramming/classinstance/ClassTest.java",
         "language": "java",
         "title": "Java (ClassTest)"
       }
@@ -3119,31 +3113,31 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/objectorientedprogramming/inheritance/SuperClass.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/objectorientedprogramming/inheritance/SuperClass.java",
         "language": "java",
         "title": "Java (SuperClass)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/objectorientedprogramming/inheritance/SubClassA.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/objectorientedprogramming/inheritance/SubClassA.java",
         "language": "java",
         "title": "Java (SubClassA)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/objectorientedprogramming/inheritance/SubClassB.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/objectorientedprogramming/inheritance/SubClassB.java",
         "language": "java",
         "title": "Java (SubClassB)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/objectorientedprogramming/inheritance/InheritanceTest1.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/objectorientedprogramming/inheritance/InheritanceTest1.java",
         "language": "java",
         "title": "Java (InheritanceTest1)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/objectorientedprogramming/inheritance/InheritanceTest2.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/objectorientedprogramming/inheritance/InheritanceTest2.java",
         "language": "java",
         "title": "Java (InheritanceTest2)"
       }
@@ -3161,25 +3155,25 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/objectorientedprogramming/encapsulation/Class.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/objectorientedprogramming/encapsulation/Class.java",
         "language": "java",
         "title": "Java (Class)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/objectorientedprogramming/encapsulation/Account.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/objectorientedprogramming/encapsulation/Account.java",
         "language": "java",
         "title": "Java (Account)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/objectorientedprogramming/encapsulation/EncapsulationTest1.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/objectorientedprogramming/encapsulation/EncapsulationTest1.java",
         "language": "java",
         "title": "Java (EncapsulationTest1)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/objectorientedprogramming/encapsulation/EncapsulationTest2.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/objectorientedprogramming/encapsulation/EncapsulationTest2.java",
         "language": "java",
         "title": "Java (EncapsulationTest2)"
       }
@@ -3197,31 +3191,31 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/objectorientedprogramming/polymorphism/ClassA.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/objectorientedprogramming/polymorphism/ClassA.java",
         "language": "java",
         "title": "Java (ClassA)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/objectorientedprogramming/polymorphism/ClassB.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/objectorientedprogramming/polymorphism/ClassB.java",
         "language": "java",
         "title": "Java (ClassB)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/objectorientedprogramming/polymorphism/ClassC.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/objectorientedprogramming/polymorphism/ClassC.java",
         "language": "java",
         "title": "Java (ClassC)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/objectorientedprogramming/polymorphism/PolymorphismTest1.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/objectorientedprogramming/polymorphism/PolymorphismTest1.java",
         "language": "java",
         "title": "Java (PolymorphismTest1)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/objectorientedprogramming/polymorphism/PolymorphismTest2.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/objectorientedprogramming/polymorphism/PolymorphismTest2.java",
         "language": "java",
         "title": "Java (PolymorphismTest2)"
       }
@@ -3371,25 +3365,25 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/adapter/OldComponent.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/adapter/OldComponent.java",
         "language": "java",
         "title": "Java (OldComponent)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/adapter/OldComponentAdapter.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/adapter/OldComponentAdapter.java",
         "language": "java",
         "title": "Java (OldComponentAdapter)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/adapter/NewClassInterface.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/adapter/NewComponentInterface.java",
         "language": "java",
-        "title": "Java (NewClassInterface)"
+        "title": "Java (NewComponentInterface)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/adapter/AdapterTest.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/adapter/AdapterTest.java",
         "language": "java",
         "title": "Java (AdapterTest)"
       }
@@ -3407,37 +3401,37 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/bridge/Abstraction.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/bridge/Abstraction.java",
         "language": "java",
         "title": "Java (Abstraction)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/bridge/RefinedAbstraction.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/bridge/RefinedAbstraction.java",
         "language": "java",
         "title": "Java (RefinedAbstraction)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/bridge/Implementor.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/bridge/Implementor.java",
         "language": "java",
         "title": "Java (Implementor)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/bridge/ConcreteImplementorA.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/bridge/ConcreteImplementorA.java",
         "language": "java",
         "title": "Java (ConcreteImplementorA)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/bridge/ConcreteImplementorB.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/bridge/ConcreteImplementorB.java",
         "language": "java",
         "title": "Java (ConcreteImplementorB)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/bridge/BridgeTest.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/bridge/BridgeTest.java",
         "language": "java",
         "title": "Java (BridgeTest)"
       }
@@ -3455,37 +3449,37 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/builder/HouseDirector.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/builder/HouseDirector.java",
         "language": "java",
         "title": "Java (HouseDirector)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/builder/HouseBuilder.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/builder/HouseBuilder.java",
         "language": "java",
         "title": "Java (HouseBuilder)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/builder/House.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/builder/House.java",
         "language": "java",
         "title": "Java (House)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/builder/ModernHouseBuilder.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/builder/ModernHouseBuilder.java",
         "language": "java",
         "title": "Java (ModernHouseBuilder)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/builder/FrenchHouseBuilder.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/builder/FrenchHouseBuilder.java",
         "language": "java",
         "title": "Java (FrenchHouseBuilder)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/builder/BuilderTest.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/builder/BuilderTest.java",
         "language": "java",
         "title": "Java (BuilderTest)"
       }
@@ -3503,25 +3497,25 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/chainofresponsibility/Handler.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/chainofresponsibility/Handler.java",
         "language": "java",
         "title": "Java (Handler)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/chainofresponsibility/Pipeline.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/chainofresponsibility/Pipeline.java",
         "language": "java",
         "title": "Java (Pipeline)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/chainofresponsibility/Request.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/chainofresponsibility/Request.java",
         "language": "java",
         "title": "Java (Request)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/chainofresponsibility/ChainOfResponsibilityTest.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/chainofresponsibility/ChainOfResponsibilityTest.java",
         "language": "java",
         "title": "Java (ChainOfResponsibilityTest)"
       }
@@ -3539,43 +3533,43 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/command/Command.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/command/Command.java",
         "language": "java",
         "title": "Java (Command)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/command/ConcreteCommandA.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/command/ConcreteCommandA.java",
         "language": "java",
         "title": "Java (ConcreteCommandA)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/command/ConcreteCommandB.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/command/ConcreteCommandB.java",
         "language": "java",
         "title": "Java (ConcreteCommandB)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/command/ConcreteCommandC.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/command/ConcreteCommandC.java",
         "language": "java",
         "title": "Java (ConcreteCommandC)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/command/CommandProducer.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/command/CommandProducer.java",
         "language": "java",
         "title": "Java (CommandProducer)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/command/CommandConsumer.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/command/CommandConsumer.java",
         "language": "java",
         "title": "Java (CommandConsumer)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/command/CommandTest.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/command/CommandTest.java",
         "language": "java",
         "title": "Java (CommandTest)"
       }
@@ -3593,25 +3587,25 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/composite/AbstractComponent.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/composite/AbstractComponent.java",
         "language": "java",
         "title": "Java (AbstractComponent)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/composite/BasicComponent.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/composite/BasicComponent.java",
         "language": "java",
         "title": "Java (BasicComponent)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/composite/CompositeComponent.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/composite/CompositeComponent.java",
         "language": "java",
         "title": "Java (CompositeComponent)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/composite/CompositeTest.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/composite/CompositeTest.java",
         "language": "java",
         "title": "Java (CompositeTest)"
       }
@@ -3629,43 +3623,43 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/decorator/Interface.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/decorator/Interface.java",
         "language": "java",
         "title": "Java (Interface)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/decorator/Base.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/decorator/Base.java",
         "language": "java",
         "title": "Java (Base)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/decorator/AbstractDecorator.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/decorator/AbstractDecorator.java",
         "language": "java",
         "title": "Java (AbstractDecorator)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/decorator/ConcreteDecoratorA.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/decorator/ConcreteDecoratorA.java",
         "language": "java",
         "title": "Java (ConcreteDecoratorA)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/decorator/ConcreteDecoratorB.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/decorator/ConcreteDecoratorB.java",
         "language": "java",
         "title": "Java (ConcreteDecoratorB)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/decorator/ConcreteDecoratorC.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/decorator/ConcreteDecoratorC.java",
         "language": "java",
         "title": "Java (ConcreteDecoratorC)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/decorator/DecoratorTest.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/decorator/DecoratorTest.java",
         "language": "java",
         "title": "Java (DecoratorTest)"
       }
@@ -3683,37 +3677,37 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/factory/Product.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/factory/Product.java",
         "language": "java",
         "title": "Java (Product)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/factory/ConcreteProductA.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/factory/ConcreteProductA.java",
         "language": "java",
         "title": "Java (ConcreteProductA)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/factory/ConcreteProductB.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/factory/ConcreteProductB.java",
         "language": "java",
         "title": "Java (ConcreteProductB)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/factory/ConcreteProductC.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/factory/ConcreteProductC.java",
         "language": "java",
         "title": "Java (ConcreteProductC)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/factory/Factory.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/factory/Factory.java",
         "language": "java",
         "title": "Java (Factory)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/factory/FactoryTest.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/factory/FactoryTest.java",
         "language": "java",
         "title": "Java (FactoryTest)"
       }
@@ -3731,13 +3725,13 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/iterator/FIFOList.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/iterator/FIFOList.java",
         "language": "java",
         "title": "Java (FIFOList)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/iterator/IteratorTest.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/iterator/IteratorTest.java",
         "language": "java",
         "title": "Java (IteratorTest)"
       }
@@ -3755,25 +3749,25 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/nullobject/AbstractRequest.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/nullobject/AbstractRequest.java",
         "language": "java",
         "title": "Java (AbstractRequest)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/nullobject/RealRequest.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/nullobject/RealRequest.java",
         "language": "java",
         "title": "Java (RealRequest)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/nullobject/NullRequest.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/nullobject/NullRequest.java",
         "language": "java",
         "title": "Java (NullRequest)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/nullobject/NullObjectTest.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/nullobject/NullObjectTest.java",
         "language": "java",
         "title": "Java (NullObjectTest)"
       }
@@ -3791,25 +3785,25 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/observer/Subject.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/observer/Subject.java",
         "language": "java",
         "title": "Java (Subject)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/observer/AbstractObserver.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/observer/AbstractObserver.java",
         "language": "java",
         "title": "Java (AbstractObserver)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/observer/ConcreteObserver.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/observer/ConcreteObserver.java",
         "language": "java",
         "title": "Java (ConcreteObserver)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/observer/ObserverTest.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/observer/ObserverTest.java",
         "language": "java",
         "title": "Java (ObserverTest)"
       }
@@ -3827,37 +3821,37 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/prototype/Prototype.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/prototype/Prototype.java",
         "language": "java",
         "title": "Java (Prototype)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/prototype/ConcretePrototypeA.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/prototype/ConcretePrototypeA.java",
         "language": "java",
         "title": "Java (ConcretePrototypeA)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/prototype/ConcretePrototypeB.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/prototype/ConcretePrototypeB.java",
         "language": "java",
         "title": "Java (ConcretePrototypeB)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/prototype/ConcretePrototypeC.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/prototype/ConcretePrototypeC.java",
         "language": "java",
         "title": "Java (ConcretePrototypeC)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/prototype/Factory.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/prototype/Factory.java",
         "language": "java",
         "title": "Java (Factory)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/prototype/PrototypeTest.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/prototype/PrototypeTest.java",
         "language": "java",
         "title": "Java (PrototypeTest)"
       }
@@ -3875,13 +3869,13 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/singleton/Singleton.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/singleton/Singleton.java",
         "language": "java",
         "title": "Java (Singleton)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/singleton/SingletonTest.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/singleton/SingletonTest.java",
         "language": "java",
         "title": "Java (SingletonTest)"
       }
@@ -3899,37 +3893,37 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/strategy/Strategy.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/strategy/Strategy.java",
         "language": "java",
         "title": "Java (Strategy)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/strategy/ConcreteStrategyA.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/strategy/ConcreteStrategyA.java",
         "language": "java",
         "title": "Java (ConcreteStrategyA)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/strategy/ConcreteStrategyB.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/strategy/ConcreteStrategyB.java",
         "language": "java",
         "title": "Java (ConcreteStrategyB)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/strategy/ConcreteStrategyC.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/strategy/ConcreteStrategyC.java",
         "language": "java",
         "title": "Java (ConcreteStrategyC)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/strategy/Context.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/strategy/Context.java",
         "language": "java",
         "title": "Java (Context)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/strategy/StrategyTest.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/strategy/StrategyTest.java",
         "language": "java",
         "title": "Java (StrategyTest)"
       }
@@ -3947,25 +3941,25 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/templatemethod/DrawBase.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/templatemethod/DrawBase.java",
         "language": "java",
         "title": "Java (DrawBase)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/templatemethod/DrawBodyLegs.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/templatemethod/DrawBodyLegs.java",
         "language": "java",
         "title": "Java (DrawBodyLegs)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/templatemethod/DrawFeet.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/templatemethod/DrawFeet.java",
         "language": "java",
         "title": "Java (DrawFeet)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/templatemethod/TemplateMethodTest.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/templatemethod/TemplateMethodTest.java",
         "language": "java",
         "title": "Java (TemplateMethodTest)"
       }
@@ -3983,43 +3977,43 @@
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/visitor/AbstractNode.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/visitor/AbstractNode.java",
         "language": "java",
         "title": "Java (AbstractNode)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/visitor/UnaryNode.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/visitor/UnaryNode.java",
         "language": "java",
         "title": "Java (UnaryNode)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/visitor/BinaryNode.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/visitor/BinaryNode.java",
         "language": "java",
         "title": "Java (BinaryNode)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/visitor/Visitor.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/visitor/Visitor.java",
         "language": "java",
         "title": "Java (Visitor)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/visitor/ConcreteVisitorA.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/visitor/ConcreteVisitorA.java",
         "language": "java",
         "title": "Java (ConcreteVisitorA)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/visitor/ConcreteVisitorB.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/visitor/ConcreteVisitorB.java",
         "language": "java",
         "title": "Java (ConcreteVisitorB)"
       },
       {
         "type": "code",
-        "resourceUrl": "https://github.com/algorithm-helper/implementations/blob/master/java/com/algorithmhelper/softwareengineering/designpatterns/visitor/VisitorTest.java",
+        "resourceUrl": "https://raw.githubusercontent.com/algorithm-helper/implementations/master/java/com/algorithmhelper/softwareengineering/designpatterns/visitor/VisitorTest.java",
         "language": "java",
         "title": "Java (VisitorTest)"
       }
