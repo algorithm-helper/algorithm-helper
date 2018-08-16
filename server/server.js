@@ -7,12 +7,17 @@ const session = require('express-session');
 
 const app = express();
 
+// MongoDB Utils:
+const SubcategoryDBUtils = require('./mongo/utils/subcategoryDBUtils');
+
 // Utils:
 const log = require('./utils/log');
+const cors = require('./utils/cors');
 
 const publicPath = path.join(__dirname, '..', 'public');
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 5000;
 
+app.use(cors);
 app.use(express.static(publicPath));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -39,9 +44,6 @@ app.listen(port, () => {
  * @param {string} password
  */
 app.post('/accounts/login', (req, res) => {
-  const userData = _.pick(req.body, ['email', 'password']);
-
-
   const { email, password } = req.body;
   log.debug(email);
   log.debug(password);
@@ -109,6 +111,22 @@ app.post('/actions/mark-as-completed', (req, res) => {
  */
 app.post('/actions/save-to-bookmarks', (req, res) => {
   // TODO
+});
+
+/**
+ * GET /data/subcategories
+ * Gets all of the subcategory data from MongoDB.
+ */
+app.get('/data/subcategories', (req, res) => {
+  res.setHeader('Content-Type', 'application/json');
+
+  SubcategoryDBUtils.getSubcategoryData()
+    .then(data => {
+      res.status(200).send(JSON.stringify({ data }));
+    })
+    .catch(error => {
+      res.status(400).send(JSON.stringify({ error }));
+    });
 });
 
 app.get('*', (req, res) => {

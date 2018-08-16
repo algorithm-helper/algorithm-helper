@@ -17,6 +17,7 @@ class MainPage extends React.Component {
 
   componentWillMount() {
     this.props.dispatch(resetColorTheme());
+    this.requestSubcategoryData();
 
     const cardData = [];
     data.categories.forEach(category => {
@@ -28,6 +29,21 @@ class MainPage extends React.Component {
       });
     });
     this.setState({ cardData });
+  }
+
+  requestSubcategoryData() {
+    fetch('http://localhost:5000/data/subcategories')
+    .then(result => result.json())
+    .then(result => {
+      const { data } = result;
+
+
+
+      console.log(result);
+    })
+    .catch(err => {
+      console.log(err);
+    });
   }
 
   /**
