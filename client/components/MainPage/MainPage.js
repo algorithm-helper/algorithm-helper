@@ -49,7 +49,7 @@ class MainPage extends React.Component {
         cardData.push({ title, description, imageUrl, colorKey, url });
       });
 
-      this.setState({ cardData, loading: true });
+      this.setState({ cardData, loading: false });
     })
     .catch(noop);
   }
