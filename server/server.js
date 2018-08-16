@@ -10,6 +10,7 @@ const app = express();
 // MongoDB Utils:
 const CategoryDBUtils = require('./mongo/utils/categoryDBUtils');
 const SubcategoryDBUtils = require('./mongo/utils/subcategoryDBUtils');
+const TopicDBUtils = require('./mongo/utils/topicDBUtils');
 
 // Utils:
 const log = require('./utils/log');
@@ -112,6 +113,73 @@ app.post('/actions/mark-as-completed', (req, res) => {
  */
 app.post('/actions/save-to-bookmarks', (req, res) => {
   // TODO
+});
+
+/**
+ * GET /data/categories
+ * Gets all of the category data from MongoDB.
+ */
+app.get('/data/categories', (req, res) => {
+  res.setHeader('Content-Type', 'application/json');
+
+  CategoryDBUtils.getCategoryData()
+  .then(data => {
+    res.status(200).send(JSON.stringify({ data }));
+  })
+  .catch(error => {
+    res.status(400).send(JSON.stringify({ error }));
+  });
+});
+
+/**
+ * GET /data/categories/:categoryKey
+ * Gets all of the category data for a specific category.
+ */
+app.get('/data/categories/:categoryKey', (req, res) => {
+  res.setHeader('Content-Type', 'application/json');
+
+  const { categoryKey } = req.params;
+  CategoryDBUtils.getCategoryDataByKey(categoryKey)
+  .then(data => {
+    res.status(200).send(JSON.stringify({ data }));
+  })
+  .catch(error => {
+    res.status(400).send(JSON.stringify({ error }));
+  });
+});
+
+/**
+ * GET /data/categories/:categoryKey/:subcategoryKey
+ * Gets all of the subcategory data for a specific subcategory.
+ */
+app.get('/data/categories/:categoryKey/:subcategoryKey', (req, res) => {
+  res.setHeader('Content-Type', 'application/json');
+
+  const { categoryKey, subcategoryKey } = req.params;
+  SubcategoryDBUtils.getSubcategoryDataByKey(categoryKey, subcategoryKey)
+  .then(data => {
+    res.status(200).send(JSON.stringify({ data }));
+  })
+  .catch(error => {
+    res.status(400).send(JSON.stringify({ error }));
+  });
+});
+
+/**
+ * GET /data/categories/:categoryKey/:subcategoryKey/:topicKey
+ * Gets all of the topic data for a specific topic.
+ */
+app.get('/data/categories/:categoryKey/:subcategoryKey/:topicKey', (req, res) => {
+  res.setHeader('Content-Type', 'application/json');
+
+  const { categoryKey, subcategoryKey, topicKey } = req.params;
+  TopicDBUtils.getTopicDataByKey(categoryKey, subcategoryKey, topicKey)
+  .then(data => {
+    res.status(200).send(JSON.stringify({ data }));
+  })
+  .catch(error => {
+    res.status(400).send(JSON.stringify({ error }));
+  });
 });
 
 /**

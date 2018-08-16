@@ -26,6 +26,10 @@ const Category = mongoose.model('Category', {
     type: [String],
     required: true,
   },
+  order: {
+    type: Number,
+    required: true,
+  },
 }, 'Categories');
 
 module.exports = Category;

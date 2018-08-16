@@ -12,8 +12,8 @@ import { getCategory, getSubcategory } from '../../utils/dataUtils';
 import { getContentUrlKey } from '../../utils/routeUtils';
 import getColorFromKey from '../../utils/getColorFromKey';
 import { setColorTheme, resetColorTheme } from '../../actions/ColorThemeActions';
-import data from '../../../data/index.json';
 
+import data from '../../../data/index.json';
 
 class ContentPage extends React.Component {
   constructor(props) {
@@ -29,6 +29,7 @@ class ContentPage extends React.Component {
 
   componentWillMount() {
     window.scrollTo(0, 0);
+    console.log('contentpage');
     this.configureDataByRouteParams(this.props.match.params);
 
     this.setState({ loading: true });
@@ -135,6 +136,15 @@ class ContentPage extends React.Component {
       });
     } else {
       this.props.dispatch(resetColorTheme());
+
+      fetch('http://localhost:5000/data/categories/data-structures/lists/linked-list')
+      .then(result => result.json())
+      .then(result => {
+        console.log(result);
+      })
+      .catch(err => {
+        console.error(err);
+      });
 
       data.categories.forEach(category => {
         const { title, key, description, colorKey } = category;
