@@ -4,17 +4,18 @@ const mongoose = require('mongoose');
 const categoryIndex = require('../data/index/categoryIndex.json');
 const subcategoryIndex = require('../data/index/subcategoryIndex.json');
 const topicIndex = require('../data/index/topicIndex.json');
+const colorIndex = require('../data/index/colorIndex.json');
 
 const Category = require('../server/mongo/models/Category');
 const Subcategory = require('../server/mongo/models/Subcategory');
 const Topic = require('../server/mongo/models/Topic');
+const Color = require('../server/mongo/models/Colors');
 
 const log = require('../server/utils/log');
-
-const MONGO_URL = 'mongodb://localhost:27017/AlgorithmHelper';
+const { MONGO_URL } = require('../server/mongo/utils/dbUtils');
 
 mongoose.Promise = Promise;
-mongoose.connect(MONGO_URL);
+mongoose.connect(MONGO_URL, { useNewUrlParser: true });
 
 /**
  * Initializes MongoDB with the data specified in the categoryIndex, subcategoryIndex, and
@@ -44,6 +45,22 @@ const initMongo = async () => {
   });
 
   await Promise.all(promises.map(p => p.catch(e => log.info(e.message))));
+
+  // Initialize Colors:
+  promises = [];
+  colorIndex.forEach(color => {
+    promises.push(new Color(color).save());
+  });
+
+  await Promise.all(promises.map(p => p.catch(e => log.info(e.message))));
 };
+
+initMongo()
+  .then(() => {
+    mongoose.disconnect();
+  })
+  .catch(() => {
+    mongoose.disconnect();
+  });
 
 module.exports = initMongo;

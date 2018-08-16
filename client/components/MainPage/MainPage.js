@@ -35,11 +35,12 @@ class MainPage extends React.Component {
     fetch('http://localhost:5000/data/subcategories')
     .then(result => result.json())
     .then(result => {
-      const { data } = result;
+      let { data } = result;
+      data = data.sort((a, b) => a.order - b.order);
 
 
 
-      console.log(result);
+      console.log(data);
     })
     .catch(err => {
       console.log(err);

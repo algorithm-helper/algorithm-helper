@@ -30,7 +30,7 @@ const mapSubcategoryWithColorKey = subcategories => {
 /**
  * Gets all of the subcategory data from MongoDB
  */
-const getSubcategoryData = () => {
+const getCategoryData = () => {
   return new Promise((resolve, reject) => {
     MongoClient.connect(MONGO_URL, { useNewUrlParser: true }, (error, client) => {
       if (error) {

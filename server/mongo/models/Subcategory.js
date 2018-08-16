@@ -31,6 +31,10 @@ const Subcategory = mongoose.model('Subcategory', {
       message: '{VALUE} is an invalid url',
     },
   },
+  order: {
+    type: Number,
+    required: true,
+  },
   children: {
     type: [String],
     required: true,

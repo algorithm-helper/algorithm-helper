@@ -1,0 +1,52 @@
+[
+  {
+    "key": 0,
+    "hexCode": "#072A60",
+    "description": "Base Algorithm Helper Theme"
+  },
+  {
+    "key": 1,
+    "hexCode": "#64B5F6",
+    "description": "Light Blue 300"
+  },
+  {
+    "key": 2,
+    "hexCode": "#BA68C8",
+    "description": "Purple 300"
+  },
+  {
+    "key": 3,
+    "hexCode": "#81C784",
+    "description": "Green 300"
+  },
+  {
+    "key": 4,
+    "hexCode": "#7986CB",
+    "description": "Indigo 300"
+  },
+  {
+    "key": 5,
+    "hexCode": "#9575CD",
+    "description": "Deep Purple 300"
+  },
+  {
+    "key": 6,
+    "hexCode": "#4DB6AC",
+    "description": "Teal 300"
+  },
+  {
+    "key": 7,
+    "hexCode": "#FFB74D",
+    "description": "Orange 300"
+  },
+  {
+    "key": 8,
+    "hexCode": "#E57373",
+    "description": "Red 300"
+  },
+  {
+    "key": 9,
+    "hexCode": "#90A4AE",
+    "description": "Blue Grey 300"
+  }
+]
