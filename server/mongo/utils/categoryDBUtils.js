@@ -41,6 +41,44 @@ const getCategoryData = () => {
 };
 
 /**
+ * Gets all of the category data from MongoDB.
+ */
+const getCategoryDataExtended = () => {
+  return new Promise((resolve, reject) => {
+    MongoClient.connect(MONGO_URL, { useNewUrlParser: true }, (error, client) => {
+      if (error) {
+        reject(new Error('Error connecting to MongoDB'));
+        return;
+      }
+
+      const db = client.db(DB_NAME);
+      const collection = db.collection(CATEGORIES_COLLECTION_NAME);
+
+      collection.find({}, {
+        fields: {
+          key: true,
+          slug: true,
+          title: true,
+          description: true,
+          colorKey: true,
+          order: true,
+          children: true,
+        },
+      }).toArray((err, result) => {
+        client.close();
+
+        if (error) {
+          reject(new Error('Error retrieving Categories data from MongoDB'));
+          return;
+        }
+
+        resolve(result);
+      });
+    });
+  });
+};
+
+/**
  * Gets the category data for a specific category by key from MongoDB.
  *
  * @param {string} categoryKey
@@ -118,6 +156,7 @@ const getCategoryColorKeyMapping = () => {
 
 module.exports = {
   getCategoryData,
+  getCategoryDataExtended,
   getCategoryDataByKey,
   getCategoryColorKeyMapping,
 };

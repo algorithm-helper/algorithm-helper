@@ -214,6 +214,22 @@ app.get('/data/utils/categories-color-key-mapping', (req, res) => {
   });
 });
 
+/**
+ * GET /data/utils/categories-extended
+ * Gets all of the category data with extended children data (subcategory data).
+ */
+app.get('/data/utils/categories-extended', (req, res) => {
+  res.setHeader('Content-Type', 'application/json');
+
+  CategoryDBUtils.getCategoryDataExtended()
+  .then(data => {
+    res.status(200).send(JSON.stringify({ data }));
+  })
+  .catch(error => {
+    res.status(400).send(JSON.stringify({ error }));
+  });
+});
+
 app.get('*', (req, res) => {
   res.sendFile(path.join(publicPath, 'index.html'));
 });

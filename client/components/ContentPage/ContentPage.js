@@ -137,10 +137,15 @@ class ContentPage extends React.Component {
     } else {
       this.props.dispatch(resetColorTheme());
 
-      fetch('http://localhost:5000/data/categories/data-structures/lists/linked-list')
+      fetch('http://localhost:5000/data/categories')
       .then(result => result.json())
       .then(result => {
-        console.log(result);
+        const categories = result.data.sort((a, b) => a.order - b.order);
+        categories.forEach(category => {
+          const { title, key, description, colorKey } = category;
+        });
+
+        console.log(categories);
       })
       .catch(err => {
         console.error(err);
