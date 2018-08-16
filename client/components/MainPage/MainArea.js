@@ -1,9 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import MDSpinner from 'react-md-spinner';
 
 import MainAreaSearchBar from './MainAreaSearchBar';
 import MainAreaCardContainer from './MainAreaCardContainer';
 import MainAreaNoResults from './MainAreaNoResults';
+
+import getColorFromKey from '../../utils/getColorFromKey';
 
 class MainArea extends React.Component {
   constructor(props) {
@@ -12,6 +16,7 @@ class MainArea extends React.Component {
       cardData: [],
       searchQuery: '',
       visibleCards: [],
+      loading: true,
     };
   }
 
@@ -19,6 +24,15 @@ class MainArea extends React.Component {
     this.setState({
       cardData: this.props.cardData,
       visibleCards: this.props.cardData,
+      loading: this.props.loading,
+    });
+  }
+
+  componentWillReceiveProps(newProps) {
+    this.setState({
+      cardData: newProps.cardData,
+      visibleCards: newProps.cardData,
+      loading: newProps.loading,
     });
   }
 
@@ -40,6 +54,32 @@ class MainArea extends React.Component {
   };
 
   /**
+   * Gets the empty items component (component to show when either the card data is loading or
+   * when the search query yields no result).
+   */
+  getEmptyItemsComponent = () => {
+    let component;
+    if (this.state.loading) {
+      component = (
+        <div className="main-area-spinner-container">
+          <MDSpinner
+            size={50}
+            singleColor={getColorFromKey(this.props.colorKey)}
+          />
+        </div>
+      );
+    } else {
+      component = (
+        <MainAreaNoResults
+          title={'No results found.'}
+          subtitle={'Try a different search term.'}
+        />
+      );
+    }
+    return component;
+  };
+
+  /**
    * Renders the MainArea component.
    */
   render() {
@@ -54,10 +94,7 @@ class MainArea extends React.Component {
           ? <MainAreaCardContainer
               cardData={this.state.visibleCards}
             />
-          : <MainAreaNoResults
-              title={'No results found.'}
-              subtitle={'Try a different search term.'}
-            />
+          : this.getEmptyItemsComponent()
         }
       </div>
     );
@@ -66,6 +103,11 @@ class MainArea extends React.Component {
 
 MainArea.propTypes = {
   cardData: PropTypes.array.isRequired,
+  loading: PropTypes.bool.isRequired,
 };
 
-export default MainArea;
+const mapStateToProps = state => ({
+  colorKey: state.colorKey,
+});
+
+export default connect(mapStateToProps)(MainArea);

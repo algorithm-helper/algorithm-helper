@@ -8,6 +8,7 @@ const session = require('express-session');
 const app = express();
 
 // MongoDB Utils:
+const CategoryDBUtils = require('./mongo/utils/categoryDBUtils');
 const SubcategoryDBUtils = require('./mongo/utils/subcategoryDBUtils');
 
 // Utils:
@@ -121,12 +122,28 @@ app.get('/data/subcategories', (req, res) => {
   res.setHeader('Content-Type', 'application/json');
 
   SubcategoryDBUtils.getSubcategoryData()
-    .then(data => {
-      res.status(200).send(JSON.stringify({ data }));
-    })
-    .catch(error => {
-      res.status(400).send(JSON.stringify({ error }));
-    });
+  .then(data => {
+    res.status(200).send(JSON.stringify({ data }));
+  })
+  .catch(error => {
+    res.status(400).send(JSON.stringify({ error }));
+  });
+});
+
+/**
+ * GET /data/utils/categories-color-key-mapping
+ * Gets all of the category data with key, slug, and colorKey from MongoDB.
+ */
+app.get('/data/utils/categories-color-key-mapping', (req, res) => {
+  res.setHeader('Content-Type', 'application/json');
+
+  CategoryDBUtils.getCategoryColorKeyMapping()
+  .then(data => {
+    res.status(200).send(JSON.stringify({ data }));
+  })
+  .catch(error => {
+    res.status(400).send(JSON.stringify({ error }));
+  });
 });
 
 app.get('*', (req, res) => {

@@ -56,11 +56,11 @@ const initMongo = async () => {
 };
 
 initMongo()
-  .then(() => {
-    mongoose.disconnect();
-  })
-  .catch(() => {
-    mongoose.disconnect();
-  });
+.then(() => {
+  mongoose.disconnect();
+})
+.catch(() => {
+  mongoose.disconnect();
+});
 
 module.exports = initMongo;

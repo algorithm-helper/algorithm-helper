@@ -3,32 +3,8 @@ const MongoClient = require('mongodb').MongoClient;
 const { MONGO_URL, DB_NAME, SUBCATEGORIES_COLLECTION_NAME } = require('./dbUtils');
 const log = require('../../utils/log');
 
-const subcategoryParentToColorKey = {
-  'data-structures': 1,
-  'general-algorithms': 2,
-  'strings': 3,
-  'graphs': 4,
-  'randomization': 5,
-  'mathematics': 6,
-  'dynamic-programming': 7,
-  'algorithmic-analysis': 8,
-  'software-engineering': 9,
-};
-
 /**
- * Maps each subcategory object with colorKey property.
- *
- * @param {Array} subcategories
- */
-const mapSubcategoryWithColorKey = subcategories => {
-  return subcategories.map(subcategory => ({
-    ...subcategory,
-    colorKey: subcategoryParentToColorKey[subcategory.parent],
-  }));
-};
-
-/**
- * Gets all of the subcategory data from MongoDB
+ * Gets all of the subcategory data from MongoDB.
  */
 const getSubcategoryData = () => {
   return new Promise((resolve, reject) => {
@@ -59,7 +35,7 @@ const getSubcategoryData = () => {
           return;
         }
 
-        resolve(mapSubcategoryWithColorKey(result));
+        resolve(result);
       });
     });
   });

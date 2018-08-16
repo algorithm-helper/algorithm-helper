@@ -4,47 +4,54 @@ import { connect } from 'react-redux';
 import MainPageJumbotron from './MainPageJumbotron';
 import MainArea from './MainArea';
 import Footer from '../Footer/';
+
 import { resetColorTheme } from '../../actions/ColorThemeActions';
-import data from '../../../data/index.json';
+import { noop } from '../../utils/utils';
 
 class MainPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       cardData: [],
+      loading: true,
     };
   }
 
   componentWillMount() {
     this.props.dispatch(resetColorTheme());
     this.requestSubcategoryData();
-
-    const cardData = [];
-    data.categories.forEach(category => {
-      const colorKey = category.colorKey;
-      category.children.forEach(subcategory => {
-        const { title, description, imageUrl } = subcategory;
-        const url = `/categories/${category.key}/${subcategory.key}`;
-        cardData.push({ title, description, imageUrl, colorKey, url });
-      });
-    });
-    this.setState({ cardData });
   }
 
+  /**
+   * Makes a request to the server to get the Subcategories data, as well as the Categories
+   * color mapping between keys to colorKey's.
+   */
   requestSubcategoryData() {
-    fetch('http://localhost:5000/data/subcategories')
-    .then(result => result.json())
+    Promise.all([
+      fetch('http://localhost:5000/data/subcategories'),
+      fetch('http://localhost:5000/data/utils/categories-color-key-mapping')
+    ])
+    .then(result => Promise.all(result.map(x => x.json())))
     .then(result => {
-      let { data } = result;
-      data = data.sort((a, b) => a.order - b.order);
+      const [subcategoriesData, categoriesColorKeyMapping] = result;
 
+      const subcategories = subcategoriesData.data.sort((a, b) => a.order - b.order);
+      const colorKeyMapping = categoriesColorKeyMapping.data.reduce((prev, curr) => ({
+        ...prev,
+        [curr.key]: curr.colorKey,
+      }), {});
 
+      const cardData = [];
+      subcategories.forEach(subcategory => {
+        const { key, title, description, imageUrl, parent } = subcategory;
+        const url = `/categories/${key}`;
+        const colorKey = colorKeyMapping[parent];
+        cardData.push({ title, description, imageUrl, colorKey, url });
+      });
 
-      console.log(data);
+      this.setState({ cardData, loading: true });
     })
-    .catch(err => {
-      console.log(err);
-    });
+    .catch(noop);
   }
 
   /**
@@ -60,6 +67,7 @@ class MainPage extends React.Component {
         />
         <MainArea
           cardData={this.state.cardData}
+          loading={this.state.loading}
         />
         <Footer />
       </div>
