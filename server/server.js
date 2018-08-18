@@ -11,6 +11,8 @@ const app = express();
 const CategoryDBUtils = require('./mongo/utils/categoryDBUtils');
 const SubcategoryDBUtils = require('./mongo/utils/subcategoryDBUtils');
 const TopicDBUtils = require('./mongo/utils/topicDBUtils');
+const ColorDBUtils = require('./mongo/utils/colorDBUtils');
+const setupMongoose = require('./mongo/utils/setupMongoose');
 
 // Utils:
 const log = require('./utils/log');
@@ -33,6 +35,8 @@ app.use(session({
     secure: false
   }
 }));
+
+setupMongoose();
 
 app.listen(port, () => {
   log.info(`Server started on port ${port}`);
@@ -127,58 +131,7 @@ app.get('/data/categories', (req, res) => {
     res.status(200).send(JSON.stringify({ data }));
   })
   .catch(error => {
-    res.status(400).send(JSON.stringify({ error }));
-  });
-});
-
-/**
- * GET /data/categories/:categoryKey
- * Gets all of the category data for a specific category.
- */
-app.get('/data/categories/:categoryKey', (req, res) => {
-  res.setHeader('Content-Type', 'application/json');
-
-  const { categoryKey } = req.params;
-  CategoryDBUtils.getCategoryDataByKey(categoryKey)
-  .then(data => {
-    res.status(200).send(JSON.stringify({ data }));
-  })
-  .catch(error => {
-    res.status(400).send(JSON.stringify({ error }));
-  });
-});
-
-/**
- * GET /data/categories/:categoryKey/:subcategoryKey
- * Gets all of the subcategory data for a specific subcategory.
- */
-app.get('/data/categories/:categoryKey/:subcategoryKey', (req, res) => {
-  res.setHeader('Content-Type', 'application/json');
-
-  const { categoryKey, subcategoryKey } = req.params;
-  SubcategoryDBUtils.getSubcategoryDataByKey(categoryKey, subcategoryKey)
-  .then(data => {
-    res.status(200).send(JSON.stringify({ data }));
-  })
-  .catch(error => {
-    res.status(400).send(JSON.stringify({ error }));
-  });
-});
-
-/**
- * GET /data/categories/:categoryKey/:subcategoryKey/:topicKey
- * Gets all of the topic data for a specific topic.
- */
-app.get('/data/categories/:categoryKey/:subcategoryKey/:topicKey', (req, res) => {
-  res.setHeader('Content-Type', 'application/json');
-
-  const { categoryKey, subcategoryKey, topicKey } = req.params;
-  TopicDBUtils.getTopicDataByKey(categoryKey, subcategoryKey, topicKey)
-  .then(data => {
-    res.status(200).send(JSON.stringify({ data }));
-  })
-  .catch(error => {
-    res.status(400).send(JSON.stringify({ error }));
+    res.status(400).send(JSON.stringify({ error: error.message }));
   });
 });
 
@@ -194,9 +147,90 @@ app.get('/data/subcategories', (req, res) => {
     res.status(200).send(JSON.stringify({ data }));
   })
   .catch(error => {
-    res.status(400).send(JSON.stringify({ error }));
+    res.status(400).send(JSON.stringify({ error: error.message }));
   });
 });
+
+/**
+ * GET /data/categories/:categoryKey
+ * Gets the category data for a specific category by key from MongoDB.
+ *
+ * @param {string} categoryKey
+ */
+app.get('/data/categories/:categoryKey', (req, res) => {
+  res.setHeader('Content-Type', 'application/json');
+
+  const { categoryKey } = req.params;
+  CategoryDBUtils.getCategoryDataByKey(categoryKey)
+  .then(data => {
+    res.status(200).send(JSON.stringify({ data }));
+  })
+  .catch(error => {
+    res.status(400).send(JSON.stringify({ error: error.message }));
+  });
+});
+
+/**
+ * GET /data/categories/:categoryKey/:subcategoryKey
+ * Gets the subcategory data for a specific subcategory by key from MongoDB.
+ *
+ * @param {string} categoryKey
+ * @param {string} subcategoryKey
+ */
+app.get('/data/categories/:categoryKey/:subcategoryKey', (req, res) => {
+  res.setHeader('Content-Type', 'application/json');
+
+  const { categoryKey, subcategoryKey } = req.params;
+  SubcategoryDBUtils.getSubcategoryDataByKey(categoryKey, subcategoryKey)
+  .then(data => {
+    res.status(200).send(JSON.stringify({ data }));
+  })
+  .catch(error => {
+    res.status(400).send(JSON.stringify({ error: error.message }));
+  });
+});
+
+/**
+ * GET /data/categories/:categoryKey/:subcategoryKey/:topicKey
+ * Gets the topic data for a specific topic by key from MongoDB.
+ *
+ * @param {string} categoryKey
+ * @param {string} subcategoryKey
+ * @param {string} topicKey
+ */
+app.get('/data/categories/:categoryKey/:subcategoryKey/:topicKey', (req, res) => {
+  res.setHeader('Content-Type', 'application/json');
+
+  const { categoryKey, subcategoryKey, topicKey } = req.params;
+  TopicDBUtils.getTopicDataByKey(categoryKey, subcategoryKey, topicKey)
+  .then(data => {
+    res.status(200).send(JSON.stringify({ data }));
+  })
+  .catch(error => {
+    res.status(400).send(JSON.stringify({ error: error.message }));
+  });
+});
+
+/**
+ * GET /data/colors
+ * Gets all the color data from MongoDB.
+ */
+app.get('/data/colors', (req, res) => {
+  res.setHeader('Content-Type', 'application/json');
+
+  ColorDBUtils.getColorData()
+  .then(data => {
+    res.status(200).send(JSON.stringify({ data }));
+  })
+  .catch(error => {
+    res.status(400).send(JSON.stringify({ error: error.message }));
+  });
+});
+
+
+
+
+
 
 /**
  * GET /data/utils/categories-color-key-mapping
@@ -206,22 +240,6 @@ app.get('/data/utils/categories-color-key-mapping', (req, res) => {
   res.setHeader('Content-Type', 'application/json');
 
   CategoryDBUtils.getCategoryColorKeyMapping()
-  .then(data => {
-    res.status(200).send(JSON.stringify({ data }));
-  })
-  .catch(error => {
-    res.status(400).send(JSON.stringify({ error }));
-  });
-});
-
-/**
- * GET /data/utils/categories-extended
- * Gets all of the category data with extended children data (subcategory data).
- */
-app.get('/data/utils/categories-extended', (req, res) => {
-  res.setHeader('Content-Type', 'application/json');
-
-  CategoryDBUtils.getCategoryDataExtended()
   .then(data => {
     res.status(200).send(JSON.stringify({ data }));
   })

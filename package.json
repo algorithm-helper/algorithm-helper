@@ -10,8 +10,8 @@
     "build:dev": "webpack",
     "build:prod": "webpack -p --env PROD",
     "dev:wds": "webpack-dev-server",
-    "dev:client": "webpack --watch",
-    "dev:server": "nodemon server/server.js | bunyan -o short",
+    "dev:client": "./clean.sh && webpack --watch",
+    "dev:server": "./clean.sh && nodemon server/server.js | bunyan -o short",
     "dev:all": "concurrently --kill-others-on-fail \"yarn run dev:wds\" \"yarn run dev:server\"",
     "init:mongo": "node scripts/initMongo.js | bunyan -o short",
     "start": "node server/server.js"
