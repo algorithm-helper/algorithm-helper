@@ -50,6 +50,7 @@ const getCategoryDataExtended = () => {
       colorKey: true,
       order: true,
     })
+    .lean()
     .exec(),
     Subcategory.find({}, {
       key: true,
@@ -60,10 +61,11 @@ const getCategoryDataExtended = () => {
       imageUrl: true,
       order: true,
     })
+    .lean()
     .exec(),
   ])
   .then(result => {
-    const [ categoryData, subcategoryData ] = result;
+    const [categoryData, subcategoryData] = result;
 
     const mapCategoryKeyToIndex = categoryData.map((category, i) => ({
       slug: category.slug,
@@ -83,10 +85,6 @@ const getCategoryDataExtended = () => {
 
       categoryData[index].children.push(subcategory);
     });
-
-    console.log(categoryData);
-
-    // console.log(typeof categoryData[0].children[0]);
 
     return categoryData;
   });

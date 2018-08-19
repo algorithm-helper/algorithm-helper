@@ -18,6 +18,7 @@ const getTopicDataByKey = (categoryKey, subcategoryKey, topicKey) => (
     description: true,
     children: true,
   })
+  .lean()
   .exec()
 );
 

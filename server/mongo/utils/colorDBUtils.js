@@ -9,6 +9,7 @@ const getColorData = () => (
     hexCode: true,
     description: true,
   })
+  .lean()
   .exec()
 );
 

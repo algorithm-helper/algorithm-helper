@@ -18,6 +18,7 @@ const getSubcategoryData = () => (
     order: true,
     children: true,
   })
+  .lean()
   .exec()
 );
 
@@ -40,6 +41,7 @@ const getSubcategoryDataByKey = (categoryKey, subcategoryKey) => (
     order: true,
     children: true,
   })
+  .lean()
   .exec()
 );
 

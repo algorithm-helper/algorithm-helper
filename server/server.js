@@ -261,9 +261,6 @@ app.get('/data-extended/categories', (req, res) => {
 
   CategoryDBUtils.getCategoryDataExtended()
   .then(data => {
-    // console.log(JSON.stringify(data, undefined, 2));
-    // console.log(data[0].children);
-
     if (data === null) {
       res.status(400).send(JSON.stringify({ error: 'Invalid request' }));
       return;
@@ -275,6 +272,10 @@ app.get('/data-extended/categories', (req, res) => {
     res.status(400).send(JSON.stringify({ error: error.message }));
   });
 });
+
+
+
+
 
 
 
