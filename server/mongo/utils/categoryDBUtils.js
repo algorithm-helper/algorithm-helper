@@ -139,36 +139,18 @@ const getCategoryDataByKeyExtended = categoryKey => (
 /**
  * Gets all of the category data by key and colorKey from MongoDB.
  */
-const getCategoryColorKeyMapping = () => {
-  return new Promise((resolve, reject) => {
-    MongoClient.connect(MONGO_URL, { useNewUrlParser: true }, (error, client) => {
-      if (error) {
-        reject(new Error('Error connecting to MongoDB'));
-        return;
-      }
-
-      const db = client.db(DB_NAME);
-      const collection = db.collection(CATEGORIES_COLLECTION_NAME);
-
-      collection.find({}, {
-        fields: {
-          key: true,
-          slug: true,
-          colorKey: true,
-        },
-      }).toArray((err, result) => {
-        client.close();
-
-        if (error) {
-          reject(new Error('Error retrieving Catgories data from MongoDB'));
-          return;
-        }
-
-        resolve(result);
-      });
-    });
-  });
-};
+const getCategoryColorKeyMapping = () => (
+  Category.find({}, {
+    key: true,
+    colorKey: true,
+  })
+  .lean()
+  .exec()
+  .then(result => result.reduce((prev, curr) => ({
+    ...prev,
+    [curr.key]: curr.colorKey,
+  }), {}))
+);
 
 module.exports = {
   getCategoryData,

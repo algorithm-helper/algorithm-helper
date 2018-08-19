@@ -72,6 +72,7 @@ const getSubcategoryDataByKeyExtended = (categoryKey, subcategoryKey) => (
       title: true,
       parent: true,
       description: true,
+      order: true,
     })
     .lean()
     .exec()

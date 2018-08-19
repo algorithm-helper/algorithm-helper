@@ -253,10 +253,10 @@ app.get('/data/colors', (req, res) => {
 });
 
 /**
- * GET /data-extended/categories
+ * GET /data/extended/categories
  * Gets all of the category data with the data of its children, from MongoDB.
  */
-app.get('/data-extended/categories', (req, res) => {
+app.get('/data/extended/categories', (req, res) => {
   res.setHeader('Content-Type', 'application/json');
 
   CategoryDBUtils.getCategoryDataExtended()
@@ -274,12 +274,12 @@ app.get('/data-extended/categories', (req, res) => {
 });
 
 /**
- * GET /data-extended/categories/:categoryKey
+ * GET /data/extended/categories/:categoryKey
  * Gets the category data for a particular category with the data of its children, from MongoDB.
  *
  * @param {string} categoryKey
  */
-app.get('/data-extended/categories/:categoryKey', (req, res) => {
+app.get('/data/extended/categories/:categoryKey', (req, res) => {
   res.setHeader('Content-Type', 'application/json');
 
   const { categoryKey } = req.params;
@@ -298,20 +298,19 @@ app.get('/data-extended/categories/:categoryKey', (req, res) => {
 });
 
 /**
- * GET /data-extended/categories/:categoryKey/:subcategoryKey
- * Gets the category data for a particular category with the data of its children, from MongoDB.
+ * GET /data/extended/categories/:categoryKey/:subcategoryKey
+ * Gets the subcategory data for a particular subcategory with the data of its children, from
+ * MongoDB.
  *
  * @param {string} categoryKey
  * @param {string} subcategoryKey
  */
-app.get('/data-extended/categories/:categoryKey/:subcategoryKey', (req, res) => {
+app.get('/data/extended/categories/:categoryKey/:subcategoryKey', (req, res) => {
   res.setHeader('Content-Type', 'application/json');
 
   const { categoryKey, subcategoryKey } = req.params;
   SubcategoryDBUtils.getSubcategoryDataByKeyExtended(categoryKey, subcategoryKey)
   .then(data => {
-    log.info(data);
-
     if (data === null) {
       res.status(400).send(JSON.stringify({ error: 'Invalid request' }));
       return;
@@ -324,18 +323,20 @@ app.get('/data-extended/categories/:categoryKey/:subcategoryKey', (req, res) => 
   });
 });
 
-
-
-
 /**
  * GET /data/utils/categories-color-key-mapping
- * Gets all of the category data with key, slug, and colorKey from MongoDB.
+ * Gets the mapping of categoryKey to colorKey, from MongoDB.
  */
 app.get('/data/utils/categories-color-key-mapping', (req, res) => {
   res.setHeader('Content-Type', 'application/json');
 
   CategoryDBUtils.getCategoryColorKeyMapping()
   .then(data => {
+    if (data === null) {
+      res.status(400).send(JSON.stringify({ error: 'Invalid request' }));
+      return;
+    }
+
     res.status(200).send(JSON.stringify({ data }));
   })
   .catch(error => {
