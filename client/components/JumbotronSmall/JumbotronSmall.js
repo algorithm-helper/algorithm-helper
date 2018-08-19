@@ -21,7 +21,9 @@ const JumbotronSmall = props => (
           <div className="jumbotron-sm-title">{props.title}</div>
           <div className="jumbotron-sm-subtitle">
             <Link to={props.urlKey}>
-              &larr; {props.subtitle}
+              {
+                props.subtitle && (`${String.fromCharCode(0x02190)} ${props.subtitle}`)
+              }
             </Link>
           </div>
         </div>
