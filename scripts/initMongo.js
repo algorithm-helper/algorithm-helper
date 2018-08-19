@@ -1,6 +1,3 @@
-const Promise = require('bluebird');
-const mongoose = require('mongoose');
-
 const categoryIndex = require('../data/index/categoryIndex.json');
 const subcategoryIndex = require('../data/index/subcategoryIndex.json');
 const topicIndex = require('../data/index/topicIndex.json');
@@ -12,25 +9,28 @@ const Topic = require('../server/mongo/models/Topic');
 const Color = require('../server/mongo/models/Color');
 
 const log = require('../server/utils/log');
-const { MONGO_URL } = require('../server/mongo/utils/dbUtils');
 
 const fixTopicIndexOrder = require('./fixTopicIndexOrder');
-
-mongoose.Promise = Promise;
-mongoose.connect(MONGO_URL, { useNewUrlParser: true });
 
 /**
  * Initializes MongoDB with the data specified in the categoryIndex, subcategoryIndex, and
  * topicIndex.
  */
-const initMongo = async () => {
+const initMongo = async options => {
+
+  const displayMessage = msg => {
+    if (!options.silent) {
+      log.info(msg);
+    }
+  };
+
   // Initialize Categories:
   let promises = [];
   categoryIndex.forEach(category => {
     promises.push(new Category(category).save());
   });
 
-  await Promise.all(promises.map(p => p.catch(e => log.info(e.message))));
+  await Promise.all(promises.map(p => p.catch(e => displayMessage(e.message))));
 
   // Initialize Subcategories:
   promises = [];
@@ -38,7 +38,7 @@ const initMongo = async () => {
     promises.push(new Subcategory(subcategory).save());
   });
 
-  await Promise.all(promises.map(p => p.catch(e => log.info(e.message))));
+  await Promise.all(promises.map(p => p.catch(e => displayMessage(e.message))));
 
   // Initialize Topics:
   promises = [];
@@ -47,7 +47,7 @@ const initMongo = async () => {
     promises.push(new Topic(topic).save());
   });
 
-  await Promise.all(promises.map(p => p.catch(e => log.info(e.message))));
+  await Promise.all(promises.map(p => p.catch(e => displayMessage(e.message))));
 
   // Initialize Colors:
   promises = [];
@@ -55,15 +55,7 @@ const initMongo = async () => {
     promises.push(new Color(color).save());
   });
 
-  await Promise.all(promises.map(p => p.catch(e => log.info(e.message))));
+  await Promise.all(promises.map(p => p.catch(e => displayMessage(e.message))));
 };
-
-initMongo()
-.then(() => {
-  mongoose.disconnect();
-})
-.catch(() => {
-  mongoose.disconnect();
-});
 
 module.exports = initMongo;

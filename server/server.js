@@ -14,6 +14,9 @@ const TopicDBUtils = require('./mongo/utils/topicDBUtils');
 const ColorDBUtils = require('./mongo/utils/colorDBUtils');
 const setupMongoose = require('./mongo/utils/setupMongoose');
 
+// Startup Scripts:
+const initMongo = require('../scripts/initMongo');
+
 // Utils:
 const log = require('./utils/log');
 const cors = require('./utils/cors');
@@ -37,6 +40,7 @@ app.use(session({
 }));
 
 setupMongoose();
+initMongo({ silent: true });
 
 app.listen(port, () => {
   log.info(`Server started on port ${port}`);
