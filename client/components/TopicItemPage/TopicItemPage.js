@@ -30,6 +30,9 @@ class TopicItemPage extends React.Component {
   componentWillMount() {
     this.history = createHistory();
     this.setState({ error: '' });
+  }
+
+  componentDidMount() {
     const { categoryKey, subcategoryKey, topicKey } = this.props.match.params;
     this.requestTopicData(categoryKey, subcategoryKey, topicKey);
   }
@@ -78,10 +81,7 @@ class TopicItemPage extends React.Component {
       indexFromQueryString < topicItemTypes.length) {
       this.setState({ indexSelected: indexFromQueryString });
     } else {
-      this.history.replace({
-        pathname: this.props.match.url,
-        search: `?item=0`,
-      });
+      this.history.replace({ pathname: this.props.match.url, search: `?item=0` });
       this.setState({ indexSelected: 0 });
     }
   };
@@ -146,6 +146,7 @@ class TopicItemPage extends React.Component {
         />
 
         <TopicItemContainer
+          topic={this.state.topic}
           topicItem={this.state.topicItemTypes[this.state.indexSelected]}
           onMarkAsCompleted={this.handleMarkAsCompleted}
           onSaveToBookmarks={this.handleSaveToBookmarks}

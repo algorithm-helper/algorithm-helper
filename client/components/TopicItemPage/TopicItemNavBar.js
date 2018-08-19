@@ -24,6 +24,7 @@ class TopicItemNavBar extends React.Component {
 
   componentWillReceiveProps(newProps) {
     this.setState({
+      indexSelected: newProps.indexStart,
       topicItemTypes: newProps.topicItemTypes,
     });
   }
