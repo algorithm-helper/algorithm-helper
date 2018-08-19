@@ -82,8 +82,8 @@ class ContentPage extends React.Component {
   requestSubcategoryData = (categoryKey, subcategoryKey) => {
     let subcategory;
     Promise.all([
-      fetch(`http://localhost:5000/data/extended/categories/${categoryKey}/${subcategoryKey}`),
-      fetch('http://localhost:5000/data/utils/categories-color-key-mapping')
+      fetch(`/data/extended/categories/${categoryKey}/${subcategoryKey}`),
+      fetch('/data/utils/categories-color-key-mapping')
     ])
     .then(result => Promise.all(result.map(x => x.json())))
     .then(result => {
@@ -98,7 +98,7 @@ class ContentPage extends React.Component {
       this.setState({ type: 'subcategory', title: subcategory.title });
 
       return Promise.all(subcategory.children.map(topic =>
-        fetch(`http://localhost:5000/data/categories/${categoryKey}/${subcategory.slug}/${topic.slug}`)));
+        fetch(`/data/categories/${categoryKey}/${subcategory.slug}/${topic.slug}`)));
     })
     .then(result => Promise.all(result.map(x => x.json())))
     .then(result => {
@@ -130,7 +130,7 @@ class ContentPage extends React.Component {
    */
   requestCategoryData = categoryKey => {
     let category;
-    fetch(`http://localhost:5000/data/extended/categories/${categoryKey}`)
+    fetch(`/data/extended/categories/${categoryKey}`)
     .then(result => result.json())
     .then(result => {
       if (result.error) {
@@ -143,7 +143,7 @@ class ContentPage extends React.Component {
       this.setState({ type: 'category', title: category.title });
 
       return Promise.all(category.children.map(subcategory =>
-        fetch(`http://localhost:5000/data/extended/categories/${categoryKey}/${subcategory.slug}`)));
+        fetch(`/data/extended/categories/${categoryKey}/${subcategory.slug}`)));
     })
     .then(result => Promise.all(result.map(x => x.json())))
     .then(result => {
@@ -175,7 +175,7 @@ class ContentPage extends React.Component {
   requestCategoriesData = () => {
     this.props.dispatch(resetColorTheme());
 
-    fetch('http://localhost:5000/data/extended/categories')
+    fetch('/data/extended/categories')
     .then(result => result.json())
     .then(result => {
       if (result.error) {

@@ -42,9 +42,9 @@ class TopicItemPage extends React.Component {
    */
   requestTopicData = (categoryKey, subcategoryKey, topicKey) => {
     Promise.all([
-      fetch(`http://localhost:5000/data/categories/${categoryKey}/${subcategoryKey}/${topicKey}`),
-      fetch(`http://localhost:5000/data/categories/${categoryKey}/${subcategoryKey}`),
-      fetch(`http://localhost:5000/data/categories/${categoryKey}`),
+      fetch(`/data/categories/${categoryKey}/${subcategoryKey}/${topicKey}`),
+      fetch(`/data/categories/${categoryKey}/${subcategoryKey}`),
+      fetch(`/data/categories/${categoryKey}`),
     ])
     .then(result => Promise.all(result.map(x => x.json())))
     .then(result => {

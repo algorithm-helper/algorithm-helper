@@ -1,4 +1,4 @@
-const MONGO_URL = 'mongodb://localhost:27017/AlgorithmHelper';
+const MONGO_URL = process.env.MLAB_MONGO_URL || 'mongodb://localhost:27017/AlgorithmHelper';
 const DB_NAME = 'AlgorithmHelper';
 const CATEGORIES_COLLECTION_NAME = 'Categories';
 const SUBCATEGORIES_COLLECTION_NAME = 'Subcategories';

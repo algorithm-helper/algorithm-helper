@@ -28,8 +28,8 @@ class MainPage extends React.Component {
    */
   requestSubcategoryData() {
     Promise.all([
-      fetch('http://localhost:5000/data/subcategories'),
-      fetch('http://localhost:5000/data/utils/categories-color-key-mapping')
+      fetch('/data/subcategories'),
+      fetch('/data/utils/categories-color-key-mapping')
     ])
     .then(result => Promise.all(result.map(x => x.json())))
     .then(result => {
