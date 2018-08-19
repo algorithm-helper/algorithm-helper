@@ -128,6 +128,11 @@ app.get('/data/categories', (req, res) => {
 
   CategoryDBUtils.getCategoryData()
   .then(data => {
+    if (data === null) {
+      res.status(400).send(JSON.stringify({ error: 'Invalid request' }));
+      return;
+    }
+
     res.status(200).send(JSON.stringify({ data }));
   })
   .catch(error => {
@@ -144,6 +149,11 @@ app.get('/data/subcategories', (req, res) => {
 
   SubcategoryDBUtils.getSubcategoryData()
   .then(data => {
+    if (data === null) {
+      res.status(400).send(JSON.stringify({ error: 'Invalid request' }));
+      return;
+    }
+
     res.status(200).send(JSON.stringify({ data }));
   })
   .catch(error => {
@@ -163,6 +173,11 @@ app.get('/data/categories/:categoryKey', (req, res) => {
   const { categoryKey } = req.params;
   CategoryDBUtils.getCategoryDataByKey(categoryKey)
   .then(data => {
+    if (data === null) {
+      res.status(400).send(JSON.stringify({ error: 'Invalid request' }));
+      return;
+    }
+
     res.status(200).send(JSON.stringify({ data }));
   })
   .catch(error => {
@@ -183,6 +198,11 @@ app.get('/data/categories/:categoryKey/:subcategoryKey', (req, res) => {
   const { categoryKey, subcategoryKey } = req.params;
   SubcategoryDBUtils.getSubcategoryDataByKey(categoryKey, subcategoryKey)
   .then(data => {
+    if (data === null) {
+      res.status(400).send(JSON.stringify({ error: 'Invalid request' }));
+      return;
+    }
+
     res.status(200).send(JSON.stringify({ data }));
   })
   .catch(error => {
@@ -204,6 +224,11 @@ app.get('/data/categories/:categoryKey/:subcategoryKey/:topicKey', (req, res) =>
   const { categoryKey, subcategoryKey, topicKey } = req.params;
   TopicDBUtils.getTopicDataByKey(categoryKey, subcategoryKey, topicKey)
   .then(data => {
+    if (data === null) {
+      res.status(400).send(JSON.stringify({ error: 'Invalid request' }));
+      return;
+    }
+
     res.status(200).send(JSON.stringify({ data }));
   })
   .catch(error => {
@@ -227,7 +252,29 @@ app.get('/data/colors', (req, res) => {
   });
 });
 
+/**
+ * GET /data-extended/categories
+ * Gets all of the category data with the data of its children, from MongoDB.
+ */
+app.get('/data-extended/categories', (req, res) => {
+  res.setHeader('Content-Type', 'application/json');
 
+  CategoryDBUtils.getCategoryDataExtended()
+  .then(data => {
+    // console.log(JSON.stringify(data, undefined, 2));
+    // console.log(data[0].children);
+
+    if (data === null) {
+      res.status(400).send(JSON.stringify({ error: 'Invalid request' }));
+      return;
+    }
+
+    res.status(200).send(JSON.stringify({ data }));
+  })
+  .catch(error => {
+    res.status(400).send(JSON.stringify({ error: error.message }));
+  });
+});
 
 
 

@@ -7,7 +7,7 @@ const log = require('../../utils/log');
  * when the Node.js application is closed with SIGINT.
  */
 const setupMongoose = () => {
-  mongoose.connect(MONGO_URL);
+  mongoose.connect(MONGO_URL, { useNewUrlParser: true });
 
   mongoose.connection.on('connected', () => {
     log.info('Mongoose connected');
