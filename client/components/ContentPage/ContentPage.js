@@ -10,6 +10,7 @@ import ContentAreaItemContainer from './ContentAreaItemContainer';
 
 import { getContentUrlKey } from '../../utils/routeUtils';
 import getColorFromKey from '../../utils/getColorFromKey';
+import { getTopicItemTypes } from '../../utils/topicItemUtils';
 import { noop, TOPIC_ITEM_TYPES, TOPIC_ITEM_TYPES_TITLE } from '../../utils/utils';
 
 import { setColorTheme, resetColorTheme } from '../../actions/ColorThemeActions';
@@ -21,8 +22,8 @@ class ContentPage extends React.Component {
       contentData: [],
       type: '',
       title: '',
-      isError: false,
       loading: true,
+      error: '',
     };
   }
 
@@ -106,23 +107,10 @@ class ContentPage extends React.Component {
         const { title, slug, description, children } = topic.data;
         const { colorKey } = subcategory;
         const urlKey = `/categories/${subcategory.key}/${slug}`;
-
-        const childrenTypes = {};
-        children.forEach(topicItem => {
-          childrenTypes[topicItem.type] = true;
-        });
-
-        const topicChildren = [];
-        TOPIC_ITEM_TYPES.forEach(type => {
-          if (childrenTypes[type]) {
-            topicChildren.push({ title: TOPIC_ITEM_TYPES_TITLE[type] });
-          }
-        });
-
         contentData.push({
           title,
           description,
-          children: topicChildren,
+          children: getTopicItemTypes(children),
           colorKey,
           urlKey,
           key: slug,

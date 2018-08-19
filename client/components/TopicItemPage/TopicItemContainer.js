@@ -17,15 +17,23 @@ class TopicItemContainer extends React.Component {
       loading: false,
       isCompleted: false,
       isBookmarked: false,
+      topicItem: null,
+      cachedItems: {},
     };
   }
 
   componentWillMount() {
-    this.setState({ loading: true });
+    this.setState({
+      loading: true,
+      topicItem: this.props.topicItem,
+    });
   }
 
-  componentWillReceiveProps() {
-    this.setState({ loading: true });
+  componentWillReceiveProps(newProps) {
+    this.setState({
+      loading: true,
+      topicItem: newProps.topicItem,
+    });
   }
 
   /**
@@ -47,17 +55,23 @@ class TopicItemContainer extends React.Component {
    * Returns the topic item component that corresponds to the topic item type.
    */
   getTopicItemComponent = () => {
-    switch(this.props.topicItem.type) {
+    if (!this.state.topicItem) {
+      return;
+    }
+
+    switch(this.state.topicItem.type) {
       case 'article':
         return (
           <TopicItemArticle
             contentLoaded={this.handleContentLoaded}
+            type={this.state.topicItem.type}
           />
         );
       case 'code':
         return (
           <TopicItemCode
             contentLoaded={this.handleContentLoaded}
+            type={this.state.topicItem.type}
           />
         );
       default:

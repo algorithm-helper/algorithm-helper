@@ -31,9 +31,9 @@ const JumbotronSmall = props => (
 );
 
 JumbotronSmall.propTypes = {
-  title: PropTypes.string.isRequired,
-  subtitle: PropTypes.string.isRequired,
-  urlKey: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  subtitle: PropTypes.string,
+  urlKey: PropTypes.string,
 };
 
 const mapStateToProps = state => ({

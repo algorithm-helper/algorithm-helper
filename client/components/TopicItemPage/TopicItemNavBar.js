@@ -11,11 +11,21 @@ class TopicItemNavBar extends React.Component {
     super(props);
     this.state = {
       indexSelected: 0,
+      topicItemTypes: [],
     };
   }
 
   componentWillMount() {
-    this.setState({ indexSelected: this.props.indexStart });
+    this.setState({
+      indexSelected: this.props.indexStart,
+      topicItemTypes: this.props.topicItemTypes,
+    });
+  }
+
+  componentWillReceiveProps(newProps) {
+    this.setState({
+      topicItemTypes: newProps.topicItemTypes,
+    });
   }
 
   /**
@@ -29,16 +39,14 @@ class TopicItemNavBar extends React.Component {
    * Renders the TopicItemNavBar component.
    */
   render() {
-    const topicItemsTest = ['Article', 'Code'];
-
     return (
       <Container fluid>
         <Row>
           <div className="topic-item-navbar-container">
             <ul className="nav justify-content-center grey lighten-4 navbar-topic">
               {
-                topicItemsTest &&
-                topicItemsTest.map((item, i) => {
+                this.state.topicItemTypes &&
+                this.state.topicItemTypes.map((item, i) => {
                   const activeClass = i === this.state.indexSelected
                     ? 'topic-item-navbar-item-active'
                     : '';
@@ -52,7 +60,7 @@ class TopicItemNavBar extends React.Component {
                         <a onClick={() => {
                           this.handleClick(i);
                           this.props.handleChangeIndex(i);
-                        }}>{item}</a>
+                        }}>{item.title}</a>
                       </div>
                     </li>
                   );
@@ -68,6 +76,7 @@ class TopicItemNavBar extends React.Component {
 
 TopicItemNavBar.propTypes = {
   indexStart: PropTypes.number.isRequired,
+  topicItemTypes: PropTypes.array.isRequired,
 };
 
 const mapStateToProps = state => ({

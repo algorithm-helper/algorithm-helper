@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import ContentAreaItem from './ContentAreaItem';
-import { getContentUrlKey } from '../../utils/routeUtils';
 
 /**
  * Renders the ContentAreaItemContainer stateless functional component.
