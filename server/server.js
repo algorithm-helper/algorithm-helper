@@ -40,7 +40,10 @@ app.use(session({
 }));
 
 setupMongoose();
-initMongo({ silent: true });
+
+if (process.env.PRODUCTION) {
+  initMongo({ silent: true });
+}
 
 app.listen(port, () => {
   log.info(`Server started on port ${port}`);
