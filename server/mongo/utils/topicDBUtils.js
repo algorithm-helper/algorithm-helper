@@ -16,6 +16,7 @@ const getTopicDataByKey = (categoryKey, subcategoryKey, topicKey) => (
     title: true,
     parent: true,
     description: true,
+    order: true,
     children: true,
   })
   .lean()

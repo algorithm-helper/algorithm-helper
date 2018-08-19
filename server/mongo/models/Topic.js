@@ -23,6 +23,10 @@ const Topic = mongoose.model('Topic', {
     type: String,
     required: true,
   },
+  order: {
+    type: Number,
+    required: true,
+  },
   children: [{
     type: {
       type: String,

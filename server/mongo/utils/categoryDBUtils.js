@@ -14,6 +14,7 @@ const getCategoryData = () => (
     order: true,
     children: true,
   })
+  .lean()
   .exec()
 );
 
@@ -34,14 +35,15 @@ const getCategoryDataByKey = categoryKey => (
     order: true,
     children: true,
   })
+  .lean()
   .exec()
 );
 
 /**
  * Gets all of the category data with the data of its children from MongoDB.
  */
-const getCategoryDataExtended = () => {
-  return Promise.all([
+const getCategoryDataExtended = () => (
+  Promise.all([
     Category.find({}, {
       key: true,
       slug: true,
@@ -86,9 +88,53 @@ const getCategoryDataExtended = () => {
       categoryData[index].children.push(subcategory);
     });
 
+    categoryData.forEach(category => {
+      category.children = category.children.sort((a, b) => a.order - b.order);
+    });
+
     return categoryData;
-  });
-};
+  })
+);
+
+/**
+ * Gets the category data for a specific category by key with the data of its children from MongoDB.
+ *
+ * @param {string} categoryKey
+ */
+const getCategoryDataByKeyExtended = categoryKey => (
+  Promise.all([
+    Category.findOne({
+      key: categoryKey,
+    }, {
+      key: true,
+      slug: true,
+      title: true,
+      description: true,
+      colorKey: true,
+      order: true,
+    })
+    .lean()
+    .exec(),
+    Subcategory.find({
+      parent: categoryKey
+    }, {
+      key: true,
+      slug: true,
+      title: true,
+      parent: true,
+      description: true,
+      imageUrl: true,
+      order: true,
+    })
+    .lean()
+    .exec()
+  ])
+  .then(result => {
+    const [categoryData, subcategoryData] = result;
+    categoryData.children = subcategoryData.sort((a, b) => a.order - b.order);
+    return categoryData;
+  })
+);
 
 /**
  * Gets all of the category data by key and colorKey from MongoDB.
@@ -128,5 +174,6 @@ module.exports = {
   getCategoryData,
   getCategoryDataByKey,
   getCategoryDataExtended,
+  getCategoryDataByKeyExtended,
   getCategoryColorKeyMapping,
 };

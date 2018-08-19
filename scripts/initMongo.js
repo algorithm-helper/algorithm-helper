@@ -9,10 +9,12 @@ const colorIndex = require('../data/index/colorIndex.json');
 const Category = require('../server/mongo/models/Category');
 const Subcategory = require('../server/mongo/models/Subcategory');
 const Topic = require('../server/mongo/models/Topic');
-const Color = require('../server/mongo/models/Colors');
+const Color = require('../server/mongo/models/Color');
 
 const log = require('../server/utils/log');
 const { MONGO_URL } = require('../server/mongo/utils/dbUtils');
+
+const fixTopicIndexOrder = require('./fixTopicIndexOrder');
 
 mongoose.Promise = Promise;
 mongoose.connect(MONGO_URL, { useNewUrlParser: true });
@@ -40,7 +42,8 @@ const initMongo = async () => {
 
   // Initialize Topics:
   promises = [];
-  topicIndex.forEach(topic => {
+  const fixedTopicIndex = fixTopicIndexOrder(topicIndex);
+  fixedTopicIndex.forEach(topic => {
     promises.push(new Topic(topic).save());
   });
 

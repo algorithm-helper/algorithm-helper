@@ -273,9 +273,56 @@ app.get('/data-extended/categories', (req, res) => {
   });
 });
 
+/**
+ * GET /data-extended/categories/:categoryKey
+ * Gets the category data for a particular category with the data of its children, from MongoDB.
+ *
+ * @param {string} categoryKey
+ */
+app.get('/data-extended/categories/:categoryKey', (req, res) => {
+  res.setHeader('Content-Type', 'application/json');
 
+  const { categoryKey } = req.params;
+  CategoryDBUtils.getCategoryDataByKeyExtended(categoryKey)
+  .then(data => {
+    if (data === null) {
+      res.status(400).send(JSON.stringify({ error: 'Invalid request' }));
+      return;
+    }
 
+    res.status(200).send(JSON.stringify({ data }));
+  })
+  .catch(error => {
+    res.status(400).send(JSON.stringify({ error: error.message }));
+  });
+});
 
+/**
+ * GET /data-extended/categories/:categoryKey/:subcategoryKey
+ * Gets the category data for a particular category with the data of its children, from MongoDB.
+ *
+ * @param {string} categoryKey
+ * @param {string} subcategoryKey
+ */
+app.get('/data-extended/categories/:categoryKey/:subcategoryKey', (req, res) => {
+  res.setHeader('Content-Type', 'application/json');
+
+  const { categoryKey, subcategoryKey } = req.params;
+  SubcategoryDBUtils.getSubcategoryDataByKeyExtended(categoryKey, subcategoryKey)
+  .then(data => {
+    log.info(data);
+
+    if (data === null) {
+      res.status(400).send(JSON.stringify({ error: 'Invalid request' }));
+      return;
+    }
+
+    res.status(200).send(JSON.stringify({ data }));
+  })
+  .catch(error => {
+    res.status(400).send(JSON.stringify({ error: error.message }));
+  });
+});
 
 
 
