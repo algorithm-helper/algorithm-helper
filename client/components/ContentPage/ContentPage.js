@@ -13,7 +13,7 @@ import { getContentUrlKey } from '../../utils/routeUtils';
 import getColorFromKey from '../../utils/getColorFromKey';
 import { setColorTheme, resetColorTheme } from '../../actions/ColorThemeActions';
 
-import data from '../../../data/index.json';
+import { noop, TOPIC_ITEM_TYPES, TOPIC_ITEM_TYPES_TITLE } from '../../utils/utils';
 
 class ContentPage extends React.Component {
   constructor(props) {
@@ -29,7 +29,6 @@ class ContentPage extends React.Component {
 
   componentWillMount() {
     window.scrollTo(0, 0);
-    console.log('contentpage');
     this.configureDataByRouteParams(this.props.match.params);
 
     this.setState({ loading: true });
@@ -64,97 +63,143 @@ class ContentPage extends React.Component {
    */
   configureDataByRouteParams = params => {
     const { categoryKey, subcategoryKey, topicKey } = params;
-    const contentData = [];
 
-    if (categoryKey !== undefined && subcategoryKey !== undefined) {
-      const categoryObj = getCategory(data, categoryKey);
-      if (!categoryObj) {
-        return this.setState({ error: true });
+    if (categoryKey && subcategoryKey) {
+      this.requestSubcategoryData(categoryKey, subcategoryKey);
+    } else if (categoryKey) {
+      this.requestCategoryData(categoryKey);
+    } else {
+      this.requestCategoriesData();
+    }
+  };
+
+  /**
+   * Makes request to the server to get the data for a particular subcategory.
+   *
+   * @param {string} categoryKey
+   * @param {string} subcategoryKey
+   */
+  requestSubcategoryData = (categoryKey, subcategoryKey) => {
+    let subcategory;
+    Promise.all([
+      fetch(`http://localhost:5000/data/extended/categories/${categoryKey}/${subcategoryKey}`),
+      fetch('http://localhost:5000/data/utils/categories-color-key-mapping')
+    ])
+    .then(result => Promise.all(result.map(x => x.json())))
+    .then(result => {
+      const [subcategoryData, colorKeyMapping] = result;
+      if (result.error) {
+        throw result;
       }
 
-      this.props.dispatch(setColorTheme(categoryObj.colorKey));
+      subcategory = subcategoryData.data;
 
-      const subcategoryObj = getSubcategory(categoryObj, subcategoryKey);
-      if (!subcategoryObj) {
-        return this.setState({ error: true });
-      }
+      this.props.dispatch(setColorTheme(colorKeyMapping.data[subcategory.parent]));
+      this.setState({ type: 'subcategory', title: subcategory.title });
 
-      subcategoryObj.children.forEach(topic => {
-        const { title, key, description } = topic;
-        const { colorKey } = categoryObj;
-        const urlKey = `/categories/${categoryObj.key}/${subcategoryObj.key}/${key}`;
-        const children = [{
-          title: 'Article',
-          key: 'article',
-        }, {
-          title: 'Code',
-          key: 'code',
-        }];
+      return Promise.all(subcategory.children.map(topic =>
+        fetch(`http://localhost:5000/data/categories/${categoryKey}/${subcategory.slug}/${topic.slug}`)));
+    })
+    .then(result => Promise.all(result.map(x => x.json())))
+    .then(result => {
+      const contentData = [];
+      result.forEach(topic => {
+        const { title, slug, description, children } = topic.data;
+        const { colorKey } = subcategory;
+        const urlKey = `/categories/${subcategory.key}/${slug}`;
+
+        const childrenTypes = {};
+        children.forEach(topicItem => {
+          childrenTypes[topicItem.type] = true;
+        });
+
+        const topicChildren = [];
+        TOPIC_ITEM_TYPES.forEach(type => {
+          if (childrenTypes[type]) {
+            topicChildren.push({ title: TOPIC_ITEM_TYPES_TITLE[type] });
+          }
+        });
+
         contentData.push({
           title,
-          key,
           description,
-          children,
+          children: topicChildren,
           colorKey,
           urlKey,
+          key: slug,
           isTopicItem: true,
         });
       });
 
-      this.setState({
-        type: 'subcategory',
-        title: subcategoryObj.title,
-      });
-    } else if (categoryKey !== undefined) {
-      const categoryObj = getCategory(data, categoryKey);
+      this.setState({ contentData });
+    })
+    .catch(err => this.setState({ error: err }));
+  };
 
-      if (!categoryObj) {
-        return this.setState({ error: true });
+  /**
+   * Makes request to the server to get the data for a particular category.
+   *
+   * @param {string} categoryKey
+   */
+  requestCategoryData = categoryKey => {
+    let category;
+    fetch(`http://localhost:5000/data/extended/categories/${categoryKey}`)
+    .then(result => result.json())
+    .then(result => {
+      if (result.error) {
+        throw result;
       }
 
-      this.props.dispatch(setColorTheme(categoryObj.colorKey));
+      category = result.data;
 
-      categoryObj.children.forEach(subcategory => {
-        const { title, key, description } = subcategory;
-        const { colorKey } = categoryObj;
-        const urlKey = `/categories/${categoryObj.key}/${key}`;
-        const children = subcategory.children.map(({ title, key }) => ({ title, key }));
+      this.props.dispatch(setColorTheme(category.colorKey));
+      this.setState({ type: 'category', title: category.title });
+
+      return Promise.all(category.children.map(subcategory =>
+        fetch(`http://localhost:5000/data/extended/categories/${categoryKey}/${subcategory.slug}`)));
+    })
+    .then(result => Promise.all(result.map(x => x.json())))
+    .then(result => {
+      const contentData = [];
+      result.forEach(subcategory => {
+        const { title, slug, description } = subcategory.data;
+        const { colorKey } = category.colorKey;
+        const urlKey = `/categories/${category.slug}/${slug}`;
+        const children = subcategory.data.children.map(({ title, slug }) => ({ title, key: slug }));
         contentData.push({
           title,
-          key,
           description,
           children,
           colorKey,
           urlKey,
+          key: slug,
           isTopicItem: false,
         });
       });
 
-      this.setState({
-        type: 'category',
-        title: categoryObj.title,
-      });
-    } else {
-      this.props.dispatch(resetColorTheme());
+      this.setState({ contentData });
+    })
+    .catch(err => this.setState({ error: err }));
+  }
 
-      fetch('http://localhost:5000/data/categories')
-      .then(result => result.json())
-      .then(result => {
-        const categories = result.data.sort((a, b) => a.order - b.order);
-        categories.forEach(category => {
-          const { title, key, description, colorKey } = category;
-        });
+  /**
+   * Makes request to the server to get all categories data.
+   */
+  requestCategoriesData = () => {
+    this.props.dispatch(resetColorTheme());
 
-        console.log(categories);
-      })
-      .catch(err => {
-        console.error(err);
-      });
+    fetch('http://localhost:5000/data/extended/categories')
+    .then(result => result.json())
+    .then(result => {
+      if (result.error) {
+        throw result;
+      }
 
-      data.categories.forEach(category => {
+      const contentData = [];
+      result.data.forEach(category => {
         const { title, key, description, colorKey } = category;
         const urlKey = `/categories/${key}`;
-        const children = category.children.map(({ title, key }) => ({ title, key}));
+        const children = category.children.map(({ title, slug }) => ({ title, key: slug }));
         contentData.push({
           title,
           key,
@@ -167,12 +212,12 @@ class ContentPage extends React.Component {
       });
 
       this.setState({
+        contentData,
         type: 'categories',
         title: 'Categories',
       });
-    }
-
-    this.setState({ contentData });
+    })
+    .catch(err => this.setState({ error: err }));
   };
 
   /**

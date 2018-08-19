@@ -17,6 +17,7 @@ const getSubcategoryData = () => (
   })
   .lean()
   .exec()
+  .then(result => result.sort((a, b) => a.order - b.order))
 );
 
 /**

@@ -1,5 +1,6 @@
 const Category = require('../models/Category');
 const Subcategory = require('../models/Subcategory');
+const Topic = require('../models/Topic');
 
 /**
  * Gets all of the category data from MongoDB.
@@ -16,6 +17,7 @@ const getCategoryData = () => (
   })
   .lean()
   .exec()
+  .then(result => result.sort((a, b) => a.order - b.order))
 );
 
 /**
@@ -92,7 +94,7 @@ const getCategoryDataExtended = () => (
       category.children = category.children.sort((a, b) => a.order - b.order);
     });
 
-    return categoryData;
+    return categoryData.sort((a, b) => a.order - b.order);
   })
 );
 
@@ -127,7 +129,7 @@ const getCategoryDataByKeyExtended = categoryKey => (
       order: true,
     })
     .lean()
-    .exec()
+    .exec(),
   ])
   .then(result => {
     const [categoryData, subcategoryData] = result;

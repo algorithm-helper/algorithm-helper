@@ -33,19 +33,13 @@ class MainPage extends React.Component {
     ])
     .then(result => Promise.all(result.map(x => x.json())))
     .then(result => {
-      const [subcategoriesData, categoriesColorKeyMapping] = result;
-
-      const subcategories = subcategoriesData.data.sort((a, b) => a.order - b.order);
-      const colorKeyMapping = categoriesColorKeyMapping.data.reduce((prev, curr) => ({
-        ...prev,
-        [curr.key]: curr.colorKey,
-      }), {});
+      const [subcategories, colorKeyMapping] = result;
 
       const cardData = [];
-      subcategories.forEach(subcategory => {
+      subcategories.data.forEach(subcategory => {
         const { key, title, description, imageUrl, parent } = subcategory;
         const url = `/categories/${key}`;
-        const colorKey = colorKeyMapping[parent];
+        const colorKey = colorKeyMapping.data[parent];
         cardData.push({ title, description, imageUrl, colorKey, url });
       });
 
