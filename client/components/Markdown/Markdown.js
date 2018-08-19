@@ -16,18 +16,26 @@ class Markdown extends React.Component {
   componentWillMount() {
     marked.setOptions(markedOptions);
 
-    fetch(this.props.url, {
-      method: 'GET'
-    })
-    .then(result => result.text())
-    .then(result => {
-      this.setState({ markdownContent: marked(result) });
+    if (this.props.url) {
+      fetch(this.props.url, {
+        method: 'GET'
+      })
+      .then(result => result.text())
+      .then(result => {
+        this.setState({ markdownContent: marked(result) });
+
+        if (this.props.onLoaded) {
+          this.props.onLoaded();
+        }
+      })
+      .catch(() => {});
+    } else if (this.props.markdownStr) {
+      this.setState({ markdownContent: marked(this.props.markdownStr) });
 
       if (this.props.onLoaded) {
         this.props.onLoaded();
       }
-    })
-    .catch(() => {});
+    }
   }
 
   componentDidUpdate() {
@@ -45,6 +53,7 @@ class Markdown extends React.Component {
 
 Markdown.propTypes = {
   url: PropTypes.string,
+  markdownStr: PropTypes.string,
   onLoaded: PropTypes.func,
 };
 

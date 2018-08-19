@@ -19,7 +19,6 @@ class TopicItemPage extends React.Component {
     this.state = {
       topic: {},
       subcategory: {},
-      urlKey: '',
       loading: false,
       indexSelected: 0,
       topicItemTypes: [],
@@ -30,9 +29,6 @@ class TopicItemPage extends React.Component {
   componentWillMount() {
     this.history = createHistory();
     this.setState({ error: '' });
-  }
-
-  componentDidMount() {
     const { categoryKey, subcategoryKey, topicKey } = this.props.match.params;
     this.requestTopicData(categoryKey, subcategoryKey, topicKey);
   }

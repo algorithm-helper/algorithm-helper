@@ -18,7 +18,7 @@ class TopicItemContainer extends React.Component {
       isCompleted: false,
       isBookmarked: false,
       topicItem: null,
-      cachedItems: {},
+      topic: null,
     };
   }
 
@@ -26,6 +26,7 @@ class TopicItemContainer extends React.Component {
     this.setState({
       loading: true,
       topicItem: this.props.topicItem,
+      topic: this.props.topic,
     });
   }
 
@@ -33,6 +34,7 @@ class TopicItemContainer extends React.Component {
     this.setState({
       loading: true,
       topicItem: newProps.topicItem,
+      topic: newProps.topic,
     });
   }
 
@@ -59,12 +61,18 @@ class TopicItemContainer extends React.Component {
       return;
     }
 
+    // Collect items with the same type:
+    const metaData = this.state.topic.children.filter(item => {
+      return item.type === this.state.topicItem.type
+    });
+
     switch(this.state.topicItem.type) {
       case 'article':
         return (
           <TopicItemArticle
             contentLoaded={this.handleContentLoaded}
             type={this.state.topicItem.type}
+
           />
         );
       case 'code':
@@ -72,6 +80,7 @@ class TopicItemContainer extends React.Component {
           <TopicItemCode
             contentLoaded={this.handleContentLoaded}
             type={this.state.topicItem.type}
+            metaData={metaData}
           />
         );
       default:
