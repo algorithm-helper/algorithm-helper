@@ -5,10 +5,8 @@ import { FormControl, Select, MenuItem, FormHelperText } from '@material-ui/core
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 
-// Components:
 import DashboardPageBookmarkItem from './DashboardPageBookmarkItem';
 
-// Actions:
 import { resetColorTheme } from '../../actions/ColorThemeActions';
 
 const sampleBookmarkData = [

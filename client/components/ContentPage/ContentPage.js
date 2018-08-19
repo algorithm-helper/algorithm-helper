@@ -8,12 +8,11 @@ import JumbotronMedium from '../JumbotronMedium/';
 import ContentAreaTableOfContents from './ContentAreaTableOfContents';
 import ContentAreaItemContainer from './ContentAreaItemContainer';
 
-import { getCategory, getSubcategory } from '../../utils/dataUtils';
 import { getContentUrlKey } from '../../utils/routeUtils';
 import getColorFromKey from '../../utils/getColorFromKey';
-import { setColorTheme, resetColorTheme } from '../../actions/ColorThemeActions';
-
 import { noop, TOPIC_ITEM_TYPES, TOPIC_ITEM_TYPES_TITLE } from '../../utils/utils';
+
+import { setColorTheme, resetColorTheme } from '../../actions/ColorThemeActions';
 
 class ContentPage extends React.Component {
   constructor(props) {

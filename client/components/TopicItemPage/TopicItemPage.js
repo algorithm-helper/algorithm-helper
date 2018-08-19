@@ -3,18 +3,14 @@ import { connect } from 'react-redux';
 import queryString from 'query-string';
 import createHistory from 'history/createBrowserHistory';
 
-// Components:
 import JumbotronSmall from '../JumbotronSmall/';
 import TopicItemNavBar from './TopicItemNavBar';
 import TopicItemContainer from './TopicItemContainer';
 
-// Actions:
 import { setColorTheme } from '../../actions/ColorThemeActions';
 
-// Data:
 import data from '../../../data/index.json';
 
-// Utils:
 import { getCategory, getSubcategory, getTopic } from '../../utils/dataUtils';
 import { getItemIndexFromQueryString } from '../../utils/routeUtils';
 
