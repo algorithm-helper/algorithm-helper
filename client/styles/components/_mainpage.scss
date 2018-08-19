@@ -17,8 +17,8 @@
   position: absolute;
   top: 40%;
   transform: translate(0, -50%);
-  margin-left: 0.5em;
-  margin-right: 0.5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
 }
 
 .main-page-jumbotron-title {
@@ -32,6 +32,16 @@
   color: $WHITE;
   font-size: 1.25em;
   font-weight: 300;
+}
+
+@media all and (max-width: 600px) {
+  .main-page-jumbotron-title {
+    font-size: 2em;
+  }
+
+  .main-page-jumbotron-subtitle {
+    font-size: 1em;
+  }
 }
 
 .main-page-particle-bg {
