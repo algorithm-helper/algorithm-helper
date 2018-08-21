@@ -97,7 +97,7 @@ app.post('/accounts/sign-up', (req, res) => {
     res.header('X-Auth', token).status(200).send(JSON.stringify({ data: user }));
   })
   .catch(error => {
-    res.status(400).send(JSON.stringify({ error: error.message }));
+    res.status(400).send(JSON.stringify({ error }));
   });
 });
 

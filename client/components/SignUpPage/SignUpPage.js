@@ -78,16 +78,28 @@ class SignUpPage extends React.Component {
         password: this.state.fieldPassword,
       }),
     })
-    .then(res => {
-      return res.json();
+    .then(result => {
+      return result.json();
     })
-    .then(res => {
-      console.log(res);
+    .then(result => {
+      if (result.error) {
+        throw result;
+      }
+
       this.setState({ isWaitingResponse: false });
     })
     .catch(err => {
-      console.log(err);
-      this.setState({ isWaitingResponse: false });
+      let serverError;
+
+      if (!err) {
+        serverError = 'There was a problem signing up your account.';
+      }
+
+      if (err.error && err.error.code === 11000) {
+        serverError = 'A user with this email already exists.';
+      }
+
+      this.setState({ serverError, isWaitingResponse: false });
     });
   };
 
