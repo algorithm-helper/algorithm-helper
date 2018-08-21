@@ -4,13 +4,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 15em;
+  min-height: 15em;
 }
 
 .jumbotron-md-text-container {
-  margin-top: 1em;
+  margin-top: 2em;
+  margin-bottom: 1em;
   margin-left: 1em;
   margin-right: 1em;
+  height: auto;
 }
 
 .jumbotron-md-title {

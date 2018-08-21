@@ -12,10 +12,14 @@ const CategoryDBUtils = require('./mongo/utils/categoryDBUtils');
 const SubcategoryDBUtils = require('./mongo/utils/subcategoryDBUtils');
 const TopicDBUtils = require('./mongo/utils/topicDBUtils');
 const ColorDBUtils = require('./mongo/utils/colorDBUtils');
+const AccountDBUtils = require('./mongo/utils/accountsDBUtils');
 const setupMongoose = require('./mongo/utils/setupMongoose');
 
 // Startup Scripts:
 const initMongo = require('../scripts/initMongo');
+
+// Middleware:
+const { authenticateUser } = require('./middleware/authentication');
 
 // Utils:
 const log = require('./utils/log');
@@ -60,6 +64,13 @@ app.post('/accounts/login', (req, res) => {
   const { email, password } = req.body;
   log.debug(email);
   log.debug(password);
+
+  /*
+  const user = new User(body);
+  user.save()
+  .then(user => {})
+  .catch(err => {})
+  */
 });
 
 /**
@@ -71,10 +82,32 @@ app.post('/accounts/login', (req, res) => {
  * @param {string} password
  */
 app.post('/accounts/sign-up', (req, res) => {
+  res.setHeader('Content-Type', 'application/json');
+
   const { fullName, email, password } = req.body;
-  log.debug(fullName);
-  log.debug(email);
-  log.debug(password);
+
+  AccountDBUtils.signupNewUser(fullName, email, password)
+  .then(data => {
+    if (data === null) {
+      res.status(400).send(JSON.stringify({ error: 'Invalid request' }));
+      return;
+    }
+
+    const { user, token } = data;
+    res.header('X-Auth', token).status(200).send(JSON.stringify({ data: user }));
+  })
+  .catch(error => {
+    res.status(400).send(JSON.stringify({ error: error.message }));
+  });
+});
+
+/**
+ * POST /accounts/user
+ * Returns the current user object if the request headers contains a valid token, otherwise
+ * returns an error response.
+ */
+app.post('/accounts/user', authenticateUser, (req, res) => {
+  res.send(req.user);
 });
 
 /**
@@ -351,6 +384,11 @@ app.get('/data/utils/categories-color-key-mapping', (req, res) => {
   });
 });
 
+/**
+ * GET *
+ * For all other routes, defaults to the index page of the Algorithm Helper
+ * website.
+ */
 app.get('*', (req, res) => {
   res.sendFile(path.join(publicPath, 'index.html'));
 });
