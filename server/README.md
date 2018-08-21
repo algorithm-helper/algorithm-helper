@@ -94,7 +94,3 @@ For getting data for the actual application (i.e. categories, subcategories, top
 #### Data Utils
 
 For getting extended or utility data (i.e. color mappings, extended categories data).
-
-
-
-- **URL**: `/adsf`
