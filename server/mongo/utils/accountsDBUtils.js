@@ -23,7 +23,19 @@ const findUserByToken = token => (
   User.findByToken(token)
 );
 
+/**
+ * Returns a Promise that finds the User with the given email and password
+ * credentials, otherwise rejects with an error.
+ *
+ * @param {string} email
+ * @param {string} password
+ */
+const findUserByCredentials = (email, password) => (
+  User.findByCredentials(email, password)
+);
+
 module.exports = {
   signupNewUser,
   findUserByToken,
+  findUserByCredentials,
 };

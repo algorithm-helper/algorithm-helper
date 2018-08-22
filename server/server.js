@@ -61,16 +61,16 @@ app.listen(port, () => {
  * @param {string} password
  */
 app.post('/accounts/login', (req, res) => {
-  const { email, password } = req.body;
-  log.debug(email);
-  log.debug(password);
+  res.setHeader('Content-Type', 'application/json');
 
-  /*
-  const user = new User(body);
-  user.save()
-  .then(user => {})
-  .catch(err => {})
-  */
+  const { email, password } = req.body;
+  AccountDBUtils.findUserByCredentials(email, password)
+  .then(data => {
+    res.status(200).send(JSON.stringify({ data }));
+  })
+  .catch(error => {
+    res.status(400).send(JSON.stringify({ error }));
+  });
 });
 
 /**
