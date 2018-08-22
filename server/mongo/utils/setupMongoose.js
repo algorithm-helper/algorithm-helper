@@ -23,6 +23,13 @@ const setupMongoose = () => {
       process.exit(0);
     });
   });
+
+  process.on('exit', () => {
+    mongoose.connection.close(() => {
+      log.info('Mongoose connection closed');
+      process.exit(0);
+    });
+  });
 };
 
 module.exports = setupMongoose;
