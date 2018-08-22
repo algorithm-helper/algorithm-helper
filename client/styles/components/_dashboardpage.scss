@@ -38,6 +38,21 @@
   margin-bottom: 1em;
 }
 
+// React Calendar Heatmap
+.react-calendar-heatmap {
+  padding-top: 0.25em;
+}
+
+.react-calendar-heatmap-month-labels {
+  font-size: 0.75em;
+}
+
+.react-calendar-heatmap .color-empty { fill: #EEEEEE; }
+.react-calendar-heatmap .color-scale-1 { fill: #D6E685; }
+.react-calendar-heatmap .color-scale-2 { fill: #8CC665; }
+.react-calendar-heatmap .color-scale-3 { fill: #44A340; }
+.react-calendar-heatmap .color-scale-4 { fill: #1E6823; }
+
 .dashboard-page-bookmarks-item-container {
   margin-bottom: 1em;
   height: 80px;

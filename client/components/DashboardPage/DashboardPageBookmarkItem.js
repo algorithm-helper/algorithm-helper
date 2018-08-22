@@ -1,5 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
+/**
+ * Renders the DashboardPageBookmarkItem stateless functional component.
+ *
+ * @param {object} props
+ */
 const DashboardPageBookmarkItem = props => {
   let typeTitle, iconComponent;
 
@@ -43,6 +49,13 @@ const DashboardPageBookmarkItem = props => {
       </div>
     </div>
   );
+};
+
+DashboardPageBookmarkItem.propTypes = {
+  topicItemTitle: PropTypes.string.isRequired,
+  subcategoryTitle: PropTypes.string.isRequired,
+  categoryTitle: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
 };
 
 export default DashboardPageBookmarkItem;
