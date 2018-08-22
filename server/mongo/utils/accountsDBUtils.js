@@ -30,9 +30,15 @@ const findUserByToken = token => (
  * @param {string} email
  * @param {string} password
  */
-const findUserByCredentials = (email, password) => (
-  User.findByCredentials(email, password)
-);
+const findUserByCredentials = (email, password) => {
+  let currentUser;
+  return User.findByCredentials(email, password)
+  .then(user => {
+    currentUser = user;
+    return user.generateAuthToken()
+  })
+  .then(token => ({ user: currentUser, token}));
+}
 
 module.exports = {
   signupNewUser,

@@ -66,7 +66,13 @@ app.post('/accounts/login', (req, res) => {
   const { email, password } = req.body;
   AccountDBUtils.findUserByCredentials(email, password)
   .then(data => {
-    res.status(200).send(JSON.stringify({ data }));
+    if (data === null) {
+      res.status(400).send(JSON.stringify({ error: 'Invalid request' }));
+      return;
+    }
+
+    const { user, token } = data;
+    res.header('X-Auth', token).status(200).send(JSON.stringify({ data: user }));
   })
   .catch(error => {
     res.status(400).send(JSON.stringify({ error }));
