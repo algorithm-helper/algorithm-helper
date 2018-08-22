@@ -78,9 +78,7 @@ class SignUpPage extends React.Component {
         password: this.state.fieldPassword,
       }),
     })
-    .then(result => {
-      return result.json();
-    })
+    .then(result => result.json())
     .then(result => {
       if (result.error) {
         throw result;

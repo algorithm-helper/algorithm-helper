@@ -75,7 +75,7 @@ app.post('/accounts/login', (req, res) => {
     res.header('X-Auth', token).status(200).send(JSON.stringify({ data: user }));
   })
   .catch(error => {
-    res.status(400).send(JSON.stringify({ error }));
+    res.status(400).send(JSON.stringify({ error: 'Invalid login credentials' }));
   });
 });
 

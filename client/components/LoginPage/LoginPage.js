@@ -71,16 +71,20 @@ class LoginPage extends React.Component {
         password: this.state.fieldPassword,
       }),
     })
-    .then(res => {
-      return res.json();
-    })
-    .then(res => {
-      console.log(res);
+    .then(result => result.json())
+    .then(result => {
+      if (result.error) {
+        throw result;
+      }
+
+      console.log(result);
       this.setState({ isWaitingResponse: false });
     })
     .catch(err => {
-      console.log(err);
-      this.setState({ isWaitingResponse: false });
+      this.setState({
+        serverError: 'Invalid login credentials.',
+        isWaitingResponse: false,
+      });
     });
   };
 
