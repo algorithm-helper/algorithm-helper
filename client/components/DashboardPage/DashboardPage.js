@@ -1,9 +1,11 @@
 import React from 'react';
+import { compose } from 'redux';
+import { connect } from 'react-redux';
+import CalendarHeatmap from 'react-calendar-heatmap';
 import { Doughnut } from 'react-chartjs-2';
 import { withStyles } from '@material-ui/core/styles';
 import { FormControl, Select, MenuItem, FormHelperText } from '@material-ui/core';
-import { compose } from 'redux';
-import { connect } from 'react-redux';
+import { Col, Container, Row } from 'reactstrap';
 
 import DashboardPageBookmarkItem from './DashboardPageBookmarkItem';
 
@@ -96,6 +98,8 @@ class DashboardPage extends React.Component {
   }
 
   componentWillMount() {
+    this.props.dispatch(resetColorTheme());
+
     this.setState({
       fullName: 'John Smith',
       uncompleted: 150,
@@ -136,10 +140,10 @@ class DashboardPage extends React.Component {
     const { classes } = this.props;
 
     return (
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-md-2"></div>
-          <div className="col-md-8">
+      <Container fluid>
+        <Row>
+          <Col md="2"/>
+          <Col md="8">
             <div className="dashboard-page-container">
               <div className="dashboard-page-header">
                 Welcome back, {this.state.fullName}.
@@ -204,12 +208,12 @@ class DashboardPage extends React.Component {
                 </div>
               </div>
             </div>
-          </div>
-          <div className="col-md-2"></div>
-        </div>
-        <div className="row">
-          <div className="col-md-2"></div>
-          <div className="col-md-8">
+          </Col>
+          <Col md="2"/>
+        </Row>
+        <Row>
+          <Col md="2"/>
+          <Col md="8">
             <div className="dashboard-page-bookmarks-container">
               <div className="dashboard-page-bookmarks-header">
                 Your Saved Bookmarks
@@ -227,10 +231,10 @@ class DashboardPage extends React.Component {
               }
               </div>
             </div>
-          </div>
-          <div className="col-md-2"></div>
-        </div>
-      </div>
+          </Col>
+          <Col md="2"/>
+        </Row>
+      </Container>
     );
   }
 }

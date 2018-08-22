@@ -48,6 +48,7 @@
     "rc-tabs": "^9.3.6",
     "react": "^16.4.2",
     "react-addons-shallow-compare": "15.6.0",
+    "react-calendar-heatmap": "^1.6.3",
     "react-chartjs-2": "^2.7.2",
     "react-dom": "^16.4.2",
     "react-intl": "^2.4.0",

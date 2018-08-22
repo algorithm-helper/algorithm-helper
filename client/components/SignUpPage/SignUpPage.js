@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import validator from 'validator';
 import {
   Button,
@@ -31,6 +32,7 @@ class SignUpPage extends React.Component {
       isPasswordError: false,
       serverError: '',
       isWaitingResponse: false,
+      success: false,
     };
   }
 
@@ -84,7 +86,7 @@ class SignUpPage extends React.Component {
         throw result;
       }
 
-      this.setState({ isWaitingResponse: false });
+      this.setState({ success: true, isWaitingResponse: false });
     })
     .catch(err => {
       let serverError;
@@ -148,6 +150,10 @@ class SignUpPage extends React.Component {
    * Renders the SignUpPage component.
    */
   render() {
+    if (this.state.success) {
+      return <Redirect to={'/dashboard'}/>;
+    }
+
     return (
       <Container fluid>
         <Row>

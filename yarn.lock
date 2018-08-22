@@ -6099,6 +6099,12 @@ react-addons-shallow-compare@^15.6.2:
     fbjs "^0.8.4"
     object-assign "^4.1.0"
 
+react-calendar-heatmap@^1.6.3:
+  version "1.6.3"
+  resolved "https://registry.yarnpkg.com/react-calendar-heatmap/-/react-calendar-heatmap-1.6.3.tgz#17bf56ad175d85ee5793410c36881112246de570"
+  dependencies:
+    prop-types "^15.5.10"
+
 react-chartjs-2@^2.7.2:
   version "2.7.2"
   resolved "https://registry.yarnpkg.com/react-chartjs-2/-/react-chartjs-2-2.7.2.tgz#9a9499f2943126b6ef89e7c8b93193879feb2597"

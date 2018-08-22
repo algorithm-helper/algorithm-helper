@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import {
   Button,
   Card,
@@ -27,6 +28,7 @@ class LoginPage extends React.Component {
       isPasswordError: false,
       serverError: '',
       isWaitingResponse: false,
+      success: false,
     };
   }
 
@@ -77,8 +79,7 @@ class LoginPage extends React.Component {
         throw result;
       }
 
-      console.log(result);
-      this.setState({ isWaitingResponse: false });
+      this.setState({ success: true, isWaitingResponse: false });
     })
     .catch(err => {
       this.setState({
@@ -128,6 +129,10 @@ class LoginPage extends React.Component {
    * Renders the LoginPage component.
    */
   render() {
+    if (this.state.success) {
+      return <Redirect to={'/dashboard'}/>;
+    }
+
     return (
       <Container fluid>
         <Row>
