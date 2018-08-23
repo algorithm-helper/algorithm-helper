@@ -11,8 +11,8 @@ const AccountHelpers = {
   signupNewUser: (fullName, email, password) => {
     const user = new User({ fullName, email, password });
     return user.save()
-    .then(() => user.generateAuthToken())
-    .then(token => ({ user, token }));
+      .then(() => user.generateAuthToken())
+      .then(token => ({ user, token }));
   },
 
   /**
@@ -32,14 +32,12 @@ const AccountHelpers = {
   findUserByCredentials: (email, password) => {
     let currentUser;
     return User.findByCredentials(email, password)
-    .then(user => {
-      currentUser = user;
-      return user.generateAuthToken()
-    })
-    .then(token => ({ user: currentUser, token}));
+      .then(user => {
+        currentUser = user;
+        return user.generateAuthToken();
+      })
+      .then(token => ({ user: currentUser, token }));
   },
 };
 
 export default AccountHelpers;
-
-

@@ -15,9 +15,9 @@ const SubcategoryHelpers = {
       order: true,
       children: true,
     })
-    .lean()
-    .exec()
-    .then(result => result.sort((a, b) => a.order - b.order))
+      .lean()
+      .exec()
+      .then(result => result.sort((a, b) => a.order - b.order))
   ),
 
   /**
@@ -39,8 +39,8 @@ const SubcategoryHelpers = {
       order: true,
       children: true,
     })
-    .lean()
-    .exec()
+      .lean()
+      .exec()
   ),
 
   /**
@@ -63,8 +63,8 @@ const SubcategoryHelpers = {
         imageUrl: true,
         order: true,
       })
-      .lean()
-      .exec(),
+        .lean()
+        .exec(),
       Topic.find({
         parent: subcategoryKey,
       }, {
@@ -75,14 +75,14 @@ const SubcategoryHelpers = {
         description: true,
         order: true,
       })
-      .lean()
-      .exec()
+        .lean()
+        .exec(),
     ])
-    .then(result => {
-      const [subcategoryData, topicData] = result;
-      subcategoryData.children = topicData.sort((a, b) => a.order - b.order);
-      return subcategoryData;
-    })
+      .then(result => {
+        const [subcategoryData, topicData] = result;
+        subcategoryData.children = topicData.sort((a, b) => a.order - b.order);
+        return subcategoryData;
+      })
   ),
 };
 

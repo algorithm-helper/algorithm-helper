@@ -45,7 +45,7 @@ const Topic = mongoose.model('Topic', {
     title: {
       type: String,
     },
-  }]
+  }],
 }, 'Topics');
 
 export default Topic;

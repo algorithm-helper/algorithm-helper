@@ -10,8 +10,8 @@ const ColorHelpers = {
       hexCode: true,
       description: true,
     })
-    .lean()
-    .exec()
+      .lean()
+      .exec()
   ),
 };
 

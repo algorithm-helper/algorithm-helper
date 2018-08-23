@@ -1,7 +1,5 @@
-import _ from 'lodash';
 import bodyParser from 'body-parser';
 import express from 'express';
-import fs from 'fs';
 import path from 'path';
 import session from 'express-session';
 
@@ -26,15 +24,15 @@ app.use(cors);
 app.use(express.static(publicPath));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
-  extended: false
+  extended: false,
 }));
 app.use(session({
   secret: '<Algorithm Helper Secret>',
   resave: false,
   saveUninitialized: true,
   cookie: {
-    secure: false
-  }
+    secure: false,
+  },
 }));
 
 setupMongoose();
@@ -55,18 +53,18 @@ app.post('/accounts/login', (req, res) => {
 
   const { email, password } = req.body;
   AccountHelpers.findUserByCredentials(email, password)
-  .then(data => {
-    if (data === null) {
-      res.status(400).send(JSON.stringify({ error: 'Invalid request' }));
-      return;
-    }
+    .then(data => {
+      if (data === null) {
+        res.status(400).send(JSON.stringify({ error: 'Invalid request' }));
+        return;
+      }
 
-    const { user, token } = data;
-    res.header('X-Auth', token).status(200).send(JSON.stringify({ data: user }));
-  })
-  .catch(error => {
-    res.status(400).send(JSON.stringify({ error: 'Invalid login credentials' }));
-  });
+      const { user, token } = data;
+      res.header('X-Auth', token).status(200).send(JSON.stringify({ data: user }));
+    })
+    .catch(() => {
+      res.status(400).send(JSON.stringify({ error: 'Invalid login credentials' }));
+    });
 });
 
 /**
@@ -83,18 +81,18 @@ app.post('/accounts/sign-up', (req, res) => {
   const { fullName, email, password } = req.body;
 
   AccountHelpers.signupNewUser(fullName, email, password)
-  .then(data => {
-    if (data === null) {
-      res.status(400).send(JSON.stringify({ error: 'Invalid request' }));
-      return;
-    }
+    .then(data => {
+      if (data === null) {
+        res.status(400).send(JSON.stringify({ error: 'Invalid request' }));
+        return;
+      }
 
-    const { user, token } = data;
-    res.header('X-Auth', token).status(200).send(JSON.stringify({ data: user }));
-  })
-  .catch(error => {
-    res.status(400).send(JSON.stringify({ error }));
-  });
+      const { user, token } = data;
+      res.header('X-Auth', token).status(200).send(JSON.stringify({ data: user }));
+    })
+    .catch(error => {
+      res.status(400).send(JSON.stringify({ error }));
+    });
 });
 
 /**
@@ -116,6 +114,7 @@ app.post('/accounts/user', authenticateUser, (req, res) => {
  */
 app.get('/actions/get-item-completed', (req, res) => {
   // TODO
+  log.info(req, res);
 });
 
 /**
@@ -128,6 +127,7 @@ app.get('/actions/get-item-completed', (req, res) => {
  */
 app.get('/actions/get-item-bookmarked', (req, res) => {
   // TODO
+  log.info(req, res);
 });
 
 /**
@@ -141,6 +141,7 @@ app.get('/actions/get-item-bookmarked', (req, res) => {
  */
 app.post('/actions/mark-as-completed', (req, res) => {
   // TODO
+  log.info(req, res);
 });
 
 /**
@@ -153,6 +154,7 @@ app.post('/actions/mark-as-completed', (req, res) => {
  */
 app.post('/actions/save-to-bookmarks', (req, res) => {
   // TODO
+  log.info(req, res);
 });
 
 /**
@@ -163,17 +165,17 @@ app.get('/data/categories', (req, res) => {
   res.setHeader('Content-Type', 'application/json');
 
   CategoryHelpers.getCategoryData()
-  .then(data => {
-    if (data === null) {
-      res.status(400).send(JSON.stringify({ error: 'Invalid request' }));
-      return;
-    }
+    .then(data => {
+      if (data === null) {
+        res.status(400).send(JSON.stringify({ error: 'Invalid request' }));
+        return;
+      }
 
-    res.status(200).send(JSON.stringify({ data }));
-  })
-  .catch(error => {
-    res.status(400).send(JSON.stringify({ error: error.message }));
-  });
+      res.status(200).send(JSON.stringify({ data }));
+    })
+    .catch(error => {
+      res.status(400).send(JSON.stringify({ error: error.message }));
+    });
 });
 
 /**
@@ -184,17 +186,17 @@ app.get('/data/subcategories', (req, res) => {
   res.setHeader('Content-Type', 'application/json');
 
   SubcategoryHelpers.getSubcategoryData()
-  .then(data => {
-    if (data === null) {
-      res.status(400).send(JSON.stringify({ error: 'Invalid request' }));
-      return;
-    }
+    .then(data => {
+      if (data === null) {
+        res.status(400).send(JSON.stringify({ error: 'Invalid request' }));
+        return;
+      }
 
-    res.status(200).send(JSON.stringify({ data }));
-  })
-  .catch(error => {
-    res.status(400).send(JSON.stringify({ error: error.message }));
-  });
+      res.status(200).send(JSON.stringify({ data }));
+    })
+    .catch(error => {
+      res.status(400).send(JSON.stringify({ error: error.message }));
+    });
 });
 
 /**
@@ -208,17 +210,17 @@ app.get('/data/categories/:categoryKey', (req, res) => {
 
   const { categoryKey } = req.params;
   CategoryHelpers.getCategoryDataByKey(categoryKey)
-  .then(data => {
-    if (data === null) {
-      res.status(400).send(JSON.stringify({ error: 'Invalid request' }));
-      return;
-    }
+    .then(data => {
+      if (data === null) {
+        res.status(400).send(JSON.stringify({ error: 'Invalid request' }));
+        return;
+      }
 
-    res.status(200).send(JSON.stringify({ data }));
-  })
-  .catch(error => {
-    res.status(400).send(JSON.stringify({ error: error.message }));
-  });
+      res.status(200).send(JSON.stringify({ data }));
+    })
+    .catch(error => {
+      res.status(400).send(JSON.stringify({ error: error.message }));
+    });
 });
 
 /**
@@ -233,17 +235,17 @@ app.get('/data/categories/:categoryKey/:subcategoryKey', (req, res) => {
 
   const { categoryKey, subcategoryKey } = req.params;
   SubcategoryHelpers.getSubcategoryDataByKey(categoryKey, subcategoryKey)
-  .then(data => {
-    if (data === null) {
-      res.status(400).send(JSON.stringify({ error: 'Invalid request' }));
-      return;
-    }
+    .then(data => {
+      if (data === null) {
+        res.status(400).send(JSON.stringify({ error: 'Invalid request' }));
+        return;
+      }
 
-    res.status(200).send(JSON.stringify({ data }));
-  })
-  .catch(error => {
-    res.status(400).send(JSON.stringify({ error: error.message }));
-  });
+      res.status(200).send(JSON.stringify({ data }));
+    })
+    .catch(error => {
+      res.status(400).send(JSON.stringify({ error: error.message }));
+    });
 });
 
 /**
@@ -259,17 +261,17 @@ app.get('/data/categories/:categoryKey/:subcategoryKey/:topicKey', (req, res) =>
 
   const { categoryKey, subcategoryKey, topicKey } = req.params;
   TopicHelpers.getTopicDataByKey(categoryKey, subcategoryKey, topicKey)
-  .then(data => {
-    if (data === null) {
-      res.status(400).send(JSON.stringify({ error: 'Invalid request' }));
-      return;
-    }
+    .then(data => {
+      if (data === null) {
+        res.status(400).send(JSON.stringify({ error: 'Invalid request' }));
+        return;
+      }
 
-    res.status(200).send(JSON.stringify({ data }));
-  })
-  .catch(error => {
-    res.status(400).send(JSON.stringify({ error: error.message }));
-  });
+      res.status(200).send(JSON.stringify({ data }));
+    })
+    .catch(error => {
+      res.status(400).send(JSON.stringify({ error: error.message }));
+    });
 });
 
 /**
@@ -280,12 +282,12 @@ app.get('/data/colors', (req, res) => {
   res.setHeader('Content-Type', 'application/json');
 
   ColorHelpers.getColorData()
-  .then(data => {
-    res.status(200).send(JSON.stringify({ data }));
-  })
-  .catch(error => {
-    res.status(400).send(JSON.stringify({ error: error.message }));
-  });
+    .then(data => {
+      res.status(200).send(JSON.stringify({ data }));
+    })
+    .catch(error => {
+      res.status(400).send(JSON.stringify({ error: error.message }));
+    });
 });
 
 /**
@@ -296,17 +298,17 @@ app.get('/data/extended/categories', (req, res) => {
   res.setHeader('Content-Type', 'application/json');
 
   CategoryHelpers.getCategoryDataExtended()
-  .then(data => {
-    if (data === null) {
-      res.status(400).send(JSON.stringify({ error: 'Invalid request' }));
-      return;
-    }
+    .then(data => {
+      if (data === null) {
+        res.status(400).send(JSON.stringify({ error: 'Invalid request' }));
+        return;
+      }
 
-    res.status(200).send(JSON.stringify({ data }));
-  })
-  .catch(error => {
-    res.status(400).send(JSON.stringify({ error: error.message }));
-  });
+      res.status(200).send(JSON.stringify({ data }));
+    })
+    .catch(error => {
+      res.status(400).send(JSON.stringify({ error: error.message }));
+    });
 });
 
 /**
@@ -320,17 +322,17 @@ app.get('/data/extended/categories/:categoryKey', (req, res) => {
 
   const { categoryKey } = req.params;
   CategoryHelpers.getCategoryDataByKeyExtended(categoryKey)
-  .then(data => {
-    if (data === null) {
-      res.status(400).send(JSON.stringify({ error: 'Invalid request' }));
-      return;
-    }
+    .then(data => {
+      if (data === null) {
+        res.status(400).send(JSON.stringify({ error: 'Invalid request' }));
+        return;
+      }
 
-    res.status(200).send(JSON.stringify({ data }));
-  })
-  .catch(error => {
-    res.status(400).send(JSON.stringify({ error: error.message }));
-  });
+      res.status(200).send(JSON.stringify({ data }));
+    })
+    .catch(error => {
+      res.status(400).send(JSON.stringify({ error: error.message }));
+    });
 });
 
 /**
@@ -346,17 +348,17 @@ app.get('/data/extended/categories/:categoryKey/:subcategoryKey', (req, res) => 
 
   const { categoryKey, subcategoryKey } = req.params;
   SubcategoryHelpers.getSubcategoryDataByKeyExtended(categoryKey, subcategoryKey)
-  .then(data => {
-    if (data === null) {
-      res.status(400).send(JSON.stringify({ error: 'Invalid request' }));
-      return;
-    }
+    .then(data => {
+      if (data === null) {
+        res.status(400).send(JSON.stringify({ error: 'Invalid request' }));
+        return;
+      }
 
-    res.status(200).send(JSON.stringify({ data }));
-  })
-  .catch(error => {
-    res.status(400).send(JSON.stringify({ error: error.message }));
-  });
+      res.status(200).send(JSON.stringify({ data }));
+    })
+    .catch(error => {
+      res.status(400).send(JSON.stringify({ error: error.message }));
+    });
 });
 
 /**
@@ -367,17 +369,17 @@ app.get('/data/utils/categories-color-key-mapping', (req, res) => {
   res.setHeader('Content-Type', 'application/json');
 
   CategoryHelpers.getCategoryColorKeyMapping()
-  .then(data => {
-    if (data === null) {
-      res.status(400).send(JSON.stringify({ error: 'Invalid request' }));
-      return;
-    }
+    .then(data => {
+      if (data === null) {
+        res.status(400).send(JSON.stringify({ error: 'Invalid request' }));
+        return;
+      }
 
-    res.status(200).send(JSON.stringify({ data }));
-  })
-  .catch(error => {
-    res.status(400).send(JSON.stringify({ error }));
-  });
+      res.status(200).send(JSON.stringify({ data }));
+    })
+    .catch(error => {
+      res.status(400).send(JSON.stringify({ error }));
+    });
 });
 
 /**

@@ -12,18 +12,18 @@ const authenticateUser = (req, res, next) => {
   const token = req.header('X-Auth');
 
   AccountHelpers.findUserByToken(token)
-  .then(user => {
-    if (!user) {
-      return Promise.reject(new Error('User does not exist'));
-    }
+    .then(user => {
+      if (!user) {
+        throw new Error('User does not exist');
+      }
 
-    req.user = user;
-    req.token = token;
-    next();
-  })
-  .catch(error => {
-    res.status(401).send(JSON.stringify({ error: error.message }));
-  });
+      req.user = user;
+      req.token = token;
+      next();
+    })
+    .catch(error => {
+      res.status(401).send(JSON.stringify({ error: error.message }));
+    });
 };
 
 export default authenticateUser;

@@ -20,8 +20,8 @@ const TopicHelpers = {
       order: true,
       children: true,
     })
-    .lean()
-    .exec()
+      .lean()
+      .exec()
   ),
 };
 

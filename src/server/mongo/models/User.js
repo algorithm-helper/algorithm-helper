@@ -1,3 +1,4 @@
+/* eslint-disable */
 import _ from 'lodash';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
@@ -87,12 +88,12 @@ const UserSchema = new mongoose.Schema({
   }],
 });
 
-UserSchema.methods.toJSON = function() {
+UserSchema.methods.toJSON = function () {
   const user = this;
   return _.pick(user.toObject(), ['_id', 'fullName', 'email']);
 }
 
-UserSchema.methods.generateAuthToken = function() {
+UserSchema.methods.generateAuthToken = function () {
   const user = this;
   const access = 'auth';
   const token = jwt.sign({ _id: user._id.toHexString(), access }, 'abc123').toString();
@@ -100,7 +101,7 @@ UserSchema.methods.generateAuthToken = function() {
   return user.save().then(() => token);
 }
 
-UserSchema.statics.findByToken = function(token) {
+UserSchema.statics.findByToken = function (token) {
   const User = this;
   let decoded;
 
@@ -117,7 +118,7 @@ UserSchema.statics.findByToken = function(token) {
   });
 }
 
-UserSchema.statics.findByCredentials = function(email, password) {
+UserSchema.statics.findByCredentials = function (email, password) {
   const User = this;
 
   return User.findOne({ email })
@@ -138,7 +139,7 @@ UserSchema.statics.findByCredentials = function(email, password) {
   });
 }
 
-UserSchema.pre('save', function(next) {
+UserSchema.pre('save', function (next) {
   const user = this;
 
   if (user.isModified('password')) {

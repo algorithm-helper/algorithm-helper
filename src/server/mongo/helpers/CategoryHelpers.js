@@ -1,4 +1,4 @@
-import { Category, Subcategory, Topic } from 'mongo/models';
+import { Category, Subcategory } from 'mongo/models';
 
 const CategoryHelpers = {
   /**
@@ -14,9 +14,9 @@ const CategoryHelpers = {
       order: true,
       children: true,
     })
-    .lean()
-    .exec()
-    .then(result => result.sort((a, b) => a.order - b.order))
+      .lean()
+      .exec()
+      .then(result => result.sort((a, b) => a.order - b.order))
   ),
 
   /**
@@ -36,8 +36,8 @@ const CategoryHelpers = {
       order: true,
       children: true,
     })
-    .lean()
-    .exec()
+      .lean()
+      .exec()
   ),
 
   /**
@@ -53,8 +53,8 @@ const CategoryHelpers = {
         colorKey: true,
         order: true,
       })
-      .lean()
-      .exec(),
+        .lean()
+        .exec(),
       Subcategory.find({}, {
         key: true,
         slug: true,
@@ -64,41 +64,43 @@ const CategoryHelpers = {
         imageUrl: true,
         order: true,
       })
-      .lean()
-      .exec(),
+        .lean()
+        .exec(),
     ])
-    .then(result => {
-      const [categoryData, subcategoryData] = result;
+      .then(result => {
+        const [categoryData, subcategoryData] = result;
 
-      const mapCategoryKeyToIndex = categoryData.map((category, i) => ({
-        slug: category.slug,
-        index: i,
-      }))
-      .reduce((prev, curr) => ({
-        ...prev,
-        [curr.slug]: curr.index,
-      }), {});
+        const mapCategoryKeyToIndex = categoryData.map((category, i) => ({
+          slug: category.slug,
+          index: i,
+        }))
+          .reduce((prev, curr) => ({
+            ...prev,
+            [curr.slug]: curr.index,
+          }), {});
 
-      subcategoryData.forEach(subcategory => {
-        const index = mapCategoryKeyToIndex[subcategory.parent];
+        subcategoryData.forEach(subcategory => {
+          const index = mapCategoryKeyToIndex[subcategory.parent];
 
-        if (!categoryData[index].children) {
-          categoryData[index].children = [];
-        }
+          if (!categoryData[index].children) {
+            categoryData[index].children = [];
+          }
 
-        categoryData[index].children.push(subcategory);
-      });
+          categoryData[index].children.push(subcategory);
+        });
 
-      categoryData.forEach(category => {
-        category.children = category.children.sort((a, b) => a.order - b.order);
-      });
+        categoryData.forEach(category => {
+          /* eslint-disable no-param-reassign */
+          category.children = category.children.sort((a, b) => a.order - b.order);
+        });
 
-      return categoryData.sort((a, b) => a.order - b.order);
-    })
+        return categoryData.sort((a, b) => a.order - b.order);
+      })
   ),
 
   /**
-   * Gets the category data for a specific category by key with the data of its children from MongoDB.
+   * Gets the category data for a specific category by key with the data of its children from
+   * MongoDB.
    *
    * @param {string} categoryKey
    */
@@ -114,10 +116,10 @@ const CategoryHelpers = {
         colorKey: true,
         order: true,
       })
-      .lean()
-      .exec(),
+        .lean()
+        .exec(),
       Subcategory.find({
-        parent: categoryKey
+        parent: categoryKey,
       }, {
         key: true,
         slug: true,
@@ -127,14 +129,14 @@ const CategoryHelpers = {
         imageUrl: true,
         order: true,
       })
-      .lean()
-      .exec(),
+        .lean()
+        .exec(),
     ])
-    .then(result => {
-      const [categoryData, subcategoryData] = result;
-      categoryData.children = subcategoryData.sort((a, b) => a.order - b.order);
-      return categoryData;
-    })
+      .then(result => {
+        const [categoryData, subcategoryData] = result;
+        categoryData.children = subcategoryData.sort((a, b) => a.order - b.order);
+        return categoryData;
+      })
   ),
 
   /**
@@ -145,12 +147,12 @@ const CategoryHelpers = {
       key: true,
       colorKey: true,
     })
-    .lean()
-    .exec()
-    .then(result => result.reduce((prev, curr) => ({
-      ...prev,
-      [curr.key]: curr.colorKey,
-    }), {}))
+      .lean()
+      .exec()
+      .then(result => result.reduce((prev, curr) => ({
+        ...prev,
+        [curr.key]: curr.colorKey,
+      }), {}))
   ),
 };
 
