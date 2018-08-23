@@ -7,22 +7,23 @@ node_modules
 # Logs
 logs
 *.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+npm-debug.log
+yarn-debug.log
+yarn-error.log
 
 # Archiving, Testing
 archive
 testing
 playground
-out
 downloads
 temp
+out
 
 # Temporary
 *.tmp
 
 # Build
+dist
 bundle.js
 bundle.js.map
 styles.css
