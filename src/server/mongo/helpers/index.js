@@ -4,7 +4,7 @@ import ColorHelpers from './ColorHelpers';
 import SubcategoryHelpers from './SubcategoryHelpers';
 import TopicHelpers from './TopicHelpers';
 
-export default {
+export {
   AccountHelpers,
   CategoryHelpers,
   ColorHelpers,

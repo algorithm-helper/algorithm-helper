@@ -8,7 +8,7 @@ import { AccountHelpers } from 'mongo/helpers';
  * @param {Response} res
  * @param {Function} next
  */
-export const authenticateUser = (req, res, next) => {
+const authenticateUser = (req, res, next) => {
   const token = req.header('X-Auth');
 
   AccountHelpers.findUserByToken(token)
@@ -25,3 +25,5 @@ export const authenticateUser = (req, res, next) => {
     res.status(401).send(JSON.stringify({ error: error.message }));
   });
 };
+
+export default authenticateUser;

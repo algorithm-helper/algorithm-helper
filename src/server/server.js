@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import bodyParse from 'body-parser';
+import bodyParser from 'body-parser';
 import express from 'express';
 import fs from 'fs';
 import path from 'path';
@@ -14,7 +14,7 @@ import {
 } from 'mongo/helpers';
 import { setupMongoose } from 'mongo/mongoose';
 import { authenticateUser } from 'middleware/authentication';
-import cors from 'middleware/authentication';
+import { cors } from 'middleware/web';
 import { log } from 'utils';
 
 const publicPath = path.join(__dirname, '..', 'public');
