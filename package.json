@@ -8,9 +8,8 @@
   "license": "MIT",
   "scripts": {
     "dev:server": "webpack --mode development --config webpack/webpack-server.config.js",
-    "build:server": "webpack --mode production --config webpack/webpack-server.config.js",
-    "dev": "webpack --mode development",
-    "build": "webpack --mode production"
+    "prod:server": "webpack --mode production --config webpack/webpack-server.config.js",
+    "build:server": "yarn run dev:server && yarn run prod:server"
   },
   "dependencies": {
     "@material-ui/core": "^1.4.2",
