@@ -9,7 +9,10 @@
   "scripts": {
     "dev:server": "webpack --mode development --config webpack/webpack-server.config.js",
     "prod:server": "webpack --mode production --config webpack/webpack-server.config.js",
-    "build:server": "yarn run dev:server && yarn run prod:server"
+    "build:server": "yarn run dev:server && yarn run prod:server",
+    "dev:client": "webpack --mode development --config webpack/webpack-client.config.js",
+    "prod:client": "webpack --mode production --config webpack/webpack-client.config.js",
+    "build:client": "yarn run dev:client && yarn run prod:client"
   },
   "dependencies": {
     "@material-ui/core": "^1.4.2",
@@ -22,6 +25,7 @@
     "bunyan": "^1.8.12",
     "chart.js": "^2.7.2",
     "color": "^3.0.0",
+    "css-loader": "^1.0.0",
     "eslint-config-airbnb": "^17.1.0",
     "express": "^4.16.3",
     "express-session": "^1.15.6",
@@ -37,7 +41,7 @@
     "mongodb": "^3.1.3",
     "mongoose": "^5.2.7",
     "muicss": "^0.9.39",
-    "node-sass": "4.5.3",
+    "node-sass": "^4.9.3",
     "numeral": "2.0.6",
     "particles.js": "^2.0.0",
     "prop-types": "^15.6.2",
@@ -61,6 +65,8 @@
     "reactstrap": "^6.3.1",
     "redux": "^4.0.0",
     "request": "2.83.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.22.1",
     "uuid": "3.2.1",
     "validator": "^10.5.0",
     "webpack-dev-server": "2.5.1",
