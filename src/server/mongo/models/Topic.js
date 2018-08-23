@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const validator = require('validator');
+import mongoose from 'mongoose';
+import validator from 'validator';
 
 const Topic = mongoose.model('Topic', {
   key: {
@@ -48,4 +48,4 @@ const Topic = mongoose.model('Topic', {
   }]
 }, 'Topics');
 
-module.exports = Topic;
+export default Topic;

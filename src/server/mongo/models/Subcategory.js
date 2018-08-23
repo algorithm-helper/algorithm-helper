@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const validator = require('validator');
+import mongoose from 'mongoose';
+import validator from 'validator';
 
 const Subcategory = mongoose.model('Subcategory', {
   key: {
@@ -41,4 +41,4 @@ const Subcategory = mongoose.model('Subcategory', {
   },
 }, 'Subcategories');
 
-module.exports = Subcategory;
+export default Subcategory;

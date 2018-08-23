@@ -1,6 +1,6 @@
-const bunyan = require('bunyan');
+import bunyan from 'bunyan';
 
-module.exports = bunyan.createLogger({
+export default bunyan.createLogger({
   name: 'AlgorithmHelper',
   level: 'debug',
 });

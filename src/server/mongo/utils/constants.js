@@ -5,7 +5,7 @@ const SUBCATEGORIES_COLLECTION_NAME = 'Subcategories';
 const TOPICS_COLLECTION_NAME = 'Topics';
 const COLORS_COLLECTION_NAME = 'Colors';
 
-module.exports = {
+export {
   MONGO_URL,
   DB_NAME,
   CATEGORIES_COLLECTION_NAME,

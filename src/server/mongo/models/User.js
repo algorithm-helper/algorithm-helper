@@ -1,8 +1,8 @@
-const _ = require('lodash');
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
-const mongoose = require('mongoose');
-const validator = require('validator');
+import _ from 'lodash';
+import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
+import mongoose from 'mongoose';
+import validator from 'validator';
 
 const MIN_FULL_NAME_LENGTH = 1;
 const MIN_EMAIL_LENGTH = 1;
@@ -155,4 +155,4 @@ UserSchema.pre('save', function(next) {
 
 const User = mongoose.model('User', UserSchema, 'Users');
 
-module.exports = User;
+export default User;

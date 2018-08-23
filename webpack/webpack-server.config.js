@@ -12,8 +12,8 @@ module.exports = {
   externals: [nodeExternals()],
   resolve: {
       modules: [
-        path.resolve(__dirname, '..', 'node_modules'),
         path.resolve(__dirname, '..', 'src', 'server'),
+        path.resolve(__dirname, '..', 'node_modules'),
       ],
   },
   stats: {

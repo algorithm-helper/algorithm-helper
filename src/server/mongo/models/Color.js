@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const Color = mongoose.model('Color', {
   key: {
@@ -16,4 +16,4 @@ const Color = mongoose.model('Color', {
   },
 }, 'Colors');
 
-module.exports = Color;
+export default Color;

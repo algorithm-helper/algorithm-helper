@@ -1,4 +1,4 @@
-const AccountDBUtils = require('../mongo/utils/accountsDBUtils');
+import { AccountHelpers } from 'mongo/helpers';
 
 /**
  * Authenticates the current user from the X-Auth header of the request, and
@@ -8,10 +8,10 @@ const AccountDBUtils = require('../mongo/utils/accountsDBUtils');
  * @param {Response} res
  * @param {Function} next
  */
-const authenticateUser = (req, res, next) => {
+export const authenticateUser = (req, res, next) => {
   const token = req.header('X-Auth');
 
-  AccountDBUtils.findUserByToken(token)
+  AccountHelpers.findUserByToken(token)
   .then(user => {
     if (!user) {
       return Promise.reject(new Error('User does not exist'));
@@ -24,8 +24,4 @@ const authenticateUser = (req, res, next) => {
   .catch(error => {
     res.status(401).send(JSON.stringify({ error: error.message }));
   });
-};
-
-module.exports = {
-  authenticateUser,
 };

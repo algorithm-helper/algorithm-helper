@@ -1,32 +1,26 @@
-const _ = require('lodash');
-const bodyParser = require('body-parser');
-const express = require('express');
-const fs = require('fs');
-const path = require('path');
-const session = require('express-session');
+import _ from 'lodash';
+import bodyParse from 'body-parser';
+import express from 'express';
+import fs from 'fs';
+import path from 'path';
+import session from 'express-session';
 
-const app = express();
-
-// MongoDB Utils:
-const CategoryDBUtils = require('mongo/utils/categoryDBUtils');
-const SubcategoryDBUtils = require('mongo/utils/subcategoryDBUtils');
-const TopicDBUtils = require('./mongo/utils/topicDBUtils');
-const ColorDBUtils = require('./mongo/utils/colorDBUtils');
-const AccountDBUtils = require('./mongo/utils/accountsDBUtils');
-const setupMongoose = require('./mongo/utils/setupMongoose');
-
-// Startup Scripts:
-// const initMongo = require('../../scripts/initMongo');
-
-// Middleware:
-const { authenticateUser } = require('./middleware/authentication');
-
-// Utils:
-const log = require('./utils/log');
-const cors = require('./utils/cors');
+import {
+  AccountHelpers,
+  CategoryHelpers,
+  ColorHelpers,
+  SubcategoryHelpers,
+  TopicHelpers,
+} from 'mongo/helpers';
+import { setupMongoose } from 'mongo/mongoose';
+import { authenticateUser } from 'middleware/authentication';
+import cors from 'middleware/authentication';
+import { log } from 'utils';
 
 const publicPath = path.join(__dirname, '..', 'public');
 const port = process.env.PORT || 5000;
+
+const app = express();
 
 app.use(cors);
 app.use(express.static(publicPath));
@@ -45,10 +39,6 @@ app.use(session({
 
 setupMongoose();
 
-if (process.env.PRODUCTION) {
-  // initMongo({ silent: true });
-}
-
 app.listen(port, () => {
   log.info(`Server started on port ${port}`);
 });
@@ -64,7 +54,7 @@ app.post('/accounts/login', (req, res) => {
   res.setHeader('Content-Type', 'application/json');
 
   const { email, password } = req.body;
-  AccountDBUtils.findUserByCredentials(email, password)
+  AccountHelpers.findUserByCredentials(email, password)
   .then(data => {
     if (data === null) {
       res.status(400).send(JSON.stringify({ error: 'Invalid request' }));
@@ -92,7 +82,7 @@ app.post('/accounts/sign-up', (req, res) => {
 
   const { fullName, email, password } = req.body;
 
-  AccountDBUtils.signupNewUser(fullName, email, password)
+  AccountHelpers.signupNewUser(fullName, email, password)
   .then(data => {
     if (data === null) {
       res.status(400).send(JSON.stringify({ error: 'Invalid request' }));
@@ -172,7 +162,7 @@ app.post('/actions/save-to-bookmarks', (req, res) => {
 app.get('/data/categories', (req, res) => {
   res.setHeader('Content-Type', 'application/json');
 
-  CategoryDBUtils.getCategoryData()
+  CategoryHelpers.getCategoryData()
   .then(data => {
     if (data === null) {
       res.status(400).send(JSON.stringify({ error: 'Invalid request' }));
@@ -193,7 +183,7 @@ app.get('/data/categories', (req, res) => {
 app.get('/data/subcategories', (req, res) => {
   res.setHeader('Content-Type', 'application/json');
 
-  SubcategoryDBUtils.getSubcategoryData()
+  SubcategoryHelpers.getSubcategoryData()
   .then(data => {
     if (data === null) {
       res.status(400).send(JSON.stringify({ error: 'Invalid request' }));
@@ -217,7 +207,7 @@ app.get('/data/categories/:categoryKey', (req, res) => {
   res.setHeader('Content-Type', 'application/json');
 
   const { categoryKey } = req.params;
-  CategoryDBUtils.getCategoryDataByKey(categoryKey)
+  CategoryHelpers.getCategoryDataByKey(categoryKey)
   .then(data => {
     if (data === null) {
       res.status(400).send(JSON.stringify({ error: 'Invalid request' }));
@@ -242,7 +232,7 @@ app.get('/data/categories/:categoryKey/:subcategoryKey', (req, res) => {
   res.setHeader('Content-Type', 'application/json');
 
   const { categoryKey, subcategoryKey } = req.params;
-  SubcategoryDBUtils.getSubcategoryDataByKey(categoryKey, subcategoryKey)
+  SubcategoryHelpers.getSubcategoryDataByKey(categoryKey, subcategoryKey)
   .then(data => {
     if (data === null) {
       res.status(400).send(JSON.stringify({ error: 'Invalid request' }));
@@ -268,7 +258,7 @@ app.get('/data/categories/:categoryKey/:subcategoryKey/:topicKey', (req, res) =>
   res.setHeader('Content-Type', 'application/json');
 
   const { categoryKey, subcategoryKey, topicKey } = req.params;
-  TopicDBUtils.getTopicDataByKey(categoryKey, subcategoryKey, topicKey)
+  TopicHelpers.getTopicDataByKey(categoryKey, subcategoryKey, topicKey)
   .then(data => {
     if (data === null) {
       res.status(400).send(JSON.stringify({ error: 'Invalid request' }));
@@ -289,7 +279,7 @@ app.get('/data/categories/:categoryKey/:subcategoryKey/:topicKey', (req, res) =>
 app.get('/data/colors', (req, res) => {
   res.setHeader('Content-Type', 'application/json');
 
-  ColorDBUtils.getColorData()
+  ColorHelpers.getColorData()
   .then(data => {
     res.status(200).send(JSON.stringify({ data }));
   })
@@ -305,7 +295,7 @@ app.get('/data/colors', (req, res) => {
 app.get('/data/extended/categories', (req, res) => {
   res.setHeader('Content-Type', 'application/json');
 
-  CategoryDBUtils.getCategoryDataExtended()
+  CategoryHelpers.getCategoryDataExtended()
   .then(data => {
     if (data === null) {
       res.status(400).send(JSON.stringify({ error: 'Invalid request' }));
@@ -329,7 +319,7 @@ app.get('/data/extended/categories/:categoryKey', (req, res) => {
   res.setHeader('Content-Type', 'application/json');
 
   const { categoryKey } = req.params;
-  CategoryDBUtils.getCategoryDataByKeyExtended(categoryKey)
+  CategoryHelpers.getCategoryDataByKeyExtended(categoryKey)
   .then(data => {
     if (data === null) {
       res.status(400).send(JSON.stringify({ error: 'Invalid request' }));
@@ -355,7 +345,7 @@ app.get('/data/extended/categories/:categoryKey/:subcategoryKey', (req, res) => 
   res.setHeader('Content-Type', 'application/json');
 
   const { categoryKey, subcategoryKey } = req.params;
-  SubcategoryDBUtils.getSubcategoryDataByKeyExtended(categoryKey, subcategoryKey)
+  SubcategoryHelpers.getSubcategoryDataByKeyExtended(categoryKey, subcategoryKey)
   .then(data => {
     if (data === null) {
       res.status(400).send(JSON.stringify({ error: 'Invalid request' }));
@@ -376,7 +366,7 @@ app.get('/data/extended/categories/:categoryKey/:subcategoryKey', (req, res) => 
 app.get('/data/utils/categories-color-key-mapping', (req, res) => {
   res.setHeader('Content-Type', 'application/json');
 
-  CategoryDBUtils.getCategoryColorKeyMapping()
+  CategoryHelpers.getCategoryColorKeyMapping()
   .then(data => {
     if (data === null) {
       res.status(400).send(JSON.stringify({ error: 'Invalid request' }));
@@ -399,4 +389,4 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(publicPath, 'index.html'));
 });
 
-module.exports = app;
+export default app;

@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
-const { MONGO_URL } = require('./dbUtils');
-const log = require('../../utils/log');
+import mongoose from 'mongoose';
+import { MONGO_URL } from 'mongo/utils/constants';
+import { log } from 'utils';
 
 /**
  * Setups Mongoose connection to MongoDB with connected/disconnected event listeners. Disconnects
@@ -32,4 +32,4 @@ const setupMongoose = () => {
   });
 };
 
-module.exports = setupMongoose;
+export default setupMongoose;

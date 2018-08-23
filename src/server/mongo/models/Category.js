@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const Category = mongoose.model('Category', {
   key: {
@@ -32,4 +32,4 @@ const Category = mongoose.model('Category', {
   },
 }, 'Categories');
 
-module.exports = Category;
+export default Category;
