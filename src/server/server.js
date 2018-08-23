@@ -8,15 +8,15 @@ const session = require('express-session');
 const app = express();
 
 // MongoDB Utils:
-const CategoryDBUtils = require('./mongo/utils/categoryDBUtils');
-const SubcategoryDBUtils = require('./mongo/utils/subcategoryDBUtils');
+const CategoryDBUtils = require('mongo/utils/categoryDBUtils');
+const SubcategoryDBUtils = require('mongo/utils/subcategoryDBUtils');
 const TopicDBUtils = require('./mongo/utils/topicDBUtils');
 const ColorDBUtils = require('./mongo/utils/colorDBUtils');
 const AccountDBUtils = require('./mongo/utils/accountsDBUtils');
 const setupMongoose = require('./mongo/utils/setupMongoose');
 
 // Startup Scripts:
-const initMongo = require('../scripts/initMongo');
+// const initMongo = require('../../scripts/initMongo');
 
 // Middleware:
 const { authenticateUser } = require('./middleware/authentication');
@@ -46,7 +46,7 @@ app.use(session({
 setupMongoose();
 
 if (process.env.PRODUCTION) {
-  initMongo({ silent: true });
+  // initMongo({ silent: true });
 }
 
 app.listen(port, () => {
