@@ -1,12 +1,9 @@
 {
   "presets": [
     "env",
-    "react",
-    "flow"
+    "react"
   ],
   "plugins": [
-    "transform-class-properties",
-    "transform-object-rest-spread",
-    "emotion"
+    "transform-class-properties"
   ]
 }
