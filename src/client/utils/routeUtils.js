@@ -14,7 +14,7 @@ export const getContentUrlKey = params => {
 export const getItemIndexFromQueryString = queryStr => {
   const queryObj = queryString.parse(queryStr);
   if (queryObj && queryObj.item && isNumeric(queryObj.item)) {
-    return parseInt(queryObj.item);
+    return parseInt(queryObj.item, 10);
   }
   return undefined;
 };

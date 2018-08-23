@@ -1,8 +1,8 @@
 export const setColorTheme = (colorKey = 'main') => ({
   type: 'SET_COLOR',
-  colorKey
+  colorKey,
 });
 
 export const resetColorTheme = () => ({
-  type: 'RESET_COLOR'
+  type: 'RESET_COLOR',
 });

@@ -13,12 +13,10 @@ const mapColorKeyToColor = {
 };
 
 /**
- * Returns the HEX color corresponding to the given key, undefined otherwise.
+ * Returns the hex color corresponding to the given key, undefined otherwise.
  *
  * @param {string|number} key
  */
-const getColorFromKey = key => {
-  return mapColorKeyToColor[key];
-};
+const getColorFromKey = key => mapColorKeyToColor[key];
 
 export default getColorFromKey;

@@ -16,7 +16,8 @@ const ContentAreaItem = props => (
       <Link to={`${props.urlKey}`}>
         <div
           className="content-area-item-header-title"
-          style={{ color: getColorFromKey(props.colorKey) }}>
+          style={{ color: getColorFromKey(props.colorKey) }}
+        >
           {props.title}
         </div>
       </Link>
@@ -49,17 +50,18 @@ const ContentAreaItem = props => (
 );
 
 ContentAreaItem.propTypes = {
-  children: PropTypes.array.isRequired,
-  description: PropTypes.string.isRequired,
-  itemKey: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  urlKey: PropTypes.string.isRequired,
+  children: PropTypes.array,
+  description: PropTypes.string,
+  itemKey: PropTypes.string,
+  title: PropTypes.string,
+  urlKey: PropTypes.string,
   isTopicItem: PropTypes.bool,
+  colorKey: PropTypes.number,
 };
 
 
 const mapStateToProps = state => ({
-  colorKey: state.colorKey
+  colorKey: state.colorKey,
 });
 
 export default connect(mapStateToProps)(ContentAreaItem);

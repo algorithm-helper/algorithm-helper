@@ -1,3 +1,3 @@
-export const wrapTextIntoMarkdownCodeBlock = (str, language) => {
-  return `\`\`\`${language}\n${str}\n\`\`\``;
-};
+export const wrapTextIntoMarkdownCodeBlock = (str, language) => (
+  `\`\`\`${language}\n${str}\n\`\`\``
+);

@@ -7,7 +7,7 @@ module.exports = (env, argv) => {
 
   return {
     context: path.resolve(__dirname, '..', 'src', 'client'),
-    entry: './app.js',
+    entry: './app.jsx',
     output: {
       filename: 'bundle-client.js',
       path: path.resolve(__dirname, '..', 'dist', outputDir),
