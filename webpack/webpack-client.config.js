@@ -16,6 +16,7 @@ module.exports = (env, argv) => {
     target: 'node',
     externals: [nodeExternals()],
     resolve: {
+      extensions: ['.js', '.jsx'],
       modules: [
         path.resolve(__dirname, '..', 'src', 'client'),
         path.resolve(__dirname, '..', 'node_modules'),

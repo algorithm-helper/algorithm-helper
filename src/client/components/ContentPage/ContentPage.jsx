@@ -5,14 +5,13 @@ import MDSpinner from 'react-md-spinner';
 import { Col, Container, Row } from 'reactstrap';
 
 import JumbotronMedium from 'components/JumbotronMedium';
-import ContentAreaTableOfContents from 'components/ContentAreaTableOfContents';
-import ContentAreaItemContainer from 'components/ContentAreaItemContainer';
-
 import { getContentUrlKey } from 'utils/routeUtils';
 import getColorFromKey from 'utils/getColorFromKey';
 import { getTopicItemTypes } from 'utils/topicItemUtils';
-
 import { setColorTheme, resetColorTheme } from 'actions/ColorThemeActions';
+
+import ContentAreaTableOfContents from './ContentAreaTableOfContents';
+import ContentAreaItemContainer from './ContentAreaItemContainer';
 
 class ContentPage extends React.Component {
   constructor(props) {
