@@ -1,6 +1,7 @@
 /* eslint-disable no-var */
 var path = require('path');
 var nodeExternals = require('webpack-node-externals');
+var MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = (env, argv) => {
   const isProduction = argv.mode === 'production';
@@ -32,7 +33,32 @@ module.exports = (env, argv) => {
           exclude: /node_modules/,
           loader: 'babel-loader',
         },
+        {
+          test: /\.(scss|css)$/,
+          use: [
+            MiniCssExtractPlugin.loader,
+            'css-loader',
+            'sass-loader',
+          ],
+        },
       ],
+    },
+    plugins: [
+      new MiniCssExtractPlugin({
+        filename: 'styles.css',
+      }),
+    ],
+    optimization: {
+      splitChunks: {
+        cacheGroups: {
+          styles: {
+            name: 'styles',
+            test: /\.css$/,
+            chunks: 'all',
+            enforce: true,
+          },
+        },
+      },
     },
   };
 };

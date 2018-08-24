@@ -1,0 +1,129 @@
+@import '../base/colors';
+
+// ContentPage
+.content-page-container {
+  margin-top: 2em;
+}
+
+.content-page-loader {
+  text-align: center;
+  margin-top: 3em;
+}
+
+// ContentAreaItemContainer
+.content-area-item-container {
+  margin-top: 2em;
+  margin-left: 3em;
+}
+
+@media all and (max-width: 768px) {
+  .content-area-item-container {
+    margin-left: 0 !important;
+  }
+}
+
+// ContentAreaItem
+.content-area-item-header {
+  height: auto;
+}
+
+.content-area-item-header-title {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 2em;
+  font-weight: 500;
+}
+
+.content-area-item-header-title:hover {
+  opacity: 0.8;
+}
+
+.content-area-item-header-description {
+  margin-top: 1.25em;
+}
+
+.content-area-item {
+  margin-bottom: 3em;
+}
+
+.content-area-item-children {
+  margin-top: 1em;
+  margin-left: 2em;
+}
+
+.content-area-item-children-area-item {
+  padding-top: 1.25em;
+  padding-bottom: 1.25em;
+  border-bottom-color: $GREY_LIGHT;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+
+.content-area-item-children-area-item-link span {
+  padding-left: 0.5em;
+  font-weight: 400;
+}
+
+.content-area-item-children-area-item-link a {
+  text-decoration: none;
+}
+
+.content-area-item-children-area-item-link a:hover {
+  opacity: 0.8;
+}
+
+// ContentAreaTableOfContents
+.content-area-toc {
+  position: sticky;
+  top: calc(60px + 2em);
+  width: 200px;
+  margin-top: 1em;
+}
+
+@media all and (max-width: 768px) {
+  .content-area-toc {
+    display: none !important;
+  }
+
+  .content-area-item-container {
+    margin-left: 0 !important;
+  }
+}
+
+.content-area-toc-container {
+  height: 600px;
+  overflow-y: scroll;
+}
+
+.content-area-toc-title {
+  font-size: 1.25em;
+  font-weight: 500;
+  margin-bottom: 0.5em;
+  color: $GREY;
+  text-transform: uppercase;
+}
+
+.content-area-toc-item {
+  height: auto;
+  font-weight: 400;
+  padding: 0.5em;
+}
+
+.content-area-toc-item a {
+  text-decoration: none;
+  color: $BLACK;
+}
+
+.content-area-toc-item a:hover {
+  color: $ACCENT_COLOR;
+}
+
+.content-area-toc-item-selected {
+  border-left-color: $ACCENT_COLOR;
+  border-left-width: 0.2em;
+  border-left-style: solid;
+}
+
+.content-area-toc-item-selected a {
+  color: $ACCENT_COLOR;
+}
