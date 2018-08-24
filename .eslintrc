@@ -1,4 +1,5 @@
 {
+  "parser": "babel-eslint",
   "extends": [
     "airbnb"
   ],
@@ -6,14 +7,24 @@
     "arrow-parens": "off",
     "indent": [2, 2, { "SwitchCase": 1, "VariableDeclarator": 2 }],
     "no-undef": "off",
+    "no-console": "off",
     "no-restricted-globals": "off",
     "import/no-unresolved": "off",
     "import/extensions": "off",
+    "import/no-extraneous-dependencies": "off",
     "import/prefer-default-export": "off",
     "react/forbid-prop-types": "off",
     "react/require-default-props": "off",
     "react/jsx-indent": [2, 2],
     "react/jsx-indent-props": [0, 2],
-    "jsx-a11y/anchor-is-valid": "off"
+    "react/prop-types": "off",
+    "react/destructuring-assignment": "off",
+    "react/no-array-index-key": "off",
+    "react/no-access-state-in-setstate": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "jsx-a11y/label-has-for": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off"
   }
 }

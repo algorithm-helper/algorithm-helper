@@ -1,3 +1,4 @@
+/* eslint-disable no-var */
 var path = require('path');
 var nodeExternals = require('webpack-node-externals');
 
@@ -15,13 +16,13 @@ module.exports = (env, argv) => {
     target: 'node',
     externals: [nodeExternals()],
     resolve: {
-        modules: [
-          path.resolve(__dirname, '..', 'src', 'server'),
-          path.resolve(__dirname, '..', 'node_modules'),
-        ],
+      modules: [
+        path.resolve(__dirname, '..', 'src', 'server'),
+        path.resolve(__dirname, '..', 'node_modules'),
+      ],
     },
     stats: {
-      warnings: false
+      warnings: false,
     },
     module: {
       rules: [
@@ -29,8 +30,8 @@ module.exports = (env, argv) => {
           test: /\.(js|jsx|mjs)$/,
           exclude: /node_modules/,
           loader: 'babel-loader',
-        }
-      ]
-    }
+        },
+      ],
+    },
   };
 };

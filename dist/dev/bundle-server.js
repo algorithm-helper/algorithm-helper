@@ -106,7 +106,7 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.authenticateUser = undefined;\n\nvar _authenticateUser = __webpack_require__(/*! ./authenticateUser */ \"./middleware/authentication/authenticateUser.js\");\n\nvar _authenticateUser2 = _interopRequireDefault(_authenticateUser);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nexports.authenticateUser = _authenticateUser2.default; /* eslint-disable import/prefer-default-export */\n\n//# sourceURL=webpack:///./middleware/authentication/index.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.authenticateUser = undefined;\n\nvar _authenticateUser = __webpack_require__(/*! ./authenticateUser */ \"./middleware/authentication/authenticateUser.js\");\n\nvar _authenticateUser2 = _interopRequireDefault(_authenticateUser);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nexports.authenticateUser = _authenticateUser2.default;\n\n//# sourceURL=webpack:///./middleware/authentication/index.js?");
 
 /***/ }),
 
@@ -130,7 +130,7 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.cors = undefined;\n\nvar _cors = __webpack_require__(/*! ./cors */ \"./middleware/web/cors.js\");\n\nvar _cors2 = _interopRequireDefault(_cors);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nexports.cors = _cors2.default; /* eslint-disable import/prefer-default-export */\n\n//# sourceURL=webpack:///./middleware/web/index.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.cors = undefined;\n\nvar _cors = __webpack_require__(/*! ./cors */ \"./middleware/web/cors.js\");\n\nvar _cors2 = _interopRequireDefault(_cors);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nexports.cors = _cors2.default;\n\n//# sourceURL=webpack:///./middleware/web/index.js?");
 
 /***/ }),
 
@@ -286,7 +286,7 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.setupMongoose = undefined;\n\nvar _setupMongoose = __webpack_require__(/*! ./setupMongoose */ \"./mongo/mongoose/setupMongoose.js\");\n\nvar _setupMongoose2 = _interopRequireDefault(_setupMongoose);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nexports.setupMongoose = _setupMongoose2.default; /* eslint-disable import/prefer-default-export */\n\n//# sourceURL=webpack:///./mongo/mongoose/index.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.setupMongoose = undefined;\n\nvar _setupMongoose = __webpack_require__(/*! ./setupMongoose */ \"./mongo/mongoose/setupMongoose.js\");\n\nvar _setupMongoose2 = _interopRequireDefault(_setupMongoose);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nexports.setupMongoose = _setupMongoose2.default;\n\n//# sourceURL=webpack:///./mongo/mongoose/index.js?");
 
 /***/ }),
 
@@ -334,7 +334,7 @@ eval("/* WEBPACK VAR INJECTION */(function(__dirname) {\n\nObject.defineProperty
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.log = undefined;\n\nvar _log = __webpack_require__(/*! ./log */ \"./utils/log.js\");\n\nvar _log2 = _interopRequireDefault(_log);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nexports.log = _log2.default; /* eslint-disable import/prefer-default-export */\n\n//# sourceURL=webpack:///./utils/index.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.log = undefined;\n\nvar _log = __webpack_require__(/*! ./log */ \"./utils/log.js\");\n\nvar _log2 = _interopRequireDefault(_log);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nexports.log = _log2.default;\n\n//# sourceURL=webpack:///./utils/index.js?");
 
 /***/ }),
 

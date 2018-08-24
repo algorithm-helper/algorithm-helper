@@ -1,23 +1,23 @@
 const options = {
   delimiters: [
     {
-      left: "$$",
-      right: "$$",
+      left: '$$',
+      right: '$$',
       display: true,
     },
     {
-      left: "\\[",
-      right: "\\]",
+      left: '\\[',
+      right: '\\]',
       display: true,
     },
     {
-      left: "$",
-      right: "$",
+      left: '$',
+      right: '$',
       display: false,
     },
     {
-      left: "\\(",
-      right: "\\)",
+      left: '\\(',
+      right: '\\)',
       display: false,
     },
   ],

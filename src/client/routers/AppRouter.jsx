@@ -1,15 +1,20 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import {
+  BrowserRouter,
+  Route,
+  Switch,
+  Redirect,
+} from 'react-router-dom';
 
-import NavBar from '../components/NavBar/';
-import MainPage from '../components/MainPage/';
-import LoginPage from '../components/LoginPage/';
-import SignUpPage from '../components/SignUpPage/';
-import DashboardPage from '../components/DashboardPage/';
+import NavBar from 'components/NavBar';
+import MainPage from 'components/MainPage';
+import LoginPage from 'components/LoginPage';
+import SignUpPage from 'components/SignUpPage';
+import DashboardPage from 'components/DashboardPage';
 // import SearchPage from '../components/SearchPage/';
-import ContentPage from '../components/ContentPage/';
-import TopicItemPage from '../components/TopicItemPage/';
-import InformationPage from '../components/InformationPage';
+import ContentPage from 'components/ContentPage';
+import TopicItemPage from 'components/TopicItemPage';
+import InformationPage from 'components/InformationPage';
 
 const AppRouter = () => (
   <BrowserRouter>
@@ -68,7 +73,7 @@ const AppRouter = () => (
         <Route
           path="/categories"
           component={ContentPage}
-          exact={true}
+          exact
         />
 
         <Route
@@ -91,7 +96,7 @@ const AppRouter = () => (
 
         <Route
           path="*"
-          component={() => <Redirect to={'/'} />}
+          component={() => <Redirect to="/" />}
         />
       </Switch>
     </div>
