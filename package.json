@@ -12,7 +12,8 @@
     "build:server": "yarn run dev:server && yarn run prod:server",
     "dev:client": "webpack --mode development --config webpack/webpack-client.config.js",
     "prod:client": "webpack --mode production --config webpack/webpack-client.config.js",
-    "build:client": "yarn run dev:client && yarn run prod:client"
+    "build:client": "yarn run dev:client && yarn run prod:client",
+    "lint": "eslint ."
   },
   "dependencies": {
     "@material-ui/core": "^1.4.2",
