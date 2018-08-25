@@ -5,12 +5,15 @@ This is the server-side code for Algorithm Helper. It includes documentation on 
 ## Content
 
 - [REST API Routes](#rest-api-routes)
+  - [Accounts](#accounts)
+  - [Data](#data)
+  - [Actions](#actions)
 
 ### REST API Routes
 
 #### Accounts
 
-For authenticating into application, or signing up a new user.
+For authenticating into the application, or signing up a new user.
 
 - **URL**: `/accounts/login`
   - **Description**: For logging into the application.
@@ -39,58 +42,136 @@ For authenticating into application, or signing up a new user.
     - Code: `400`<br/>
       Content-Type: `application/json`
 
-#### Actions
-
-For various actions that update the user's data.
-
-- **URL**: `/actions/get-item-completed`
-  - **Description**:
-  - **Method**: `POST`
-  - **Parameters**:
-  - **Success Response**:
-    - Code: `200`<br/>
-      Content-Type: `application/json`
-  - **Error Response**:
-    - Code: `400`<br/>
-      Content-Type: `application/json`
-
-- **URL**: `/accounts/get-item-bookmarked`
-  - **Description**:
-  - **Method**: `POST`
-  - **Parameters**:
-  - **Success Response**:
-    - Code: `200`<br/>
-      Content-Type: `application/json`
-  - **Error Response**:
-    - Code: `400`<br/>
-      Content-Type: `application/json`
-
-- **URL**: `/accounts/mark-as-completed`
-  - **Description**:
-  - **Method**: `POST`
-  - **Parameters**:
-  - **Success Response**:
-    - Code: `200`<br/>
-      Content-Type: `application/json`
-  - **Error Response**:
-    - Code: `400`<br/>
-      Content-Type: `application/json`
-
-- **URL**: `/accounts/save-to-bookmarks`
-  - **Description**:
-  - **Method**: `POST`
-  - **Parameters**:
-  - **Success Response**:
-    - Code: `200`<br/>
-      Content-Type: `application/json`
-  - **Error Response**:
-    - Code: `400`<br/>
-      Content-Type: `application/json`
-
 #### Data
 
 For getting data for the actual application (i.e. categories, subcategories, topics).
 
+- **URL**: `/data/categories`
+  - **Description**: Gets all of the category data.
+  - **Method**: `GET`
+  - **Parameters**: none
+  - **Success Response**:
+    - Code: `200`<br/>
+      Content-Type: `application/json`
+  - **Error Response**:
+    - Code: `400`<br/>
+      Content-Type: `application/json`
+
+- **URL**: `/data/subcategories`
+  - **Description**: Gets all of the subcategory data.
+  - **Method**: `GET`
+  - **Parameters**: none
+  - **Success Response**:
+    - Code: `200`<br/>
+      Content-Type: `application/json`
+        - **Error Response**:
+    - Code: `400`<br/>
+      Content-Type: `application/json`
+
+- **URL**: `/data/categories/:categoryKey`
+  - **Description**: Gets the data for a particular category by key.
+  - **Method**: `GET`
+  - **Parameters**:
+    - `categoryKey`: The key of the category.
+  - **Success Response**:
+    - Code: `200`<br/>
+      Content-Type: `application/json`<br/>
+  - **Error Response**:
+    - Code: `400`<br/>
+      Content-Type: `application/json`<br/>
+
+- **URL**: `/data/categories/:categoryKey/:subcategoryKey`
+  - **Description**: Gets the data for a particular subcategory by key.
+  - **Method**: `GET`
+  - **Parameters**:
+    - `categoryKey`: The key of the category.
+    - `subcategoryKey`: The key of the subcategory.
+  - **Success Response**:
+    - Code: `200`<br/>
+      Content-Type: `application/json`
+  - **Error Response**:
+    - Code: `400`<br/>
+      Content-Type: `application/json`
+
+- **URL**: `/data/categories/:categoryKey/:subcategoryKey/:topicKey`
+  - **Description**: Gets the data for a particular topic by key.
+  - **Method**: `GET`
+  - **Parameters**:
+    - `categoryKey`: The key of the category.
+    - `subcategoryKey`: The key of the subcategory.
+    - `topicKey`: The key of the topic.
+  - **Success Response**:
+    - Code: `200`<br/>
+      Content-Type: `application/json`
+  - **Error Response**:
+    - Code: `400`<br/>
+      Content-Type: `application/json`
+
+- **URL**: `/data/colors`
+  - **Description**: Gets all of the color data.
+  - **Method**: `GET`
+  - **Parameters**: none
+  - **Success Response**:
+    - Code: `200`<br/>
+      Content-Type: `application/json`
+  - **Error Response**:
+    - Code: `400`<br/>
+      Content-Type: `application/json`
+
+#### Data Extended
+
+For getting extended data, this means getting the content from the children as well.
+
+- **URL**: `/data/extended/categories`
+  - **Description**: Gets all of the category data, and the data of its children (all
+    subcategories).
+  - **Method**: `GET`
+  - **Parameters**: none
+  - **Success Response**:
+    - Code: `200`<br/>
+      Content-Type: `application/json`
+  - **Error Response**:
+    - Code: `400`<br/>
+      Content-Type: `application/json`
+
+- **URL**: `/data/extended/categories/:categoryKey`
+  - **Description**: Gets all of the category data for a particular category by key, and the data of
+     its children (all subcategory children).
+  - **Method**: `GET`
+  - **Parameters**:
+    - `categoryKey`: The key of the category.
+  - **Success Response**:
+    - Code: `200`<br/>
+      Content-Type: `application/json`
+  - **Error Response**:
+    - Code: `400`<br/>
+      Content-Type: `application/json`
+
+- **URL**: `/data/extended/categories/:categoryKey/:subcategoryKey`
+  - **Description**: Gets all of the subcategory data for a particular subcategory by key, and the
+    data of its children (all topic children).
+  - **Method**: `GET`
+  - **Parameters**:
+    - `categoryKey`: The key of the category.
+    - `subcategoryKey`: The key of the subcategory.
+  - **Success Response**:
+    - Code: `200`<br/>
+      Content-Type: `application/json`
+  - **Error Response**:
+    - Code: `400`<br/>
+      Content-Type: `application/json`
+
 #### Data Utils
 
-For getting extended or utility data (i.e. color mappings, extended categories data).
+Other utility related data.
+
+- **URL**: `/data/utils/categories-color-key-mapping`
+  - **Description**: Gets a mapping of category keys to colors.
+  - **Method**: `GET`
+  - **Parameters**: none
+  - **Success Response**:
+    - Code: `200`<br/>
+      Content-Type: `application/json`
+  - **Error Response**:
+    - Code: `400`<br/>
+      Content-Type: `application/json`

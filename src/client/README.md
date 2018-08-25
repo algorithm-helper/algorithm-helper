@@ -1,3 +1,0 @@
-# Algorithm Helper: Client-Side
-
-
