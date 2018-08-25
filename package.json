@@ -13,7 +13,10 @@
     "dev:client": "webpack --mode development --config webpack/webpack-client.config.js",
     "prod:client": "webpack --mode production --config webpack/webpack-client.config.js",
     "build:client": "yarn run dev:client && yarn run prod:client",
-    "lint": "eslint ."
+    "build:all": "yarn run build:client && yarn run build:server",
+    "lint": "eslint .",
+    "server": "node dist/prod/bundle-server.min.js",
+    "run:server": "webpack-dev-server --config webpack/webpack-server.config.js --mode development"
   },
   "dependencies": {
     "@material-ui/core": "^1.4.2",
@@ -65,7 +68,7 @@
     "request": "2.83.0",
     "uuid": "3.2.1",
     "validator": "^10.5.0",
-    "webpack-dev-server": "2.5.1",
+    "webpack-dev-server": "^3.1.5",
     "yamljs": "^0.3.0"
   },
   "devDependencies": {
