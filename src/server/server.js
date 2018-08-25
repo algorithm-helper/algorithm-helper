@@ -15,7 +15,7 @@ import { authenticateUser } from 'middleware/authentication';
 import { cors } from 'middleware/web';
 import { log } from 'utils';
 
-const publicPath = path.join(__dirname, '..', '..', 'dist');
+const publicPath = path.resolve(process.cwd(), 'dist');
 const port = process.env.PORT || 5000;
 
 const app = express();
@@ -388,9 +388,7 @@ app.get('/data/utils/categories-color-key-mapping', (req, res) => {
  * website.
  */
 app.get('*', (req, res) => {
-  console.log(publicPath);
-  console.log(__dirname);
-  res.sendFile(path.join(publicPath, 'index.html'));
+  res.sendFile(path.resolve(publicPath, 'index.html'));
 });
 
 export default app;

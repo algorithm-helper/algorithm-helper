@@ -15,7 +15,7 @@
     "build:client": "yarn run dev:client && yarn run prod:client",
     "build:all": "yarn run build:client && yarn run build:server",
     "lint": "eslint .",
-    "server": "node dist/prod/bundle-server.min.js",
+    "server": "node dist/prod/bundle-server.min.js | bunyan -o short",
     "run:server": "webpack-dev-server --config webpack/webpack-server.config.js --mode development"
   },
   "dependencies": {

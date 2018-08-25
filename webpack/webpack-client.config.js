@@ -14,7 +14,6 @@ module.exports = (env, argv) => {
       filename: 'bundle-client.min.js',
       path: path.resolve(__dirname, '..', 'dist', outputDir),
     },
-    target: 'node',
     externals: [nodeExternals()],
     resolve: {
       extensions: ['.js', '.jsx'],
@@ -43,6 +42,7 @@ module.exports = (env, argv) => {
                 modules: true,
                 sourceMap: true,
                 importLoader: 2,
+                localIdentName: '[path]__[name]__[local]__[hash:base64:5]',
               },
             },
             'sass-loader',
