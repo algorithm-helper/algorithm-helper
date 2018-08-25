@@ -4,7 +4,7 @@ import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { Col, Container, Row } from 'reactstrap';
 
-import getColorFromKey from '../../utils/getColorFromKey';
+import getColorFromKey from 'utils/getColorFromKey';
 
 /**
  * Renders the JumbotronMedium stateless functional component.

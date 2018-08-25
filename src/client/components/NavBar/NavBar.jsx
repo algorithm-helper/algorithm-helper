@@ -17,7 +17,7 @@ import {
 
 import Logo from 'components/Logo';
 
-import getColorFromKey from '../../utils/getColorFromKey';
+import getColorFromKey from 'utils/getColorFromKey';
 
 class NavBar extends React.Component {
   constructor(props) {

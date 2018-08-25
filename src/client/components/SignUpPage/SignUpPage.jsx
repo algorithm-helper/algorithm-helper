@@ -17,8 +17,8 @@ import {
 
 import Logo from 'components/Logo';
 
-import { MIN_PASSWORD_LENGTH } from '../../settings/signupSettings';
-import { resetColorTheme } from '../../actions/ColorThemeActions';
+import { MIN_PASSWORD_LENGTH } from 'settings/signupSettings';
+import { resetColorTheme } from 'actions/ColorThemeActions';
 
 class SignUpPage extends React.Component {
   constructor(props) {

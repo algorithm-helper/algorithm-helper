@@ -4,11 +4,11 @@ import MDSpinner from 'react-md-spinner';
 import { connect } from 'react-redux';
 import { Col, Container, Row } from 'reactstrap';
 
+import getColorFromKey from 'utils/getColorFromKey';
+
 import TopicItemArticle from './TopicItemArticle';
 import TopicItemCode from './TopicItemCode';
 import TopicItemBar from './TopicItemBar';
-
-import getColorFromKey from '../../utils/getColorFromKey';
 
 class TopicItemContainer extends React.Component {
   constructor(props) {

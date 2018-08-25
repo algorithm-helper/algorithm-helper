@@ -4,7 +4,11 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Col, Container, Row } from 'reactstrap';
 
-import getColorFromKey from '../../utils/getColorFromKey';
+import getColorFromKey from 'utils/getColorFromKey';
+
+import styles from './styles.scss';
+
+console.log(styles);
 
 /**
  * Renders the JumbotronSmall stateless functional component.

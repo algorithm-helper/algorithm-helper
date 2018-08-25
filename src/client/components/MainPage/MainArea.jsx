@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import MDSpinner from 'react-md-spinner';
 
+import getColorFromKey from 'utils/getColorFromKey';
+
 import MainAreaSearchBar from './MainAreaSearchBar';
 import MainAreaCardContainer from './MainAreaCardContainer';
 import MainAreaNoResults from './MainAreaNoResults';
-
-import getColorFromKey from '../../utils/getColorFromKey';
 
 class MainArea extends React.Component {
   constructor(props) {

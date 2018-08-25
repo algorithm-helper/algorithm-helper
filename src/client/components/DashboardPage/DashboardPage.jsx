@@ -5,12 +5,11 @@ import moment from 'moment';
 import CalendarHeatmap from 'react-calendar-heatmap';
 import { Col, Container, Row } from 'reactstrap';
 
-import DashboardPageBookmarkItem from './DashboardPageBookmarkItem';
+import { resetColorTheme } from 'actions/ColorThemeActions';
 
+import DashboardPageBookmarkItem from './DashboardPageBookmarkItem';
 import DashboardPageHeader from './DashboardPageHeader';
 import DashboardPageProgressContainer from './DashboardProgressContainer';
-
-import { resetColorTheme } from '../../actions/ColorThemeActions';
 
 const sampleBookmarkData = [
   {

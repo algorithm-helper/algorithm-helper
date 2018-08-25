@@ -9,7 +9,7 @@ import {
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
-import getColorFromKey from '../../utils/getColorFromKey';
+import getColorFromKey from 'utils/getColorFromKey';
 
 /**
  * Renders the MainAreaCard stateless functional component.

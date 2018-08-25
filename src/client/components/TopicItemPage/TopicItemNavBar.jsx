@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Container, Row } from 'reactstrap';
 
-import getColorFromKey from '../../utils/getColorFromKey';
+import getColorFromKey from 'utils/getColorFromKey';
 
 class TopicItemNavBar extends React.Component {
   constructor(props) {
