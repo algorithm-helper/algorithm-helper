@@ -23,7 +23,6 @@ out
 *.tmp
 
 # Build
-dist
 bundle.js
 bundle.js.map
 styles.css
