@@ -10,7 +10,7 @@ module.exports = (env, argv) => {
     context: path.resolve(__dirname, '..', 'src', 'server'),
     entry: './server.js',
     output: {
-      filename: 'bundle-server.js',
+      filename: 'bundle-server.min.js',
       path: path.resolve(__dirname, '..', 'dist', outputDir),
     },
     target: 'node',

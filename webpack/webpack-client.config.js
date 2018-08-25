@@ -11,7 +11,7 @@ module.exports = (env, argv) => {
     context: path.resolve(__dirname, '..', 'src', 'client'),
     entry: './app.jsx',
     output: {
-      filename: 'bundle-client.js',
+      filename: 'bundle-client.min.js',
       path: path.resolve(__dirname, '..', 'dist', outputDir),
     },
     target: 'node',
@@ -37,7 +37,14 @@ module.exports = (env, argv) => {
           test: /\.(scss|css)$/,
           use: [
             MiniCssExtractPlugin.loader,
-            'css-loader',
+            {
+              loader: 'css-loader',
+              options: {
+                modules: true,
+                sourceMap: true,
+                importLoader: 2,
+              },
+            },
             'sass-loader',
           ],
         },
@@ -46,6 +53,7 @@ module.exports = (env, argv) => {
     plugins: [
       new MiniCssExtractPlugin({
         filename: 'styles.css',
+        chunkFilename: '[name].css',
       }),
     ],
     optimization: {
