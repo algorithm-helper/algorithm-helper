@@ -18,7 +18,7 @@ COPY . .
 EXPOSE 8080
 
 # Webpack build
-CMD ["yarn", "run", "build:server"]
+# CMD ["yarn", "run", "build:server"]
 
 # Start the server
-CMD [ "yarn", "start" ]
+CMD [ "yarn", "server" ]
