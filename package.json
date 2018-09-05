@@ -7,9 +7,9 @@
   "author": "Eric Liu <ericliudevelopment@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build:server": "webpack --mode production --config webpack/webpack-server.config.js",
-    "build:client": "webpack --mode production --config webpack/webpack-client.config.js",
     "lint": "eslint .",
+    "dev:server": "webpack --mode development --config webpack/webpack-server.config.js",
+    "build:server": "webpack --mode production --config webpack/webpack-server.config.js",
     "server": "node dist/bundle-server.js | bunyan -o short"
   },
   "dependencies": {
