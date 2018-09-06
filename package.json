@@ -8,8 +8,8 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint .",
-    "dev:server": "webpack --mode development --config webpack/webpack-server.config.js",
     "build:server": "webpack --mode production --config webpack/webpack-server.config.js",
+    "build:client": "webpack --mode production --config webpack/webpack-client.config.js",
     "server": "node dist/bundle-server.js | bunyan -o short"
   },
   "dependencies": {
