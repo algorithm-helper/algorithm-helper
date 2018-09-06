@@ -1,19 +1,20 @@
-import bodyParser from 'body-parser';
-import express from 'express';
-import path from 'path';
-import session from 'express-session';
+const bodyParser = require('body-parser');
+const express = require('express');
+const path = require('path');
+const session = require('express-session');
 
-import {
+const {
   AccountHelpers,
   CategoryHelpers,
   ColorHelpers,
   SubcategoryHelpers,
   TopicHelpers,
-} from 'mongo/helpers';
-import { setupMongoose } from 'mongo/mongoose';
-import { authenticateUser } from 'middleware/authentication';
-import { cors } from 'middleware/web';
-import { log } from 'utils';
+} = require('mongo/helpers');
+const { setupMongoose } = require('mongo/mongoose');
+const { authenticateUser } = require('middleware/authentication');
+const { cors } = require('middleware/web');
+const { log } = require('utils');
+const { initMongo } = require('startup');
 
 const publicPath = path.resolve(process.cwd(), 'dist');
 const port = process.env.PORT || 5000;
@@ -36,6 +37,10 @@ app.use(session({
 }));
 
 setupMongoose();
+
+if (process.env.DB_INIT) {
+  initMongo({ silent: process.env.DB_INIT_SILENT === 'true' });
+}
 
 app.listen(port, () => {
   log.info(`Server started on port ${port}`);
@@ -391,4 +396,4 @@ app.get('*', (req, res) => {
   res.sendFile(path.resolve(publicPath, 'index.html'));
 });
 
-export default app;
+module.exports = app;

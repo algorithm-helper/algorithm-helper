@@ -1,5 +1,6 @@
 /* eslint-disable no-var */
 var path = require('path');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 // var MiniCssExtractPlugin = require('mini-css-extract-plugin');
 // var HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -28,6 +29,16 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
       },
+      {
+        test: /\.html$/,
+        loader: 'html-loader',
+      },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './index.html',
+      filename: 'index.html',
+    }),
+  ],
 };

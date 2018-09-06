@@ -8,9 +8,10 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint .",
-    "build:server": "webpack --mode production --config webpack/webpack-server.config.js",
     "build:client": "webpack --mode production --config webpack/webpack-client.config.js",
-    "server": "node dist/bundle-server.js | bunyan -o short"
+    "dev:client": "webpack --mode development --config webpack/webpack-client.config.js",
+    "server:init": "DB_INIT=true DB_INIT_SILENT=false node src/server/server.js | bunyan -o short",
+    "server": "node src/server/server.js | bunyan -o short"
   },
   "dependencies": {
     "@material-ui/core": "^1.4.2",
@@ -62,7 +63,7 @@
     "request": "2.83.0",
     "uuid": "3.2.1",
     "validator": "^10.5.0",
-    "webpack-dev-server": "^3.1.5",
+    "webpack-dev-server": "^3.1.7",
     "yamljs": "^0.3.0"
   },
   "devDependencies": {
