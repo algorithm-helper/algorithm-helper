@@ -9,7 +9,8 @@
   "scripts": {
     "lint": "eslint .",
     "client:build": "webpack --mode production --config webpack/webpack-client.config.js",
-    "client:dev": "webpack --mode development --config webpack/webpack-client.config.js",
+    "client:dev": "webpack --mode development --config webpack/webpack-client.config.js --watch",
+    "client:wds": "webpack-dev-server --config webpack/webpack-client.config.js",
     "server:init": "DB_INIT=true DB_INIT_SILENT=false node src/server/server.js | bunyan -o short",
     "server:dev": "nodemon src/server/server.js | bunyan -o short",
     "server": "node src/server/server.js | bunyan -o short"
