@@ -1,8 +1,7 @@
 /* eslint-disable no-var */
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-// var MiniCssExtractPlugin = require('mini-css-extract-plugin');
-// var HtmlWebpackPlugin = require('html-webpack-plugin');
+var MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   context: path.resolve(__dirname, '..', 'src', 'client'),
@@ -33,12 +32,36 @@ module.exports = {
         test: /\.html$/,
         loader: 'html-loader',
       },
+      {
+        test: /\.(scss|sass|css)$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              url: false,
+              sourceMap: true,
+            },
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              url: false,
+              sourceMap: true,
+            },
+          },
+        ],
+      },
     ],
   },
+  devtool: 'source-map',
   plugins: [
     new HtmlWebpackPlugin({
       template: './index.html',
       filename: 'index.html',
+    }),
+    new MiniCssExtractPlugin({
+      filename: 'style.css',
     }),
   ],
 };

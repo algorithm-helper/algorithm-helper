@@ -23,7 +23,5 @@ out
 *.tmp
 
 # Build
-bundle.js
-bundle.js.map
-styles.css
-styles.css.map
+/dist/bundle-client.js.map
+/dist/style.css.map

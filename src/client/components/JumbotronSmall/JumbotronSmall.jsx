@@ -6,9 +6,9 @@ import { Col, Container, Row } from 'reactstrap';
 
 import getColorFromKey from 'utils/getColorFromKey';
 
-import styles from './styles.scss';
+// import styles from './styles.scss';
 
-console.log(styles);
+// console.log(styles);
 
 /**
  * Renders the JumbotronSmall stateless functional component.
