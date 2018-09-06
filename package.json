@@ -8,9 +8,10 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint .",
-    "build:client": "webpack --mode production --config webpack/webpack-client.config.js",
-    "dev:client": "webpack --mode development --config webpack/webpack-client.config.js",
+    "client:build": "webpack --mode production --config webpack/webpack-client.config.js",
+    "client:dev": "webpack --mode development --config webpack/webpack-client.config.js",
     "server:init": "DB_INIT=true DB_INIT_SILENT=false node src/server/server.js | bunyan -o short",
+    "server:dev": "nodemon src/server/server.js | bunyan -o short",
     "server": "node src/server/server.js | bunyan -o short"
   },
   "dependencies": {
