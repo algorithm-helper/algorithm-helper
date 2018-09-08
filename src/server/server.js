@@ -3,16 +3,11 @@ const express = require('express');
 const path = require('path');
 const session = require('express-session');
 
+const { AccountsRouter, ActionsRouter, DataRouter } = include('routers');
 const { setupMongoose } = include('mongo/mongoose');
 const { cors } = include('middleware/web');
 const { log } = include('utils');
 const { initMongo } = include('startup');
-
-const {
-  AccountsRouter,
-  ActionsRouter,
-  DataRouter,
-} = include('routers');
 
 const publicPath = path.resolve(process.cwd(), 'dist');
 const port = process.env.PORT || 5000;
@@ -34,14 +29,13 @@ app.use(session({
   },
 }));
 
-setupMongoose();
-
-if (process.env.DB_INIT) {
-  initMongo({ silent: process.env.DB_INIT_SILENT === 'true' });
-}
-
 app.listen(port, () => {
   log.info(`Server started on port ${port}`);
+  setupMongoose();
+
+  if (process.env.DB_INIT) {
+    initMongo({ silent: process.env.DB_INIT_SILENT === 'true' });
+  }
 });
 
 /**
