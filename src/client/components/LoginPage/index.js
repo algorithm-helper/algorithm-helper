@@ -1,3 +1,3 @@
-import LoginPage from './LoginPageContainer';
+import LoginPageContainer from './LoginPageContainer';
 
-export default LoginPage;
+export default LoginPageContainer;

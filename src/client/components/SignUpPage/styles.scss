@@ -1,25 +1,20 @@
-@import '../base/colors';
+@import '~styles/base/colors';
 
-.sign-up-page-card-container {
+:local(.signUpPageCardContainer) {
   margin-top: calc(60px + 3em);
   max-width: 400px;
   margin-bottom: 3em;
 }
 
-.sign-up-page-card {
+:local(.signUpPageCard) {
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
 }
 
-.sign-up-page-logo-container {
+:local(.signUpPageLogoContainer) {
   text-align:  center;
 }
 
-.sign-up-page-logo {
-  width: 100px;
-  height: 100px;
-}
-
-.sign-up-page-title {
+:local(.signUpPageTitle) {
   text-align: center;
   margin-top: 1em;
   margin-bottom: 1em;
@@ -27,44 +22,44 @@
   font-weight: 500;
 }
 
-.sign-up-page-form {
+:local(.signUpPageForm) {
   margin-top: 2em;
   margin-bottom: 2em;
 }
 
-.sign-up-page-label {
+:local(.signUpPageLabel) {
   font-weight: 400;
   margin-left: 0.75em;
 }
 
-.sign-up-page-input {
+:local(.signUpPageInput) {
   outline: none;
   box-shadow: none !important;
   border: 1px solid $OUTLINE_COLOR !important;
+
+  &:focus {
+    border-color: $BASE_COLOR !important;
+  }
 }
 
-.sign-up-page-input:focus {
-  border-color: $BASE_COLOR !important;
-}
-
-.sign-up-page-btn-register-container {
+:local(.signUpPageBtnRegisterContainer) {
   text-align: center;
   margin-bottom: 1em;
 }
 
-.sign-up-page-btn-register {
+:local(.signUpPageBtnRegister) {
   outline: none;
   box-shadow: none !important;
 }
 
-.sign-up-page-input-error {
+:local(.signUpPageInputError) {
   margin-top: 0.1em;
   font-size: 1em;
   font-weight: 400;
   color: $ERROR_RED;
 }
 
-.sign-up-page-server-error {
+:local(.signUpPageServerError) {
   font-size: 1em;
   font-weight: 400;
   color: $ERROR_RED;

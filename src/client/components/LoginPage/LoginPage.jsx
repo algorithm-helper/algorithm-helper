@@ -67,7 +67,10 @@ const LoginPage = props => (
               <Form className={loginPageForm}>
                 <FormGroup>
                   <i className="fa fa-envelope prefix grey-text" />
-                  <label htmlFor="login-page-email" className={loginPageLabel}>
+                  <label
+                    htmlFor="login-page-email"
+                    className={loginPageLabel}
+                  >
                     Email
                   </label>
                   <InputGroup>
@@ -87,12 +90,15 @@ const LoginPage = props => (
 
                 <FormGroup>
                   <i className="fa fa-lock prefix grey-text" />
-                  <label htmlFor="login-page-password" className={loginPageLabel}>
+                  <label
+                    htmlFor="login-page-password"
+                    className={loginPageLabel}
+                  >
                     Password
                   </label>
                   <InputGroup>
                     <Input
-                      className="login-page-input"
+                      className={loginPageInput}
                       type="password"
                       id="login-page-password"
                       autoComplete="off"
