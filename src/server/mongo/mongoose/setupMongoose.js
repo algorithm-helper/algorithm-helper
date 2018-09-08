@@ -12,6 +12,7 @@ const setupMongoose = () => {
 
   mongoose.connection.on('connected', () => {
     log.info('Mongoose connected');
+    log.info('Mongo URL', MONGO_URL);
   });
 
   mongoose.connection.on('disconnected', () => {
