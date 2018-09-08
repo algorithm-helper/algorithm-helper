@@ -1,6 +1,7 @@
 import React from 'react';
 import ParticlesJS from 'react-particles-js';
 
+import { particlesStyles } from './styles.scss';
 import particlesSettings from './particlesSettings.json';
 
 /**
@@ -11,7 +12,7 @@ import particlesSettings from './particlesSettings.json';
 const Particles = () => (
   <ParticlesJS
     params={particlesSettings}
-    className="particles-bg"
+    className={particlesStyles}
   />
 );
 
