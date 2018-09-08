@@ -6,9 +6,10 @@ import { Col, Container, Row } from 'reactstrap';
 import JumbotronMedium from 'components/JumbotronMedium';
 import Markdown from 'components/Markdown';
 import Footer from 'components/Footer';
-
 import { resetColorTheme } from 'actions/ColorThemeActions';
+
 import settings from './settings.json';
+import { informationPageContainer } from './styles.scss';
 
 /**
  * Renders the InformationPage stateless functional component.
@@ -23,7 +24,7 @@ const InformationPage = props => {
   return (
     <div>
       <JumbotronMedium title={title} />
-      <Container className="information-page-markdown-container" fluid>
+      <Container className={informationPageContainer} fluid>
         <Row>
           <Col md="2" />
           <Col md="8">
