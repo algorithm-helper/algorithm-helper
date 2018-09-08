@@ -1,6 +1,6 @@
 {
   "name": "algorithm-helper",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "Online educational reference tool for learning about algorithms, data structures, and other software engineering topics.",
   "repository": "git@github.com:algorithm-helper/algorithm-helper.git",
   "main": "main.js",
@@ -8,12 +8,12 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint .",
-    "client:build": "webpack --mode production --config webpack/webpack-client.config.js",
-    "client:dev": "webpack --mode development --config webpack/webpack-client.config.js --watch",
-    "client:wds": "webpack-dev-server --config webpack/webpack-client.config.js",
     "server:init": "DB_INIT=true DB_INIT_SILENT=false node src/server/main.js | bunyan -o short",
     "server:dev": "nodemon src/server/main.js | bunyan -o short",
-    "server": "node src/server/main.js | bunyan -o short"
+    "server": "node src/server/main.js | bunyan -o short",
+    "client:build": "webpack --mode production --config webpack/webpack-client.config.js",
+    "client:dev": "webpack --mode development --config webpack/webpack-client.config.js --watch",
+    "client:wds": "webpack-dev-server --config webpack/webpack-client.config.js"
   },
   "dependencies": {
     "@material-ui/core": "^1.4.2",
@@ -65,7 +65,6 @@
     "request": "2.83.0",
     "uuid": "3.2.1",
     "validator": "^10.5.0",
-    "webpack-dev-server": "^3.1.7",
     "yamljs": "^0.3.0"
   },
   "devDependencies": {
@@ -91,6 +90,7 @@
     "style-loader": "^0.22.1",
     "webpack": "^4.17.1",
     "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.8",
     "webpack-node-externals": "^1.7.2"
   }
 }
