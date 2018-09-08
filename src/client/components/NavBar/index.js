@@ -1,3 +1,3 @@
-import NavBar from './NavBar';
+import NavBarContainer from './NavBarContainer';
 
-export default NavBar;
+export default NavBarContainer;
