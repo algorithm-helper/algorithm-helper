@@ -19,6 +19,15 @@ import Logo from 'components/Logo';
 
 import getColorFromKey from 'utils/getColorFromKey';
 
+import {
+  navbarMain,
+  navbarBrandTitle,
+  navbarLogoContainer,
+  navbarLink,
+  navbarSearch,
+  navbarBtnSignup,
+} from './styles.scss';
+
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
@@ -60,17 +69,16 @@ class NavBar extends React.Component {
    * Renders the NavBar component.
    */
   render() {
-    console.log(this.state.searchQuery);
     return (
       <Navbar
         fixed="top"
-        className="navbar-main"
+        className={navbarMain}
         dark
         expand="md"
         style={{ backgroundColor: getColorFromKey(this.props.colorKey) }}
       >
-        <NavbarBrand className="navbar-brand-title" tag={Link} to="/">
-          <div className="navbar-logo-container">
+        <NavbarBrand className={navbarBrandTitle} tag={Link} to="/">
+          <div className={navbarLogoContainer}>
             <Logo
               height="40px"
               width="40px"
@@ -87,12 +95,12 @@ class NavBar extends React.Component {
         >
           <Nav className="ml-auto" navbar>
             <NavItem>
-              <NavLink className="navbar-link" tag={Link} to="/categories">Categories</NavLink>
+              <NavLink className={navbarLink} tag={Link} to="/categories">Categories</NavLink>
             </NavItem>
             <NavItem>
               <InputGroup>
                 <Input
-                  className="navbar-link navbar-search"
+                  className={`${navbarLink} ${navbarSearch}`}
                   type="text"
                   aria-label="search"
                   placeholder="Search..."
@@ -102,13 +110,13 @@ class NavBar extends React.Component {
               </InputGroup>
             </NavItem>
             <NavItem>
-              <NavLink className="navbar-link" tag={Link} to="/premium">Premium</NavLink>
+              <NavLink className={navbarLink} tag={Link} to="/premium">Premium</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink className="navbar-link" tag={Link} to="/login">Login</NavLink>
+              <NavLink className={navbarLink} tag={Link} to="/login">Login</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink className="navbar-link navbar-btn-signup" tag={Link} to="/signup">Sign Up</NavLink>
+              <NavLink className={`${navbarLink} ${navbarBtnSignup}`} tag={Link} to="/signup">Sign Up</NavLink>
             </NavItem>
           </Nav>
         </Collapse>

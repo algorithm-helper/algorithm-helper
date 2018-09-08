@@ -7,21 +7,29 @@ import {
 } from 'react-router-dom';
 
 import NavBar from 'components/NavBar';
-import MainPage from 'components/MainPage';
-import LoginPage from 'components/LoginPage';
-import SignUpPage from 'components/SignUpPage';
-import DashboardPage from 'components/DashboardPage';
-// import SearchPage from '../components/SearchPage/';
-import ContentPage from 'components/ContentPage';
-import TopicItemPage from 'components/TopicItemPage';
-import InformationPage from 'components/InformationPage';
+// import MainPage from 'components/MainPage';
+// import LoginPage from 'components/LoginPage';
+// import SignUpPage from 'components/SignUpPage';
+// import DashboardPage from 'components/DashboardPage';
+// import SearchPage from 'components/SearchPage';
+// import ContentPage from 'components/ContentPage';
+// import TopicItemPage from 'components/TopicItemPage';
+// import InformationPage from 'components/InformationPage';
 
 const AppRouter = () => (
   <BrowserRouter>
     <div>
       <NavBar />
 
-      <Switch>
+
+    </div>
+  </BrowserRouter>
+);
+
+export default AppRouter;
+
+/*
+<Switch>
         <Route
           path="/"
           component={MainPage}
@@ -99,8 +107,4 @@ const AppRouter = () => (
           component={() => <Redirect to="/" />}
         />
       </Switch>
-    </div>
-  </BrowserRouter>
-);
-
-export default AppRouter;
+      */

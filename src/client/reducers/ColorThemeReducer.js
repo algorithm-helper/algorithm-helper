@@ -1,4 +1,4 @@
-const ColorThemeReducerDefaultState = 'main';
+const ColorThemeReducerDefaultState = 0;
 
 export default (state = ColorThemeReducerDefaultState, action) => {
   switch (action.type) {

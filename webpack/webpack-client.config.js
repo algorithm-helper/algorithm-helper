@@ -10,43 +10,66 @@ module.exports = {
     filename: 'bundle-client.js',
     path: path.resolve(__dirname, '..', 'dist'),
   },
-  target: 'web',
   resolve: {
-    extensions: ['.js', '.jsx'],
     modules: [
       path.resolve(__dirname, '..', 'src', 'client'),
-      path.resolve(__dirname, '..', 'node_modules'),
+      'node_modules',
     ],
+    extensions: ['.js', '.jsx'],
   },
-  stats: {
-    warnings: false,
-  },
+  devtool: 'source-map',
   module: {
     rules: [
       {
         test: /\.(js|jsx|mjs)$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
+        use: {
+          loader: 'babel-loader',
+        },
       },
       {
         test: /\.html$/,
-        loader: 'html-loader',
+        use: [
+          {
+            loader: 'html-loader',
+          },
+        ],
       },
       {
         test: /\.(scss|sass|css)$/,
+        exclude: /node_modules/,
         use: [
           MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
-              url: false,
+              sourceMap: true,
+              modules: true,
+              localIdentName: '[path][name]__[local]',
+            },
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(scss|sass|css)$/,
+        include: /node_modules/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
               sourceMap: true,
             },
           },
           {
             loader: 'sass-loader',
             options: {
-              url: false,
               sourceMap: true,
             },
           },
@@ -54,14 +77,14 @@ module.exports = {
       },
     ],
   },
-  devtool: 'source-map',
   plugins: [
     new HtmlWebpackPlugin({
-      template: './index.html',
-      filename: 'index.html',
+      template: 'index.html',
+      filename: './index.html',
     }),
     new MiniCssExtractPlugin({
-      filename: 'style.css',
+      filename: '[name].css',
+      chunkFilename: '[id].css',
     }),
   ],
 };

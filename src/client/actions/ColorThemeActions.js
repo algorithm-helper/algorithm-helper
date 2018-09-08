@@ -1,4 +1,4 @@
-export const setColorTheme = (colorKey = 'main') => ({
+export const setColorTheme = (colorKey = 0) => ({
   type: 'SET_COLOR',
   colorKey,
 });

@@ -4,16 +4,23 @@ This is the server-side code for Algorithm Helper. It includes documentation on 
 
 ## Content
 
+- [Entry Point](#entry-point)
 - [REST API Routes](#rest-api-routes)
   - [Accounts](#accounts)
   - [Data](#data)
   - [Actions](#actions)
 
+### Entry Point
+
+The entry point for the server-side code is `main.js`, which provides the global function `include`,
+which allows for absolute filepath `requires` from the server root (`./src/server`). It requires
+`server.js`, which provides the main `express` web server.
+
 ### REST API Routes
 
 #### Accounts
 
-For authenticating into the application, or signing up a new user.
+For authenticating into the application, or signing up a new user. This is handled with `AppRouter`.
 
 - **URL**: `/accounts/login`
   - **Description**: For logging into the application.
@@ -44,7 +51,8 @@ For authenticating into the application, or signing up a new user.
 
 #### Data
 
-For getting data for the actual application (i.e. categories, subcategories, topics).
+For getting data for the actual application (i.e. categories, subcategories, topics). This is
+handled with `DataRouter`.
 
 - **URL**: `/data/categories`
   - **Description**: Gets all of the category data.
