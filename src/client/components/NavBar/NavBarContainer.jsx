@@ -48,8 +48,6 @@ class NavBarContainer extends React.Component {
    * Renders the NavBar presentational component.
    */
   render() {
-    console.log(this.state.searchQuery);
-
     const color = getColorFromKey(this.props.colorKey);
 
     return (

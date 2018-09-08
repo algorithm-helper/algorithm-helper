@@ -7,29 +7,21 @@ import {
 } from 'react-router-dom';
 
 import NavBar from 'components/NavBar';
-// import MainPage from 'components/MainPage';
-// import LoginPage from 'components/LoginPage';
-// import SignUpPage from 'components/SignUpPage';
+import MainPage from 'components/MainPage';
+import LoginPage from 'components/LoginPage';
+import SignUpPage from 'components/SignUpPage';
 // import DashboardPage from 'components/DashboardPage';
 // import SearchPage from 'components/SearchPage';
 // import ContentPage from 'components/ContentPage';
 // import TopicItemPage from 'components/TopicItemPage';
-// import InformationPage from 'components/InformationPage';
+import InformationPage from 'components/InformationPage';
 
 const AppRouter = () => (
   <BrowserRouter>
     <div>
       <NavBar />
 
-
-    </div>
-  </BrowserRouter>
-);
-
-export default AppRouter;
-
-/*
-<Switch>
+      <Switch>
         <Route
           path="/"
           component={MainPage}
@@ -45,12 +37,6 @@ export default AppRouter;
         <Route
           path="/signup"
           component={SignUpPage}
-          exact
-        />
-
-        <Route
-          path="/premium"
-          component={MainPage}
           exact
         />
 
@@ -72,6 +58,19 @@ export default AppRouter;
           exact
         />
 
+        <Route
+          path="*"
+          component={() => <Redirect to="/" />}
+        />
+      </Switch>
+    </div>
+  </BrowserRouter>
+);
+
+export default AppRouter;
+
+/*
+<Switch>
         <Route
           path="/dashboard"
           component={DashboardPage}
@@ -100,11 +99,6 @@ export default AppRouter;
           path="/categories/:categoryKey/:subcategoryKey/:topicKey"
           component={TopicItemPage}
           exact
-        />
-
-        <Route
-          path="*"
-          component={() => <Redirect to="/" />}
         />
       </Switch>
       */
