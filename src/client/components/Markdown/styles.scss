@@ -1,0 +1,80 @@
+@import '~styles/base/colors';
+
+:local(.markdownContainer) {
+  h1 {
+    font-size: 1.75em;
+  }
+
+  h2 {
+    font-size: 1.6em;
+  }
+
+  h3 {
+    font-size: 1.5em;
+  }
+
+  h4 {
+    font-size: 1.4em;
+  }
+
+  h5 {
+    font-size: 1.3em;
+  }
+
+  h6 {
+    font-size: 1.25em;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  code {
+    background-color: $CODE_BG_COLOR;
+    color: $BLACK;
+    padding: 2px;
+    border-radius: 2px;
+  }
+
+  pre {
+    border-radius: 2px;
+
+    code {
+      color: $WHITE;
+      background-color: $PRE_CODE_BG_COLOR;
+      padding: 1em;
+    }
+  }
+
+  blockquote {
+    background: $BLOCKQUOTE_BG_COLOR;
+    border-left: 10px solid $OUTLINE_COLOR;
+    margin: 1.5em 10px;
+    padding: 0.5em;
+    quotes: "\201C""\201D""\2018""\2019";
+
+    p {
+      display: inline;
+    }
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+
+    tr {
+      border-bottom-color: $OUTLINE_COLOR;
+      border-bottom-width: 1px;
+      border-bottom-style: solid;
+    }
+
+    tr:last-child {
+      border-bottom: none;
+    }
+
+    th, td {
+      padding: 1em;
+    }
+  }
+}
