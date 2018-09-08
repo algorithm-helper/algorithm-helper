@@ -1,10 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { Col, Container, Row } from 'reactstrap';
 
 import getColorFromKey from 'utils/getColorFromKey';
+
+import {
+  jumbotronMd,
+  jumbotronMdTextContainer,
+  jumbotronMdTitle,
+} from './styles.scss';
 
 /**
  * Renders the JumbotronMedium stateless functional component.
@@ -14,12 +19,12 @@ import getColorFromKey from 'utils/getColorFromKey';
 const JumbotronMedium = props => (
   <Container fluid>
     <Row
-      className="jumbotron-md"
+      className={jumbotronMd}
       style={{ backgroundColor: getColorFromKey(props.colorKey) }}
     >
       <Col md="12">
-        <div className="jumbotron-md-text-container">
-          <div className="jumbotron-md-title">{props.title}</div>
+        <div className={jumbotronMdTextContainer}>
+          <div className={jumbotronMdTitle}>{props.title}</div>
         </div>
       </Col>
     </Row>
@@ -34,6 +39,4 @@ const mapStateToProps = state => ({
   colorKey: state.colorKey,
 });
 
-export default compose(
-  connect(mapStateToProps),
-)(JumbotronMedium);
+export default connect(mapStateToProps)(JumbotronMedium);

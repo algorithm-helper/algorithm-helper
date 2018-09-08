@@ -1,0 +1,23 @@
+@import '~styles/base/colors';
+
+:local(.jumbotronMd) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 15em;
+}
+
+:local(.jumbotronMdTextContainer) {
+  margin-top: 2em;
+  margin-bottom: 1em;
+  margin-left: 1em;
+  margin-right: 1em;
+  height: auto;
+}
+
+:local(.jumbotronMdTitle) {
+  text-align: center;
+  font-weight: 500;
+  font-size: 3em;
+  color: $WHITE;
+}
