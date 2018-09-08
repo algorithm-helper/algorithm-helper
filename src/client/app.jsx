@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import AppRouter from 'routers/AppRouter';
 import configureStore from 'store/configureStore';
+import 'styles/base/base.scss';
 
 const store = configureStore();
 const App = (

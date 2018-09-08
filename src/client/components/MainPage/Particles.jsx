@@ -2,6 +2,7 @@ import React from 'react';
 import ParticlesJS from 'react-particles-js';
 
 import particlesSettings from './particlesSettings.json';
+import { mainPageParticleBg } from './styles.scss';
 
 /**
  * Renders the Particles stateless functional component.
@@ -11,7 +12,7 @@ import particlesSettings from './particlesSettings.json';
 const Particles = () => (
   <ParticlesJS
     params={particlesSettings}
-    className="main-page-particle-bg"
+    className={mainPageParticleBg}
   />
 );
 

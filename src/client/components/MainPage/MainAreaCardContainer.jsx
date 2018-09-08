@@ -4,13 +4,15 @@ import { Col, Container, Row } from 'reactstrap';
 
 import MainAreaCard from './MainAreaCard';
 
+import { mainAreaCardContainer } from './styles.scss';
+
 /**
  * Renders the MainAreaCardContainer stateless functional component.
  *
  * @param {object} props
  */
 const MainAreaCardContainer = props => (
-  <div className="main-area-card-container">
+  <div className={mainAreaCardContainer}>
     <Container fluid>
       <Row>
         <Col md="1" />

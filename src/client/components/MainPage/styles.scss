@@ -1,0 +1,129 @@
+@import '~styles/base/colors';
+
+:local(.mainPageContainer) {
+  margin-top: 60px;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+:local(.mainPageJumbotron) {
+  width: 100%;
+  position: relative;
+}
+
+:local(.mainPageJumbotronTextContainer) {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 40%;
+  transform: translate(0, -50%);
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+:local(.mainPageJumbotronTitle) {
+  color: $WHITE;
+  font-size: 3em;
+  font-weight: 300;
+  margin-bottom: 1em;
+
+  @media all and (max-width: 600px) {
+    font-size: 2em;
+  }
+}
+
+:local(.mainPageJumbotronSubtitle) {
+  color: $WHITE;
+  font-size: 1.25em;
+  font-weight: 300;
+
+  @media all and (max-width: 600px) {
+    font-size: 1em;
+  }
+}
+
+:local(.mainPageParticleBg) {
+  background-color: $BASE_COLOR;
+  height: 30em;
+}
+
+:local(.mainAreaContainer) {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+:local(.mainAreaSpinner) {
+  margin-top: 3em;
+  text-align: center;
+  width: 100%;
+}
+
+:local(.mainAreaSearchBar) {
+  &:focus {
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+}
+
+:local(.mainAreaNoResultsContainer) {
+  margin-top: 2em;
+  text-align: center;
+}
+
+:local(.mainAreaNoResultsTitle) {
+  font-weight: 500;
+  font-size: 2em;
+  color: $ACCENT_GREY_COLOR;
+}
+
+:local(.mainAreaNoResultsSubtitle) {
+  font-weight: 400;
+  font-size: 1.25em;
+  color: $ACCENT_GREY_COLOR;
+}
+
+:local(.mainAreaCardContainer) {
+  margin-top: 2em;
+}
+
+:local(.mainAreaCard) {
+  height: 20em;
+  margin-bottom: 2em;
+  border-radius: 0.5em;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
+  &:hover {
+    opacity: 0.9;
+    cursor: pointer;
+  }
+}
+
+:local(.mainAreaCardLink) {
+  height: 100%;
+  text-decoration: none !important;
+}
+
+:local(.mainAreaCardTitle) {
+  color: $WHITE;
+  font-size: 1.75em;
+  font-weight: 500;
+}
+
+:local(.mainAreaCardSubtitle) {
+  color: $WHITE;
+  bottom: 1em;
+}
+
+:local(.mainAreaCardDescription) {
+  color: $WHITE;
+  font-weight: 400;
+}
+
+:local(.mainAreaCardBodyBottom) {
+  bottom: 1em;
+  position: absolute;
+}

@@ -1,0 +1,38 @@
+@import '~styles/base/colors';
+
+:local(.jumbotronSm) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 12em;
+}
+
+:local(.jumbotronSmTextContainer) {
+  margin-top: 5em;
+  margin-bottom: 2em;
+  margin-left: 3em;
+  margin-right: 3em;
+  height: auto;
+}
+
+:local(.jumbotronSmTitle) {
+  text-align: left;
+  font-weight: 500;
+  font-size: 2.5em;
+  color: $WHITE;
+}
+
+:local(.jumbotronSmSubtitle) {
+  font-weight: 400;
+  font-size: 1.25em;
+  color: $WHITE;
+
+  a {
+    color: $WHITE;
+    text-decoration: none;
+  }
+
+  a:hover {
+    opacity: 0.8;
+  }
+}

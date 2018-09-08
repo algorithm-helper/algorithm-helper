@@ -6,9 +6,12 @@ import { Col, Container, Row } from 'reactstrap';
 
 import getColorFromKey from 'utils/getColorFromKey';
 
-// import styles from './styles.scss';
-
-// console.log(styles);
+import {
+  jumbotronSm,
+  jumbotronSmTextContainer,
+  jumbotronSmTitle,
+  jumbotronSmSubtitle,
+} from './styles.scss';
 
 /**
  * Renders the JumbotronSmall stateless functional component.
@@ -18,13 +21,13 @@ import getColorFromKey from 'utils/getColorFromKey';
 const JumbotronSmall = props => (
   <Container fluid>
     <Row
-      className="jumbotron-sm"
+      className={jumbotronSm}
       style={{ backgroundColor: getColorFromKey(props.colorKey) }}
     >
       <Col md="12">
-        <div className="jumbotron-sm-text-container">
-          <div className="jumbotron-sm-title">{props.title}</div>
-          <div className="jumbotron-sm-subtitle">
+        <div className={jumbotronSmTextContainer}>
+          <div className={jumbotronSmTitle}>{props.title}</div>
+          <div className={jumbotronSmSubtitle}>
             <Link to={props.urlKey}>
               {
                 props.subtitle && (`${String.fromCharCode(0x02190)} ${props.subtitle}`)

@@ -8,20 +8,22 @@ import {
   Row,
 } from 'reactstrap';
 
+import { mainAreaSearchBar } from './styles.scss';
+
 /**
  * Renders the MainAreaSearchBar stateless functional component.
  *
  * @param {object} props
  */
 const MainAreaSearchBar = props => (
-  <Container className="main-area-search-bar" fluid>
+  <Container fluid>
     <Row>
       <Col md="2" />
       <Col md="8">
         <InputGroup>
           <Input
             type="text"
-            className="main-area-search-bar"
+            className={mainAreaSearchBar}
             placeholder={props.searchPlaceholder}
             onChange={props.onSearchChange}
             autoComplete="off"

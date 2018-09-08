@@ -9,6 +9,11 @@ import MainAreaSearchBar from './MainAreaSearchBar';
 import MainAreaCardContainer from './MainAreaCardContainer';
 import MainAreaNoResults from './MainAreaNoResults';
 
+import {
+  mainAreaContainer,
+  mainAreaSpinner,
+} from './styles.scss';
+
 class MainArea extends React.Component {
   constructor(props) {
     super(props);
@@ -40,7 +45,7 @@ class MainArea extends React.Component {
    *
    * @param {Event} e
    */
-  handleSearchChange = e => {
+  onSearchChange = e => {
     const searchQuery = e.target.value.trim().replace(/\s/g, '').toLowerCase();
 
     // Get visible cards based on the search query:
@@ -60,7 +65,7 @@ class MainArea extends React.Component {
     let component;
     if (this.state.loading) {
       component = (
-        <div className="main-area-spinner-container">
+        <div className={mainAreaSpinner}>
           <MDSpinner
             size={50}
             singleColor={getColorFromKey(this.props.colorKey)}
@@ -83,9 +88,9 @@ class MainArea extends React.Component {
    */
   render() {
     return (
-      <div className="main-area-container">
+      <div className={mainAreaContainer}>
         <MainAreaSearchBar
-          onSearchChange={this.handleSearchChange}
+          onSearchChange={this.onSearchChange}
           searchPlaceholder="Search for a topic..."
         />
         {

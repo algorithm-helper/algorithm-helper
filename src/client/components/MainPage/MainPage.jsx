@@ -8,6 +8,8 @@ import { noop } from 'utils/utils';
 import MainPageJumbotron from './MainPageJumbotron';
 import MainArea from './MainArea';
 
+import { mainPageContainer } from './styles.scss';
+
 class MainPage extends React.Component {
   constructor(props) {
     super(props);
@@ -65,7 +67,7 @@ class MainPage extends React.Component {
    */
   render() {
     return (
-      <div className="main-page-container">
+      <div className={mainPageContainer}>
         <MainPageJumbotron
           title="Learn about algorithms and data structures."
           subtitle="Algorithm Helper is an educational resource for learning about algorithms, data structures, and software engineering topics."

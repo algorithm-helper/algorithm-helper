@@ -2,6 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Particles from './Particles';
+import {
+  mainPageJumbotron,
+  mainPageJumbotronTextContainer,
+  mainPageJumbotronTitle,
+  mainPageJumbotronSubtitle,
+} from './styles.scss';
 
 /**
  * Renders the MainPageJumbotron stateless functional component.
@@ -9,12 +15,12 @@ import Particles from './Particles';
  * @param {object} props
  */
 const MainPageJumbotron = props => (
-  <div className="main-page-jumbotron">
-    <div className="main-page-jumbotron-text-container">
-      <div className="main-page-jumbotron-title">
+  <div className={mainPageJumbotron}>
+    <div className={mainPageJumbotronTextContainer}>
+      <div className={mainPageJumbotronTitle}>
         {props.title}
       </div>
-      <div className="main-page-jumbotron-subtitle">
+      <div className={mainPageJumbotronSubtitle}>
         {props.subtitle}
       </div>
     </div>
