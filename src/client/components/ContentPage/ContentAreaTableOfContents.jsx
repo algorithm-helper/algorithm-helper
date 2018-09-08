@@ -1,6 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import { HashLink as Link } from 'react-router-hash-link';
+
+import {
+  contentAreaToc,
+  contentAreaTocContainer,
+  contentAreaTocTitle,
+  contentAreaTocItem,
+  contentAreaTocItemSelected,
+} from './styles.scss';
 
 class ContentAreaTableOfContents extends React.Component {
   constructor(props) {
@@ -24,7 +33,7 @@ class ContentAreaTableOfContents extends React.Component {
    */
   getSelectedClassName = index => {
     const { selectedIndex } = this.state;
-    return index === selectedIndex ? 'content-area-toc-item-selected' : '';
+    return index === selectedIndex ? contentAreaTocItemSelected : '';
   };
 
   /**
@@ -34,16 +43,16 @@ class ContentAreaTableOfContents extends React.Component {
     const { title, contentData } = this.props;
 
     return (
-      <div className="content-area-toc">
-        <div className="content-area-toc-title">
+      <div className={contentAreaToc}>
+        <div className={contentAreaTocTitle}>
           {title}
         </div>
-        <div className="content-area-toc-container">
+        <div className={contentAreaTocContainer}>
           {
             contentData
             && contentData.map((item, i) => (
               <div
-                className={`content-area-toc-item ${this.getSelectedClassName(i)}`}
+                className={classnames(contentAreaTocItem, this.getSelectedClassName(i))}
                 key={i}
               >
                 <Link

@@ -1,3 +1,3 @@
-import ContentPage from './ContentPage';
+import ContentPageContainer from './ContentPageContainer';
 
-export default ContentPage;
+export default ContentPageContainer;

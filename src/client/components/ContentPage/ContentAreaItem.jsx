@@ -5,6 +5,16 @@ import { Link } from 'react-router-dom';
 
 import getColorFromKey from 'utils/getColorFromKey';
 
+import {
+  contentAreaItem,
+  contentAreaItemHeader,
+  contentAreaItemHeaderTitle,
+  contentAreaItemHeaderDescription,
+  contentAreaItemChildren,
+  contentAreaItemChildrenItem,
+  contentAreaItemChildrenItemLink,
+} from './styles.scss';
+
 /**
  * Renders the ContentAreaItem stateless functional component.
  *
@@ -22,27 +32,27 @@ const ContentAreaItem = props => {
   } = props;
 
   return (
-    <div id={itemKey} className="content-area-item">
-      <div className="content-area-item-header">
+    <div id={itemKey} className={contentAreaItem}>
+      <div className={contentAreaItemHeader}>
         <Link to={`${urlKey}`}>
           <div
-            className="content-area-item-header-title"
+            className={contentAreaItemHeaderTitle}
             style={{ color: getColorFromKey(colorKey) }}
           >
             {title}
           </div>
         </Link>
 
-        <div className="content-area-item-header-description">
+        <div className={contentAreaItemHeaderDescription}>
           {description}
         </div>
       </div>
-      <div className="content-area-item-children">
+      <div className={contentAreaItemChildren}>
         {
           children
           && children.map((item, i) => (
-            <div className="content-area-item-children-area-item" key={i}>
-              <div className="content-area-item-children-area-item-link">
+            <div className={contentAreaItemChildrenItem} key={i}>
+              <div className={contentAreaItemChildrenItemLink}>
                 <Link
                   to={isTopicItem
                     ? `${props.urlKey}?item=${i}`

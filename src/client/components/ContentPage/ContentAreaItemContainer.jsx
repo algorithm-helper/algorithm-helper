@@ -1,9 +1,9 @@
 /* eslint-disable react/no-children-prop */
-
 import React from 'react';
 import PropTypes from 'prop-types';
 
 import ContentAreaItem from './ContentAreaItem';
+import { contentAreaItemContainer } from './styles.scss';
 
 /**
  * Renders the ContentAreaItemContainer stateless functional component.
@@ -14,7 +14,7 @@ const ContentAreaItemContainer = props => {
   const { contentData } = props;
 
   return (
-    <div className="content-area-item-container">
+    <div className={contentAreaItemContainer}>
       {
         contentData
         && contentData.map((item, i) => (
