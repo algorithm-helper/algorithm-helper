@@ -10,12 +10,14 @@ import NavBar from 'components/NavBar';
 import MainPage from 'components/MainPage';
 import LoginPage from 'components/LoginPage';
 import SignUpPage from 'components/SignUpPage';
-// import DashboardPage from 'components/DashboardPage';
-// import SearchPage from 'components/SearchPage';
-// import ContentPage from 'components/ContentPage';
-// import TopicItemPage from 'components/TopicItemPage';
+import DashboardPage from 'components/DashboardPage';
+import ContentPage from 'components/ContentPage';
+import TopicItemPage from 'components/TopicItemPage';
 import InformationPage from 'components/InformationPage';
 
+/**
+ * Renders the AppRouter stateless functional component.
+ */
 const AppRouter = () => (
   <BrowserRouter>
     <div>
@@ -59,19 +61,6 @@ const AppRouter = () => (
         />
 
         <Route
-          path="*"
-          component={() => <Redirect to="/" />}
-        />
-      </Switch>
-    </div>
-  </BrowserRouter>
-);
-
-export default AppRouter;
-
-/*
-<Switch>
-        <Route
           path="/dashboard"
           component={DashboardPage}
           exact
@@ -100,5 +89,14 @@ export default AppRouter;
           component={TopicItemPage}
           exact
         />
+
+        <Route
+          path="*"
+          component={() => <Redirect to="/" />}
+        />
       </Switch>
-      */
+    </div>
+  </BrowserRouter>
+);
+
+export default AppRouter;
