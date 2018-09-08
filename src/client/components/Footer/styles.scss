@@ -1,0 +1,22 @@
+@import '~styles/base/colors';
+
+:local(.footerContainer) {
+  margin-top: 3em;
+  margin-bottom: 3em;
+  text-align: center;
+}
+
+:local(.footerItem) {
+  margin-left: 1em;
+  margin-right: 1em;
+  display: inline-block;
+  color: $BASE_COLOR;
+}
+
+:local(.footerItemLink) {
+  text-decoration: none !important;
+
+  &:hover {
+    color: $GREY_LIGHT;
+  }
+}

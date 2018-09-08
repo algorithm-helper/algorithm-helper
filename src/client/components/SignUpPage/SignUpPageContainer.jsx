@@ -160,6 +160,8 @@ class SignUpPageContainer extends React.Component {
   }
 }
 
+SignUpPageContainer.propTypes = {};
+
 const mapStateToProps = state => ({
   colorKey: state.colorKey,
 });
