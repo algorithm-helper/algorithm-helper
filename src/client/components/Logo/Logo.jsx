@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { logoStyles } from './styles.scss';
 import logoSettings from './logoSettings.json';
 
 /**
@@ -20,7 +21,7 @@ const Logo = props => {
 
   return (
     <img
-      className="logo"
+      className={logoStyles}
       src={src}
       style={{
         width: props.width || 100,
