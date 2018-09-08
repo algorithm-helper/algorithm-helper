@@ -34,6 +34,17 @@ class NavBarContainer extends React.Component {
   };
 
   /**
+   * Handles when the enter key is pressed.
+   *
+   * @param {Event} e
+   */
+  onEnterKeyPressed = e => {
+    if (e.key === 'Enter') {
+      // TODO
+    }
+  };
+
+  /**
    * Renders the NavBar presentational component.
    */
   render() {
@@ -46,6 +57,7 @@ class NavBarContainer extends React.Component {
         color={color}
         colorLightened={getLightenedColor(color)}
         isOpen={this.state.isOpen}
+        onEnterKeyPressed={this.onEnterKeyPressed}
         onSearchChange={this.onSearchChange}
         onToggleRequest={this.onToggleRequest}
       />

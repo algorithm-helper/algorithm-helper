@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import { Link } from 'react-router-dom';
 import {
   Collapse,
@@ -37,7 +38,11 @@ const NavBar = props => (
     expand="md"
     style={{ backgroundColor: props.color }}
   >
-    <NavbarBrand className={navbarBrandTitle} tag={Link} to="/">
+    <NavbarBrand
+      className={navbarBrandTitle}
+      tag={Link}
+      to="/"
+    >
       <div className={navbarLogoContainer}>
         <Logo
           height="40px"
@@ -53,27 +58,49 @@ const NavBar = props => (
       navbar
       style={{ backgroundColor: props.color }}
     >
-      <Nav className="ml-auto" navbar>
+      <Nav
+        className="ml-auto"
+        navbar
+      >
         <NavItem>
-          <NavLink className={navbarLink} tag={Link} to="/categories">Categories</NavLink>
+          <NavLink
+            className={navbarLink}
+            tag={Link}
+            to="/categories"
+          >
+            Categories
+          </NavLink>
         </NavItem>
         <NavItem>
           <InputGroup>
             <Input
-              className={`${navbarLink} ${navbarSearch}`}
+              className={classnames(navbarLink, navbarSearch)}
               type="text"
               aria-label="search"
               placeholder="Search..."
               style={{ backgroundColor: props.colorLightened }}
               onChange={props.onSearchChange}
+              onKeyPress={props.onEnterKeyPressed}
             />
           </InputGroup>
         </NavItem>
         <NavItem>
-          <NavLink className={navbarLink} tag={Link} to="/login">Login</NavLink>
+          <NavLink
+            className={navbarLink}
+            tag={Link}
+            to="/login"
+          >
+            Login
+          </NavLink>
         </NavItem>
         <NavItem>
-          <NavLink className={`${navbarLink} ${navbarBtnSignup}`} tag={Link} to="/signup">Sign Up</NavLink>
+          <NavLink
+            className={classnames(navbarLink, navbarBtnSignup)}
+            tag={Link}
+            to="/signup"
+          >
+            Sign Up
+          </NavLink>
         </NavItem>
       </Nav>
     </Collapse>
@@ -84,6 +111,7 @@ NavBar.propTypes = {
   color: PropTypes.string,
   colorLightened: PropTypes.string,
   isOpen: PropTypes.bool,
+  onEnterKeyPressed: PropTypes.func,
   onSearchChange: PropTypes.func,
   onToggleRequest: PropTypes.func,
 };
