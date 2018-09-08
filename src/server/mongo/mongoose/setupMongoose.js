@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
-const { MONGO_URL } = require('mongo/utils/constants');
-const { log } = require('utils');
+const { MONGO_URL } = include('mongo/utils/constants');
+const { log } = include('utils');
 
 /**
  * Setups Mongoose connection to MongoDB with connected/disconnected event listeners. Disconnects

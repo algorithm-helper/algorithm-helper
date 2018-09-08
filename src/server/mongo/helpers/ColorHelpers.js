@@ -1,4 +1,4 @@
-const { Color } = require('mongo/models');
+const { Color } = include('mongo/models');
 
 const ColorHelpers = {
   /**

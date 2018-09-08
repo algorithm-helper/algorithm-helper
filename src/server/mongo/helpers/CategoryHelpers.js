@@ -1,4 +1,4 @@
-const { Category, Subcategory } = require('mongo/models');
+const { Category, Subcategory } = include('mongo/models');
 
 const CategoryHelpers = {
   /**

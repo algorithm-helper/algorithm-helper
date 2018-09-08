@@ -1,12 +1,11 @@
-const fs = require('fs');
-
 /**
  * Fixes the topicIndex by adding the correct 'order' property to each grouping of topics (i.e.
  * topics with the same parent should have ascending order starting from 0 in EXACTLY the same
  * order as it is in the index).
  */
 const fixTopicIndexOrder = () => {
-  let topicIndex = require('../../../../data/index/topicIndex.json');
+  // eslint-disable-next-line global-require
+  let topicIndex = require('../../../data/index/topicIndex.json');
   let currentParent;
   let currentOrder;
   topicIndex = topicIndex.map(topic => {

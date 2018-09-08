@@ -1,4 +1,4 @@
-const { AccountHelpers } = require('mongo/helpers');
+const { AccountHelpers } = include('mongo/helpers');
 
 /**
  * Authenticates the current user from the X-Auth header of the request, and

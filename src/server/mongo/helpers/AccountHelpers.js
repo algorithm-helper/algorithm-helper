@@ -1,4 +1,4 @@
-const { User } = require('mongo/models');
+const { User } = include('mongo/models');
 
 const AccountHelpers = {
   /**

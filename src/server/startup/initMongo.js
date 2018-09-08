@@ -3,21 +3,22 @@ const {
   Subcategory,
   Topic,
   Color,
-} = require('mongo/models');
-const { log } = require('utils');
+} = include('mongo/models');
+const { log } = include('utils');
 
 const fixTopicIndexOrder = require('./fixTopicIndexOrder');
-const categoryIndex = require('../../../../data/index/categoryIndex.json');
-const subcategoryIndex = require('../../../../data/index/subcategoryIndex.json');
-const topicIndex = require('../../../../data/index/topicIndex.json');
-const colorIndex = require('../../../../data/index/colorIndex.json');
+const categoryIndex = require('../../../data/index/categoryIndex.json');
+const subcategoryIndex = require('../../../data/index/subcategoryIndex.json');
+const topicIndex = require('../../../data/index/topicIndex.json');
+const colorIndex = require('../../../data/index/colorIndex.json');
 
 /**
  * Initializes MongoDB with the data specified in the categoryIndex, subcategoryIndex, and
  * topicIndex.
+ *
+ * @param {object} options
  */
 const initMongo = async options => {
-
   const displayMessage = msg => {
     if (!options.silent) {
       log.info(msg);

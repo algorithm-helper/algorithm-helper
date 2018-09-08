@@ -3,7 +3,7 @@
   "version": "1.1.0",
   "description": "Online educational reference tool for learning about algorithms, data structures, and other software engineering topics.",
   "repository": "git@github.com:algorithm-helper/algorithm-helper.git",
-  "main": "index.js",
+  "main": "main.js",
   "author": "Eric Liu <ericliudevelopment@gmail.com>",
   "license": "MIT",
   "scripts": {
@@ -11,14 +11,13 @@
     "client:build": "webpack --mode production --config webpack/webpack-client.config.js",
     "client:dev": "webpack --mode development --config webpack/webpack-client.config.js --watch",
     "client:wds": "webpack-dev-server --config webpack/webpack-client.config.js",
-    "server:init": "DB_INIT=true DB_INIT_SILENT=false node src/server/server.js | bunyan -o short",
-    "server:dev": "nodemon src/server/server.js | bunyan -o short",
-    "server": "node src/server/server.js | bunyan -o short"
+    "server:init": "DB_INIT=true DB_INIT_SILENT=false node src/server/main.js | bunyan -o short",
+    "server:dev": "nodemon src/server/main.js | bunyan -o short",
+    "server": "node src/server/main.js | bunyan -o short"
   },
   "dependencies": {
     "@material-ui/core": "^1.4.2",
     "@material-ui/icons": "^2.0.0",
-    "babel-eslint": "^8.2.6",
     "bcryptjs": "^2.4.3",
     "bluebird": "^3.5.1",
     "body-parser": "^1.18.2",
@@ -41,6 +40,7 @@
     "muicss": "^0.9.39",
     "numeral": "2.0.6",
     "particles.js": "^2.0.0",
+    "popper.js": "^1.14.4",
     "postcss-loader": "^3.0.0",
     "prop-types": "^15.6.2",
     "query-string": "^6.1.0",
@@ -70,6 +70,7 @@
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
+    "babel-eslint": "^9.0.0",
     "babel-loader": "^7.1.5",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",

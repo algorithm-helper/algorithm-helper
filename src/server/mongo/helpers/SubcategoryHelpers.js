@@ -1,4 +1,4 @@
-const { Subcategory, Topic } = require('mongo/models');
+const { Subcategory, Topic } = include('mongo/models');
 
 const SubcategoryHelpers = {
   /**

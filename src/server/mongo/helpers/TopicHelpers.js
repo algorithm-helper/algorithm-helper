@@ -1,4 +1,4 @@
-const { Topic } = require('mongo/models');
+const { Topic } = include('mongo/models');
 
 const TopicHelpers = {
   /**
