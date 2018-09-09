@@ -10,7 +10,7 @@ const { log } = include('utils');
 const { initMongo } = include('startup');
 
 const publicPath = path.resolve(process.cwd(), 'dist');
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8080;
 
 const app = express();
 

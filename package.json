@@ -14,7 +14,7 @@
     "client:build": "webpack --mode production --config webpack/webpack-client.config.js",
     "client:dev": "webpack --mode development --config webpack/webpack-client.config.js",
     "client:devw": "webpack --mode development --config webpack/webpack-client.config.js --watch",
-    "client:wds": "webpack-dev-server --mode development --config webpack/webpack-client.config.js"
+    "client:wds": "webpack-dev-server --mode development --config webpack/webpack-client.config.js --port 3000"
   },
   "dependencies": {
     "@material-ui/core": "^1.4.2",
