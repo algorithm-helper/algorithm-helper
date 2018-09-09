@@ -8,6 +8,9 @@ tmux new-session -d -s $session -n "Info"
 tmux select-window -t $session:0
 tmux send-keys "./scripts/show-info.sh" C-m
 
+tmux selectp -t 1
+tmux splitw -h -p 35
+
 tmux new-window -t $session:1 -n "Server"
 tmux select-window -t $session:1
 tmux send-keys "./scripts/server-dev.sh" C-m

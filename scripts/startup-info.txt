@@ -17,8 +17,9 @@
     \|__|\|__|\|_______|\|_______|\|__|     \|_______|\|__|\|__|
 
 
-Welcome to the Algorithm Helper development environment! The following is a description of each
-of the tmux windows that are opened with this session:
+Welcome to the Algorithm Helper development environment! The web application should be running on
+http://localhost:3000. The following is a description of each of the tmux windows that are opened
+with this session:
 
 0 Info
   - Shows this information page.

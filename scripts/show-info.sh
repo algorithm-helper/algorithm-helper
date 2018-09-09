@@ -1,3 +1,3 @@
 #!/bin/bash
 
-cat ./scripts/startup-info.txt
+less ./scripts/startup-info.txt
