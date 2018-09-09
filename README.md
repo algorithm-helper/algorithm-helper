@@ -20,7 +20,7 @@ Kubernetes/Minikube.
 
 ### Getting Started
 
-Starting the development environment with as a new `tmux` session, which starts the server and
+Starting the development environment as a new `tmux` session, which starts the server and
 client for development, and a MongoDB shell. Make sure that you already have `tmux` installed on
 your machine, and that you have `mongod` running.
 
