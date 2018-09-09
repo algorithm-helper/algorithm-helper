@@ -21,31 +21,36 @@ Kubernetes/Minikube.
 ### Getting Started
 
 Get a copy of the project so that you can use Algorithm Helper offline as reference, or for testing
-purposes. Algorithm Helper uses `webpack 4`, `babel`, `eslint` amongst its build tools to transpile
-and use ES6/ES7 features, JSX, and SCSS (+ CSS modules). For developing with hot-reloads, it uses
-`webpack-dev-server`, `nodemon`, `concurrently`, amongst other tools. It builds from `src/client`,
-`src/server` and outputs bundled code into `dist/client`, `dist/server` respectively.
-
-For compiling with `webpack` for client/server and development/production, run:
+purposes. Algorithm Helper uses `webpack 4`, `babel 7`, `eslint` amongst its build tools to
+transpile and use ES6/ES7 features, and JSX for React components. It has SCSS support, CSS modules
+support that work with global and locally scoped (via `:local()`) styles. For developing with
+hot-reloads, it uses `webpack-dev-server` and `nodemon`, amongst other tools. It builds from
+`src/client`, `src/server` and outputs bundled code into `dist`.
 
 ```
-// Client development
-yarn run dev:client
+// For starting the server with MongoDB initialization:
+yarn run server:init
 
-// Server development
-yarn run dev:server
+// For server development with hot-reloads with nodemon:
+yarn run server:dev
 
-// Client production
-yarn run prod:client
+// For starting the server:
+yarn run server
 
-// Server production
-yarn run prod:server
+// For client build for production with webpack:
+yarn run client:build
 
-// Client build all
-yarn run build:client
+// For client build for development with webpack:
+yarn run client:dev
 
-// Server build all
-yarn run build:server
+// For client build for development with webpack --watch:
+yarn run client:devw
+
+// For client development with webpack-dev-server:
+yarn run client:wds
+
+// For running eslint:
+yarn run lint
 ```
 
 ### Content & Implementations
