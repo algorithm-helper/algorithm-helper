@@ -142,7 +142,7 @@ class TopicItemPageContainer extends React.Component {
         topic={this.state.topic}
         topicItemTypes={this.state.topicItemTypes}
         subcategory={this.state.subcategory}
-        urlKey={`/categories/${props.subcategory.key}`}
+        urlKey={`/categories/${this.state.subcategory.key}`}
       />
     );
   }

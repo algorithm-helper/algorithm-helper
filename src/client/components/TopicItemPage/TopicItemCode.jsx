@@ -16,23 +16,23 @@ class TopicItemCode extends React.Component {
     super(props);
     this.state = {
       codeContent: [],
-      metaData: [],
       error: '',
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.contentLoaded();
-    this.setState({ error: '', metaData: this.props.metaData });
-    this.getCodeContent();
+    this.setState({ error: '' });
+    this.getCodeContent(this.props.metaData);
   }
 
   /**
    * Fetches the code text content from its corresponding resource URL.
+   *
+   * @param {object} metaData
    */
-  getCodeContent = () => {
+  getCodeContent = metaData => {
     const promises = [];
-    const { metaData } = this.state;
     metaData.forEach(codeItem => {
       promises.push(fetch(codeItem.resourceUrl));
     });

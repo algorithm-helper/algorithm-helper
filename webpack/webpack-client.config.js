@@ -9,6 +9,7 @@ module.exports = {
   output: {
     filename: 'bundle-client.js',
     path: path.resolve(__dirname, '..', 'dist'),
+    publicPath: '/',
   },
   resolve: {
     modules: [

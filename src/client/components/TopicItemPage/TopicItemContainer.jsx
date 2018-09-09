@@ -137,8 +137,8 @@ class TopicItemContainer extends React.Component {
 TopicItemContainer.propTypes = {
   onMarkAsCompleted: PropTypes.func,
   onSaveToBookmarks: PropTypes.func,
-  topicItem: PropTypes.object,
   topic: PropTypes.object,
+  topicItem: PropTypes.object,
 };
 
 const mapStateToProps = state => ({
