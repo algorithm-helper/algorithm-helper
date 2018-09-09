@@ -22,7 +22,6 @@ class TopicItemCode extends React.Component {
 
   componentDidMount() {
     this.props.contentLoaded();
-    this.setState({ error: '' });
     this.getCodeContent(this.props.metaData);
   }
 

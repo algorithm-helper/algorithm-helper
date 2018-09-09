@@ -1,6 +1,5 @@
 /* eslint-disable no-var */
 var path = require('path');
-var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
@@ -22,7 +21,6 @@ module.exports = {
   devtool: 'source-map',
   devServer: {
     historyApiFallback: true,
-    hot: true,
     inline: true,
     host: 'localhost',
     port: 3000,
@@ -97,9 +95,6 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name].css',
       chunkFilename: '[id].css',
-    }),
-    new webpack.HotModuleReplacementPlugin({
-      multiStep: true,
     }),
   ],
 };
