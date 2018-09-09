@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint .",
-    "start": "yarn run client:build && yarn run server",
+    "start": "yarn run server",
     "server:init": "DB_INIT=true DB_INIT_SILENT=false node src/server/main.js | bunyan -o short",
     "server:dev": "nodemon src/server/main.js | bunyan -o short",
     "server": "node src/server/main.js | bunyan -o short",
