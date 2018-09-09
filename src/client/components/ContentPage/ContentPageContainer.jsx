@@ -23,25 +23,18 @@ class ContentPageContainer extends React.Component {
 
   componentWillMount() {
     window.scrollTo(0, 0);
-    this.configureDataByRouteParams(this.props.match.params);
-
     this.setState({ loading: true });
-    setTimeout(() => {
-      this.setState({ loading: false });
-    }, 500);
+    this.configureDataByRouteParams(this.props.match.params);
   }
 
   componentWillReceiveProps(newProps) {
+    this.setState({ loading: true });
     this.configureDataByRouteParams(newProps.match.params);
 
     const oldKey = getContentUrlKey(this.props.match.params).trim();
     const newKey = getContentUrlKey(newProps.match.params).trim();
     if (oldKey !== newKey) {
       window.scrollTo(0, 0);
-      this.setState({ loading: true });
-      setTimeout(() => {
-        this.setState({ loading: false });
-      }, 500);
     }
   }
 
@@ -117,7 +110,7 @@ class ContentPageContainer extends React.Component {
           });
         });
 
-        this.setState({ contentData });
+        this.setState({ contentData, loading: false });
       })
       .catch(err => this.setState({ error: err }));
   };
@@ -167,7 +160,7 @@ class ContentPageContainer extends React.Component {
           });
         });
 
-        this.setState({ contentData });
+        this.setState({ contentData, loading: false });
       })
       .catch(err => this.setState({ error: err }));
   }
@@ -212,6 +205,7 @@ class ContentPageContainer extends React.Component {
         this.setState({
           contentData,
           title: 'Categories',
+          loading: false,
         });
       })
       .catch(err => this.setState({ error: err }));
