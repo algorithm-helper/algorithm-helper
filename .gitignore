@@ -23,5 +23,8 @@ out
 *.tmp
 
 # Build
+/dist/index.html
+/dist/bundle-client.js
 /dist/bundle-client.js.map
-/dist/style.css.map
+/dist/main.css
+/dist/main.css.map
