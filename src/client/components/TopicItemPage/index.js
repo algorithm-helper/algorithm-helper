@@ -1,3 +1,3 @@
-import TopicItemPage from './TopicItemPage';
+import TopicItemPageContainer from './TopicItemPageContainer';
 
-export default TopicItemPage;
+export default TopicItemPageContainer;

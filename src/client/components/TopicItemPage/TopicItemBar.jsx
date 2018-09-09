@@ -3,17 +3,23 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Button } from 'reactstrap';
 
+import {
+  topicItemBarContainer,
+  topicItemBarItem,
+  topicItemBarBtn,
+} from './styles.scss';
+
 /**
  * Renders the TopicItemBar stateless functional component.
  *
  * @param {object} props
  */
 const TopicItemBar = props => (
-  <div className="topic-item-bar-container">
-    <div className="topic-item-bar-item">
+  <div className={topicItemBarContainer}>
+    <div className={topicItemBarItem}>
       <Button
         color="primary"
-        className="topic-item-bar-btn"
+        className={topicItemBarBtn}
         onClick={props.onMarkAsCompleted}
       >
         <i
@@ -27,10 +33,10 @@ const TopicItemBar = props => (
         }
       </Button>
     </div>
-    <div className="topic-item-bar-item">
+    <div className={topicItemBarItem}>
       <Button
         color="primary"
-        className="topic-item-bar-btn"
+        className={topicItemBarBtn}
         onClick={props.onSaveToBookmarks}
       >
         <i

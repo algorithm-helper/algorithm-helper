@@ -5,12 +5,11 @@ import { Redirect } from 'react-router-dom';
 import Tabs, { TabPane } from 'rc-tabs';
 import TabContent from 'rc-tabs/lib/TabContent';
 import ScrollableInkTabBar from 'rc-tabs/lib/ScrollableInkTabBar';
+import 'rc-tabs/assets/index.css';
 
 import Markdown from 'components/Markdown';
 
 import { wrapTextIntoMarkdownCodeBlock } from 'utils/markdownUtils';
-
-import 'rc-tabs/assets/index.css';
 
 class TopicItemCode extends React.Component {
   constructor(props) {

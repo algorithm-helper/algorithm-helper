@@ -10,6 +10,11 @@ import TopicItemArticle from './TopicItemArticle';
 import TopicItemCode from './TopicItemCode';
 import TopicItemBar from './TopicItemBar';
 
+import {
+  topicItemContainer,
+  topicItemPageSpinnerContainer,
+} from './styles.scss';
+
 class TopicItemContainer extends React.Component {
   constructor(props) {
     super(props);
@@ -99,7 +104,7 @@ class TopicItemContainer extends React.Component {
             {
               this.state.loading
               && (
-                <div className="topic-item-page-spinner-container">
+                <div className={topicItemPageSpinnerContainer}>
                   <MDSpinner
                     size={50}
                     singleColor={getColorFromKey(this.props.colorKey)}
@@ -118,7 +123,7 @@ class TopicItemContainer extends React.Component {
                 />
               )
             }
-            <div className="topic-item-container">
+            <div className={topicItemContainer}>
               { this.getTopicItemComponent() }
             </div>
           </Col>

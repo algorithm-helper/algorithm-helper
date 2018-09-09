@@ -1,0 +1,49 @@
+:local(.topicItemPage) {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+:local(.topicItemNavbarContainer) {
+  width: 100%;
+}
+
+:local(.topicItemNavbarItem) {
+  font-weight: 400;
+  margin-left: 1.5em;
+  margin-right: 1.5em;
+  padding-bottom: .5em;
+  padding-top: .5em;
+  cursor: pointer;
+}
+
+:local(.topicItemNavbarItemActive) {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+}
+
+:local(.topicItemBarContainer) {
+  margin-top: 2em;
+}
+
+:local(.topicItemBarItem) {
+  display: inline-block;
+  margin-right: 0.5em;
+}
+
+:local(.topicItemBarBtn) {
+  font-size: .75em;
+  outline: none;
+  box-shadow: none !important;
+}
+
+:local(.topicItemContainer) {
+  margin-bottom: 4em;
+  margin-top: 2em;
+  width: 100%;
+}
+
+:local(.topicItemPageSpinnerContainer) {
+  margin-top: 3em;
+  text-align: center;
+  width: 100%;
+}

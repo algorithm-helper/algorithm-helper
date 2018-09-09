@@ -7010,6 +7010,47 @@ a.text-dark:focus, a.text-dark:hover {
   .components-JumbotronSmall-styles__jumbotronSmSubtitle a:hover {
     opacity: 0.8; }
 
+.components-TopicItemPage-styles__topicItemPage {
+  width: 100%;
+  overflow-x: hidden; }
+
+.components-TopicItemPage-styles__topicItemNavbarContainer {
+  width: 100%; }
+
+.components-TopicItemPage-styles__topicItemNavbarItem {
+  font-weight: 400;
+  margin-left: 1.5em;
+  margin-right: 1.5em;
+  padding-bottom: .5em;
+  padding-top: .5em;
+  cursor: pointer; }
+
+.components-TopicItemPage-styles__topicItemNavbarItemActive {
+  border-bottom-style: solid;
+  border-bottom-width: 2px; }
+
+.components-TopicItemPage-styles__topicItemBarContainer {
+  margin-top: 2em; }
+
+.components-TopicItemPage-styles__topicItemBarItem {
+  display: inline-block;
+  margin-right: 0.5em; }
+
+.components-TopicItemPage-styles__topicItemBarBtn {
+  font-size: .75em;
+  outline: none;
+  box-shadow: none !important; }
+
+.components-TopicItemPage-styles__topicItemContainer {
+  margin-bottom: 4em;
+  margin-top: 2em;
+  width: 100%; }
+
+.components-TopicItemPage-styles__topicItemPageSpinnerContainer {
+  margin-top: 3em;
+  text-align: center;
+  width: 100%; }
+
 @charset "UTF-8";
 .components-Markdown-styles__markdownContainer h1 {
   font-size: 1.75em; }
