@@ -20,6 +20,12 @@ Kubernetes/Minikube.
 
 ### Getting Started
 
+Starting the development environment:
+
+```
+./scripts/dev.sh
+```
+
 Get a copy of the project so that you can use Algorithm Helper offline as reference, or for testing
 purposes. Algorithm Helper uses `webpack 4`, `babel 7`, `eslint` amongst its build tools to
 transpile and use ES6/ES7 features, and JSX for React components. It has SCSS support, CSS modules
