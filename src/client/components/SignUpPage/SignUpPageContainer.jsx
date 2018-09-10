@@ -146,7 +146,7 @@ class SignUpPageContainer extends React.Component {
 
     return (
       <div>
-        <Particles />
+        <Particles shouldReload={false} />
         <SignUpPage
           isEmailError={this.state.isEmailError}
           isFullNameError={this.state.isFullNameError}

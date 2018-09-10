@@ -1,15 +1,15 @@
 import React from 'react';
-import { compose } from 'redux';
 import { connect } from 'react-redux';
-import moment from 'moment';
-import CalendarHeatmap from 'react-calendar-heatmap';
 import { Col, Container, Row } from 'reactstrap';
 
 import { resetColorTheme } from 'actions/ColorThemeActions';
 
-import DashboardPageBookmarkItem from './DashboardPageBookmarkItem';
-import DashboardPageHeader from './DashboardPageHeader';
+import DashboardHeader from './DashboardHeader';
 import DashboardPageProgressContainer from './DashboardProgressContainer';
+import DashboardCalendarHeatmapContainer from './DashboardCalendarHeatmapContainer';
+import DashboardBookmarkContainer from './DashboardBookmarkContainer';
+
+import { dashboardPageContainer } from './styles.scss';
 
 const sampleBookmarkData = [
   {
@@ -74,81 +74,34 @@ class DashboardPage extends React.Component {
 
   render() {
     return (
-      <Container fluid>
+      <Container className={dashboardPageContainer} fluid>
         <Row>
           <Col md="2" />
           <Col md="8">
-            <div className="dashboard-page-container">
-              <DashboardPageHeader
-                fullName={this.state.fullName}
-              />
-              <DashboardPageProgressContainer
-                uncompleted={this.state.uncompleted}
-                completed={this.state.completed}
-              />
-            </div>
-          </Col>
-          <Col md="2" />
-        </Row>
+            <DashboardHeader
+              fullName={this.state.fullName}
+            />
 
-        <Row>
-          <Col md="2" />
-          <Col md="8">
-            <div className="dashboard-page-bookmarks-container">
-              <div className="dashboard-page-bookmarks-header">
-                Daily Activity
-              </div>
-              <div className="dashboard-page-bookmarks-body">
-                <CalendarHeatmap
-                  className="dashboard-page-calendar-heatmap"
-                  startDate={moment()}
-                  endDate={moment().add(365, 'day')}
-                  values={[
-                    { date: '2016-01-01' },
-                    { date: '2016-01-22' },
-                    { date: '2016-01-30' },
-                  ]}
-                  classForValue={value => {
-                    if (!value) {
-                      return 'color-empty';
-                    }
+            <DashboardPageProgressContainer
+              uncompleted={this.state.uncompleted}
+              completed={this.state.completed}
+            />
 
-                    /* eslint-disable no-else-return */
-                    if (!value.count || (value.count >= 0 && value.count <= 3)) {
-                      return 'color-scale-1';
-                    } else if (value.count <= 5) {
-                      return 'color-scale-2';
-                    } else if (value.count <= 7) {
-                      return 'color-scale-3';
-                    } else {
-                      return 'color-scale-4';
-                    }
-                  }}
-                />
-              </div>
-            </div>
-          </Col>
-          <Col md="2" />
-        </Row>
+            <DashboardCalendarHeatmapContainer
+              activityItems={
+                [
+                  { date: '2016-01-01' },
+                  { date: '2016-01-22' },
+                  { date: '2018-09-30' },
+                ]
+              }
+              title="Daily Activity"
+            />
 
-        <Row>
-          <Col md="2" />
-          <Col md="8">
-            <div className="dashboard-page-bookmarks-container">
-              <div className="dashboard-page-bookmarks-header">
-                Saved Bookmarks
-              </div>
-              <div className="dashboard-page-bookmarks-body">
-                {
-                  sampleBookmarkData.map((bookmark, i) => (
-                    <DashboardPageBookmarkItem
-                      key={i}
-                      {...bookmark}
-                    />
-                  ))
-                }
-              </div>
-            </div>
+            <DashboardBookmarkContainer
+              bookmarkItems={sampleBookmarkData}
+              title="Saved Bookmarks"
+            />
           </Col>
           <Col md="2" />
         </Row>
@@ -161,6 +114,4 @@ const mapStateToProps = state => ({
   colorKey: state.colorKey,
 });
 
-export default compose(
-  connect(mapStateToProps),
-)(DashboardPage);
+export default connect(mapStateToProps)(DashboardPage);

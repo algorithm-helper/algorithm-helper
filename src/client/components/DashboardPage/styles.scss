@@ -1,0 +1,122 @@
+// react-calendar-heatmap
+:global {
+  .react-calendar-heatmap {
+    padding-top: 0.25em;
+  }
+
+  .react-calendar-heatmap-month-labels {
+    font-size: 0.75em;
+  }
+
+  .react-calendar-heatmap .color-empty {
+    fill: #EEEEEE;
+  }
+
+  .react-calendar-heatmap .color-scale-1 {
+    fill: #D6E685;
+  }
+
+  .react-calendar-heatmap .color-scale-2 {
+    fill: #8CC665;
+  }
+
+  .react-calendar-heatmap .color-scale-3 {
+    fill: #44A340;
+  }
+
+  .react-calendar-heatmap .color-scale-4 {
+    fill: #1E6823;
+  }
+}
+
+:local(.dashboardCalendarHeatMapContainer) {
+  margin-top: 2em;
+}
+
+:local(.dashboardCalendarHeatMapHeader) {
+  font-size: 1.5em;
+  font-weight: 400;
+}
+
+:local(.dashboardCalendarHeatMapBody) {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+:local(.dashboardBookmarkContainer) {
+  margin-top: 2em;
+}
+
+:local(.dashboardBookmarkHeader) {
+  font-size: 1.5em;
+  font-weight: 400;
+}
+
+:local(.dashboardBookmarkBody) {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+:local(.dashboardPageContainer) {
+  margin-top: calc(60px + 3em);
+  margin-bottom: 2em;
+}
+
+:local(.dashboardHeader) {
+  font-size: 2em;
+}
+
+:local(.dashboardProgressContainer) {
+  margin-top: 2em;
+}
+
+:local(.dashboardProgressHeader) {
+  font-size: 1.5em;
+  font-weight: 400;
+}
+
+:local(.dashboardProgressBody) {
+  margin-top: 0.5em;
+}
+
+:local(.dashboardProgressItem) {
+  font-size: 1.25em;
+  margin-top: 0.25em;
+}
+
+:local(.dashboardBookmarkItemContainer) {
+  margin-bottom: 1em;
+  height: 80px;
+}
+
+:local(.dashboardBookmarkItemTitle) {
+  font-weight: 400;
+}
+
+:local(.dashboardBookmarkItemSubtitle) {
+  font-weight: 400;
+  font-size: 0.75em;
+}
+
+:local(.dashboardBookmarkItemTypeContainer) {
+  @media all and (max-width: 820px) {
+    display: none;
+  }
+}
+
+:local(.dashboardBookmarkItemType) {
+  text-align: center;
+}
+
+:local(.dashboardBookmarkItemDelete) {
+  position: relative;
+  text-align: right;
+  margin-right: 1em;
+  height: 100%;
+}
+
+:local(.dashboardBookmarkItemDeleteBtn) {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}

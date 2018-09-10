@@ -46,7 +46,6 @@ router.post('/sign-up', (req, res) => {
   res.setHeader('Content-Type', 'application/json');
 
   const { fullName, email, password } = req.body;
-
   AccountHelpers.signupNewUser(fullName, email, password)
     .then(data => {
       if (data === null) {

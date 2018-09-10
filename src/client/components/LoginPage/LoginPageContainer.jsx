@@ -126,7 +126,7 @@ class LoginPageContainer extends React.Component {
 
     return (
       <div>
-        <Particles />
+        <Particles shouldReload={false} />
         <LoginPage
           isEmailError={this.state.isEmailError}
           isPasswordError={this.state.isPasswordError}

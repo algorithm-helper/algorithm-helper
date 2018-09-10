@@ -6,6 +6,13 @@ import { withStyles } from '@material-ui/core/styles';
 import { FormControl, Select, MenuItem } from '@material-ui/core';
 import { Col, Container, Row } from 'reactstrap';
 
+import {
+  dashboardProgressContainer,
+  dashboardProgressHeader,
+  dashboardProgressBody,
+  dashboardProgressItem,
+} from './styles.scss';
+
 const materialUIStyles = theme => ({
   root: {
     display: 'flex',
@@ -22,15 +29,42 @@ const materialUIStyles = theme => ({
 
 // TODO: fetch this list from server
 const categories = [
-  'Data Structures',
-  'General Algorithms',
-  'Strings',
-  'Graphs',
-  'Randomization',
-  'Mathematics',
-  'Dynamic Programming',
-  'Algorithmic Analysis',
-  'Software Engineering',
+  {
+    title: 'Data Structures',
+    key: 'data-structures',
+  },
+  {
+    title: 'General Algorithms',
+    key: 'general-algorithms',
+  },
+  {
+    title: 'Strings',
+    key: 'strings',
+  },
+  {
+    title: 'Graphs',
+    key: 'graphs',
+  },
+  {
+    title: 'Randomization',
+    key: 'randomization',
+  },
+  {
+    title: 'Mathematics',
+    key: 'mathematics',
+  },
+  {
+    title: 'Dynamic Programming',
+    key: 'dynamic-programming',
+  },
+  {
+    title: 'Algorithmic Analysis',
+    key: 'algorithmic-analysis',
+  },
+  {
+    title: 'Software Engineering',
+    key: 'software-engineering',
+  },
 ];
 
 class DashboardProgressContainer extends React.Component {
@@ -95,30 +129,28 @@ class DashboardProgressContainer extends React.Component {
     const { classes } = this.props;
 
     return (
-      <Container fluid className="dashboard-page-progress-container">
+      <Container className={dashboardProgressContainer} fluid>
         <Row>
-          <Col md="6">
-            <div className="dashboard-page-progress-left">
-              <Doughnut
-                data={this.createData(this.props.uncompleted, this.props.completed)}
-                height={250}
-              />
-            </div>
+          <Col md="6" sm="6" xs="6">
+            <Doughnut
+              data={this.createData(this.props.uncompleted, this.props.completed)}
+              height={250}
+            />
           </Col>
-          <Col md="6">
-            <div className="dashboard-page-progress-right">
-              <div className="dashboard-page-progress-header">
+          <Col md="6" sm="6" xs="6">
+            <div>
+              <div className={dashboardProgressHeader}>
                 Your Progress
               </div>
-              <div className="dashboard-page-progress-body">
-                <div className="dashboard-page-progress-item">
+              <div className={dashboardProgressBody}>
+                <div className={dashboardProgressItem}>
                   <div style={{ float: 'left' }}>Completed</div>
                   <div style={{ float: 'right' }}>
                     { this.getPercentage(this.props.completed) }
                   </div>
                   <div style={{ clear: 'both' }} />
                 </div>
-                <div className="dashboard-page-progress-item">
+                <div className={dashboardProgressItem}>
                   <div style={{ float: 'left' }}>Uncompleted</div>
                   <div style={{ float: 'right' }}>
                     { this.getPercentage(this.props.uncompleted) }
@@ -139,8 +171,8 @@ class DashboardProgressContainer extends React.Component {
                     </MenuItem>
                     {
                       categories.map((category, i) => (
-                        <MenuItem key={i} value={i}>
-                          {category}
+                        <MenuItem key={i} value={category.key}>
+                          {category.title}
                         </MenuItem>
                       ))
                     }
