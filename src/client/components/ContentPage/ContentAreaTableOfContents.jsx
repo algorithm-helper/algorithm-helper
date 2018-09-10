@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { HashLink as Link } from 'react-router-hash-link';
+import { HashLink } from 'react-router-hash-link';
 
 import {
   contentAreaToc,
@@ -24,7 +24,7 @@ class ContentAreaTableOfContents extends React.Component {
    *
    * @param {number} index
    */
-  handleSelectTableItem = index => {
+  onSelectTableItem = index => {
     this.setState({ selectedIndex: index });
   };
 
@@ -55,13 +55,13 @@ class ContentAreaTableOfContents extends React.Component {
                 className={classnames(contentAreaTocItem, this.getSelectedClassName(i))}
                 key={i}
               >
-                <Link
+                <HashLink
                   smooth
                   to={`#${item.key}`}
-                  onClick={() => this.handleSelectTableItem(i)}
+                  onClick={() => this.onSelectTableItem(i)}
                 >
                   {item.title}
-                </Link>
+                </HashLink>
               </div>
             ))
           }
