@@ -29,6 +29,15 @@
   }
 }
 
+:local(.dashboardPageContainer) {
+  margin-top: calc(60px + 3em);
+  margin-bottom: 4em;
+}
+
+:local(.dashboardHeader) {
+  font-size: 2em;
+}
+
 :local(.dashboardCalendarHeatMapContainer) {
   margin-top: 2em;
 }
@@ -55,15 +64,6 @@
 :local(.dashboardBookmarkBody) {
   margin-top: 1em;
   margin-bottom: 1em;
-}
-
-:local(.dashboardPageContainer) {
-  margin-top: calc(60px + 3em);
-  margin-bottom: 2em;
-}
-
-:local(.dashboardHeader) {
-  font-size: 2em;
 }
 
 :local(.dashboardProgressContainer) {
@@ -109,14 +109,12 @@
 }
 
 :local(.dashboardBookmarkItemDelete) {
-  position: relative;
-  text-align: right;
-  margin-right: 1em;
-  height: 100%;
+  position: absolute;
+  right: 40px;
+  top: 50%;
 }
 
 :local(.dashboardBookmarkItemDeleteBtn) {
   position: absolute;
-  top: 50%;
   transform: translateY(-50%);
 }

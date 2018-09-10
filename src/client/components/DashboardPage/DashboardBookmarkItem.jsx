@@ -57,13 +57,11 @@ const DashboardBookmarkItem = props => {
                 {`${props.categoryTitle} / ${props.subcategoryTitle}`}
               </div>
             </Col>
-
-            <Col md="2">
-              <div className={dashboardBookmarkItemDelete}>
-                <i className={classnames('fas', 'fa-times', dashboardBookmarkItemDeleteBtn)} />
-              </div>
-            </Col>
           </Row>
+
+          <div className={dashboardBookmarkItemDelete}>
+            <i className={classnames('fas', 'fa-times', dashboardBookmarkItemDeleteBtn)} />
+          </div>
         </div>
       </div>
     </Container>
