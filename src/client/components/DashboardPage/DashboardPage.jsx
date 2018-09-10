@@ -73,6 +73,9 @@ class DashboardPage extends React.Component {
   }
 
   render() {
+    // TODO: Check if there is a current user logged in based on Redux, otherwise redirect to
+    // the home page
+
     return (
       <Container className={dashboardPageContainer} fluid>
         <Row>
