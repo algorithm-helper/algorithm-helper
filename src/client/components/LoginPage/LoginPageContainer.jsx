@@ -4,6 +4,7 @@ import { Redirect } from 'react-router-dom';
 
 import Particles from 'components/Particles';
 import { resetColorTheme } from 'actions/ColorThemeActions';
+import { handleAuthToken } from 'authentication';
 
 import LoginPage from './LoginPage';
 
@@ -64,7 +65,12 @@ class LoginPageContainer extends React.Component {
         password: this.state.fieldPassword,
       }),
     })
-      .then(result => result.json())
+      .then(result => {
+        const { headers } = result;
+        const authToken = headers.get('X-Auth');
+        handleAuthToken(authToken, this.props.dispatch);
+        return result.json();
+      })
       .then(result => {
         if (result.error) {
           throw result;
@@ -120,7 +126,7 @@ class LoginPageContainer extends React.Component {
    * Renders the LoginPage presentational component.
    */
   render() {
-    if (this.state.success) {
+    if (this.state.success || this.props.userAccount.isLoggedIn) {
       return <Redirect to="/dashboard" />;
     }
 
@@ -143,6 +149,7 @@ LoginPageContainer.propTypes = {};
 
 const mapStateToProps = state => ({
   colorKey: state.colorKey,
+  userAccount: state.userAccount,
 });
 
 export default connect(mapStateToProps)(LoginPageContainer);

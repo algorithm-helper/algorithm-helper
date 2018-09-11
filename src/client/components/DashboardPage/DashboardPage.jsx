@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import { Col, Container, Row } from 'reactstrap';
 
 import { resetColorTheme } from 'actions/ColorThemeActions';
@@ -73,6 +74,10 @@ class DashboardPage extends React.Component {
   }
 
   render() {
+    if (!this.props.userAccount.isLoggedIn) {
+      return <Redirect to="/login" />;
+    }
+
     return (
       <Container className={dashboardPageContainer} fluid>
         <Row>
@@ -112,6 +117,7 @@ class DashboardPage extends React.Component {
 
 const mapStateToProps = state => ({
   colorKey: state.colorKey,
+  userAccount: state.userAccount,
 });
 
 export default connect(mapStateToProps)(DashboardPage);

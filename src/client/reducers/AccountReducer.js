@@ -1,4 +1,7 @@
-const defaultState = {};
+const defaultState = {
+  authToken: '',
+  isLoggedIn: false,
+};
 
 const accountReducer = (state = defaultState, action) => {
   switch (action.type) {
@@ -6,11 +9,13 @@ const accountReducer = (state = defaultState, action) => {
       return {
         ...state,
         authToken: action.authToken,
+        isLoggedIn: true,
       };
     case 'RESET_AUTH_TOKEN':
       return {
         ...state,
         authToken: null,
+        isLoggedIn: false,
       };
     default:
       return state;

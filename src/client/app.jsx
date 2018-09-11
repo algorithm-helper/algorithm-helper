@@ -24,6 +24,7 @@ store.subscribe(() => {
 const run = () => {
   Promise.resolve()
     .then(() => authenticateUser(store))
+    .catch(() => { /* Ignore */ })
     .finally(() => ReactDOM.render(App, document.getElementById('react-root')));
 };
 
