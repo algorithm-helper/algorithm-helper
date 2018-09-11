@@ -96,6 +96,7 @@ UserSchema.methods.toJSON = function () {
 UserSchema.methods.generateAuthToken = function () {
   const user = this;
   const access = 'auth';
+  // TODO: private authentication config file for salt
   const token = jwt.sign({ _id: user._id.toHexString(), access }, 'abc123').toString();
   user.tokens = user.tokens.concat([{ access, token }]);
   return user.save().then(() => token);

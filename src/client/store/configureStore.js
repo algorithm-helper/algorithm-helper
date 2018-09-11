@@ -1,5 +1,5 @@
 import { createStore, combineReducers } from 'redux';
-import ColorThemeReducer from '../reducers/ColorThemeReducer';
+import { ColorThemeReducer } from 'reducers';
 
 export default () => {
   const store = createStore(combineReducers({

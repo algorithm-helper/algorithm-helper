@@ -14,6 +14,9 @@ const App = (
   </Provider>
 );
 
+// Check if localStorage contains a valid token, then store it into Redux
+// localStorage['AlgorithmHelper.authToken']
+
 store.subscribe(() => {
   // console.log('action', store.getState());
 });

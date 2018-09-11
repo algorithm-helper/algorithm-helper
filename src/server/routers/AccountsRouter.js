@@ -67,6 +67,9 @@ router.post('/sign-up', (req, res) => {
  * returns an error response.
  */
 router.post('/user', authenticateUser, (req, res) => {
+  console.log('test');
+  console.log(req.user);
+
   res.send(req.user);
 });
 
