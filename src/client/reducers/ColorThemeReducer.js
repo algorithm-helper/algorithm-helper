@@ -1,6 +1,6 @@
-const ColorThemeReducerDefaultState = 0;
+const defaultState = 0;
 
-export default (state = ColorThemeReducerDefaultState, action) => {
+const colorThemeReducer = (state = defaultState, action) => {
   switch (action.type) {
     case 'SET_COLOR':
       return action.colorKey;
@@ -10,3 +10,5 @@ export default (state = ColorThemeReducerDefaultState, action) => {
       return state;
   }
 };
+
+export default colorThemeReducer;
