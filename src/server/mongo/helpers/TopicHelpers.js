@@ -19,6 +19,7 @@ const TopicHelpers = {
       description: true,
       order: true,
       children: true,
+      topicItemCount: true,
     })
       .lean()
       .exec()

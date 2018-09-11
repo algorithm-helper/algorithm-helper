@@ -90,13 +90,16 @@ class DashboardPage extends React.Component {
       });
 
     // Request the total number of items
-
-
-    // this.setState({
-    //   fullName: '',
-    //   uncompleted: 0,
-    //   completed: 0,
-    // });
+    fetch('/data/utils/topic-item-count', {
+      method: 'GET',
+    })
+      .then(result => result.json())
+      .then(result => {
+        console.log(result);
+      })
+      .catch(err => {
+        console.log(err);
+      });
   }
 
   render() {
