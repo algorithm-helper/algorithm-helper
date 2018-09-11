@@ -118,3 +118,8 @@
   position: absolute;
   transform: translateY(-50%);
 }
+
+:local(.dashboardSpinner) {
+  text-align: center;
+  margin-top: 2em;
+}

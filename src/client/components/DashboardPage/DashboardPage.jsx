@@ -1,16 +1,18 @@
 import React from 'react';
+import MDSpinner from 'react-md-spinner';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { Col, Container, Row } from 'reactstrap';
 
 import { resetColorTheme } from 'actions/ColorThemeActions';
+import getColorFromKey from 'utils/getColorFromKey';
 
 import DashboardHeader from './DashboardHeader';
 import DashboardPageProgressContainer from './DashboardProgressContainer';
 import DashboardCalendarHeatmapContainer from './DashboardCalendarHeatmapContainer';
 import DashboardBookmarkContainer from './DashboardBookmarkContainer';
 
-import { dashboardPageContainer } from './styles.scss';
+import { dashboardPageContainer, dashboardSpinner } from './styles.scss';
 
 const sampleBookmarkData = [
   // {
@@ -64,43 +66,53 @@ class DashboardPage extends React.Component {
       fullName: '',
       uncompleted: 0,
       completed: 0,
+      loading: true,
     };
   }
 
   componentWillMount() {
     this.props.dispatch(resetColorTheme());
+    this.requestUserData();
+  }
 
+  /**
+   * Makes a request to the server to get the current user's data as well as the total number of
+   * TopicItems.
+   */
+  requestUserData = () => {
     if (!this.props.userAccount || !this.props.userAccount.isLoggedIn) {
       return;
     }
 
-    // Request the current user
-    fetch('/accounts/user-data', {
-      method: 'POST',
-      headers: {
-        'X-Auth': this.props.userAccount.authToken,
-      },
-    })
-      .then(result => result.json())
+    Promise.all([
+      fetch('/accounts/user-data', {
+        method: 'POST',
+        headers: {
+          'X-Auth': this.props.userAccount.authToken,
+        },
+      }),
+      fetch('/data/utils/topic-item-count', {
+        method: 'GET',
+      }),
+    ])
+      .then(result => Promise.all(result.map(x => x.json())))
       .then(result => {
-        console.log(result);
-      })
-      .catch(err => {
-        console.log(err);
-      });
+        let [userData, topicItemCountMapping] = result;
+        userData = userData.data;
+        topicItemCountMapping = topicItemCountMapping.data;
 
-    // Request the total number of items
-    fetch('/data/utils/topic-item-count', {
-      method: 'GET',
-    })
-      .then(result => result.json())
-      .then(result => {
-        console.log(result);
+        console.log(userData);
+        console.log(topicItemCountMapping);
+
+        this.setState({
+          fullName: userData.fullName,
+          loading: false,
+        });
       })
       .catch(err => {
         console.log(err);
       });
-  }
+  };
 
   render() {
     if (!this.props.userAccount.isLoggedIn) {
@@ -112,24 +124,38 @@ class DashboardPage extends React.Component {
         <Row>
           <Col md="2" />
           <Col md="8">
-            <DashboardHeader
-              fullName={this.state.fullName}
-            />
+            {
+              this.state.loading
+                ? (
+                  <div className={dashboardSpinner}>
+                    <MDSpinner
+                      size={50}
+                      singleColor={getColorFromKey(this.props.colorKey)}
+                    />
+                  </div>
+                ) : (
+                  <React.Fragment>
+                    <DashboardHeader
+                      fullName={this.state.fullName}
+                    />
 
-            <DashboardPageProgressContainer
-              uncompleted={this.state.uncompleted}
-              completed={this.state.completed}
-            />
+                    <DashboardPageProgressContainer
+                      uncompleted={this.state.uncompleted}
+                      completed={this.state.completed}
+                    />
 
-            <DashboardCalendarHeatmapContainer
-              activityItems={sampleActivityItems}
-              title="Daily Activity"
-            />
+                    <DashboardCalendarHeatmapContainer
+                      activityItems={sampleActivityItems}
+                      title="Daily Activity"
+                    />
 
-            <DashboardBookmarkContainer
-              bookmarkItems={sampleBookmarkData}
-              title="Saved Bookmarks"
-            />
+                    <DashboardBookmarkContainer
+                      bookmarkItems={sampleBookmarkData}
+                      title="Saved Bookmarks"
+                    />
+                  </React.Fragment>
+                )
+            }
           </Col>
           <Col md="2" />
         </Row>
