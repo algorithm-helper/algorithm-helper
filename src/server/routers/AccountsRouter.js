@@ -70,4 +70,20 @@ router.post('/user', authenticateUser, (req, res) => {
   res.send(req.user);
 });
 
+/**
+ * DELETE /accounts/logout
+ * Logs out the logged in user via deleting their authentication token from their user record in
+ * MongoDB.
+ */
+router.delete('/logout', authenticateUser, (req, res) => {
+  const { user, token } = req;
+  AccountHelpers.logoutUser(user, token)
+    .then(() => {
+      res.status(200).send(JSON.stringify({ data: 'User successfully logged out' }));
+    })
+    .catch(() => {
+      res.status(400).send(JSON.stringify({ error: 'Invalid logout request' }));
+    });
+});
+
 module.exports = router;

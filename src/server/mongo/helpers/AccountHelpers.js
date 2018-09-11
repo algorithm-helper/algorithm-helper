@@ -38,6 +38,14 @@ const AccountHelpers = {
       })
       .then(token => ({ user: currentUser, token }));
   },
+
+  /**
+   * Logs out user by removing the given auth token from their user record in MongoDB.
+   *
+   * @param {User} user
+   * @param {String} token
+   */
+  logoutUser: (user, token) => user.removeToken(token),
 };
 
 module.exports = AccountHelpers;

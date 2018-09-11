@@ -14,7 +14,7 @@ const authenticateUser = (req, res, next) => {
   AccountHelpers.findUserByToken(token)
     .then(user => {
       if (!user) {
-        throw new Error('User does not exist');
+        throw new Error('Could not authenticate user');
       }
 
       req.user = user;
