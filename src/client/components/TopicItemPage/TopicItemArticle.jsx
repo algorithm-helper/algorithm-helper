@@ -32,7 +32,6 @@ class TopicItemArticle extends React.Component {
 
 TopicItemArticle.propTypes = {
   contentLoaded: PropTypes.func,
-  // metaData: PropTypes.array,
 };
 
 const mapStateToProps = state => ({
