@@ -3,7 +3,12 @@
  */
 const express = require('express');
 
-const { CategoryHelpers, SubcategoryHelpers, TopicHelpers } = include('mongo/helpers');
+const {
+  AggregationHelpers,
+  CategoryHelpers,
+  SubcategoryHelpers,
+  TopicHelpers,
+} = include('mongo/helpers');
 
 const router = express.Router();
 
@@ -221,6 +226,27 @@ router.get('/utils/categories-color-key-mapping', (req, res) => {
   CategoryHelpers.getCategoryColorKeyMapping()
     .then(data => {
       if (data === null) {
+        res.status(400).send(JSON.stringify({ error: 'Invalid request' }));
+        return;
+      }
+
+      res.status(200).send(JSON.stringify({ data }));
+    })
+    .catch(error => {
+      res.status(400).send(JSON.stringify({ error }));
+    });
+});
+
+/**
+ * GET /data/utils/topic-item-count
+ * Gets the total number of TopicItems stored in MongoDB.
+ */
+router.get('/utils/topic-item-count', (req, res) => {
+  res.setHeader('Content-Type', 'application/json');
+
+  AggregationHelpers.getTopicItemsCount()
+    .then(data => {
+      if (!data) {
         res.status(400).send(JSON.stringify({ error: 'Invalid request' }));
         return;
       }

@@ -113,7 +113,7 @@ class TopicItemContainer extends React.Component {
               )
             }
             {
-              !this.state.loading
+              !this.state.loading && this.props.userAccount.isLoggedIn
               && (
                 <TopicItemBar
                   onMarkAsCompleted={this.props.onMarkAsCompleted}
@@ -143,6 +143,7 @@ TopicItemContainer.propTypes = {
 
 const mapStateToProps = state => ({
   colorKey: state.colorKey,
+  userAccount: state.userAccount,
 });
 
 export default connect(mapStateToProps)(TopicItemContainer);

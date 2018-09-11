@@ -13,42 +13,48 @@ import DashboardBookmarkContainer from './DashboardBookmarkContainer';
 import { dashboardPageContainer } from './styles.scss';
 
 const sampleBookmarkData = [
-  {
-    topicItemTitle: 'Introduction',
-    subcategoryTitle: 'Lists',
-    categoryTitle: 'Data Structures',
-    type: 'article',
-  },
-  {
-    topicItemTitle: 'Linked List',
-    subcategoryTitle: 'Lists',
-    categoryTitle: 'Data Structures',
-    type: 'code',
-  },
-  {
-    topicItemTitle: 'Stack',
-    subcategoryTitle: 'Lists',
-    categoryTitle: 'Data Structures',
-    type: 'video',
-  },
-  {
-    topicItemTitle: 'Introduction',
-    subcategoryTitle: 'Sorting',
-    categoryTitle: 'General Algorithms',
-    type: 'article',
-  },
-  {
-    topicItemTitle: 'Merge Sort',
-    subcategoryTitle: 'Sorting',
-    categoryTitle: 'General Algorithms',
-    type: 'code',
-  },
-  {
-    topicItemTitle: 'Quick Sort',
-    subcategoryTitle: 'Sorting',
-    categoryTitle: 'General Algorithms',
-    type: 'video',
-  },
+  // {
+  //   topicItemTitle: 'Introduction',
+  //   subcategoryTitle: 'Lists',
+  //   categoryTitle: 'Data Structures',
+  //   type: 'article',
+  // },
+  // {
+  //   topicItemTitle: 'Linked List',
+  //   subcategoryTitle: 'Lists',
+  //   categoryTitle: 'Data Structures',
+  //   type: 'code',
+  // },
+  // {
+  //   topicItemTitle: 'Stack',
+  //   subcategoryTitle: 'Lists',
+  //   categoryTitle: 'Data Structures',
+  //   type: 'video',
+  // },
+  // {
+  //   topicItemTitle: 'Introduction',
+  //   subcategoryTitle: 'Sorting',
+  //   categoryTitle: 'General Algorithms',
+  //   type: 'article',
+  // },
+  // {
+  //   topicItemTitle: 'Merge Sort',
+  //   subcategoryTitle: 'Sorting',
+  //   categoryTitle: 'General Algorithms',
+  //   type: 'code',
+  // },
+  // {
+  //   topicItemTitle: 'Quick Sort',
+  //   subcategoryTitle: 'Sorting',
+  //   categoryTitle: 'General Algorithms',
+  //   type: 'video',
+  // },
+];
+
+const sampleActivityItems = [
+  // { date: '2016-01-01' },
+  // { date: '2016-01-22' },
+  // { date: '2018-09-30' },
 ];
 
 class DashboardPage extends React.Component {
@@ -64,13 +70,33 @@ class DashboardPage extends React.Component {
   componentWillMount() {
     this.props.dispatch(resetColorTheme());
 
-    // request current user
+    if (!this.props.userAccount || !this.props.userAccount.isLoggedIn) {
+      return;
+    }
 
-    this.setState({
-      fullName: 'John Smith',
-      uncompleted: 150,
-      completed: 25,
-    });
+    // Request the current user
+    fetch('/accounts/user-data', {
+      method: 'POST',
+      headers: {
+        'X-Auth': this.props.userAccount.authToken,
+      },
+    })
+      .then(result => result.json())
+      .then(result => {
+        console.log(result);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+
+    // Request the total number of items
+
+
+    // this.setState({
+    //   fullName: '',
+    //   uncompleted: 0,
+    //   completed: 0,
+    // });
   }
 
   render() {
@@ -93,13 +119,7 @@ class DashboardPage extends React.Component {
             />
 
             <DashboardCalendarHeatmapContainer
-              activityItems={
-                [
-                  { date: '2016-01-01' },
-                  { date: '2016-01-22' },
-                  { date: '2018-09-30' },
-                ]
-              }
+              activityItems={sampleActivityItems}
               title="Daily Activity"
             />
 

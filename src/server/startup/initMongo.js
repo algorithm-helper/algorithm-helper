@@ -1,3 +1,5 @@
+const _ = require('lodash');
+
 const {
   Category,
   Subcategory,
@@ -7,6 +9,8 @@ const {
 const { log } = include('utils');
 
 const fixTopicIndexOrder = require('./fixTopicIndexOrder');
+const fixTopicItemCount = require('./fixTopicItemCount');
+
 const categoryIndex = require('../../../data/index/categoryIndex.json');
 const subcategoryIndex = require('../../../data/index/subcategoryIndex.json');
 const topicIndex = require('../../../data/index/topicIndex.json');
@@ -43,7 +47,11 @@ const initMongo = async options => {
 
   // Initialize Topics:
   promises = [];
-  const fixedTopicIndex = fixTopicIndexOrder(topicIndex);
+  const fixedTopicIndex = _.flow([
+    fixTopicIndexOrder,
+    fixTopicItemCount,
+  ])(topicIndex);
+
   fixedTopicIndex.forEach(topic => {
     promises.push(new Topic(topic).save());
   });

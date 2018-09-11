@@ -67,10 +67,28 @@ router.post('/sign-up', (req, res) => {
  * returns an error response.
  */
 router.post('/user', authenticateUser, (req, res) => {
-  console.log('test');
-  console.log(req.user);
+  res.status(200).send(req.user);
+});
 
-  res.send(req.user);
+/**
+ * POST /accounts/user-data
+ * Returns the current user object if the request headers contains a valid token, otherwise
+ * returns an error response. Note that this returns the user object without any token information.
+ */
+router.post('/user-data', authenticateUser, (req, res) => {
+  // eslint-disable-next-line no-underscore-dangle
+  AccountHelpers.getUserData(req.user._id)
+    .then(data => {
+      if (data === null) {
+        res.status(400).send(JSON.stringify({ error: 'Invalid request' }));
+        return;
+      }
+
+      res.status(200).send(JSON.stringify({ data }));
+    })
+    .catch(error => {
+      res.status(400).send(JSON.stringify({ error }));
+    });
 });
 
 /**

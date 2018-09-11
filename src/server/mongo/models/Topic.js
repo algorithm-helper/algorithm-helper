@@ -27,6 +27,10 @@ const Topic = mongoose.model('Topic', {
     type: Number,
     required: true,
   },
+  topicItemCount: {
+    type: Number,
+    required: true,
+  },
   children: [{
     type: {
       type: String,

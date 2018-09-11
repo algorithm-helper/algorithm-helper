@@ -1,3 +1,4 @@
+const _ = require('lodash');
 const { User } = include('mongo/models');
 
 const AccountHelpers = {
@@ -46,6 +47,23 @@ const AccountHelpers = {
    * @param {String} token
    */
   logoutUser: (user, token) => user.removeToken(token),
+
+  /**
+   * Gets the user data (everything excluding token data) from the given user record.
+   *
+   * @param {string} id
+   */
+  getUserData: id => (
+    User.findById(id)
+      .lean()
+      .exec()
+      .then(result => _.pick(result, [
+        'fullName',
+        'email',
+        'bookmarks',
+        'completedItems',
+      ]))
+  ),
 };
 
 module.exports = AccountHelpers;

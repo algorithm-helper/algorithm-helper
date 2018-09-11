@@ -20,15 +20,19 @@ const DashboardBookmarkContainer = props => (
     </div>
     <div className={dashboardBookmarkBody}>
       {
-        props.bookmarkItems
-        && (
-          props.bookmarkItems.map((bookmark, i) => (
-            <DashboardBookmarkItem
-              key={i}
-              {...bookmark}
-            />
-          ))
-        )
+        props.bookmarkItems && props.bookmarkItems.length > 0
+          ? (
+            props.bookmarkItems.map((bookmark, i) => (
+              <DashboardBookmarkItem
+                key={i}
+                {...bookmark}
+              />
+            ))
+          ) : (
+            <div>
+              You have no bookmarked items.
+            </div>
+          )
       }
     </div>
   </div>

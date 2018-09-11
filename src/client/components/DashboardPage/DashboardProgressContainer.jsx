@@ -94,23 +94,32 @@ class DashboardProgressContainer extends React.Component {
    * @param {number} uncompleted
    * @param {number} completed
    */
-  createData = (uncompleted, completed) => ({
-    labels: [
-      'Uncompleted',
-      'Completed',
-    ],
-    datasets: [{
-      data: [uncompleted, completed],
-      backgroundColor: [
-        '#BDBDBD',
-        '#66BB6A',
+  createData = (uncompleted, completed) => {
+    let data;
+    if (!uncompleted && !completed) {
+      data = [1, 0];
+    } else {
+      data = [uncompleted, completed];
+    }
+
+    return {
+      labels: [
+        'Uncompleted',
+        'Completed',
       ],
-      hoverBackgroundColor: [
-        '#BDBDBD',
-        '#66BB6A',
-      ],
-    }],
-  });
+      datasets: [{
+        data,
+        backgroundColor: [
+          '#BDBDBD',
+          '#66BB6A',
+        ],
+        hoverBackgroundColor: [
+          '#BDBDBD',
+          '#66BB6A',
+        ],
+      }],
+    };
+  }
 
   /**
    * Handles changes to the Select component.
