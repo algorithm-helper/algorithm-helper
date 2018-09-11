@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import getColorFromKey from 'utils/getColorFromKey';
 import getLightenedColor from 'utils/getLightenedColor';
+import { handleAuthToken } from 'authentication';
 
 import NavBar from './NavBar';
 
@@ -45,6 +46,28 @@ class NavBarContainer extends React.Component {
   };
 
   /**
+   * Logs out the current user.
+   */
+  onLogoutRequest = () => {
+    if (!this.props.userAccount.isLoggedIn
+      || !this.props.userAccount.authToken) {
+      // Do nothing if this user is already logged out:
+      return;
+    }
+
+    const { authToken } = this.props.userAccount;
+    fetch('/accounts/logout', {
+      method: 'POST',
+      headers: {
+        'X-Auth': authToken,
+      },
+    })
+      .then(() => { /* Ignore */ })
+      .catch(() => { /* Ignore */ })
+      .finally(() => handleAuthToken(null, this.props.dispatch));
+  };
+
+  /**
    * Renders the NavBar presentational component.
    */
   render() {
@@ -54,8 +77,10 @@ class NavBarContainer extends React.Component {
       <NavBar
         color={color}
         colorLightened={getLightenedColor(color)}
+        isLoggedIn={this.props.userAccount.isLoggedIn}
         isOpen={this.state.isOpen}
         onEnterKeyPressed={this.onEnterKeyPressed}
+        onLogoutRequest={this.onLogoutRequest}
         onSearchChange={this.onSearchChange}
         onToggleRequest={this.onToggleRequest}
       />
@@ -69,6 +94,7 @@ NavBarContainer.propTypes = {
 
 const mapStateToProps = state => ({
   colorKey: state.colorKey,
+  userAccount: state.userAccount,
 });
 
 export default connect(mapStateToProps)(NavBarContainer);

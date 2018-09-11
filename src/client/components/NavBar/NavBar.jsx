@@ -30,60 +30,35 @@ import {
  *
  * @param {object} props
  */
-const NavBar = props => (
-  <Navbar
-    fixed="top"
-    className={navbarMain}
-    dark
-    expand="md"
-    style={{ backgroundColor: props.color }}
-  >
-    <NavbarBrand
-      className={navbarBrandTitle}
-      tag={Link}
-      to="/"
-    >
-      <div className={navbarLogoContainer}>
-        <Logo
-          height="40px"
-          width="40px"
-          light
-        />
-      </div>
-      Algorithm Helper
-    </NavbarBrand>
-    <NavbarToggler onClick={props.onToggleRequest} />
-    <Collapse
-      isOpen={props.isOpen}
-      navbar
-      style={{ backgroundColor: props.color }}
-    >
-      <Nav
-        className="ml-auto"
-        navbar
-      >
+const NavBar = props => {
+  let accountOptions;
+  if (props.isLoggedIn) {
+    accountOptions = (
+      <React.Fragment>
         <NavItem>
           <NavLink
             className={navbarLink}
             tag={Link}
-            to="/categories"
+            to="/dashboard"
           >
-            Categories
+            Dashboard
           </NavLink>
         </NavItem>
         <NavItem>
-          <InputGroup>
-            <Input
-              className={classnames(navbarLink, navbarSearch)}
-              type="text"
-              aria-label="search"
-              placeholder="Search..."
-              style={{ backgroundColor: props.colorLightened }}
-              onChange={props.onSearchChange}
-              onKeyPress={props.onEnterKeyPressed}
-            />
-          </InputGroup>
+          <NavLink
+            className={navbarLink}
+            tag={Link}
+            onClick={props.onLogoutRequest}
+            to="/"
+          >
+            Logout
+          </NavLink>
         </NavItem>
+      </React.Fragment>
+    );
+  } else {
+    accountOptions = (
+      <React.Fragment>
         <NavItem>
           <NavLink
             className={navbarLink}
@@ -102,16 +77,78 @@ const NavBar = props => (
             Sign Up
           </NavLink>
         </NavItem>
-      </Nav>
-    </Collapse>
-  </Navbar>
-);
+      </React.Fragment>
+    );
+  }
+
+  return (
+    <Navbar
+      fixed="top"
+      className={navbarMain}
+      dark
+      expand="md"
+      style={{ backgroundColor: props.color }}
+    >
+      <NavbarBrand
+        className={navbarBrandTitle}
+        tag={Link}
+        to="/"
+      >
+        <div className={navbarLogoContainer}>
+          <Logo
+            height="40px"
+            width="40px"
+            light
+          />
+        </div>
+        Algorithm Helper
+      </NavbarBrand>
+      <NavbarToggler onClick={props.onToggleRequest} />
+      <Collapse
+        isOpen={props.isOpen}
+        navbar
+        style={{ backgroundColor: props.color }}
+      >
+        <Nav
+          className="ml-auto"
+          navbar
+        >
+          <NavItem>
+            <NavLink
+              className={navbarLink}
+              tag={Link}
+              to="/categories"
+            >
+              Categories
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <InputGroup>
+              <Input
+                className={classnames(navbarLink, navbarSearch)}
+                type="text"
+                aria-label="search"
+                placeholder="Search..."
+                style={{ backgroundColor: props.colorLightened }}
+                onChange={props.onSearchChange}
+                onKeyPress={props.onEnterKeyPressed}
+              />
+            </InputGroup>
+          </NavItem>
+          {accountOptions}
+        </Nav>
+      </Collapse>
+    </Navbar>
+  );
+};
 
 NavBar.propTypes = {
   color: PropTypes.string,
   colorLightened: PropTypes.string,
+  isLoggedIn: PropTypes.bool,
   isOpen: PropTypes.bool,
   onEnterKeyPressed: PropTypes.func,
+  onLogoutRequest: PropTypes.func,
   onSearchChange: PropTypes.func,
   onToggleRequest: PropTypes.func,
 };
