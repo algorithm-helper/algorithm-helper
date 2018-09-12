@@ -1,3 +1,5 @@
+/* eslint-disable  no-underscore-dangle */
+
 /**
  * Provides the routes related to actions.
  */
@@ -14,7 +16,6 @@ const router = express.Router();
  * Returns with the completedItems and bookmarks for this current logged in user.
  */
 router.post('/get-completion-items', authenticateUser, (req, res) => {
-  // eslint-disable-next-line no-underscore-dangle
   ActionsHelpers.getCompletionItems(req.user._id)
     .then(data => {
       if (data === null) {
@@ -34,13 +35,21 @@ router.post('/get-completion-items', authenticateUser, (req, res) => {
  * Toggles the completion for this current item for the currently logged in user. If no user
  * is logged in, then returns an error response.
  *
- * @param {string} topicItemKey
- * @param {string} authKey
- *
+ * @param {string} key
  */
-router.post('/mark-as-completed', (req, res) => {
-  // TODO
-  log.info(req, res);
+router.post('/mark-as-completed', authenticateUser, (req, res) => {
+  ActionsHelpers.handleItemCompleted(req.user._id, req.body.key)
+    .then(data => {
+      if (data === null) {
+        res.status(400).send(JSON.stringify({ error: 'Invalid request' }));
+        return;
+      }
+
+      res.status(200).send(JSON.stringify({ data }));
+    })
+    .catch(error => {
+      res.status(400).send(JSON.stringify({ error }));
+    });
 });
 
 /**
@@ -48,12 +57,21 @@ router.post('/mark-as-completed', (req, res) => {
  * Adds or removes the bookmark for this current item for the currently logged in user. If no user
  * is logged in, then returns an error response.
  *
- * @param {string} topicItemKey
- * @param {string} authKey
+ * @param {string} url
  */
-router.post('/save-to-bookmarks', (req, res) => {
-  // TODO
-  log.info(req, res);
+router.post('/save-to-bookmarks', authenticateUser, (req, res) => {
+  ActionsHelpers.handleItemBookmarked(req.user._id, req.body.url)
+    .then(data => {
+      if (data === null) {
+        res.status(400).send(JSON.stringify({ error: 'Invalid request' }));
+        return;
+      }
+
+      res.status(200).send(JSON.stringify({ data }));
+    })
+    .catch(error => {
+      res.status(400).send(JSON.stringify({ error }));
+    });
 });
 
 module.exports = router;

@@ -143,23 +143,55 @@ class TopicItemPageContainer extends React.Component {
   };
 
   /**
-   * Handles mark as completed for the current topic item.
+   * Handles mark as completed for the current topic item. Note that this marks the item as
+   * uncompleted (removes from user record) if the item is already completed.
    */
   onMarkAsCompleted = () => {
-    const { categoryKey, subcategoryKey, topicKey } = this.props.match.params;
+    if (!this.props.userAccount || !this.props.userAccount.isLoggedIn) {
+      return;
+    }
 
-    // console.log(this.props.match.params);
-    // const params = this.getCurrentKeyParameters();
-    // console.log(params);
-    console.log('test completed');
+    const key = this.getCurrentKey();
+    fetch('/actions/mark-as-completed', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Auth': this.props.userAccount.authToken,
+      },
+      body: JSON.stringify({ key }),
+    })
+      .then(result => {
+        console.log(result);
+      })
+      .catch(err => {
+        console.log(err);
+      });
   };
 
   /**
-   * Handles save to bookmarks for the current topic item.
+   * Handles save to bookmarks for the current topic item. Note that this un-bookmarks the item
+   * (removes from user record) if the item is already bookmarked.
    */
   onSaveToBookmarks = () => {
-    // TODO
-    console.log('test bookmarks');
+    if (!this.props.userAccount || !this.props.userAccount.isLoggedIn) {
+      return;
+    }
+
+    const url = this.getCurrentUrl();
+    fetch('/actions/save-to-bookmarks', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Auth': this.props.userAccount.authToken,
+      },
+      body: JSON.stringify({ url }),
+    })
+      .then(result => {
+        console.log(result);
+      })
+      .catch(err => {
+        console.log(err);
+      });
   };
 
   /**
