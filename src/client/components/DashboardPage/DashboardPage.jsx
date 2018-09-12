@@ -142,6 +142,7 @@ class DashboardPage extends React.Component {
                     <DashboardPageProgressContainer
                       uncompleted={this.state.uncompleted}
                       completed={this.state.completed}
+                      topicItemCountMapping={this.state.completed}
                     />
 
                     <DashboardCalendarHeatmapContainer

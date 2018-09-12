@@ -28,6 +28,8 @@ const TopicItemPage = props => (
     />
 
     <TopicItemContainer
+      isCompleted={props.isCompleted}
+      isBookmarked={props.isBookmarked}
       topic={props.topic}
       topicItem={props.topicItemTypes[props.indexSelected]}
       onMarkAsCompleted={props.onMarkAsCompleted}
@@ -37,6 +39,8 @@ const TopicItemPage = props => (
 );
 
 TopicItemPage.propTypes = {
+  isCompleted: PropTypes.bool,
+  isBookmarked: PropTypes.bool,
   indexSelected: PropTypes.number,
   onChangeIndex: PropTypes.func,
   onMarkAsCompleted: PropTypes.func,

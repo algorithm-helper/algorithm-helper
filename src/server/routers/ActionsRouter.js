@@ -3,34 +3,30 @@
  */
 const express = require('express');
 
+const { ActionsHelpers } = include('mongo/helpers');
+const { authenticateUser } = include('middleware/authentication');
 const { log } = include('utils');
 
 const router = express.Router();
 
 /**
- * GET /actions/get-item-completed
- * Returns true/false based on whether the currently logged in user has the item as completed. If
- * no user is logged in, then returns an error response.
- *
- * @param {string} topicItemKey
- * @param {string} authKey
+ * POST /actions/get-completion-items
+ * Returns with the completedItems and bookmarks for this current logged in user.
  */
-router.get('/get-item-completed', (req, res) => {
-  // TODO
-  log.info(req, res);
-});
+router.post('/get-completion-items', authenticateUser, (req, res) => {
+  // eslint-disable-next-line no-underscore-dangle
+  ActionsHelpers.getCompletionItems(req.user._id)
+    .then(data => {
+      if (data === null) {
+        res.status(400).send(JSON.stringify({ error: 'Invalid request' }));
+        return;
+      }
 
-/**
- * GET /actions/get-item-bookmarked
- * Returns true/false based on whether the currently logged in user has the item as bookmarked. If
- * no user is logged in, then returns an error response.
- *
- * @param {string} topicItemKey
- * @param {string} authKey
- */
-router.get('/get-item-bookmarked', (req, res) => {
-  // TODO
-  log.info(req, res);
+      res.status(200).send(JSON.stringify({ data }));
+    })
+    .catch(error => {
+      res.status(400).send(JSON.stringify({ error }));
+    });
 });
 
 /**

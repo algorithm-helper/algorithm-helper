@@ -20,10 +20,10 @@ class TopicItemContainer extends React.Component {
     super(props);
     this.state = {
       loading: false,
-      isCompleted: false,
-      isBookmarked: false,
       topicItem: null,
       topic: null,
+      isCompleted: false,
+      isBookmarked: false,
     };
   }
 
@@ -32,6 +32,8 @@ class TopicItemContainer extends React.Component {
       loading: true,
       topicItem: this.props.topicItem,
       topic: this.props.topic,
+      isCompleted: this.props.isCompleted,
+      isBookmarked: this.props.isBookmarked,
     });
   }
 
@@ -40,6 +42,8 @@ class TopicItemContainer extends React.Component {
       loading: true,
       topicItem: newProps.topicItem,
       topic: newProps.topic,
+      isCompleted: newProps.isCompleted,
+      isBookmarked: newProps.isBookmarked,
     });
   }
 
@@ -135,6 +139,8 @@ class TopicItemContainer extends React.Component {
 }
 
 TopicItemContainer.propTypes = {
+  isCompleted: PropTypes.bool,
+  isBookmarked: PropTypes.bool,
   onMarkAsCompleted: PropTypes.func,
   onSaveToBookmarks: PropTypes.func,
   topic: PropTypes.object,

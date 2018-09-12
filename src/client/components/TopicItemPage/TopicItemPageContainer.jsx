@@ -18,6 +18,8 @@ class TopicItemPageContainer extends React.Component {
       indexSelected: 0,
       topicItemTypes: [],
       error: '',
+      isCompleted: false,
+      isBookmarked: false,
     };
   }
 
@@ -26,6 +28,8 @@ class TopicItemPageContainer extends React.Component {
     this.setState({ error: '' });
     const { categoryKey, subcategoryKey, topicKey } = this.props.match.params;
     this.requestTopicData(categoryKey, subcategoryKey, topicKey);
+
+    this.requestCompletionData();
   }
 
   /**
@@ -62,6 +66,35 @@ class TopicItemPageContainer extends React.Component {
   };
 
   /**
+   * Check if this TopicItem is already completed or bookmarked.
+   */
+  requestCompletionData = () => {
+    if (!this.props.userAccount || !this.props.userAccount.isLoggedIn) {
+      return;
+    }
+
+    fetch('/actions/get-completion-items', {
+      method: 'POST',
+      headers: {
+        'X-Auth': this.props.userAccount.authToken,
+      },
+    })
+      .then(result => result.json())
+      .then(result => {
+        const { completedItems, bookmarks } = result.data;
+
+        const { categoryKey, subcategoryKey, topicKey } = this.props.match.params;
+        const key = `${categoryKey}/${subcategoryKey}/${topicKey}`;
+        const url = `${key}?item=0`;
+
+        const isCompleted = !!completedItems.find(elem => elem.key === key);
+        const isBookmarked = !!bookmarks.find(elem => elem.url === url);
+        this.setState({ isCompleted, isBookmarked });
+      })
+      .catch(() => { /* Ignore */ });
+  };
+
+  /**
    * Fixes the query string if its index is out of bounds, and fixes the currently selected
    * index for the TopicItemNavbar.
    *
@@ -93,34 +126,18 @@ class TopicItemPageContainer extends React.Component {
   };
 
   /**
-   * Returns the key parameters for this current topic item, including the type (`article`, `code`,
-   * etc.)
-   */
-  getCurrentKeyParameters = () => {
-    const { categoryKey, subcategoryKey, topicKey } = this.props.match.params;
-    const topicItemType = this.state.topicItemTypes[this.state.indexSelected].type;
-    return {
-      categoryKey,
-      subcategoryKey,
-      topicKey,
-      topicItemType,
-    };
-  };
-
-  /**
    * Handles mark as completed for the current topic item.
    */
   onMarkAsCompleted = () => {
-    const params = this.getCurrentKeyParameters();
-    // TODO
-    console.log(params);
+    // console.log(this.props.match.params);
+    // const params = this.getCurrentKeyParameters();
+    // console.log(params);
   };
 
   /**
    * Handles save to bookmarks for the current topic item.
    */
   onSaveToBookmarks = () => {
-    const params = this.getCurrentKeyParameters();
     // TODO
     console.log(params);
   };
@@ -136,6 +153,8 @@ class TopicItemPageContainer extends React.Component {
     return (
       <TopicItemPage
         indexSelected={this.state.indexSelected}
+        isCompleted={this.state.isCompleted}
+        isBookmarked={this.state.isBookmarked}
         onChangeIndex={this.onChangeIndex}
         onMarkAsCompleted={this.onMarkAsCompleted}
         onSaveToBookmarks={this.onSaveToBookmarks}
@@ -152,6 +171,7 @@ TopicItemPageContainer.propTypes = {};
 
 const mapStateToProps = state => ({
   colorKey: state.colorKey,
+  userAccount: state.userAccount,
 });
 
 export default connect(mapStateToProps)(TopicItemPageContainer);

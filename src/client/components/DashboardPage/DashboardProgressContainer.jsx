@@ -137,6 +137,8 @@ class DashboardProgressContainer extends React.Component {
   render() {
     const { classes } = this.props;
 
+    console.log(this.props.topicItemCountMapping);
+
     return (
       <Container className={dashboardProgressContainer} fluid>
         <Row>
@@ -199,6 +201,7 @@ class DashboardProgressContainer extends React.Component {
 DashboardProgressContainer.propTypes = {
   uncompleted: PropTypes.number,
   completed: PropTypes.number,
+  topicItemCountMapping: PropTypes.object,
 };
 
 export default compose(

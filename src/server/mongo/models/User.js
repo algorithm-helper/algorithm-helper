@@ -43,37 +43,29 @@ const UserSchema = new mongoose.Schema({
     },
   }],
   completedItems: [{
-    categoryKey: {
+    key: {
       type: String,
       required: true,
     },
-    subcategoryKey: {
-      type: String,
-      required: true,
-    },
-    topicKey: {
-      type: String,
-      required: true,
-    },
-    topicItemType: {
-      type: String,
-      required: true,
-    },
-    dateCompleted: {
+    dateAdded: {
       type: Number,
       required: true,
     },
   }],
   bookmarks: [{
-    categoryKey: {
+    url: {
       type: String,
       required: true,
     },
-    subcategoryKey: {
+    topicTitle: {
       type: String,
       required: true,
     },
-    topicKey: {
+    subcategoryTitle: {
+      type: String,
+      required: true,
+    },
+    categoryTitle: {
       type: String,
       required: true,
     },
@@ -81,7 +73,7 @@ const UserSchema = new mongoose.Schema({
       type: String,
       required: true,
     },
-    dateBookmarked: {
+    dateAdded: {
       type: Number,
       required: true,
     },
