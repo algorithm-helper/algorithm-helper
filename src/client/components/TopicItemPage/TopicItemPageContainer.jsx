@@ -83,9 +83,10 @@ class TopicItemPageContainer extends React.Component {
       .then(result => {
         const { completedItems, bookmarks } = result.data;
 
-        const { categoryKey, subcategoryKey, topicKey } = this.props.match.params;
-        const key = `${categoryKey}/${subcategoryKey}/${topicKey}`;
-        const url = `${key}?item=0`;
+        const key = this.getCurrentKey();
+        const url = this.getCurrentUrl();
+
+        console.log(key, url);
 
         const isCompleted = !!completedItems.find(elem => elem.key === key);
         const isBookmarked = !!bookmarks.find(elem => elem.url === url);
@@ -113,6 +114,22 @@ class TopicItemPageContainer extends React.Component {
   };
 
   /**
+   * Returns the current key given the match params.
+   */
+  getCurrentKey = () => {
+    const { categoryKey, subcategoryKey, topicKey } = this.props.match.params;
+    return `${categoryKey}/${subcategoryKey}/${topicKey}`;
+  };
+
+  /**
+   * Returns the current url given the match params and indexSelected.
+   */
+  getCurrentUrl = () => {
+    const key = this.getCurrentKey();
+    return `${key}?item=${this.state.indexSelected}`;
+  };
+
+  /**
    * Handles changing the index for the TopicItemNavbar.
    *
    * @param {number} index
@@ -129,9 +146,12 @@ class TopicItemPageContainer extends React.Component {
    * Handles mark as completed for the current topic item.
    */
   onMarkAsCompleted = () => {
+    const { categoryKey, subcategoryKey, topicKey } = this.props.match.params;
+
     // console.log(this.props.match.params);
     // const params = this.getCurrentKeyParameters();
     // console.log(params);
+    console.log('test completed');
   };
 
   /**
@@ -139,7 +159,7 @@ class TopicItemPageContainer extends React.Component {
    */
   onSaveToBookmarks = () => {
     // TODO
-    console.log(params);
+    console.log('test bookmarks');
   };
 
   /**
