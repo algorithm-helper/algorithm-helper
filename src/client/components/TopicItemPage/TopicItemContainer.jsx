@@ -1,13 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import MDSpinner from 'react-md-spinner';
-import { connect } from 'react-redux';
 import { Col, Container, Row } from 'reactstrap';
 
-import getColorFromKey from 'utils/getColorFromKey';
-
-import TopicItemArticle from './TopicItemArticle';
-import TopicItemCode from './TopicItemCode';
 import TopicItemBar from './TopicItemBar';
 
 import {
@@ -15,141 +10,54 @@ import {
   topicItemPageSpinnerContainer,
 } from './styles.scss';
 
-class TopicItemContainer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      loading: false,
-      topicItem: null,
-      topic: null,
-      isCompleted: false,
-      isBookmarked: false,
-    };
-  }
-
-  componentWillMount() {
-    this.setState({
-      loading: true,
-      topicItem: this.props.topicItem,
-      topic: this.props.topic,
-      isCompleted: this.props.isCompleted,
-      isBookmarked: this.props.isBookmarked,
-    });
-  }
-
-  componentWillReceiveProps(newProps) {
-    this.setState({
-      loading: true,
-      topicItem: newProps.topicItem,
-      topic: newProps.topic,
-      isCompleted: newProps.isCompleted,
-      isBookmarked: newProps.isBookmarked,
-    });
-  }
-
-  /**
-   * Makes a request to the server to check the completion and bookmark status of this current
-   * topic item for this current logged in user.
-   */
-  requestCompletionAndBookmarkStatus = () => {
-    // TODO
-  };
-
-  /**
-   * Handles when the content finishes loading.
-   */
-  handleContentLoaded = () => {
-    this.setState({ loading: false });
-  };
-
-  /**
-   * Returns the topic item component that corresponds to the topic item type.
-   */
-  getTopicItemComponent = () => {
-    if (!this.state.topicItem) {
-      return undefined;
-    }
-
-    // Collect items with the same type:
-    const metaData = this.state.topic.children.filter(item => (
-      item.type === this.state.topicItem.type
-    ));
-
-    switch (this.state.topicItem.type) {
-      case 'article':
-        return (
-          <TopicItemArticle
-            contentLoaded={this.handleContentLoaded}
-            type={this.state.topicItem.type}
-          />
-        );
-      case 'code':
-        return (
-          <TopicItemCode
-            contentLoaded={this.handleContentLoaded}
-            type={this.state.topicItem.type}
-            metaData={metaData}
-          />
-        );
-      default:
-        return null;
-    }
-  };
-
-  /**
-   * Renders the TopicItemContainer component.
-   */
-  render() {
-    return (
-      <Container fluid>
-        <Row>
-          <Col md="2" />
-          <Col md="8">
-            {
-              this.state.loading
-              && (
-                <div className={topicItemPageSpinnerContainer}>
-                  <MDSpinner
-                    size={50}
-                    singleColor={getColorFromKey(this.props.colorKey)}
-                  />
-                </div>
-              )
-            }
-            {
-              !this.state.loading && this.props.userAccount.isLoggedIn
-              && (
-                <TopicItemBar
-                  onMarkAsCompleted={this.props.onMarkAsCompleted}
-                  onSaveToBookmarks={this.props.onSaveToBookmarks}
-                  isCompleted={this.state.isCompleted}
-                  isBookmarked={this.state.isBookmarked}
-                />
-              )
-            }
-            <div className={topicItemContainer}>
-              { this.getTopicItemComponent() }
+/**
+ * Renders the TopicItemContainer stateless functional component.
+ *
+ * @param {object} props
+ */
+const TopicItemContainer = props => (
+  <Container fluid>
+    <Row>
+      <Col md="2" />
+      <Col md="8">
+        {
+          props.loading
+          && (
+            <div className={topicItemPageSpinnerContainer}>
+              <MDSpinner
+                size={50}
+                singleColor={props.color}
+              />
             </div>
-          </Col>
-          <Col md="2" />
-        </Row>
-      </Container>
-    );
-  }
-}
+          )
+        }
+        {
+          !props.loading && props.userAccount.isLoggedIn
+          && (
+            <TopicItemBar
+              onMarkAsCompleted={props.onMarkAsCompleted}
+              onSaveToBookmarks={props.onSaveToBookmarks}
+              isCompleted={props.isCompleted}
+              isBookmarked={props.isBookmarked}
+            />
+          )
+        }
+        <div className={topicItemContainer}>
+          { props.getTopicItemComponent() }
+        </div>
+      </Col>
+      <Col md="2" />
+    </Row>
+  </Container>
+);
 
 TopicItemContainer.propTypes = {
+  color: PropTypes.string,
+  getTopicItemComponent: PropTypes.func,
   isCompleted: PropTypes.bool,
   isBookmarked: PropTypes.bool,
   onMarkAsCompleted: PropTypes.func,
   onSaveToBookmarks: PropTypes.func,
-  topic: PropTypes.object,
-  topicItem: PropTypes.object,
 };
 
-const mapStateToProps = state => ({
-  colorKey: state.colorKey,
-  userAccount: state.userAccount,
-});
-
-export default connect(mapStateToProps)(TopicItemContainer);
+export default TopicItemContainer;

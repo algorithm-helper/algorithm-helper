@@ -6,26 +6,30 @@ import createHistory from 'history/createBrowserHistory';
 import { setColorTheme } from 'actions/ColorThemeActions';
 import { getItemIndexFromQueryString } from 'utils/routeUtils';
 import { getTopicItemTypes } from 'utils/topicItemUtils';
+import getColorFromKey from 'utils/getColorFromKey';
 
 import TopicItemPage from './TopicItemPage';
+import TopicItemArticle from './TopicItemArticle';
+import TopicItemCode from './TopicItemCode';
 
 class TopicItemPageContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      topic: {},
       subcategory: {},
       indexSelected: 0,
       topicItemTypes: [],
       error: '',
       isCompleted: false,
       isBookmarked: false,
+      loading: false,
+      topic: {},
     };
   }
 
   componentWillMount() {
     this.history = createHistory();
-    this.setState({ error: '' });
+    this.setState({ loading: true, error: '' });
     const { categoryKey, subcategoryKey, topicKey } = this.props.match.params;
     this.requestTopicData(categoryKey, subcategoryKey, topicKey);
 
@@ -56,6 +60,7 @@ class TopicItemPageContainer extends React.Component {
         this.props.dispatch(setColorTheme(categoryData.data.colorKey));
         const topicItemTypes = getTopicItemTypes(topicData.data.children);
         this.setState({
+          loading: false,
           topic: topicData.data,
           subcategory: subcategoryData.data,
           topicItemTypes,
@@ -161,11 +166,13 @@ class TopicItemPageContainer extends React.Component {
       body: JSON.stringify({ key }),
     })
       .then(result => {
-        console.log(result);
+        if (!result) {
+          throw result;
+        }
+
+        this.setState(prevState => ({ isCompleted: !prevState.isCompleted }));
       })
-      .catch(err => {
-        console.log(err);
-      });
+      .catch(() => { /* Ignore */ });
   };
 
   /**
@@ -194,6 +201,47 @@ class TopicItemPageContainer extends React.Component {
       });
   };
 
+
+  /**
+   * Returns the topic item component that corresponds to the topic item type.
+   */
+  getTopicItemComponent = () => {
+    const topicItem = this.state.topicItemTypes[this.state.indexSelected];
+
+    if (!topicItem) {
+      return undefined;
+    }
+
+    // Collect items with the same type:
+    const metaData = this.state.topic.children.filter(item => (
+      item.type === topicItem.type
+    ));
+
+    switch (topicItem.type) {
+      case 'article':
+        return (
+          <TopicItemArticle
+            contentLoaded={this.onContentLoaded}
+            type={topicItem.type}
+          />
+        );
+      case 'code':
+        return (
+          <TopicItemCode
+            contentLoaded={this.onContentLoaded}
+            type={topicItem.type}
+            metaData={metaData}
+          />
+        );
+      default:
+        return null;
+    }
+  };
+
+  onContentLoaded = () => {
+    this.setState({ loading: false });
+  };
+
   /**
    * Renders the TopicItemPage presentational component.
    */
@@ -204,9 +252,12 @@ class TopicItemPageContainer extends React.Component {
 
     return (
       <TopicItemPage
+        color={getColorFromKey(this.props.colorKey)}
+        getTopicItemComponent={this.getTopicItemComponent}
         indexSelected={this.state.indexSelected}
         isCompleted={this.state.isCompleted}
         isBookmarked={this.state.isBookmarked}
+        loading={this.state.loading}
         onChangeIndex={this.onChangeIndex}
         onMarkAsCompleted={this.onMarkAsCompleted}
         onSaveToBookmarks={this.onSaveToBookmarks}
@@ -214,6 +265,7 @@ class TopicItemPageContainer extends React.Component {
         topicItemTypes={this.state.topicItemTypes}
         subcategory={this.state.subcategory}
         urlKey={`/categories/${this.state.subcategory.key}`}
+        userAccount={this.props.userAccount}
       />
     );
   }

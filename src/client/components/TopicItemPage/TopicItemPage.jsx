@@ -28,17 +28,20 @@ const TopicItemPage = props => (
     />
 
     <TopicItemContainer
+      color={props.color}
+      getTopicItemComponent={props.getTopicItemComponent}
       isCompleted={props.isCompleted}
       isBookmarked={props.isBookmarked}
-      topic={props.topic}
-      topicItem={props.topicItemTypes[props.indexSelected]}
       onMarkAsCompleted={props.onMarkAsCompleted}
       onSaveToBookmarks={props.onSaveToBookmarks}
+      userAccount={props.userAccount}
     />
   </div>
 );
 
 TopicItemPage.propTypes = {
+  color: PropTypes.string,
+  getTopicItemComponent: PropTypes.func,
   isCompleted: PropTypes.bool,
   isBookmarked: PropTypes.bool,
   indexSelected: PropTypes.number,
@@ -49,6 +52,7 @@ TopicItemPage.propTypes = {
   topicItemTypes: PropTypes.array,
   subcategory: PropTypes.object,
   urlKey: PropTypes.string,
+  userAccount: PropTypes.object,
 };
 
 export default TopicItemPage;

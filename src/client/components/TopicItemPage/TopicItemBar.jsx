@@ -14,44 +14,49 @@ import {
  *
  * @param {object} props
  */
-const TopicItemBar = props => (
-  <div className={topicItemBarContainer}>
-    <div className={topicItemBarItem}>
-      <Button
-        color="primary"
-        className={topicItemBarBtn}
-        onClick={props.onMarkAsCompleted}
-      >
-        <i
-          className="fas fa-check"
-          style={{ marginRight: '0.5em' }}
-        />
-        {
-          !props.isCompleted
-            ? 'Mark as Completed'
-            : 'Mark as Uncompleted'
-        }
-      </Button>
+const TopicItemBar = props => {
+  console.log(props.isCompleted);
+  console.log(props.isBookmarked);
+
+  return (
+    <div className={topicItemBarContainer}>
+      <div className={topicItemBarItem}>
+        <Button
+          color="primary"
+          className={topicItemBarBtn}
+          onClick={props.onMarkAsCompleted}
+        >
+          <i
+            className="fas fa-check"
+            style={{ marginRight: '0.5em' }}
+          />
+          {
+            !props.isCompleted
+              ? 'Mark as Completed'
+              : 'Mark as Uncompleted'
+          }
+        </Button>
+      </div>
+      <div className={topicItemBarItem}>
+        <Button
+          color="primary"
+          className={topicItemBarBtn}
+          onClick={props.onSaveToBookmarks}
+        >
+          <i
+            className="fas fa-star"
+            style={{ marginRight: '0.5em' }}
+          />
+          {
+            !props.isBookmarked
+              ? 'Save to Bookmarks'
+              : 'Remove from Bookmarks'
+          }
+        </Button>
+      </div>
     </div>
-    <div className={topicItemBarItem}>
-      <Button
-        color="primary"
-        className={topicItemBarBtn}
-        onClick={props.onSaveToBookmarks}
-      >
-        <i
-          className="fas fa-star"
-          style={{ marginRight: '0.5em' }}
-        />
-        {
-          !props.isBookmarked
-            ? 'Save to Bookmarks'
-            : 'Remove from Bookmarks'
-        }
-      </Button>
-    </div>
-  </div>
-);
+  );
+}
 
 TopicItemBar.propTypes = {
   isCompleted: PropTypes.bool,
