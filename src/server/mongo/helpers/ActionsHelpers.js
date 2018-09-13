@@ -68,8 +68,9 @@ const ActionsHelpers = {
    *
    * @param {string} id
    * @param {string} url
+   * @param {boolean} isStrictDelete
    */
-  handleItemBookmarked: (id, key) => (
+  handleItemBookmarked: (id, key, isStrictDelete) => (
     User.findById(id, {
       bookmarks: true,
     })
@@ -90,7 +91,12 @@ const ActionsHelpers = {
                 key,
               },
             },
-          });
+          })
+            .then(() => Promise.resolve({ success: 'Bookmark removed' }));
+        }
+
+        if (isStrictDelete) {
+          return Promise.resolve({ success: 'There was no bookmark to remove' });
         }
 
         const [categorySlug, subcategorySlug, topicSlug] = key.split('/');

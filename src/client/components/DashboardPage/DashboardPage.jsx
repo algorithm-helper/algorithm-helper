@@ -113,6 +113,7 @@ class DashboardPage extends React.Component {
       categoryTitle,
       subcategoryTitle,
       topicTitle,
+      topicKey: key,
     }))
   );
 
@@ -133,6 +134,35 @@ class DashboardPage extends React.Component {
     const total = Object.keys(result).reduce((prev, curr) => prev + result[curr], 0);
     return { ...result, total };
   }
+
+  /**
+   * Handles the deletion of a bookmark by key.
+   *
+   * @param {string} key
+   */
+  onBookmarkDeleteRequest = key => {
+    if (!this.props.userAccount || !this.props.userAccount.isLoggedIn) {
+      return;
+    }
+
+    fetch('/actions/remove-from-bookmarks', {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Auth': this.props.userAccount.authToken,
+      },
+      body: JSON.stringify({ key }),
+    })
+      .then(result => result.json())
+      .then(() => {
+        // Removing the bookmark from state locally is sufficient:
+        const bookmarkDataNew = this.state.bookmarkData.filter(bookmark => (
+          bookmark.topicKey !== key
+        ));
+        this.setState({ bookmarkData: bookmarkDataNew });
+      })
+      .catch(noop);
+  };
 
   render() {
     if (!this.props.userAccount.isLoggedIn) {
@@ -171,6 +201,7 @@ class DashboardPage extends React.Component {
 
                     <DashboardBookmarkContainer
                       bookmarkItems={this.state.bookmarkData}
+                      onBookmarkDeleteRequest={this.onBookmarkDeleteRequest}
                       title="Saved Bookmarks"
                     />
                   </React.Fragment>

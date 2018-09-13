@@ -1,3 +1,5 @@
+@import '~styles/base/colors';
+
 // react-calendar-heatmap
 :global {
   .react-calendar-heatmap {
@@ -93,6 +95,11 @@
 
   a {
     text-decoration: none;
+    color: $BASE_COLOR;
+  }
+
+  a:hover {
+    color: $BASE_COLOR_LIGHT;
   }
 }
 
@@ -109,6 +116,8 @@
   position: absolute;
   right: 40px;
   top: 50%;
+  cursor: pointer;
+  color: $DELETE_RED;
 }
 
 :local(.dashboardBookmarkItemDeleteBtn) {

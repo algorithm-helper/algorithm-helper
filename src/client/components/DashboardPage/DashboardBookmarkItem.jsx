@@ -33,7 +33,10 @@ const DashboardBookmarkItem = props => (
         </Row>
 
         <div className={dashboardBookmarkItemDelete}>
-          <i className={classnames('fas', 'fa-times', dashboardBookmarkItemDeleteBtn)} />
+          <i
+            className={classnames('fas', 'fa-times', dashboardBookmarkItemDeleteBtn)}
+            onClick={() => props.onBookmarkDeleteRequest(props.topicKey)}
+          />
         </div>
       </div>
     </div>
@@ -45,6 +48,8 @@ DashboardBookmarkItem.propTypes = {
   categoryTitle: PropTypes.string,
   subcategoryTitle: PropTypes.string,
   topicTitle: PropTypes.string,
+  onBookmarkDeleteRequest: PropTypes.func,
+  topicKey: PropTypes.string,
 };
 
 export default DashboardBookmarkItem;

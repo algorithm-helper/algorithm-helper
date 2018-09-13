@@ -26,6 +26,7 @@ const DashboardBookmarkContainer = props => (
               <DashboardBookmarkItem
                 key={i}
                 {...bookmark}
+                onBookmarkDeleteRequest={props.onBookmarkDeleteRequest}
               />
             ))
           ) : (
@@ -41,6 +42,7 @@ const DashboardBookmarkContainer = props => (
 DashboardBookmarkContainer.propTypes = {
   bookmarkItems: PropTypes.array,
   title: PropTypes.string,
+  onBookmarkDeleteRequest: PropTypes.func,
 };
 
 export default DashboardBookmarkContainer;
