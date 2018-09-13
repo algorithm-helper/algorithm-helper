@@ -7,6 +7,7 @@ import { Col, Container, Row } from 'reactstrap';
 
 import { resetColorTheme } from 'actions/ColorThemeActions';
 import getColorFromKey from 'utils/getColorFromKey';
+import { noop } from 'utils/utils';
 
 import DashboardHeader from './DashboardHeader';
 import DashboardPageProgressContainer from './DashboardProgressContainer';
@@ -20,11 +21,9 @@ class DashboardPage extends React.Component {
     super(props);
     this.state = {
       fullName: '',
-      uncompleted: 0,
-      completed: 0,
-      loading: true,
       bookmarkData: [],
       activityItems: [],
+      loading: true,
     };
   }
 
@@ -60,20 +59,18 @@ class DashboardPage extends React.Component {
         const { bookmarks, fullName, completedItems } = userData;
         const bookmarkData = this.getBookmarkData(bookmarks);
         const activityItems = this.getActivityItems(bookmarks, completedItems);
-
-        console.log(topicItemCountMapping);
-        console.log(completedItems);
+        const completedItemsMapping = this.getCompletedItemsMapping(completedItems);
 
         this.setState({
           loading: false,
           fullName,
           bookmarkData,
           activityItems,
+          topicItemCountMapping,
+          completedItemsMapping,
         });
       })
-      .catch(err => {
-        console.log(err);
-      });
+      .catch(noop);
   };
 
   /**
@@ -119,6 +116,24 @@ class DashboardPage extends React.Component {
     }))
   );
 
+  /**
+   * Gets the mapping of completed item categoryKey to count.
+   *
+   * @param {array} completedItems
+   */
+  getCompletedItemsMapping = completedItems => {
+    const result = completedItems.reduce((prev, curr) => {
+      const [categoryKey] = curr.key.split('/');
+      return {
+        ...prev,
+        [categoryKey]: (prev[categoryKey] || 0) + 1,
+      };
+    }, {});
+
+    const total = Object.keys(result).reduce((prev, curr) => prev + result[curr], 0);
+    return { ...result, total };
+  }
+
   render() {
     if (!this.props.userAccount.isLoggedIn) {
       return <Redirect to="/login" />;
@@ -145,9 +160,8 @@ class DashboardPage extends React.Component {
                     />
 
                     <DashboardPageProgressContainer
-                      uncompleted={this.state.uncompleted}
-                      completed={this.state.completed}
                       topicItemCountMapping={this.state.topicItemCountMapping}
+                      completedItemsMapping={this.state.completedItemsMapping}
                     />
 
                     <DashboardCalendarHeatmapContainer

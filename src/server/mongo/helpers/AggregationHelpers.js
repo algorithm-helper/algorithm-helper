@@ -7,19 +7,21 @@ const AggregationHelpers = {
   getTopicItemsCount: () => (
     Topic.find({}, {
       key: true,
-      topicItemCount: true,
     })
       .then(result => {
-        const mapCategoryKeyToCount = {};
-        let total = 0;
-        result.forEach(topic => {
-          const categoryKey = topic.key.substring(0, topic.key.indexOf('/'));
-          mapCategoryKeyToCount[categoryKey] = (mapCategoryKeyToCount[categoryKey] || 0)
-            + topic.topicItemCount;
-          total += topic.topicItemCount;
-        });
-        mapCategoryKeyToCount.total = total;
-        return mapCategoryKeyToCount;
+        const mapCategoryKeyToCount = result.reduce((prev, curr) => {
+          const [categoryKey] = curr.key.split('/');
+          return {
+            ...prev,
+            [categoryKey]: (prev[categoryKey] || 0) + 1,
+          };
+        }, {});
+
+        const total = Object.keys(mapCategoryKeyToCount).reduce((prev, curr) => (
+          prev + mapCategoryKeyToCount[curr]
+        ), 0);
+
+        return { ...mapCategoryKeyToCount, total };
       })
   ),
 };

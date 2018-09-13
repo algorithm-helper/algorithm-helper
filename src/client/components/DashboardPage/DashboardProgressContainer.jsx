@@ -6,6 +6,8 @@ import { withStyles } from '@material-ui/core/styles';
 import { FormControl, Select, MenuItem } from '@material-ui/core';
 import { Col, Container, Row } from 'reactstrap';
 
+import { noop } from 'utils/utils';
+
 import {
   dashboardProgressContainer,
   dashboardProgressHeader,
@@ -27,53 +29,53 @@ const materialUIStyles = theme => ({
   },
 });
 
-// TODO: fetch this list from server
-const categories = [
-  {
-    title: 'Data Structures',
-    key: 'data-structures',
-  },
-  {
-    title: 'General Algorithms',
-    key: 'general-algorithms',
-  },
-  {
-    title: 'Strings',
-    key: 'strings',
-  },
-  {
-    title: 'Graphs',
-    key: 'graphs',
-  },
-  {
-    title: 'Randomization',
-    key: 'randomization',
-  },
-  {
-    title: 'Mathematics',
-    key: 'mathematics',
-  },
-  {
-    title: 'Dynamic Programming',
-    key: 'dynamic-programming',
-  },
-  {
-    title: 'Algorithmic Analysis',
-    key: 'algorithmic-analysis',
-  },
-  {
-    title: 'Software Engineering',
-    key: 'software-engineering',
-  },
-];
-
 class DashboardProgressContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       selected: '',
+      uncompleted: 0,
+      completed: 0,
+      topicItemCountMapping: null,
+      completedItemsMapping: null,
+      categoriesData: null,
     };
   }
+
+  componentDidMount() {
+    const { topicItemCountMapping, completedItemsMapping } = this.props;
+
+    this.setState({
+      topicItemCountMapping,
+      completedItemsMapping,
+      uncompleted: topicItemCountMapping.total - completedItemsMapping.total,
+      completed: completedItemsMapping.total,
+    });
+    this.requestCategoriesData();
+  }
+
+  componentWillReceiveProps(newProps) {
+    this.setState({
+      topicItemCountMapping: newProps.topicItemCountMapping,
+      completedItemsMapping: newProps.completedItemsMapping,
+    });
+  }
+
+  /**
+   * Requests for the categories data from the server, and only keeps the key and the title.
+   */
+  requestCategoriesData = () => {
+    fetch('/data/categories')
+      .then(result => result.json())
+      .then(result => {
+        const categoriesData = result.data.map(elem => ({
+          key: elem.key,
+          title: elem.title,
+        }));
+        this.setState({ categoriesData });
+      })
+      .catch(noop);
+  };
 
   /**
    * Returns the percentage given number.
@@ -81,7 +83,7 @@ class DashboardProgressContainer extends React.Component {
    * @param {number} num
    */
   getPercentage = num => {
-    const total = this.props.uncompleted + this.props.completed;
+    const total = this.state.uncompleted + this.state.completed;
     if (total === 0) {
       return '0%';
     }
@@ -123,12 +125,21 @@ class DashboardProgressContainer extends React.Component {
 
   /**
    * Handles changes to the Select component.
+   *
+   * @param {Event} evt
    */
-  handleChange = evt => {
-    console.log(evt.target.value);
-    this.setState({
-      [evt.target.name]: evt.target.value,
-    });
+  onSelectChange = evt => {
+    this.setState({ selected: evt.target.value });
+
+    if (this.state.topicItemCountMapping && this.state.completedItemsMapping) {
+      const key = evt.target.value || 'total';
+      const completed = this.state.completedItemsMapping[key] || 0;
+
+      this.setState({
+        uncompleted: this.state.topicItemCountMapping[key] - completed,
+        completed,
+      });
+    }
   };
 
   /**
@@ -136,15 +147,12 @@ class DashboardProgressContainer extends React.Component {
    */
   render() {
     const { classes } = this.props;
-
-    // console.log(this.props.topicItemCountMapping);
-
     return (
       <Container className={dashboardProgressContainer} fluid>
         <Row>
           <Col md="6" sm="6" xs="6">
             <Doughnut
-              data={this.createData(this.props.uncompleted, this.props.completed)}
+              data={this.createData(this.state.uncompleted, this.state.completed)}
               height={250}
             />
           </Col>
@@ -157,14 +165,14 @@ class DashboardProgressContainer extends React.Component {
                 <div className={dashboardProgressItem}>
                   <div style={{ float: 'left' }}>Completed</div>
                   <div style={{ float: 'right' }}>
-                    { this.getPercentage(this.props.completed) }
+                    { this.getPercentage(this.state.completed) }
                   </div>
                   <div style={{ clear: 'both' }} />
                 </div>
                 <div className={dashboardProgressItem}>
                   <div style={{ float: 'left' }}>Uncompleted</div>
                   <div style={{ float: 'right' }}>
-                    { this.getPercentage(this.props.uncompleted) }
+                    { this.getPercentage(this.state.uncompleted) }
                   </div>
                   <div style={{ clear: 'both' }} />
                 </div>
@@ -172,20 +180,23 @@ class DashboardProgressContainer extends React.Component {
                 <FormControl className={classes.formControl}>
                   <Select
                     value={this.state.selected}
-                    onChange={this.handleChange}
+                    onChange={this.onSelectChange}
                     name="selected"
                     displayEmpty
                     className={classes.selectEmpty}
                   >
                     <MenuItem value="">
-                      <em>All</em>
+                      <em>Total</em>
                     </MenuItem>
                     {
-                      categories.map((category, i) => (
-                        <MenuItem key={i} value={category.key}>
-                          {category.title}
-                        </MenuItem>
-                      ))
+                      this.state.categoriesData
+                      && (
+                        this.state.categoriesData.map((category, i) => (
+                          <MenuItem key={i} value={category.key}>
+                            {category.title}
+                          </MenuItem>
+                        ))
+                      )
                     }
                   </Select>
                 </FormControl>
@@ -199,9 +210,8 @@ class DashboardProgressContainer extends React.Component {
 }
 
 DashboardProgressContainer.propTypes = {
-  uncompleted: PropTypes.number,
-  completed: PropTypes.number,
   topicItemCountMapping: PropTypes.object,
+  completedItemsMapping: PropTypes.object,
 };
 
 export default compose(
