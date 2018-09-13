@@ -1,4 +1,5 @@
 const _ = require('lodash');
+
 const { User } = include('mongo/models');
 
 const AccountHelpers = {

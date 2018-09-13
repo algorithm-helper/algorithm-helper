@@ -7,7 +7,6 @@ const express = require('express');
 
 const { ActionsHelpers } = include('mongo/helpers');
 const { authenticateUser } = include('middleware/authentication');
-const { log } = include('utils');
 
 const router = express.Router();
 
