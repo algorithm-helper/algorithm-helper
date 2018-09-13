@@ -11,11 +11,11 @@ import {
 } from './styles.scss';
 
 /**
- * Renders the DashboardCalendarHeatmapContainer stateless functional component.
+ * Renders the DashboardCalendarHeatmap stateless functional component.
  *
  * @param {object} props
  */
-const DashboardCalendarHeatmapContainer = props => (
+const DashboardCalendarHeatmap = props => (
   <div className={dashboardCalendarHeatMapContainer}>
     <div className={dashboardCalendarHeatMapHeader}>
       {props.title}
@@ -45,9 +45,9 @@ const DashboardCalendarHeatmapContainer = props => (
   </div>
 );
 
-DashboardCalendarHeatmapContainer.propTypes = {
+DashboardCalendarHeatmap.propTypes = {
   activityItems: PropTypes.array,
   title: PropTypes.string,
 };
 
-export default DashboardCalendarHeatmapContainer;
+export default DashboardCalendarHeatmap;
