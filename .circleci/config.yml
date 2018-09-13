@@ -15,8 +15,8 @@ jobs:
           - v1-dependencies-
 
       - run:
-        name: Install npm dependencies
-        command: yarn install
+          name: Install npm dependencies
+          command: yarn install
 
       - save_cache:
           paths:
