@@ -11,7 +11,7 @@ import { noop } from 'utils/utils';
 
 import DashboardHeader from './DashboardHeader';
 import DashboardPageProgressContainer from './DashboardProgressContainer';
-import DashboardCalendarHeatmapContainer from './DashboardCalendarHeatmapContainer';
+// import DashboardCalendarHeatmapContainer from './DashboardCalendarHeatmapContainer';
 import DashboardBookmarkContainer from './DashboardBookmarkContainer';
 
 import { dashboardPageContainer, dashboardSpinner } from './styles.scss';
@@ -194,11 +194,6 @@ class DashboardPage extends React.Component {
                       completedItemsMapping={this.state.completedItemsMapping}
                     />
 
-                    <DashboardCalendarHeatmapContainer
-                      activityItems={this.state.activityItems}
-                      title="Daily Activity"
-                    />
-
                     <DashboardBookmarkContainer
                       bookmarkItems={this.state.bookmarkData}
                       onBookmarkDeleteRequest={this.onBookmarkDeleteRequest}
@@ -221,3 +216,8 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps)(DashboardPage);
+
+// <DashboardCalendarHeatmapContainer
+// activityItems={this.state.activityItems}
+// title="Daily Activity"
+// />
