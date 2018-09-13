@@ -14,7 +14,9 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
-      - run: yarn install
+      - run:
+        name: Install npm dependencies
+        command: yarn install
 
       - save_cache:
           paths:
@@ -22,7 +24,12 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # Lint
-      - run: yarn run lint
+      - run:
+          name: Run ESLint
+          command: yarn run lint
 
-      # Testing
-      # - run: yarn run test
+      # Deploy to Heroku
+      - run:
+          name: Deploy to Heroku
+          command: |
+            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
