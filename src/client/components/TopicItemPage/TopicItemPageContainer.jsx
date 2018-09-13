@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import { setColorTheme } from 'actions/ColorThemeActions';
 import { getItemIndexFromQueryString } from 'utils/routeUtils';
@@ -159,7 +161,13 @@ class TopicItemPageContainer extends React.Component {
 
         // Note that this toggles the `isCompleted` flag locally on the client. This is sufficient
         // since any new loads of this page would request this anyway:
-        this.setState(prevState => ({ isCompleted: !prevState.isCompleted }));
+        // this.setState(prevState => ({ isCompleted: !prevState.isCompleted }));
+        this.requestCompletionData();
+
+        toast.info(`Marked as ${!this.state.isCompleted ? 'Completed' : 'Uncompleted'}`, {
+          position: toast.POSITION.BOTTOM_LEFT,
+          hideProgressBar: true,
+        });
       })
       .catch(noop);
   };
@@ -189,7 +197,13 @@ class TopicItemPageContainer extends React.Component {
 
         // Note that this toggles the `isBookmarked` flag locally on the client. This is sufficient
         // since any new loads of this page would request this anyway:
-        this.setState(prevState => ({ isBookmarked: !prevState.isBookmarked }));
+        // this.setState(prevState => ({ isBookmarked: !prevState.isBookmarked }));
+        this.requestCompletionData();
+
+        toast.info(`${!this.state.isBookmarked ? 'Added to' : 'Removed from'} bookmarks`, {
+          position: toast.POSITION.BOTTOM_LEFT,
+          hideProgressBar: true,
+        });
       })
       .catch(noop);
   };
@@ -246,22 +260,25 @@ class TopicItemPageContainer extends React.Component {
     }
 
     return (
-      <TopicItemPage
-        color={getColorFromKey(this.props.colorKey)}
-        topicItemComponent={this.getTopicItemComponent()}
-        indexSelected={this.state.indexSelected}
-        isCompleted={this.state.isCompleted}
-        isBookmarked={this.state.isBookmarked}
-        loading={this.state.loading}
-        onChangeIndex={this.onChangeIndex}
-        onMarkAsCompleted={this.onMarkAsCompleted}
-        onSaveToBookmarks={this.onSaveToBookmarks}
-        topic={this.state.topic}
-        topicItemTypes={this.state.topicItemTypes}
-        subcategory={this.state.subcategory}
-        urlKey={`/categories/${this.state.subcategory.key}`}
-        userAccount={this.props.userAccount}
-      />
+      <div>
+        <TopicItemPage
+          color={getColorFromKey(this.props.colorKey)}
+          topicItemComponent={this.getTopicItemComponent()}
+          indexSelected={this.state.indexSelected}
+          isCompleted={this.state.isCompleted}
+          isBookmarked={this.state.isBookmarked}
+          loading={this.state.loading}
+          onChangeIndex={this.onChangeIndex}
+          onMarkAsCompleted={this.onMarkAsCompleted}
+          onSaveToBookmarks={this.onSaveToBookmarks}
+          topic={this.state.topic}
+          topicItemTypes={this.state.topicItemTypes}
+          subcategory={this.state.subcategory}
+          urlKey={`/categories/${this.state.subcategory.key}`}
+          userAccount={this.props.userAccount}
+        />
+        <ToastContainer />
+      </div>
     );
   }
 }
