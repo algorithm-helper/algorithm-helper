@@ -31,6 +31,34 @@ const TopicItemContainer = props => (
             </div>
           )
         }
+
+        {props.topicItemComponent}
+      </Col>
+      <Col md="2" />
+    </Row>
+  </Container>
+);
+
+TopicItemContainer.propTypes = {
+  color: PropTypes.string,
+  isBookmarked: PropTypes.bool,
+  isCompleted: PropTypes.bool,
+  onMarkAsCompleted: PropTypes.func,
+  onSaveToBookmarks: PropTypes.func,
+  topicItemComponent: PropTypes.object,
+};
+
+export default TopicItemContainer;
+
+/**
+
+        <div className={topicItemContainer}>
+          {props.topicItemComponent}
+        </div>
+
+ */
+
+ /*
         {
           !props.loading && props.userAccount.isLoggedIn
           && (
@@ -42,22 +70,4 @@ const TopicItemContainer = props => (
             />
           )
         }
-        <div className={topicItemContainer}>
-          { props.getTopicItemComponent() }
-        </div>
-      </Col>
-      <Col md="2" />
-    </Row>
-  </Container>
-);
-
-TopicItemContainer.propTypes = {
-  color: PropTypes.string,
-  getTopicItemComponent: PropTypes.func,
-  isCompleted: PropTypes.bool,
-  isBookmarked: PropTypes.bool,
-  onMarkAsCompleted: PropTypes.func,
-  onSaveToBookmarks: PropTypes.func,
-};
-
-export default TopicItemContainer;
+ */

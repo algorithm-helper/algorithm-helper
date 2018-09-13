@@ -7,6 +7,7 @@ import { setColorTheme } from 'actions/ColorThemeActions';
 import { getItemIndexFromQueryString } from 'utils/routeUtils';
 import { getTopicItemTypes } from 'utils/topicItemUtils';
 import getColorFromKey from 'utils/getColorFromKey';
+import { noop } from 'utils/utils';
 
 import TopicItemPage from './TopicItemPage';
 import TopicItemArticle from './TopicItemArticle';
@@ -27,12 +28,11 @@ class TopicItemPageContainer extends React.Component {
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.history = createHistory();
     this.setState({ loading: true, error: '' });
     const { categoryKey, subcategoryKey, topicKey } = this.props.match.params;
     this.requestTopicData(categoryKey, subcategoryKey, topicKey);
-
     this.requestCompletionData();
   }
 
@@ -87,17 +87,12 @@ class TopicItemPageContainer extends React.Component {
       .then(result => result.json())
       .then(result => {
         const { completedItems, bookmarks } = result.data;
-
         const key = this.getCurrentKey();
-        const url = this.getCurrentUrl();
-
-        console.log(key, url);
-
         const isCompleted = !!completedItems.find(elem => elem.key === key);
-        const isBookmarked = !!bookmarks.find(elem => elem.url === url);
+        const isBookmarked = !!bookmarks.find(elem => elem.key === key);
         this.setState({ isCompleted, isBookmarked });
       })
-      .catch(() => { /* Ignore */ });
+      .catch(noop);
   };
 
   /**
@@ -124,14 +119,6 @@ class TopicItemPageContainer extends React.Component {
   getCurrentKey = () => {
     const { categoryKey, subcategoryKey, topicKey } = this.props.match.params;
     return `${categoryKey}/${subcategoryKey}/${topicKey}`;
-  };
-
-  /**
-   * Returns the current url given the match params and indexSelected.
-   */
-  getCurrentUrl = () => {
-    const key = this.getCurrentKey();
-    return `${key}?item=${this.state.indexSelected}`;
   };
 
   /**
@@ -166,13 +153,15 @@ class TopicItemPageContainer extends React.Component {
       body: JSON.stringify({ key }),
     })
       .then(result => {
-        if (!result) {
+        if (result.status !== 200) {
           throw result;
         }
 
+        // Note that this toggles the `isCompleted` flag locally on the client. This is sufficient
+        // since any new loads of this page would request this anyway:
         this.setState(prevState => ({ isCompleted: !prevState.isCompleted }));
       })
-      .catch(() => { /* Ignore */ });
+      .catch(noop);
   };
 
   /**
@@ -184,23 +173,26 @@ class TopicItemPageContainer extends React.Component {
       return;
     }
 
-    const url = this.getCurrentUrl();
+    const key = this.getCurrentKey();
     fetch('/actions/save-to-bookmarks', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'X-Auth': this.props.userAccount.authToken,
       },
-      body: JSON.stringify({ url }),
+      body: JSON.stringify({ key }),
     })
       .then(result => {
-        console.log(result);
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  };
+        if (result.status !== 200) {
+          throw result;
+        }
 
+        // Note that this toggles the `isBookmarked` flag locally on the client. This is sufficient
+        // since any new loads of this page would request this anyway:
+        this.setState(prevState => ({ isBookmarked: !prevState.isBookmarked }));
+      })
+      .catch(noop);
+  };
 
   /**
    * Returns the topic item component that corresponds to the topic item type.
@@ -238,6 +230,9 @@ class TopicItemPageContainer extends React.Component {
     }
   };
 
+  /**
+   * Handles when the content is finished loading.
+   */
   onContentLoaded = () => {
     this.setState({ loading: false });
   };
@@ -253,7 +248,7 @@ class TopicItemPageContainer extends React.Component {
     return (
       <TopicItemPage
         color={getColorFromKey(this.props.colorKey)}
-        getTopicItemComponent={this.getTopicItemComponent}
+        topicItemComponent={this.getTopicItemComponent()}
         indexSelected={this.state.indexSelected}
         isCompleted={this.state.isCompleted}
         isBookmarked={this.state.isBookmarked}

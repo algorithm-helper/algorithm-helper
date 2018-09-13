@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 import { Button } from 'reactstrap';
 
 import {
@@ -15,8 +14,7 @@ import {
  * @param {object} props
  */
 const TopicItemBar = props => {
-  console.log(props.isCompleted);
-  console.log(props.isBookmarked);
+  console.log(props.isCompleted, props.isBookmarked);
 
   return (
     <div className={topicItemBarContainer}>
@@ -56,15 +54,11 @@ const TopicItemBar = props => {
       </div>
     </div>
   );
-}
-
-TopicItemBar.propTypes = {
-  isCompleted: PropTypes.bool,
-  isBookmarked: PropTypes.bool,
 };
 
-const mapStateToProps = state => ({
-  colorKey: state.colorKey,
-});
+TopicItemBar.propTypes = {
+  isBookmarked: PropTypes.bool,
+  isCompleted: PropTypes.bool,
+};
 
-export default connect(mapStateToProps)(TopicItemBar);
+export default TopicItemBar;

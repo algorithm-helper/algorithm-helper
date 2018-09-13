@@ -6,6 +6,8 @@ import JumbotronSmall from 'components/JumbotronSmall';
 import TopicItemNavBar from './TopicItemNavBar';
 import TopicItemContainer from './TopicItemContainer';
 
+import TopicItemBar from './TopicItemBar';
+
 import { topicItemPage } from './styles.scss';
 
 /**
@@ -27,9 +29,21 @@ const TopicItemPage = props => (
       topicItemTypes={props.topicItemTypes}
     />
 
+    {
+      !props.loading && props.userAccount.isLoggedIn
+      && (
+        <TopicItemBar
+          onMarkAsCompleted={props.onMarkAsCompleted}
+          onSaveToBookmarks={props.onSaveToBookmarks}
+          isCompleted={props.isCompleted}
+          isBookmarked={props.isBookmarked}
+        />
+      )
+    }
+
     <TopicItemContainer
       color={props.color}
-      getTopicItemComponent={props.getTopicItemComponent}
+      topicItemComponent={props.topicItemComponent}
       isCompleted={props.isCompleted}
       isBookmarked={props.isBookmarked}
       onMarkAsCompleted={props.onMarkAsCompleted}
@@ -41,7 +55,6 @@ const TopicItemPage = props => (
 
 TopicItemPage.propTypes = {
   color: PropTypes.string,
-  getTopicItemComponent: PropTypes.func,
   isCompleted: PropTypes.bool,
   isBookmarked: PropTypes.bool,
   indexSelected: PropTypes.number,
@@ -49,6 +62,7 @@ TopicItemPage.propTypes = {
   onMarkAsCompleted: PropTypes.func,
   onSaveToBookmarks: PropTypes.func,
   topic: PropTypes.object,
+  topicItemComponent: PropTypes.object,
   topicItemTypes: PropTypes.array,
   subcategory: PropTypes.object,
   urlKey: PropTypes.string,

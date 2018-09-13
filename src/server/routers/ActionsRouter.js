@@ -60,7 +60,7 @@ router.post('/mark-as-completed', authenticateUser, (req, res) => {
  * @param {string} url
  */
 router.post('/save-to-bookmarks', authenticateUser, (req, res) => {
-  ActionsHelpers.handleItemBookmarked(req.user._id, req.body.url)
+  ActionsHelpers.handleItemBookmarked(req.user._id, req.body.key)
     .then(data => {
       if (data === null) {
         res.status(400).send(JSON.stringify({ error: 'Invalid request' }));

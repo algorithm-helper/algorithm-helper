@@ -53,7 +53,7 @@ const UserSchema = new mongoose.Schema({
     },
   }],
   bookmarks: [{
-    url: {
+    key: {
       type: String,
       required: true,
     },
@@ -66,10 +66,6 @@ const UserSchema = new mongoose.Schema({
       required: true,
     },
     categoryTitle: {
-      type: String,
-      required: true,
-    },
-    topicItemType: {
       type: String,
       required: true,
     },

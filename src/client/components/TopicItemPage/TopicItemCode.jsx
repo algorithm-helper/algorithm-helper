@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import Tabs, { TabPane } from 'rc-tabs';
 import TabContent from 'rc-tabs/lib/TabContent';
@@ -85,8 +84,4 @@ TopicItemCode.propTypes = {
   metaData: PropTypes.array,
 };
 
-const mapStateToProps = state => ({
-  colorKey: state.colorKey,
-});
-
-export default connect(mapStateToProps)(TopicItemCode);
+export default TopicItemCode;
