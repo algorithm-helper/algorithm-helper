@@ -35,8 +35,6 @@ const TopicItemPage = props => (
         <TopicItemBar
           onMarkAsCompleted={props.onMarkAsCompleted}
           onSaveToBookmarks={props.onSaveToBookmarks}
-          isCompleted={props.isCompleted}
-          isBookmarked={props.isBookmarked}
         />
       )
     }
@@ -44,19 +42,12 @@ const TopicItemPage = props => (
     <TopicItemContainer
       color={props.color}
       topicItemComponent={props.topicItemComponent}
-      isCompleted={props.isCompleted}
-      isBookmarked={props.isBookmarked}
-      onMarkAsCompleted={props.onMarkAsCompleted}
-      onSaveToBookmarks={props.onSaveToBookmarks}
-      userAccount={props.userAccount}
     />
   </div>
 );
 
 TopicItemPage.propTypes = {
   color: PropTypes.string,
-  isCompleted: PropTypes.bool,
-  isBookmarked: PropTypes.bool,
   indexSelected: PropTypes.number,
   onChangeIndex: PropTypes.func,
   onMarkAsCompleted: PropTypes.func,

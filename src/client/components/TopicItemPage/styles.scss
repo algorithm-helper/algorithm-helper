@@ -23,6 +23,7 @@
 
 :local(.topicItemBarContainer) {
   margin-top: 2em;
+  margin-bottom: 2em;
 }
 
 :local(.topicItemBarItem) {
@@ -47,4 +48,8 @@
   margin-top: 3em;
   text-align: center;
   width: 100%;
+}
+
+:local(.topicItemToast) {
+  font-family: 'IBM Plex Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }

@@ -39,6 +39,12 @@ class MarkdownContainer extends React.Component {
     }
   }
 
+  componentWillReceiveProps(newProps) {
+    this.setState({
+      markdownContent: marked(newProps.markdownStr),
+    });
+  }
+
   componentDidUpdate() {
     window.renderMathInElement(document.body, katexOptions);
   }

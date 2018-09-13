@@ -9,11 +9,14 @@ import { setColorTheme } from 'actions/ColorThemeActions';
 import { getItemIndexFromQueryString } from 'utils/routeUtils';
 import { getTopicItemTypes } from 'utils/topicItemUtils';
 import getColorFromKey from 'utils/getColorFromKey';
+import getS3ArticleUrl from 'utils/getS3ArticleUrl';
 import { noop } from 'utils/utils';
 
 import TopicItemPage from './TopicItemPage';
 import TopicItemArticle from './TopicItemArticle';
 import TopicItemCode from './TopicItemCode';
+
+import { topicItemToast } from './styles.scss';
 
 class TopicItemPageContainer extends React.Component {
   constructor(props) {
@@ -25,7 +28,7 @@ class TopicItemPageContainer extends React.Component {
       error: '',
       isCompleted: false,
       isBookmarked: false,
-      loading: false,
+      loading: true,
       topic: {},
     };
   }
@@ -161,13 +164,11 @@ class TopicItemPageContainer extends React.Component {
 
         // Note that this toggles the `isCompleted` flag locally on the client. This is sufficient
         // since any new loads of this page would request this anyway:
-        // this.setState(prevState => ({ isCompleted: !prevState.isCompleted }));
-        this.requestCompletionData();
-
         toast.info(`Marked as ${!this.state.isCompleted ? 'Completed' : 'Uncompleted'}`, {
           position: toast.POSITION.BOTTOM_LEFT,
           hideProgressBar: true,
         });
+        this.setState(prevState => ({ isCompleted: !prevState.isCompleted }));
       })
       .catch(noop);
   };
@@ -197,13 +198,11 @@ class TopicItemPageContainer extends React.Component {
 
         // Note that this toggles the `isBookmarked` flag locally on the client. This is sufficient
         // since any new loads of this page would request this anyway:
-        // this.setState(prevState => ({ isBookmarked: !prevState.isBookmarked }));
-        this.requestCompletionData();
-
         toast.info(`${!this.state.isBookmarked ? 'Added to' : 'Removed from'} bookmarks`, {
           position: toast.POSITION.BOTTOM_LEFT,
           hideProgressBar: true,
         });
+        this.setState(prevState => ({ isBookmarked: !prevState.isBookmarked }));
       })
       .catch(noop);
   };
@@ -227,14 +226,15 @@ class TopicItemPageContainer extends React.Component {
       case 'article':
         return (
           <TopicItemArticle
-            contentLoaded={this.onContentLoaded}
+            articleUrl={getS3ArticleUrl(this.props.match.params)}
+            onContentLoaded={this.onContentLoaded}
             type={topicItem.type}
           />
         );
       case 'code':
         return (
           <TopicItemCode
-            contentLoaded={this.onContentLoaded}
+            onContentLoaded={this.onContentLoaded}
             type={topicItem.type}
             metaData={metaData}
           />
@@ -277,7 +277,7 @@ class TopicItemPageContainer extends React.Component {
           urlKey={`/categories/${this.state.subcategory.key}`}
           userAccount={this.props.userAccount}
         />
-        <ToastContainer />
+        <ToastContainer toastClassName={topicItemToast} />
       </div>
     );
   }

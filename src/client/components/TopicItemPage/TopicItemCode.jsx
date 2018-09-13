@@ -20,7 +20,6 @@ class TopicItemCode extends React.Component {
   }
 
   componentDidMount() {
-    this.props.contentLoaded();
     this.getCodeContent(this.props.metaData);
   }
 
@@ -39,6 +38,7 @@ class TopicItemCode extends React.Component {
       .then(result => Promise.all(result.map(x => x.text())))
       .then(result => {
         const codeContent = result.map((codeStr, i) => ({ ...metaData[i], codeStr }));
+        this.props.onContentLoaded();
         this.setState({ codeContent });
       })
       .catch(err => this.setState({ error: err }));
@@ -80,7 +80,7 @@ class TopicItemCode extends React.Component {
 }
 
 TopicItemCode.propTypes = {
-  contentLoaded: PropTypes.func,
+  onContentLoaded: PropTypes.func,
   metaData: PropTypes.array,
 };
 
