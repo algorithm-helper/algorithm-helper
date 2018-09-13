@@ -22,7 +22,7 @@ const DashboardCalendarHeatmapContainer = props => (
     </div>
     <div className={dashboardCalendarHeatMapBody}>
       <CalendarHeatmap
-        startDate={moment()}
+        startDate={moment().subtract(2, 'day')}
         endDate={moment().add(365, 'day')}
         values={props.activityItems}
         classForValue={value => {

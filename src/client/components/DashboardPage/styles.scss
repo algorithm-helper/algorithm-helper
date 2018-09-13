@@ -54,6 +54,7 @@
 
 :local(.dashboardBookmarkContainer) {
   margin-top: 2em;
+
 }
 
 :local(.dashboardBookmarkHeader) {
@@ -64,6 +65,8 @@
 :local(.dashboardBookmarkBody) {
   margin-top: 1em;
   margin-bottom: 1em;
+  max-height: 400px;
+  overflow-y: scroll;
 }
 
 :local(.dashboardProgressContainer) {
@@ -87,6 +90,10 @@
 :local(.dashboardBookmarkItemContainer) {
   margin-bottom: 1em;
   height: 80px;
+
+  a {
+    text-decoration: none;
+  }
 }
 
 :local(.dashboardBookmarkItemTitle) {
@@ -96,16 +103,6 @@
 :local(.dashboardBookmarkItemSubtitle) {
   font-weight: 400;
   font-size: 0.75em;
-}
-
-:local(.dashboardBookmarkItemTypeContainer) {
-  @media all and (max-width: 820px) {
-    display: none;
-  }
-}
-
-:local(.dashboardBookmarkItemType) {
-  text-align: center;
 }
 
 :local(.dashboardBookmarkItemDelete) {

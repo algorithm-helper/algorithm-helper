@@ -107,7 +107,7 @@ const ActionsHelpers = {
               $push: {
                 bookmarks: {
                   key,
-                  dataAdded: Date.now(),
+                  dateAdded: Date.now(),
                   categoryTitle,
                   subcategoryTitle,
                   topicTitle,

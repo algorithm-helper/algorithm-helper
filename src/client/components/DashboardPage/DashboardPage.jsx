@@ -1,5 +1,6 @@
 import React from 'react';
 import MDSpinner from 'react-md-spinner';
+import moment from 'moment';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { Col, Container, Row } from 'reactstrap';
@@ -14,51 +15,6 @@ import DashboardBookmarkContainer from './DashboardBookmarkContainer';
 
 import { dashboardPageContainer, dashboardSpinner } from './styles.scss';
 
-const sampleBookmarkData = [
-  // {
-  //   topicItemTitle: 'Introduction',
-  //   subcategoryTitle: 'Lists',
-  //   categoryTitle: 'Data Structures',
-  //   type: 'article',
-  // },
-  // {
-  //   topicItemTitle: 'Linked List',
-  //   subcategoryTitle: 'Lists',
-  //   categoryTitle: 'Data Structures',
-  //   type: 'code',
-  // },
-  // {
-  //   topicItemTitle: 'Stack',
-  //   subcategoryTitle: 'Lists',
-  //   categoryTitle: 'Data Structures',
-  //   type: 'video',
-  // },
-  // {
-  //   topicItemTitle: 'Introduction',
-  //   subcategoryTitle: 'Sorting',
-  //   categoryTitle: 'General Algorithms',
-  //   type: 'article',
-  // },
-  // {
-  //   topicItemTitle: 'Merge Sort',
-  //   subcategoryTitle: 'Sorting',
-  //   categoryTitle: 'General Algorithms',
-  //   type: 'code',
-  // },
-  // {
-  //   topicItemTitle: 'Quick Sort',
-  //   subcategoryTitle: 'Sorting',
-  //   categoryTitle: 'General Algorithms',
-  //   type: 'video',
-  // },
-];
-
-const sampleActivityItems = [
-  // { date: '2016-01-01' },
-  // { date: '2016-01-22' },
-  // { date: '2018-09-30' },
-];
-
 class DashboardPage extends React.Component {
   constructor(props) {
     super(props);
@@ -67,6 +23,8 @@ class DashboardPage extends React.Component {
       uncompleted: 0,
       completed: 0,
       loading: true,
+      bookmarkData: [],
+      activityItems: [],
     };
   }
 
@@ -97,22 +55,69 @@ class DashboardPage extends React.Component {
     ])
       .then(result => Promise.all(result.map(x => x.json())))
       .then(result => {
-        let [userData, topicItemCountMapping] = result;
-        userData = userData.data;
-        topicItemCountMapping = topicItemCountMapping.data;
+        const [userData, topicItemCountMapping] = result.map(elem => elem.data);
 
-        console.log(userData);
+        const { bookmarks, fullName, completedItems } = userData;
+        const bookmarkData = this.getBookmarkData(bookmarks);
+        const activityItems = this.getActivityItems(bookmarks, completedItems);
+
         console.log(topicItemCountMapping);
+        console.log(completedItems);
 
         this.setState({
-          fullName: userData.fullName,
           loading: false,
+          fullName,
+          bookmarkData,
+          activityItems,
         });
       })
       .catch(err => {
         console.log(err);
       });
   };
+
+  /**
+   * Creates the activity item array for the calendar heat map.
+   *
+   * @param {array} bookmarks
+   * @param {array} completedItems
+   */
+  getActivityItems = (bookmarks, completedItems) => {
+    const result = []
+      .concat(
+        bookmarks.map(elem => elem.dateAdded),
+        completedItems.map(elem => elem.dateAdded),
+      )
+      .map(timestamp => moment(timestamp).format('YYYY-MM-DD'))
+      .reduce((prev, curr) => ({
+        ...prev,
+        [curr]: (prev[curr] || 0) + 1,
+      }), {});
+
+    return Object.keys(result).map(key => ({
+      date: key,
+      count: result[key],
+    }));
+  };
+
+  /**
+   * Gets the correctly formatted bookmark data for the bookmark container.
+   *
+   * @param {array} bookmarks
+   */
+  getBookmarkData = bookmarks => (
+    bookmarks.map(({
+      key,
+      categoryTitle,
+      subcategoryTitle,
+      topicTitle,
+    }) => ({
+      url: `/categories/${key}`,
+      categoryTitle,
+      subcategoryTitle,
+      topicTitle,
+    }))
+  );
 
   render() {
     if (!this.props.userAccount.isLoggedIn) {
@@ -142,16 +147,16 @@ class DashboardPage extends React.Component {
                     <DashboardPageProgressContainer
                       uncompleted={this.state.uncompleted}
                       completed={this.state.completed}
-                      topicItemCountMapping={this.state.completed}
+                      topicItemCountMapping={this.state.topicItemCountMapping}
                     />
 
                     <DashboardCalendarHeatmapContainer
-                      activityItems={sampleActivityItems}
+                      activityItems={this.state.activityItems}
                       title="Daily Activity"
                     />
 
                     <DashboardBookmarkContainer
-                      bookmarkItems={sampleBookmarkData}
+                      bookmarkItems={this.state.bookmarkData}
                       title="Saved Bookmarks"
                     />
                   </React.Fragment>

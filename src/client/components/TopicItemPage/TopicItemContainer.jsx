@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import MDSpinner from 'react-md-spinner';
 import { Col, Container, Row } from 'reactstrap';
 
-import { topicItemPageSpinnerContainer } from './styles.scss';
+import { topicItemContainer, topicItemPageSpinnerContainer } from './styles.scss';
 
 /**
  * Renders the TopicItemContainer stateless functional component.
@@ -11,7 +11,10 @@ import { topicItemPageSpinnerContainer } from './styles.scss';
  * @param {object} props
  */
 const TopicItemContainer = props => (
-  <Container fluid>
+  <Container
+    className={topicItemContainer}
+    fluid
+  >
     <Row>
       <Col md="2" />
       <Col md="8">

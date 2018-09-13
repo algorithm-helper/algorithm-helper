@@ -1,14 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import { Link } from 'react-router-dom';
 import { Col, Container, Row } from 'reactstrap';
 
 import {
   dashboardBookmarkItemContainer,
   dashboardBookmarkItemTitle,
   dashboardBookmarkItemSubtitle,
-  dashboardBookmarkItemTypeContainer,
-  dashboardBookmarkItemType,
   dashboardBookmarkItemDelete,
   dashboardBookmarkItemDeleteBtn,
 } from './styles.scss';
@@ -18,61 +17,34 @@ import {
  *
  * @param {object} props
  */
-const DashboardBookmarkItem = props => {
-  let typeTitle;
-  let iconComponent;
-
-  switch (props.type) {
-    case 'article':
-      typeTitle = 'Article';
-      iconComponent = <i className="fas fa-newspaper" />;
-      break;
-    case 'code':
-      typeTitle = 'Code';
-      iconComponent = <i className="fas fa-code" />;
-      break;
-    case 'video':
-      typeTitle = 'Video';
-      iconComponent = <i className="fas fa-play" />;
-      break;
-    default:
-      return null;
-  }
-
-  return (
-    <Container fluid>
-      <div className={classnames('card', dashboardBookmarkItemContainer)}>
-        <div className="card-body">
-          <Row>
-            <Col className={dashboardBookmarkItemTypeContainer} md="2">
-              <div className={dashboardBookmarkItemType}>
-                <div className={dashboardBookmarkItemTitle}>{typeTitle}</div>
-                <div className={dashboardBookmarkItemSubtitle}>{iconComponent}</div>
-              </div>
-            </Col>
-
-            <Col md="8">
-              <div className={dashboardBookmarkItemTitle}>{props.topicItemTitle}</div>
+const DashboardBookmarkItem = props => (
+  <Container fluid>
+    <div className={classnames('card', dashboardBookmarkItemContainer)}>
+      <div className="card-body">
+        <Row>
+          <Col md="10">
+            <Link to={props.url}>
+              <div className={dashboardBookmarkItemTitle}>{props.topicTitle}</div>
               <div className={dashboardBookmarkItemSubtitle}>
                 {`${props.categoryTitle} / ${props.subcategoryTitle}`}
               </div>
-            </Col>
-          </Row>
+            </Link>
+          </Col>
+        </Row>
 
-          <div className={dashboardBookmarkItemDelete}>
-            <i className={classnames('fas', 'fa-times', dashboardBookmarkItemDeleteBtn)} />
-          </div>
+        <div className={dashboardBookmarkItemDelete}>
+          <i className={classnames('fas', 'fa-times', dashboardBookmarkItemDeleteBtn)} />
         </div>
       </div>
-    </Container>
-  );
-};
+    </div>
+  </Container>
+);
 
 DashboardBookmarkItem.propTypes = {
+  url: PropTypes.string,
   categoryTitle: PropTypes.string,
   subcategoryTitle: PropTypes.string,
-  topicItemTitle: PropTypes.string,
-  type: PropTypes.string,
+  topicTitle: PropTypes.string,
 };
 
 export default DashboardBookmarkItem;
