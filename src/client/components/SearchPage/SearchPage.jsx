@@ -65,6 +65,7 @@ class SearchPage extends React.Component {
 
   // eslint-disable-next-line
   getSearchItems = () => {
+    return [];
     return dummyData.map(elem => ({
       ...elem,
       url: getTopicUrlFromKey(elem.topicKey),

@@ -51,3 +51,19 @@
 :local(.searchItemSubtitle) {
   font-size: 0.75em;
 }
+
+:local(.searchNoResults) {
+  text-align: center;
+}
+
+:local(.searchNoResultsTitle) {
+  font-weight: 500;
+  font-size: 1.25em;
+  color: $ACCENT_GREY_COLOR;
+
+}
+
+:local(.searchNoResultsSubtitle) {
+  font-weight: 400;
+  color: $ACCENT_GREY_COLOR;
+}
