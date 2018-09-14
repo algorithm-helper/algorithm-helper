@@ -1,7 +1,10 @@
 import React from 'react';
 import { Col, Container, Row } from 'reactstrap';
+import { connect } from 'react-redux';
 
 import getTopicUrlFromKey from 'utils/getTopicUrlFromKey';
+import { resetColorTheme } from 'actions/ColorThemeActions';
+import getColorFromKey from 'utils/getColorFromKey';
 
 import SearchHeader from './SearchHeader';
 import SearchBar from './SearchBar';
@@ -45,8 +48,12 @@ class SearchPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // test: '',
+      loading: false,
     };
+  }
+
+  componentWillMount() {
+    this.props.dispatch(resetColorTheme());
   }
 
   componentDidMount() {
@@ -65,7 +72,6 @@ class SearchPage extends React.Component {
 
   // eslint-disable-next-line
   getSearchItems = () => {
-    return [];
     return dummyData.map(elem => ({
       ...elem,
       url: getTopicUrlFromKey(elem.topicKey),
@@ -95,6 +101,8 @@ class SearchPage extends React.Component {
             />
 
             <SearchItemContainer
+              color={getColorFromKey(this.props.colorKey)}
+              loading={this.state.loading}
               searchItems={this.getSearchItems()}
             />
           </Col>
@@ -107,4 +115,8 @@ class SearchPage extends React.Component {
 
 SearchPage.propTypes = {};
 
-export default SearchPage;
+const mapStateToProps = state => ({
+  colorKey: state.colorKey,
+});
+
+export default connect(mapStateToProps)(SearchPage);
