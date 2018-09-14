@@ -1,11 +1,11 @@
 import React from 'react';
 import { Col, Container, Row } from 'reactstrap';
 
+import getTopicUrlFromKey from 'utils/getTopicUrlFromKey';
+
 import SearchHeader from './SearchHeader';
 import SearchBar from './SearchBar';
 import SearchResults from './SearchResults';
-
-import getTopicUrlFromKey from 'utils/getTopicUrlFromKey';
 
 import { searchPageContainer } from './styles.scss';
 import SearchItemContainer from './SearchItemContainer';
@@ -60,6 +60,7 @@ class SearchPage extends React.Component {
    */
   onSearchChange = e => {
     const searchQuery = e.target.value.trim().toLowerCase();
+    console.log(searchQuery);
   };
 
   // eslint-disable-next-line
