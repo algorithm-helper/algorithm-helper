@@ -43,9 +43,12 @@ class NavBarContainer extends React.Component {
    * @param {Event} e
    */
   onEnterKeyPressed = e => {
-    this.props.dispatch(setSearchQuery(this.state.searchQuery));
-    if (e.key === 'Enter' && this.state.searchQuery) {
-      this.props.history.push('/search');
+    if (e.key === 'Enter') {
+      this.props.dispatch(setSearchQuery(this.state.searchQuery));
+
+      if (this.state.searchQuery) {
+        this.props.history.push('/search');
+      }
     }
   };
 

@@ -1,0 +1,53 @@
+@import '~styles/base/colors';
+
+:local(.searchPageContainer) {
+  margin-top: calc(60px + 3em);
+  margin-bottom: 4em;
+}
+
+:local(.searchHeader) {
+  margin-bottom: 1em;
+}
+
+:local(.searchHeaderTitle) {
+  font-size: 2em;
+  font-weight: 400;
+}
+
+:local(.searchBarContainer) {
+  margin-bottom: 1em;
+}
+
+:local(.searchBar) {
+  &:focus {
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+}
+
+:local(.searchResults) {
+  margin-bottom: 2em;
+  font-size: 0.8em;
+}
+
+:local(.searchItemContainer) {
+  margin-bottom: 1.5em;
+
+  a {
+    text-decoration: none;
+    color: $BASE_COLOR;
+  }
+
+  a:hover {
+    color: $BASE_COLOR_LIGHT;
+  }
+}
+
+:local(.searchItemTitle) {
+  font-size: 1em;
+}
+
+:local(.searchItemSubtitle) {
+  font-size: 0.75em;
+}

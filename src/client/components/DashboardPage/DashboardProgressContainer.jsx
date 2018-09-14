@@ -43,6 +43,8 @@ class DashboardProgressContainer extends React.Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0);
+
     const { topicItemCountMapping, completedItemsMapping } = this.props;
 
     this.setState({
