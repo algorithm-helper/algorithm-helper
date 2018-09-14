@@ -1,9 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { compose } from 'redux';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 import getColorFromKey from 'utils/getColorFromKey';
 import getLightenedColor from 'utils/getLightenedColor';
+import { setSearchQuery } from 'actions/SearchActions';
 import { handleAuthToken } from 'authentication';
 
 import NavBar from './NavBar';
@@ -40,8 +43,9 @@ class NavBarContainer extends React.Component {
    * @param {Event} e
    */
   onEnterKeyPressed = e => {
-    if (e.key === 'Enter') {
-      // TODO
+    this.props.dispatch(setSearchQuery(this.state.searchQuery));
+    if (e.key === 'Enter' && this.state.searchQuery) {
+      this.props.history.push('/search');
     }
   };
 
@@ -95,6 +99,10 @@ NavBarContainer.propTypes = {
 const mapStateToProps = state => ({
   colorKey: state.colorKey,
   userAccount: state.userAccount,
+  searchQuery: state.searchQuery,
 });
 
-export default connect(mapStateToProps)(NavBarContainer);
+export default compose(
+  connect(mapStateToProps),
+  withRouter,
+)(NavBarContainer);

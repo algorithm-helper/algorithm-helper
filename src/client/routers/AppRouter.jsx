@@ -11,6 +11,7 @@ import MainPage from 'components/MainPage';
 import LoginPage from 'components/LoginPage';
 import SignUpPage from 'components/SignUpPage';
 import DashboardPage from 'components/DashboardPage';
+import SearchPage from 'components/SearchPage';
 import ContentPage from 'components/ContentPage';
 import TopicItemPage from 'components/TopicItemPage';
 import InformationPage from 'components/InformationPage';
@@ -63,6 +64,12 @@ const AppRouter = () => (
         <Route
           path="/dashboard"
           component={DashboardPage}
+          exact
+        />
+
+        <Route
+          path="/search"
+          component={SearchPage}
           exact
         />
 

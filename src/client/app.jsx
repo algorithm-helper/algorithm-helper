@@ -18,7 +18,7 @@ const App = (
 );
 
 store.subscribe(() => {
-  // console.log('action', store.getState());
+  console.log('action', store.getState());
 });
 
 const run = () => {
