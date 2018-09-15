@@ -11,10 +11,10 @@ const { log } = include('utils');
 const fixTopicIndexOrder = require('./fixTopicIndexOrder');
 const fixTopicItemCount = require('./fixTopicItemCount');
 
-const categoryIndex = require('../../../data/index/categoryIndex.json');
-const subcategoryIndex = require('../../../data/index/subcategoryIndex.json');
-const topicIndex = require('../../../data/index/topicIndex.json');
-const colorIndex = require('../../../data/index/colorIndex.json');
+const categoryIndex = require('../../../../data/index/categoryIndex.json');
+const subcategoryIndex = require('../../../../data/index/subcategoryIndex.json');
+const topicIndex = require('../../../../data/index/topicIndex.json');
+const colorIndex = require('../../../../data/index/colorIndex.json');
 
 /**
  * Initializes MongoDB with the data specified in the categoryIndex, subcategoryIndex, and

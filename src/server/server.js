@@ -7,7 +7,7 @@ const { AccountsRouter, ActionsRouter, DataRouter } = include('routers');
 const { setupMongoose } = include('mongo/mongoose');
 const { cors } = include('middleware/web');
 const { log } = include('utils');
-const { initMongo } = include('startup');
+const { initMongo } = include('mongo/utils');
 
 const publicPath = path.resolve(process.cwd(), 'dist');
 const port = process.env.PORT || 8080;
