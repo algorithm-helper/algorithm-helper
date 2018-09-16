@@ -8,18 +8,18 @@ const { INDEX_NAME, TYPE_NAME } = require('./constants');
  * @param {string} query
  * @param {string} field
  */
-const getClientSearchQuery = (client, query, field) => (
-  client.search({
+const getClientSearchQuery = (client, query, field) => {
+  const matchKey = query ? 'match' : 'match_all';
+  const matchVal = query ? { [field]: query } : {};
+  return client.search({
     index: INDEX_NAME,
     type: TYPE_NAME,
     body: {
       query: {
-        match: {
-          [field]: query,
-        },
+        [matchKey]: matchVal,
       },
     },
-  })
-);
+  });
+};
 
 module.exports = getClientSearchQuery;
