@@ -19,7 +19,7 @@ const SearchItem = props => (
       <div className={searchItemTitle}>{props.topicTitle}</div>
       <div className={searchItemSubtitle}>{`${props.categoryTitle} / ${props.subcategoryTitle}`}</div>
     </Link>
-    <div>{props.textSnippet}</div>
+    <div>{props.description}</div>
   </div>
 );
 
@@ -28,7 +28,7 @@ SearchItem.propTypes = {
   topicTitle: PropTypes.string,
   subcategoryTitle: PropTypes.string,
   categoryTitle: PropTypes.string,
-  textSnippet: PropTypes.string,
+  description: PropTypes.string,
 };
 
 export default SearchItem;

@@ -20,6 +20,7 @@ const SearchBar = props => (
         type="text"
         placeholder={props.searchPlaceholder}
         onChange={props.onSearchChange}
+        onKeyPress={props.onEnterKeyPressed}
         autoComplete="off"
       />
     </InputGroup>
@@ -28,6 +29,7 @@ const SearchBar = props => (
 
 SearchBar.propTypes = {
   onSearchChange: PropTypes.func,
+  onEnterKeyPressed: PropTypes.func,
   searchPlaceholder: PropTypes.string,
 };
 

@@ -4,7 +4,9 @@ import { connect } from 'react-redux';
 
 import getTopicUrlFromKey from 'utils/getTopicUrlFromKey';
 import { resetColorTheme } from 'actions/ColorThemeActions';
+import { setSearchQuery } from 'actions/SearchActions';
 import getColorFromKey from 'utils/getColorFromKey';
+import { noop } from 'utils/utils';
 
 import SearchHeader from './SearchHeader';
 import SearchBar from './SearchBar';
@@ -13,42 +15,14 @@ import SearchResults from './SearchResults';
 import { searchPageContainer } from './styles.scss';
 import SearchItemContainer from './SearchItemContainer';
 
-const dummyData = [
-  {
-    topicKey: 'data-structures/lists/introduction',
-    topicTitle: 'Introduction',
-    subcategoryTitle: 'Lists',
-    categoryTitle: 'Data Structures',
-    textSnippet: 'Lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet',
-  },
-  {
-    topicKey: 'data-structures/lists/linked-list',
-    topicTitle: 'Linked List',
-    subcategoryTitle: 'Lists',
-    categoryTitle: 'Data Structures',
-    textSnippet: 'Lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet',
-  },
-  {
-    topicKey: 'data-structures/lists/stack',
-    topicTitle: 'Stack',
-    subcategoryTitle: 'Lists',
-    categoryTitle: 'Data Structures',
-    textSnippet: 'Lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet',
-  },
-  {
-    topicKey: 'data-structures/lists/dynamic-array',
-    topicTitle: 'Dynamic Array',
-    subcategoryTitle: 'Lists',
-    categoryTitle: 'Data Structures',
-    textSnippet: 'Lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet',
-  },
-];
-
 class SearchPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       loading: false,
+      searchQuery: '',
+      searchResults: [],
+      currentSearchQuery: '',
     };
   }
 
@@ -58,21 +32,15 @@ class SearchPage extends React.Component {
 
   componentDidMount() {
     window.scrollTo(0, 0);
+    this.setState({ currentSearchQuery: this.props.searchQuery, loading: true });
+    this.requestSearchResults(this.props.searchQuery);
+  }
 
-    fetch('/search/search', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        query: 'list',
-      }),
-    })
-      .then(result => result.json())
-      .then(result => {
-        console.log(result);
-      })
-      .catch(() => {});
+  componentWillReceiveProps(newProps) {
+    if (newProps.searchQuery !== this.state.currentSearchQuery) {
+      this.setState({ currentSearchQuery: newProps.searchQuery, loading: true });
+      this.requestSearchResults(newProps.searchQuery);
+    }
   }
 
   /**
@@ -82,15 +50,46 @@ class SearchPage extends React.Component {
    */
   onSearchChange = e => {
     const searchQuery = e.target.value.trim().toLowerCase();
-    console.log(searchQuery);
+    this.setState({ searchQuery });
   };
 
-  // eslint-disable-next-line
-  getSearchItems = () => {
-    return dummyData.map(elem => ({
-      ...elem,
-      url: getTopicUrlFromKey(elem.topicKey),
-    }));
+  /**
+   * Handles when the 'enter' key is pressed in the search bar.
+   *
+   * @param {Event} e
+   */
+  onEnterKeyPressed = e => {
+    if (e.key === 'Enter') {
+      this.props.dispatch(setSearchQuery(this.state.searchQuery));
+    }
+  }
+
+  /**
+   * Makes a request to the server to get the search results for the given search query.
+   *
+   * @param {string} query
+   */
+  requestSearchResults = query => {
+    fetch('/search/search', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ query }),
+    })
+      .then(result => result.json())
+      .then(result => {
+        const searchResults = result.data.map(elem => ({
+          ...elem,
+          url: getTopicUrlFromKey(elem.key),
+        }));
+
+        this.setState({
+          loading: false,
+          searchResults,
+        });
+      })
+      .catch(noop);
   };
 
   render() {
@@ -108,17 +107,18 @@ class SearchPage extends React.Component {
 
             <SearchBar
               onSearchChange={this.onSearchChange}
+              onEnterKeyPressed={this.onEnterKeyPressed}
               searchPlaceholder="Enter a search term..."
             />
 
             <SearchResults
-              numResults={0}
+              numResults={this.state.searchResults.length}
             />
 
             <SearchItemContainer
               color={getColorFromKey(this.props.colorKey)}
               loading={this.state.loading}
-              searchItems={this.getSearchItems()}
+              searchItems={this.state.searchResults}
             />
           </Col>
           <Col md="2" />
@@ -132,6 +132,7 @@ SearchPage.propTypes = {};
 
 const mapStateToProps = state => ({
   colorKey: state.colorKey,
+  searchQuery: state.searchQuery,
 });
 
 export default connect(mapStateToProps)(SearchPage);
