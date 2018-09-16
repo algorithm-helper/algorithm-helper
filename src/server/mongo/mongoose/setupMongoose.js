@@ -1,18 +1,18 @@
 const mongoose = require('mongoose');
 
-const { MONGO_URL } = include('mongo/utils/constants');
+const Configuration = include('configuration');
 const { log } = include('utils');
 
 /**
  * Setups Mongoose connection to MongoDB with connected/disconnected event listeners. Disconnects
- * when the Node.js application is closed with SIGINT.
+ * when the Node.js application is closed with SIGINT or exited normally.
  */
 const setupMongoose = () => {
-  mongoose.connect(MONGO_URL, { useNewUrlParser: true });
+  mongoose.connect(Configuration.get('mongodb.url'), { useNewUrlParser: true });
 
   mongoose.connection.on('connected', () => {
     log.info('Mongoose connected');
-    log.info('Mongo URL', MONGO_URL);
+    log.info('Mongo URL', Configuration.get('mongodb.url'));
   });
 
   mongoose.connection.on('disconnected', () => {

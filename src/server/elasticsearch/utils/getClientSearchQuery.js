@@ -1,4 +1,4 @@
-const { INDEX_NAME, TYPE_NAME } = require('./constants');
+const Configuration = include('configuration');
 
 /**
  * Helper function that returns a Promise to a search with the Elasticsearch client with the
@@ -12,8 +12,8 @@ const getClientSearchQuery = (client, query, field) => {
   const matchKey = query ? 'match' : 'match_all';
   const matchVal = query ? { [field]: query } : {};
   return client.search({
-    index: INDEX_NAME,
-    type: TYPE_NAME,
+    index: Configuration.get('elasticsearch.indexName'),
+    type: Configuration.get('elasticsearch.typeName'),
     body: {
       query: {
         [matchKey]: matchVal,

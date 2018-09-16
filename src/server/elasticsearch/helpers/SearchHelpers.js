@@ -3,17 +3,9 @@ const AWS = require('aws-sdk');
 const connectionClass = require('http-aws-es');
 const elasticsearch = require('elasticsearch');
 
+const Configuration = include('configuration');
 const { Category, Subcategory } = include('mongo/models');
-const {
-  ELASTICSEARCH_URL,
-  MAX_TIMEOUT,
-  LOG_LEVEL,
-  FIELDS_USED,
-} = include('elasticsearch/utils/constants');
-const {
-  getClientSearchQuery,
-  scoreComparator,
-} = include('elasticsearch/utils');
+const { getClientSearchQuery, scoreComparator } = include('elasticsearch/utils');
 
 const SearchHelpers = {
   /**
@@ -27,13 +19,16 @@ const SearchHelpers = {
     let client;
     if (process.env.PRODUCTION) {
       AWS.config.update({
-        credentials: new AWS.Credentials(process.env.AWS_ACCESS_KEY_ID, process.env.AWS_SECRET_KEY),
-        region: 'us-east-1',
+        credentials: new AWS.Credentials(
+          Configuration.get('aws.accessKeyId'),
+          Configuration.get('aws.secretKey'),
+        ),
+        region: Configuration.get('aws.region'),
       });
 
       client = new elasticsearch.Client({
-        hosts: ELASTICSEARCH_URL,
-        log: LOG_LEVEL,
+        hosts: Configuration.get('elasticsearch.url'),
+        log: Configuration.get('elasticsearch.logLevel'),
         connectionClass,
         amazonES: {
           credentials: new AWS.EnvironmentCredentials('AWS'),
@@ -41,16 +36,17 @@ const SearchHelpers = {
       });
     } else {
       client = new elasticsearch.Client({
-        hosts: ELASTICSEARCH_URL,
-        log: LOG_LEVEL,
+        hosts: Configuration.get('elasticsearch.url'),
+        log: Configuration.get('elasticsearch.logLevel'),
       });
     }
 
     // Test connection to Elasticsearch instance:
-    await client.ping({ requestTimeout: MAX_TIMEOUT });
+    await client.ping({ requestTimeout: Configuration.get('elasticsearch.maxTimeout') });
 
     // Make a request to the Search API for each field in parallel:
-    const results = await Promise.all(FIELDS_USED.map(field => (
+    const fieldsUsed = Configuration.get('elasticsearch.fieldsUsed');
+    const results = await Promise.all(fieldsUsed.map(field => (
       getClientSearchQuery(client, query, field)
     )));
 
