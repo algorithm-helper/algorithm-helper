@@ -56,7 +56,7 @@ router.post('/mark-as-completed', authenticateUser, (req, res) => {
  * Adds or removes the bookmark for this current item for the currently logged in user. If no user
  * is logged in, then returns an error response.
  *
- * @param {string} url
+ * @param {string} key
  */
 router.post('/save-to-bookmarks', authenticateUser, (req, res) => {
   ActionsHelpers.handleItemBookmarked(req.user._id, req.body.key)
@@ -78,6 +78,8 @@ router.post('/save-to-bookmarks', authenticateUser, (req, res) => {
  * Removes the given bookmark for this current item for the currently logged in user. If no user
  * is logged in, then returns an error response. Note the difference between this and
  * /actions/save-to-bookmarks is that it strictly deletes the bookmark.
+ *
+ * @param {string} key
  */
 router.delete('/remove-from-bookmarks', authenticateUser, (req, res) => {
   ActionsHelpers.handleItemBookmarked(req.user._id, req.body.key, true)

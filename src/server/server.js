@@ -3,7 +3,12 @@ const express = require('express');
 const path = require('path');
 const session = require('express-session');
 
-const { AccountsRouter, ActionsRouter, DataRouter } = include('routers');
+const {
+  AccountsRouter,
+  ActionsRouter,
+  DataRouter,
+  SearchRouter,
+} = include('routers');
 const { setupMongoose } = include('mongo/mongoose');
 const { cors } = include('middleware/web');
 const { log } = include('utils');
@@ -55,6 +60,11 @@ app.use('/actions', ActionsRouter);
  * routed to the DataRouter.
  */
 app.use('/data', DataRouter);
+
+/**
+ * Routes related to search (using Elasticsearch) are routed to the SearchRouter.
+ */
+app.use('/search', SearchRouter);
 
 /**
  * GET *
