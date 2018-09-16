@@ -59,20 +59,20 @@ class SearchPage extends React.Component {
   componentDidMount() {
     window.scrollTo(0, 0);
 
-    // fetch('/search/search', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify({
-    //     query: 'test',
-    //   }),
-    // })
-    //   .then(result => result.json())
-    //   .then(result => {
-    //     console.log(result);
-    //   })
-    //   .catch(() => {});
+    fetch('/search/search', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        query: 'list',
+      }),
+    })
+      .then(result => result.json())
+      .then(result => {
+        console.log(result);
+      })
+      .catch(() => {});
   }
 
   /**

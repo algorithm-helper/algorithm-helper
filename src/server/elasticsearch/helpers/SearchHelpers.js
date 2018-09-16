@@ -3,6 +3,7 @@ const AWS = require('aws-sdk');
 const connectionClass = require('http-aws-es');
 const elasticsearch = require('elasticsearch');
 
+const { Category, Subcategory } = include('mongo/models');
 const {
   ELASTICSEARCH_URL,
   MAX_TIMEOUT,
@@ -63,7 +64,7 @@ const SearchHelpers = {
         if (!aggregatedMapping[key]) {
           aggregatedMapping[key] = {
             score: 0,
-            title,
+            topicTitle: title,
             description,
           };
         }
@@ -72,10 +73,38 @@ const SearchHelpers = {
     });
 
     // Convert the mapping object into an array and sort by combined score:
-    return Object
+    const arr = Object
       .keys(aggregatedMapping)
       .map(key => ({ key, ...aggregatedMapping[key] }))
       .sort(scoreComparator);
+
+    // Need to get titles for the category and subcategory that the topic item belongs to:
+    const titles = await Promise.all(arr.map(item => {
+      const [categoryKey, subcategoryKey] = item.key.split('/');
+      return Promise.all([
+        Category.findOne({
+          slug: categoryKey,
+        }, {
+          title: true,
+        }).lean().exec(),
+        Subcategory.findOne({
+          slug: subcategoryKey,
+        }, {
+          title: true,
+        }).lean().exec(),
+      ])
+        .then(result => ({
+          categoryTitle: result[0].title,
+          subcategoryTitle: result[1].title,
+        }));
+    }));
+
+    arr.forEach((item, i) => {
+      arr[i].categoryTitle = titles[i].categoryTitle;
+      arr[i].subcategoryTitle = titles[i].subcategoryTitle;
+    });
+
+    return arr;
   },
 };
 
