@@ -326,7 +326,7 @@
     "slug": "heap",
     "title": "Heap",
     "parent": "trees",
-    "description": "Learn about the heap, a tree data structure that represents the tree in a single array, and implementations for binary min/max heaps.",
+    "description": "Learn about the heap, a tree data structure that represents the tree in a single array, and implementations for binary min and max heaps.",
     "children": [
       {
         "type": "article",
@@ -351,7 +351,7 @@
     "slug": "priority-queue",
     "title": "Priority Queue",
     "parent": "trees",
-    "description": "Learn about the priority queue, a data structure that uses the heap data structure to allow for efficient retrieval of min/max elements.",
+    "description": "Learn about the priority queue, a data structure that uses the heap data structure to allow for efficient retrieval of min and max elements.",
     "children": [
       {
         "type": "article",
@@ -868,7 +868,7 @@
     "slug": "ternary-search",
     "title": "Ternary Search",
     "parent": "searching",
-    "description": "Learn about ternary search, a searching algorithm for finding the min/max element of a unimodal function.",
+    "description": "Learn about ternary search, a searching algorithm for finding the min and max element of a unimodal function.",
     "children": [
       {
         "type": "article",
@@ -3216,6 +3216,19 @@
       {
         "type": "article",
         "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/algorithmic-analysis/computational-complexity/amortization.md"
+      }
+    ]
+  },
+  {
+    "key": "algorithmic-analysis/computational-complexity/master-theorem",
+    "slug": "master-theorem",
+    "title": "Master Theorem",
+    "parent": "computational-complexity",
+    "description": "Learn about the Master Theorem, a unified theorem for determining the time complexity of recurrence relations.",
+    "children": [
+      {
+        "type": "article",
+        "resourceUrl": "https://s3.amazonaws.com/algorithm-helper/content/categories/algorithmic-analysis/computational-complexity/master-theorem.md"
       }
     ]
   },

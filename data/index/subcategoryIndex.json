@@ -484,7 +484,8 @@
       "introduction",
       "big-o-notation",
       "small-o-notation",
-      "amortization"
+      "amortization",
+      "master-theorem"
     ]
   },
   {
