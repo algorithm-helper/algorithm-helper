@@ -1,6 +1,6 @@
 # Algorithm Helper
 
-<img src="https://circleci.com/gh/algorithm-helper/algorithm-helper/tree/master.svg?style=shield&circle-token=:circle-token">
+[![CircleCI](https://circleci.com/gh/algorithm-helper/algorithm-helper.svg?style=svg)](https://circleci.com/gh/algorithm-helper/algorithm-helper)
 
 Algorithm Helper is an educational resource for students and software developers to learn about
 a multitude of algorithms, data structures, and other software engineering topics. It is meant to
